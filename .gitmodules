@@ -1,0 +1,3 @@
+[submodule "pages/tianxiaogu"]
+	path = pages/tianxiaogu
+	url = git@git.artemisprojects.org:tianxiaogu/moon-tianxiaogu.git
