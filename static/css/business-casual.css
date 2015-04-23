@@ -5,9 +5,9 @@
  */
 
 body {
-    font-family: "Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
-    /*background: url('../img/bg.jpg') no-repeat center center fixed;*/
-    background-color: #6495ED;
+    font-family: Helvetica,Arial,sans-serif;
+    background: url('../img/bg.jpg') no-repeat center center fixed;
+    /*background-color: #6495ED;*/
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;
@@ -20,10 +20,12 @@ h3,
 h4,
 h5,
 h6 {
-    text-transform: uppercase;
-    font-family: "Josefin Slab","Helvetica Neue",Helvetica,Arial,sans-serif;
-    font-weight: 700;
+    /*text-transform: uppercase;*/
+    font-family: Helvetica,Arial,sans-serif;
+    font-weight: 400;
     letter-spacing: 1px;
+    color:#000066;
+    /*background-color: #d1eaff;*/
 }
 
 p {
@@ -87,8 +89,26 @@ hr {
 
 .intro-text {
     text-transform: uppercase;
-    font-size: 1.25em;
+    font-size: 1.5em;
     font-weight: 400;
+    letter-spacing: 1px;
+}
+
+h1 {
+    font-size: 2em;
+    font-weight: 400;
+    letter-spacing: 1px;
+}
+
+h2 {
+    font-size: 1.5em;
+    font-weight: 400;
+    letter-spacing: 1px;
+}
+
+h3 {
+    font-size: 1em;
+    font-weight: 200;
     letter-spacing: 1px;
 }
 
