@@ -57,6 +57,12 @@ phd:
 
 graduates:
   - name: Hongwei Xie
+  - name: Hao Jin
+    url: http://moon.nju.edu.cn/spar/people/HaoJin'sPage/index.html
+  - name: Xiujiang Li
+    url: http://moon.nju.edu.cn/spar/people/lxj/index.html
+  - name: Wang Xi
+    url: http://moon.nju.edu.cn/spar/people/xw.html
   - name: Geng Xiao
   - name: Huating Liu
   - name: Chenchen Cao
@@ -81,6 +87,20 @@ graduates:
   - name: Jun Tao
   - name: Dong Chen
   - name: Yu Du
+  - name: Qiwei Li
+    url: http://moon.nju.edu.cn/spar/people/lqw.html
+  - name: Xiangyu Wu
+    url: http://moon.nju.edu.cn/spar/people/wxy.html
+  - name: Ruiqing Zhang
+    url: http://moon.nju.edu.cn/spar/people/zrq/zrq.html
+  - name: Ying Zhang
+    url: http://moon.nju.edu.cn/spar/people/zy.html
+
+undergraduates:
+  - name: Na Liu
+    url: http://moon.nju.edu.cn/spar/people/ln/ln.html
+  - name: Huiyan Wang
+    url: http://moon.nju.edu.cn/spar/people/why/why.html
 
 alumni:
   - name: 董凯
