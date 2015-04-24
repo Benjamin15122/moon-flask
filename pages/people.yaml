@@ -1,0 +1,159 @@
+faculty:
+  - name: Jiafu Xu
+    title: Professor
+  - name: Jian Lu
+    title: Professor
+  - name: Xiaoxing Ma
+    title: Professor
+    url: people/xiaoxingma
+  - name: Xianping Tao
+    title: Professor
+  - name: Feng Xu
+    title: Professor
+  - name: Chang Xu
+    title: Associated Professor
+    url: people/changxu
+  - name: Hao Hu
+    title: Associated Professor
+  - name: Yu Huang
+    title: Associated Professor
+    url: people/yuhuang
+  - name: Chun Cao
+    title: Associated Professor
+  - name: Ping Yu
+    title: Assistant Professor
+  - name: Jun Ma
+    title: Assistant Professor
+  - name: Liang Wang
+    title: Assistant Professor
+  - name: Jianying Zhang
+    title: CFO
+
+phd:
+  - name: Xuansong Li
+    url:  people/xuansongli
+  - name: Xiaorui Zhu
+    url:  people/xiaoruizhu
+  - name: Yang Zou
+    url:  people/yangzou
+  - name: Xuansong Li
+    url:  people/xuansongli
+  - name: Hongyu Kuang
+    url:  people/kuanghongyu
+  - name: Xiaorui Zhu
+    url:  people/xiaoruizhu
+  - name: Haibin Yang
+    url:  people/haibinyang
+  - name: Hengfeng Wei
+    url:  people/hengfengwei
+  - name: Haibo Ye
+    url:  people/haiboye
+  - name: Yiling Yang
+    url:  people/yilingyang
+  - name: Yuan Yao
+    url:  people/yuanyao
+  - name: Jingwei Xu
+    url:  people/jingweixu
+  - name: Tianxiao Gu
+    url:  people/tianxiaogu
+  - name: Yanyan Jiang
+    url:  people/yanyanjiang
+  - name: Yi Qin
+    url:  people/yiqin
+  - name: Wenhua Yang
+    url:  people/wenhuayang
+  - name: Shengqu Xi
+    url:  people/shengquxi
+  - name: Yaojing Wang
+    url:  people/yaojingwang
+  - name: Zelin Zhao
+    url:  people/zelinzhao
+
+graduates:
+  - name: Hongwei Xie
+    url:  people/hongweixie
+  - name: Geng Xiao
+  - name: Huating Liu
+  - name: Chenchen Cao
+  - name: Tongbao Zhang
+  - name: Rongfei Zhu
+  - name: Dongliang Yu
+  - name: Haicheng Li
+  - name: Jie Zhang
+  - name: Xiujiang Li
+  - name: Jian Zheng
+  - name: Xuezhi Hong
+  - name: Wang Xi
+  - name: Huating Liu
+  - name: Bin Chen
+  - name: Cheng Zhang
+  - name: Mingzhu Yuan
+  - name: Hao Zhang
+  - name: Shaowen Zhang
+  - name: Jianliang Jiang
+  - name: Xiaoyu Chen
+  - name: Haoyi Zhou
+  - name: Jun Tao
+  - name: Dong Chen
+  - name: Yu Du
+
+alumni:
+  - name: 董凯
+  - name: 张凌浩
+  - name: 杨启亮
+  - name: 周宇
+  - name: 葛季栋
+  - name: 宋巍
+  - name: 潘静
+  - name: 吴绽青
+  - name: 华婷婷
+  - name: 谢国珍
+  - name: 姚燕
+  - name: 陈昊
+  - name: 王宁
+  - name: 袁国泉
+  - name: 胡海洋
+  - name: 冉平
+  - name: 张林
+  - name: 石兵
+  - name: 郭卿
+  - name: 林强
+  - name: 谢德平
+  - name: 关连伟
+  - name: 曹流
+  - name: 陈秀
+  - name: 方超
+  - name: 刘涛
+  - name: 施文波
+  - name: 徐刚
+  - name: 陈小康
+  - name: 苏萍
+  - name: 孙辉
+  - name: 张浩
+  - name: 王守涛
+  - name: 葛海龙
+  - name: 匡大虎
+  - name: 王珏
+  - name: 钟敏
+  - name: 李兴宇
+  - name: 王远
+  - name: 殷琴
+  - name: 罗滨
+  - name: 陆闻天
+  - name: 毛晓炜
+  - name: 潘健
+  - name: 李叶青
+  - name: 陈威
+  - name: 陈智勇
+  - name: 黄阳
+  - name: 陆掾
+  - name: 王姜
+  - name: 徐俊
+  - name: 江磊
+  - name: 任国超
+  - name: 冯仁君
+  - name: 张栋栋
+  - name: 宗波
+  - name: 余建平
+  - name: 张璟璟
+  - name: 辛显龙
