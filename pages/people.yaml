@@ -12,66 +12,51 @@ faculty:
     title: Professor
   - name: Chang Xu
     title: Associated Professor
-    url: people/changxu
+    url: http://cs.nju.edu.cn/changxu
   - name: Hao Hu
     title: Associated Professor
   - name: Yu Huang
     title: Associated Professor
-    url: people/yuhuang
+    url: http://cs.nju.edu.cn/yuhuang
   - name: Chun Cao
     title: Associated Professor
   - name: Ping Yu
     title: Assistant Professor
+    url: http://cs.nju.edu.cn/yuping
   - name: Jun Ma
     title: Assistant Professor
   - name: Liang Wang
     title: Assistant Professor
+    url: http://cs.nju.edu.cn/wangliang
   - name: Jianying Zhang
     title: CFO
 
 phd:
-  - name: Xuansong Li
-    url:  people/xuansongli
-  - name: Xiaorui Zhu
-    url:  people/xiaoruizhu
   - name: Yang Zou
-    url:  people/yangzou
   - name: Xuansong Li
-    url:  people/xuansongli
   - name: Hongyu Kuang
-    url:  people/kuanghongyu
   - name: Xiaorui Zhu
-    url:  people/xiaoruizhu
   - name: Haibin Yang
-    url:  people/haibinyang
   - name: Hengfeng Wei
-    url:  people/hengfengwei
   - name: Haibo Ye
-    url:  people/haiboye
   - name: Yiling Yang
-    url:  people/yilingyang
   - name: Yuan Yao
-    url:  people/yuanyao
   - name: Jingwei Xu
-    url:  people/jingweixu
   - name: Tianxiao Gu
     url:  people/tianxiaogu
   - name: Yanyan Jiang
-    url:  people/yanyanjiang
+    url:  http://moon.nju.edu.cn/spar/people/jyy.html
   - name: Yi Qin
-    url:  people/yiqin
+    url:  http://moon.nju.edu.cn/spar/people/qy.html
   - name: Wenhua Yang
-    url:  people/wenhuayang
+    url:  http://moon.nju.edu.cn/spar/people/ywh/ywh.html
   - name: Shengqu Xi
-    url:  people/shengquxi
   - name: Yaojing Wang
-    url:  people/yaojingwang
   - name: Zelin Zhao
-    url:  people/zelinzhao
+    url:  http://moon.nju.edu.cn/spar/people/zzl/zzl.html
 
 graduates:
   - name: Hongwei Xie
-    url:  people/hongweixie
   - name: Geng Xiao
   - name: Huating Liu
   - name: Chenchen Cao
