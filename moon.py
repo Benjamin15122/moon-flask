@@ -42,13 +42,14 @@ def refresh_moon():
 def gitlab_webhooks():
     data = request.get_json()
 
-    try:
-        if data['object_type'] != 'push':
-            print('gitlab webhooks: object type is ' + data['object_type'])
-            abort(500)
-    except Exception:
-        print('gitlab webhooks: json is ' + str(data))
-        abort(404)
+    #TODO no 'object type' in current gitlab request
+    #try:
+    #    if data['object_type'] != 'push':
+    #        print('gitlab webhooks: object type is ' + data['object_type'])
+    #        abort(500)
+    #except Exception:
+    #    print('gitlab webhooks: json is ' + str(data))
+    #    abort(404)
 
     try:
         refresh_moon()
