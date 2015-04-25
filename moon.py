@@ -87,14 +87,14 @@ def gitlab_webhooks():
 def index():
     return render_template('index.html')
 
-@app.route('/people.html', methods=['GET'])
+@app.route('/people/', methods=['GET'])
 def people():
     with open(PEOPLE_YAML) as f:
         people = yaml.load(f)
 
     return render_template('people.html', people=people)
 
-@app.route('/research.html', methods=['GET'])
+@app.route('/research/', methods=['GET'])
 def research():
     return render_template('research.html')
 

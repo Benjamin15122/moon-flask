@@ -45,7 +45,7 @@ phd:
   - name: Yuan Yao
   - name: Jingwei Xu
   - name: Tianxiao Gu
-    url:  people/tianxiaogu
+    url:  tianxiaogu
   - name: Yanyan Jiang
     url:  http://moon.nju.edu.cn/spar/people/jyy.html
   - name: Yi Qin
@@ -59,6 +59,8 @@ phd:
 
 graduates:
   - name: Hongwei Xie
+  - name: Shengwei An
+    url:  shengweian
   - name: Hao Jin
     url: http://moon.nju.edu.cn/spar/people/HaoJin'sPage/index.html
   - name: Xiujiang Li
