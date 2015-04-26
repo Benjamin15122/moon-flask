@@ -33,7 +33,7 @@
             {% if item.url%}
             <a href="{{ item.url }}">
             {% endif %}
-            <h3 align="left"><small>{{ item.title }}</small> {{ item.name }}</h3>
+            <h3 align="left">{{ item.name }} <small>{{ item.title }}</small></h3>
             {% if item.url%}
             </a>
             {% endif %}
@@ -56,7 +56,7 @@
             {% if item.url%}
             <a href="{{ item.url }}">
             {% endif %}
-            <h3 align="left"><small>{{ item.title }}</small> {{ item.name }}</h3>
+            <h3 align="left">{{ item.name }} <small>{{ item.title }}</small></h3>
             {% if item.url%}
             </a>
             {% endif %}
@@ -75,7 +75,7 @@
         </div>
 
         {% for item in people.phd %}
-        <div class="col-sm-4 text-left">
+        <div class="col-sm-3 text-left">
             {% if item.url%}
             <a href="{{ item.url }}">
             {% endif %}
@@ -99,7 +99,7 @@
         </div>
 
         {% for item in people.graduates %}
-        <div class="col-sm-4 text-left">
+        <div class="col-sm-3 text-left">
             {% if item.url%}
             <a href="{{ item.url }}">
             {% endif %}
@@ -123,7 +123,7 @@
         </div>
 
         {% for item in people.undergraduates %}
-        <div class="col-sm-4 text-left">
+        <div class="col-sm-3 text-left">
             {% if item.url%}
             <a href="{{ item.url }}">
             {% endif %}
@@ -149,7 +149,7 @@
         </div>
 
         {% for item in people.alumni %}
-        <div class="col-sm-4 text-left">
+        <div class="col-sm-3 text-left">
             {% if item.url%}
             <a href="{{ item.url }}">
             {% endif %}
