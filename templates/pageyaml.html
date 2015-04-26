@@ -4,11 +4,14 @@
 {% endblock%}
 
 {% block content %}
-<body>
+<div class="row">
+    <div class="box">
+        <div class="col-lg-12">
+
     <div id="wrapper">
         <div id="page">
             <div id="logo">
-                <h1>{{ page.meta.name }} {{ page.meta.姓名}}</h1>
+                <h1>{{ page.meta.name }} {{ page.meta['姓名']}}</h1>
                 <br />
                 <p>
                 {{ page.meta.title}}<br /> <!-- PhD or ... -->
@@ -27,42 +30,48 @@
                             <tr>
                                 <td valign="top">
                                     <p>
-                                        {{ page.meta.biography }}
+                                        {{ page.meta.biography|safe }}
                                     </p>
                                 </td>
                                 <td><img style="float:right;display:block;margin-left:15px" src="{{ page.meta.image }}" width="225" /></td>
                             </tr>
                         </table>
-
                     </div>
                 </div>
                 <div class="post">
                     <h2 class="title"><a name="Research">Research</a></h2>
                     <div class="entry">
-                        <p>{{ page.meta.research }}</p>
+                        <p>{{ page.meta.research|safe }}</p>
                     </div>
                 </div>
                 <div class="post">
                     <h2 class="title"><a name="Contact">Contact</a></h2>
                     <div class="entry">
                         <table>
+                            {% if page.meta.email %}
                             <tr>
                                 <td align="right">Email: </td>
                                 <td style="padding-left:15px">
                                     {{ page.meta.email }}
                                 </td>
                             </tr>
+                            {% endif %}
 
+                            {% if page.meta.office %}
                             <tr>
                                 <td align="right">Office:</td>
                                 <td style="padding-left:15px">
                                     {{ page.meta.office }}
                                 </td>
                             </tr>
+                            {% endif %}
+
+                            {% if page.meta.email %}
                             <tr>
                                 <td valign="top" align="right">Address:</td>
                                 <td style="padding-left:15px">{{ page.meta.address }}</td>
                             </tr>
+                            {% endif %}
                         </table>
                     </div>
                 </div>
@@ -79,6 +88,8 @@
         </div>
         <!-- end #footer -->
     </div>
-</body>
+        </div>
+    </div>
+</div>
 
 {% endblock content %}
