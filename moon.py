@@ -1,4 +1,4 @@
-from flask import Flask, render_template, redirect, send_from_directory, request, abort, make_response
+from flask import Flask, render_template, redirect, send_from_directory, request, abort, make_response, safe_join
 from flask_flatpages import FlatPages
 from flask_frozen import Freezer
 import sys, os, subprocess
@@ -113,7 +113,7 @@ def page(name, path=None):
 
 
     if path.startswith('static/'):
-        return send_from_directory('pages/' + name, path)
+        return send_from_directory(safe_join(PAGES_DIR, name), path)
 
     page = flatpages.get_or_404(page_path)
 
