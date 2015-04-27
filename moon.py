@@ -103,7 +103,13 @@ def research():
 def page(name, path=None):
     if path is None:
         path = 'index'
+
+    if path == 'cn/':
+        path = 'cn/index'
+
     page_path = name + '/' + path
+
+    print(page_path)
 
     if path.startswith('static/'):
         return send_from_directory('pages/' + name, path)

@@ -17,6 +17,7 @@
 
     <!-- Custom CSS -->
     <link href="{{ url_for('static', filename='css/business-casual.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/iframe.css') }}" rel="stylesheet">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -32,7 +33,12 @@
     <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
 
 
-
+<script type="text/javascript">
+  function resizeIframe(obj){
+     {obj.style.height = 0;};
+     {obj.style.height = obj.contentWindow.document.body.scrollHeight + 'px';}
+  }
+</script>
 
 </head>
 
