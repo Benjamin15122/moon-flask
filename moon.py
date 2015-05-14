@@ -85,7 +85,7 @@ def gitlab_webhooks():
 
 @app.route('/', methods=['GET'])
 def index():
-    return render_template('index.html')
+    return render_template('index1.html')
 
 @app.route('/people/', methods=['GET'])
 def people():
