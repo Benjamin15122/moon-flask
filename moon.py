@@ -121,7 +121,7 @@ def page(name, path=None):
     if rd is not None:
         return redirect(rd)
 
-    template = page.meta.get('template', 'page.html')
+    template = page.meta.get('template', 'page1.html')
     return render_template(template, page=page)
 
 if __name__ == '__main__':
