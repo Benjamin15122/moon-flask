@@ -92,7 +92,7 @@ def people():
     with open(PEOPLE_YAML) as f:
         people = yaml.load(f)
 
-    return render_template('people.html', people=people)
+    return render_template('people1.html', people=people)
 
 @app.route('/research/', methods=['GET'])
 def research():

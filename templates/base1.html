@@ -30,9 +30,8 @@
             <nav class="k-functional-navig"><!-- functional navig -->
         
                 <ul class="list-inline pull-right">
-                    <li><a href="#">Jobs</a></li>
-                    <li><a href="#">Calendar</a></li>
-                    <li><a href="#">Directions</a></li>
+                    <li><a href="#">English</a></li>
+                    <li><a href="#">简体中文</a></li>
                 </ul>
         
             </nav><!-- functional navig end -->
@@ -42,7 +41,7 @@
         		<div id="k-site-logo" class="pull-left"><!-- site logo -->
                 
                     <h1 class="k-logo">
-                        <a href="index.html" title="Home Page">
+                        <a href="{{ url_for('index') }}" title="Home Page">
                             <img src="{{ url_for('static', filename='img/site-logo.png') }}" alt="Site Logo" class="img-responsive" />
                         </a>
                     </h1>
