@@ -1,115 +1,98 @@
-{% extends 'base1.html' %}
+{% extends 'base.html' %}
 {% block title%}People |{% endblock %}
 {% block content %}
-            <div class="row"><!-- row -->
-            
-                <div id="k-top-search" class="col-lg-12 clearfix"><!-- top search -->
-                
-                    <form action="#" id="top-searchform" method="get" role="search">
-                        <div class="input-group">
-                            <input type="text" name="s" id="sitesearch" class="form-control" autocomplete="off" placeholder="Type in keyword(s) then hit Enter on keyboard" />
-                        </div>
-                    </form>
-                    
-                    <div id="bt-toggle-search" class="search-icon text-center"><i class="s-open fa fa-search"></i><i class="s-close fa fa-times"></i></div><!-- toggle search button -->
-                
-                </div><!-- top search end -->
-            
-                <div class="k-breadcrumbs col-lg-12 clearfix"><!-- breadcrumbs -->
-                
-                    <ol class="breadcrumb">
-                        <li><a href="{{ url_for('index') }}">Home</a></li>
-                        <li class="active">People</li>
-                    </ol>
-                    
-                </div><!-- breadcrumbs end -->               
-                
-            </div><!-- row end -->
-
-            <div class="row"><!-- row -->
-                
-                <div class="col-lg-12 col-md-12"><!-- doc body wrapper -->
-                    
-                    <div class="col-padded"><!-- inner custom column -->
-                        
-                        <h1 class="page-title">People</h1>
-                        
-                        <div class="news-body">
-                        
-                            <p class="call-out">所长徐家福教授，副所长马晓星教授。软件所现任教职员工{{ people.faculty|length + people.staff|length }}名。在读博士生{{ people.phd|length }}名。在读硕士生{{ people.graduates|length }}名。</p>
-                            
-                            <div class="separator-dbl-strike"></div><!-- separator -->
-
-                            <h2>Faculty</h2>
-                            <div class="row small k-equal-height"><!-- row -->
-                                
-                            	
-                            	{% for item in people.faculty %}
-                                <div class="col-lg-3 col-md-6 col-sm-12">
-                                    {% if item.url %}
-                                    <a href="{{ item.url }}">
-                                    {% endif %}
-                                        <h6><i class="fa fa-coffee"></i>{{ item.name }}</h6>
-                                        <p>{{ item.title }}</p>
-                                    {% if item.url %}
-                                    </a>
-                                    {% endif %}
-                                </div>
-                                {% endfor %}
-                            
-                            </div><!-- row end -->
-                            
-                            <div class="separator-dashed"></div><!-- separator -->
-
-                            <h2>Ph.D. Candidates</h2>
-                            <div class="row small k-equal-height"><!-- row -->
-                                
-                            	
-                            	{% for item in people.phd %}
-                                <div class="col-lg-3 col-md-6 col-sm-12">
-                                    {% if item.url %}
-                                    <a href="{{ item.url }}">
-                                    {% endif %}
-                                        <h6><i class="fa fa-rocket"></i>{{ item.name }}</h6>
-                                        <!-- <p>{{ item.title }}</p> -->
-                                    {% if item.url %}
-                                    </a>
-                                    {% endif %}
-                                </div>
-                                {% endfor %}
-                            
-                            </div><!-- row end -->
-                            
-                            <div class="separator-dashed"></div><!-- separator -->
-
-                            <h2>Graduates</h2>
-                            <div class="row small k-equal-height"><!-- row -->
-                                
-                            	
-                            	{% for item in people.graduates %}
-                                <div class="col-lg-3 col-md-6 col-sm-12">
-                                    {% if item.url %}
-                                    <a href="{{ item.url }}">
-                                    {% endif %}
-                                        <h6><i class="fa fa-graduation-cap"></i>{{ item.name }}</h6>
-                                        <!-- <p>{{ item.title }}</p> -->
-                                    {% if item.url %}
-                                    </a>
-                                    {% endif %}
-                                </div>
-                                {% endfor %}
-                            
-                            </div><!-- row end -->
-                            
-                        </div>
-                    
-                    </div><!-- inner custom column end -->
-                    
-                </div><!-- doc body wrapper end -->
-            
-            </div><!-- row end -->
-
-            
-
-
+<div class="row"><!-- row -->
+    <div id="k-top-search" class="col-lg-12 clearfix"><!-- top search -->
+        <form action="#" id="top-searchform" method="get" role="search">
+            <div class="input-group">
+                <input type="text" name="s" id="sitesearch" class="form-control" autocomplete="off" placeholder="Type in keyword(s) then hit Enter on keyboard" />
+            </div>
+        </form>
+        <div id="bt-toggle-search" class="search-icon text-center"><i class="s-open fa fa-search"></i><i class="s-close fa fa-times"></i></div><!-- toggle search button -->
+    </div><!-- top search end -->
+    <div class="k-breadcrumbs col-lg-12 clearfix"><!-- breadcrumbs -->
+        <ol class="breadcrumb">
+            <li><a href="{{ url_for('index') }}">Home</a></li>
+            <li class="active">People</li>
+        </ol>
+    </div><!-- breadcrumbs end -->
+</div><!-- row end -->
+<div class="row"><!-- row -->
+    <div class="col-lg-12 col-md-12"><!-- doc body wrapper -->
+        <div class="col-padded"><!-- inner custom column -->
+            <h1 class="page-title">People</h1>
+            <div class="news-body">
+                 <p class="call-out">
+                    The Institute of Computer Software (ICS) is a xxxx.
+                    Currently, there are {{ people.faculty|length}} Faculty members, {{ people.phd|length + people.graduates|length + people.undergraduates|length }} students.
+                 </p>
+                 <p class="call-out">
+                    Sir Jiafu Xu is the director of Institute of Computer Software at Nanjing University.
+                    He is a professor of the Department of Computer Science and Technology at Nanjing University.
+                    He mentored the first doctor of Computer Science in China.
+                    He has received a lifetime achievement award from the China Computer Federation in 2011.
+                </p>
+                <p class="call-out">
+                    Doctor Jian Lü is the vice president of Nanjing University.
+                    He is a professor of the Department of Computer Science and Technology at Nanjing University.
+                    In 2013, he became an academician of Chinese Academy of Science.
+                    He is also the dean of Graduate School of Nanjing University and
+                    the former deputy director of Institute of Computer Software at Nanjing University.
+                </p>
+                <p class="call-out">
+                Doctor <a href="{{ url_for('page', name='xiaoxingma') }}" title="Xiaoxing Ma">Xiaoxing Ma</a> is the deputy directory of Institute of Computer Software at Nanjing University.
+                    He is a professor of the Department of Computer Science and Technology at Nanjing University.
+                </p>
+               <div class="separator-dbl-strike"></div><!-- separator -->
+                <h2>Faculty</h2>
+                <div class="row small k-equal-height"><!-- row -->
+                    {% for item in people.faculty %}
+                    <div class="col-lg-3 col-md-6 col-sm-12">
+                        {% if item.url %}
+                        <a href="{{ item.url }}">
+                            {% endif %}
+                            <h6><i class="fa fa-coffee"></i>{{ item.name }}</h6>
+                            <p>{{ item.title }}</p>
+                            {% if item.url %}
+                        </a>
+                        {% endif %}
+                    </div>
+                    {% endfor %}
+                </div><!-- row end -->
+                <div class="separator-dashed"></div><!-- separator -->
+                <h2>Ph.D. Candidates</h2>
+                <div class="row small k-equal-height"><!-- row -->
+                    {% for item in people.phd %}
+                    <div class="col-lg-3 col-md-6 col-sm-12">
+                        {% if item.url %}
+                        <a href="{{ item.url }}">
+                            {% endif %}
+                            <h6><i class="fa fa-rocket"></i>{{ item.name }}</h6>
+                            <!-- <p>{{ item.title }}</p> -->
+                            {% if item.url %}
+                        </a>
+                        {% endif %}
+                    </div>
+                    {% endfor %}
+                </div><!-- row end -->
+                <div class="separator-dashed"></div><!-- separator -->
+                <h2>Graduates</h2>
+                <div class="row small k-equal-height"><!-- row -->
+                    {% for item in people.graduates %}
+                    <div class="col-lg-3 col-md-6 col-sm-12">
+                        {% if item.url %}
+                        <a href="{{ item.url }}">
+                            {% endif %}
+                            <h6><i class="fa fa-graduation-cap"></i>{{ item.name }}</h6>
+                            <!-- <p>{{ item.title }}</p> -->
+                            {% if item.url %}
+                        </a>
+                        {% endif %}
+                    </div>
+                    {% endfor %}
+                </div><!-- row end -->
+            </div>
+        </div><!-- inner custom column end -->
+    </div><!-- doc body wrapper end -->
+</div><!-- row end -->
 {% endblock %}
