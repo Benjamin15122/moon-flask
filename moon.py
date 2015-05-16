@@ -81,18 +81,27 @@ def gitlab_webhooks():
     #    if config.get(sec, 'url') == repo_url:
     #        refresh_moon()
 
-        
+
+@app.route('/news/', methods=['GET'])
+@app.route('/news/<path:path>', methods=['GET'])
+def news(path=None):
+    return render_template('news.html')
+
+@app.route('/events/', methods=['GET'])
+@app.route('/events/<path:path>', methods=['GET'])
+def events(path=None):
+    return render_template('events.html')
 
 @app.route('/', methods=['GET'])
 def index():
-    return render_template('index1.html')
+    return render_template('index.html')
 
 @app.route('/people/', methods=['GET'])
 def people():
     with open(PEOPLE_YAML) as f:
         people = yaml.load(f)
 
-    return render_template('people1.html', people=people)
+    return render_template('people.html', people=people)
 
 @app.route('/research/', methods=['GET'])
 def research():
@@ -121,7 +130,7 @@ def page(name, path=None):
     if rd is not None:
         return redirect(rd)
 
-    template = page.meta.get('template', 'page1.html')
+    template = page.meta.get('template', 'page.html')
     return render_template(template, page=page)
 
 if __name__ == '__main__':
