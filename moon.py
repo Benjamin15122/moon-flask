@@ -4,8 +4,13 @@ from flask import Flask, render_template, redirect, send_from_directory, request
 import sys, os, subprocess
 import yaml
 
+from string import Template
 import markdown
 from docutils.core import publish_string, publish_parts
+
+import bibtexparser
+from bibtexparser.bparser import BibTexParser
+from bibtexparser.customization import convert_to_unicode
 
 #import ConfigParser
 
@@ -36,6 +41,71 @@ app.config.from_object(__name__)
 
 ################
 
+from docutils import nodes
+from docutils.parsers import rst
+from docutils.parsers.rst import directives
+
+def convert_bibtex(bibtex, hl):
+    parser = BibTexParser()
+    parser.customization = convert_to_unicode
+    bib_database = bibtexparser.loads(bibtex, parser=parser)
+    print(bib_database.entries)
+
+    return convert_bibentries_to_html(bib_database.entries)
+
+ip_temp = Template('<li><a name="$id"></a><b>$title</b>,$author,<em>$booktitle</em>,$pages,$month $year</li>')
+
+def render_interproceedings(e):
+    if 'month' not in e:
+        e['month'] = ''
+    return ip_temp.substitute(e)
+
+def render_article(e):
+    pass
+
+def isEntry(e, t):
+    return e.get('type') == t
+
+def convert_bibentries_to_html(entries):
+    html = []
+    html.append('<ol>')
+    for e in entries:
+        print(getattr(e, 'type', '') == 'inproceedings')
+        print(getattr(e, 'type', ''))
+        print(e['type'])
+        if isEntry(e, 'inproceedings'):
+            html.append(render_interproceedings(e))
+        elif isEntry(e, 'article'):
+            html.append(render_article(e))
+        else:
+            html.append(' '.join(e.values()))
+
+    html.append('</ol>')
+
+    return '\n'.join(html)
+
+
+class BibtexDirective(rst.Directive):
+
+    required_arguments = 0
+    optional_arguments = 1
+    final_argument_whitespace = True
+    option_spec = {'hl': directives.unchanged}
+    has_content = True
+
+    def run(self):
+        self.assert_has_content()
+        text = '\n'.join(self.content)
+        b = convert_bibtex(text, self.options.get('hl', ''))
+        n = nodes.raw(rawsource=self.block_text, text=b, format='html')
+        print(b)
+        return [n]
+
+
+directives.register_directive('bibtex', BibtexDirective)
+
+################
+
 
 class Page(object):
     pass
@@ -58,6 +128,7 @@ def refresh_moon():
     print('execute "%s" with ret %d' % (' '.join(GIT_PULL_SUBMODULES), ret_code))
 
 ##################
+
 
 @app.route('/gitlabwebhooks', methods=['POST'])
 def gitlab_webhooks():
@@ -93,6 +164,12 @@ def gitlab_webhooks():
     #    if config.get(sec, 'url') == repo_url:
     #        refresh_moon()
 
+###################
+
+@app.errorhandler(404)
+def page_not_found(e):
+    return render_template('404.html'), 404
+
 @app.before_request
 def before_request():
     md = getattr(g, 'md', None)
@@ -103,19 +180,28 @@ def before_request():
 def teardown_request(exception):
     pass
 
+
+#####################
+
 @app.route('/news/', methods=['GET'])
 @app.route('/news/<path:path>', methods=['GET'])
 def news(path=None):
     return render_template('news.html')
+
+#####################
 
 @app.route('/events/', methods=['GET'])
 @app.route('/events/<path:path>', methods=['GET'])
 def events(path=None):
     return render_template('events.html')
 
+#####################
+
 @app.route('/', methods=['GET'])
 def index():
     return render_template('index.html')
+
+#####################
 
 @app.route('/people/', methods=['GET'])
 def people():
@@ -182,8 +268,18 @@ def get_user_page(user_dir, path):
     if page_path:
         return get_restructuredtext_page_or_404(page_path)
 
-    # 3) Test html
+    # 3) Test yaml
+    try:
+        yaml_path = safe_join(user_dir, path + '.yaml')
+        if os.path.exists(yaml_path):
+            page_path = rst_path
+    except Exception as e:
+        print(e)
+        print("Cannot find rst path for " + path)
 
+
+    # 4) Test html
+    # TODO Extract the body
     abort(404)
 
 def get_restructuredtext_page_or_404(page_path):
