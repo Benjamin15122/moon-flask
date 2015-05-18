@@ -212,12 +212,42 @@ def load_photos():
 
 def load_news():
     n = {}
+
+    if not os.path.exists(NEWS_YAML):
+        update_news_yaml()
+
     with open(NEWS_YAML, 'r') as f:
         n = yaml.load(f)
         sorted(n, key=get_date, reverse=True)
 
 
     return n
+
+def update_news_yaml():
+    rootdir = NEWS_DIR
+    news_pages = []
+    for subdir, dirs, files in os.walk(rootdir):
+        curdir = os.path.join(rootdir, subdir)
+        for f in files:
+            f = os.path.join(curdir, f)
+            if f.endswith('.md'):
+                page = get_markdown_page_or_404(f)
+            elif f.endswith('.rst'):
+                page = get_restructuredtext_page_or_404(f)
+            else:
+                continue
+
+            pagedict = {}
+            pagedict['path'] = os.path.splitext(os.path.relpath(f, rootdir).replace('\\','/'))[0]
+            pagedict['title'] = page.meta.get('title', 'Please add a title')
+            pagedict['date'] = page.meta.get('date', time.strftime('%Y-%m-%d', time.localtime()))
+            news_pages.append(pagedict)
+
+    sorted(news_pages, key=get_date, reverse=True)
+
+    news_cache = yaml.dump(news_pages, default_flow_style=False)
+    with open(NEWS_YAML, 'w') as f:
+        f.write(news_cache)
 
 
 
@@ -255,7 +285,8 @@ def teardown_request(exception):
 @app.route('/news/<path:path>', methods=['GET'])
 def news(path=None):
     if path is None:
-        return render_template('news.html')
+        n = load_news()
+        return render_template('news.html', news=n)
 
     page = get_page(NEWS_DIR, path)
 
@@ -390,10 +421,16 @@ def get_markdown_page_or_404(page_path):
     page = Page()
     with open(page_path, 'r') as f:
         try:
+            if not hasattr(g, 'md'):
+                g.md = markdown.Markdown(['markdown.extensions.extra', 'markdown.extensions.meta'])
+
             page.html = g.md.convert(f.read())
             page.meta = g.md.Meta # flask-pages naming covention
+            for key, value in page.meta.iteritems():
+                page.meta[key] = ''.join(value)
             return page
-        except:
+        except Exception as e:
+            print(e)
             abort(404)
 
     abort(404)

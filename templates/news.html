@@ -2,7 +2,7 @@
 {% block content %}
 <ol>
 {% for n in news%}
-<li><a href="{{ n.url }}"><strong>{{ n.title }}</strong><small>{{ n.date }}</small></a></li>
+<li><a href="{{ url_for('news', path=n.path) }}">{{ n.title }}<small> - {{ n.date }}</small></a></li>
 {% endfor %}
 </ol>
 {% endblock %}

@@ -95,18 +95,10 @@
                                     <div class="up-event-meta clearfix">
                                         <div class="up-event-date">{{ e.date | to_date }}</div><div class="up-event-time">{{ e.date | to_time }} {% if e.end %} - {{ e.end | to_time}} {% endif %}</div>
                                     </div>
-                                    {% if e.summary %}
                                     <p>
-                                        {{ e.summary }}
-                                        <a href="{{ e.events }}" class="moretag" title="read more">MORE</a>
+                                        {{ e.html|safe }}
+                                        <!--<a href="{{ e.events }}" class="moretag" title="read more">MORE</a>-->
                                     </p>
-                                    {% else %}
-                                        {% if e.content %}
-                                            <p>
-                                            {{ e.content }}
-                                            </p>
-                                        {% endif %}
-                                    {% endif %}
                                 </li>
                             {% endif %}
                         {% endfor %}
@@ -128,14 +120,14 @@
                                     <div class="recent-news-meta">
                                         <div class="recent-news-date">{{ n.date | to_date }}</div>
                                     </div>
-                                    <div class="recent-news-content clearfix">
+                                    <div class="recent-news-content clearfix" style="display:none"><!-- set display=none to comment it-->
                                         {% if n.img %}
                                         <figure class="recent-news-thumb">
                                             <a href="{{ n.img.url }}" title="{{ n.img.title }}"><img src="{{ url_for('static', filename=n.img.src) }}" class="attachment-thumbnail wp-post-image" alt="Thumbnail 1" /></a>
                                         </figure>
                                         {% endif %}
                                         <div class="recent-news-text">
-                                            <p>{{ n.summary }}</p>
+                                            <p>{{ n.html|safe}}</p>
                                         </div>
                                     </div>
                                 </li>
