@@ -1,0 +1,8 @@
+{% extends 'base.html' %}
+{% block content %}
+<ol>
+{% for e in events%}
+<li><a href="{{ e.url }}"><strong>{{ e.title }}</strong><small>{{ e.date }}</small></a></li>
+{% endfor %}
+</ol>
+{% endblock %}

@@ -1,3 +1,8 @@
 {% extends 'base.html' %}
 {% block content %}
+<ol>
+{% for n in news%}
+<li><a href="{{ n.url }}"><strong>{{ n.title }}</strong><small>{{ n.date }}</small></a></li>
+{% endfor %}
+</ol>
 {% endblock %}

@@ -30,7 +30,7 @@
                 <div id="k-site-logo" class="pull-left"><!-- site logo -->
                     <h1 class="k-logo">
                         <a href="{{ url_for('index') }}" title="Home Page">
-                            <img src="{{ url_for('static', filename='img/site-logo.png') }}" alt="Site Logo" class="img-responsive" />
+                            <img src="{{ url_for('static', filename='img/ICS_NJU.png') }}" alt="Site Logo" class="img-responsive" />
                         </a>
                     </h1>
                     <a id="mobile-nav-switch" href="#drop-down-left"><span class="alter-menu-icon"></span></a><!-- alternative menu button -->
@@ -72,13 +72,11 @@
                     <div class="col-padded col-naked">
                         <ul class="list-unstyled clear-margins"><!-- widgets -->
                             <li class="widget-container widget_nav_menu"><!-- widgets list -->
-                                <h1 class="title-widget">Useful links</h1>
+                                <h1 class="title-widget">Links</h1>
                                 <ul>
-                                    <li><a href="#" title="menu item">Placement Exam Schedule</a></li>
-                                    <li><a href="#" title="menu item">Superintendent's Hearing Audio</a></li>
-                                    <li><a href="#" title="menu item">Budget Central</a></li>
-                                    <li><a href="#" title="menu item">Job Opportunities - Application</a></li>
-                                    <li><a href="#" title="menu item">College Acceptances as of May 12</a></li>
+                                    <li><a href="http://cs.nju.edu.cn/" title="menu item">Department of Computer Science and Technology</a></li>
+                                    <li><a href="http://www.nju.edu.cn/" title="menu item">Nanjing University</a></li>
+                                    <li><a href="http://keysoftlab.nju.edu.cn/site/ndjsjx/" title="menu item">State Key Laboratory for Novel Software Technology</a></li>
                                 </ul>
                             </li>
                         </ul>
@@ -88,7 +86,7 @@
                     <div class="col-padded col-naked">
                         <ul class="list-unstyled clear-margins"><!-- widgets -->
                             <li class="widget-container widget_recent_news"><!-- widgets list -->
-                                <h1 class="title-widget">Institute Contact</h1>
+                                <h1 class="title-widget">Contact</h1>
                                 <div itemscope itemtype="http://data-vocabulary.org/Organization"> 
                                     <h2 class="title-median m-contact-subject" itemprop="name">Institute of Computer Software</h2>
                                     <div class="m-contact-address" itemprop="address" itemscope itemtype="http://data-vocabulary.org/Address">
@@ -97,8 +95,8 @@
                                         <span class="m-contact-zip-country"><span class="m-contact-zip" itemprop="postal-code">210023</span> <span class="m-contact-country" itemprop="country-name">China</span></span>
                                     </div>
                                     <div class="m-contact-tel-fax">
-                                        <span class="m-contact-tel">Tel: <span itemprop="tel">025-8968xxxx</span></span>
-                                        <span class="m-contact-fax">Fax: <span itemprop="fax">025-8968xxxx</span></span>
+                                        <span class="m-contact-tel">Tel: <span itemprop="tel">025-89686068</span></span>
+                                        <span class="m-contact-fax">Fax: <span itemprop="fax">025-83593283</span></span>
                                     </div>
                                 </div>
                                 <div class="social-icons">
@@ -116,16 +114,13 @@
                     <div class="col-padded col-naked">
                         <ul class="list-unstyled clear-margins"><!-- widgets -->
                             <li class="widget-container widget_sofa_flickr"><!-- widgets list -->
-                                <h1 class="title-widget">Flickr Stream</h1>
+                                <h1 class="title-widget">Photo</h1>
                                 <ul class="k-flickr-photos list-unstyled">
-                                    <li><a href="#" title="Flickr photo"><img src="{{ url_for('static', filename='img/flickr-1.jpg') }}" alt="Photo 1" /></a></li>
-                                    <li><a href="#" title="Flickr photo"><img src="{{ url_for('static', filename='img/flickr-2.jpg') }}" alt="Photo 2" /></a></li>
-                                    <li><a href="#" title="Flickr photo"><img src="{{ url_for('static', filename='img/flickr-3.jpg') }}" alt="Photo 3" /></a></li>
-                                    <li><a href="#" title="Flickr photo"><img src="{{ url_for('static', filename='img/flickr-4.jpg') }}" alt="Photo 4" /></a></li>
-                                    <li><a href="#" title="Flickr photo"><img src="{{ url_for('static', filename='img/flickr-5.jpg') }}" alt="Photo 5" /></a></li>
-                                    <li><a href="#" title="Flickr photo"><img src="{{ url_for('static', filename='img/flickr-6.jpg') }}" alt="Photo 6" /></a></li>
-                                    <li><a href="#" title="Flickr photo"><img src="{{ url_for('static', filename='img/flickr-7.jpg') }}" alt="Photo 7" /></a></li>
-                                    <li><a href="#" title="Flickr photo"><img src="{{ url_for('static', filename='img/flickr-8.jpg') }}" alt="Photo 8" /></a></li>
+                                    {% for p in g.p %}
+                                        {% if loop.index <= 8 %}
+                                           <li><a href="{{ p.url }}" title="{{ p.title }}"><img src="{{ url_for('static', filename=p.src) }}" alt="{{ p.title }}" /></a></li>
+                                        {% endif %}
+                                    {% endfor %}
                                 </ul>
                             </li>
                         </ul> 

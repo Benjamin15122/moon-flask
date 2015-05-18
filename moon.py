@@ -1,7 +1,7 @@
 from flask import Flask, render_template, redirect, send_from_directory, request, abort, make_response, safe_join, Markup, abort, g
 #from flask_flatpages import FlatPages
 #from flask_frozen import Freezer
-import sys, os, subprocess
+import sys, os, subprocess, time, datetime
 import yaml
 
 from string import Template
@@ -24,8 +24,13 @@ MOON_GIT_URL = 'git@git.artemisprojects.org:moon.git'
 MOON_DIR = os.path.dirname(os.path.abspath(__file__))
 
 PAGES_DIR = MOON_DIR + os.path.sep + 'pages'
+NEWS_DIR = PAGES_DIR + os.path.sep + 'news'
+EVENTS_DIR = PAGES_DIR + os.path.sep + 'events'
+
 PEOPLE_YAML = PAGES_DIR + os.path.sep + 'people.yaml'
-PEOPLE_BIO = 'people_bio'
+PHOTO_YAML  = PAGES_DIR + os.path.sep + 'photo.yaml'
+NEWS_YAML   = NEWS_DIR + os.path.sep + 'news.yaml'
+EVENTS_YAML = EVENTS_DIR + os.path.sep + 'events.yaml'
 
 GITSUBMODULES = MOON_DIR + os.path.sep + '.gitsubmodules'
 
@@ -48,8 +53,10 @@ from docutils.parsers.rst import directives
 def convert_bibtex(bibtex, hl):
     parser = BibTexParser()
     parser.customization = convert_to_unicode
-    bib_database = bibtexparser.loads(bibtex, parser=parser)
-    print(bib_database.entries)
+    try:
+        bib_database = bibtexparser.loads(bibtex, parser=parser)
+    except:
+        return bibtex
 
     return convert_bibentries_to_html(bib_database.entries)
 
@@ -134,15 +141,6 @@ def refresh_moon():
 def gitlab_webhooks():
     data = request.get_json()
 
-    #TODO no 'object type' in current gitlab request
-    #try:
-    #    if data['object_type'] != 'push':
-    #        print('gitlab webhooks: object type is ' + data['object_type'])
-    #        abort(500)
-    #except Exception:
-    #    print('gitlab webhooks: json is ' + str(data))
-    #    abort(404)
-
     try:
         refresh_moon()
     except Exception:
@@ -150,19 +148,86 @@ def gitlab_webhooks():
 
     return make_response("", 200)
 
-    #repo_url = data['repository']['url']
 
-    #if repo_url == MOON_GIT_URL:
-    #    refresh_moon()
+###################
 
-    #config = ConfigParser.ConfigParser()
 
-    #with open(GITSUBMODULES) as f:
-    #    config.readfp(open("rb"))
+@app.template_filter('to_date')
+def to_date(st):
+    if isinstance(st, datetime.date):
+        return st.strftime("%b %d, %Y")
 
-    #for sec in config.sections():
-    #    if config.get(sec, 'url') == repo_url:
-    #        refresh_moon()
+    st = parse_date(st)
+
+    return time.strftime("%b %d, %Y", st)
+
+@app.template_filter('to_time')
+def to_time(st):
+    if isinstance(st, datetime.datetime):
+        return st.strftime("%H:%M")
+
+    st = parse_date(st)
+
+    return time.strftime("%H:%M", st)
+
+app.jinja_env.filters['to_date'] = to_date
+app.jinja_env.filters['to_time'] = to_time
+
+
+def parse_date(d):
+    print("Type of d " + str(type(d)))
+    dt = None
+    try:
+        print("Attempt 1 for " + str(d))
+        return time.strptime(d, "%Y-%m-%d")
+    except Exception as e:
+        print(e)
+
+    try:
+        print("Attempt 2 for " + str(d))
+        return time.strptime(d, "%Y-%m")
+    except Exception as e:
+        print(e)
+
+    try:
+        print("Attempt 3 for " + str(d))
+        return time.strptime(d, "%Y-%m-%d %H:%M")
+    except Exception as e:
+        print(e)
+
+    print("Use default time " + str(d))
+
+    return time.localtime()
+
+def get_date(e):
+    return e.get('date', '')
+
+def load_photos():
+    p = {}
+    with open(PHOTO_YAML, 'r') as f:
+        p = yaml.load(f)
+        sorted(p, key=get_date, reverse=True)
+
+    return p
+
+def load_news():
+    n = {}
+    with open(NEWS_YAML, 'r') as f:
+        n = yaml.load(f)
+        sorted(n, key=get_date, reverse=True)
+
+
+    return n
+
+
+
+def load_events():
+    e = {}
+    with open(EVENTS_YAML, 'r') as f:
+        e = yaml.load(f)
+        sorted(e, key=get_date, reverse=True)
+
+    return e
 
 ###################
 
@@ -176,6 +241,9 @@ def before_request():
     if md is None:
         g.md = markdown.Markdown(['markdown.extensions.extra', 'markdown.extensions.meta'])
 
+    g.p = load_photos()
+
+
 @app.teardown_request
 def teardown_request(exception):
     pass
@@ -186,20 +254,37 @@ def teardown_request(exception):
 @app.route('/news/', methods=['GET'])
 @app.route('/news/<path:path>', methods=['GET'])
 def news(path=None):
-    return render_template('news.html')
+    if path is None:
+        return render_template('news.html')
+
+    page = get_page(NEWS_DIR, path)
+
+    template = page.meta.get('template', 'page.html')
+    return render_template(template, page=page)
+
 
 #####################
 
 @app.route('/events/', methods=['GET'])
 @app.route('/events/<path:path>', methods=['GET'])
 def events(path=None):
-    return render_template('events.html')
+    if path is None:
+        return render_template('events.html')
+
+    page = get_page(EVENTS_DIR, path)
+
+    template = page.meta.get('template', 'page.html')
+    return render_template(template, page=page)
 
 #####################
 
 @app.route('/', methods=['GET'])
 def index():
-    return render_template('index.html')
+
+    n = load_news()
+    e = load_events()
+
+    return render_template('index.html', news=n, events=e)
 
 #####################
 
@@ -229,7 +314,7 @@ def page(name, path=None):
     if path.startswith('static/'):
         return send_from_directory(user_dir, path)
 
-    page = get_user_page(user_dir, path)
+    page = get_page(user_dir, path)
 
     rd = page.meta.get('redirect')
     if rd is not None:
@@ -238,13 +323,13 @@ def page(name, path=None):
     template = page.meta.get('template', 'page.html')
     return render_template(template, page=page)
 
-def get_user_page(user_dir, path):
+def get_page(page_dir, path):
     print(path)
     page_path = None
 
     # 1) Test markdown
     try:
-        md_path = safe_join(user_dir, path + '.md')
+        md_path = safe_join(page_dir, path + '.md')
         if os.path.exists(md_path):
             page_path = md_path
     except Exception as e:
@@ -256,7 +341,7 @@ def get_user_page(user_dir, path):
 
     # 2) Test reStructuredText
     try:
-        rst_path = safe_join(user_dir, path + '.rst')
+        rst_path = safe_join(page_dir, path + '.rst')
         if os.path.exists(rst_path):
             page_path = rst_path
     except Exception as e:
@@ -270,7 +355,7 @@ def get_user_page(user_dir, path):
 
     # 3) Test yaml
     try:
-        yaml_path = safe_join(user_dir, path + '.yaml')
+        yaml_path = safe_join(page_dir, path + '.yaml')
         if os.path.exists(yaml_path):
             page_path = rst_path
     except Exception as e:
@@ -286,8 +371,11 @@ def get_restructuredtext_page_or_404(page_path):
     page = Page()
 
     with open(page_path, 'r') as f:
-        page.html = publish_parts(f.read(), writer_name='html')['html_body']
+        parts = publish_parts(f.read(), writer_name='html')
+
+        page.html = parts['html_body']
         page.meta = {} # test
+        page.meta['title'] = parts['title']
         return page
 
     abort(404)
