@@ -2,19 +2,19 @@
 {% block content %}
 <script src="{{ url_for('static', filename='galleria/galleria-1.4.2.min.js') }}"></script>
 <div class="galleria">
-<img src="img/National_2011.jpg" data-title="2011 National Award for Progress in Science and Technology" data-description="December, 2012">
-<img src="img/National_2006.jpg" data-title="2006 National Award for Progress in Science and Technology" data-description="February, 2007">
-<img src="img/MOE_2011.jpg" data-title="2011 MOE Award for Technology Invention" data-description="January, 2011">
-<img src="img/MOE_2003.jpg" data-title="2003 MOE Award for Progress in Science and Technology" data-description="February, 2004">
-<img src="img/ICSE_2014.jpg" data-title="ICSE 2014 ACM SigSoft Distinguished Paper Award" data-description="June, 2014">
-<img src="img/APSEC_2014.jpg" data-title="APSEC 2014 Best Paper Award" data-description="December, 2014">
-<img src="img/NASAC_2012.jpg" data-title="NASAC 2012 Best Student Paper Award" data-description="October, 2012">
-<img src="img/Chang_ZC_2012.jpg" data-title="CVIC SE Talents 2012" data-description="October, 2012">
-<img src="img/Xiaoxing_ZC_2009.jpg" data-title="CVIC SE Talents 2009" data-description="November, 2012">
-<img src="img/Chang_ACM_2014.jpg" data-title="2014 ACM Nanjing Rising Star Award" data-description="December, 2014">
+    <img src="{{ url_for('static', filename='photo/National_2011.jpg') }}" data-title="2011 National Award for Progress in Science and Technology" data-description="December, 2012">
+    <img src="{{ url_for('static', filename='photo/National_2006.jpg') }}" data-title="2006 National Award for Progress in Science and Technology" data-description="February, 2007">
+    <img src="{{ url_for('static', filename='photo/MOE_2011.jpg') }}" data-title="2011 MOE Award for Technology Invention" data-description="January, 2011">
+    <img src="{{ url_for('static', filename='photo/MOE_2003.jpg') }}" data-title="2003 MOE Award for Progress in Science and Technology" data-description="February, 2004">
+    <img src="{{ url_for('static', filename='photo/ICSE_2014.jpg') }}" data-title="ICSE 2014 ACM SigSoft Distinguished Paper Award" data-description="June, 2014">
+    <img src="{{ url_for('static', filename='photo/APSEC_2014.jpg') }}" data-title="APSEC 2014 Best Paper Award" data-description="December, 2014">
+    <img src="{{ url_for('static', filename='photo/NASAC_2012.jpg') }}" data-title="NASAC 2012 Best Student Paper Award" data-description="October, 2012">
+    <img src="{{ url_for('static', filename='photo/Chang_ZC_2012.jpg') }}" data-title="CVIC SE Talents 2012" data-description="October, 2012">
+    <img src="{{ url_for('static', filename='photo/Xiaoxing_ZC_2009.jpg') }}" data-title="CVIC SE Talents 2009" data-description="November, 2012">
+    <img src="{{ url_for('static', filename='photo/Chang_ACM_2014.jpg') }}" data-title="2014 ACM Nanjing Rising Star Award" data-description="December, 2014">
 </div>
 <script>
-Galleria.loadTheme({{ url_for('static', filename='galleria/themes/classic/galleria.classic.js') }});
+Galleria.loadTheme("{{ url_for('static', filename='galleria/themes/classic/galleria.classic.js') }}");
 Galleria.run('.galleria');
 </script>
 {% endblock %}

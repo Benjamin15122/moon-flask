@@ -294,6 +294,10 @@ def people():
         people = yaml.load(f)
     return render_template('people.html', people=people)
 
+@app.route('/awards/', methods=['GET'])
+def awards():
+    return render_template('awards.html')
+
 @app.route('/research/', methods=['GET'])
 def research():
     return render_template('research.html')
