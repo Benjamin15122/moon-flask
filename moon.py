@@ -77,9 +77,6 @@ def convert_bibentries_to_html(entries):
     html = []
     html.append('<ol>')
     for e in entries:
-        print(getattr(e, 'type', '') == 'inproceedings')
-        print(getattr(e, 'type', ''))
-        print(e['type'])
         if isEntry(e, 'inproceedings'):
             html.append(render_interproceedings(e))
         elif isEntry(e, 'article'):
@@ -90,7 +87,6 @@ def convert_bibentries_to_html(entries):
     html.append('</ol>')
 
     return '\n'.join(html)
-
 
 class BibtexDirective(rst.Directive):
 
@@ -105,9 +101,7 @@ class BibtexDirective(rst.Directive):
         text = '\n'.join(self.content)
         b = convert_bibtex(text, self.options.get('hl', ''))
         n = nodes.raw(rawsource=self.block_text, text=b, format='html')
-        print(b)
         return [n]
-
 
 directives.register_directive('bibtex', BibtexDirective)
 
@@ -116,8 +110,6 @@ directives.register_directive('bibtex', BibtexDirective)
 
 class Page(object):
     pass
-
-
 
 #################
 
@@ -133,6 +125,8 @@ def refresh_moon():
 
     ret_code = subprocess.call(GIT_PULL_SUBMODULES)
     print('execute "%s" with ret %d' % (' '.join(GIT_PULL_SUBMODULES), ret_code))
+
+    os.remove(NEWS_YAML)
 
 ##################
 
@@ -175,27 +169,21 @@ app.jinja_env.filters['to_time'] = to_time
 
 
 def parse_date(d):
-    print("Type of d " + str(type(d)))
     dt = None
     try:
-        print("Attempt 1 for " + str(d))
         return time.strptime(d, "%Y-%m-%d")
     except Exception as e:
         print(e)
 
     try:
-        print("Attempt 2 for " + str(d))
         return time.strptime(d, "%Y-%m")
     except Exception as e:
         print(e)
 
     try:
-        print("Attempt 3 for " + str(d))
         return time.strptime(d, "%Y-%m-%d %H:%M")
     except Exception as e:
         print(e)
-
-    print("Use default time " + str(d))
 
     return time.localtime()
 
@@ -223,6 +211,13 @@ def load_news():
 
     return n
 
+def pagination(news_pages):
+
+    num_per_page = 10
+
+    for index, page in enumerate(news_pages):
+        page['index'] = index / num_per_page + 1 # page number starts from 1
+
 def update_news_yaml():
     rootdir = NEWS_DIR
     news_pages = []
@@ -241,9 +236,12 @@ def update_news_yaml():
             pagedict['path'] = os.path.splitext(os.path.relpath(f, rootdir).replace('\\','/'))[0]
             pagedict['title'] = page.meta.get('title', 'Please add a title')
             pagedict['date'] = page.meta.get('date', time.strftime('%Y-%m-%d', time.localtime()))
+            pagedict['body'] = page.meta.get('boty', 'Please provide a news body')
             news_pages.append(pagedict)
 
     sorted(news_pages, key=get_date, reverse=True)
+
+    pagination(news_pages)
 
     news_cache = yaml.dump(news_pages, default_flow_style=False)
     with open(NEWS_YAML, 'w') as f:
@@ -282,12 +280,13 @@ def teardown_request(exception):
 #####################
 
 @app.route('/news/', methods=['GET'])
-@app.route('/news/<path:path>', methods=['GET'])
-def news(path=None):
-    if path is None:
-        n = load_news()
-        return render_template('news.html', news=n)
+@app.route('/news/<int:page_num>', methods=['GET'])
+def news(page_num=None):
+    n = load_news()
+    return render_template('news.html', news=n, page_num=page_num)
 
+@app.route('/news/page/<path:path>', methods=['GET'])
+def news_page(path):
     page = get_page(NEWS_DIR, path)
 
     template = page.meta.get('template', 'page.html')
@@ -363,7 +362,6 @@ def page(name, path=None):
     return render_template(template, page=page)
 
 def get_page(page_dir, path):
-    print(path)
     page_path = None
 
     # 1) Test markdown
@@ -387,7 +385,6 @@ def get_page(page_dir, path):
         print(e)
         print("Cannot find rst path for " + path)
 
-    print(page_path)
 
     if page_path:
         return get_restructuredtext_page_or_404(page_path)
