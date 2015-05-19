@@ -329,6 +329,10 @@ def people():
 def awards():
     return render_template('awards.html')
 
+@app.route('/contact/', methods=['GET'])
+def contact():
+    return render_template('contact.html')
+
 @app.route('/research/', methods=['GET'])
 def research():
     return render_template('research.html')

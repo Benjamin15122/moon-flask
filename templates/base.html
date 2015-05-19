@@ -14,27 +14,6 @@
     <link href="{{ url_for('static', filename='js/audioplayer/audioplayer.css') }}" rel="stylesheet" type="text/css"><!-- Audioplayer -->
     <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet" type="text/css"><!-- theme styles -->
 
-    <!-- jQuery -->
-    <script src="{{ url_for('static', filename='jQuery/jquery-2.1.1.min.js') }}"></script>
-    <script src="{{ url_for('static', filename='jQuery/jquery-migrate-1.2.1.min.js') }}"></script>
-    <!-- Bootstrap -->
-    <script src="{{ url_for('static', filename='bootstrap/js/bootstrap.min.js') }}"></script>
-    <!-- Drop-down -->
-    <script src="{{ url_for('static', filename='js/dropdown-menu/dropdown-menu.js') }}"></script>
-    <!-- Fancybox -->
-    <script src="{{ url_for('static', filename='js/fancybox/jquery.fancybox.pack.js') }}"></script>
-    <script src="{{ url_for('static', filename='js/fancybox/jquery.fancybox-media.js') }}"></script><!-- Fancybox media -->
-    <!-- Responsive videos -->
-    <script src="{{ url_for('static', filename='js/jquery.fitvids.js') }}"></script>
-    <!-- Audio player -->
-    <script src="{{ url_for('static', filename='js/audioplayer/audioplayer.min.js') }}"></script>
-    <!-- Pie charts -->
-    <script src="{{ url_for('static', filename='js/jquery.easy-pie-chart.js') }}"></script>
-    <!-- Google Maps -->
-    <script src="https://maps.googleapis.com/maps/api/js?sensor=true"></script>
-    <!-- Theme -->
-    <script src="{{ url_for('static', filename='js/theme.js') }}"></script>
-
   </head>
   <body role="document">
     <!-- device test, don't remove. javascript needed! -->
@@ -75,7 +54,7 @@
                             <a href="http://moon.nju.edu.cn/courses/" title="">Courses</a>
                         </li>
                         <li>
-                            <a href="contact-us.html" title="">Contact</a>
+                            <a href="{{ url_for('contact') }}" title="">Contact</a>
                         </li>
                     </ul>
                 </nav><!-- main navig end -->
@@ -162,5 +141,26 @@
             </div><!-- row end -->
         </div><!-- container end -->
     </div><!-- subfooter end -->
+
+    <!-- jQuery -->
+    <script src="{{ url_for('static', filename='jQuery/jquery-2.1.1.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='jQuery/jquery-migrate-1.2.1.min.js') }}"></script>
+    <!-- Bootstrap -->
+    <script src="{{ url_for('static', filename='bootstrap/js/bootstrap.min.js') }}"></script>
+    <!-- Drop-down -->
+    <script src="{{ url_for('static', filename='js/dropdown-menu/dropdown-menu.js') }}"></script>
+    <!-- Fancybox -->
+    <script src="{{ url_for('static', filename='js/fancybox/jquery.fancybox.pack.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/fancybox/jquery.fancybox-media.js') }}"></script><!-- Fancybox media -->
+    <!-- Responsive videos -->
+    <script src="{{ url_for('static', filename='js/jquery.fitvids.js') }}"></script>
+    <!-- Audio player -->
+    <script src="{{ url_for('static', filename='js/audioplayer/audioplayer.min.js') }}"></script>
+    <!-- Pie charts -->
+    <script src="{{ url_for('static', filename='js/jquery.easy-pie-chart.js') }}"></script>
+    <!-- Google Maps -->
+    <script src="https://maps.googleapis.com/maps/api/js?sensor=true"></script>
+    <!-- Theme -->
+    <script src="{{ url_for('static', filename='js/theme.js') }}"></script>
   </body>
 </html>
