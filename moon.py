@@ -1,8 +1,12 @@
 from flask import Flask, render_template, redirect, send_from_directory, request, abort, make_response, safe_join, Markup, abort, g
 #from flask_flatpages import FlatPages
 #from flask_frozen import Freezer
-import sys, os, subprocess, time, datetime
+import sys, os, subprocess, time
 import yaml
+
+import codecs
+
+from datetime import datetime
 
 from string import Template
 import markdown
@@ -107,6 +111,8 @@ directives.register_directive('bibtex', BibtexDirective)
 
 ################
 
+class Pagination(object):
+    pass
 
 class Page(object):
     pass
@@ -148,21 +154,23 @@ def gitlab_webhooks():
 
 @app.template_filter('to_date')
 def to_date(st):
-    if isinstance(st, datetime.date):
+    if isinstance(st, datetime):
         return st.strftime("%b %d, %Y")
 
-    st = parse_date(st)
+    if isinstance(st, unicode):
+        st = str(st)
 
-    return time.strftime("%b %d, %Y", st)
+    return parse_date(st).strftime("%b %d, %Y")
 
 @app.template_filter('to_time')
 def to_time(st):
-    if isinstance(st, datetime.datetime):
+    if isinstance(st, datetime):
         return st.strftime("%H:%M")
 
-    st = parse_date(st)
+    if isinstance(st, unicode):
+        st = str(st)
 
-    return time.strftime("%H:%M", st)
+    return parse_date(st).strftime("%H:%M")
 
 app.jinja_env.filters['to_date'] = to_date
 app.jinja_env.filters['to_time'] = to_time
@@ -171,21 +179,22 @@ app.jinja_env.filters['to_time'] = to_time
 def parse_date(d):
     dt = None
     try:
-        return time.strptime(d, "%Y-%m-%d")
+        return datetime.strptime(d, "%Y-%m-%d")
+    except Exception as e:
+        print("Not the %Y-%m-%d" + str(e))
+        print(type(d))
+
+    try:
+        return datetime.strptime(d, "%Y-%m")
     except Exception as e:
         print(e)
 
     try:
-        return time.strptime(d, "%Y-%m")
+        return datetime.strptime(d, "%Y-%m-%d %H:%M")
     except Exception as e:
         print(e)
 
-    try:
-        return time.strptime(d, "%Y-%m-%d %H:%M")
-    except Exception as e:
-        print(e)
-
-    return time.localtime()
+    return datetime.now()
 
 def get_date(e):
     return e.get('date', '')
@@ -194,7 +203,7 @@ def load_photos():
     p = {}
     with open(PHOTO_YAML, 'r') as f:
         p = yaml.load(f)
-        sorted(p, key=get_date, reverse=True)
+        p = sorted(p, key=get_date, reverse=True)
 
     return p
 
@@ -206,17 +215,20 @@ def load_news():
 
     with open(NEWS_YAML, 'r') as f:
         n = yaml.load(f)
-        sorted(n, key=get_date, reverse=True)
+        n = sorted(n, key=get_date, reverse=True)
 
+    pg = Pagination()
+    pg.first = n[0]['page_num']
+    pg.last  = n[-1]['page_num']
 
-    return n
+    return n, pg
 
 def pagination(news_pages):
 
     num_per_page = 10
 
     for index, page in enumerate(news_pages):
-        page['index'] = index / num_per_page + 1 # page number starts from 1
+        page['page_num'] = index / num_per_page + 1 # page number starts from 1
 
 def update_news_yaml():
     rootdir = NEWS_DIR
@@ -226,34 +238,46 @@ def update_news_yaml():
         for f in files:
             f = os.path.join(curdir, f)
             if f.endswith('.md'):
-                page = get_markdown_page_or_404(f)
+                page = get_markdown_page_or_none(f)
             elif f.endswith('.rst'):
                 page = get_restructuredtext_page_or_404(f)
             else:
                 continue
 
+            if page is None:
+                print("Get page " + str(f) + " failed")
+                continue
+
             pagedict = {}
             pagedict['path'] = os.path.splitext(os.path.relpath(f, rootdir).replace('\\','/'))[0]
             pagedict['title'] = page.meta.get('title', 'Please add a title')
-            pagedict['date'] = page.meta.get('date', time.strftime('%Y-%m-%d', time.localtime()))
-            pagedict['body'] = page.meta.get('boty', 'Please provide a news body')
+            pagedict['date'] = parse_date(page.meta.get('date', ''))
+            pagedict['summary'] = page.meta.get('summary', 'Please provide a news body')
+            pagedict['img_title'] = page.meta.get('img_title')
+            pagedict['img_path'] = page.meta.get('img_path')
+            # TODO Support news draft
+            pagedict['status'] = page.meta.get('status')
+
             news_pages.append(pagedict)
 
-    sorted(news_pages, key=get_date, reverse=True)
+    news_pages = sorted(news_pages, key=get_date, reverse=True)
 
     pagination(news_pages)
 
-    news_cache = yaml.dump(news_pages, default_flow_style=False)
-    with open(NEWS_YAML, 'w') as f:
+    news_cache = yaml.safe_dump(news_pages, default_flow_style=False, allow_unicode=True, encoding='utf-8')
+    with codecs.open(NEWS_YAML, 'w', 'utf-8') as f:
         f.write(news_cache)
 
+def load_people():
+    with open(PEOPLE_YAML) as f:
+        return yaml.load(f)
 
 
 def load_events():
     e = {}
     with open(EVENTS_YAML, 'r') as f:
         e = yaml.load(f)
-        sorted(e, key=get_date, reverse=True)
+        e = sorted(e, key=get_date, reverse=True)
 
     return e
 
@@ -282,8 +306,13 @@ def teardown_request(exception):
 @app.route('/news/', methods=['GET'])
 @app.route('/news/<int:page_num>', methods=['GET'])
 def news(page_num=None):
-    n = load_news()
-    return render_template('news.html', news=n, page_num=page_num)
+    if page_num is None:
+        page_num = 1
+
+    n, pg = load_news()
+    pg.current = page_num
+
+    return render_template('news.html', news=n, pg=pg)
 
 @app.route('/news/page/<path:path>', methods=['GET'])
 def news_page(path):
@@ -311,10 +340,11 @@ def events(path=None):
 @app.route('/', methods=['GET'])
 def index():
 
-    n = load_news()
+    n,pg = load_news()
     e = load_events()
+    m = load_people()
 
-    return render_template('index.html', news=n, events=e)
+    return render_template('index.html', news=n, events=e, members=m)
 
 #####################
 
@@ -416,25 +446,38 @@ def get_restructuredtext_page_or_404(page_path):
 
     abort(404)
 
+def get_markdown_page_or_none(page_path):
+    try:
+        return get_markdown_page(page_path)
+    except Exception as e:
+        print(e)
+        return None
 
-
-def get_markdown_page_or_404(page_path):
+def get_markdown_page(page_path):
     page = Page()
     with open(page_path, 'r') as f:
-        try:
-            if not hasattr(g, 'md'):
-                g.md = markdown.Markdown(['markdown.extensions.extra', 'markdown.extensions.meta'])
+        if not hasattr(g, 'md'):
+            g.md = markdown.Markdown(['markdown.extensions.extra', 'markdown.extensions.meta'])
 
-            page.html = g.md.convert(f.read())
-            page.meta = g.md.Meta # flask-pages naming covention
-            for key, value in page.meta.iteritems():
-                page.meta[key] = ''.join(value)
-            return page
-        except Exception as e:
-            print(e)
-            abort(404)
+        page.html = g.md.convert(f.read())
+        page.meta = g.md.Meta # flask-pages naming covention
+        for key, value in page.meta.iteritems():
+            page.meta[key] = ''.join(value)
+        return page
 
     abort(404)
+
+def get_markdown_page_or_404(page_path):
+    try:
+        return get_markdown_page(page_path)
+    except Exception as e:
+        print(e)
+        abort(404)
+
+    abort(404)
+
+reload(sys)
+sys.setdefaultencoding('utf-8') 
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=8000)

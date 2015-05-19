@@ -17,64 +17,55 @@
     </div><!-- breadcrumbs end -->
 </div><!-- row end -->
 <div class="row no-gutter"><!-- row -->
-    
     <div class="col-lg-12 col-md-12"><!-- doc body wrapper -->
-    	
         <div class="col-padded"><!-- inner custom column -->
-        
-        	<div class="row gutter"><!-- row -->
-            
-            	<div class="col-lg-12 col-md-12">
-        
-                	<h1 class="page-title">Latest News</h1><!-- category title -->
-                
+            <div class="row gutter"><!-- row -->
+                <div class="col-lg-12 col-md-12">
+                    <h1 class="page-title">Latest News</h1><!-- category title -->
                 </div>
-            
             </div><!-- row end -->
-        
-        	<div class="row gutter"><!-- row -->
-            
-            	<div class="col-lg-12 col-md-12">
+            <div class="row gutter"><!-- row -->
+                <div class="col-lg-12 col-md-12">
                 {% for n in news%}
-                	<div class="up-event-wrapper"><!-- event summary -->
-                    
-                        <h1 class="title-median"><a href="{{ url_for('news', path=n.path) }}" title="{{ n.title }}">{{ n.title }}</a></h1>
-                        
+                    <div class="up-event-wrapper"><!-- event summary -->
+                        <h1 class="title-median"><a href="{{ url_for('news_page', path=n.path) }}" title="{{ n.title }}">{{ n.title }}</a></h1>
                         <div class="up-event-meta clearfix">
                             <div class="up-event-date">{{ n.date }}</div>
                         </div>
-                        
                         <p>
-                        Suspendisse faucibus sem nec dictum tristique. Morbi quis scelerisque ligula. Mauris id nisl eget velit tincidunt congue. Nam vel egestas arcu. Donec pretium rutrum justo eu dapibus... <a href="{{ url_for('news', path=n.path) }}" class="moretag" title="read more">MORE</a> 
+                        {{ n.summary|truncate(255) }} <a href="{{ url_for('news_page', path=n.path) }}" class="moretag" title="read more">MORE</a> 
                         </p>
-                    
                     </div><!-- event summary end -->
-                {% endfor %}  
+                {% endfor %}
                 </div>
-            
-            </div><!-- row end --> 
-            
+            </div><!-- row end -->
             <div class="row gutter"><!-- row -->
-            
-            	<div class="col-lg-12">
-            
+                <div class="col-lg-12">
                     <ul class="pagination pull-right"><!-- pagination -->
-                        <li class="disabled"><a href="#">Prev</a></li>
-                        <li class="active"><a href="#">1</a></li>
-                        <li><a href="#">2</a></li>
-                        <li><a href="#">3</a></li>
-                        <li><a href="#">4</a></li>
-                        <li><a href="#">5</a></li>
-                        <li><a href="#">Next</a></li>
+                        {% if pg.current == pg.first %}
+                        <!--<li class="disabled"><a href="{{ url_for('news', page_num=pg.current) }}">Prev</a></li>-->
+                        {% else %}
+                            <li><a href="{{ url_for('news', page_num=pg.current) }}">Prev</a></li>
+                        {% endif %}
+                        {% if pg.last == 1 %}
+                            <li class="active"><a href="{{ url_for('news', page_num=1) }}">1</a></li>
+                        {% endif %}
+                        {% for index in range(pg.first, pg.last) %}
+                        {% if pg.current == index %}
+                            <li class="active"><a href="{{ url_for('news', page_num=index) }}">{{ index }}</a></li>
+                        {% else %}
+                            <li><a href="#">{{ index }}</a></li>
+                        {% endif %}
+                        {% endfor %}
+                        {% if pg.current == pg.last %}
+                        <!--<li class="disabled"><a href="{{ url_for('news', page_num=pg.current) }}">Next</a></li>-->
+                        {% else %}
+                            <li><a href="{{ url_for('news', page_num=pg.current) }}">Next</a></li>
+                        {% endif %}
                     </ul><!-- pagination end -->
-                
                 </div>
-                
             </div><!-- row end -->                 
-        
         </div><!-- inner custom column end -->
-        
     </div><!-- doc body wrapper end -->
 </div>
-
 {% endblock %}
