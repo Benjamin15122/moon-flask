@@ -4,8 +4,6 @@ summary: Wang Xi has won the APSEC 2014 Best Paper Award!
 img_title: Wang Xi at APSEC 2014
 img_path: photo/wang-xi-apsec-2014_150x150.jpg
 
-# Wang Xi Winning APSEC 2014 Best Paper Award
-
 Congratulations to him!
 
 ![](/static/photo/wang-xi-apsec-2014.jpg)
