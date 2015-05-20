@@ -30,7 +30,7 @@
                     <div class="up-event-wrapper"><!-- event summary -->
                         <h1 class="title-median"><a href="{{ url_for('news_page', path=n.path) }}" title="{{ n.title }}">{{ n.title }}</a></h1>
                         <div class="up-event-meta clearfix">
-                            <div class="up-event-date">{{ n.date }}</div>
+                            <div class="up-event-date">{{ n.date|to_date }}</div>
                         </div>
                         <p>
                         {{ n.summary|truncate(255) }} <a href="{{ url_for('news_page', path=n.path) }}" class="moretag" title="read more">MORE</a> 
