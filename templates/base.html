@@ -14,6 +14,8 @@
     <link href="{{ url_for('static', filename='js/audioplayer/audioplayer.css') }}" rel="stylesheet" type="text/css"><!-- Audioplayer -->
     <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet" type="text/css"><!-- theme styles -->
 
+    {% block customcss %}{% endblock %}
+
   </head>
   <body role="document">
     <!-- device test, don't remove. javascript needed! -->
@@ -50,16 +52,21 @@
                         <li>
                             <a href="#" title="">Events</a>
                             <ul class="sub-menu">
-                                <li><a href="{{ url_for('events') }}">Phd Seminar</a></li>
+                                <li><a href="{{ url_for('events', path='phd') }}">PhD Seminar</a></li>
                                 <li><a href="sidebar-left.html">Master Seminar </a></li>
-                                <li><a href="formatting.html">Deadline Event</a></li>
+                                <li><a href="{{ url_for('events', path='deadlines')}}">Deadlines</a></li>
                             </ul>
                         </li>
                         <li>
                             <a href="http://moon.nju.edu.cn/courses/" title="">Courses</a>
                         </li>
                         <li>
-                            <a href="{{ url_for('contact') }}" title="">Contact</a>
+                            <a href="#" title="">About</a>
+                            <ul class="sub-menu">
+                                <li><a href="{{ url_for('contact') }}" title="">Contact</a></li>
+                                <li><a href="{{ url_for('leadership') }}">Leadership</a></li>
+                            </ul>
+
                         </li>
                     </ul>
                 </nav><!-- main navig end -->
@@ -167,5 +174,7 @@
     <script src="https://maps.googleapis.com/maps/api/js?sensor=true"></script>
     <!-- Theme -->
     <script src="{{ url_for('static', filename='js/theme.js') }}"></script>
+
+    {% block customjs %}{% endblock %}
   </body>
 </html>
