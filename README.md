@@ -2,10 +2,10 @@
 
 ## TODO
 
-1. Discard flask-pages, use our custom markdown convertor
-2. publications.html + bibtexparser
-3. a proxy that embed web pages of changxu, yuhunag
-4. A set of basic templates that generates pages from yaml 
+1. publications.html + bibtexparser
+1. a proxy that embed web pages of changxu, yuhunag
+1. A set of basic templates that generates pages from yaml 
+1. tags and category of news
 
 ## Install
 
