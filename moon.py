@@ -318,7 +318,7 @@ def news(page_num=None):
 def news_page(path):
     page = get_page(NEWS_DIR, path)
 
-    template = page.meta.get('template', 'page.html')
+    template = page.meta.get('template', 'news-page.html')
     return render_template(template, page=page)
 
 
@@ -332,7 +332,7 @@ def events(path=None):
 
     page = get_page(EVENTS_DIR, path)
 
-    template = page.meta.get('template', 'page.html')
+    template = page.meta.get('template', 'events-page.html')
     return render_template(template, page=page)
 
 #####################
@@ -388,7 +388,7 @@ def page(name, path=None):
     if rd is not None:
         return redirect(rd)
 
-    template = page.meta.get('template', 'page.html')
+    template = page.meta.get('template', 'people-page.html')
     return render_template(template, page=page)
 
 def get_page(page_dir, path):

@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% block title%}
-{{ page.title }} |
+{{ page.meta.title }} |
 {% endblock%}
 {% block content %}
 <div class="row"><!-- row -->
@@ -15,8 +15,8 @@
     <div class="k-breadcrumbs col-lg-12 clearfix"><!-- breadcrumbs -->
         <ol class="breadcrumb">
             <li><a href="{{ url_for('index') }}">Home</a></li>
-            <li><a href="{{ url_for('people') }}">People</a></li>
-            <li class="active">{{ page.title }}</li>
+            <li><a href="{{ url_for('news') }}">News</a></li>
+            <li class="active">{{ page.meta.title }}</li>
         </ol>
     </div><!-- breadcrumbs end -->
 </div><!-- row end -->
