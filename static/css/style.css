@@ -128,7 +128,7 @@ img.alignleft, img.aligncenter, img.alignright { margin-bottom: 5px; }
 /* == END functional menu == */
 
 /* == dropdown-menu kustom style == */
-.k-main-navig { margin-top: 40px; line-height: 20px; }
+.k-main-navig { margin-top: 55px; line-height: 20px; }
 .k-dropdown-menu { background: none; text-align: left; }
 .k-dropdown-menu .k-item-desc { display: block; font-size: 12px; font-weight: 300; }
 .k-dropdown-menu, .k-dropdown-menu ul { -moz-box-shadow: none; -webkit-box-shadow: none; box-shadow: none; }
@@ -137,7 +137,7 @@ img.alignleft, img.aligncenter, img.alignright { margin-bottom: 5px; }
 /* main links */
 #drop-down-left > li { margin-left: 50px; }
 #drop-down-left > li:first-child { /*margin-left: 0;*/ }
-#drop-down-left a { font-size: 16px; font-weight: 700; padding: 20px 0 10px !important; text-transform: uppercase; border-left: none; border-right: none; border-top: 5px solid #EFEFEF; -webkit-transition: all .25s; -moz-transition: all .25s; transition: all .25s; }
+#drop-down-left a { font-size: 13px; font-weight: 700; padding: 20px 0 10px !important; text-transform: uppercase; border-left: none; border-right: none; border-top: 5px solid #EFEFEF; -webkit-transition: all .25s; -moz-transition: all .25s; transition: all .25s; }
 #drop-down-left .k-item-desc { font-size: 12px; font-weight: 300; color: #959595; text-transform: none; -moz-opacity: 0.7; -webkit-opacity: 0.7; opacity: 0.7; }
 #drop-down-left a:link, #drop-down-left a:visited { color: #363636; background-color: transparent; }
 /* drops */
@@ -166,7 +166,7 @@ span.alter-menu-icon { display: block; width: 24px; height: 24px; background: ur
 /* ================================================== VARIOUS PAGE ELEMENTS */
 
 /* == site header == */
-#k-head { margin-bottom: 25px; }
+#k-head { margin-bottom: 40px; }
 #k-site-logo { position: relative; }
 .k-logo { margin: 0; }
 /* == END site header == */
