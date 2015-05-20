@@ -1,0 +1,81 @@
+{% extends "base.html" %}
+{% block title%}
+Upcoming deadlines | 
+{% endblock%}
+{% block customcss %}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/default.css') }}" />
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/component.css') }}" />
+{% endblock %}
+{% block content %}
+<div class="row"><!-- row -->
+    <div id="k-top-search" class="col-lg-12 clearfix"><!-- top search -->
+        <form action="#" id="top-searchform" method="get" role="search">
+            <div class="input-group">
+                <input type="text" name="s" id="sitesearch" class="form-control" autocomplete="off" placeholder="Type in keyword(s) then hit Enter on keyboard" />
+            </div>
+        </form>
+        <div id="bt-toggle-search" class="search-icon text-center"><i class="s-open fa fa-search"></i><i class="s-close fa fa-times"></i></div><!-- toggle search button -->
+    </div><!-- top search end -->
+    <div class="k-breadcrumbs col-lg-12 clearfix"><!-- breadcrumbs -->
+        <ol class="breadcrumb">
+            <li><a href="{{ url_for('index') }}">Home</a></li>
+            <li><a href="{{ url_for('news') }}">News</a></li>
+            <li class="active">Upcoming deadlines</li>
+        </ol>
+    </div><!-- breadcrumbs end -->
+</div><!-- row end -->
+<div class="row no-gutter fullwidth"><!-- row -->
+    <div class="col-lg-12 col-md-12"><!-- doc body wrapper -->
+        <div class="col-padded"><!-- inner custom column -->
+        <ul class="cbp_tmtimeline">
+            {% for d in deadlines %}
+            <li>{% if d.date %}<time class="cbp_tmtime" id="{{ d.id }}"></time>{% endif %}<div class="cbp_tmlabel"><a href="{{ d.url }}">{{ d.label }}</a></div></li>
+            {% endfor %}
+        </ul>
+        <p>
+        Note: deadlines are "anywhere on earth" time. Time is accurate only if your computer is set to China time.
+        </p>
+        </div><!-- inner custom column end -->
+    </div><!-- doc body wrapper end -->
+</div><!-- row end -->
+{% endblock content %}
+{% block customjs %}
+<script src="{{ url_for('static', filename='js/countdown.min.js') }}" type="text/javascript"></script>
+<script src="{{ url_for('static', filename='js/modernizr.custom.js') }}" type="text/javascript"></script>
+<script>
+upd = function() {
+    first = true;
+    {% for d in deadlines %}
+    {% if d.date %}
+    update('{{ d.id }}', '{{d.date.strftime("%B %d")}}', {{ d.date.year }}, {{ d.date.month }}, {{ d.date.day }});
+    {% endif %}
+    {% endfor %}
+};
+setInterval(upd, 1000);
+
+function byId(id) {
+    return document.getElementById(id);
+}
+
+function update(nm, tip, y, m, d) {
+    // m-1是因为Date对象的月从0开始计算
+    // d+1是因为anywhere on earth是+1天的晚上8点
+    var deadline = new Date(y, m - 1, d + 1, 20), txt;
+    if (new Date() >= deadline) {
+        txt = "<span></span><span><s>" + tip + "</s></span>";
+    } else {
+        var flg = countdown.MONTHS | countdown.DAYS;
+        if (first) {
+            flg = flg | countdown.HOURS | countdown.MINUTES | countdown.SECONDS;
+        }
+        ctd = countdown(null, deadline, flg).toString();
+        txt = "<span>" + ctd + "</span> <span>" + tip +"</span>";
+    }
+    byId(nm).innerHTML = txt;
+    first = false;
+}
+
+upd();
+</script>
+{% endblock %}
+

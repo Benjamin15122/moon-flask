@@ -90,7 +90,21 @@
                 <li class="widget-container widget_up_events"><!-- widgets list -->
                     <h1 class="title-widget">Events</h1>
                     <ul class="list-unstyled">
-                        {% for e in events %}
+                         <!-- the most close deadline -->
+                         <li class="up-event-wrap">
+                         <h1 class="title-median"><a href="{{ url_for('events', path='deadlines') }}" title="{{ deadlines[0].label}}">DEADLINE: {{ deadlines[0].label }}</a></h1>
+                             <div class="up-event-meta clearfix">
+                                 <div class="up-event-date">{{ deadlines[0].date | to_date }}</div><div class="up-event-time">{{ deadlines[0].date | to_time }}</div>
+                             </div>
+                         </li>
+                         <!-- -->
+                         <li class="up-event-wrap">
+                         <h1 class="title-median"><a href="{{ url_for('events', path='phd') }}" title="{{ phd[0].speaker }}">PhD Seminar: {{ phd[0].speaker }}</a></h1>
+                             <div class="up-event-meta clearfix">
+                                 <div class="up-event-date">{{ phd[0].date | to_date }}</div><div class="up-event-time">{{ phd[0].date | to_time }}</div>
+                             </div>
+                         </li>
+                         {% for e in events %}
                             {% if loop.index <= 3 %}
                                 <li class="up-event-wrap">
                                 <h1 class="title-median"><a href="{{ e.url }}" title="{{ e.title }}">{{ e.title }}</a></h1>

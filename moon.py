@@ -6,7 +6,7 @@ import yaml
 
 import codecs
 
-from datetime import datetime
+from datetime import datetime, date
 
 from string import Template
 import markdown
@@ -35,6 +35,8 @@ PEOPLE_YAML = PAGES_DIR + os.path.sep + 'people.yaml'
 PHOTO_YAML  = PAGES_DIR + os.path.sep + 'photo.yaml'
 NEWS_YAML   = NEWS_DIR + os.path.sep + 'news.yaml'
 EVENTS_YAML = EVENTS_DIR + os.path.sep + 'events.yaml'
+DEADLINES_YAML = EVENTS_DIR + os.path.sep + 'deadlines.yaml'
+PHD_EVENTS_YAML = EVENTS_DIR + os.path.sep + 'phd.yaml'
 
 GITSUBMODULES = MOON_DIR + os.path.sep + '.gitsubmodules'
 
@@ -177,11 +179,17 @@ app.jinja_env.filters['to_time'] = to_time
 
 
 def parse_date(d):
+    if isinstance(d, date):
+        return d
+
+    if isinstance(d, datetime):
+        return d
+
     dt = None
     try:
         return datetime.strptime(d, "%Y-%m-%d")
     except Exception as e:
-        print("Not the %Y-%m-%d" + str(e))
+        print("Not the %Y-%m-%d " + str(e))
         print(type(d))
 
     try:
@@ -198,6 +206,22 @@ def parse_date(d):
 
 def get_date(e):
     return e.get('date', '')
+
+def load_deadlines():
+    d = {}
+    with open(DEADLINES_YAML, 'r') as f:
+        d = yaml.load(f)
+
+    return d
+
+def load_phd_events():
+    d = {}
+    with open(PHD_EVENTS_YAML, 'r') as f:
+        d = yaml.load(f)
+
+    return d
+
+
 
 def load_photos():
     p = {}
@@ -277,6 +301,8 @@ def load_events():
     e = {}
     with open(EVENTS_YAML, 'r') as f:
         e = yaml.load(f)
+        if e is None:
+            return {}
         e = sorted(e, key=get_date, reverse=True)
 
     return e
@@ -328,7 +354,18 @@ def news_page(path):
 @app.route('/events/<path:path>', methods=['GET'])
 def events(path=None):
     if path is None:
-        return render_template('events.html')
+        e = load_events()
+        p = load_phd_events()
+        d = load_deadlines()
+        return render_template('events.html', events=e, deadlines=d, phd=p)
+
+    if path == 'deadlines':
+        d = load_deadlines()
+        return render_template('deadlines.html', deadlines=d)
+
+    if path == 'phd':
+        phd = load_phd_events()
+        return render_template('phd.html', phd=phd)
 
     page = get_page(EVENTS_DIR, path)
 
@@ -343,10 +380,16 @@ def index():
     n,pg = load_news()
     e = load_events()
     m = load_people()
-
-    return render_template('index.html', news=n, events=e, members=m)
+    p = load_phd_events()
+    d = load_deadlines()
+    return render_template('index.html', news=n, events=e, members=m, deadlines=d, phd=p)
 
 #####################
+
+@app.route('/leadership/', methods=['GET'])
+def leadership():
+    return render_template('leadership.html')
+
 
 @app.route('/people/', methods=['GET'])
 def people():
