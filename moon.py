@@ -50,7 +50,9 @@ GIT_PULL_SUBMODULES = [GIT_CMD, '-C', MOON_DIR, 'submodule', 'foreach', 'git', '
 app = Flask(__name__)
 app.config.from_object(__name__)
 
-################
+#############################################
+# Bibtex Support (reStructuredText only)
+#############################################
 
 from docutils import nodes
 from docutils.parsers import rst
@@ -69,17 +71,43 @@ def convert_bibtex(bibtex, hl):
 ip_temp = Template('<li><a name="$id"></a><b>$title</b>,$author,<em>$booktitle</em>,$pages,$month $year</li>')
 
 def render_interproceedings(e):
+    '''Generate HTML for an bibtex inproceedings entry
+
+    Args:
+        e is a dict
+    '''
     if 'month' not in e:
         e['month'] = ''
     return ip_temp.substitute(e)
 
+
+
 def render_article(e):
+    '''Not implemented
+    '''
     pass
 
 def isEntry(e, t):
+    ''' check wether a bibtex entry is the specified type
+
+    Args:
+        e, the bibtex entry represented by a dict
+        t, the specified type string, e.g., 'inproceedings'
+    '''
     return e.get('type') == t
 
 def convert_bibentries_to_html(entries):
+    ''' Convert a list of bibtex entries into html
+
+    Args: the list of entries
+
+    Result:
+        a HTML string 
+
+        <ol>
+            <li>entry html</li>
+        </ol>
+    '''
     html = []
     html.append('<ol>')
     for e in entries:
@@ -95,6 +123,20 @@ def convert_bibentries_to_html(entries):
     return '\n'.join(html)
 
 class BibtexDirective(rst.Directive):
+    '''A reStructuredText directive to support generate HTML for bibtex entries
+
+    Usage:
+        .. bibtex::
+
+            @inproceedings{an_id,
+              title = {A title},
+              booktitle = {a proceeding},
+              author = {Xiaoming and Xiaohong}
+              years = {2015}
+            }
+
+        will be converted into an html
+    '''
 
     required_arguments = 0
     optional_arguments = 1
@@ -109,19 +151,30 @@ class BibtexDirective(rst.Directive):
         n = nodes.raw(rawsource=self.block_text, text=b, format='html')
         return [n]
 
+# Register this directive into docutils
 directives.register_directive('bibtex', BibtexDirective)
 
 ################
 
+
 class Pagination(object):
+    ''' A plain object to facilitate add attr as it has __dict__
+
+    '''
     pass
 
 class Page(object):
+    ''' A plain object to hold page information instead of using a dict
+
+    '''
     pass
 
 #################
 
 def refresh_moon():
+    ''' Refresh the code repository
+
+    '''
     ret_code = subprocess.call(GIT_PULL_MOON)
     print('execute "%s" with ret %d' % (' '.join(GIT_PULL_MOON), ret_code))
 
@@ -141,6 +194,9 @@ def refresh_moon():
 
 @app.route('/gitlabwebhooks', methods=['POST'])
 def gitlab_webhooks():
+    ''' Gitlab webhooks
+
+    '''
     data = request.get_json()
 
     try:
@@ -189,25 +245,34 @@ def parse_date(d):
     try:
         return datetime.strptime(d, "%Y-%m-%d")
     except Exception as e:
-        print("Not the %Y-%m-%d " + str(e))
+        print("Not the %Y-%m-%d " + str(e)) # 2012-02-01
         print(type(d))
 
     try:
         return datetime.strptime(d, "%Y-%m")
     except Exception as e:
-        print(e)
+        print("Not the %Y-%m " + str(e)) # 2012-02
+        print(type(d))
 
     try:
         return datetime.strptime(d, "%Y-%m-%d %H:%M")
     except Exception as e:
-        print(e)
+        print("Not the %Y-%m-%d %H:%M" + str(e)) # 2012-02-01 19:00
+        print(type(d))
 
     return datetime.now()
 
+
 def get_date(e):
+    ''' A helper method used to sort entries
+    '''
     return e.get('date', '')
 
 def load_deadlines():
+    ''' Load all deadlines, see events/deadlines.yaml
+
+    All deadlines have been sorted manually
+    '''
     d = {}
     with open(DEADLINES_YAML, 'r') as f:
         d = yaml.load(f)
@@ -215,15 +280,20 @@ def load_deadlines():
     return d
 
 def load_phd_events():
+    ''' Load all PhD seminar events, see events/phd.yaml
+
+    All PhD seminar events have been sorted manually
+    '''
     d = {}
     with open(PHD_EVENTS_YAML, 'r') as f:
         d = yaml.load(f)
 
     return d
 
-
-
 def load_photos():
+    ''' Load all photos shown in gallery
+
+    '''
     p = {}
     with open(PHOTO_YAML, 'r') as f:
         p = yaml.load(f)
@@ -232,6 +302,12 @@ def load_photos():
     return p
 
 def load_news():
+    ''' Load all news and paginations
+
+    Result:
+        a tuple of which the first element is the list of news
+        and the second element is the Pagination object.
+    '''
     n = {}
 
     if not os.path.exists(NEWS_YAML):
@@ -248,13 +324,25 @@ def load_news():
     return n, pg
 
 def pagination(news_pages):
+    ''' Set all news with a page_num
 
+    '''
     num_per_page = 10
 
     for index, page in enumerate(news_pages):
         page['page_num'] = index / num_per_page + 1 # page number starts from 1
 
 def update_news_yaml():
+    ''' Scan news folder and save all news into a single yaml file
+
+    Arguments:
+        path: the path of the news in relative to the NEWS_DIR
+        title: title in the metadata
+        date: date in the metadata
+        summary: summary in the metadata
+        img_title: a image title should be 90x90 or 150x150 or MMxMM
+        img_path: path in relative to the static folder
+    '''
     rootdir = NEWS_DIR
     news_pages = []
     for subdir, dirs, files in os.walk(rootdir):
@@ -293,11 +381,17 @@ def update_news_yaml():
         f.write(news_cache)
 
 def load_people():
+    ''' Load all people
+    '''
     with open(PEOPLE_YAML) as f:
         return yaml.load(f)
 
 
 def load_events():
+    '''Load general events,
+
+    Empty now so we need check whether e is None and returning a {} accordingly
+    '''
     e = {}
     with open(EVENTS_YAML, 'r') as f:
         e = yaml.load(f)
@@ -311,10 +405,17 @@ def load_events():
 
 @app.errorhandler(404)
 def page_not_found(e):
+    '''Custom 404 page
+
+    '''
     return render_template('404.html'), 404
 
 @app.before_request
 def before_request():
+    ''' Callback before each request
+
+    TODO: in fact all load should be done here
+    '''
     md = getattr(g, 'md', None)
     if md is None:
         g.md = markdown.Markdown(['markdown.extensions.extra', 'markdown.extensions.meta'])
@@ -422,11 +523,13 @@ def page(name, path=None):
 
     user_dir = safe_join(PAGES_DIR, name)
 
+    # Personal static folder
     if path.startswith('static/'):
         return send_from_directory(user_dir, path)
 
     page = get_page(user_dir, path)
 
+    # support redirect
     rd = page.meta.get('redirect')
     if rd is not None:
         return redirect(rd)
@@ -477,6 +580,9 @@ def get_page(page_dir, path):
     abort(404)
 
 def get_restructuredtext_page_or_404(page_path):
+    ''' Deprecated
+
+    '''
     page = Page()
 
     with open(page_path, 'r') as f:
@@ -499,13 +605,13 @@ def get_markdown_page_or_none(page_path):
 def get_markdown_page(page_path):
     page = Page()
     with open(page_path, 'r') as f:
-        if not hasattr(g, 'md'):
-            g.md = markdown.Markdown(['markdown.extensions.extra', 'markdown.extensions.meta'])
+        #if not hasattr(g, 'md'):
+        #    g.md = markdown.Markdown(['markdown.extensions.extra', 'markdown.extensions.meta'])
 
         page.html = g.md.convert(f.read())
         page.meta = g.md.Meta # flask-pages naming covention
         for key, value in page.meta.iteritems():
-            page.meta[key] = ''.join(value)
+            page.meta[key] = ''.join(value) # meta is a list
         return page
 
     abort(404)
@@ -519,8 +625,10 @@ def get_markdown_page_or_404(page_path):
 
     abort(404)
 
+# Encoding problem in windows
+# should be removed in production run
 reload(sys)
-sys.setdefaultencoding('utf-8') 
+sys.setdefaultencoding('utf-8')
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=8000)
