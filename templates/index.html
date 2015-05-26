@@ -2,10 +2,11 @@
 {% block content %}
 <div class="row"><!-- row -->
     <div id="k-top-search" class="col-lg-12 clearfix"><!-- top search -->
-        <form action="#" id="top-searchform" method="get" role="search">
+        <form action="http://www.google.com/search" id="top-searchform" method="get" role="search">
             <div class="input-group">
-                <input type="text" name="s" id="sitesearch" class="form-control" autocomplete="off" placeholder="Type in keyword(s) then hit Enter on keyboard" />
+                <input type="text" name="q" id="sitesearch" class="form-control" autocomplete="off" placeholder="Type in keyword(s) then hit Enter on keyboard" />
             </div>
+            <input type="hidden"  name="sitesearch" value="moon.iwanna.xyz" />
         </form>
         <div id="bt-toggle-search" class="search-icon text-center"><i class="s-open fa fa-search"></i><i class="s-close fa fa-times"></i></div><!-- toggle search button -->
     </div><!-- top search end -->
