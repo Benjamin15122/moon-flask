@@ -33,8 +33,5 @@ Suppose that you want to add an entry for Tom.
 3. Add the submodule:
 
         git submodule add git@git.artemisprojects.org:moon/moon-tom.git pages/tom
-        git submodule init
-        git submodule update
-        git submodule foreach git pull origin master
-        
+
 4. Edit `pages/people.yaml` and add an entry. You can learn from other entries.
