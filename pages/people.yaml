@@ -56,50 +56,26 @@ phd:
     url:  http://moon.nju.edu.cn/spar/people/zzl/zzl.html
 
 graduates:
-  - name: Hongwei Xie
-  - name: Shengwei An
-    url:  shengweian
-  - name: Ruiqi Liu
-    url:  ruiqiliu
-  - name: Hao Jin
-    url: http://moon.nju.edu.cn/spar/people/HaoJin'sPage/index.html
-  - name: Xiujiang Li
-    url: http://moon.nju.edu.cn/spar/people/lxj/index.html
-  - name: Wang Xi
-    url: http://moon.nju.edu.cn/spar/people/xw.html
-  - name: Geng Xiao
-  - name: Huating Liu
-  - name: Chenchen Cao
-  - name: Tongbao Zhang
-  - name: Rongfei Zhu
-  - name: Dongliang Yu
-  - name: Haicheng Li
-  - name: Jie Zhang
-  - name: Jian Zheng
-  - name: Xuezhi Hong
-  - name: Wang Xi
-  - name: Huating Liu
-  - name: Bin Chen
-  - name: Cheng Zhang
-  - name: Mingzhu Yuan
-  - name: Hao Zhang
-  - name: Shaowen Zhang
-  - name: Jianliang Jiang
-  - name: Xiaoyu Chen
-  - name: Haoyi Zhou
-  - name: Jun Tao
-  - name: Dong Chen
-  - name: Yu Du
-  - name: Qiwei Li
-    url: http://moon.nju.edu.cn/spar/people/lqw.html
-  - name: Xiangyu Wu
-    url: http://moon.nju.edu.cn/spar/people/wxy.html
-  - name: Ruiqing Zhang
-    url: http://moon.nju.edu.cn/spar/people/zrq/zrq.html
-  - name: Ying Zhang
-    url: http://moon.nju.edu.cn/spar/people/zy.html
   - name: Chenglin Meng
     url:  chenglinmeng
+  - name: Hao Jin
+    url: http://moon.nju.edu.cn/spar/people/HaoJin'sPage/index.html
+  - name: Qiwei Li
+    url: http://moon.nju.edu.cn/spar/people/lqw.html
+  - name: Ruiqi Liu
+    url:  ruiqiliu
+  - name: Ruiqing Zhang
+    url: http://moon.nju.edu.cn/spar/people/zrq/zrq.html
+  - name: Shengwei An
+    url:  shengweian
+  - name: Wang Xi
+    url: http://moon.nju.edu.cn/spar/people/xw.html
+  - name: Xiangyu Wu
+    url: http://moon.nju.edu.cn/spar/people/wxy.html
+  - name: Xiujiang Li
+    url: http://moon.nju.edu.cn/spar/people/lxj/index.html
+  - name: Ying Zhang
+    url: http://moon.nju.edu.cn/spar/people/zy.html
 
 undergraduates:
   - name: Na Liu
