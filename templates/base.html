@@ -40,21 +40,21 @@
                 </div><!-- site logo end -->
                 <nav id="k-menu" class="k-main-navig"><!-- main navig -->
                     <ul id="drop-down-left" class="k-dropdown-menu">
-                        <li>
+                        <li {% if request.path == url_for('index') %} class="current-menu-item" {% endif %}>
                             <a href="{{ url_for('index') }}" title="">Home</a>
                         </li>
-                        <li>
+                        <li {% if request.path == url_for('people') %} class="current-menu-item" {% endif %}>
                             <a href="{{ url_for('people') }}" title="">People</a>
                         </li>
-                        <li>
+                        <li {% if request.path == url_for('news') %} class="current-menu-item" {% endif %}>
                             <a href="{{ url_for('news') }}" title="">News</a>
                         </li>
                         <li>
                             <a href="#" title="">Events</a>
                             <ul class="sub-menu">
-                                <li><a href="{{ url_for('events', path='phd') }}">PhD Seminar</a></li>
-                                <li><a href="sidebar-left.html">Master Seminar </a></li>
-                                <li><a href="{{ url_for('events', path='deadlines')}}">Deadlines</a></li>
+                                <li {% if request.path == url_for('events', path='phd') %} class="current-menu-item" {% endif %}><a href="{{ url_for('events', path='phd') }}">PhD Seminar</a></li>
+                                <li {% if request.path == '' %} class="current-menu-item" {% endif %}><a href="sidebar-left.html">Master Seminar </a></li>
+                                <li {% if request.path == url_for('events', path='deadlines') %} class="current-menu-item" {% endif %}><a href="{{ url_for('events', path='deadlines')}}">Deadlines</a></li>
                             </ul>
                         </li>
                         <li>
@@ -63,9 +63,9 @@
                         <li>
                             <a href="#" title="">About</a>
                             <ul class="sub-menu">
-                                <li><a href="{{ url_for('contact') }}" title="">Contact</a></li>
-                                <li><a href="{{ url_for('leadership') }}">Leadership</a></li>
-                                <li><a href="{{ url_for('awards') }}">Awards</a></li>
+                                <li {% if request.path == url_for('contact') %} class="current-menu-item" {% endif %}><a href="{{ url_for('contact') }}" title="">Contact</a></li>
+                                <li {% if request.path == url_for('leadership') %} class="current-menu-item" {% endif %}><a href="{{ url_for('leadership') }}">Leadership</a></li>
+                                <li {% if request.path == url_for('awards') %} class="current-menu-item" {% endif %}><a href="{{ url_for('awards') }}">Awards</a></li>
                             </ul>
 
                         </li>
