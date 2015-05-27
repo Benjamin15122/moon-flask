@@ -75,7 +75,6 @@ graduates:
   - name: Dongliang Yu
   - name: Haicheng Li
   - name: Jie Zhang
-  - name: Xiujiang Li
   - name: Jian Zheng
   - name: Xuezhi Hong
   - name: Wang Xi
@@ -99,6 +98,8 @@ graduates:
     url: http://moon.nju.edu.cn/spar/people/zrq/zrq.html
   - name: Ying Zhang
     url: http://moon.nju.edu.cn/spar/people/zy.html
+  - name: Chenglin Meng
+    url:  chenglinmeng
 
 undergraduates:
   - name: Na Liu

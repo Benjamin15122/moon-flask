@@ -7,3 +7,6 @@
 [submodule "pages/ruiqiliu"]
 	path = pages/ruiqiliu
 	url = git@lab.artemisprojects.org:moon/moon-ruiqiliu.git
+[submodule "pages/chenglinmeng"]
+	path = pages/chenglinmeng
+	url = git@lab.artemisprojects.org:moon/moon-chenglinmeng.git
