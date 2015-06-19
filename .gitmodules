@@ -10,3 +10,6 @@
 [submodule "pages/chenglinmeng"]
 	path = pages/chenglinmeng
 	url = git@lab.artemisprojects.org:moon/moon-chenglinmeng.git
+[submodule "spar"]
+	path = spar
+	url = git@lab.artemisprojects.org:spar/homepage.git
