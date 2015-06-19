@@ -37,4 +37,4 @@ app = Flask(__name__,
             static_folder = MOON_DIR + os.path.sep + 'static')
 app.config.from_object(__name__)                                                                                            
 
-import moon.views, moon.shorturl
+import moon.views, moon.shorturl, moon.spar
