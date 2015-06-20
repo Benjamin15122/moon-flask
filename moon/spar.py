@@ -19,7 +19,7 @@ def spar_homapge(path = '/'):
                     ) 
                     content = md.convert(fp.read())
                     meta = md.Meta
-                    title = meta.get('title', [''])[0]
+                    title = ''.join( meta.get('title', ['']) )
                 return flask.render_template('spar.html', content = content, title = title)
         return flask.send_from_directory(SPAR_DIR, path)
     except Exception, e:

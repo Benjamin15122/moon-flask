@@ -11,7 +11,6 @@ from datetime import datetime, date
 
 from string import Template
 import markdown
-from docutils.core import publish_string, publish_parts
 
 class Pagination(object):
     ''' A plain object to facilitate add attr as it has __dict__
