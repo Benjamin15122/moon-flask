@@ -17,7 +17,7 @@ def spar_homapge(path = '/'):
                          'markdown.extensions.meta',
                          'markdown.extensions.toc',]
                     ) 
-                    content = md.convert(fp.read())
+                    content = md.convert(fp.read().decode('utf-8'))
                     meta = md.Meta
                     title = ''.join( meta.get('title', ['']) )
                 return flask.render_template('spar.html', content = content, title = title)
