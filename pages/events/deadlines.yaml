@@ -1,11 +1,3 @@
-- id: ase15
-  label: ASE 2015
-  url: http://ase2015.unl.edu
-  date: 2015-05-15
-- id: issre15
-  label: ISSRE 2015
-  url: http://issre.net/important-dates.html
-  date: 2015-05-29
 - id: apsec15
   label: APSEC 2015
   url: http://www.apsec2015.org/
