@@ -5,6 +5,7 @@ from moon import app
 SHORT_URLS = {
     'jyy': 'http://moon.nju.edu.cn/spar/people/jyy.html',
     'txgu': '/people/tianxiaogu',
+    'wenhua': 'http://moon.nju.edu.cn/spar/people/ywh/ywh.html',
 }
 
 @app.route('/~<name>', methods=['GET'])
