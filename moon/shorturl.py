@@ -1,16 +1,13 @@
-import flask
-from moon import app
-
-# TODO: move code to a better place (e.g., configuration file)
-SHORT_URLS = {
-    'jyy': 'http://moon.nju.edu.cn/spar/people/jyy.html',
-    'txgu': '/people/tianxiaogu',
-    'wenhua': 'http://moon.nju.edu.cn/spar/people/ywh/ywh.html',
-}
+import flask, yaml
+from moon import *
 
 @app.route('/~<name>', methods=['GET'])
 def short_url(name, path = None):
-    if name in SHORT_URLS:
-        return flask.redirect(SHORT_URLS[name])
-    else:
-        return flask.redirect('/')
+    with open(SHORTURL_YAML, 'r') as fp:
+        d = yaml.load(fp)
+        print d
+        if name in d:
+            return flask.redirect(d[name])
+        else:
+            return flask.redirect('/')
+    return '404'
