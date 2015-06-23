@@ -463,7 +463,7 @@ def get_markdown_page(page_path):
         #if not hasattr(g, 'md'):
         #    g.md = markdown.Markdown(['markdown.extensions.extra', 'markdown.extensions.meta'])
 
-        page.html = g.md.convert(f.read())
+        page.html = g.md.convert(f.read().decode('utf-8'))
         page.meta = g.md.Meta # flask-pages naming covention
         for key, value in page.meta.iteritems():
             page.meta[key] = ''.join(value) # meta is a list
