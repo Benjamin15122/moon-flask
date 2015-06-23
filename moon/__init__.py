@@ -20,6 +20,7 @@ EVENTS_DIR = PAGES_DIR + os.path.sep + 'events'
 
 PEOPLE_YAML = PAGES_DIR + os.path.sep + 'people.yaml'
 PHOTO_YAML  = PAGES_DIR + os.path.sep + 'photo.yaml'
+SHORTURL_YAML = PAGES_DIR + os.path.sep + 'shorturl.yaml'
 NEWS_YAML= NEWS_DIR + os.path.sep + 'news.yaml'
 EVENTS_YAML = EVENTS_DIR + os.path.sep + 'events.yaml'
 DEADLINES_YAML = EVENTS_DIR + os.path.sep + 'deadlines.yaml'
