@@ -6,4 +6,4 @@ __pycache__/
 .DS_Store
 *.swp
 
-news.yamp
+/pages/news/news.yaml
