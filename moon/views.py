@@ -232,8 +232,10 @@ def update_news_yaml():
     pagination(news_pages)
 
     news_cache = yaml.safe_dump(news_pages, default_flow_style=False, allow_unicode=True, encoding='utf-8')
+    # news_cache is a utf-8 encoded str object
+    # convert it into an unicode object
     with codecs.open(NEWS_YAML, 'w', 'utf-8') as f:
-        f.write(news_cache)
+        f.write(news_cache.decode("utf-8"))
 
 def load_people():
     ''' Load all people
