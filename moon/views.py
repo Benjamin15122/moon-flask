@@ -2,12 +2,13 @@ from moon import *
 from flask import Flask, render_template, redirect, send_from_directory, request, abort, make_response, safe_join, Markup, abort, g
 #from flask_flatpages import FlatPages
 #from flask_frozen import Freezer
-import sys, os, subprocess, time
+import sys, os, subprocess
 import yaml
 
 import codecs
 
 from datetime import datetime, date
+from datetime import time as dtime
 
 from string import Template
 import markdown
@@ -73,7 +74,7 @@ def to_date(st):
     if isinstance(st, unicode):
         st = str(st)
 
-    return parse_date(st).strftime("%b %d, %Y")
+    return to_datetime(st).strftime("%b %d, %Y")
 
 @app.template_filter('to_time')
 def to_time(st):
@@ -83,18 +84,27 @@ def to_time(st):
     if isinstance(st, unicode):
         st = str(st)
 
-    return parse_date(st).strftime("%H:%M")
+    return to_datetime(st).strftime("%H:%M")
 
 app.jinja_env.filters['to_date'] = to_date
 app.jinja_env.filters['to_time'] = to_time
 
 
-def parse_date(d):
+def to_datetime(d):
+    '''
+        convert everything to datetime
+    '''
     if isinstance(d, date):
-        return d
+        return datetime.combine(d, dtime(0, 0))
 
     if isinstance(d, datetime):
         return d
+
+    if d is None:
+        return datetime.now();
+
+    if d == '':
+        return datetime.now();
 
     dt = None
     try:
@@ -120,8 +130,13 @@ def parse_date(d):
 
 def get_date(e):
     ''' A helper method used to sort entries
+        No crash but will result in a bad page, e.g., incorrect date
     '''
     return e.get('date', '')
+
+def remove_dead_events(events):
+    now = datetime.now();
+    return filter(lambda e: now < to_datetime(get_date(e)), events)
 
 def load_deadlines():
     ''' Load all deadlines, see events/deadlines.yaml
@@ -178,6 +193,7 @@ def load_news():
 
     return n, pg
 
+
 def pagination(news_pages):
     ''' Set all news with a page_num
 
@@ -218,7 +234,7 @@ def update_news_yaml():
             pagedict = {}
             pagedict['path'] = os.path.splitext(os.path.relpath(f, rootdir).replace('\\','/'))[0]
             pagedict['title'] = page.meta.get('title', 'Please add a title')
-            pagedict['date'] = parse_date(page.meta.get('date', ''))
+            pagedict['date'] = to_datetime(page.meta.get('date', ''))
             pagedict['summary'] = page.meta.get('summary', 'Please provide a news body')
             pagedict['img_title'] = page.meta.get('img_title')
             pagedict['img_path'] = page.meta.get('img_path')
@@ -340,6 +356,10 @@ def index():
     m = load_people()
     p = load_phd_events()
     d = load_deadlines()
+
+    # remove dead events on index page
+    p = remove_dead_events(p)
+    d = remove_dead_events(d)
     return render_template('index.html', news=n, events=e, members=m, deadlines=d, phd=p)
 
 #####################
