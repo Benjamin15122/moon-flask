@@ -443,7 +443,7 @@ def get_restructuredtext_page_or_404(page_path):
     page = Page()
 
     with open(page_path, 'r') as f:
-        parts = publish_parts(f.read(), writer_name='html')
+        parts = publish_parts(f.read().decode('utf-8'), writer_name='html')
 
         page.html = parts['html_body']
         page.meta = {} # test
