@@ -11,32 +11,11 @@
             <h1 class="page-title">People</h1>
             <div class="news-body">
                  <p class="call-out">
-                    The Institute of Computer Software (ICS) is a xxxx.
-                    Currently, there are {{ people.faculty|length}} Faculty members, {{ people.phd|length + people.graduates|length + people.undergraduates|length }} students.
+                 Currently, there are <a href="#faculty">{{ people.faculty|length}}</a> Faculty members, <a href="#students">{{ people.phd|length + people.graduates|length + people.undergraduates|length }}</a> students.
                  </p>
-<!--
-                 <p class="call-out">
-                    Sir Jiafu Xu is the director of Institute of Computer Software at Nanjing University.
-                    He is a professor of the Department of Computer Science and Technology at Nanjing University.
-                    He mentored the first doctor of Computer Science in China.
-                    He has received a lifetime achievement award from the China Computer Federation in 2011.
-                    He is also the honorary director of <a href="http://keysoftlab.nju.edu.cn/site/ndjsjx/">State Key Laboratory for Novel Software Technology at Nanjing University</a>.
-                </p>
-                <p class="call-out">
-                    Doctor Jian Lü is the vice president of Nanjing University.
-                    He is a professor of the Department of Computer Science and Technology at Nanjing University.
-                    In 2013, he was elected as an academician of Chinese Academy of Science.
-                    He is also the director of State Key Laboratory for Novel Software Technology at Nanjing University,
-                    the dean of Graduate School of Nanjing University,
-                    the former deputy director of Institute of Computer Software at Nanjing University.
-                </p>
-                <p class="call-out">
-                Doctor <a href="{{ url_for('page', name='xiaoxingma') }}" title="Xiaoxing Ma">Xiaoxing Ma</a> is the deputy directory of Institute of Computer Software at Nanjing University.
-                    He is a professor of the Department of Computer Science and Technology at Nanjing University.
-                </p>
--->
                <div class="separator-dbl-strike"></div><!-- separator -->
-                <h2>Faculty</h2>
+               <a name="faculty"></a>
+               <h2>Faculty</h2>
                 <div class="row small k-equal-height"><!-- row -->
                     {% for item in people.faculty %}
                     <div class="col-lg-3 col-md-6 col-sm-12">
@@ -52,6 +31,7 @@
                     {% endfor %}
                 </div><!-- row end -->
                 <div class="separator-dashed"></div><!-- separator -->
+                <a name="students"></a>
                 <h2>Ph.D. Candidates</h2>
                 <div class="row small k-equal-height"><!-- row -->
                     {% for item in people.phd %}
