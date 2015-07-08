@@ -336,7 +336,7 @@ def news_page(path):
 #####################
 
 @app.route('/events/', methods=['GET'])
-@app.route('/events/<path:path>', methods=['GET'])
+@app.route('/events/<path:path>/', methods=['GET'])
 def events(path=None):
     if path is None:
         e = load_events()
