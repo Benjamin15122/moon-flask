@@ -24,7 +24,6 @@ PhD Seminar
                                 <th>Title</th>
                                 <th>Speaker</th>
                                 <th>Time</th>
-                                <th>Location</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -34,7 +33,6 @@ PhD Seminar
                             <td>{{ p.title  }}</td>
                             <td>{{ p.speaker }} </td>
                             <td>{{ p.date.strftime("%b %d (%A), %Y %H:%M") }} </td>
-                            <td>{{ p.location }} </td>
                         </tr>
                         {% endfor %}
                         </tbody>

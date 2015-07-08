@@ -86,6 +86,14 @@
                              </div>
                          </li>
                          {% endif %}
+                         {% if master|first %}
+                         <li class="up-event-wrap">
+                         <h1 class="title-median"><a href="{{ url_for('events', path='master') }}" title="{{ master[0].speaker }}">Master Seminar: {{ master[0].speaker }}</a></h1>
+                             <div class="up-event-meta clearfix">
+                                 <div class="up-event-date">{{ master[0].date | to_date }}</div><div class="up-event-time">{{ master[0].date | to_time }}</div>
+                             </div>
+                         </li>
+                         {% endif %}
                          {% for e in events %}
                             {% if loop.index <= 3 %}
                                 <li class="up-event-wrap">

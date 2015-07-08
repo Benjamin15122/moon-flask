@@ -25,6 +25,7 @@ NEWS_YAML= NEWS_DIR + os.path.sep + 'news.yaml'
 EVENTS_YAML = EVENTS_DIR + os.path.sep + 'events.yaml'
 DEADLINES_YAML = EVENTS_DIR + os.path.sep + 'deadlines.yaml'
 PHD_EVENTS_YAML = EVENTS_DIR + os.path.sep + 'phd.yaml'
+MASTER_EVENTS_YAML = EVENTS_DIR + os.path.sep + 'master.yaml'
 
 GITSUBMODULES = MOON_DIR + os.path.sep + '.gitsubmodules'
 

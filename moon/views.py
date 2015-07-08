@@ -160,6 +160,17 @@ def load_phd_events():
 
     return d
 
+def load_master_events():
+    ''' Load all Master seminar events, see events/master.yaml
+
+    All Master seminar events have been sorted manually
+    '''
+    d = {}
+    with open(MASTER_EVENTS_YAML, 'r') as f:
+        d = yaml.load(f)
+
+    return d
+
 def load_photos():
     ''' Load all photos shown in gallery
 
@@ -341,6 +352,10 @@ def events(path=None):
         phd = load_phd_events()
         return render_template('phd.html', phd=phd)
 
+    if path == 'master':
+        master = load_master_events()
+        return render_template('master.html', master=master)
+
     page = get_page(EVENTS_DIR, path)
 
     template = page.meta.get('template', 'events-page.html')
@@ -356,11 +371,13 @@ def index():
     m = load_people()
     p = load_phd_events()
     d = load_deadlines()
+    master = load_master_events()
 
     # remove dead events on index page
     p = remove_dead_events(p)
     d = remove_dead_events(d)
-    return render_template('index.html', news=n, events=e, members=m, deadlines=d, phd=p)
+    master = remove_dead_events(master)
+    return render_template('index.html', news=n, events=e, members=m, deadlines=d, phd=p, master=master)
 
 #####################
 
