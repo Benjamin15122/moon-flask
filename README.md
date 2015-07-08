@@ -14,7 +14,6 @@ Dependencies:
 1. markdown
 2. bibtexparser
 3. docutils
-4. 
 
 ## Update
 
