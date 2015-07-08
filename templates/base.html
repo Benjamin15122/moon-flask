@@ -63,7 +63,7 @@
                             <a href="#" title="">About</a>
                             <ul class="sub-menu">
                                 <li {% if request.path == url_for('contact') %} class="current-menu-item" {% endif %}><a href="{{ url_for('contact') }}" title="">Contact</a></li>
-                                <li {% if request.path == url_for('leadership') %} class="current-menu-item" {% endif %}><a href="{{ url_for('leadership') }}">Leadership</a></li>
+                                <!-- <li {% if request.path == url_for('leadership') %} class="current-menu-item" {% endif %}><a href="{{ url_for('leadership') }}">Leadership</a></li> -->
                                 <li {% if request.path == url_for('awards') %} class="current-menu-item" {% endif %}><a href="{{ url_for('awards') }}">Awards</a></li>
                             </ul>
 
