@@ -13,6 +13,8 @@ from datetime import time as dtime
 from string import Template
 import markdown
 
+from gitlet import git_update_check
+
 class Pagination(object):
     ''' A plain object to facilitate add attr as it has __dict__
 
@@ -138,50 +140,54 @@ def remove_dead_events(events):
     now = datetime.now();
     return filter(lambda e: now < to_datetime(get_date(e)), events)
 
+@git_update_check(DEADLINES_YAML)
 def load_deadlines():
     ''' Load all deadlines, see events/deadlines.yaml
 
     All deadlines have been sorted manually
     '''
-    d = {}
+    e = None
     with open(DEADLINES_YAML, 'r') as f:
-        d = yaml.load(f)
+        e = yaml.load(f)
 
-    return d
+    return e if e else {}
 
+@git_update_check(PHD_EVENTS_YAML)
 def load_phd_events():
     ''' Load all PhD seminar events, see events/phd.yaml
 
     All PhD seminar events have been sorted manually
     '''
-    d = {}
+    e = None
     with open(PHD_EVENTS_YAML, 'r') as f:
-        d = yaml.load(f)
+        e = yaml.load(f)
 
-    return d
+    return e if e else {}
 
+@git_update_check(MASTER_EVENTS_YAML)
 def load_master_events():
     ''' Load all Master seminar events, see events/master.yaml
 
     All Master seminar events have been sorted manually
     '''
-    d = {}
+    e = None
     with open(MASTER_EVENTS_YAML, 'r') as f:
-        d = yaml.load(f)
+        e = yaml.load(f)
 
-    return d
+    return e if e else {}
 
+@git_update_check(PHOTO_YAML)
 def load_photos():
     ''' Load all photos shown in gallery
 
     '''
-    p = {}
+    p = None
     with open(PHOTO_YAML, 'r') as f:
         p = yaml.load(f)
-        p = sorted(p, key=get_date, reverse=True)
 
-    return p
+    return sorted(p, key=get_date, reverse=True) if p else {}
 
+@git_update_check(NEWS_DIR)
 def load_news():
     ''' Load all news and paginations
 
@@ -189,13 +195,16 @@ def load_news():
         a tuple of which the first element is the list of news
         and the second element is the Pagination object.
     '''
-    n = {}
+    n = None
 
     if not os.path.exists(NEWS_YAML):
         update_news_yaml()
 
     with open(NEWS_YAML, 'r') as f:
         n = yaml.load(f)
+        if not (n and len(n)):
+            # TODO raise 404 or 500?
+            abort(500)
         n = sorted(n, key=get_date, reverse=True)
 
     pg = Pagination()
@@ -264,26 +273,27 @@ def update_news_yaml():
     with codecs.open(NEWS_YAML, 'w', 'utf-8') as f:
         f.write(news_cache.decode("utf-8"))
 
+@git_update_check(PEOPLE_YAML)
 def load_people():
     ''' Load all people
     '''
+    p = None
     with open(PEOPLE_YAML) as f:
-        return yaml.load(f)
+        p = yaml.load(f)
 
+    return p if p else {}
 
+@git_update_check(EVENTS_YAML)
 def load_events():
     '''Load general events,
 
     Empty now so we need check whether e is None and returning a {} accordingly
     '''
-    e = {}
+    e = None
     with open(EVENTS_YAML, 'r') as f:
         e = yaml.load(f)
-        if e is None:
-            return {}
-        e = sorted(e, key=get_date, reverse=True)
 
-    return e
+    return sorted(e, key=get_date, reverse=True) if e else {}
 
 ###################
 
@@ -300,17 +310,40 @@ def before_request():
 
     TODO: in fact all load should be done here
     '''
+
+    # TODO In fact, g is per-request, so we have to do the initialization here every request
+    # Should we cache these in-memory values in to session?
     md = getattr(g, 'md', None)
     if md is None:
         g.md = markdown.Markdown(['markdown.extensions.extra', 'markdown.extensions.meta'])
 
-    g.p = load_photos()
+    if not getattr(g, 'photos', None):
+        install_content_hook()
+
+    # g.photos takes the responsibility to check cache
+    g.p = g.photos()
+
+def install_content_hook():
+    # TODO Note we only check whether g.photos is set
+    # photos
+    g.photos = load_photos
+
+    # events
+    g.events = load_events
+    g.phd_events = load_phd_events
+    g.deadlines = load_deadlines
+    g.master_events = load_master_events
+
+    # news
+    g.news = load_news
+
+    # members
+    g.members = load_people
 
 
 @app.teardown_request
 def teardown_request(exception):
     pass
-
 
 #####################
 
@@ -320,7 +353,8 @@ def news(page_num=None):
     if page_num is None:
         page_num = 1
 
-    n, pg = load_news()
+    #load_news()
+    n, pg = g.news()
     pg.current = page_num
 
     return render_template('news.html', news=n, pg=pg)
@@ -339,22 +373,22 @@ def news_page(path):
 @app.route('/events/<path:path>/', methods=['GET'])
 def events(path=None):
     if path is None:
-        e = load_events()
-        p = load_phd_events()
-        d = load_deadlines()
-        return render_template('events.html', events=e, deadlines=d, phd=p)
+        #load_events()
+        #load_phd_events()
+        #load_deadlines()
+        return render_template('events.html', events=g.events(), deadlines=g.deadlines(), phd=g.phd_events())
 
     if path == 'deadlines':
-        d = load_deadlines()
-        return render_template('deadlines.html', deadlines=d)
+        #load_deadlines()
+        return render_template('deadlines.html', deadlines=g.deadlines())
 
     if path == 'phd':
-        phd = load_phd_events()
-        return render_template('phd.html', phd=phd)
+        #load_phd_events()
+        return render_template('phd.html', phd=g.phd_events())
 
     if path == 'master':
-        master = load_master_events()
-        return render_template('master.html', master=master)
+        #load_master_events()
+        return render_template('master.html', master=g.master_events())
 
     page = get_page(EVENTS_DIR, path)
 
@@ -365,19 +399,12 @@ def events(path=None):
 
 @app.route('/', methods=['GET'])
 def index():
-
-    n,pg = load_news()
-    e = load_events()
-    m = load_people()
-    p = load_phd_events()
-    d = load_deadlines()
-    master = load_master_events()
-
     # remove dead events on index page
-    p = remove_dead_events(p)
-    d = remove_dead_events(d)
-    master = remove_dead_events(master)
-    return render_template('index.html', news=n, events=e, members=m, deadlines=d, phd=p, master=master)
+    return render_template('index.html', news=g.news()[0], \
+            events=g.events(), members=g.members(), \
+            deadlines=remove_dead_events(g.deadlines()), \
+            phd=remove_dead_events(g.phd_events()), \
+            master=remove_dead_events(g.master_events()))
 
 #####################
 
@@ -388,9 +415,7 @@ def leadership():
 
 @app.route('/people/', methods=['GET'])
 def people():
-    with open(PEOPLE_YAML) as f:
-        people = yaml.load(f)
-    return render_template('people.html', people=people)
+    return render_template('people.html', people=g.members())
 
 @app.route('/awards/', methods=['GET'])
 def awards():

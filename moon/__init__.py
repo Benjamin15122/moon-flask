@@ -36,9 +36,11 @@ GIT_INIT_SUBMODULES = [GIT_CMD, '-C', MOON_DIR, 'submodule', 'init']
 GIT_UPDATE_SUBMODULES = [GIT_CMD, '-C', MOON_DIR, 'submodule', 'update']
 GIT_PULL_SUBMODULES = [GIT_CMD, '-C', MOON_DIR, 'submodule', 'foreach', 'git', 'pull', 'origin', 'master']
 
+GIT_SHOW_HEAD_HASH = [GIT_CMD, '-C', MOON_DIR, 'log', '-1', '--format=%H']
+
 app = Flask(__name__,
     template_folder = MOON_DIR + os.path.sep + 'templates',
     static_folder = MOON_DIR + os.path.sep + 'static')
 app.config.from_object(__name__)
 
-import moon.views, moon.shorturl, moon.spar
+import moon.views, moon.shorturl, moon.spar, moon.gitlet

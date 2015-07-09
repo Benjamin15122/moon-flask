@@ -1,5 +1,19 @@
 # READ ME
 
+## NOTE
+
+1. `yaml.load` may return `None` if the yaml file is empty.
+2. `sys.setdefaultencoding` may not work in Docker. Remove it and explicit decode and encode `str` and `unicode`.
+
+    Some I/O may convert a `str` into `unicode` and than byte array
+
+3. Currently, we load all small files on demand and cache them.
+   (See `install_content_hook`)
+   Keep those `yaml` files in small sizes and build an archive version
+   once they become bigger than bigger.
+
+   Note that **ARCHIVE** is not implemented yet.
+
 ## TODO
 
 1. publications.html + bibtexparser
