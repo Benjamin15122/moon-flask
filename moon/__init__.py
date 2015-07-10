@@ -2,10 +2,6 @@ from flask import Flask
 import os
 
 DEBUG = True
-FLATPAGES_AUTO_RELOAD = DEBUG
-FLATPAGES_EXTENSION = '.md'
-
-FLATPAGES_MARKDOWN_EXTENSIONS = []
 
 MOON_GIT_URL = 'git@git.artemisprojects.org:moon.git'
 MOON_DIR = os.path.dirname(

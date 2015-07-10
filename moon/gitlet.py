@@ -3,8 +3,9 @@ import subprocess
 
 def git_update_check(path):
     def wrapper(method):
-        return GitPathChecker(path, method)
-
+        def wrapper2():
+            return GitPathChecker(path, method)
+        return wrapper2
     return wrapper
 
 class GitPathChecker:

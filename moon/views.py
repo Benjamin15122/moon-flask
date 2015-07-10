@@ -310,35 +310,30 @@ def before_request():
 
     TODO: in fact all load should be done here
     '''
-
-    # TODO In fact, g is per-request, so we have to do the initialization here every request
-    # Should we cache these in-memory values in to session?
-    md = getattr(g, 'md', None)
-    if md is None:
+    # We should use request.endpoint == 'static'
+    # However, not all static files are fetched from global static directory
+    # Currently, we check whether there is a `/static/' in the path
+    if '/static/' not in request.path:
         g.md = markdown.Markdown(['markdown.extensions.extra', 'markdown.extensions.meta'])
-
-    if not getattr(g, 'photos', None):
         install_content_hook()
 
-    # g.photos takes the responsibility to check cache
-    g.p = g.photos()
+        # g.photos takes the responsibility to check cache
+        g.p = g.photos()
 
 def install_content_hook():
-    # TODO Note we only check whether g.photos is set
     # photos
-    g.photos = load_photos
+    g.photos = load_photos()
 
     # events
-    g.events = load_events
-    g.phd_events = load_phd_events
-    g.deadlines = load_deadlines
-    g.master_events = load_master_events
-
+    g.events = load_events()
+    g.phd_events = load_phd_events()
+    g.deadlines = load_deadlines()
+    g.master_events = load_master_events()
     # news
-    g.news = load_news
+    g.news = load_news()
 
     # members
-    g.members = load_people
+    g.members = load_people()
 
 
 @app.teardown_request
