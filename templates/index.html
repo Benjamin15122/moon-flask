@@ -102,7 +102,7 @@
                                         <div class="up-event-date">{{ e.date | to_date }}</div><div class="up-event-time">{{ e.date | to_time }} {% if e.end %} - {{ e.end | to_time}} {% endif %}</div>
                                     </div>
                                     <p>
-                                        {{ e.summary|truncate(100)}}
+                                        {{ e.summary|truncate(100)|safe}}
                                         <!--<a href="{{ e.events }}" class="moretag" title="read more">MORE</a>-->
                                     </p>
                                 </li>
@@ -132,11 +132,12 @@
                                             <a href="{{ url_for('news_page', path=n.path) }}" title="{{ n.img_title }}"><img src="{{url_for('static', filename=n.img_path)}}" class="attachment-thumbnail wp-post-image" alt="Thumbnail 1" /></a>
                                         </figure>
                                         <div class="recent-news-text">
-                                            <p>{{ n.summary|truncate(100) }}</p>
+                                            <p>{{ n.summary|truncate(100)|safe }}</p>
                                         </div>
                                         {% else %}
                                         <div class="recent-news-text" style="margin-left:0px">
-                                            <p>{{ n.summary|truncate(100) }}</p>
+                                            <!-- no image, show more words use 200 -->
+                                            <p>{{ n.summary|truncate(300)|safe }}</p>
                                         </div>
                                         {% endif %}
                                     </div>
