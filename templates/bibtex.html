@@ -21,8 +21,7 @@
 {% if entry.journal %}<span class="bibtex journal">{{ entry.journal }},</span>{% endif %}
 {% if entry.pages %}<span class="bibtex pages">{{ entry.pages }},</span>{% endif %}
 {% if entry.year %}<span class="bibtex year">{{ entry.year}}.</span>{% endif %}
-{% if entry.doi %}<a href="{{ entry.doi }}">[doi]</a>{% endif %}
-{% if entry.url %}<a href="{{ entry.url }}">[url]</a>{% endif %}
+{% if entry.link %}<a href="{{ entry.link }}" target="_blank">[link]</a>{% endif %}
 </li>
 {% endfor %}
 </ul>
