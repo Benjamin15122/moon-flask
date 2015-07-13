@@ -14,6 +14,7 @@ from string import Template
 import markdown
 
 from gitlet import git_update_check
+from citation import makeExtension as makeCitationExtension
 
 class Pagination(object):
     ''' A plain object to facilitate add attr as it has __dict__
@@ -314,7 +315,9 @@ def before_request():
     # However, not all static files are fetched from global static directory
     # Currently, we check whether there is a `/static/' in the path
     if '/static/' not in request.path:
-        g.md = markdown.Markdown(['markdown.extensions.extra', 'markdown.extensions.meta'])
+        g.md = markdown.Markdown(['markdown.extensions.extra',
+            'markdown.extensions.meta',
+            makeCitationExtension()])
         install_content_hook()
 
         # g.photos takes the responsibility to check cache
@@ -438,7 +441,7 @@ def page(name, path=None):
     if path is None:
         path = 'index'
 
-    print("Incoming path: " + path)
+    #print("Incoming path: " + path)
 
     if path == 'cn/':
         path = 'cn/index'
