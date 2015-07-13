@@ -3,7 +3,19 @@
 <ul class="bibtex">
 {% for entry in entries %}
 <li><a name="{{ entry.id }}"></a>
-{% if entry.author%}<span class="bibtex author">{{ entry.author }},</span>{% endif %}
+{% if entry.author%}<span class="bibtex author">
+    {% if entry.author|length == 1%}
+        {{ entry.author|first }}
+    {% else %}
+    {% for a in entry.author %}
+        {% if loop.index == entry.author|length %}
+        and {{ a }},
+        {% else %}
+        {{ a }},
+        {% endif %}
+    {% endfor %}
+    {% endif %}
+</span>{% endif %}
 {% if entry.title %}<span class="bibtex title">{{ entry.title }},</span>{% endif %}
 {% if entry.booktitle %}<span class="bibtex booktitle">{{ entry.booktitle }},</span>{% endif %}
 {% if entry.journal %}<span class="bibtex journal">{{ entry.journal }},</span>{% endif %}

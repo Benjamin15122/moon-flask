@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from __future__ import absolute_import
 from __future__ import unicode_literals
 from markdown.extensions import Extension
@@ -92,8 +93,8 @@ class MoonFencedBlockPreprocessor(Preprocessor):
         return convert_bibtex(bibtex)
 
 
-def makeExtension(configs=None):
-    return MoonFencedCodeExtension(configs=configs)
+def makeExtension(**kwargs):
+    return MoonFencedCodeExtension(**kwargs)
 
 
 import bibtexparser
@@ -110,6 +111,52 @@ from docutils import nodes
 from docutils.parsers import rst
 from docutils.parsers.rst import directives
 
+
+def decorate_author(author):
+    ''' Simply normalize all FamilyName, GivenName [MiddleName] to GivenName [MiddleName] FamilyName
+    '''
+
+    authors = author.split('and')
+
+    new_authors = []
+    for a in authors:
+        ns = a.strip().split(',')
+        if len(ns) == 2:
+            new_authors.append(ns[1].strip() + ' ' + ns[0].strip())
+        elif len(ns) == 1:
+            new_authors.append(ns[0])
+        else:
+            # should not happen
+            new_authors.append[a.strip()]
+
+    # if you modify here, you should modify your template
+    #return ' and '.join(new_authors)
+    return new_authors
+
+
+HYPEN_HYPEN = u'–'
+PAGES_RE = re.compile(r'(?P<begin>[0-9]+)-+(?P<end>[0-9]+)')
+
+def decorate_pages(pages):
+    m = PAGES_RE.match(pages)
+    if m:
+        return m.group('begin') + HYPEN_HYPEN + m.group('end')
+
+    # if not match return
+    return pages
+
+
+def decorate_entries(entries):
+    for entry in entries:
+        if 'author' in entry:
+            entry['author'] = decorate_author(entry['author'])
+
+        if 'pages' in entry:
+            entry['pages'] = decorate_pages(entry['pages'])
+
+    return entries
+
+
 def convert_bibtex(bibtex, hl=None):
     parser = BibTexParser()
     parser.customization = convert_to_unicode
@@ -118,7 +165,9 @@ def convert_bibtex(bibtex, hl=None):
     except:
         return bibtex
 
-    return convert_bibentries_to_html(bib_database.entries)
+    entries = decorate_entries(bib_database.entries)
+
+    return convert_bibentries_to_html(entries)
 
 def convert_bibentries_to_html(entries):
     ''' Convert a list of bibtex entries into html
