@@ -13,6 +13,7 @@ SPAR_DIR = MOON_DIR + os.path.sep + 'spar'
 PAGES_DIR = MOON_DIR + os.path.sep + 'pages'
 NEWS_DIR = PAGES_DIR + os.path.sep + 'news'
 EVENTS_DIR = PAGES_DIR + os.path.sep + 'events'
+DSE_DIR = PAGES_DIR + os.path.sep + 'dse'
 
 PEOPLE_YAML = PAGES_DIR + os.path.sep + 'people.yaml'
 PHOTO_YAML  = PAGES_DIR + os.path.sep + 'photo.yaml'

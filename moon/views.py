@@ -424,6 +424,14 @@ def contact():
 def research():
     return render_template('research.html')
 
+@app.route('/dse/', methods=['GET'])
+@app.route('/dse/<path:path>', methods=['GET'])
+def dse():
+    page = get_page(DSE_DIR, 'index')
+    template = page.meta.get('template', 'people-page.html')
+    return render_template(template, page=page)
+
+
 @app.route('/people/<name>/', methods=['GET'])
 @app.route('/people/<name>/<path:path>', methods=['GET'])
 def page(name, path=None):
