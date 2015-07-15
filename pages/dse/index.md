@@ -134,7 +134,10 @@ Our experience with Javelus indicates that low-disruptive and type-safe dynamic 
 
 ## Former Group Members
 
-* Ping Su (M.S., 2013)
+* Guozhao Ren (M.S., 2014)
+    * Current employment: China Telecom
+* Ping Su (M.S., 2014)
+* Jiang Wang (M.S., 2013)
 * Guozhen Xie (M.S., 2013)
     * Current employment: ICBC
 * Yan Yao (M.S., 2012)
