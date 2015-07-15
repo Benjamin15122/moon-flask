@@ -683,6 +683,25 @@ Our experience with Javelus indicates that low-disruptive and type-safe dynamic 
 	Year = {2009},
 	Bdsk-Url-1 = {http://dx.doi.org/10.1109/SCC.2009.18}}
 
+@inproceedings{DBLP:conf/apsec/SuCML13,
+  author    = {Ping Su and
+               Chun Cao and
+               Xiaoxing Ma and
+               Jian Lu},
+  title     = {Automated Management of Dynamic Component Dependency for Runtime System
+               Reconfiguration},
+  booktitle = {20th Asia-Pacific Software Engineering Conference, {APSEC} 2013, Ratchathewi,
+               Bangkok, Thailand, December 2-5, 2013 - Volume 1},
+  pages     = {450--458},
+  year      = {2013},
+  crossref  = {DBLP:conf/apsec/2013-1},
+  url       = {http://dx.doi.org/10.1109/APSEC.2013.66},
+  doi       = {10.1109/APSEC.2013.66},
+  timestamp = {Mon, 15 Jun 2015 19:00:08 +0200},
+  biburl    = {http://dblp.uni-trier.de/rec/bib/conf/apsec/SuCML13},
+  bibsource = {dblp computer science bibliography, http://dblp.org}
+}
+
 @inproceedings{Gu:2012:JLD:2452575.2454416,
 	Acmid = {2454416},
 	Address = {Washington, DC, USA},

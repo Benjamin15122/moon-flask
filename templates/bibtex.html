@@ -17,7 +17,7 @@
     {% endif %}
 </span>{% endif %}
 {% if entry.title %}<span class="bibtex title">“{{ entry.title }}”,</span>{% endif %}
-{% if entry.booktitle %}<span class="bibtex booktitle">{{ entry.booktitle }},</span>{% endif %}
+{% if entry.booktitle %}in <span class="bibtex booktitle">{{ entry.booktitle }},</span>{% endif %}
 {% if entry.journal %}<span class="bibtex journal">{{ entry.journal }},</span>{% endif %}
 {% if entry.pages %}<span class="bibtex pages">{{ entry.pages }},</span>{% endif %}
 {% if entry.year %}<span class="bibtex year">{{ entry.year}}.</span>{% endif %}
