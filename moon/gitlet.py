@@ -1,12 +1,32 @@
 from moon import *
-import subprocess
 
+###################
 def git_update_check(path):
     def wrapper(method):
         def wrapper2():
-            return GitPathChecker(path, method)
+            #return GitPathChecker(path, method)
+            return GitValueChecker(method)
         return wrapper2
     return wrapper
+
+class GitValueChecker:
+
+    def __init__(self, callback):
+        self.callback = callback
+        self.value = None
+
+    def update(self, *args, **kwargs):
+
+        if self.value is None:
+            self.value = self.callback(*args, **kwargs)
+
+        return self.value
+
+    def __call__(self, *args, **kwargs):
+        ''' shortcut for update
+        '''
+        return self.update(*args, **kwargs)
+
 
 class GitPathChecker:
 

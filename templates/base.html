@@ -154,7 +154,7 @@
                             <li class="widget-container widget_sofa_flickr"><!-- widgets list -->
                                 <h1 class="title-widget">Photo</h1>
                                 <ul class="k-flickr-photos list-unstyled">
-                                    {% for p in g.p %}
+                                    {% for p in g.site.photos %}
                                         {% if loop.index <= 8 %}
                                            <li><a href="{{ p.url }}" title="{{ p.title }}"><img src="{{ url_for('static', filename=p.src) }}" alt="{{ p.title }}" /></a></li>
                                         {% endif %}

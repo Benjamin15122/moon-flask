@@ -11,6 +11,10 @@ MOON_DIR = os.path.dirname(
 SPAR_DIR = MOON_DIR + os.path.sep + 'spar'
 
 PAGES_DIR = MOON_DIR + os.path.sep + 'pages'
+PAGES_SHARE_DIR = PAGES_DIR + os.path.sep + 'share'
+
+SITE_PAPER = PAGES_DIR + os.path.sep + 'paper.bib'
+
 NEWS_DIR = PAGES_DIR + os.path.sep + 'news'
 EVENTS_DIR = PAGES_DIR + os.path.sep + 'events'
 DSE_DIR = PAGES_DIR + os.path.sep + 'dse'

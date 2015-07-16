@@ -134,6 +134,9 @@ def decorate_author(author):
     return new_authors
 
 
+# TODO use bibtexparser library customizations
+# see https://bibtexparser.readthedocs.org/en/latest/tutorial.html#parsing-the-file-into-a-bibliographic-database-object
+
 HYPEN_HYPEN = u'–'
 PAGES_RE = re.compile(r'(?P<begin>[0-9]+)-+(?P<end>[0-9]+)')
 
@@ -174,8 +177,8 @@ def convert_bibentries_to_html(entries):
 
     Args: the list of entries
     '''
-    bibtex = get_template_attribute('bibtex.html', 'bibtex')
-    return bibtex(entries)
+    render = get_template_attribute('bibtex.html', 'render_entries')
+    return render(entries)
 
 
 #########################################
@@ -213,4 +216,52 @@ class BibtexDirective(rst.Directive):
 directives.register_directive('bibtex', BibtexDirective)
 
 ################
+
+def render_bib_entry(entry, hl=''):
+    render = get_template_attribute('bibtex.html', 'render_entry')
+
+    return render(entry, hl)
+
+def render_bib_entries(entries, hl=''):
+    render = get_template_attribute('bibtex.html', 'render_entries')
+
+    return render(entries, hl)
+
+def parse_bibtex(bibtex):
+    parser = BibTexParser()
+    parser.customization = convert_to_unicode
+
+    return bibtexparser.loads(bibtex, parser=parser)
+
+
+class Citations(object):
+    def __init__(self, bibfile):
+        with open(bibfile) as f:
+            bibtex_str = f.read()
+
+        database = parse_bibtex(bibtex_str)
+        self.entries = decorate_entries(database.entries)
+
+    def __getitem__(self, key):
+        try:
+            return next(e for e in self.entries if e.get('id') == key)
+        except:
+            raise KeyError(key)
+
+    def render_entry(self, key, hl=''):
+        entry = self.__getitem__(key)
+
+        if not entry:
+            return "No such entry with key " + key
+
+        return render_bib_entry(entry, hl)
+
+    def render_entries(self, keys, hl=''):
+        entries = filter(lambda e: e['id'] in keys, self.entries)
+
+        return render_bib_entries(entries, hl)
+
+
+    def render_all(self, hl=''):
+        return render_bib_entries(self.entries, hl)
 

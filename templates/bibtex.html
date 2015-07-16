@@ -1,28 +1,39 @@
-{% macro bibtex(entries) -%}
+{% macro render_entries(entries, hl="") -%}
 <!-- see https://verbosus.com/bibtex-style-examples.html -->
 <ul class="bibtex">
 {% for entry in entries %}
 <li><a name="{{ entry.id }}"></a>
-{% if entry.author%}<span class="bibtex author">
-    {% if entry.author|length == 1%}
-        {{ entry.author|first }}
-    {% else %}
-    {% for a in entry.author %}
-        {% if loop.index == entry.author|length %}
-        and {{ a }},
-        {% else %}
-        {{ a }},
-        {% endif %}
-    {% endfor %}
-    {% endif %}
-</span>{% endif %}
+{{ render_entry(entry, hl) }}
+</li>
+{% endfor %}
+</ul>
+{%- endmacro %}
+
+{% macro render_author(author, hl="") -%}
+  {% if hl == author -%}
+     <span class="bibtex author hl">{{ author }}</span>
+  {%- else -%}
+     {{ author }}
+  {%- endif%}
+{%- endmacro %}
+
+{% macro render_entry(entry, hl="") %}
+{% if entry.author -%}
+<span class="bibtex author">{% if entry.author|length == 1 -%}
+        {{ render_author(entry.author|first, hl) }}
+    {%- else -%}
+    {% for a in entry.author -%}
+        {% if loop.index == entry.author|length -%}
+        and {{ render_author(a, hl) }},
+        {%- else -%}
+        {{ render_author(a, hl) }},
+        {%- endif %}
+    {%- endfor %}
+    {%- endif %}</span>{% endif %}
 {% if entry.title %}<span class="bibtex title">“{{ entry.title }}”,</span>{% endif %}
 {% if entry.booktitle %}in <span class="bibtex booktitle">{{ entry.booktitle }},</span>{% endif %}
 {% if entry.journal %}<span class="bibtex journal">{{ entry.journal }},</span>{% endif %}
 {% if entry.pages %}<span class="bibtex pages">{{ entry.pages }},</span>{% endif %}
 {% if entry.year %}<span class="bibtex year">{{ entry.year}}.</span>{% endif %}
 {% if entry.link %}<a href="{{ entry.link }}" target="_blank">[link]</a>{% endif %}
-</li>
-{% endfor %}
-</ul>
 {%- endmacro %}

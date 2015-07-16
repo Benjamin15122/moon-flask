@@ -4,18 +4,20 @@
 
 .bibtex.title {
     font-style: italic;
+    font-weight : bold;
 }
 
 .bibtex.author {
+}
+
+.bibtex.author.hl{
     font-weight: bold;
 }
 
 .bibtex.booktitle {
     font-style: italic;
-    font-weight : bold;
 }
 
 .bibtex.journal {
     font-style: italic;
-    font-weight : bold;
 }

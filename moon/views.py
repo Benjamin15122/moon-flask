@@ -1,5 +1,7 @@
 from moon import *
-from flask import Flask, render_template, redirect, send_from_directory, request, abort, make_response, safe_join, Markup, abort, g
+from models import Page, Site
+
+from flask import Flask, render_template, redirect, send_from_directory, request, abort, make_response, safe_join, Markup, abort, g, render_template_string
 #from flask_flatpages import FlatPages
 #from flask_frozen import Freezer
 import sys, os, subprocess
@@ -13,20 +15,8 @@ from datetime import time as dtime
 from string import Template
 import markdown
 
-from gitlet import git_update_check
 from citation import makeExtension as makeCitationExtension
-
-class Pagination(object):
-    ''' A plain object to facilitate add attr as it has __dict__
-
-    '''
-    pass
-
-class Page(object):
-    ''' A plain object to hold page information instead of using a dict
-
-    '''
-    pass
+from citation import Citations, render_bib_entry
 
 #################
 
@@ -131,172 +121,22 @@ def to_datetime(d):
     return datetime.now()
 
 
-def get_date(e):
-    ''' A helper method used to sort entries
-        No crash but will result in a bad page, e.g., incorrect date
-    '''
-    return e.get('date', '')
 
 def remove_dead_events(events):
     now = datetime.now();
-    return filter(lambda e: now < to_datetime(get_date(e)), events)
-
-@git_update_check(DEADLINES_YAML)
-def load_deadlines():
-    ''' Load all deadlines, see events/deadlines.yaml
-
-    All deadlines have been sorted manually
-    '''
-    e = None
-    with open(DEADLINES_YAML, 'r') as f:
-        e = yaml.load(f)
-
-    return e if e else {}
-
-@git_update_check(PHD_EVENTS_YAML)
-def load_phd_events():
-    ''' Load all PhD seminar events, see events/phd.yaml
-
-    All PhD seminar events have been sorted manually
-    '''
-    e = None
-    with open(PHD_EVENTS_YAML, 'r') as f:
-        e = yaml.load(f)
-
-    return e if e else {}
-
-@git_update_check(MASTER_EVENTS_YAML)
-def load_master_events():
-    ''' Load all Master seminar events, see events/master.yaml
-
-    All Master seminar events have been sorted manually
-    '''
-    e = None
-    with open(MASTER_EVENTS_YAML, 'r') as f:
-        e = yaml.load(f)
-
-    return e if e else {}
-
-@git_update_check(PHOTO_YAML)
-def load_photos():
-    ''' Load all photos shown in gallery
-
-    '''
-    p = None
-    with open(PHOTO_YAML, 'r') as f:
-        p = yaml.load(f)
-
-    return sorted(p, key=get_date, reverse=True) if p else {}
-
-@git_update_check(NEWS_DIR)
-def load_news():
-    ''' Load all news and paginations
-
-    Result:
-        a tuple of which the first element is the list of news
-        and the second element is the Pagination object.
-    '''
-    n = None
-
-    if not os.path.exists(NEWS_YAML):
-        update_news_yaml()
-
-    with open(NEWS_YAML, 'r') as f:
-        n = yaml.load(f)
-        if not (n and len(n)):
-            # TODO raise 404 or 500?
-            abort(500)
-        n = sorted(n, key=get_date, reverse=True)
-
-    pg = Pagination()
-    pg.first = n[0]['page_num']
-    pg.last  = n[-1]['page_num']
-
-    return n, pg
+    return filter(lambda e: now < to_datetime(e.get('date', '')), events)
 
 
-def pagination(news_pages):
-    ''' Set all news with a page_num
+def create_markdown():
+    md = markdown.Markdown(['markdown.extensions.extra',
+            'markdown.extensions.meta',
+            makeCitationExtension()])
 
-    '''
-    num_per_page = 10
+    md.inlinePatterns.add('jinja block pattern', JinjaBlockPattern(JINJA_BLOCK_RE, md), ">backtick") # after backtick
 
-    for index, page in enumerate(news_pages):
-        page['page_num'] = index / num_per_page + 1 # page number starts from 1
+    return md
 
-def update_news_yaml():
-    ''' Scan news folder and save all news into a single yaml file
-
-    Arguments:
-        path: the path of the news in relative to the NEWS_DIR
-        title: title in the metadata
-        date: date in the metadata
-        summary: summary in the metadata
-        img_title: a image title should be 90x90 or 150x150 or MMxMM
-        img_path: path in relative to the static folder
-    '''
-    rootdir = NEWS_DIR
-    news_pages = []
-    for subdir, dirs, files in os.walk(rootdir):
-        curdir = os.path.join(rootdir, subdir)
-        for f in files:
-            f = os.path.join(curdir, f)
-            if f.endswith('.md'):
-                page = get_markdown_page_or_none(f)
-            elif f.endswith('.rst'):
-                page = get_restructuredtext_page_or_404(f)
-            else:
-                continue
-
-            if page is None:
-                print("Get page " + str(f) + " failed")
-                continue
-
-            pagedict = {}
-            pagedict['path'] = os.path.splitext(os.path.relpath(f, rootdir).replace('\\','/'))[0]
-            pagedict['title'] = page.meta.get('title', 'Please add a title')
-            pagedict['date'] = to_datetime(page.meta.get('date', ''))
-            pagedict['summary'] = page.meta.get('summary', 'Please provide a news body')
-            pagedict['img_title'] = page.meta.get('img_title')
-            pagedict['img_path'] = page.meta.get('img_path')
-            # TODO Support news draft
-            pagedict['status'] = page.meta.get('status')
-
-            news_pages.append(pagedict)
-
-    news_pages = sorted(news_pages, key=get_date, reverse=True)
-
-    pagination(news_pages)
-
-    news_cache = yaml.safe_dump(news_pages, default_flow_style=False, allow_unicode=True, encoding='utf-8')
-    # news_cache is a utf-8 encoded str object
-    # convert it into an unicode object
-    with codecs.open(NEWS_YAML, 'w', 'utf-8') as f:
-        f.write(news_cache.decode("utf-8"))
-
-@git_update_check(PEOPLE_YAML)
-def load_people():
-    ''' Load all people
-    '''
-    p = None
-    with open(PEOPLE_YAML) as f:
-        p = yaml.load(f)
-
-    return p if p else {}
-
-@git_update_check(EVENTS_YAML)
-def load_events():
-    '''Load general events,
-
-    Empty now so we need check whether e is None and returning a {} accordingly
-    '''
-    e = None
-    with open(EVENTS_YAML, 'r') as f:
-        e = yaml.load(f)
-
-    return sorted(e, key=get_date, reverse=True) if e else {}
-
-###################
+##################
 
 @app.errorhandler(404)
 def page_not_found(e):
@@ -315,29 +155,8 @@ def before_request():
     # However, not all static files are fetched from global static directory
     # Currently, we check whether there is a `/static/' in the path
     if '/static/' not in request.path:
-        g.md = markdown.Markdown(['markdown.extensions.extra',
-            'markdown.extensions.meta',
-            makeCitationExtension()])
-        install_content_hook()
-
-        # g.photos takes the responsibility to check cache
-        g.p = g.photos()
-
-def install_content_hook():
-    # photos
-    g.photos = load_photos()
-
-    # events
-    g.events = load_events()
-    g.phd_events = load_phd_events()
-    g.deadlines = load_deadlines()
-    g.master_events = load_master_events()
-    # news
-    g.news = load_news()
-
-    # members
-    g.members = load_people()
-
+        g.md = create_markdown()
+        g.site = Site()
 
 @app.teardown_request
 def teardown_request(exception):
@@ -352,7 +171,7 @@ def news(page_num=None):
         page_num = 1
 
     #load_news()
-    n, pg = g.news()
+    n, pg = g.site.news
     pg.current = page_num
 
     return render_template('news.html', news=n, pg=pg)
@@ -374,19 +193,19 @@ def events(path=None):
         #load_events()
         #load_phd_events()
         #load_deadlines()
-        return render_template('events.html', events=g.events(), deadlines=g.deadlines(), phd=g.phd_events())
+        return render_template('events.html', events=g.site.events, deadlines=g.site.deadlines, phd=g.site.phd_events)
 
     if path == 'deadlines':
         #load_deadlines()
-        return render_template('deadlines.html', deadlines=g.deadlines())
+        return render_template('deadlines.html', deadlines=g.site.deadlines)
 
     if path == 'phd':
         #load_phd_events()
-        return render_template('phd.html', phd=g.phd_events())
+        return render_template('phd.html', phd=g.site.phd_events)
 
     if path == 'master':
         #load_master_events()
-        return render_template('master.html', master=g.master_events())
+        return render_template('master.html', master=g.site.master_events)
 
     page = get_page(EVENTS_DIR, path)
 
@@ -398,11 +217,11 @@ def events(path=None):
 @app.route('/', methods=['GET'])
 def index():
     # remove dead events on index page
-    return render_template('index.html', news=g.news()[0], \
-            events=g.events(), members=g.members(), \
-            deadlines=remove_dead_events(g.deadlines()), \
-            phd=remove_dead_events(g.phd_events()), \
-            master=remove_dead_events(g.master_events()))
+    return render_template('index.html', news=g.site.news[0], \
+            events=g.site.events, members=g.site.people, \
+            deadlines=remove_dead_events(g.site.deadlines), \
+            phd=remove_dead_events(g.site.phd_events), \
+            master=remove_dead_events(g.site.master_events))
 
 #####################
 
@@ -413,7 +232,7 @@ def leadership():
 
 @app.route('/people/', methods=['GET'])
 def people():
-    return render_template('people.html', people=g.members())
+    return render_template('people.html', people=g.site.people)
 
 @app.route('/awards/', methods=['GET'])
 def awards():
@@ -434,6 +253,15 @@ def dse():
     template = page.meta.get('template', 'people-page.html')
     return render_template(template, page=page)
 
+def get_user_dir(name):
+    user_dir = safe_join(PAGES_DIR, name)
+
+    # pages in the 'share' folder can be either
+    # accessed by /people/share/haosun/ or /people/haosun/
+    if not os.path.exists(user_dir):
+        user_dir = safe_join(PAGES_SHARE_DIR, name)
+
+    return user_dir
 
 @app.route('/people/<name>/', methods=['GET'])
 @app.route('/people/<name>/<path:path>', methods=['GET'])
@@ -442,11 +270,10 @@ def page(name, path=None):
         path = 'index'
 
     #print("Incoming path: " + path)
+    if path.endswith('/'):
+        path = path + 'index'
 
-    if path == 'cn/':
-        path = 'cn/index'
-
-    user_dir = safe_join(PAGES_DIR, name)
+    user_dir = get_user_dir(name)
 
     # Personal static folder
     if path.startswith('static/'):
@@ -549,3 +376,77 @@ def get_markdown_page_or_404(page_path):
         abort(404)
 
     abort(404)
+
+
+##########################
+
+@app.context_processor
+def bib_processor():
+
+    def render_bib_file(path=None, keys=None, hl=''):
+        if not path:
+            return g.site.paper.render_all(hl)
+
+        if request.endpoint == 'page':
+            name = request.view_args['name']
+
+            user_dir = get_user_dir(name)
+            print(user_dir)
+            bibfile = safe_join(user_dir, path)
+        else:
+            bibfile = safe_join(MOON_DIR, path)
+
+        print(bibfile)
+
+        try:
+            c = Citations(bibfile)
+
+            if not keys:
+                return c.render_all(hl)
+            elif isinstance(keys, str):
+                return c.render_entry(keys, hl)
+            else:
+                return c.render_entries(keys, hl)
+
+        except:
+            pass
+
+        return "<em>No such bib file " + path + "</em>"
+
+    return dict(render_bib_file=render_bib_file, render_bib_entry=render_bib_entry)
+
+
+##############################################
+
+from markdown.inlinepatterns import Pattern
+from markdown.util import etree
+
+import re
+
+JINJA_BLOCK_RE = r'({{[^{}]*}})'
+
+
+class JinjaBlockPattern(Pattern):
+
+    def __init__(self, pattern, md):
+        Pattern.__init__(self, pattern, md)
+
+    def handleMatch(self, m):
+        jinja_block = m.group(2)
+
+        try:
+            # render returns a unicode object, encode it into a utf-8 string
+            html = render_template_string(m.group(2)).encode('utf-8')
+        except:
+            return etree.fromstring('<em>' + m.group(2) + '</em>')
+
+        try:
+            return etree.fromstring(html)
+        except:
+            pass
+
+        try:
+            return etree.fromstring('<jinja>' + html + '</jinja>')
+        except:
+            pass
+

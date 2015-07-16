@@ -4,7 +4,7 @@ from moon import *
 
 @app.route('/spar/', methods = ['GET'])
 @app.route('/spar/<path:path>', methods = ['GET'])
-def spar_homapge(path = '/'):
+def spar_homepage(path = '/'):
     try:
         if path.endswith('/'):
             path += 'index.html'
@@ -16,7 +16,7 @@ def spar_homapge(path = '/'):
                         ['markdown.extensions.extra',
                          'markdown.extensions.meta',
                          'markdown.extensions.toc',]
-                    ) 
+                    )
                     content = md.convert(fp.read().decode('utf-8'))
                     meta = md.Meta
                     title = ''.join( meta.get('title', ['']) )
