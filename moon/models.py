@@ -91,7 +91,7 @@ class Site(object):
         self._spar_paper = load_spar_paper()
 
     @property
-    def photo(self):
+    def photos(self):
         return self._photos()
 
     @property
@@ -299,5 +299,3 @@ def load_spar_paper():
     '''Create a shared site paper
     '''
     return Citations(SPAR_PAPER)
-
-
