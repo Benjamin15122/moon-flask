@@ -1,9 +1,60 @@
 from moon import *
 from gitlet import git_update_check
-
 from citation import Citations
-import subprocess
-import os, yaml
+from utils import to_date, to_time, to_datetime
+
+import os, yaml, codecs
+
+import os
+from flask import safe_join, abort, g
+
+def get_page(page_dir, path):
+    page_path = None
+
+    # 1) Test markdown
+    try:
+        md_path = safe_join(page_dir, path + '.md')
+        if os.path.exists(md_path):
+            page_path = md_path
+    except Exception as e:
+        print(e)
+        print("Cannot find md path for " + path)
+
+    if page_path:
+        return get_markdown_page_or_404(page_path)
+
+    abort(404)
+
+def get_markdown_page_or_none(page_path):
+    try:
+        return get_markdown_page(page_path)
+    except Exception as e:
+        print(e)
+        return None
+
+def get_markdown_page(page_path):
+    page = Page()
+    with open(page_path, 'r') as f:
+        #if not hasattr(g, 'md'):
+        #    g.md = markdown.Markdown(['markdown.extensions.extra', 'markdown.extensions.meta'])
+
+        page.html = g.md.convert(f.read().decode('utf-8'))
+        page.meta = g.md.Meta # flask-pages naming covention
+        for key, value in page.meta.iteritems():
+            page.meta[key] = ''.join(value) # meta is a list
+        return page
+
+    abort(404)
+
+def get_markdown_page_or_404(page_path):
+    try:
+        return get_markdown_page(page_path)
+    except Exception as e:
+        print(e)
+        abort(404)
+
+    abort(404)
+
 
 
 class Pagination(object):
@@ -37,7 +88,7 @@ class Site(object):
 
         # papers
         self._paper = load_paper()
-
+        self._spar_paper = load_spar_paper()
 
     @property
     def photo(self):
@@ -71,6 +122,9 @@ class Site(object):
     def paper(self):
         return self._paper()
 
+    @property
+    def spar_paper(self):
+        return self._spar_paper()
 
 #####################################
 
@@ -183,8 +237,6 @@ def update_news_yaml():
             f = os.path.join(curdir, f)
             if f.endswith('.md'):
                 page = get_markdown_page_or_none(f)
-            elif f.endswith('.rst'):
-                page = get_restructuredtext_page_or_404(f)
             else:
                 continue
 
@@ -241,3 +293,11 @@ def load_paper():
     '''Create a shared site paper
     '''
     return Citations(SITE_PAPER)
+
+@git_update_check(SPAR_PAPER)
+def load_spar_paper():
+    '''Create a shared site paper
+    '''
+    return Citations(SPAR_PAPER)
+
+

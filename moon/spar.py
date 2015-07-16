@@ -1,6 +1,7 @@
 import os, flask, markdown
 from moon import *
 
+from citation import makeJinjaBlockPattern
 
 @app.route('/spar/', methods = ['GET'])
 @app.route('/spar/<path:path>', methods = ['GET'])
@@ -17,6 +18,9 @@ def spar_homepage(path = '/'):
                          'markdown.extensions.meta',
                          'markdown.extensions.toc',]
                     )
+
+                    makeJinjaBlockPattern(md)
+
                     content = md.convert(fp.read().decode('utf-8'))
                     meta = md.Meta
                     title = ''.join( meta.get('title', ['']) )

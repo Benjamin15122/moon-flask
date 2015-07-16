@@ -1,22 +1,20 @@
 from moon import *
-from models import Page, Site
+from models import Site, get_page
 
 from flask import Flask, render_template, redirect, send_from_directory, request, abort, make_response, safe_join, Markup, abort, g, render_template_string
 #from flask_flatpages import FlatPages
 #from flask_frozen import Freezer
 import sys, os, subprocess
-import yaml
 
-import codecs
+from datetime import datetime
+from utils import to_date, to_time, to_datetime
 
-from datetime import datetime, date
-from datetime import time as dtime
 
-from string import Template
+
 import markdown
 
 from citation import makeExtension as makeCitationExtension
-from citation import Citations, render_bib_entry
+from citation import Citations, render_bib_entry, makeJinjaBlockPattern
 
 #################
 
@@ -59,68 +57,6 @@ def gitlab_webhooks():
 ###################
 
 
-@app.template_filter('to_date')
-def to_date(st):
-    if isinstance(st, datetime):
-        return st.strftime("%b %d, %Y")
-
-    if isinstance(st, unicode):
-        st = str(st)
-
-    return to_datetime(st).strftime("%b %d, %Y")
-
-@app.template_filter('to_time')
-def to_time(st):
-    if isinstance(st, datetime):
-        return st.strftime("%H:%M")
-
-    if isinstance(st, unicode):
-        st = str(st)
-
-    return to_datetime(st).strftime("%H:%M")
-
-app.jinja_env.filters['to_date'] = to_date
-app.jinja_env.filters['to_time'] = to_time
-
-
-def to_datetime(d):
-    '''
-        convert everything to datetime
-    '''
-    if isinstance(d, date):
-        return datetime.combine(d, dtime(0, 0))
-
-    if isinstance(d, datetime):
-        return d
-
-    if d is None:
-        return datetime.now();
-
-    if d == '':
-        return datetime.now();
-
-    dt = None
-    try:
-        return datetime.strptime(d, "%Y-%m-%d")
-    except Exception as e:
-        print("Not the %Y-%m-%d " + str(e)) # 2012-02-01
-        print(type(d))
-
-    try:
-        return datetime.strptime(d, "%Y-%m")
-    except Exception as e:
-        print("Not the %Y-%m " + str(e)) # 2012-02
-        print(type(d))
-
-    try:
-        return datetime.strptime(d, "%Y-%m-%d %H:%M")
-    except Exception as e:
-        print("Not the %Y-%m-%d %H:%M" + str(e)) # 2012-02-01 19:00
-        print(type(d))
-
-    return datetime.now()
-
-
 
 def remove_dead_events(events):
     now = datetime.now();
@@ -132,7 +68,9 @@ def create_markdown():
             'markdown.extensions.meta',
             makeCitationExtension()])
 
-    md.inlinePatterns.add('jinja block pattern', JinjaBlockPattern(JINJA_BLOCK_RE, md), ">backtick") # after backtick
+    #md.inlinePatterns.add('jinja block pattern', JinjaBlockPattern(JINJA_BLOCK_RE, md), ">backtick") # after backtick
+
+    makeJinjaBlockPattern(md)
 
     return md
 
@@ -289,94 +227,6 @@ def page(name, path=None):
     template = page.meta.get('template', 'people-page.html')
     return render_template(template, page=page)
 
-def get_page(page_dir, path):
-    page_path = None
-
-    # 1) Test markdown
-    try:
-        md_path = safe_join(page_dir, path + '.md')
-        if os.path.exists(md_path):
-            page_path = md_path
-    except Exception as e:
-        print(e)
-        print("Cannot find md path for " + path)
-
-    if page_path:
-        return get_markdown_page_or_404(page_path)
-
-    # 2) Test reStructuredText
-    try:
-        rst_path = safe_join(page_dir, path + '.rst')
-        if os.path.exists(rst_path):
-            page_path = rst_path
-    except Exception as e:
-        print(e)
-        print("Cannot find rst path for " + path)
-
-
-    if page_path:
-        return get_restructuredtext_page_or_404(page_path)
-
-    # 3) Test yaml
-    try:
-        yaml_path = safe_join(page_dir, path + '.yaml')
-        if os.path.exists(yaml_path):
-            page_path = rst_path
-    except Exception as e:
-        print(e)
-        print("Cannot find rst path for " + path)
-
-
-    # 4) Test html
-    # TODO Extract the body
-    abort(404)
-
-def get_restructuredtext_page_or_404(page_path):
-    ''' Deprecated
-
-    '''
-    page = Page()
-
-    with open(page_path, 'r') as f:
-        parts = publish_parts(f.read().decode('utf-8'), writer_name='html')
-
-        page.html = parts['html_body']
-        page.meta = {} # test
-        page.meta['title'] = parts['title']
-        return page
-
-    abort(404)
-
-def get_markdown_page_or_none(page_path):
-    try:
-        return get_markdown_page(page_path)
-    except Exception as e:
-        print(e)
-        return None
-
-def get_markdown_page(page_path):
-    page = Page()
-    with open(page_path, 'r') as f:
-        #if not hasattr(g, 'md'):
-        #    g.md = markdown.Markdown(['markdown.extensions.extra', 'markdown.extensions.meta'])
-
-        page.html = g.md.convert(f.read().decode('utf-8'))
-        page.meta = g.md.Meta # flask-pages naming covention
-        for key, value in page.meta.iteritems():
-            page.meta[key] = ''.join(value) # meta is a list
-        return page
-
-    abort(404)
-
-def get_markdown_page_or_404(page_path):
-    try:
-        return get_markdown_page(page_path)
-    except Exception as e:
-        print(e)
-        abort(404)
-
-    abort(404)
-
 
 ##########################
 
@@ -417,36 +267,4 @@ def bib_processor():
 
 
 ##############################################
-
-from markdown.inlinepatterns import Pattern
-from markdown.util import etree
-
-import re
-
-JINJA_BLOCK_RE = r'({{[^{}]*}})'
-
-
-class JinjaBlockPattern(Pattern):
-
-    def __init__(self, pattern, md):
-        Pattern.__init__(self, pattern, md)
-
-    def handleMatch(self, m):
-        jinja_block = m.group(2)
-
-        try:
-            # render returns a unicode object, encode it into a utf-8 string
-            html = render_template_string(m.group(2)).encode('utf-8')
-        except:
-            return etree.fromstring('<em>' + m.group(2) + '</em>')
-
-        try:
-            return etree.fromstring(html)
-        except:
-            pass
-
-        try:
-            return etree.fromstring('<jinja>' + html + '</jinja>')
-        except:
-            pass
 

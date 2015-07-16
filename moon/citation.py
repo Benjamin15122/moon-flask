@@ -4,6 +4,11 @@ from __future__ import unicode_literals
 from markdown.extensions import Extension
 from markdown.preprocessors import Preprocessor
 from markdown.extensions.codehilite import CodeHilite, CodeHiliteExtension, parse_hl_lines
+from markdown.inlinepatterns import Pattern
+from markdown.util import etree
+
+from flask import render_template_string
+
 import re
 
 """Copied from FencedCodeExtension
@@ -103,15 +108,6 @@ from bibtexparser.customization import convert_to_unicode
 
 from flask import get_template_attribute
 
-#############################################
-# Bibtex Support (reStructuredText only)
-#############################################
-
-from docutils import nodes
-from docutils.parsers import rst
-from docutils.parsers.rst import directives
-
-
 def decorate_author(author):
     ''' Simply normalize all FamilyName, GivenName [MiddleName] to GivenName [MiddleName] FamilyName
     '''
@@ -181,41 +177,6 @@ def convert_bibentries_to_html(entries):
     return render(entries)
 
 
-#########################################
-
-class BibtexDirective(rst.Directive):
-    '''A reStructuredText directive to support generate HTML for bibtex entries
-
-    Usage:
-        .. bibtex::
-
-            @inproceedings{an_id,
-              title = {A title},
-              booktitle = {a proceeding},
-              author = {Xiaoming and Xiaohong}
-              years = {2015}
-            }
-
-        will be converted into an html
-    '''
-
-    required_arguments = 0
-    optional_arguments = 1
-    final_argument_whitespace = True
-    option_spec = {'hl': directives.unchanged}
-    has_content = True
-
-    def run(self):
-        self.assert_has_content()
-        text = '\n'.join(self.content)
-        b = convert_bibtex(text, self.options.get('hl', ''))
-        n = nodes.raw(rawsource=self.block_text, text=b, format='html')
-        return [n]
-
-# Register this directive into docutils
-directives.register_directive('bibtex', BibtexDirective)
-
-################
 
 def render_bib_entry(entry, hl=''):
     render = get_template_attribute('bibtex.html', 'render_entry')
@@ -264,4 +225,38 @@ class Citations(object):
 
     def render_all(self, hl=''):
         return render_bib_entries(self.entries, hl)
+
+
+#################################################################
+
+
+JINJA_BLOCK_RE = r'({{[^{}]*}})'
+
+class JinjaBlockPattern(Pattern):
+
+    def __init__(self, pattern, md):
+        Pattern.__init__(self, pattern, md)
+
+    def handleMatch(self, m):
+        jinja_block = m.group(2)
+
+        try:
+            # render returns a unicode object, encode it into a utf-8 string
+            html = render_template_string(m.group(2)).encode('utf-8')
+        except:
+            return etree.fromstring('<em>' + m.group(2) + '</em>')
+
+        try:
+            return etree.fromstring(html)
+        except:
+            pass
+
+        try:
+            return etree.fromstring('<jinja>' + html + '</jinja>')
+        except:
+            pass
+
+
+def makeJinjaBlockPattern(md):
+    md.inlinePatterns.add('jinja block pattern', JinjaBlockPattern(JINJA_BLOCK_RE, md), ">backtick") # after backtick
 

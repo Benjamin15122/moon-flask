@@ -12,6 +12,7 @@ SPAR_DIR = MOON_DIR + os.path.sep + 'spar'
 
 PAGES_DIR = MOON_DIR + os.path.sep + 'pages'
 PAGES_SHARE_DIR = PAGES_DIR + os.path.sep + 'share'
+SPAR_PAPER = SPAR_DIR + os.path.sep + 'spar.bib'
 
 SITE_PAPER = PAGES_DIR + os.path.sep + 'paper.bib'
 
