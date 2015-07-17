@@ -60,6 +60,8 @@ graduates:
     url:  chenglinmeng
   - name: Hao Jin
     url: http://moon.nju.edu.cn/spar/people/HaoJin'sPage/index.html
+  - name: Hao Sun
+    url: haosun
   - name: Qiwei Li
     url: http://moon.nju.edu.cn/spar/people/lqw.html
   - name: Ruiqi Liu
@@ -76,8 +78,8 @@ graduates:
     url: http://moon.nju.edu.cn/spar/people/lxj/index.html
   - name: Ying Zhang
     url: http://moon.nju.edu.cn/spar/people/zy.html
-  - name: Hao Sun
-    url: haosun
+  - name: Yiqun Wang
+    url: yiqunwang
 
 undergraduates:
   - name: Na Liu
