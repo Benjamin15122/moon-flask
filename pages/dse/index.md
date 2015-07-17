@@ -8,7 +8,7 @@ title: Dynamic Software Evolution Group
 * [Tianxiao Gu](http://moon.nju.edu.cn/~txgu)
 * [Shengwei An](/people/shengweian/ )
 * [Ruiqi Liu](/people/ruiqiliu/)
-* Yiqun Wang
+* [Yiqun Wang](/people/yiqunwang/)
 * [Zelin Zhao](http://moon.nju.edu.cn/spar/people/zzl/zzl.html)
 
 ## Publications
