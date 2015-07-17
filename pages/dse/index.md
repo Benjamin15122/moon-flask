@@ -3,7 +3,6 @@ title: Dynamic Software Evolution Group
 # Dynamic Software Evolution Group
 
 ## People
-
 * Prof. [Xiaoxing Ma](http://moon.nju.edu.cn/~xxm)
 * [Tianxiao Gu](http://moon.nju.edu.cn/~txgu)
 * [Shengwei An](/people/shengweian/ )
@@ -142,5 +141,36 @@ Our experience with Javelus indicates that low-disruptive and type-safe dynamic 
     * Current employment: ICBC
 * Yan Yao (M.S., 2012)
     * Current employment: Microsoft
+
+<style>
+svg {
+position: relative;
+left: 50%;
+-webkit-transform: translateX(-50%);
+-ms-transform: translateX(-50%);
+transform: translateX(-50%);
+}
+</style>
+
+<div style="position: relative;">
+<svg height="200" width="700">
+  <path id="D"  d="M0 0 L75 0 L100 100 L50 200 L0 200 Z" fill="#e1004c"/>
+  <path id="S"  d="M75 0 L100 100 L50 200 L125 200 L100 100 L150 0 Z" fill="#ffee00"/>
+  <path id="E1" d="M150 0 L100 100 L200 100 L200 0 Z" fill="#e1004c"/>
+  <path id="E2" d="M125 200 L100 100 L200 100 L200 200 Z" fill="#06799f"/>
+  <text x="440" y="100" fill="#e1004c"
+       font-size="200" font-family="Courier New" font-weight="bold"
+       text-anchor="middle"
+       dominant-baseline="middle">DSE</text>
+
+  <text x="440" y="175" fill="#06799f"
+       font-size="25" font-family="Courier New" font-weight="bold"
+       text-anchor="middle"
+       dominant-baseline="middle">Dynamic Software Evolution</text>
+
+
+  Sorry, your browser does not support inline SVG.
+</svg>
+</div>
 
 
