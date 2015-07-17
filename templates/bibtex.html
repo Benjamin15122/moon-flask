@@ -24,9 +24,9 @@
     {%- else -%}
     {% for a in entry.author -%}
         {% if loop.index == entry.author|length -%}
-        and {{ render_author(a, hl) }},
+        and {{ render_author(a, hl) }}, 
         {%- else -%}
-        {{ render_author(a, hl) }},&nbsp
+        {{ render_author(a, hl) }}, 
         {%- endif %}
     {%- endfor %}
     {%- endif %}</span>{% endif %}
