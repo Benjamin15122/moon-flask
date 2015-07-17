@@ -241,12 +241,10 @@ def bib_processor():
             name = request.view_args['name']
 
             user_dir = get_user_dir(name)
-            print(user_dir)
             bibfile = safe_join(user_dir, path)
         else:
             bibfile = safe_join(MOON_DIR, path)
 
-        print(bibfile)
 
         try:
             c = Citations(bibfile)
@@ -257,9 +255,8 @@ def bib_processor():
                 return c.render_entry(keys, hl)
             else:
                 return c.render_entries(keys, hl)
-
-        except:
-            pass
+        except Exception as e:
+            return "<em>render path=%s, keys=%s, hl=%s failed! </em>" % (path, keys, hl)
 
         return "<em>No such bib file " + path + "</em>"
 

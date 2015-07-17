@@ -183,6 +183,7 @@ def render_bib_entry(entry, hl=''):
 
     return render(entry, hl)
 
+
 def render_bib_entries(entries, hl=''):
     render = get_template_attribute('bibtex.html', 'render_entries')
 
@@ -198,7 +199,7 @@ def parse_bibtex(bibtex):
 class Citations(object):
     def __init__(self, bibfile):
         with open(bibfile) as f:
-            bibtex_str = f.read()
+            bibtex_str = f.read().decode('utf-8')
 
         database = parse_bibtex(bibtex_str)
         self.entries = decorate_entries(database.entries)
@@ -243,7 +244,8 @@ class JinjaBlockPattern(Pattern):
         try:
             # render returns a unicode object, encode it into a utf-8 string
             html = render_template_string(m.group(2)).encode('utf-8')
-        except:
+        except Exception as e:
+            print(e)
             return etree.fromstring('<em>' + m.group(2) + '</em>')
 
         try:
@@ -252,10 +254,10 @@ class JinjaBlockPattern(Pattern):
             pass
 
         try:
-            return etree.fromstring('<jinja>' + html + '</jinja>')
-        except:
-            pass
-
+            # This file is claimed as utf-8, see the first line
+            return etree.fromstring("<jinja>".decode('utf-8').encode('utf-8') + html + "</jinja>".decode('utf-8').encode('utf-8'))
+        except Exception as e:
+            return etree.fromstring('<em>Error: ' + str(e) + '</em>')
 
 def makeJinjaBlockPattern(md):
     md.inlinePatterns.add('jinja block pattern', JinjaBlockPattern(JINJA_BLOCK_RE, md), ">backtick") # after backtick
