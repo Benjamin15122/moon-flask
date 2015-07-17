@@ -20,13 +20,13 @@
 {% macro render_entry(entry, hl="") %}
 {% if entry.author -%}
 <span class="bibtex author">{% if entry.author|length == 1 -%}
-        {{ render_author(entry.author|first, hl) }}
+        {{ render_author(entry.author|first, hl) }}{{ ', ' }}
     {%- else -%}
     {% for a in entry.author -%}
         {% if loop.index == entry.author|length -%}
-        and {{ render_author(a, hl) }}, 
+        and {{ render_author(a, hl) }}{{ ', ' }}
         {%- else -%}
-        {{ render_author(a, hl) }}, 
+        {{ render_author(a, hl) }}{{ ', ' }}
         {%- endif %}
     {%- endfor %}
     {%- endif %}</span>{% endif %}
