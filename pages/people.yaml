@@ -59,29 +59,33 @@ graduates:
   - name: Chenglin Meng
     url:  chenglinmeng
   - name: Hao Jin
-    url: http://moon.nju.edu.cn/spar/people/HaoJin'sPage/index.html
+    url:  http://moon.nju.edu.cn/spar/people/HaoJin'sPage/index.html
   - name: Hao Sun
-    url: haosun
+    url:  haosun
   - name: Qiwei Li
-    url: http://moon.nju.edu.cn/spar/people/lqw.html
+    url:  http://moon.nju.edu.cn/spar/people/lqw.html
   - name: Ruiqi Liu
     url:  ruiqiliu
   - name: Ruiqing Zhang
-    url: http://moon.nju.edu.cn/spar/people/zrq/zrq.html
+    url:  http://moon.nju.edu.cn/spar/people/zrq/zrq.html
   - name: Shengwei An
     url:  shengweian
+  - name: Shuo Cheng
+    url:  shuocheng
   - name: Wang Xi
-    url: http://moon.nju.edu.cn/spar/people/xw.html
+    url:  http://moon.nju.edu.cn/spar/people/xw.html
   - name: Xiangyu Wu
-    url: http://moon.nju.edu.cn/spar/people/wxy.html
+    url:  http://moon.nju.edu.cn/spar/people/wxy.html
   - name: Xiujiang Li
-    url: http://moon.nju.edu.cn/spar/people/lxj/index.html
+    url:  http://moon.nju.edu.cn/spar/people/lxj/index.html
   - name: Ying Zhang
-    url: http://moon.nju.edu.cn/spar/people/zy.html
+    url:  http://moon.nju.edu.cn/spar/people/zy.html
   - name: Yiqun Wang
-    url: yiqunwang
+    url:  yiqunwang
+  - name: Weiyi Wang
+    url:  weiyiwang
   - name: Ziling Lu
-    url: zilinglu
+    url:  zilinglu
 
 undergraduates:
   - name: Na Liu
