@@ -173,4 +173,6 @@ transform: translateX(-50%);
 </svg>
 </div>
 
+## Dynamic Software Evolution
 
+![](/static/img/dse.gif)
