@@ -4,7 +4,7 @@ title: Dynamic Software Evolution Group
 
 ## People
 * Prof. [Xiaoxing Ma](http://moon.nju.edu.cn/~xxm)
-* [Tianxiao Gu](http://moon.nju.edu.cn/~txgu)
+* [Tianxiao Gu](/people/tianxiaogu/)
 * [Shengwei An](/people/shengweian/ )
 * [Ruiqi Liu](/people/ruiqiliu/)
 * [Yiqun Wang](/people/yiqunwang/)
@@ -133,14 +133,16 @@ Our experience with Javelus indicates that low-disruptive and type-safe dynamic 
 
 ## Former Group Members
 
+* Tongbao Zhang (M.S., 2015)
+    * First employment: Alibaba
 * Guozhao Ren (M.S., 2014)
-    * Current employment: China Telecom
+    * First employment: China Telecom
 * Ping Su (M.S., 2014)
 * Jiang Wang (M.S., 2013)
 * Guozhen Xie (M.S., 2013)
-    * Current employment: ICBC
+    * First employment: ICBC
 * Yan Yao (M.S., 2012)
-    * Current employment: Microsoft
+    * First employment: Microsoft
 
 <style>
 svg {
