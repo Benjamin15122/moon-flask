@@ -105,16 +105,16 @@ I am interested in various topics in software engineering, especially
 ## Professional activities
 
 * Member of program committees 
-    * SEAMS [2014](http://seams2014.uni-paderborn.de/), [2013](http://www.yorku.ca/mlitoiu/seams2013/), [2012](http://www.seams2012.cs.uvic.ca/): 9th/8th/7th International Symposium on Software Engineering for Adaptive and Self-Managing Systems
+    * SEAMS [2016](http://seams2016.jgreen.de/), [2014](http://seams2014.uni-paderborn.de/), [2013](http://www.yorku.ca/mlitoiu/seams2013/), [2012](http://www.seams2012.cs.uvic.ca/): 9th/8th/7th International Symposium on Software Engineering for Adaptive and Self-Managing Systems
+    * Internetware [2015 PC Co-Chair](http://internetware2015.trustie.net/), 2014
     * [SOSE 2013](http://sei.pku.edu.cn/conference/sose2013/): 7th International Symposium on Service Oriented System Engineering
     * [WICSA/ECSA 2012 - Joint 10th Working IEEE/IFIP Conference on Software Architecture & 6th European Conference on Software Architecture](http://www.wicsa.net/)
     * VINCI 2011, 2010, 2009: [Visual Information Communication - International Symposium](http://www.cse.ust.hk/vinci2011/)
     * SCORE 2011: [Student Contest on Software Engineering](http://score-contest.org/2011/)
     * [Software engineering education track of ICSE 2010](http://www.sbs.co.za/ICSE2010/3-EVENTS/_TRACKS/ICSE2010_SE-EDUCATION.html)
 * Editorial Board Member 
-    * [Journal of Software](http://www.jos.org.cn) (in Chinese), Jan. 2011 - Dec. 2014
+    * [Journal of Software](http://www.jos.org.cn) (in Chinese), since Jan. 2011.
 * Guest Editor 
     * Special Focus on Internetware, _Science China: Information Sciences_ Volume 56, Number 1, January 2013.
+    * Special Focus on Self-adaptive Software Systems: Development Methods and Runtime Supports. _Journal of Software_ Volume 26, Number 4, April 2015.
 
-
-Maintained by [Xiaoxing Ma](/people/xiaoxingma) Last updated 2014-02-12
