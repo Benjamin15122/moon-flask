@@ -105,16 +105,16 @@ I am interested in various topics in software engineering, especially
 ## Professional activities
 
 * Member of program committees 
-   * SEAMS [2014](http://seams2014.uni-paderborn.de/), [2013](http://www.yorku.ca/mlitoiu/seams2013/), [2012](http://www.seams2012.cs.uvic.ca/): 9th/8th/7th International Symposium on Software Engineering for Adaptive and Self-Managing Systems
-   * [SOSE 2013](http://sei.pku.edu.cn/conference/sose2013/): 7th International Symposium on Service Oriented System Engineering
-   * [WICSA/ECSA 2012 - Joint 10th Working IEEE/IFIP Conference on Software Architecture & 6th European Conference on Software Architecture](http://www.wicsa.net/)
-   * VINCI 2011, 2010, 2009: [Visual Information Communication - International Symposium](http://www.cse.ust.hk/vinci2011/)
-   * SCORE 2011: [Student Contest on Software Engineering](http://score-contest.org/2011/)
-   * [Software engineering education track of ICSE 2010](http://www.sbs.co.za/ICSE2010/3-EVENTS/_TRACKS/ICSE2010_SE-EDUCATION.html)
+    * SEAMS [2014](http://seams2014.uni-paderborn.de/), [2013](http://www.yorku.ca/mlitoiu/seams2013/), [2012](http://www.seams2012.cs.uvic.ca/): 9th/8th/7th International Symposium on Software Engineering for Adaptive and Self-Managing Systems
+    * [SOSE 2013](http://sei.pku.edu.cn/conference/sose2013/): 7th International Symposium on Service Oriented System Engineering
+    * [WICSA/ECSA 2012 - Joint 10th Working IEEE/IFIP Conference on Software Architecture & 6th European Conference on Software Architecture](http://www.wicsa.net/)
+    * VINCI 2011, 2010, 2009: [Visual Information Communication - International Symposium](http://www.cse.ust.hk/vinci2011/)
+    * SCORE 2011: [Student Contest on Software Engineering](http://score-contest.org/2011/)
+    * [Software engineering education track of ICSE 2010](http://www.sbs.co.za/ICSE2010/3-EVENTS/_TRACKS/ICSE2010_SE-EDUCATION.html)
 * Editorial Board Member 
-   * [Journal of Software](http://www.jos.org.cn) (in Chinese), Jan. 2011 - Dec. 2014
+    * [Journal of Software](http://www.jos.org.cn) (in Chinese), Jan. 2011 - Dec. 2014
 * Guest Editor 
-   * Special Focus on Internetware, _Science China: Information Sciences_ Volume 56, Number 1, January 2013.
+    * Special Focus on Internetware, _Science China: Information Sciences_ Volume 56, Number 1, January 2013.
 
 
 Maintained by [Xiaoxing Ma](/people/xiaoxingma) Last updated 2014-02-12
