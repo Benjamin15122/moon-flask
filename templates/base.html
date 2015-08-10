@@ -103,6 +103,7 @@
         {% block content %}{% endblock %}
         </div><!-- container end -->
     </div><!-- content wrapper end -->
+    {% if not nofooter %}
     <div id="k-footer"><!-- footer -->
         <div class="container"><!-- container -->
             <div class="row no-gutter"><!-- row -->
@@ -167,6 +168,7 @@
             </div><!-- row end -->
         </div><!-- container end -->
     </div><!-- footer end -->
+    {% endif %}
     <div id="k-subfooter"><!-- subfooter -->
         <div class="container"><!-- container -->
             <div class="row"><!-- row -->
