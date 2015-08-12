@@ -5,7 +5,7 @@ from citation import makeJinjaBlockPattern
 
 @app.route('/spar/', methods = ['GET'])
 @app.route('/spar/<path:path>', methods = ['GET'])
-def spar_homepage(path = '/'):
+def spar(path = '/'):
     try:
         if path.endswith('/'):
             path += 'index.html'
