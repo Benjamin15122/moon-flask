@@ -1,18 +1,29 @@
-- id: apsec15
-  label: APSEC 2015
-  url: http://www.apsec2015.org/
-  date: 2015-07-06
-- id: icse16
-  label: ICSE 2016
-  url: http://2016.icse.cs.txstate.edu
-  date: 2015-08-28
 - id: icst16
   label: ICST 2016
   url: http://www.cs.uic.edu/~icst2016/index.htm
   date: 2015-09-22
-- id: sac15
-  label: SAC 2015
-- id: middleware15
-  label: Middleware 2015
 - id: pldi16
   label: PLDI 2016
+  date: 2015-11-20
+  url: http://conf.researchr.org/home/pldi-2016
+- id: compsac16
+  label: COMPSAC 2016
+  url: http://www.computer.org/portal/web/COMPSAC2016
+  date: 2015-12-11
+- id: qrs16
+  label: QRS 2016
+  url: http://paris.utdallas.edu/qrs16/CFP/CFP-QRS-2016.pdf
+  date: 2016-01-15
+- id: issta16
+  label: ISSTA 2016
+  url: http://issta2016.cispa.saarland
+  date: 2016-01-29
+- id: fse16
+  label: FSE 2016
+  url: http://www.cs.ucdavis.edu/fse2016/
+  date: 2016-03-11
+- id: oopsla16
+  label: OOPSLA 2016
+  url: http://2016.splashcon.org
+  date: 2016-03-23
+
