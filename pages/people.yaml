@@ -10,6 +10,7 @@ faculty:
     title: Professor
   - name: Feng Xu
     title: Professor
+    url: fengxu
   - name: Chang Xu
     title: Associate Professor
     url: http://cs.nju.edu.cn/changxu
