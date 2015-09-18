@@ -1,255 +1,190 @@
-- date: 2014-11-05 14:00:00
-  speaker: Yuanming Zhu
-  location: TBD
-  title: TBD
-  summary: None
-- date: 2014-11-05 14:00:00
-  speaker: Chenchen Cao
-  location: TBD
-  title: TBD
-  summary: None
-- date: 2014-11-19 14:00:00
-  speaker: Haoyi Zhou
-  location: TBD
-  title: TBD
-  summary: None
-- date: 2014-11-19 14:00:00
-  speaker: Chenchen Cao
-  location: TBD
-  title: TBD
-  summary: None
-- date: 2014-11-26 14:00:00
-  speaker: Haicheng Li
-  location: TBD
-  title: TBD
-  summary: None
-- date: 2014-11-26 14:00:00
-  speaker: Yu Du
-  location: TBD
-  title: TBD
-  summary: None
-- date: 2014-12-10 14:00:00
-  speaker: Jiangliang Jiang
-  location: TBD
-  title: TBD
-  summary: None
-- date: 2014-12-10 14:00:00
-  speaker: Jun Tao
-  location: TBD
-  title: TBD
-  summary: None
-- date: 2014-12-17 14:00:00
-  speaker: Hao Jin
-  location: TBD
-  title: TBD
-  summary: None
-- date: 2014-12-17 14:00:00
-  speaker: Dong Chen
-  location: TBD
-  title: TBD
-  summary: None
-- date: 2014-12-31 14:00:00
-  speaker: Xiujiang Li
-  location: TBD
-  title: TBD
-  summary: None
-- date: 2014-12-31 14:00:00
-  speaker: Jie Zhang
-  location: TBD
-  title: TBD
-  summary: None
-- date: 2015-01-21 14:00:00
-  speaker: Cheng Zhang
-  location: TBD
-  title: TBD
-  summary: None
-- date: 2015-01-21 14:00:00
-  speaker: Xiaoyu Chen
-  location: TBD
-  title: TBD
-  summary: None
-- date: 2015-03-11 14:00:00
-  speaker: Wang Xi
-  location: TBD
-  title: TBD
-  summary: None
-- date: 2015-03-11 14:00:00
-  speaker: Bin Chen
-  location: TBD
-  title: TBD
-  summary: None
-- date: 2015-03-18 14:00:00
-  speaker: Hongwei Xie
-  location: TBD
-  title: TBD
-  summary: None
-- date: 2015-03-18 14:00:00
-  speaker: Jian Zheng
-  location: TBD
-  title: TBD
-  summary: None
-- date: 2015-03-25 14:00:00
-  speaker: Shaowen Zhang
-  location: TBD
-  title: TBD
-  summary: None
-- date: 2015-03-25 14:00:00
-  speaker: Hao Zhang
-  location: TBD
-  title: TBD
-  summary: None
-- date: 2015-04-01 14:00:00
-  speaker: Dongliang Yu
-  location: TBD
-  title: TBD
-  summary: None
-- date: 2015-04-01 14:00:00
-  speaker: Rongfei Zhu
-  location: TBD
-  title: TBD
-  summary: None
-- date: 2015-04-08 14:00:00
-  speaker: Huating Liu
-  location: TBD
-  title: TBD
-  summary: None
-- date: 2015-04-08 14:00:00
-  speaker: Ruiqi Liu
-  location: TBD
-  title: TBD
-  summary: None
-- date: 2015-04-15 14:00:00
-  speaker: Jun Sui
-  location: TBD
-  title: TBD
-  summary: None
-- date: 2015-04-15 14:00:00
-  speaker: Fei Yang
-  location: TBD
-  title: TBD
-  summary: None
-- date: 2015-04-22 14:00:00
-  speaker: Guo Yan
-  location: TBD
-  title: TBD
-  summary: None
-- date: 2015-04-22 14:00:00
+- date: 2015-09-24 16:00:00
   speaker: Licheng Li
   location: TBD
   title: TBD
   summary: None
-- date: 2015-04-29 14:00:00
-  speaker: Shengwei An
-  location: TBD
-  title: TBD
-  summary: None
-- date: 2015-04-29 14:00:00
+- date: 2015-09-24 16:00:00
   speaker: Jia Nie
   location: TBD
   title: TBD
   summary: None
-- date: 2015-05-06 14:00:00
-  speaker: Yang Liang
-  location: TBD
-  title: TBD
-  summary: None
-- date: 2015-05-06 14:00:00
-  speaker: Jie Wei
-  location: TBD
-  title: TBD
-  summary: None
-- date: 2015-05-13 14:00:00
+- date: 2015-10-08 16:00:00
   speaker: Kesheng Qi
   location: TBD
   title: TBD
   summary: None
-- date: 2015-05-13 14:00:00
-  speaker: Xiangyu Wu
+- date: 2015-10-08 16:00:00
+  speaker: Jie Wei
   location: TBD
   title: TBD
   summary: None
-- date: 2015-05-20 14:00:00
-  speaker: Ziling Lu
+- date: 2015-10-15 16:00:00
+  speaker: Yang Liang
   location: TBD
   title: TBD
   summary: None
-- date: 2015-05-20 14:00:00
-  speaker: Yiqun Wang
+- date: 2015-10-15 16:00:00
+  speaker: Ruiqi Liu
   location: TBD
   title: TBD
   summary: None
-- date: 2015-05-27 14:00:00
-  speaker: Shengqu Xi
+- date: 2015-10-22 16:00:00
+  speaker: Shengwei An
   location: TBD
   title: TBD
   summary: None
-- date: 2015-05-27 14:00:00
-  speaker: Ying Zhang
+- date: 2015-10-22 16:00:00
+  speaker: Huating Liu
   location: TBD
   title: TBD
   summary: None
-- date: 2015-06-03 14:00:00
-  speaker: Hengzhi Yao
+- date: 2015-10-29 16:00:00
+  speaker: Fei Yang
   location: TBD
   title: TBD
   summary: None
-- date: 2015-06-03 14:00:00
-  speaker: Xiaofan Li
+- date: 2015-10-29 16:00:00
+  speaker: Jun Sui
   location: TBD
   title: TBD
   summary: None
-- date: 2015-06-10 14:00:00
-  speaker: Ruiqing Zhang
+- date: 2015-11-05 16:00:00
+  speaker: Guo Yan
   location: TBD
   title: TBD
   summary: None
-- date: 2015-06-10 14:00:00
-  speaker: Qiwei Li
-  location: TBD
-  title: TBD
-  summary: None
-- date: 2015-07-08 14:00:00
-  speaker: Qi Bu
-  location: TBD
-  title: TBD
-  summary: None
-- date: 2015-07-08 14:00:00
+- date: 2015-11-05 16:00:00
   speaker: Yong Wu
   location: TBD
   title: TBD
   summary: None
-- date: 2015-07-15 14:00:00
+- date: 2015-11-12 16:00:00
+  speaker: Shenqu Xi
+  location: TBD
+  title: TBD
+  summary: None
+- date: 2015-11-12 16:00:00
+  speaker: Qiwei Li
+  location: TBD
+  title: TBD
+  summary: None
+- date: 2015-11-19 16:00:00
+  speaker: Xiaofan Li
+  location: TBD
+  title: TBD
+  summary: None
+- date: 2015-11-19 16:00:00
+  speaker: Hengzhi Yao
+  location: TBD
+  title: TBD
+  summary: None
+- date: 2015-11-26 16:00:00
+  speaker: Xiangyu Wu
+  location: TBD
+  title: TBD
+  summary: None
+- date: 2015-11-26 16:00:00
   speaker: Yuhao Gong
   location: TBD
   title: TBD
   summary: None
-- date: 2015-07-15 14:00:00
-  speaker: Yaojing Wang
-  location: TBD
-  title: TBD
-  summary: None
-- date: 2015-07-22 14:00:00
+- date: 2015-12-03 16:00:00
   speaker: Jinqi Cui
   location: TBD
   title: TBD
   summary: None
-- date: 2015-07-22 14:00:00
+- date: Zhongliang Yuan
+  speaker: Hao Zhang
+  location: TBD
+  title: TBD
+  summary: None
+- date: 2015-12-10 16:00:00
+  speaker: Yaojing Wang
+  location: TBD
+  title: TBD
+  summary: None
+- date: 2015-12-10 16:00:00
+  speaker: Yiqun Wang
+  location: TBD
+  title: TBD
+  summary: None
+- date: 2015-12-17 16:00:00
+  speaker: Ruiqing Zhang
+  location: TBD
+  title: TBD
+  summary: None
+- date: 2015-12-17 16:00:00
+  speaker: Ziling Lu
+  location: TBD
+  title: TBD
+  summary: None
+- date: 2015-12-24 16:00:00
   speaker: Chenglin Meng
   location: TBD
   title: TBD
   summary: None
-- date: 2015-07-29 14:00:00
-  speaker: Geng Xiao
+- date: 2015-12-24 16:00:00
+  speaker: Hao Sun
   location: TBD
   title: TBD
   summary: None
-- date: 2015-07-29 14:00:00
-  speaker: Susu Shan
+- date: 2015-12-31 16:00:00
+  speaker: Zhanshuai Meng
   location: TBD
   title: TBD
   summary: None
-- date: 2015-08-05 14:00:00
-  speaker: Zhongliang Yuan
+- date: 2015-12-31 16:00:00
+  speaker: Tianchi Liu
+  location: TBD
+  title: TBD
+  summary: None
+- date: 2016-01-07 16:00:00
+  speaker: Weiyi Wang
+  location: TBD
+  title: TBD
+  summary: None
+- date: 2016-01-07 16:00:00
+  speaker: Bingying Guo
+  location: TBD
+  title: TBD
+  summary: None
+- date: 2016-01-14 16:00:00
+  speaker: Yong Wang
+  location: TBD
+  title: TBD
+  summary: None
+- date: 2016-01-14 16:00:00
+  speaker: Zongfei Zhang
+  location: TBD
+  title: TBD
+  summary: None
+- date: 2016-01-21 16:00:00
+  speaker: Shuo Cheng
+  location: TBD
+  title: TBD
+  summary: None
+- date: 2016-01-21 16:00:00
+  speaker: Xiang Xu
+  location: TBD
+  title: TBD
+  summary: None
+- date: 2016-01-28 16:00:00
+  speaker: Jiaxing Dong
+  location: TBD
+  title: TBD
+  summary: None
+- date: 2016-01-28 16:00:00
+  speaker: Na Liu
+  location: TBD
+  title: TBD
+  summary: None
+- date: 2016-02-04 16:00:00
+  speaker: Maoseng Huang
+  location: TBD
+  title: TBD
+  summary: None
+- date: 2016-02-04 16:00:00
+  speaker: Shentao Yue
   location: TBD
   title: TBD
   summary: None
