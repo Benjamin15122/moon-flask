@@ -69,7 +69,9 @@ title: Feng Xu
 
 ## Some recent publications
 
-
+   * Licheng Li, Yuan Yao, *Feng Xu*, Jian Lu. MATAR: Keywords Enhanced Multi- Label Learning for Tag Recommendation. The 17th Asia-Pacific Web Conference (APWeb), 2015.
+   * Guo Yan, Yuan Yao, *Feng Xu*, Jian Lu. RIT: Enhancing Recommendation with Inferred Trust. The 19th Pacific-Asia Conference on Knowledge Discovery and Data Mining (PAKDD), pp. 756–767, 2015.
+   * Yuan Yao, Hanghang Tong, Tao Xie, Leman Akoglu, *Feng Xu*, Jian Lu. Detect- ing High-quality Posts in Community Question Answering Sites. Information Sciences, vol. 302, pp. 70-82, 2015. 
    * Xiaoyu Chen, Yuan Yao, *Feng Xu*, Jian Lu, Exploring Review Content for Recommendation via Latent Factor Model, PRICAI'14 (The 13th Pacific Rim International Conference on Artificial Intelligence), 1 - 5 December, 2014, Gold Coast, Australia.
    * Yuan Yao, Hanghang Tong, Guo Yan, *Feng Xu*, Xiang Zhang, Boleslaw Szymanski, Jian Lu, Dual-Regularized One-Class Collaborative Filtering, CIKM'14 (The 23rd ACM International Conference on Information and Knowledge Management), 3 - 7 November, 2014, Shanghai, China.
    * Yuan Yao, Hanghang Tong, *Feng Xu*, Jian Lu, Predicting Long-Term Impact of CQA Posts: A Comprehensive Viewpoint, KDD'14 (The 20th ACM SIGKDD Conference on Knowledge Discovery and Data Mining), 24 - 27 August, 2014, New York, USA. (acceptance rate 14.6% )
