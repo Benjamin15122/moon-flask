@@ -53,7 +53,7 @@ title: Feng Xu
             </div><!-- nesting row end -->
             <div class="row gutter k-equal-height"><!-- nesting row -->
                 <div class="col-lg-12 col-md-12 col-sm-12">
-                    Tel: +86 +25 83686590
+                    Tel: +86 25 83686590
                 </div>
             </div><!-- nesting row end -->
         </div>
