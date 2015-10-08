@@ -15,12 +15,17 @@ title: Dynamic Software Evolution Group
 ~~~{.bibtexhtml}
 
 @inproceedings{an_qrs_2015,
-	author = {An, Shengwei and Ma, Xiaoxing and Cao, Chun and Yu, Ping and Xu, Chang},
-	booktitle = {Proceedings of the 2015 IEEE International Conference on Software Quality, Reliability & Security},
-	numpages = {10},
-	title = {An Event-based Formal Framework for Dynamic Software Update},
-	year = {2015},
+	author={An, Shengwei and Ma, Xiaoxing and Cao, Chun and Yu, Ping and Xu, Chang}, 
+    booktitle={2015 IEEE International Conference on Software Quality, Reliability and Security (QRS)}, 
+    title={An Event-Based Formal Framework for Dynamic Software Update}, 
+    year={2015}, 
+    pages={173-182}, 
+    keywords={dynamic software update; formal methods;}, 
+    doi={10.1109/QRS.2015.33}, 
+    month={Aug},
 }
+
+
 
 @inproceedings{Zhao:2014:ARD:2677832.2677853,
  author = {Zhao, Zelin and Ma, Xiaoxing and Xu, Chang and Yang, Wenhua},
