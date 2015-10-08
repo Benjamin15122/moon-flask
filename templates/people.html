@@ -5,7 +5,7 @@
 <li class="active">People</li>
 {% endblock %}
 {% block content %}
-<div class="row"><!-- row -->
+<div class="row people"><!-- row -->
     <div class="col-lg-12 col-md-12"><!-- doc body wrapper -->
         <div class="col-padded"><!-- inner custom column -->
             <h1 class="page-title">People</h1>
@@ -22,7 +22,7 @@
                         {% if item.url %}
                         <a href="{{ item.url }}">
                             {% endif %}
-                            <h6><i class="fa fa-coffee"></i>{{ item.name }}</h6>
+                            <h6 style=""><i class="fa fa-coffee"></i>{{ item.name }}</h6>
                             <p>{{ item.title }}</p>
                             {% if item.url %}
                         </a>
