@@ -51,7 +51,9 @@ phd:
   - name: Wenhua Yang
     url:  http://moon.nju.edu.cn/spar/people/ywh/ywh.html
   - name: Shengqu Xi
+    url:  pig
   - name: Yaojing Wang
+    url:  pig
   - name: Zelin Zhao
     url:  http://moon.nju.edu.cn/spar/people/zzl/zzl.html
   - name: Huiyan Wang
@@ -67,8 +69,6 @@ graduates:
     url:  pig
   - name: Guo Yan
     url:  pig
-  - name: Hao Jin
-    url:  http://moon.nju.edu.cn/spar/people/HaoJin'sPage/index.html
   - name: Hao Sun
     url:  haosun
   - name: Hengzhi Yao
@@ -91,8 +91,6 @@ graduates:
     url:  pig
   - name: Maosen Huang
     url:  pig
-  - name: Na Liu
-    url:  pig
   - name: Qiwei Li
     url:  http://moon.nju.edu.cn/spar/people/lqw.html
   - name: Ruiqi Liu
@@ -109,8 +107,6 @@ graduates:
     url:  shuocheng
   - name: Tianchi Liu
     url:  tianchiliu
-  - name: Wang Xi
-    url:  http://moon.nju.edu.cn/spar/people/xw.html
   - name: Weiyi Wang
     url:  weiyiwang
   - name: Xiang Xu
@@ -118,12 +114,8 @@ graduates:
   - name: Xiangyu Wu
     url:  http://moon.nju.edu.cn/spar/people/wxy.html
   - name: Xiaofan Li
-    url:  pig
-  - name: Xiujiang Li
-    url:  http://moon.nju.edu.cn/spar/people/lxj/index.html
+    url:  xiaofanli
   - name: Yang Liang
-    url:  pig
-  - name: Yaojing Wang
     url:  pig
   - name: Ying Zhang
     url:  http://moon.nju.edu.cn/spar/people/zy.html
@@ -146,64 +138,72 @@ graduates:
 
 
 alumni:
+  - name: Xiujiang Li
+    url:  http://moon.nju.edu.cn/spar/people/lxj/index.html
+  - name: Wang Xi
+    url:  http://moon.nju.edu.cn/spar/people/xw.html
+  - name: Hao Jin
+    url:  http://moon.nju.edu.cn/spar/people/HaoJin'sPage/index.html
   - name: Yuan Yao
+    姓名: 姚远
   - name: Yiling Yang
-  - name: 董凯
-  - name: 张凌浩
-  - name: 杨启亮
-  - name: 周宇
-  - name: 葛季栋
-  - name: 宋巍
-  - name: 潘静
-  - name: 吴绽青
-  - name: 华婷婷
-  - name: 谢国珍
-  - name: 姚燕
-  - name: 陈昊
-  - name: 王宁
-  - name: 袁国泉
-  - name: 胡海洋
-  - name: 冉平
-  - name: 张林
-  - name: 石兵
-  - name: 郭卿
-  - name: 林强
-  - name: 谢德平
-  - name: 关连伟
-  - name: 曹流
-  - name: 陈秀
-  - name: 方超
-  - name: 刘涛
-  - name: 施文波
-  - name: 徐刚
-  - name: 陈小康
-  - name: 苏萍
-  - name: 孙辉
-  - name: 张浩
-  - name: 王守涛
-  - name: 葛海龙
-  - name: 匡大虎
-  - name: 王珏
-  - name: 钟敏
-  - name: 李兴宇
-  - name: 王远
-  - name: 殷琴
-  - name: 罗滨
-  - name: 陆闻天
-  - name: 毛晓炜
-  - name: 潘健
-  - name: 李叶青
-  - name: 陈威
-  - name: 陈智勇
-  - name: 黄阳
-  - name: 陆掾
-  - name: 王姜
-  - name: 徐俊
-  - name: 江磊
-  - name: 任国超
-  - name: 冯仁君
-  - name: 张栋栋
-  - name: 宗波
-  - name: 余建平
-  - name: 张璟璟
-  - name: 辛显龙
+    姓名: 杨怡玲
+  - 姓名: 董凯
+  - 姓名: 张凌浩
+  - 姓名: 杨启亮
+  - 姓名: 周宇
+  - 姓名: 葛季栋
+  - 姓名: 宋巍
+  - 姓名: 潘静
+  - 姓名: 吴绽青
+  - 姓名: 华婷婷
+  - 姓名: 谢国珍
+  - 姓名: 姚燕
+  - 姓名: 陈昊
+  - 姓名: 王宁
+  - 姓名: 袁国泉
+  - 姓名: 胡海洋
+  - 姓名: 冉平
+  - 姓名: 张林
+  - 姓名: 石兵
+  - 姓名: 郭卿
+  - 姓名: 林强
+  - 姓名: 谢德平
+  - 姓名: 关连伟
+  - 姓名: 曹流
+  - 姓名: 陈秀
+  - 姓名: 方超
+  - 姓名: 刘涛
+  - 姓名: 施文波
+  - 姓名: 徐刚
+  - 姓名: 陈小康
+  - 姓名: 苏萍
+  - 姓名: 孙辉
+  - 姓名: 张浩
+  - 姓名: 王守涛
+  - 姓名: 葛海龙
+  - 姓名: 匡大虎
+  - 姓名: 王珏
+  - 姓名: 钟敏
+  - 姓名: 李兴宇
+  - 姓名: 王远
+  - 姓名: 殷琴
+  - 姓名: 罗滨
+  - 姓名: 陆闻天
+  - 姓名: 毛晓炜
+  - 姓名: 潘健
+  - 姓名: 李叶青
+  - 姓名: 陈威
+  - 姓名: 陈智勇
+  - 姓名: 黄阳
+  - 姓名: 陆掾
+  - 姓名: 王姜
+  - 姓名: 徐俊
+  - 姓名: 江磊
+  - 姓名: 任国超
+  - 姓名: 冯仁君
+  - 姓名: 张栋栋
+  - 姓名: 宗波
+  - 姓名: 余建平
+  - 姓名: 张璟璟
+  - 姓名: 辛显龙
