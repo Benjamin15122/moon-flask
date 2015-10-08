@@ -48,7 +48,7 @@ title: Jun Ma
             </div><!-- nesting row end -->
             <div class="row gutter k-equal-height"><!-- nesting row -->
                 <div class="col-lg-12 col-md-12 col-sm-12">
-                    E-mail: <img src="static/img/email.png"></img>
+                    E-mail: <img src="static/img/email.jpg"></img>
                 </div>
             </div><!-- nesting row end -->
             <div class="row gutter k-equal-height"><!-- nesting row -->
