@@ -251,7 +251,7 @@ class JinjaBlockPattern(Pattern):
             return etree.fromstring(html)
         except:
             elem = etree.Element(None)
-            elem.text = html
+            elem.text = html.decode('utf-8')
             return elem
 
 
