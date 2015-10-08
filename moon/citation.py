@@ -76,7 +76,7 @@ class MoonFencedBlockPreprocessor(Preprocessor):
 
                     code = highliter.hilite()
                 elif m.group('lang') == 'bibtexhtml':
-                    code = self.parse_bibtex(m.group('code'));
+                    code = self.parse_bibtex(m.group('code'), m.group('hl_lines'));
                 else:
                     code = self.CODE_WRAP % (lang, self._escape(m.group('code')))
 
@@ -94,8 +94,8 @@ class MoonFencedBlockPreprocessor(Preprocessor):
         txt = txt.replace('"', '&quot;')
         return txt
 
-    def parse_bibtex(self, bibtex):
-        return convert_bibtex(bibtex)
+    def parse_bibtex(self, bibtex, hl=None):
+        return convert_bibtex(bibtex, hl)
 
 
 def makeExtension(**kwargs):
@@ -166,15 +166,15 @@ def convert_bibtex(bibtex, hl=None):
 
     entries = decorate_entries(bib_database.entries)
 
-    return convert_bibentries_to_html(entries)
+    return convert_bibentries_to_html(entries, hl)
 
-def convert_bibentries_to_html(entries):
+def convert_bibentries_to_html(entries, hl=''):
     ''' Convert a list of bibtex entries into html
 
     Args: the list of entries
     '''
     render = get_template_attribute('bibtex.html', 'render_entries')
-    return render(entries)
+    return render(entries, hl)
 
 
 
@@ -245,19 +245,15 @@ class JinjaBlockPattern(Pattern):
             # render returns a unicode object, encode it into a utf-8 string
             html = render_template_string(m.group(2)).encode('utf-8')
         except Exception as e:
-            print(e)
             return etree.fromstring('<em>' + m.group(2) + '</em>')
 
         try:
             return etree.fromstring(html)
         except:
-            pass
+            elem = etree.Element(None)
+            elem.text = html
+            return elem
 
-        try:
-            # This file is claimed as utf-8, see the first line
-            return etree.fromstring("<jinja>".decode('utf-8').encode('utf-8') + html + "</jinja>".decode('utf-8').encode('utf-8'))
-        except Exception as e:
-            return etree.fromstring('<em>Error: ' + str(e) + '</em>')
 
 def makeJinjaBlockPattern(md):
     md.inlinePatterns.add('jinja block pattern', JinjaBlockPattern(JINJA_BLOCK_RE, md), ">backtick") # after backtick
