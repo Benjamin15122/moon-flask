@@ -26,6 +26,7 @@ faculty:
     url: http://cs.nju.edu.cn/yuping
   - name: Jun Ma
     title: Assistant Professor
+    url: junma
   - name: Liang Wang
     title: Assistant Professor
     url: http://cs.nju.edu.cn/wangliang
@@ -40,8 +41,6 @@ phd:
   - name: Haibin Yang
   - name: Hengfeng Wei
   - name: Haibo Ye
-  - name: Yiling Yang
-  - name: Yuan Yao
   - name: Jingwei Xu
   - name: Tianxiao Gu
     url:  tianxiaogu
@@ -55,6 +54,9 @@ phd:
   - name: Yaojing Wang
   - name: Zelin Zhao
     url:  http://moon.nju.edu.cn/spar/people/zzl/zzl.html
+  - name: Huiyan Wang
+    url: http://moon.nju.edu.cn/spar/people/why/why.html
+
 
 graduates:
   - name: Chenglin Meng
@@ -92,13 +94,10 @@ graduates:
   - name: Ziling Lu
     url:  zilinglu
 
-undergraduates:
-  - name: Na Liu
-    url: http://moon.nju.edu.cn/spar/people/ln/ln.html
-  - name: Huiyan Wang
-    url: http://moon.nju.edu.cn/spar/people/why/why.html
 
 alumni:
+  - name: Yuan Yao
+  - name: Yiling Yang
   - name: 董凯
   - name: 张凌浩
   - name: 杨启亮
