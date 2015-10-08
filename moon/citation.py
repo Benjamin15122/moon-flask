@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 from __future__ import absolute_import
 from __future__ import unicode_literals
 from markdown.extensions import Extension
@@ -133,7 +132,7 @@ def decorate_author(author):
 # TODO use bibtexparser library customizations
 # see https://bibtexparser.readthedocs.org/en/latest/tutorial.html#parsing-the-file-into-a-bibliographic-database-object
 
-HYPEN_HYPEN = u'–'
+HYPEN_HYPEN = u'\u2013' # -- in LaTeX
 PAGES_RE = re.compile(r'(?P<begin>[0-9]+)-+(?P<end>[0-9]+)')
 
 def decorate_pages(pages):
@@ -243,15 +242,15 @@ class JinjaBlockPattern(Pattern):
 
         try:
             # render returns a unicode object, encode it into a utf-8 string
-            html = render_template_string(m.group(2)).encode('utf-8')
+            html = render_template_string(m.group(2))
         except Exception as e:
-            return etree.fromstring('<em>' + m.group(2) + '</em>')
+            return etree.fromstring('<em>Error: %s</em>' % m.group(2))
 
         try:
             return etree.fromstring(html)
         except:
             elem = etree.Element(None)
-            elem.text = html.decode('utf-8')
+            elem.text = html
             return elem
 
 
