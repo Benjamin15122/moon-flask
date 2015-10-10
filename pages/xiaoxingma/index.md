@@ -5,64 +5,105 @@ title: Xiaoxing Ma
 
 <hr/>
 
-<table border="0" cellpadding="0" cellspacing="0" width="100%">
-    <tbody>
-    <tr>
-        <td valign="top" width="300"><img src="static/xxm-small.jpg" width="249" height="297"></td>
-        <td valign="top">
-            <table border="0" cellpadding="0" cellspacing="0">
-                <tbody>
-                <tr>
-                    <td colspan="2">
-                        <span style="font-size:24pt">Dr. Xiaoxing Ma</span>
-                    </td>
-                </tr>
-                <tr>
-                    <td colspan="2">
-                        <span style="font-size:14pt">Professor</span>
-                    </td>
-                </tr>
-                <tr>
-                    <td colspan="2">
-                        <span style="font-size:14pt">State Key Laboratory for Novel Software Technology, Nanjing University</span>
-                    </td>
-                </tr>
-                <tr>
-                    <td colspan="2">
-                        <span style="font-size:14pt">Department of Computer Science and Technology, Nanjing University</span>
-                    </td>
-                </tr>
-                <tr>
-                    <td align="right" style="vertical-align:top;padding-top:10pt">Address:</td>
-                    <td style="padding-left:15px;vertical-align:top;padding-top:10pt">
-                        Department of Computer Science,<br/>
-                        Nanjing University Xianlin Campus (Mailbox 603)<br/>
-                        163 Xianlin Avenue, Qixia, Nanjing 210023, Jiangsu, China
-                    </td>
-                </tr>
-                <tr>
-                    <td align="right">Office:</td>
-                    <td style="padding-left:15px">Computer Science and Technology Building 816</td>
-                </tr>
-                <tr>
-                    <td align="right">Phone:</td>
-                    <td style="padding-left:15px">+86 25 89686068</td>
-                </tr>
-                <tr>
-                    <td align="right">Fax:</td>
-                    <td style="padding-left:15px">+86 25 83593283</td>
-                </tr>
-                <tr>
-                    <td align="right">Email:</td>
-                    <td style="padding-left:15px"><img src="static/email_nju.gif"/></td>
-                </tr>
-                </tbody>
-            </table>
-        </td>
-    </tr>
-    </tbody>
-</table>
-
+<div class="news-body">
+    <div class="row gutter k-equal-height"><!-- row -->
+        <div class="col-lg-3 col-md-4 col-sm-12">
+            <img src="static/xxm-small.jpg" alt="Xiaoxing Ma" class="aligncenter" />
+        </div>
+        <div class="col-lg-9 col-md-8 col-sm-12">
+            <div class="row gutter k-equal-height"><!-- nesting row -->
+                <div class="col-lg-12">
+                    <span style="font-size:24pt">Dr. Xiaoxing Ma</span>
+                </div>
+            </div><!-- nesting row end -->
+            <div class="row gutter k-equal-height"><!-- nesting row -->
+                <div class="col-lg-12">
+                    <span style="font-size:14pt">Professor</span>
+                </div>
+            </div><!-- nesting row end -->
+            <div class="row gutter k-equal-height"><!-- nesting row -->
+                <div class="col-lg-12">
+                    <span style="font-size:14pt">State Key Laboratory for Novel Software Technology, Nanjing University</span>
+                </div>
+            </div><!-- nesting row end -->
+            <div class="row gutter k-equal-height"><!-- nesting row -->
+                <div class="col-lg-12">
+                    <span style="font-size:14pt">Department of Computer Science and Technology, Nanjing University</span>
+                </div>
+            </div><!-- nesting row end -->
+            <div class="row gutter k-equal-height"><!-- nesting row -->
+                <div class="col-lg-1 col-md-2 col-sm-12">
+                    <span style="font-weight: 600;">Address:</span>
+                </div>
+                <div class="col-lg-11 col-md-10 col-sm-12">
+                    <div clas="row">
+                        <div class="col-lg-12">
+                            Department of Computer Science,
+                        </div>
+                    </div>
+                    <div clas="row">
+                        <div class="col-lg-12">
+                            Nanjing University Xianlin Campus (Mailbox 603),
+                        </div>
+                    </div>
+                    <div clas="row">
+                        <div class="col-lg-12">
+                            163 Xianlin Avenue, Qixia, Nanjing 210023, Jiangsu, China
+                        </div>
+                    </div>
+                </div>
+            </div><!-- nesting row end -->
+            <div class="row gutter k-equal-height"><!-- nesting row -->
+                <div class="col-lg-1 col-md-2 col-sm-12">
+                    <span style="font-weight: 600;">Office:</span>
+                </div>
+                <div class="col-lg-11 col-md-10 col-sm-12">
+                    <div clas="row">
+                        <div class="col-lg-12">
+                            Computer Science and Technology Building 816
+                        </div>
+                    </div>
+                </div>
+            </div><!-- nesting row end -->
+            <div class="row gutter k-equal-height"><!-- nesting row -->
+                <div class="col-lg-1 col-md-2 col-sm-12">
+                    <span style="font-weight: 600;">Phone:</span>
+                </div>
+                <div class="col-lg-11 col-md-10 col-sm-12">
+                    <div clas="row">
+                        <div class="col-lg-12">
+                            +86 25 89686068
+                        </div>
+                    </div>
+                </div>
+            </div><!-- nesting row end -->
+            <div class="row gutter k-equal-height"><!-- nesting row -->
+                <div class="col-lg-1 col-md-2 col-sm-12">
+                    <span style="font-weight: 600;">Fax:</span>
+                </div>
+                <div class="col-lg-11 col-md-10 col-sm-12">
+                    <div clas="row">
+                        <div class="col-lg-12">
+                            +86 25 83593283
+                        </div>
+                    </div>
+                </div>
+            </div><!-- nesting row end -->
+            <div class="row gutter k-equal-height"><!-- nesting row -->
+                <div class="col-lg-1 col-md-2 col-sm-12">
+                    <span style="font-weight: 600;">Email:</span>
+                </div>
+                <div class="col-lg-11 col-md-10 col-sm-12">
+                    <div clas="row">
+                        <div class="col-lg-12">
+                            <img src="static/email_nju.gif"/>
+                        </div>
+                    </div>
+                </div>
+            </div><!-- nesting row end -->
+        </div>
+    </div><!-- row end -->
+</div>
 
 <!--
 ## Short biography

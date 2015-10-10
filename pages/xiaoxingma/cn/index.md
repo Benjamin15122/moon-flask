@@ -5,43 +5,105 @@ title: Xiaoxing Ma (Chinese)
 
 <hr/>
 
-
-<table cellspacing="3" cellpadding="0" border="0"><tbody><tr>
-        <td>
-            <img src="../static/xxm-small.jpg" alt="Xiaoxing Ma in Rome" width="220">
-        </td>
-        <td> &nbsp;&nbsp;&nbsp;&nbsp; </td>
-        <td>
-
-            <table cellspacing="0" id="table1" cellpadding="0" border="0">
-                <tbody><tr>
-                    <td colspan="2" valign="top"> <h2>马晓星 &nbsp;&nbsp;<small>博士</small> </h2> </td>
-                </tr>
-                <tr>
-                    <td colspan="2" valign="top"> 南京大学计算机科学与技术系 教授，博士生导师 <br>南京大学计算机软件研究所 副所长<br>南京大学计算机软件新技术国家重点实验室 </td>
-                </tr>
-                <tr>
-                    <td width="15%" valign="top"> 地址: </td>
-                    <td width="85%" valign="top"> 中国江苏省南京市栖霞区仙林大道163号南大仙林校区603信箱计算机系 <br> 邮编： 210023 </td>
-                </tr>
-                <tr>
-                    <td width="15%" valign="top"> 办公室: </td>
-                    <td width="85%" valign="top"> <a href="/contact/">计算机科学与技术楼816</a> </td>
-                </tr>
-                <tr>
-                    <td width="25%" valign="top"> E-mail: </td>
-                    <td width="85%" valign="top"> <img width="114" alt="Ma Xiaoxing's email" src="../static/email_nju.gif" id="_x0000_i1066" height="16" border="0"> </td>
-                </tr>
-                <tr>
-                    <td width="15%" valign="top"> 电话: </td>
-                    <td width="85%" valign="top"> +86 25 83686068 </td>
-                </tr>
-                <tr>
-                    <td width="15%" valign="top"> 传真: </td>
-                    <td width="85%" valign="top"> +86 25 83593283 </td>
-            </tr></tbody></table>
-        </td>
-</tr></tbody></table>
+<div class="news-body">
+    <div class="row gutter k-equal-height"><!-- row -->
+        <div class="col-lg-3 col-md-4 col-sm-12">
+            <img src="../static/xxm-small.jpg" alt="Xiaoxing Ma" class="aligncenter" />
+        </div>
+        <div class="col-lg-9 col-md-8 col-sm-12">
+            <div class="row gutter k-equal-height"><!-- nesting row -->
+                <div class="col-lg-12">
+                    <span style="font-size:24pt">马晓星</span> <span style="font-size:14pt">博士</span>
+                </div>
+            </div><!-- nesting row end -->
+            <div class="row gutter k-equal-height"><!-- nesting row -->
+                <div class="col-lg-12">
+                    <span style="font-size:14pt">南京大学计算机科学与技术系 教授，博士生导师</span>
+                </div>
+            </div><!-- nesting row end -->
+            <div class="row gutter k-equal-height"><!-- nesting row -->
+                <div class="col-lg-12">
+                    <span style="font-size:14pt">南京大学计算机软件研究所 副所长</span>
+                </div>
+            </div><!-- nesting row end -->
+            <div class="row gutter k-equal-height"><!-- nesting row -->
+                <div class="col-lg-12">
+                    <span style="font-size:14pt">南京大学计算机软件新技术国家重点实验室</span>
+                </div>
+            </div><!-- nesting row end -->
+            <div class="row gutter k-equal-height"><!-- nesting row -->
+                <div class="col-lg-1 col-md-2 col-sm-12">
+                    <span style="font-weight: 600;">地址:</span>
+                </div>
+                <div class="col-lg-11 col-md-10 col-sm-12">
+                    <div clas="row">
+                        <div class="col-lg-12">
+                            中国江苏省南京市栖霞区仙林大道 163 号
+                        </div>
+                    </div>
+                    <div clas="row">
+                        <div class="col-lg-12">
+                            南大仙林校区 603 信箱计算机系
+                        </div>
+                    </div>
+                    <div clas="row">
+                        <div class="col-lg-12">
+                            邮编: 210023
+                        </div>
+                    </div>
+                </div>
+            </div><!-- nesting row end -->
+            <div class="row gutter k-equal-height"><!-- nesting row -->
+                <div class="col-lg-1 col-md-2 col-sm-12" style="padding-right: 0;">
+                    <span style="font-weight: 600;">办公室:</span>
+                </div>
+                <div class="col-lg-11 col-md-10 col-sm-12">
+                    <div clas="row">
+                        <div class="col-lg-12">
+                            计算机科学与技术楼 816
+                        </div>
+                    </div>
+                </div>
+            </div><!-- nesting row end -->
+            <div class="row gutter k-equal-height"><!-- nesting row -->
+                <div class="col-lg-1 col-md-2 col-sm-12">
+                    <span style="font-weight: 600;">电话:</span>
+                </div>
+                <div class="col-lg-11 col-md-10 col-sm-12">
+                    <div clas="row">
+                        <div class="col-lg-12">
+                            +86 25 89686068
+                        </div>
+                    </div>
+                </div>
+            </div><!-- nesting row end -->
+            <div class="row gutter k-equal-height"><!-- nesting row -->
+                <div class="col-lg-1 col-md-2 col-sm-12">
+                    <span style="font-weight: 600;">传真:</span>
+                </div>
+                <div class="col-lg-11 col-md-10 col-sm-12">
+                    <div clas="row">
+                        <div class="col-lg-12">
+                            +86 25 83593283
+                        </div>
+                    </div>
+                </div>
+            </div><!-- nesting row end -->
+            <div class="row gutter k-equal-height"><!-- nesting row -->
+                <div class="col-lg-1 col-md-2 col-sm-12">
+                    <span style="font-weight: 600;">Email:</span>
+                </div>
+                <div class="col-lg-11 col-md-10 col-sm-12">
+                    <div clas="row">
+                        <div class="col-lg-12">
+                            <img src="../static/email_nju.gif"/>
+                        </div>
+                    </div>
+                </div>
+            </div><!-- nesting row end -->
+        </div>
+    </div><!-- row end -->
+</div>
 
 ## 简历
 我从1997年来南京大学后就一直在此读书，2003年获得博士学位，而后留校任教至今。 
