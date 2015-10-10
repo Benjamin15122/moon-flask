@@ -1,4 +1,4 @@
-﻿title: Jun Ma
+title: Jun Ma
 
 <div class="news-body">
     <div class="row gutter k-equal-height"><!-- row -->
