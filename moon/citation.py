@@ -196,6 +196,7 @@ def parse_bibtex(bibtex):
 
 
 class Citations(object):
+
     def __init__(self, bibfile):
         with open(bibfile) as f:
             bibtex_str = f.read().decode('utf-8')
@@ -203,9 +204,10 @@ class Citations(object):
         database = parse_bibtex(bibtex_str)
         self.entries = decorate_entries(database.entries)
 
+
     def __getitem__(self, key):
         try:
-            return next(e for e in self.entries if e.get('id') == key)
+            return next(e for e in self.entries if e.get('id') == key or e.get('ID') == key)
         except:
             raise KeyError(key)
 
@@ -218,8 +220,8 @@ class Citations(object):
         return render_bib_entry(entry, hl)
 
     def render_entries(self, keys, hl=''):
-        entries = filter(lambda e: e['id'] in keys, self.entries)
-
+        entries = filter(lambda e: e.get('id') in keys, self.entries)
+        entries += filter(lambda e: e.get('ID') in keys, self.entries)
         return render_bib_entries(entries, hl)
 
 
