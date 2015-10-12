@@ -74,19 +74,7 @@ title: Xianping Tao (Chinese)
                 <div class="col-lg-11 col-md-10 col-sm-12">
                     <div clas="row">
                         <div class="col-lg-12">
-                            +86 25 00000000
-                        </div>
-                    </div>
-                </div>
-            </div><!-- nesting row end -->
-            <div class="row gutter k-equal-height"><!-- nesting row -->
-                <div class="col-lg-1 col-md-2 col-sm-12">
-                    传真:
-                </div>
-                <div class="col-lg-11 col-md-10 col-sm-12">
-                    <div clas="row">
-                        <div class="col-lg-12">
-                            +86 25 83593283
+                            +86 25 83593694
                         </div>
                     </div>
                 </div>
