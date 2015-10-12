@@ -6,34 +6,36 @@ title: Xianping Tao (Chinese)
 <hr/>
 
 <div class="news-body">
+    <div class="row gutter k-equal-height"><!-- nesting row -->
+        <div class="col-lg-12">
+            <span style="font-size:24pt">陶先平</span> <span style="font-size:14pt">博士</span>
+        </div>
+    </div><!-- nesting row end -->
+    <hr/>
+    <div class="row gutter k-equal-height"><!-- nesting row -->
+        <div class="col-lg-12">
+            <span style="font-size:14pt">南京大学计算机科学与技术系 教授，博士生导师</span>
+        </div>
+    </div><!-- nesting row end -->
+    <div class="row gutter k-equal-height"><!-- nesting row -->
+        <div class="col-lg-12">
+            <span style="font-size:14pt">南京大学计算机科学与技术系 副系主任</span>
+        </div>
+    </div><!-- nesting row end -->
+    <div class="row gutter k-equal-height"><!-- nesting row -->
+        <div class="col-lg-12">
+            <span style="font-size:14pt">南京大学计算机软件新技术国家重点实验室</span>
+        </div>
+    </div><!-- nesting row end -->
+    <hr/>
     <div class="row gutter k-equal-height"><!-- row -->
         <div class="col-lg-3 col-md-4 col-sm-12">
-            <img src="#" alt="Xianping Tao" class="aligncenter" />
+            <img src="../static/taoxianping.jpg" alt="Xianping Tao" class="aligncenter" />
         </div>
         <div class="col-lg-9 col-md-8 col-sm-12">
             <div class="row gutter k-equal-height"><!-- nesting row -->
-                <div class="col-lg-12">
-                    <span style="font-size:24pt">陶先平</span> <span style="font-size:14pt">博士</span>
-                </div>
-            </div><!-- nesting row end -->
-            <div class="row gutter k-equal-height"><!-- nesting row -->
-                <div class="col-lg-12">
-                    <span style="font-size:14pt">南京大学计算机科学与技术系 教授，博士生导师</span>
-                </div>
-            </div><!-- nesting row end -->
-            <div class="row gutter k-equal-height"><!-- nesting row -->
-                <div class="col-lg-12">
-                    <span style="font-size:14pt">南京大学计算机科学与技术西 副系主任</span>
-                </div>
-            </div><!-- nesting row end -->
-            <div class="row gutter k-equal-height"><!-- nesting row -->
-                <div class="col-lg-12">
-                    <span style="font-size:14pt">南京大学计算机软件新技术国家重点实验室</span>
-                </div>
-            </div><!-- nesting row end -->
-            <div class="row gutter k-equal-height"><!-- nesting row -->
                 <div class="col-lg-1 col-md-2 col-sm-12">
-                    <span style="font-weight: 600;">地址:</span>
+                    地址:
                 </div>
                 <div class="col-lg-11 col-md-10 col-sm-12">
                     <div clas="row">
@@ -55,7 +57,7 @@ title: Xianping Tao (Chinese)
             </div><!-- nesting row end -->
             <div class="row gutter k-equal-height"><!-- nesting row -->
                 <div class="col-lg-1 col-md-2 col-sm-12" style="padding-right: 0;">
-                    <span style="font-weight: 600;">办公室:</span>
+                    办公室:
                 </div>
                 <div class="col-lg-11 col-md-10 col-sm-12">
                     <div clas="row">
@@ -67,7 +69,7 @@ title: Xianping Tao (Chinese)
             </div><!-- nesting row end -->
             <div class="row gutter k-equal-height"><!-- nesting row -->
                 <div class="col-lg-1 col-md-2 col-sm-12">
-                    <span style="font-weight: 600;">电话:</span>
+                    电话:
                 </div>
                 <div class="col-lg-11 col-md-10 col-sm-12">
                     <div clas="row">
@@ -79,7 +81,7 @@ title: Xianping Tao (Chinese)
             </div><!-- nesting row end -->
             <div class="row gutter k-equal-height"><!-- nesting row -->
                 <div class="col-lg-1 col-md-2 col-sm-12">
-                    <span style="font-weight: 600;">传真:</span>
+                    传真:
                 </div>
                 <div class="col-lg-11 col-md-10 col-sm-12">
                     <div clas="row">
@@ -91,12 +93,12 @@ title: Xianping Tao (Chinese)
             </div><!-- nesting row end -->
             <div class="row gutter k-equal-height"><!-- nesting row -->
                 <div class="col-lg-1 col-md-2 col-sm-12">
-                    <span style="font-weight: 600;">Email:</span>
+                    Email:
                 </div>
                 <div class="col-lg-11 col-md-10 col-sm-12">
                     <div clas="row">
                         <div class="col-lg-12">
-                            <img src="../static/email_nju.gif"/>
+                            txp@nju.edu.cn
                         </div>
                     </div>
                 </div>
@@ -104,6 +106,8 @@ title: Xianping Tao (Chinese)
         </div>
     </div><!-- row end -->
 </div>
+
+----------------
 
 ## 简历
 

@@ -6,31 +6,33 @@ title: Xianping Tao
 <hr/>
 
 <div class="news-body">
+    <div class="row gutter k-equal-height"><!-- nesting row -->
+        <div class="col-lg-12">
+            <span style="font-size:24pt">Xianping Tao</span>
+        </div>
+    </div><!-- nesting row end -->
+    <hr/>
+    <div class="row gutter k-equal-height"><!-- nesting row -->
+        <div class="col-lg-12">
+            <span style="font-size:14pt">Ph.D., Professor</span>
+        </div>
+    </div><!-- nesting row end -->
+    <div class="row gutter k-equal-height"><!-- nesting row -->
+        <div class="col-lg-12">
+            <span style="font-size:14pt">State Key Laboratory for Novel Software Technology, Nanjing University</span>
+        </div>
+    </div><!-- nesting row end -->
+    <div class="row gutter k-equal-height"><!-- nesting row -->
+        <div class="col-lg-12">
+            <span style="font-size:14pt">Department of Computer Science and Technology, Nanjing University</span>
+        </div>
+    </div><!-- nesting row end -->
+    <hr/>
     <div class="row gutter k-equal-height"><!-- row -->
         <div class="col-lg-3 col-md-4 col-sm-12">
-            <img src="#" alt="Xianping Tao" class="aligncenter" />
+            <img src="static/taoxianping.jpg" alt="Xianping Tao" class="img-responsive" />
         </div>
         <div class="col-lg-9 col-md-8 col-sm-12">
-            <div class="row gutter k-equal-height"><!-- nesting row -->
-                <div class="col-lg-12">
-                    <span style="font-size:24pt">Xianping Tao</span>
-                </div>
-            </div><!-- nesting row end -->
-            <div class="row gutter k-equal-height"><!-- nesting row -->
-                <div class="col-lg-12">
-                    <span style="font-size:14pt">Ph.D., Professor</span>
-                </div>
-            </div><!-- nesting row end -->
-            <div class="row gutter k-equal-height"><!-- nesting row -->
-                <div class="col-lg-12">
-                    <span style="font-size:14pt">State Key Laboratory for Novel Software Technology, Nanjing University</span>
-                </div>
-            </div><!-- nesting row end -->
-            <div class="row gutter k-equal-height"><!-- nesting row -->
-                <div class="col-lg-12">
-                    <span style="font-size:14pt">Department of Computer Science and Technology, Nanjing University</span>
-                </div>
-            </div><!-- nesting row end -->
             <div class="row gutter k-equal-height"><!-- nesting row -->
                 <div class="col-lg-1 col-md-2 col-sm-12">
                     <span style="font-weight: 600;">Address:</span>
@@ -115,9 +117,10 @@ title: Xianping Tao
 
 ## [Publications](publications)
 
-* [English publications](publications)
+
 
 ### Some recent publications:
 
 {{ render_bib_file('2014.bib') }}
 
+([More...](publications))
