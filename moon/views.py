@@ -14,7 +14,7 @@ from utils import to_date, to_time, to_datetime
 import markdown
 
 from citation import makeExtension as makeCitationExtension
-from citation import Citations, render_bib_entry, makeJinjaBlockPattern
+from citation import makeJinjaExpressionPattern
 
 #################
 
@@ -68,10 +68,7 @@ def create_markdown():
             'markdown.extensions.meta',
             makeCitationExtension()])
 
-    #md.inlinePatterns.add('jinja block pattern', JinjaBlockPattern(JINJA_BLOCK_RE, md), ">backtick") # after backtick
-
-    makeJinjaBlockPattern(md)
-
+    makeJinjaExpressionPattern(md)
     return md
 
 ##################
@@ -228,40 +225,4 @@ def page(name, path=None):
     return render_template(template, page=page)
 
 
-##########################
-
-@app.context_processor
-def bib_processor():
-
-    def render_bib_file(path=None, keys=None, hl=''):
-        if not path:
-            return g.site.paper.render_all(hl)
-
-        if request.endpoint == 'page':
-            name = request.view_args['name']
-
-            user_dir = get_user_dir(name)
-            bibfile = safe_join(user_dir, path)
-        else:
-            bibfile = safe_join(MOON_DIR, path)
-
-
-        try:
-            c = Citations(bibfile)
-
-            if not keys:
-                return c.render_all(hl)
-            elif isinstance(keys, str):
-                return c.render_entry(keys, hl)
-            else:
-                return c.render_entries(keys, hl)
-        except Exception as e:
-            return "<em>render path=%s, keys=%s, hl=%s failed! </em>" % (path, keys, hl)
-
-        return "<em>No such bib file " + path + "</em>"
-
-    return dict(render_bib_file=render_bib_file, render_bib_entry=render_bib_entry)
-
-
-##############################################
 

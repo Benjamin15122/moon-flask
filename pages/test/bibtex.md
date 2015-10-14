@@ -10,6 +10,10 @@ title: A test page for bibtex
 
 -----------------
 
+{{ render_bib_file(None, group_by_year=True) }}
+
+-----------------
+
 {{ render_bib_file('test.bib') }}
 
 -----------------

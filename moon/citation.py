@@ -6,9 +6,12 @@ from markdown.extensions.codehilite import CodeHilite, CodeHiliteExtension, pars
 from markdown.inlinepatterns import Pattern
 from markdown.util import etree
 
+import traceback
+
 from flask import render_template_string
 
 import re
+from itertools import groupby
 
 """Copied from FencedCodeExtension
 """
@@ -183,9 +186,19 @@ def render_bib_entry(entry, hl=''):
     return render(entry, hl)
 
 
-def render_bib_entries(entries, hl=''):
-    render = get_template_attribute('bibtex.html', 'render_entries')
+def render_bib_entries(entries, hl='', group_by_year=False):
+    if group_by_year:
+        def getyear(e):
+            print(e)
+            return e.get('year', 'Unknown')
+        entries = sorted(entries, key=getyear, reverse=True)
+        grouped_entries = groupby(entries, getyear)
+        years = groupby(entries, getyear)
+        render = get_template_attribute('bibtex.html', 'render_entries_group_by_year')
+        return render(years, grouped_entries, hl)
 
+
+    render = get_template_attribute('bibtex.html', 'render_entries')
     return render(entries, hl)
 
 def parse_bibtex(bibtex):
@@ -207,7 +220,7 @@ class Citations(object):
 
     def __getitem__(self, key):
         try:
-            return next(e for e in self.entries if e.get('id') == key or e.get('ID') == key)
+            return next(e for e in self.entries if e.get('ID') == key)
         except:
             raise KeyError(key)
 
@@ -219,22 +232,21 @@ class Citations(object):
 
         return render_bib_entry(entry, hl)
 
-    def render_entries(self, keys, hl=''):
-        entries = filter(lambda e: e.get('id') in keys, self.entries)
-        entries += filter(lambda e: e.get('ID') in keys, self.entries)
+    def render_entries(self, keys, hl='', group_by_year=False):
+        entries = filter(lambda e: e.get('ID') in keys, self.entries)
         return render_bib_entries(entries, hl)
 
 
-    def render_all(self, hl=''):
-        return render_bib_entries(self.entries, hl)
+    def render_all(self, hl='', group_by_year=False):
+        return render_bib_entries(self.entries, hl, group_by_year)
 
 
 #################################################################
 
 
-JINJA_BLOCK_RE = r'({{[^{}]*}})'
+JINJA_EXPRESSION_RE = r'({{.+?(?<!})}})'
 
-class JinjaBlockPattern(Pattern):
+class JinjaExpressionPattern(Pattern):
 
     def __init__(self, pattern, md):
         Pattern.__init__(self, pattern, md)
@@ -243,19 +255,27 @@ class JinjaBlockPattern(Pattern):
         jinja_block = m.group(2)
 
         try:
-            # render returns a unicode object, encode it into a utf-8 string
+            # render returns a unicode object
             html = render_template_string(m.group(2))
         except Exception as e:
-            return etree.fromstring('<em>Error: %s</em>' % m.group(2))
+            return etree.fromstring('<em>Error %s in rendering %s</em>' % (e, m.group(2)))
 
         try:
-            return etree.fromstring(html)
-        except:
-            elem = etree.Element(None)
-            elem.text = html
-            return elem
+            return etree.fromstring(html.encode('utf8'))
+        except Exception as e:
+            pass
+
+        try:
+            e = etree.Element(None)
+            e.text = html
+            return e
+        except Exception as e:
+            return html
 
 
-def makeJinjaBlockPattern(md):
-    md.inlinePatterns.add('jinja block pattern', JinjaBlockPattern(JINJA_BLOCK_RE, md), ">backtick") # after backtick
 
+def makeJinjaExpressionPattern(md):
+    md.inlinePatterns.add('jinja expression pattern', JinjaExpressionPattern(JINJA_EXPRESSION_RE, md), ">backtick") # after backtick
+
+# Compatibility
+makeJinjaBlockPattern = makeJinjaExpressionPattern

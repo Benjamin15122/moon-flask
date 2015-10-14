@@ -1,5 +1,4 @@
 {% macro render_entries(entries, hl="") -%}
-<!-- see https://verbosus.com/bibtex-style-examples.html -->
 <ul class="bibtex">
 {% for entry in entries %}
 <li><a name="{{ entry.id }}"></a>
@@ -35,4 +34,18 @@
 {% if entry.link %}<span><a href="{{ entry.link }}" target="_blank" title="Publication site of this paper"><img src='/static/img/icon-link.png'/></a></span>{% endif %}{% if entry.booktitle or entry.journal %}<span>, </span>{% endif %}
 {% if entry.pages %}<span class="bibtex pages">{{ entry.pages }},</span>{% endif %}
 {% if entry.year %}<span class="bibtex year">{{ entry.year}}.</span>{% endif %}
+{%- endmacro %}
+
+{% macro render_entries_group_by_year(years, grouped_entries, hl="") -%}
+<p>
+{% for year,__ in years %}
+[<a href="#{{ year }}">{{ year }}</a>]
+{% endfor %}
+</p>
+{% for year, entries in grouped_entries %}
+<h2><a name="{{ year }}"></a>{{ year }}</h2>
+<hr/>
+{{ render_entries(entries, hl) }}
+<hr/>
+{% endfor %}
 {%- endmacro %}
