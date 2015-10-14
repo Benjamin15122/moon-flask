@@ -220,7 +220,7 @@ class Citations(object):
 
     def __getitem__(self, key):
         try:
-            return next(e for e in self.entries if e.get('ID') == key)
+            return next(e for e in self.entries if e.get('ID') == key or e.get('id') == key)
         except:
             raise KeyError(key)
 
@@ -233,7 +233,7 @@ class Citations(object):
         return render_bib_entry(entry, hl)
 
     def render_entries(self, keys, hl='', group_by_year=False):
-        entries = filter(lambda e: e.get('ID') in keys, self.entries)
+        entries = filter(lambda e: e.get('ID') in keys or e.get('id') in keys, self.entries)
         return render_bib_entries(entries, hl)
 
 
