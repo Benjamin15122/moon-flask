@@ -54,7 +54,7 @@ phd:
   - name: Shengqu Xi
     url:  shengquxi
   - name: Yaojing Wang
-    url:  pig
+    url:  default
   - name: Zelin Zhao
     url:  http://moon.nju.edu.cn/spar/people/zzl/zzl.html
   - name: Huiyan Wang
@@ -63,31 +63,31 @@ phd:
 
 graduates:
   - name: Bingying Guo
-    url:  pig
+    url:  default
   - name: Chenglin Meng
     url:  chenglinmeng
   - name: Fei Yang
     url:  feiyang
   - name: Guo Yan
-    url:  pig
+    url:  default
   - name: Hao Sun
     url:  haosun
   - name: Hengzhi Yao
-    url:  pig
+    url:  default
   - name: Huating Liu
-    url:  pig
+    url:  default
   - name: Jia Nie
-    url:  pig
+    url:  default
   - name: Jiaxing Dong
     url:  http://moon.nju.edu.cn/spar/people/djx.html
   - name: Jie Wei
-    url:  pig
+    url:  default
   - name: Jinqi Cui
-    url:  pig
+    url:  default
   - name: Jun Sui
-    url:  pig
+    url:  default
   - name: Kesheng Qi
-    url:  pig
+    url:  default
   - name: Licheng Li
     url:  lichengli
   - name: Maosen Huang
@@ -101,9 +101,9 @@ graduates:
   - name: Shengwei An
     url:  shengweian
   - name: Shenqu Xi
-    url:  pig
+    url:  default
   - name: Shentao Yue
-    url:  pig
+    url:  default
   - name: Shuo Cheng
     url:  shuocheng
   - name: Tianchi Liu
@@ -117,17 +117,17 @@ graduates:
   - name: Xiaofan Li
     url:  xiaofanli
   - name: Yang Liang
-    url:  pig
+    url:  default
   - name: Ying Zhang
     url:  http://moon.nju.edu.cn/spar/people/zy.html
   - name: Yiqun Wang
     url:  yiqunwang
   - name: Yong Wang
-    url:  pig
+    url:  default
   - name: Yong Wu
     url:  yongwu
   - name: Yuhao Gong
-    url:  pig
+    url:  default
   - name: Zhanshuai Meng
     url:  http://moon.nju.edu.cn/spar/people/mzs/mzs.html
   - name: Zhongliang Yuan
@@ -135,7 +135,7 @@ graduates:
   - name: Ziling Lu
     url:  zilinglu
   - name: Zongfei Zhang
-    url:  pig
+    url:  default
 
 
 alumni:
