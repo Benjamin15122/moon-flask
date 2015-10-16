@@ -21,10 +21,11 @@ def spar(path = '/'):
 
                     makeJinjaBlockPattern(md)
 
-                    content = md.convert(fp.read().decode('utf-8'))
+                    content = md.convert(fp.read())
                     meta = md.Meta
                     title = ''.join( meta.get('title', ['']) )
                 return flask.render_template('spar.html', content = content, title = title, nofooter = True)
         return flask.send_from_directory(SPAR_DIR, path)
     except Exception, e:
         return str(e)
+
