@@ -261,7 +261,7 @@ class JinjaExpressionPattern(Pattern):
             return etree.fromstring('<em>Error %s in rendering %s</em>' % (e, m.group(2)))
 
         try:
-            return etree.fromstring(html.encode('utf8'))
+            return etree.fromstring(html.encode('utf-8'))
         except Exception as e:
             pass
 
