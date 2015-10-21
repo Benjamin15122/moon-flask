@@ -119,7 +119,7 @@ title: Tianxiao Gu
 * [AOTES](http://lab.artemisprojects.org/javelus/aotes)
     * Automating object transformations for dynamic software updating via execution synthesis
 * [MiniTracing](http://lab.artemisprojects.org/tianxiaogu/mini-tracing)
-    * A light-weight tracing tool built on top of JVM 7.
+    * A light-weight tracing tool built on top of the HotSpot JVM in OpenJDK 7.
     * Currently only support tracing events like method entry/exit, object allocation, gc moving.
 
 
