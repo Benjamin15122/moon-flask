@@ -121,6 +121,9 @@ title: Tianxiao Gu
 * [MiniTracing](http://lab.artemisprojects.org/tianxiaogu/mini-tracing)
     * A light-weight tracing tool built on top of the HotSpot JVM in OpenJDK 7.
     * Currently only support tracing events like method entry/exit, object allocation, object moving by GC (for identifying objects in the log).
+* [MiniTracingForAndroidART](http://lab.artemisprojects.org/tianxiaogu/mini-tracing-for-art)
+    * This project extends the built-in trace mechanism of Android ART by supporting logging Field Read/Written events with only 170 lines of code.
+    * Obviously, it is an experimantal extension.
 * [myblog](http://lab.artemisprojects.org/tianxiaogu/myblog)
     * A quite simple blog system built on top of `flask`, `SQLAlchemy`, `bootstrap`, `font-awesome` and many open source plugins.
     * It is simple as I almost do no customization on the style.
