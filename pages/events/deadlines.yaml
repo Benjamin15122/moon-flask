@@ -1,19 +1,11 @@
-- id: compsac16
-  label: COMPSAC 2016 (Atlanta, United States)
-  url: http://www.computer.org/portal/web/COMPSAC2016
-  date: 2015-12-11
-- id: qrs16
-  label: QRS 2016 (Vienna, Austria)
-  url: http://paris.utdallas.edu/qrs16/CFP/CFP-QRS-2016.pdf
-  date: 2016-01-15
-- id: issta16
-  label: ISSTA 2016 (Saarbrücken, Germany)
-  url: http://issta2016.cispa.saarland
-  date: 2016-01-29
 - id: fse16
   label: FSE 2016 (Seattle, United State)
   url: http://www.cs.ucdavis.edu/fse2016/
   date: 2016-03-11
+- id: qrs16
+  label: QRS 2016 (Vienna, Austria)
+  url: http://paris.utdallas.edu/qrs16/CFP/CFP-QRS.pdf
+  date: 2016-03-25
 - id: oopsla16
   label: OOPSLA 2016 (Amsterdam, Netherlands)
   url: http://2016.splashcon.org
@@ -22,3 +14,7 @@
   label: ASE 2016 (Singapore, Singapore)
   url: http://www.ase2016.org
   date: 2016-04-29
+- id: issre16
+  label: ISSRE 2016 (Ottawa, Canada)
+  url: http://issre.net/cfp-research
+  date: 2016-05-13
