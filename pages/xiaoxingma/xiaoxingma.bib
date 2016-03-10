@@ -2,12 +2,54 @@
 %% http://bibdesk.sourceforge.net/
 
 
-%% Created for Xiaoxing Ma at 2016-03-10 20:02:36 +0800 
+%% Created for Xiaoxing Ma at 2016-03-10 20:21:25 +0800 
 
 
 %% Saved with string encoding Unicode (UTF-8) 
 
 
+
+@inproceedings{Zhang:2015:APSEC,
+	Address = {New Delhi, India.},
+	Author = {Ying Zhang and Yanyan Jiang and Chang Xu and Xiaoxing Ma and Ping Yu},
+	Booktitle = {Proceedings of the 22nd Asia-Pacific Software Engineering Conference (APSEC 2015)},
+	Date-Added = {2016-03-10 12:19:06 +0000},
+	Date-Modified = {2016-03-10 12:21:12 +0000},
+	Month = {December},
+	Pages = {182-189},
+	Title = {ABC: Accelerated Building of C/C++ Projects},
+	Year = {2015}}
+
+@inproceedings{Jiang:2015:ASE,
+	Abstract = {Inter-thread shared memory dependences are crucial to understanding the behavior of concurrent systems, as such dependences are the cornerstone of time-travel debugging and further predictive trace analyses. To enable effective and efficient shared memory dependence tracing, we present an optimistic scheme addressing the challenge of capturing exact dependences between unsynchronized events to reduce the probe effect of program instrumentation. Specifically, our approach achieved a wait-free fast path for thread-local reads on x86-TSO relaxed memory systems, and simultaneously achieved precise tracing of exact read-after-write, write-after-write and write-after-read dependences on the fly. We implemented an open-source RWTrace tool, and evaluation results show that our approach not only achieves efficient shared memory dependence tracing, but also scales well on a multi-core computer system.},
+	Author = {Yanyan Jiang and Du Li and Chang Xu and Xiaoxing Ma and Jian Lu},
+	Booktitle = {Proceedings of the 30th IEEE/ACM International Conference on Automated Software Engineering (ASE)},
+	Date-Added = {2016-03-10 12:13:50 +0000},
+	Date-Modified = {2016-03-10 12:15:23 +0000},
+	Doi = {10.1109/ASE.2015.11},
+	Keywords = {program debugging;shared memory systems;interthread shared memory dependence;multicore computer system;open-source RWTrace tool;optimistic shared memory dependence tracing;predictive trace analysis;program instrumentation;time-travel debugging;x86-TSO relaxed memory system;Algorithm design and analysis;Benchmark testing;Computer science;Debugging;Instruction sets;Memory management;Synchronization;concurrency;dynamic analysis;shared memory dependence},
+	Month = {Nov},
+	Pages = {524-534},
+	Title = {Optimistic Shared Memory Dependence Tracing},
+	Year = {2015},
+	Bdsk-Url-1 = {http://dx.doi.org/10.1109/ASE.2015.11}}
+
+@article{Xu:2015:TSE,
+	Abstract = {Context-aware applications adapt their behavior based on contexts. Contexts can, however, be incorrect. A popular means to build dependable applications is to augment them with a set of constraints to govern the consistency of context values. These constraints are evaluated upon context changes to detect inconsistencies so that they can be timely handled. However, we observe that many context inconsistencies are unstable. They vanish by themselves and do not require handling. Such inconsistencies are detected due to misaligned sensor sampling or improper inconsistency detection scheduling. We call them unstable context inconsistencies (or STINs). STINs should be avoided to prevent unnecessary inconsistency handling and unstable behavioral adaptation to applications. In this article, we study STINs systematically, from examples to theoretical analysis, and present algorithms to suppress their detection. Our key insight is that only certain patterns of context changes can make a consistency constraint subject to the detection of STINs. We derive such patterns and proactively use them to suppress the detection of STINs. We implemented our idea and applied it to real-world applications. Experimental results confirmed its effectiveness in suppressing the detection of numerous STINs with negligible overhead, while preserving the detection of stable context inconsistencies that require inconsistency handling.},
+	Author = {Chang Xu and Wang Xi and S. C. Cheung and Xiaoxing Ma and Chun Cao and Jian Lu},
+	Date-Added = {2016-03-10 12:12:23 +0000},
+	Date-Modified = {2016-03-10 12:16:12 +0000},
+	Doi = {10.1109/TSE.2015.2418760},
+	Issn = {0098-5589},
+	Journal = {IEEE Transactions on Software Engineering},
+	Keywords = {software engineering;ubiquitous computing;CINA;STIN;context-aware applications;unstable context inconsistency detection;Context;Delays;Finite element analysis;Middleware;Schedules;Sensors;Constraint;context inconsistency;impact propagation;instability analysis;pervasive computing},
+	Month = {Sept},
+	Number = {9},
+	Pages = {842-865},
+	Title = {Cina: Suppressing the Detection of Unstable Context Inconsistency},
+	Volume = {41},
+	Year = {2015},
+	Bdsk-Url-1 = {http://dx.doi.org/10.1109/TSE.2015.2418760}}
 
 @inproceedings{Wu:2015:CEC:2847601.2847924,
 	Acmid = {2847924},
