@@ -10,7 +10,7 @@ from arithmatex import ArithmatexExtension
 def spar(path = '/'):
     try:
         if path == 'kwiki':
-            path += '/index.html'
+            return flask.redirect('/spar/kwiki/')
         if path.endswith('/'):
             path += 'index.html'
         if path.split('.')[-1] in ['html']: # HTML may be raw file or a markdown
