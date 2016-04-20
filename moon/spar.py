@@ -3,6 +3,8 @@ from moon import *
 
 from citation import makeJinjaBlockPattern
 
+from arithmatex import ArithmatexExtension
+
 @app.route('/spar/', methods = ['GET'])
 @app.route('/spar/<path:path>', methods = ['GET'])
 def spar(path = '/'):
@@ -14,22 +16,25 @@ def spar(path = '/'):
         if path.split('.')[-1] in ['html']: # HTML may be raw file or a markdown
             md_path = SPAR_DIR + os.path.sep + '.'.join(path.split('.')[:-1] + ['md'])
             if os.path.isfile(md_path):
+                kwiki = path.startswith('kwiki/')
+                template = 'wiki.html' if kwiki else 'spar.html'
+
                 with open(md_path, 'r') as fp:
-                    md = markdown.Markdown(extensions = 
-                        ['markdown.extensions.extra',
+                    extensions = ['markdown.extensions.extra',
                          'markdown.extensions.meta',
                          'markdown.extensions.toc',]
-                    )
+
+                    if kwiki:
+                        extensions.append(ArithmatexExtension())
+
+                    md = markdown.Markdown(extensions = extensions)
 
                     makeJinjaBlockPattern(md)
 
                     content = md.convert(fp.read().decode('utf-8'))
+
                     meta = md.Meta
                     title = ''.join( meta.get('title', ['']) )
-                if path.startswith('kwiki'):
-                    template = 'wiki.html'
-                else:
-                    template = 'spar.html'
                 return flask.render_template(template, content = content, title = title, nofooter = True)
         return flask.send_from_directory(SPAR_DIR, path)
     except Exception, e:
