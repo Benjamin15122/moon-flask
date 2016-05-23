@@ -38,7 +38,8 @@
 
 {% macro render_entries_group_by_year(years, grouped_entries, years2, grouped_entries2, hl="") -%}
 <p>
-<h2><a name="conference"></a>Conference<small><a href="#journal">Journal<img src="/static/img/icon-link.png"></a></small></h2>
+<h3>[<a href="#conference">Conference<img src="/static/img/icon-link.png"></a>][<a href="#journal">Journal<img src="/static/img/icon-link.png"></a>]</h3>
+<h2><a name="conference"></a>Conference</h2>
 {% for year,__ in years %}
 [<a href="#conference-{{ year }}">{{ year }}</a>]
 {% endfor %}
@@ -49,7 +50,7 @@
 {{ render_entries(entries, hl) }}
 <hr/>
 {% endfor %}
-<h2><a name="journal"></a>Journal<small><a href="#conference">Conference<img src="/static/img/icon-link.png"></a></small></h2>
+<h2><a name="journal"></a>Journal</h2>
 {% for year,__ in years2 %}
 [<a href="#journal-{{ year }}">{{ year }}</a>]
 {% endfor %}
