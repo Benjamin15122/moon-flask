@@ -21,6 +21,10 @@ title: Yuan Yao
 
 ## Publications
 
+[publications][publications]
+
+### Selected Publications
+
 ~~~{.bibtexhtml hl_lines="Yuan Yao"}
 
 @article{DBLP:journals/isci/YaoTXAXL15,
