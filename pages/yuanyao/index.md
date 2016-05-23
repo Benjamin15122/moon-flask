@@ -21,7 +21,7 @@ title: Yuan Yao
 
 ## Publications
 
-[publications][publications]
+[publications](publications)
 
 ### Selected Publications
 
