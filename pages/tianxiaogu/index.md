@@ -16,7 +16,7 @@ title: Tianxiao Gu
 
 * 2013.9 - 2014.9: Visiting student, University of California, Davis, [Professor Zhendong Su](http://www.cs.ucdavis.edu/~su/).
 * 2012.9 - Present: PhD Candidate, Department of Computer Science and Technology, Nanjing University
-* 20010.9 - 2012.7: PhD Student, Department of Computer Science and Technology, Nanjing University
+* 2010.9 - 2012.7: PhD Student, Department of Computer Science and Technology, Nanjing University
 * 2006.9 - 2010.6: B.Sc., Department of Computer Science and Technology, Nanjing University
 
 

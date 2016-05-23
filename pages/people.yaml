@@ -31,6 +31,9 @@ faculty:
   - name: Liang Wang
     title: Assistant Professor
     url: http://cs.nju.edu.cn/wangliang
+  - name: Yuan Yao
+    title: Assistant Professor
+    url: yuanyao
   - name: Jianying Zhang
     title: Senior Engineer
 
