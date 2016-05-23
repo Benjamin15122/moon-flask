@@ -20,8 +20,8 @@ title: Yuan Yao
 
 ## Publications
 
-* Selected Publications
+Selected Publications
 
-{{ render_bib_file('yuanyao.bib', ['IJCAI15', 'TKDE14', 'KDD14', 'WWW13']) }}
+{{ render_bib_file('yuanyao.bib', ['IJCAI15', 'TKDE14', 'KDD14', 'WWW13'], hl='Yuan Yao') }}
 
 More [publications](publications).

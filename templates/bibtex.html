@@ -1,7 +1,7 @@
 {% macro render_entries(entries, hl="") -%}
 <ul class="bibtex">
 {% for entry in entries %}
-<li><a name="{{ entry.id }}"></a>
+<li><a name="{{ entry.ID }}"></a>
 {{ render_entry(entry, hl) }}
 </li>
 {% endfor %}
@@ -36,14 +36,26 @@
 {% if entry.year %}<span class="bibtex year">{{ entry.year}}.</span>{% endif %}
 {%- endmacro %}
 
-{% macro render_entries_group_by_year(years, grouped_entries, hl="") -%}
+{% macro render_entries_group_by_year(years, grouped_entries, years2, grouped_entries2, hl="") -%}
 <p>
+<h2><a name="conference"></a>Conference/<a href="#journal">Journal</a></h2>
 {% for year,__ in years %}
-[<a href="#{{ year }}">{{ year }}</a>]
+[<a href="#conference-{{ year }}">{{ year }}</a>]
 {% endfor %}
 </p>
 {% for year, entries in grouped_entries %}
-<h2><a name="{{ year }}"></a>{{ year }}</h2>
+<h2><a name="conference-{{ year }}"></a>{{ year }}</h2>
+<hr/>
+{{ render_entries(entries, hl) }}
+<hr/>
+{% endfor %}
+<h2><a name="journal"></a>Journal/<a href="#conference">Conference</a></h2>
+{% for year,__ in years2 %}
+[<a href="#journal-{{ year }}">{{ year }}</a>]
+{% endfor %}
+</p>
+{% for year, entries in grouped_entries2 %}
+<h2><a name="journal-{{ year }}"></a>{{ year }}</h2>
 <hr/>
 {{ render_entries(entries, hl) }}
 <hr/>

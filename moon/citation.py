@@ -185,18 +185,21 @@ def render_bib_entry(entry, hl=''):
 
     return render(entry, hl)
 
+def getyear(e):
+    return e.get('year', 'Unknown')
 
 def render_bib_entries(entries, hl='', group_by_year=False):
     if group_by_year:
-        def getyear(e):
-            print(e)
-            return e.get('year', 'Unknown')
         entries = sorted(entries, key=getyear, reverse=True)
-        grouped_entries = groupby(entries, getyear)
-        years = groupby(entries, getyear)
+        grouped_entries = groupby([ e for e in entries if e['ENTRYTYPE'] in ['inproceedings','proceedings']], getyear)
+        years = groupby([ e for e in entries if e['ENTRYTYPE'] in ['inproceedings', 'proceedings']], getyear)
+        grouped_entries2 = groupby([ e for e in entries if e['ENTRYTYPE'] in ['article']], getyear)
+        years2 = groupby([ e for e in entries if e['ENTRYTYPE'] in ['article']], getyear)
         render = get_template_attribute('bibtex.html', 'render_entries_group_by_year')
-        return render(years, grouped_entries, hl)
-
+        try:
+            return render(years, grouped_entries, years2, grouped_entries2, hl)
+        except Exception as e:
+            print(e)
 
     render = get_template_attribute('bibtex.html', 'render_entries')
     return render(entries, hl)
