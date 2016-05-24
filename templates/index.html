@@ -66,14 +66,14 @@
         <div class="col-padded col-shaded"><!-- inner custom column -->
             <ul class="list-unstyled clear-margins"><!-- widgets -->
                 <li class="widget-container widget_up_events"><!-- widgets list -->
-                    <h1 class="title-widget">Events</h1>
+                    <h1 class="title-widget">Upcoming Events</h1>
                     <ul class="list-unstyled">
                          <!-- the most close deadline -->
                          {% if deadlines|first %}
                          <li class="up-event-wrap">
                          <h1 class="title-median"><a href="{{ url_for('events', path='deadlines') }}" title="{{ deadlines[0].label}}">DEADLINE: {{ deadlines[0].label }}</a></h1>
                              <div class="up-event-meta clearfix">
-                                 <div class="up-event-date">{{ deadlines[0].date | to_date }}</div><div class="up-event-time">{{ deadlines[0].date | to_time }}</div>
+                                 <div class="up-event-date">{{ deadlines[0].date | to_date }}</div>
                              </div>
                          </li>
                          {% endif %}

@@ -15,7 +15,8 @@ title: Yuan Yao
 
 ## Research Interests
 
-* Recommendation System
+* Data Mining
+* Recommender Systems
 * Trust Computing
 
 ## Publications
