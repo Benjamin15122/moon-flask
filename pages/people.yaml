@@ -8,6 +8,7 @@ faculty:
   - name: Xiaoxing Ma 马晓星
     title: Professor
     url: xiaoxingma
+    avatar: /people/xiaoxingma/static/avatar.jpg
   - name: Xianping Tao 陶先平
     title: Professor
     url: xianpingtao
@@ -41,30 +42,46 @@ faculty:
 
 phd:
   - name: Yang Zou
+    from: 2007
   - name: Xuansong Li
+    from: 2008
   - name: Hongyu Kuang
+    from: 2009
   - name: Xiaorui Zhu
+    from: 2009
   - name: Haibin Yang
+    from: 2010
   - name: Hengfeng Wei
+    from: 2011
   - name: Haibo Ye
+    from: 2011
   - name: Jingwei Xu
+    from: 2012
   - name: Tianxiao Gu
     url:  tianxiaogu
     avatar: /static/img/avatar/gutianxiao.jpg
+    from: 2012
   - name: Yanyan Jiang
     url:  http://moon.nju.edu.cn/spar/people/jyy.html
+    from: 2013
   - name: Yi Qin
     url:  http://moon.nju.edu.cn/spar/people/qy.html
+    from: 2013
   - name: Wenhua Yang
     url:  http://moon.nju.edu.cn/spar/people/ywh/ywh.html
+    from: 2014
   - name: Shengqu Xi
     url:  shengquxi
+    from: 2014
   - name: Yaojing Wang
     url:  yaojingwang
+    from: 2014
   - name: Zelin Zhao
     url:  http://moon.nju.edu.cn/spar/people/zzl/zzl.html
+    from: 2014
   - name: Huiyan Wang
     url: http://moon.nju.edu.cn/spar/people/why/why.html
+    from: 2015
 
 
 graduates:
