@@ -12,6 +12,7 @@ faculty:
   - name: Xianping Tao 陶先平
     title: Professor
     url: xianpingtao
+    avatar: /people/xianpingtao/static/avatar.jpg
   - name: Feng Xu 徐锋
     title: Professor
     url: fengxu
