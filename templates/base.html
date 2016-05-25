@@ -156,6 +156,7 @@
                         </ul>
                     </div>
                 </div><!-- widgets column center end -->
+                {% if g.site %}
                 <div class="col-lg-4 col-md-4"><!-- widgets column right -->
                     <div class="col-padded col-naked">
                         <ul class="list-unstyled clear-margins"><!-- widgets -->
@@ -169,9 +170,10 @@
                                     {% endfor %}
                                 </ul>
                             </li>
-                        </ul> 
+                        </ul>
                     </div>
                 </div><!-- widgets column right end -->
+                {% endif %}
             </div><!-- row end -->
         </div><!-- container end -->
     </div><!-- footer end -->

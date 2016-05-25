@@ -15,6 +15,7 @@ faculty:
     avatar: /people/xianpingtao/static/avatar.jpg
   - name: Feng Xu 徐锋
     title: Professor
+    avatar: /people/fengxu/static/img/avatar.jpg
     url: fengxu
   - name: Chang Xu 许畅
     title: Associate Professor

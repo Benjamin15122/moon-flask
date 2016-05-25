@@ -78,6 +78,8 @@ def page_not_found(e):
     '''Custom 404 page
 
     '''
+    if not hasattr(g, 'site'):
+        g.site = Site()
     return render_template('404.html'), 404
 
 @app.before_request
