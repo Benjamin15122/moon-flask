@@ -5,14 +5,14 @@ faculty:
   - name: Jian Lü 吕建
     title: Professor
     avatar: /static/img/avatar/lujian.jpg
-  - name: Xiaoxing Ma 马晓星
-    title: Professor
-    url: xiaoxingma
-    avatar: /people/xiaoxingma/static/avatar.jpg
   - name: Xianping Tao 陶先平
     title: Professor
     url: xianpingtao
     avatar: /people/xianpingtao/static/avatar.jpg
+  - name: Xiaoxing Ma 马晓星
+    title: Professor
+    url: xiaoxingma
+    avatar: /people/xiaoxingma/static/avatar.jpg
   - name: Feng Xu 徐锋
     title: Professor
     avatar: /people/fengxu/static/img/avatar.jpg
