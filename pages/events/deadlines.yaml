@@ -1,24 +1,13 @@
-- id: fse16
-  label: FSE 2016 (Seattle, United State)
-  url: http://www.cs.ucdavis.edu/fse2016/
-  date: 2016-03-11
-- id: qrs16
-  label: QRS 2016 (Vienna, Austria)
-  url: http://paris.utdallas.edu/qrs16/CFP/CFP-QRS.pdf
-  date: 2016-03-25
-- id: oopsla16
-  label: OOPSLA 2016 (Amsterdam, Netherlands)
-  url: http://2016.splashcon.org
-  date: 2016-03-23
-- id: ase16
-  label: ASE 2016 (Singapore, Singapore)
-  url: http://www.ase2016.org
-  date: 2016-04-29
-- id: issre16
-  label: ISSRE 2016 (Ottawa, Canada)
-  url: http://issre.net/cfp-research
-  date: 2016-05-13
 - id: apsec16
-  label: APSEC 2016 (University of Waikato, Hamilton, New Zealand)
+  label: APSEC 2016 (Hamilton, New Zealand)
   url: http://www.apsec2016.org
   date: 2016-07-15
+- id: icse17
+  label: ICSE 2017 (Buenos Aires, Argentina)
+  url: http://icse2017.gatech.edu
+  date: 2016-08-26
+- id: icst17
+  label: ICST 2017 (Tokyo, Japan)
+  url: http://aster.or.jp/conference/icst2017/
+  date: 2016-09-23
+
