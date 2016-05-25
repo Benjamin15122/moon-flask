@@ -109,6 +109,6 @@ title: Xianping Tao
 
 ### Some recent publications:
 
-{{ render_bib_file('2014.bib') }}
+{{ render_bib_file('2014.bib', hl='Xianping Tao') }}
 
 ([More...](publications))
