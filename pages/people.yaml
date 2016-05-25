@@ -106,6 +106,7 @@ graduates:
     url:  http://moon.nju.edu.cn/spar/people/zrq/zrq.html
   - name: Shengwei An
     url:  shengweian
+    avatar: shengweian/static/img/avatar.jpg
   - name: Shenqu Xi
     url:  default
   - name: Shentao Yue
