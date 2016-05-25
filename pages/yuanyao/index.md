@@ -4,7 +4,7 @@ title: Yuan Yao
 <div class="news-body">
     <div class="row gutter k-equal-height"><!-- row -->
         <div class="col-lg-3 col-md-4 col-sm-12">
-            <img src="static/moon-yy2.jpg" alt="Yuan Yao" class="aligncenter" />
+            <img src="static/moon-yy2.jpg" height="400" alt="Yuan Yao" class="aligncenter" />
         </div>
         <div class="col-lg-9 col-md-8 col-sm-12">
             <div class="row gutter k-equal-height"><!-- nesting row -->
