@@ -11,22 +11,35 @@
             <h1 class="page-title">People</h1>
             <div class="news-body">
                  <p class="call-out">
-                 Currently, there are <a href="#faculty">{{ people.faculty|length}}</a> Faculty members, <a href="#students">{{ people.phd|length + people.graduates|length + people.undergraduates|length }}</a> students.
+                 Currently, there are <a href="#faculty">{{ people.faculty|length}}</a> faculty members and <a href="#students">{{ people.phd|length + people.graduates|length + people.undergraduates|length }}</a> students.
                  </p>
                <div class="separator-dbl-strike"></div><!-- separator -->
                <a name="faculty"></a>
-               <h2>Faculty</h2>
+               <h2>Faculties</h2>
                 <div class="row small k-equal-height"><!-- row -->
                     {% for item in people.faculty %}
                     <div class="col-lg-3 col-md-6 col-sm-12">
-                        {% if item.url %}
-                        <a href="{{ item.url }}">
-                            {% endif %}
-                            <h6 style=""><i class="fa fa-coffee"></i>{{ item.name }}</h6>
-                            <p>{{ item.title }}</p>
-                            {% if item.url %}
-                        </a>
-                        {% endif %}
+                        {% if item.url %} <a href="{{ item.url }}"> {% endif %}
+                            <div class="pblock">
+                            <table><tr>
+                                <td>
+                                    {% if item.avatar %}
+                                        <i class="fa">
+                                            <img class="avatar" src="{{ item.avatar }}"/>
+                                        </i>
+                                    {% else %}
+                                        <i class="fa">
+                                            <img class="avatar" src="/static/img/avatar/default.jpg"/>
+                                        </i>
+                                    {% endif %}
+                                </td>
+                                <td>
+                                    <span class="name">{{ item.name }}, <br></span>{{ item.title }}
+                                </td>
+                            </tr></table>
+                            </div>
+                            <!-- <p>{{ item.title }}</p> -->
+                        {% if item.url %} </a> {% endif %}
                     </div>
                     {% endfor %}
                 </div><!-- row end -->
@@ -36,14 +49,24 @@
                 <div class="row small k-equal-height"><!-- row -->
                     {% for item in people.phd %}
                     <div class="col-lg-3 col-md-6 col-sm-12">
-                        {% if item.url %}
-                        <a href="{{ item.url }}">
+                        {% if item.url %} <a href="{{ item.url }}"> {% endif %}
+                            <div class="pblock">
+                            <table><tr>
+                            <td>
+                                {% if item.avatar %}
+                                    <i class="fa">
+                                        <img class="avatar" src="{{ item.avatar }}"/>
+                                    </i>
+                                {% else %}
+                                    <i class="fa">
+                                        <img class="avatar" src="/static/img/avatar/default.jpg"/>
+                                    </i>
+                            </td>
                             {% endif %}
-                            <h6><i class="fa fa-rocket"></i>{{ item.name }}</h6>
-                            <!-- <p>{{ item.title }}</p> -->
-                            {% if item.url %}
-                        </a>
-                        {% endif %}
+                            <td> <span class="name">{{ item.name }}</span> </td>
+                            </tr></table>
+                            </div>
+                        {% if item.url %} </a> {% endif %}
                     </div>
                     {% endfor %}
                 </div><!-- row end -->
@@ -52,14 +75,26 @@
                 <div class="row small k-equal-height"><!-- row -->
                     {% for item in people.graduates %}
                     <div class="col-lg-3 col-md-6 col-sm-12">
-                        {% if item.url %}
-                        <a href="{{ item.url }}">
+                        {% if item.url %} <a href="{{ item.url }}"> {% endif %}
+
+                            <div class="pblock">
+                            <table><tr>
+                            <td>
+                                {% if item.avatar %}
+                                    <i class="fa">
+                                        <img class="avatar" src="{{ item.avatar }}"/>
+                                    </i>
+                                {% else %}
+                                    <i class="fa">
+                                        <img class="avatar" src="/static/img/avatar/default.jpg"/>
+                                    </i>
+                            </td>
                             {% endif %}
-                            <h6><i class="fa fa-graduation-cap"></i>{{ item.name }}</h6>
-                            <!-- <p>{{ item.title }}</p> -->
-                            {% if item.url %}
-                        </a>
-                        {% endif %}
+                            <td> <span class="name">{{ item.name }}</span> </td>
+                            </tr></table>
+                            </div>
+
+                            {% if item.url %} </a> {% endif %}
                     </div>
                     {% endfor %}
                 </div><!-- row end -->

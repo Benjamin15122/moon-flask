@@ -1,40 +1,42 @@
 faculty:
-  - name: Jiafu Xu
+  - name: Jiafu Xu 徐家福
     title: Professor
-  - name: Jian Lü
+    avatar: /static/img/avatar/xujiafu.jpg
+  - name: Jian Lü 吕建
     title: Professor
-  - name: Xiaoxing Ma
+    avatar: /static/img/avatar/lujian.jpg
+  - name: Xiaoxing Ma 马晓星
     title: Professor
     url: xiaoxingma
-  - name: Xianping Tao
+  - name: Xianping Tao 陶先平
     title: Professor
     url: xianpingtao
-  - name: Feng Xu
+  - name: Feng Xu 徐锋
     title: Professor
     url: fengxu
-  - name: Chang Xu
+  - name: Chang Xu 许畅
     title: Associate Professor
     url: http://cs.nju.edu.cn/changxu
-  - name: Hao Hu
+  - name: Hao Hu 胡昊
     title: Associate Professor
-  - name: Yu Huang
+  - name: Yu Huang 黄宇
     title: Associate Professor
     url: http://cs.nju.edu.cn/yuhuang
-  - name: Chun Cao
+  - name: Chun Cao 曹春
     title: Associate Professor
-  - name: Ping Yu
+  - name: Ping Yu 余萍
     title: Assistant Professor
     url: http://cs.nju.edu.cn/yuping
-  - name: Jun Ma
+  - name: Jun Ma 马骏
     title: Assistant Professor
     url: junma
-  - name: Liang Wang
+  - name: Liang Wang 汪亮
     title: Assistant Professor
     url: http://cs.nju.edu.cn/wangliang
-  - name: Yuan Yao
+  - name: Yuan Yao 姚远
     title: Assistant Professor
     url: yuanyao
-  - name: Jianying Zhang
+  - name: Jianying Zhang 张建莹
     title: Senior Engineer
 
 phd:
