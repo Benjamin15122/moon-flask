@@ -49,48 +49,69 @@ faculty:
     title: Senior Engineer
 
 phd:
-  - name: Yang Zou
-    from: 2007
-  - name: Xuansong Li
+  - name: Yang Zou 邹阳
     from: 2008
-  - name: Hongyu Kuang
+  - name: Xuansong Li 李晅松
     from: 2009
-  - name: Xiaorui Zhu
-    from: 2009
-  - name: Haibin Yang
+  - name: Hongyu Kuang 匡宏宇
     from: 2010
-  - name: Hengfeng Wei
+  - name: Xiaorui Zhu 朱晓瑞
+    from: 2010
+  - name: Haibin Yang 杨海滨
+    from: 2010
+  - name: Hengfeng Wei 魏恒峰
     from: 2011
-  - name: Haibo Ye
+  - name: Haibo Ye 叶海波
     from: 2011
-  - name: Jingwei Xu
+  - name: Jingwei Xu 徐经纬
     from: 2012
-  - name: Tianxiao Gu
+  - name: Tianxiao Gu 顾天晓
     url:  tianxiaogu
     avatar: /static/img/avatar/gutianxiao.jpg
     from: 2012
-  - name: Yanyan Jiang
+  - name: Yanyan Jiang 蒋炎岩
     url:  http://moon.nju.edu.cn/spar/people/jyy.html
     avatar: /spar/people/jyy/jyy_small.jpg
     from: 2013
-  - name: Yi Qin
+  - name: Yi Qin 秦逸
     url:  http://moon.nju.edu.cn/spar/people/qy.html
     from: 2013
-  - name: Wenhua Yang
+  - name: Wenhua Yang 杨文华
     url:  http://moon.nju.edu.cn/spar/people/ywh/ywh.html
     from: 2014
-  - name: Shengqu Xi
+  - name: Shengqu Xi 席圣渠
     url:  shengquxi
     from: 2014
-  - name: Yaojing Wang
+  - name: Yaojing Wang 王瑶菁
     url:  yaojingwang
     from: 2014
-  - name: Zelin Zhao
+  - name: Zelin Zhao 赵泽林
     url:  http://moon.nju.edu.cn/spar/people/zzl/zzl.html
     from: 2014
-  - name: Huiyan Wang
+  - name: Huiyan Wang 王慧妍
     url: http://moon.nju.edu.cn/spar/people/why/why.html
     from: 2015
+  - name: Jue Wang 王珏
+    from: 2016
+  - name: Da Li 李达
+    from: 2016
+  - name: Ying Zhang 张营
+    from: 2016
+  - name: Yanxiang Tong 童燕翔
+    from: 2016
+  - name: Xue Jiang 江雪
+    from: 2016
+  - name: Wenjie Li 李文杰
+    from: 2016
+  - name: Yuqi Zhang 张宇奇
+    from: 2016
+
+
+
+
+
+
+
 
 
 graduates:
