@@ -3,6 +3,25 @@
     line-height: 22px;
 }
 
+.people .pblock a img {
+    -webkit-transition: all 0.25s ease-in-out 0s;
+    -moz-transition: all 0.25s ease-in-out 0s;
+    -o-transition: all 0.25s ease-in-out 0s;
+    transition: all 0.25s ease-in-out 0s; 
+}
+
+.people .pblock a img:hover {
+    -ms-transform: scale(1.2, 1.2) translateZ(0);
+    -webkit-transform: scale(1.2, 1.2) translateZ(0);
+    transform: scale(1.2, 1.2) translateZ(0);
+}
+
+.people .pblock a img:focus { 
+    -ms-transform: scale(1, 1);
+    -webkit-transform: scale(1, 1);
+    transform: scale(1, 1); 
+}
+
 .people .name {
     font-size: 16px;
     font-weight: 700;

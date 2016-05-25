@@ -19,27 +19,24 @@
                 <div class="row small k-equal-height"><!-- row -->
                     {% for item in people.faculty %}
                     <div class="col-lg-3 col-md-6 col-sm-12">
+                        <div class="pblock">
                         {% if item.url %} <a href="{{ item.url }}"> {% endif %}
-                            <div class="pblock">
                             <table><tr>
                                 <td>
                                     {% if item.avatar %}
-                                        <i class="fa">
-                                            <img class="avatar" src="{{ item.avatar }}"/>
-                                        </i>
+                                        <img class="avatar" src="{{ item.avatar }}"/>
                                     {% else %}
-                                        <i class="fa">
-                                            <img class="avatar" src="/static/img/avatar/default.jpg"/>
-                                        </i>
+                                        <img class="avatar" src="/static/img/avatar/default.jpg"/>
                                     {% endif %}
                                 </td>
                                 <td>
                                     <span class="name">{{ item.name }}, <br></span>{{ item.title }}
                                 </td>
                             </tr></table>
-                            </div>
+                            
                             <!-- <p>{{ item.title }}</p> -->
                         {% if item.url %} </a> {% endif %}
+                        </div>
                     </div>
                     {% endfor %}
                 </div><!-- row end -->
@@ -49,24 +46,20 @@
                 <div class="row small k-equal-height"><!-- row -->
                     {% for item in people.phd %}
                     <div class="col-lg-3 col-md-6 col-sm-12">
+                        <div class="pblock">
                         {% if item.url %} <a href="{{ item.url }}"> {% endif %}
-                            <div class="pblock">
                             <table><tr>
                             <td>
                                 {% if item.avatar %}
-                                    <i class="fa">
-                                        <img class="avatar" src="{{ item.avatar }}"/>
-                                    </i>
+                                    <img class="avatar" src="{{ item.avatar }}"/>
                                 {% else %}
-                                    <i class="fa">
-                                        <img class="avatar" src="/static/img/avatar/default.jpg"/>
-                                    </i>
+                                    <img class="avatar" src="/static/img/avatar/default.jpg"/>
                             </td>
                             {% endif %}
                             <td> <span class="name">{{ item.name }}</span> </td>
                             </tr></table>
-                            </div>
                         {% if item.url %} </a> {% endif %}
+                        </div>
                     </div>
                     {% endfor %}
                 </div><!-- row end -->
@@ -75,26 +68,20 @@
                 <div class="row small k-equal-height"><!-- row -->
                     {% for item in people.graduates %}
                     <div class="col-lg-3 col-md-6 col-sm-12">
+                        <div class="pblock">
                         {% if item.url %} <a href="{{ item.url }}"> {% endif %}
-
-                            <div class="pblock">
                             <table><tr>
                             <td>
                                 {% if item.avatar %}
-                                    <i class="fa">
-                                        <img class="avatar" src="{{ item.avatar }}"/>
-                                    </i>
+                                    <img class="avatar" src="{{ item.avatar }}"/>
                                 {% else %}
-                                    <i class="fa">
-                                        <img class="avatar" src="/static/img/avatar/default.jpg"/>
-                                    </i>
+                                    <img class="avatar" src="/static/img/avatar/default.jpg"/>
                             </td>
                             {% endif %}
                             <td> <span class="name">{{ item.name }}</span> </td>
                             </tr></table>
-                            </div>
-
                             {% if item.url %} </a> {% endif %}
+                        </div>
                     </div>
                     {% endfor %}
                 </div><!-- row end -->
