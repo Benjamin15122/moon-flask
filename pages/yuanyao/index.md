@@ -2,14 +2,14 @@ title: Yuan Yao
 
 
 <table class="imgtable"><tr><td>
-<a href="IMGLINKTARGET"><img src="static/moon-yy2.jpg" alt="alt text" width="175px" height="HEIGHTpx" /></a>&nbsp;</td>
-<td align="left"><p>Dr. Yuan Yao    <a href="static/cv_yuanyao.pdf" target=&ldquo;blank&rdquo;>[cv]</a></p>
-<p>Assistant Researcher</p>
-<p>State Key Laboratory for Novel Software Technology</p>
-<p>Department of Computer Science and Technology</p>
-<p>Nanjing University</p>
-<p>No 163 Xianlin Ave. Nanjing</p>
-<p>Email: yyao AT nju DOT edu DOT cn</p>
+<a href="IMGLINKTARGET"><img src="static/moon-yy2.jpg" alt="alt text" width="180px" height="HEIGHTpx" /></a>&nbsp;</td>
+<td align="left"><p font-size:18px; font-weight:bold> Dr. Yuan Yao    <a href="static/cv_yuanyao.pdf" target=&ldquo;blank&rdquo;>[cv]</a></p>
+<p> Assistant Researcher</p>
+<p> State Key Laboratory for Novel Software Technology</p>
+<p> Department of Computer Science and Technology</p>
+<p> Nanjing University</p>
+<p> No 163 Xianlin Ave. Nanjing</p>
+<p> Email: yyao AT nju DOT edu DOT cn</p>
 </td></tr></table>
 
 
