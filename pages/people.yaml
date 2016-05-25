@@ -20,24 +20,30 @@ faculty:
   - name: Chang Xu 许畅
     title: Associate Professor
     url: http://cs.nju.edu.cn/changxu
+    avatar: /static/img/avatar/xuchang.jpg
   - name: Hao Hu 胡昊
     title: Associate Professor
   - name: Yu Huang 黄宇
     title: Associate Professor
     url: http://cs.nju.edu.cn/yuhuang
+    avatar: /static/img/avatar/huangyu.jpg
   - name: Chun Cao 曹春
     title: Associate Professor
   - name: Ping Yu 余萍
     title: Assistant Professor
     url: http://cs.nju.edu.cn/yuping
+    avatar: /static/img/avatar/yuping.jpg
   - name: Jun Ma 马骏
     title: Assistant Professor
     url: junma
+    avatar: /static/img/avatar/majun.jpg
   - name: Liang Wang 汪亮
     title: Assistant Professor
     url: http://cs.nju.edu.cn/wangliang
+    avatar: /static/img/avatar/wangliang.jpg
   - name: Yuan Yao 姚远
     title: Assistant Professor
+    avatar: /static/img/avatar/yaoyuan.jpg
     url: yuanyao
   - name: Jianying Zhang 张建莹
     title: Senior Engineer
@@ -65,6 +71,7 @@ phd:
     from: 2012
   - name: Yanyan Jiang
     url:  http://moon.nju.edu.cn/spar/people/jyy.html
+    avatar: /spar/people/jyy/jyy_small.jpg
     from: 2013
   - name: Yi Qin
     url:  http://moon.nju.edu.cn/spar/people/qy.html
