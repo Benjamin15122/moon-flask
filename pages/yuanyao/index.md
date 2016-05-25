@@ -2,7 +2,7 @@ title: Yuan Yao
 
 
 <table class="imgtable"><tr><td>
-<a href="IMGLINKTARGET"><img src="static/moon-yy2.jpg" alt="alt text" width="160px" height="HEIGHTpx" /></a>&nbsp;</td>
+<a href="IMGLINKTARGET"><img src="static/moon-yy2.jpg" alt="alt text" width="175px" height="HEIGHTpx" /></a>&nbsp;</td>
 <td align="left"><p>Dr. Yuan Yao    <a href="static/cv_yuanyao.pdf" target=&ldquo;blank&rdquo;>[cv]</a></p>
 <p>Assistant Researcher</p>
 <p>State Key Laboratory for Novel Software Technology</p>
