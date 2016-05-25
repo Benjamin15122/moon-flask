@@ -3,7 +3,7 @@ title: Yuan Yao
 
 <table class="imgtable"><tr><td>
 <a href="IMGLINKTARGET"><img src="static/moon-yy2.jpg" alt="alt text" width="180px" height="HEIGHTpx" /></a>&nbsp;</td>
-<td align="left"><p>&nbsp; Dr. <b>Yuan Yao</b>   <a href="static/cv_yuanyao.pdf" target=&ldquo;blank&rdquo;>[cv]</a></p>
+<td align="left"><p>&nbsp; Dr. <b>Yuan Yao</b>   <a href="static/cv-yuanyao.pdf" target=&ldquo;blank&rdquo;>[cv]</a></p>
 <p>&nbsp; Assistant Researcher</p>
 <p>&nbsp; State Key Laboratory for Novel Software Technology</p>
 <p>&nbsp; Department of Computer Science and Technology</p>
