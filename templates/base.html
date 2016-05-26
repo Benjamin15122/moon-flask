@@ -61,6 +61,11 @@
                         </li>
                         <li {% if request.path == url_for('news') %} class="current-menu-item" {% endif %}>
                             <a href="{{ url_for('news') }}" title="">News</a>
+                            <ul class="sub-menu">
+                                <li ><a href="{{ url_for('short_news', path='papers') }}">Paper</a></li>
+                                <li ><a href="{{ url_for('short_news', path='awards') }}">Award</a></li>
+                                <li ><a href="{{ url_for('short_news', path='scholarship') }}">Scholarship</a></li>
+                            </ul>
                         </li>
                         <li>
                             <a href="#" title="">Events</a>
@@ -74,10 +79,9 @@
                             <a href="http://moon.nju.edu.cn/courses/" title="">Courses</a>
                         </li>
                         <li>
-                            <a href="#" title="">About</a>
+                            <a href="{{ url_for('about') }}" title="">About</a>
                             <ul class="sub-menu">
                                 <li {% if request.path == url_for('contact') %} class="current-menu-item" {% endif %}><a href="{{ url_for('contact') }}" title="">Contact</a></li>
-                                <!-- <li {% if request.path == url_for('leadership') %} class="current-menu-item" {% endif %}><a href="{{ url_for('leadership') }}">Leadership</a></li> -->
                                 <li {% if request.path == url_for('awards') %} class="current-menu-item" {% endif %}><a href="{{ url_for('awards') }}">Awards</a></li>
                             </ul>
 
