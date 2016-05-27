@@ -3,7 +3,7 @@ from moon import *
 
 from citation import makeJinjaBlockPattern
 
-from arithmatex import ArithmatexExtension
+from spar_ext import ArithmatexExtension, SparPeople
 
 @app.route('/spar/', methods = ['GET'])
 @app.route('/spar/<path:path>', methods = ['GET'])
@@ -26,15 +26,21 @@ def spar(path = '/'):
 
                     if kwiki:
                         extensions.append(ArithmatexExtension())
+                        
+                    raw = fp.read().decode('utf-8')
 
                     md = markdown.Markdown(extensions = extensions)
 
                     makeJinjaBlockPattern(md)
 
-                    content = md.convert(fp.read().decode('utf-8'))
+                    content = md.convert(raw)
+
+                    if path == '/index.html':
+                        content += SparPeople()
 
                     meta = md.Meta
                     title = ''.join( meta.get('title', ['']) )
+
                 return flask.render_template(template, content = content, title = title, nofooter = True)
         return flask.send_from_directory(SPAR_DIR, path)
     except Exception, e:

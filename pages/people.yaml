@@ -13,6 +13,7 @@ faculty:
     title: Professor
     url: xiaoxingma
     avatar: /people/xiaoxingma/static/avatar.jpg
+    group: spar, dse
   - name: Feng Xu 徐锋
     title: Professor
     avatar: /people/fengxu/static/img/avatar.jpg
@@ -21,6 +22,7 @@ faculty:
     title: Associate Professor
     url: http://cs.nju.edu.cn/changxu
     avatar: /static/img/avatar/xuchang.jpg
+    group: spar
   - name: Hao Hu 胡昊
     title: Associate Professor
   - name: Yu Huang 黄宇
@@ -69,16 +71,20 @@ phd:
     url:  tianxiaogu
     avatar: /static/img/avatar/gutianxiao.jpg
     from: 2012
+    group: dse
   - name: Yanyan Jiang 蒋炎岩
     url:  http://moon.nju.edu.cn/spar/people/jyy.html
     avatar: /spar/people/jyy/jyy_small.jpg
     from: 2013
+    group: spar
   - name: Yi Qin 秦逸
     url:  http://moon.nju.edu.cn/spar/people/qy.html
     from: 2013
+    group: spar
   - name: Wenhua Yang 杨文华
     url:  http://moon.nju.edu.cn/spar/people/ywh/ywh.html
     from: 2014
+    group: spar
   - name: Shengqu Xi 席圣渠
     url:  shengquxi
     from: 2014
@@ -91,6 +97,7 @@ phd:
   - name: Huiyan Wang 王慧妍
     url: http://moon.nju.edu.cn/spar/people/why/why.html
     from: 2015
+    group: spar
   - name: Jue Wang 王珏
     from: 2016
   - name: Da Li 李达
@@ -106,17 +113,10 @@ phd:
   - name: Yuqi Zhang 张宇奇
     from: 2016
 
-
-
-
-
-
-
-
-
 graduates:
   - name: Bingying Guo
-    url:  default
+    url:  /spar/people/gby/gby.html
+    group: spar
   - name: Chenglin Meng
     url:  chenglinmeng
   - name: Fei Yang
@@ -133,6 +133,7 @@ graduates:
     url:  default
   - name: Jiaxing Dong
     url:  http://moon.nju.edu.cn/spar/people/djx.html
+    group: spar
   - name: Jie Wei
     url:  default
   - name: Jinqi Cui
@@ -147,10 +148,12 @@ graduates:
     url:  maosenhuang
   - name: Qiwei Li
     url:  http://moon.nju.edu.cn/spar/people/lqw.html
+    group: spar
   - name: Ruiqi Liu
     url:  ruiqiliu
   - name: Ruiqing Zhang
     url:  http://moon.nju.edu.cn/spar/people/zrq/zrq.html
+    group: spar
   - name: Shengwei An
     url:  shengweian
     avatar: shengweian/static/img/avatar.jpg
@@ -168,12 +171,15 @@ graduates:
     url:  xiangxu
   - name: Xiangyu Wu
     url:  http://moon.nju.edu.cn/spar/people/wxy.html
+    group: spar
   - name: Xiaofan Li
     url:  http://moon.nju.edu.cn/spar/people/lxf/lxf.html
+    group: spar
   - name: Yang Liang
     url:  default
   - name: Ying Zhang
     url:  http://moon.nju.edu.cn/spar/people/zy.html
+    group: spar
   - name: Yiqun Wang
     url:  yiqunwang
   - name: Yong Wang
@@ -184,6 +190,7 @@ graduates:
     url:  default
   - name: Zhanshuai Meng
     url:  http://moon.nju.edu.cn/spar/people/mzs/mzs.html
+    group: spar
   - name: Zhongliang Yuan
     url:  zhongliangyuan
   - name: Ziling Lu
@@ -195,10 +202,13 @@ graduates:
 alumni:
   - name: Xiujiang Li
     url:  http://moon.nju.edu.cn/spar/people/lxj/index.html
+    group: spar
   - name: Wang Xi
     url:  http://moon.nju.edu.cn/spar/people/xw.html
+    group: spar
   - name: Hao Jin
     url:  http://moon.nju.edu.cn/spar/people/HaoJin'sPage/index.html
+    group: spar
   - name: Yuan Yao
     姓名: 姚远
   - name: Yiling Yang
