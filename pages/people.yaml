@@ -74,16 +74,16 @@ phd:
     from: 2012
     group: dse
   - name: Yanyan Jiang 蒋炎岩
-    url:  http://moon.nju.edu.cn/spar/people/jyy.html
+    url:  /spar/people/jyy.html
     avatar: /spar/img/avatar/jiangyanyan.jpg
     from: 2013
     group: spar
   - name: Yi Qin 秦逸
-    url:  http://moon.nju.edu.cn/spar/people/qy.html
+    url:  /spar/people/qy.html
     from: 2013
     group: spar
   - name: Wenhua Yang 杨文华
-    url:  http://moon.nju.edu.cn/spar/people/ywh/ywh.html
+    url:  /spar/people/ywh/ywh.html
     from: 2014
     group: spar
   - name: Shengqu Xi 席圣渠
@@ -93,10 +93,10 @@ phd:
     url:  yaojingwang
     from: 2014
   - name: Zelin Zhao 赵泽林
-    url:  http://moon.nju.edu.cn/spar/people/zzl/zzl.html
+    url:  /spar/people/zzl/zzl.html
     from: 2014
   - name: Huiyan Wang 王慧妍
-    url: http://moon.nju.edu.cn/spar/people/why/why.html
+    url: /spar/people/why/why.html
     from: 2015
     group: spar
   - name: Jue Wang 王珏
@@ -133,7 +133,7 @@ graduates:
   - name: Jia Nie
     url:  default
   - name: Jiaxing Dong 董加星
-    url:  http://moon.nju.edu.cn/spar/people/djx.html
+    url:  /spar/people/djx.html
     group: spar
   - name: Jie Wei
     url:  default
@@ -148,12 +148,12 @@ graduates:
   - name: Maosen Huang
     url:  maosenhuang
   - name: Qiwei Li 李其玮
-    url:  http://moon.nju.edu.cn/spar/people/lqw.html
+    url:  /spar/people/lqw.html
     group: spar
   - name: Ruiqi Liu
     url:  ruiqiliu
   - name: Ruiqing Zhang 张瑞青
-    url:  http://moon.nju.edu.cn/spar/people/zrq/zrq.html
+    url:  /spar/people/zrq/zrq.html
     group: spar
   - name: Shengwei An
     url:  shengweian
@@ -171,15 +171,15 @@ graduates:
   - name: Xiang Xu
     url:  xiangxu
   - name: Xiangyu Wu 武翔宇
-    url:  http://moon.nju.edu.cn/spar/people/wxy.html
+    url:  /spar/people/wxy.html
     group: spar
   - name: Xiaofan Li 李晓帆
-    url:  http://moon.nju.edu.cn/spar/people/lxf/lxf.html
+    url:  /spar/people/lxf/lxf.html
     group: spar
   - name: Yang Liang
     url:  default
   - name: Ying Zhang 张营
-    url:  http://moon.nju.edu.cn/spar/people/zy.html
+    url:  /spar/people/zy.html
     group: spar
   - name: Yiqun Wang
     url:  yiqunwang
@@ -190,7 +190,7 @@ graduates:
   - name: Yuhao Gong
     url:  default
   - name: Zhanshuai Meng 孟占帅
-    url:  http://moon.nju.edu.cn/spar/people/mzs/mzs.html
+    url:  /spar/people/mzs/mzs.html
     group: spar
   - name: Zhongliang Yuan
     url:  zhongliangyuan
@@ -202,13 +202,13 @@ graduates:
 
 alumni:
   - name: Xiujiang Li 李秀江
-    url:  http://moon.nju.edu.cn/spar/people/lxj/index.html
+    url:  /spar/people/lxj/index.html
     group: spar
   - name: Wang Xi 奚旺
-    url:  http://moon.nju.edu.cn/spar/people/xw.html
+    url:  /spar/people/xw.html
     group: spar
   - name: Hao Jin 金昊
-    url:  http://moon.nju.edu.cn/spar/people/HaoJin'sPage/index.html
+    url:  /spar/people/HaoJin'sPage/index.html
     group: spar
   - name: Yuan Yao
     姓名: 姚远
