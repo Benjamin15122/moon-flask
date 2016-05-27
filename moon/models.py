@@ -82,6 +82,9 @@ class Site(object):
         self._master_events = load_master_events()
         # news
         self._news = load_news()
+        self._paper_news = load_paper_news()
+        self._award_news = load_award_news()
+        self._scholarship_news = load_scholarship_news()
 
         # people
         self._people = load_people()
@@ -113,6 +116,18 @@ class Site(object):
     @property
     def news(self):
         return self._news()
+
+    @property
+    def paper_news(self):
+        return self._paper_news()
+
+    @property
+    def award_news(self):
+        return self._award_news()
+
+    @property
+    def scholarship_news(self):
+        return self._scholarship_news()
 
     @property
     def people(self):
@@ -167,6 +182,45 @@ def load_master_events():
     '''
     e = None
     with open(MASTER_EVENTS_YAML, 'r') as f:
+        e = yaml.load(f)
+
+    return e if e else {}
+
+
+@git_update_check(PAPER_NEWS_YAML)
+def load_paper_news():
+    ''' Load all Master seminar events, see events/master.yaml
+
+    All paper news events have been sorted manually
+    '''
+    e = None
+    with open(PAPER_NEWS_YAML, 'r') as f:
+        e = yaml.load(f)
+
+    return e if e else {}
+
+
+@git_update_check(AWARD_NEWS_YAML)
+def load_award_news():
+    ''' Load all Master seminar events, see events/master.yaml
+
+    All award news have been sorted manually
+    '''
+    e = None
+    with open(AWARD_NEWS_YAML, 'r') as f:
+        e = yaml.load(f)
+
+    return e if e else {}
+
+
+@git_update_check(SCHOLARSHIP_NEWS_YAML)
+def load_scholarship_news():
+    ''' Load all Master seminar events, see events/master.yaml
+
+    All scholarship news have been sorted manually
+    '''
+    e = None
+    with open(SCHOLARSHIP_NEWS_YAML, 'r') as f:
         e = yaml.load(f)
 
     return e if e else {}
@@ -232,6 +286,8 @@ def update_news_yaml():
     rootdir = NEWS_DIR
     news_pages = []
     for subdir, dirs, files in os.walk(rootdir):
+        if os.path.abspath(subdir) == os.path.abspath(rootdir):
+            continue
         curdir = os.path.join(rootdir, subdir)
         for f in files:
             f = os.path.join(curdir, f)

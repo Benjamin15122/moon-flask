@@ -111,7 +111,30 @@ def news(page_num=None):
     n, pg = g.site.news
     pg.current = page_num
 
+    n = [news for news in n if news.get('status') != 'draft']
     return render_template('news.html', news=n, pg=pg)
+
+@app.route('/news/<path>', methods=['GET'])
+def short_news(path=None):
+    page = get_page(NEWS_DIR, path)
+    template = page.meta.get('template')
+    if not template:
+        print("notepage")
+        abort(404)
+
+    t = page.meta.get('type')
+
+    if t is None:
+        abort(404)
+    elif t == 'paper':
+        items = g.site.paper_news
+    elif t == 'award':
+        items = g.site.award_news
+    elif t == 'scholarship':
+        items = g.site.scholarship_news
+    else:
+        abort(404)
+    return render_template(template, title=page.meta.get('title'), items=items)
 
 @app.route('/news/page/<path:path>', methods=['GET'])
 def news_page(path):
@@ -162,10 +185,11 @@ def index():
 
 #####################
 
-@app.route('/leadership/', methods=['GET'])
-def leadership():
-    return render_template('leadership.html')
-
+@app.route('/about/', methods=['GET'])
+def about():
+    page = get_page(PAGES_DIR, 'about')
+    template = page.meta.get('template', 'people-page.html')
+    return render_template(template, page=page)
 
 @app.route('/people/', methods=['GET'])
 def people():

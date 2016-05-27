@@ -22,7 +22,7 @@
                                 Founded in 1984. Advancing software technology in China.
                             </p>
                             <p>
-                                <a href="#" class="btn btn-sm btn-danger" title="Button">READ MORE</a>
+                                <a href="/about" class="btn btn-sm btn-danger" title="Button">READ MORE</a>
                             </p>
                         </div>
                     </div>
@@ -69,14 +69,7 @@
                     <h1 class="title-widget">Upcoming Events</h1>
                     <ul class="list-unstyled">
                          <!-- the most close deadline -->
-                         {% if deadlines|first %}
-                         <li class="up-event-wrap">
-                         <h1 class="title-median"><a href="{{ url_for('events', path='deadlines') }}" title="{{ deadlines[0].label}}">DEADLINE: {{ deadlines[0].label }}</a></h1>
-                             <div class="up-event-meta clearfix">
-                                 <div class="up-event-date">{{ deadlines[0].date | to_date }}</div>
-                             </div>
-                         </li>
-                         {% endif %}
+
                          <!-- -->
                          {% if phd|first %}
                          <li class="up-event-wrap">
@@ -110,7 +103,24 @@
                         {% endfor %}
                     </ul>
                 </li><!-- widgets list end -->
-            </ul><!-- widgets end -->
+                {% if deadlines | first %}
+                <li class="widget-container widget_up_events" style="margin-top: 10px"><!-- widgets list -->
+                    <h1 class="title-widget">Deadlines</h1>
+                    <ul class="list-unstyled">
+                          {% for e in deadlines %}
+                            {% if loop.index <= 3 %}
+                         <li class="">
+                         <h1 class="title-median"><a href="{{ url_for('events', path='deadlines') }}" title="{{ e.label}}">DEADLINE: {{ e.label }}</a></h1>
+                             <div class="up-event-meta clearfix">
+                                 <div class="up-event-date">{{ e.date | to_date }}</div>
+                             </div>
+                         </li>
+                         {% endif %}
+                         {% endfor %}
+                    </ul>
+                </li><!-- widgets list end -->
+                {% endif %}
+             </ul><!-- widgets end -->
         </div><!-- inner custom column end -->
     </div><!-- upcoming events wrapper end -->
     <div class="col-lg-4 col-md-4"><!-- recent news wrapper -->
@@ -145,9 +155,9 @@
                             {% endif %}
                         {% endfor %}
                     </ul>
-                         <div class="recent-news-wrap" style="text-align:right">
-                            <a href="{{ url_for('news') }}" class="moretag" title="read more">more</a>
-                         <div>
+                    <div class="recent-news-wrap" style="text-align:right">
+                       <a href="{{ url_for('news') }}" class="moretag" title="read more">more</a>
+                    <div>
                 </li><!-- widgets list end -->
             </ul><!-- widgets end -->
         </div><!-- inner custom column end -->
@@ -155,55 +165,45 @@
     <div class="col-lg-4 col-md-4"><!-- misc wrapper -->
         <div class="col-padded col-shaded"><!-- inner custom column -->
             <ul class="list-unstyled clear-margins"><!-- widgets -->
-                <li class="widget-container widget_course_search"><!-- widget -->
-                    <h1 class="title-median">Introduction</h1>
-                    <p style="font-size: 14px;line-height: 24px;">The <a href="/">Institute of Computer Software (ICS)</a> is affiliated with <a href="http://www.nju.edu.cn" title="Nanjing University">Nanjing University</a>
-                    and supported by the <a href="http://cs.nju.edu.cn">Department of Computer Science and Technology of Nanjing University</a>.
-                    </p>
-                    <!--
-                    ICS was established at 1984 by Professor Jiafu Xu.
-                    -->
-                    <p style="font-size: 14px;line-height: 24px;">Research interests of ICS mainly focus on:
-                    <ul style="font-size: 14px;line-height: 24px;">
-                        <li>Internetware-based Software Methodology
-                        <li>Self-adaptive Software
-                        <li>Dynamic Software Evolution
-                        <li>Context-aware Modeling
-                        <li>Software Trustiness and Quality
-                        <li>Software Requirements Modeling and Analysis etc.
-                    <ul></p>
-                    </li>
+                <li class="widget-container widget_nav_menu"><!-- widget -->
+                    <h1 class="title-widget">Recent Papers</h1>
+                    <ul class="list-unstyled">
+                        {% for n in g.site.paper_news %}
+                            {% if loop.index <= 3 %}
+                                <li style="text-transform: none">{{ n.title }}</li>
+                            {% endif %}
+                        {% endfor %}
+                    </ul>
+                    <div class="recent-news-wrap" style="text-align:right">
+                       <a href="{{ url_for('short_news', path='papers') }}" class="moretag" title="read more">more</a>
+                    <div>
                 </li><!-- widget end -->
-                <!--
-                <li class="widget-container widget_text">
-                --><!-- widget -->
-                    <!--
-                    <a href="#" class="custom-button cb-green" title="How to apply?">
-                        <i class="custom-button-icon fa fa-check-square-o"></i>
-                        <span class="custom-button-wrap">
-                            <span class="custom-button-title">How to apply?</span>
-                            <span class="custom-button-tagline">Join us whenewer you feel it’s time!</span>
-                        </span>
-                        <em></em>
-                    </a>
-                    <a href="#" class="custom-button cb-gray" title="Campus tour">
-                        <i class="custom-button-icon fa  fa-play-circle-o"></i>
-                        <span class="custom-button-wrap">
-                            <span class="custom-button-title">Our Research</span>
-                            <span class="custom-button-tagline">Our research and papers...</span>
-                        </span>
-                        <em></em>
-                    </a>
-                    <a href="#" class="custom-button cb-yellow" title="Prospectus">
-                        <i class="custom-button-icon fa  fa-leaf"></i>
-                        <span class="custom-button-wrap">
-                            <span class="custom-button-title">Prospectus</span>
-                            <span class="custom-button-tagline">Request a free Institute Prospectus!</span>
-                        </span>
-                        <em></em>
-                    </a>
-                </li>-->
-                <!-- widget end -->
+                <li class="widget-container widget_nav_menu" style="margin-top: 10px"><!-- widget -->
+                    <h1 class="title-widget">Awards</h1>
+                    <ul class="list-unstyled">
+                        {% for n in g.site.award_news %}
+                            {% if loop.index <= 3 %}
+                                <li style="text-transform: none">{{ n.title }}</li>
+                            {% endif %}
+                        {% endfor %}
+                    </ul>
+                    <div class="recent-news-wrap" style="text-align:right">
+                       <a href="{{ url_for('short_news', path='awards') }}" class="moretag" title="read more">more</a>
+                    <div>
+                </li><!-- widget end -->
+                 <li class="widget-container widget_nav_menu" style="margin-top: 10px"><!-- widget -->
+                    <h1 class="title-widget">Scholarship</h1>
+                    <ul class="list-unstyled">
+                        {%-for n in g.site.scholarship_news-%}
+                            {%-if loop.index <= 3-%}
+                                <li style="text-transform: none">{{ n.title }}</li>
+                            {%-endif-%}
+                        {%-endfor-%}
+                    </ul>
+                    <div class="recent-news-wrap" style="text-align:right">
+                       <a href="{{ url_for('short_news', path='scholarship') }}" class="moretag" title="read more">more</a>
+                    <div>
+                </li><!-- widget end -->
             </ul><!-- widgets end -->
         </div><!-- inner custom column end -->
     </div><!-- misc wrapper end -->

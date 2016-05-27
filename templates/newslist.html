@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block title%}
+{{ title }} |
+{% endblock%}
+{% block page_path %}
+<li><a href="{{ url_for('index') }}">Home</a></li>
+<li>News</li>
+<li class="active">{{ title }}</li>
+{% endblock %}
+{% block content %}
+<h1>{{ title }}</h1>
+<ol>
+    {% for i in items %}
+    <li>{{ i.title }}</li>
+    {% endfor %}
+</ol>
+{% endblock %}
