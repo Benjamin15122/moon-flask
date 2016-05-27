@@ -205,11 +205,14 @@ alumni:
   - name: Xiujiang Li 李秀江
     url:  /spar/people/lxj/index.html
     group: spar
+    avatar: /spar/img/avatar/lixiujiang.jpg
   - name: Wang Xi 奚旺
     url:  /spar/people/xw.html
     group: spar
+    avatar: /spar/img/avatar/xiwang.jpg
   - name: Hao Jin 金昊
-    url:  /spar/people/HaoJin'sPage/index.html
+    url:  /spar/people/jh/index.html
+    avatar: /spar/img/avatar/jinhao.jpg
     group: spar
   - name: Yuan Yao
     姓名: 姚远
