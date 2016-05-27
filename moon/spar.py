@@ -28,15 +28,14 @@ def spar(path = '/'):
                         extensions.append(ArithmatexExtension())
                         
                     raw = fp.read().decode('utf-8')
+                    if path == '/index.html':
+                        raw += SparPeople()
 
                     md = markdown.Markdown(extensions = extensions)
 
                     makeJinjaBlockPattern(md)
 
                     content = md.convert(raw)
-
-                    if path == '/index.html':
-                        content += SparPeople()
 
                     meta = md.Meta
                     title = ''.join( meta.get('title', ['']) )

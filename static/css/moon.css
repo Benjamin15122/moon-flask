@@ -1,3 +1,11 @@
+.row .people {
+    margin-left: 0px;
+    margin-right: 0px;
+}
+.spar-people .row .small {
+    margin-left: 10px;
+    margin-right: 10px;
+}
 .people .pblock {
     margin-top: 20px;
     line-height: 22px;

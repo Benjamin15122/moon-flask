@@ -151,6 +151,7 @@ def display_people(p):
     d = []
     d.append('<div class="col-lg-2 col-md-3 col-sm-6">')
     d.append('<div class="pblock">')
+
     if 'url' in p: d.append('<a href="%s">' % p['url'])
 
     d.append('<table><tr>')
@@ -173,10 +174,10 @@ def SparPeople():
     peoples = g.site.people
     ret = []
     ret.append(
-'''<div class="row people">
-<div class="col-lg-12 col-md-12">
-<div class="col-padded">
+'''<div class="spar-people"><div class="row people" >
 ''')
+#<div class="col-lg-12 col-md-12">
+#<div class="col-padded">
 
     for (key, name) in zip(
         ['faculty', 'phd', 'graduates', 'alumni'],
@@ -190,6 +191,7 @@ def SparPeople():
                 ret.append(display_people(p))
         ret.append('</div>')
 
-    ret.append('</div></div></div>')
+    ret.append('</div></div>')
+    #</div></div>')
 
     return '\n'.join(ret)
