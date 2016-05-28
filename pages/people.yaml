@@ -98,6 +98,7 @@ phd:
     from: 2014
   - name: Huiyan Wang 王慧妍
     url: /spar/people/why/why.html
+    avatar: /spar/img/avatar/wanghuiyan.jpg
     from: 2015
     group: spar
   - name: Jue Wang 王珏
@@ -106,6 +107,7 @@ phd:
     from: 2016
   - name: Ying Zhang 张营
     from: 2016
+    avatar: /spar/img/avatar/zhangying.jpg
   - name: Yanxiang Tong 童燕翔
     from: 2016
   - name: Xue Jiang 江雪
@@ -135,6 +137,7 @@ graduates:
     url:  default
   - name: Jiaxing Dong 董加星
     url:  /spar/people/djx.html
+    avatar: /spar/img/avatar/dongjiaxing.jpg
     group: spar
   - name: Jie Wei
     url:  default
