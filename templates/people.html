@@ -30,7 +30,7 @@
                                     {% endif %}
                                 </td>
                                 <td>
-                                    <span class="name">{{ item.name }}<br></span>{{ item.title }}
+                                    <span class="name">{{ item.name }}</span><br>{{ item.title }}
                                 </td>
                             </tr></table>
                             
@@ -78,7 +78,7 @@
                                     <img class="avatar" src="/static/img/avatar/default.jpg"/>
                             </td>
                             {% endif %}
-                            <td> <span class="name">{{ item.name }}</span> </td>
+                            <td> <span class="name">{{ item.name }}</span> <br>{{ item.from }} –</td>
                             </tr></table>
                             {% if item.url %} </a> {% endif %}
                         </div>

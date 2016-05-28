@@ -122,93 +122,129 @@ phd:
     from: 2016
 
 graduates:
-  - name: Bingying Guo 郭冰莹
-    url:  /spar/people/gby/gby.html
-    avatar: /spar/img/avatar/guobingying.png
-    group: spar
-  - name: Chenglin Meng
-    url:  chenglinmeng
-  - name: Fei Yang
-    url:  feiyang
-  - name: Guo Yan
+  - name: Shengwei An 安圣威
+    url:  shengweian
+    from: 2013
+    avatar: /people/shengweian/static/img/avatar.jpg
+  - name: Huating Liu 刘华艇
     url:  default
-  - name: Hao Sun
-    url:  haosun
-  - name: Hengzhi Yao
-    url:  default
-  - name: Huating Liu
-    url:  default
-  - name: Jia Nie
-    url:  default
-  - name: Jiaxing Dong 董加星
-    url:  /spar/people/djx.html
-    avatar: /spar/img/avatar/dongjiaxing.jpg
-    group: spar
-  - name: Jie Wei
-    url:  default
-  - name: Jinqi Cui
-    url:  default
-  - name: Jun Sui
-    url:  default
-  - name: Kesheng Qi
-    url:  default
-  - name: Licheng Li
+    from: 2013
+  - name: Licheng Li 李立成
     url:  lichengli
-  - name: Maosen Huang
-    url:  maosenhuang
+    from: 2013
+  - name: Ruiqi Liu 刘锐奇
+    url:  ruiqiliu
+    from: 2013
+  - name: Yang Liang 梁阳
+    url:  default
+    from: 2013
+  - name: Jia Nie 聂佳
+    url:  default
+    from: 2013
+  - name: Kesheng Qi 戚可生
+    url:  default
+    from: 2013
+  - name: Jun Sui 睢骏
+    url:  default
+    from: 2013
+  - name: Jie Wei 魏杰
+    url:  default
+    from: 2013
+  - name: Fei Yang 杨飞
+    url:  feiyang
+    from: 2013
+  - name: Guo Yan 严国
+    url:  default
+    from: 2013
+  - name: Jinqi Cui 崔金琦
+    url:  default
+    from: 2014
+  - name: Yuhao Gong 龚宇豪
+    url:  default
+    from: 2014
   - name: Qiwei Li 李其玮
     url:  /spar/people/lqw.html
+    from: 2014
     avatar: /spar/img/avatar/liqiwei.jpg
-    group: spar
-  - name: Ruiqi Liu
-    url:  ruiqiliu
-  - name: Ruiqing Zhang 张瑞青
-    url:  /spar/people/zrq/zrq.html
-    avatar: /spar/img/avatar/zhangruiqing.jpg
-    group: spar
-  - name: Shengwei An
-    url:  shengweian
-    avatar: shengweian/static/img/avatar.jpg
-  - name: Shenqu Xi
-    url:  default
-  - name: Shentao Yue
-    url:  default
-  - name: Shuo Cheng
-    url:  shuocheng
-  - name: Tianchi Liu
-    url:  tianchiliu
-  - name: Weiyi Wang
-    url:  weiyiwang
-  - name: Xiang Xu
-    url:  xiangxu
-  - name: Xiangyu Wu 武翔宇
-    url:  /spar/people/wxy.html
-    avatar: /spar/img/avatar/wuxiangyu.jpg
     group: spar
   - name: Xiaofan Li 李晓帆
     url:  /spar/people/lxf/lxf.html
+    from: 2014
     avatar: /spar/img/avatar/lixiaofan.jpg
     group: spar
-  - name: Yang Liang
-    url:  default
-  - name: Yiqun Wang
+  - name: Ziling Lu 陆子凌
+    url:  zilinglu
+    from: 2014
+  - name: Chenglin Meng 孟成林
+    url:  chenglinmeng
+    from: 2014
+  - name: Yiqun Wang 王逸群
     url:  yiqunwang
-  - name: Yong Wang
-    url:  default
-  - name: Yong Wu
+    from: 2014
+  - name: Xiangyu Wu 武翔宇
+    url:  /spar/people/wxy.html
+    from: 2014
+    avatar: /spar/img/avatar/wuxiangyu.jpg
+    group: spar
+  - name: Yong Wu 吴勇
     url:  yongwu
-  - name: Yuhao Gong
+    from: 2014
+  - name: Shenqu Xi 席胜渠
     url:  default
+    from: 2014
+  - name: Hengzhi Yao 姚恒志
+    url:  default
+    from: 2014
+  - name: Zhongliang Yuan 袁忠良
+    url:  zhongliangyuan
+    from: 2014
+  - name: Ruiqing Zhang 张瑞青
+    url:  /spar/people/zrq/zrq.html
+    from: 2014
+    avatar: /spar/img/avatar/zhangruiqing.jpg
+    group: spar
+  - name: Shuo Cheng 程硕
+    url:  shuocheng
+    from: 2015
+  - name: Jiaxing Dong 董加星
+    url:  /spar/people/djx.html
+    from: 2015
+    avatar: /spar/img/avatar/dongjiaxing.jpg
+    group: spar
+  - name: Bingying Guo 郭冰莹
+    url:  /spar/people/gby/gby.html
+    from: 2015
+    avatar: /spar/img/avatar/guobingying.png
+    group: spar
+  - name: Maosen Huang 黄茂森
+    url:  maosenhuang
+    from: 2015
+  - name: Tianchi Liu 刘天驰
+    url:  tianchiliu
+    from: 2015
   - name: Zhanshuai Meng 孟占帅
     url:  /spar/people/mzs/mzs.html
+    from: 2015
     group: spar
     avatar: /spar/img/avatar/mengzhanshuai.jpg
-  - name: Zhongliang Yuan
-    url:  zhongliangyuan
-  - name: Ziling Lu
-    url:  zilinglu
-  - name: Zongfei Zhang
+  - name: Hao Sun 孙浩
+    url:  haosun
+    from: 2015
+  - name: Weiyi Wang 王惟一
+    url:  weiyiwang
+    from: 2015
+  - name: Yong Wang 王勇
     url:  default
+    from: 2015
+  - name: Xiang Xu 徐翔
+    url:  xiangxu
+    from: 2015
+  - name: Shentao Yue 岳胜涛
+    url:  default
+    from: 2015
+  - name: Zongfei Zhang 张宗飞
+    url:  default
+    from: 2015
 
 
 alumni:
