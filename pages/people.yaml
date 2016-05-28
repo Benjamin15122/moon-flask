@@ -80,10 +80,12 @@ phd:
     group: spar
   - name: Yi Qin 秦逸
     url:  /spar/people/qy.html
+    avatar: /spar/img/avatar/qinyi.jpg
     from: 2013
     group: spar
   - name: Wenhua Yang 杨文华
     url:  /spar/people/ywh/ywh.html
+    avatar: /spar/img/avatar/yangwenhua.jpg
     from: 2014
     group: spar
   - name: Shengqu Xi 席圣渠
@@ -108,6 +110,8 @@ phd:
   - name: Ying Zhang 张营
     from: 2016
     avatar: /spar/img/avatar/zhangying.jpg
+    url:  /spar/people/zy.html
+    group: spar
   - name: Yanxiang Tong 童燕翔
     from: 2016
   - name: Xue Jiang 江雪
@@ -120,6 +124,7 @@ phd:
 graduates:
   - name: Bingying Guo 郭冰莹
     url:  /spar/people/gby/gby.html
+    avatar: /spar/img/avatar/guobingying.png
     group: spar
   - name: Chenglin Meng
     url:  chenglinmeng
@@ -153,11 +158,13 @@ graduates:
     url:  maosenhuang
   - name: Qiwei Li 李其玮
     url:  /spar/people/lqw.html
+    avatar: /spar/img/avatar/liqiwei.jpg
     group: spar
   - name: Ruiqi Liu
     url:  ruiqiliu
   - name: Ruiqing Zhang 张瑞青
     url:  /spar/people/zrq/zrq.html
+    avatar: /spar/img/avatar/zhangruiqing.jpg
     group: spar
   - name: Shengwei An
     url:  shengweian
@@ -176,15 +183,14 @@ graduates:
     url:  xiangxu
   - name: Xiangyu Wu 武翔宇
     url:  /spar/people/wxy.html
+    avatar: /spar/img/avatar/wuxiangyu.jpg
     group: spar
   - name: Xiaofan Li 李晓帆
     url:  /spar/people/lxf/lxf.html
+    avatar: /spar/img/avatar/lixiaofan.jpg
     group: spar
   - name: Yang Liang
     url:  default
-  - name: Ying Zhang 张营
-    url:  /spar/people/zy.html
-    group: spar
   - name: Yiqun Wang
     url:  yiqunwang
   - name: Yong Wang
@@ -196,6 +202,7 @@ graduates:
   - name: Zhanshuai Meng 孟占帅
     url:  /spar/people/mzs/mzs.html
     group: spar
+    avatar: /spar/img/avatar/mengzhanshuai.jpg
   - name: Zhongliang Yuan
     url:  zhongliangyuan
   - name: Ziling Lu
