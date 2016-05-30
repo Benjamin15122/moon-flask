@@ -31,6 +31,7 @@ faculty:
     avatar: /static/img/avatar/huangyu.jpg
   - name: Chun Cao 曹春
     title: Associate Professor
+    avatar: /static/img/avatar/caochun.jpg
   - name: Ping Yu 余萍
     title: Assistant Professor
     url: http://cs.nju.edu.cn/yuping
