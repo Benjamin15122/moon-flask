@@ -91,6 +91,7 @@ phd:
   - name: Shengqu Xi 席圣渠
     url:  shengquxi
     from: 2014
+    avatar: /people/shengquxi/static/face.png
   - name: Yaojing Wang 王瑶菁
     url:  yaojingwang
     from: 2014
