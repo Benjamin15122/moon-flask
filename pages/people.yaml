@@ -177,9 +177,11 @@ graduates:
   - name: Ziling Lu 陆子凌
     url:  zilinglu
     from: 2014
+    avatar: /people/zilinglu/static/lzl.jpg
   - name: Chenglin Meng 孟成林
     url:  chenglinmeng
     from: 2014
+    avatar: /people/chenglinmeng/static/avatar.png
   - name: Yiqun Wang 王逸群
     url:  yiqunwang
     from: 2014
@@ -225,6 +227,7 @@ graduates:
   - name: Tianchi Liu 刘天驰
     url:  tianchiliu
     from: 2015
+    avatar: /people/tianchiliu/static/avatar.jpg
   - name: Zhanshuai Meng 孟占帅
     url:  /spar/people/mzs/mzs.html
     from: 2015
