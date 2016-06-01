@@ -13,29 +13,24 @@ title: Yuan Yao
 </td></tr></table>
 -->
 
-<table width="90%">
-      <tbody><tr>
-        <td width="160" align="left" valign="top">
-          <img src="static/moon-yy2.jpg" width="160" border="1">
-        </td>
+<div style="float:left";width=160px>
+  <img src="static/moon-yy2.jpg" width="160px" border="1">
+</div>
 
-        <td width="20">&nbsp;</td>
+<div style="float:left";width=200px>
+  <h3 style="margin:0px">Yuan Yao</h3>
+  <p>Assistant Researcher</p>
+  <p><a href="https://scholar.google.com/citations?user=vUvt8JYAAAAJ">[Google Scholar entry]</a></p>
+  <p><a href="static/cv-yuanyao.pdf" target=&ldquo;blank&rdquo;>[cv]</a></p>
+</div>
 
-        <td aligh="left" valign="top">
-          <h1>Yuan Yao</h1>
-          <h3>Assistant Researcher</h3>
-	  <p><a href="https://scholar.google.com/citations?user=vUvt8JYAAAAJ">[Google Scholar entry]</a></p>
-	  <p><a href="static/cv-yuanyao.pdf" target=&ldquo;blank&rdquo;>[cv]</a></p>
+<p>Contact: yyao AT nju DOT edu DOT cn</p>
 
-          <br>
-	</td></tr>
-      </tbody>
-</table>
-
+<!--
 <p>State Key Laboratory for Novel Software Technology</p>
 <p>Department of Computer Science and Technology</p>
 <p>Nanjing University</p>
-<p>Contact: yyao AT nju DOT edu DOT cn</p>
+-->
 
 
 
