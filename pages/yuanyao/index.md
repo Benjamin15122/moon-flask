@@ -1,6 +1,6 @@
 title: Yuan Yao
 
-
+<!--
 <table class="imgtable"><tr><td>
 <a href="static/moon-yy2.jpg"><img src="static/moon-yy2.jpg" alt="alt text" width="180px" height="HEIGHTpx" /></a>&nbsp;</td>
 <td align="left"><p>&nbsp; Dr. <b>Yuan Yao</b>   <a href="static/cv-yuanyao.pdf" target=&ldquo;blank&rdquo;>[cv]</a></p>
@@ -11,7 +11,32 @@ title: Yuan Yao
 <p>&nbsp; No 163 Xianlin Ave. Nanjing</p>
 <p>&nbsp; Email: yyao AT nju DOT edu DOT cn</p>
 </td></tr></table>
+-->
 
+<table width="90%">
+      <tbody><tr>
+        <td width="160" align="left" valign="top">
+          <img src="static/moon-yy2.jpg" width="160" border="1">
+        </td>
+
+        <td width="20">&nbsp;</td>
+
+        <td aligh="left" valign="top">
+          <h1>Yuan Yao</h1>
+          <h3>Assistant Researcher</h3>
+	  <p><a href="https://scholar.google.com/citations?user=vUvt8JYAAAAJ">[Google Scholar entry]</a></p>
+	  <p><a href="static/cv-yuanyao.pdf" target=&ldquo;blank&rdquo;>[cv]</a></p>
+
+          <br>
+
+      </tbody>
+</table>
+
+          <p>State Key Laboratory for Novel Software Technology</p>
+	  <p>Department of Computer Science and Technology</p>
+	  <p>Nanjing University</p>
+	  <p>Contact: yyao AT nju DOT edu DOT cn</p>
+	</td></tr>
 
 
 
