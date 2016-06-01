@@ -28,15 +28,15 @@ title: Yuan Yao
 	  <p><a href="static/cv-yuanyao.pdf" target=&ldquo;blank&rdquo;>[cv]</a></p>
 
           <br>
-
+	</td></tr>
       </tbody>
 </table>
 
-          <p>State Key Laboratory for Novel Software Technology</p>
-	  <p>Department of Computer Science and Technology</p>
-	  <p>Nanjing University</p>
-	  <p>Contact: yyao AT nju DOT edu DOT cn</p>
-	</td></tr>
+<p>State Key Laboratory for Novel Software Technology</p>
+<p>Department of Computer Science and Technology</p>
+<p>Nanjing University</p>
+<p>Contact: yyao AT nju DOT edu DOT cn</p>
+
 
 
 
