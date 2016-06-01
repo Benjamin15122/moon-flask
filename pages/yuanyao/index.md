@@ -27,30 +27,19 @@ title: Yuan Yao
 	    <br>
             <div class="row gutter k-equal-height"><!-- nesting row -->
                 <div class="col-lg-12">
-                    <span style="font-size:10pt">Assistant Researcher</span>
-                </div>
-            </div><!-- nesting row end -->
-	    <br>
-	    <div class="row gutter k-equal-height"><!-- nesting row -->
-                <div class="col-lg-12">
-                    <span style="font-size:8pt">Dept. Com. Sci. & Tech.</span>
-                </div>
-            </div><!-- nesting row end -->
-	    <div class="row gutter k-equal-height"><!-- nesting row -->
-                <div class="col-lg-12">
-                    <span style="font-size:8pt">Nanjing University</span>
+                    <span style="font-size:14pt">Assistant Researcher</span>
                 </div>
             </div><!-- nesting row end -->
 	    <br>
             <div class="row gutter k-equal-height"><!-- nesting row -->
                 <div class="col-lg-12">
-                    <span style="font-size:8pt"><a href="https://scholar.google.com/citations?user=vUvt8JYAAAAJ">[Google Scholar]</a>,<a href="static/cv-yuanyao.pdf" target=&ldquo;blank&rdquo;>[cv]</a></span>
+                    <span style="font-size:14pt"><a href="https://scholar.google.com/citations?user=vUvt8JYAAAAJ">[Google Scholar]</a>,<a href="static/cv-yuanyao.pdf" target=&ldquo;blank&rdquo;>[cv]</a></span>
                 </div>
             </div><!-- nesting row end -->
 	    <br>
 	    <div class="row gutter k-equal-height"><!-- nesting row -->
                 <div class="col-lg-12">
-                    <span style="font-size:8pt">Contact: yyao AT nju DOT edu DOT cn</span>
+                    <span style="font-size:14pt">Contact: yyao AT nju DOT edu DOT cn</span>
                 </div>
             </div><!-- nesting row end -->
         </div>
