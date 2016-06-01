@@ -14,17 +14,33 @@ title: Yuan Yao
 -->
 
 <div class="news-body">
-<div style="float:left";width=160px>
-  <img src="static/moon-yy2.jpg" width="160px" border="1">
-</div>
-
-<div style="float:left">
-  <h1 style="margin:0px">Yuan Yao</h1>
-  <h3>Assistant Researcher</h3>
-  <p><a href="https://scholar.google.com/citations?user=vUvt8JYAAAAJ">[Google Scholar entry]</a></p>
-  <p><a href="static/cv-yuanyao.pdf" target=&ldquo;blank&rdquo;>[cv]</a></p>
-  <p>Contact: yyao AT nju DOT edu DOT cn</p>
-</div>
+    <div class="row gutter k-equal-height"><!-- row -->
+        <div class="col-lg-3 col-md-4 col-sm-12">
+            <img src="static/moon-yy2.jpg" width="160px" border="10" class="aligncenter" />
+        </div>
+        <div class="col-lg-9 col-md-8 col-sm-12">
+            <div class="row gutter k-equal-height"><!-- nesting row -->
+                <div class="col-lg-12">
+                    <span style="font-size:24pt">Yuan Yao</span>
+                </div>
+            </div><!-- nesting row end -->
+            <div class="row gutter k-equal-height"><!-- nesting row -->
+                <div class="col-lg-12">
+                    <span style="font-size:14pt">Assistant Researcher</span>
+                </div>
+            </div><!-- nesting row end -->
+            <div class="row gutter k-equal-height"><!-- nesting row -->
+                <div class="col-lg-12">
+                    <span style="font-size:14pt"><a href="https://scholar.google.com/citations?user=vUvt8JYAAAAJ">[Google Scholar]</a>,<a href="static/cv-yuanyao.pdf" target=&ldquo;blank&rdquo;>[cv]</a></span>
+                </div>
+            </div><!-- nesting row end -->
+	    <div class="row gutter k-equal-height"><!-- nesting row -->
+                <div class="col-lg-12">
+                    <span style="font-size:14pt">Contact: yyao AT nju DOT edu DOT cn</span>
+                </div>
+            </div><!-- nesting row end -->
+        </div>
+    </div><!-- row end -->
 </div>
 
 
