@@ -17,14 +17,14 @@
                         <h1 class="page-title">{{ page.meta.title }}</h1>
                         <div class="news-meta">
                             <span class="news-meta-date">{{ page.meta.date }}</span>
-                            <span class="news-meta-category"><a href="news.html" title="News">News</a></span>
+                            <span class="news-meta-category"><a href="{{ url_for('news') }}" title="News">News</a></span>
                         </div>
                     </div>
                     <div class="news-body">
                         {{ page.html|safe }}
                     </div>
                 </div>
-            </div><!-- row end -->  
+            </div><!-- row end -->
         </div><!-- inner custom column end -->
     </div><!-- doc body wrapper end -->
 </div><!-- row end -->
