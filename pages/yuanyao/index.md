@@ -15,8 +15,8 @@ title: Yuan Yao
 
 <div class="news-body">
     <div class="row gutter k-equal-height"><!-- row -->
-        <div width="180px">
-            <img src="static/moon-yy2.jpg" width="160px" border="10" class="alignleft" />
+        <div width="160px">
+            <img src="static/moon-yy2.jpg" width="140px" border="10" class="alignleft" />
         </div>
         <div class="col-lg-9 col-md-8 col-sm-12">
             <div class="row gutter k-equal-height"><!-- nesting row -->
@@ -53,7 +53,6 @@ title: Yuan Yao
 <p>Nanjing University</p>
 -->
 
-Contact: yyao AT nju DOT edu DOT cn
 
 
 ## Research Interests
