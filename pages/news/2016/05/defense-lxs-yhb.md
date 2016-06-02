@@ -1,4 +1,4 @@
-title: Xuansong Li and Haibo Ye defended their dissertations.
+title: Xuansong Li and Haibo Ye Defended Their Dissertations
 date: 2016-05-25
 summary: Congratulations to them!
 

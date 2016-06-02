@@ -5,7 +5,7 @@
 {% block page_path %}
 <li><a href="{{ url_for('index') }}">Home</a></li>
 <li><a href="{{ url_for('news') }}">News</a></li>
-<li class="active">{{ page.meta.title | title }}</li>
+<li class="active">{{ page.meta.title }}</li>
 {% endblock %}
 {% block content %}
 <div class="row no-gutter fullwidth"><!-- row -->
@@ -14,7 +14,7 @@
             <div class="row gutter"><!-- row -->
                 <div class="col-lg-12 col-md-12">
                     <div class="news-title-meta">
-                        <h1 class="page-title">{{ page.meta.title|title }}</h1>
+                        <h1 class="page-title">{{ page.meta.title}}</h1>
                         <div class="news-meta">
                             <span class="news-meta-date">{{ page.meta.date }}</span>
                             <span class="news-meta-category"><a href="{{ url_for('news') }}" title="News">News</a></span>
