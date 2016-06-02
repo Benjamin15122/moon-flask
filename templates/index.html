@@ -192,7 +192,7 @@
                     <div>
                 </li><!-- widget end -->
                  <li class="widget-container widget_nav_menu" style="margin-top: 10px"><!-- widget -->
-                    <h1 class="title-widget">Scholarship</h1>
+                    <h1 class="title-widget">Scholarships</h1>
                     <ul class="list-unstyled">
                         {%-for n in g.site.scholarship_news-%}
                             {%-if loop.index <= 3-%}
@@ -201,7 +201,7 @@
                         {%-endfor-%}
                     </ul>
                     <div class="recent-news-wrap" style="text-align:right">
-                       <a href="{{ url_for('short_news', path='scholarship') }}" class="moretag" title="read more">more</a>
+                       <a href="{{ url_for('short_news', path='scholarships') }}" class="moretag" title="read more">more</a>
                     <div>
                 </li><!-- widget end -->
             </ul><!-- widgets end -->
