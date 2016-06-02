@@ -5,7 +5,7 @@
 {% block page_path %}
 <li><a href="{{ url_for('index') }}">Home</a></li>
 <li><a href="{{ url_for('news') }}">News</a></li>
-<li class="active">{{ page.meta.title }}</li>
+<li class="active">{{ page.meta.title | title }}</li>
 {% endblock %}
 {% block content %}
 <div class="row no-gutter fullwidth"><!-- row -->
