@@ -1,4 +1,4 @@
-title: Chang Xu received the "CCF Young Computer Scientist Award" in 2015
+title: Chang Xu Received the "CCF Young Computer Scientist Award" in 2015
 date: 2016-01-30
 summary: Chang Xu received the "CCF Young Computer Scientist Award" in 2015.
 img_title: Chang received award
