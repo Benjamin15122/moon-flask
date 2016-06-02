@@ -70,6 +70,9 @@ title: Jingwei Xu
 }
 ~~~
 
+## Services
+* PC Member for: ASONAM 2016
+
 ## Projects
 
 * [WSNs based Human Activity Recognition System]
