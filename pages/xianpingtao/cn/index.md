@@ -86,9 +86,15 @@ title: Xianping Tao (Chinese)
                 <div class="col-lg-11 col-md-10 col-sm-12">
                     <div clas="row">
                         <div class="col-lg-12">
-                            txp@nju.edu.cn
+                            txp (AT) nju (DOT) edu (DOT) cn
                         </div>
                     </div>
+                </div>
+            </div><!-- nesting row end -->
+            <div class="row gutter k-equal-height"><!-- nesting row -->
+                <div class="col-lg-6 col-md-6 col-sm-12">
+                     <a href="https://scholar.google.com/citations?user=F3mGYVoAAAAJ&hl=en">[Google Citations]</a>
+                     <a href="http://dblp.uni-trier.de/pers/hd/t/Tao:XianPing">[DBLP]</a>
                 </div>
             </div><!-- nesting row end -->
         </div>
@@ -115,7 +121,7 @@ title: Xianping Tao (Chinese)
 
 近期部分论文：
 
-{{ render_bib_file('2014.bib', hl='Xianping Tao') }}
+{{ render_bib_file('2015.bib', hl='Xianping Tao') }}
 
 
 ([还有...](../publications))

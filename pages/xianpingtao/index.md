@@ -19,12 +19,12 @@ title: Xianping Tao
     </div><!-- nesting row end -->
     <div class="row gutter k-equal-height"><!-- nesting row -->
         <div class="col-lg-12">
-            <span style="font-size:14pt">State Key Laboratory for Novel Software Technology, Nanjing University</span>
+            <span style="font-size:14pt"><a href="http://keysoftlab.nju.edu.cn" target="_blank">State Key Laboratory for Novel Software Technology, Nanjing University</a></span>
         </div>
     </div><!-- nesting row end -->
     <div class="row gutter k-equal-height"><!-- nesting row -->
         <div class="col-lg-12">
-            <span style="font-size:14pt">Department of Computer Science and Technology, Nanjing University</span>
+            <span style="font-size:14pt"><a href="http://cs.nju.edu.cn" target="_blank">Department of Computer Science and Technology, Nanjing University</a></span>
         </div>
     </div><!-- nesting row end -->
     <hr/>
@@ -86,9 +86,15 @@ title: Xianping Tao
                 <div class="col-lg-11 col-md-10 col-sm-12">
                     <div clas="row">
                         <div class="col-lg-12">
-                            txp@nju.edu.cn
+                            txp (AT) nju (DOT) edu (DOT) cn
                         </div>
                     </div>
+                </div>
+            </div><!-- nesting row end -->
+            <div class="row gutter k-equal-height"><!-- nesting row -->
+                <div class="col-lg-6 col-md-6 col-sm-12">
+                     <a href="https://scholar.google.com/citations?user=F3mGYVoAAAAJ&hl=en">[Google Citations]</a>
+                     <a href="http://dblp.uni-trier.de/pers/hd/t/Tao:XianPing">[DBLP]</a>
                 </div>
             </div><!-- nesting row end -->
         </div>
@@ -109,6 +115,6 @@ title: Xianping Tao
 
 ### Some recent publications:
 
-{{ render_bib_file('2014.bib', hl='Xianping Tao') }}
+{{ render_bib_file('2015.bib', hl='Xianping Tao') }}
 
 ([More...](publications))
