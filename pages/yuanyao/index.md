@@ -18,17 +18,17 @@ title: Yuan Yao
             </div><!-- nesting row end -->
             <div class="row"><!-- nesting row -->
                 <div class="col-lg-12">
-                    <span style="font-size:14pt;line-height:150%;"><a href="http://keysoftlab.nju.edu.cn" target="_blank">State Key Laboratory for Novel Software Technology</a>,</span>
+                    <span style="font-size:14pt;line-height:150%;">State Key Laboratory for Novel Software Technology,</span>
                 </div>
             </div><!-- nesting row end -->
             <div class="row gutter k-equal-height"><!-- nesting row -->
                 <div class="col-lg-12">
-                    <span style="font-size:14pt;line-height:150%;"><a href="http://cs.nju.edu.cn" target="_blank">Department of Computer Science and Technology</a>,</span>
+                    <span style="font-size:14pt;line-height:150%;">Department of Computer Science and Technology,</span>
                 </div>
             </div><!-- nesting row end -->
             <div class="row gutter k-equal-height"><!-- nesting row -->
                 <div class="col-lg-12">
-                    <span style="font-size:14pt;line-height:150%;"><a href="http://www.nju.edu.cn" target="_blank">Nanjing University</a></span>
+                    <span style="font-size:14pt;line-height:150%;">Nanjing University</span>
                 </div>
             </div><!-- nesting row end -->
             <div class="row gutter k-equal-height"><!-- nesting row -->
@@ -38,7 +38,7 @@ title: Yuan Yao
             </div><!-- nesting row end -->
             <div class="row gutter k-equal-height"><!-- nesting row -->
                 <div class="col-lg-6 col-md-6 col-sm-12">
-                    Email: yyao AT nju DOT edu DOT cn
+                    Email: y DOT yao AT nju DOT edu DOT cn
                 </div>
             </div><!-- nesting row end -->
             <div class="row gutter k-equal-height"><!-- nesting row -->
