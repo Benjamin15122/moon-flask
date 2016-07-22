@@ -81,4 +81,4 @@ title: Jingwei Xu
 ## Resources
 
 * The proof that the derivative of Eq. (12) is Lipschitz continuous in our TKDE submission.
-    * [Spec.pdf](./static/proof.pdf)
+    * [Proof.pdf](./static/proof.pdf)
