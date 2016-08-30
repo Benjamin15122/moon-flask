@@ -77,3 +77,8 @@ title: Jingwei Xu
 
 * [WSNs based Human Activity Recognition System]
     * A real-time AR system that built in Department of Computer Science & Technology, Nanjing University. 
+
+## Resources
+
+* The proof that the derivative of Eq. (12) is Lipschitz continuous in our TKDE submission.
+    * [Proof.pdf](./static/proof.pdf)
