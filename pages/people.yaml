@@ -63,8 +63,6 @@ phd:
   - name: Hengfeng Wei 魏恒峰
     url:  hengfengwei
     from: 2011
-  - name: Haibo Ye 叶海波
-    from: 2011
   - name: Jingwei Xu 徐经纬
     url:  jingweixu 
     from: 2012
@@ -216,6 +214,8 @@ graduates:
 
 
 alumni:
+  - name: Haibo Ye 叶海波
+    from: 2011
   - name: Shengwei An 安圣威
     url:  shengweian
     from: 2013
