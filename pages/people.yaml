@@ -19,7 +19,7 @@ faculty:
     avatar: /people/fengxu/static/img/avatar.jpg
     url: fengxu
   - name: Chang Xu 许畅
-    title: Associate Professor
+    title: Professor
     url: http://cs.nju.edu.cn/changxu
     avatar: /static/img/avatar/xuchang.jpg
     group: spar
@@ -33,7 +33,7 @@ faculty:
     title: Associate Professor
     avatar: /static/img/avatar/caochun.jpg
   - name: Ping Yu 余萍
-    title: Assistant Professor
+    title: Associate Professor
     url: http://cs.nju.edu.cn/yuping
     avatar: /static/img/avatar/yuping.jpg
   - name: Jun Ma 马骏
@@ -53,10 +53,6 @@ faculty:
     avatar: /static/img/avatar/mrszhang.jpg
 
 phd:
-  - name: Yang Zou 邹阳
-    from: 2008
-  - name: Xuansong Li 李晅松
-    from: 2009
   - name: Hongyu Kuang 匡宏宇
     from: 2010
   - name: Xiaorui Zhu 朱晓瑞
@@ -127,40 +123,6 @@ phd:
     from: 2016
 
 graduates:
-  - name: Shengwei An 安圣威
-    url:  shengweian
-    from: 2013
-    avatar: /people/shengweian/static/img/avatar.jpg
-  - name: Huating Liu 刘华艇
-    url:  default
-    from: 2013
-  - name: Licheng Li 李立成
-    url:  lichengli
-    from: 2013
-  - name: Ruiqi Liu 刘锐奇
-    url:  ruiqiliu
-    from: 2013
-  - name: Yang Liang 梁阳
-    url:  default
-    from: 2013
-  - name: Jia Nie 聂佳
-    url:  default
-    from: 2013
-  - name: Kesheng Qi 戚可生
-    url:  default
-    from: 2013
-  - name: Jun Sui 睢骏
-    url:  default
-    from: 2013
-  - name: Jie Wei 魏杰
-    url:  default
-    from: 2013
-  - name: Fei Yang 杨飞
-    url:  feiyang
-    from: 2013
-  - name: Guo Yan 严国
-    url:  default
-    from: 2013
   - name: Jinqi Cui 崔金琦
     url:  default
     from: 2014
@@ -254,6 +216,44 @@ graduates:
 
 
 alumni:
+  - name: Shengwei An 安圣威
+    url:  shengweian
+    from: 2013
+    avatar: /people/shengweian/static/img/avatar.jpg
+  - name: Huating Liu 刘华艇
+    url:  default
+    from: 2013
+  - name: Licheng Li 李立成
+    url:  lichengli
+    from: 2013
+  - name: Ruiqi Liu 刘锐奇
+    url:  ruiqiliu
+    from: 2013
+  - name: Yang Liang 梁阳
+    url:  default
+    from: 2013
+  - name: Jia Nie 聂佳
+    url:  default
+    from: 2013
+  - name: Kesheng Qi 戚可生
+    url:  default
+    from: 2013
+  - name: Jun Sui 睢骏
+    url:  default
+    from: 2013
+  - name: Jie Wei 魏杰
+    url:  default
+    from: 2013
+  - name: Fei Yang 杨飞
+    url:  feiyang
+    from: 2013
+  - name: Guo Yan 严国
+    url:  default
+    from: 2013
+  - name: Yang Zou 邹阳
+    from: 2008
+  - name: Xuansong Li 李晅松
+    from: 2009
   - name: Xiujiang Li 李秀江
     url:  /spar/people/lxj/index.html
     group: spar
