@@ -29,6 +29,24 @@ title: Tianxiao Gu
 ## Publications
 
 ~~~{.bibtexhtml hl_lines="Tianxiao Gu"}
+@inproceedings{DBLP:conf/kbse/GuSMLS16,
+  author    = {Tianxiao Gu and
+               Chengnian Sun and
+               Xiaoxing Ma and
+               Jian L{\"u} and
+               Zhendong Su},
+  title     = {Automatic runtime recovery via error handler synthesis},
+  booktitle = {Proceedings of the 31st IEEE/ACM International Conference on Automated
+               Software Engineering, ASE 2016, Singapore, September 3-7, 2016},
+  pages     = {684--695},
+  year      = {2016},
+  crossref  = {DBLP:conf/kbse/2016},
+  url       = {http://doi.acm.org/10.1145/2970276.2970360},
+  doi       = {10.1145/2970276.2970360},
+  timestamp = {Mon, 29 Aug 2016 15:09:35 +0200},
+  biburl    = {http://dblp.uni-trier.de/rec/bib/conf/kbse/GuSMLS16},
+  bibsource = {dblp computer science bibliography, http://dblp.org}
+}
 @article{DBLP:journals/infsof/GuCXMZL14,
   author    = {Tianxiao Gu and
                Chun Cao and

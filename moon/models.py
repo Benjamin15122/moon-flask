@@ -329,9 +329,9 @@ def load_people():
     p = None
     with open(PEOPLE_YAML) as f:
         try:
-            e = Nonep = yaml.load(f)
+            p = yaml.load(f)
         except Exception as e:
-            e = None
+            p = None
 
     return p if p else {}
 
