@@ -328,7 +328,10 @@ def load_people():
     '''
     p = None
     with open(PEOPLE_YAML) as f:
-        p = yaml.load(f)
+        try:
+            e = Nonep = yaml.load(f)
+        except Exception as e:
+            e = None
 
     return p if p else {}
 
@@ -340,9 +343,12 @@ def load_events():
     '''
     e = None
     with open(EVENTS_YAML, 'r') as f:
-        e = yaml.load(f)
+        try:
+            e = yaml.load(f)
+        except Exception as ex:
+            e = None
 
-    return sorted(e, key=get_date, reverse=True) if e else {}
+    return sorted(e, key=get_date, reverse=False) if e else {}
 
 @git_update_check(SITE_PAPER)
 def load_paper():
