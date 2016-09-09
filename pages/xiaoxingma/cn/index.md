@@ -150,4 +150,4 @@ title: Xiaoxing Ma (Chinese)
 * 期刊编委
    * [软件学报](http://www.jos.org.cn)  2011 - 2014
 
-Maintained by [Xiaoxing Ma](/people/xiaoxingma) Last updated 2014-02-12
+<!-- Maintained by [Xiaoxing Ma](/people/xiaoxingma) Last updated 2014-02-12 --->
