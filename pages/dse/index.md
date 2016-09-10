@@ -2,18 +2,44 @@ title: Dynamic Software Evolution Group
 
 # Dynamic Software Evolution Group
 
+We hack JVM to implement tools and conduct research on
+
+* Dynamic Software Updating
+* Automatic Runtime Recovery
+* Whole-Program Dynamic Program Analysis
+* Android Testing
+
 ## People
+
 * Prof. [Xiaoxing Ma](http://moon.nju.edu.cn/~xxm)
 * [Tianxiao Gu](/people/tianxiaogu/)
-* [Shengwei An](/people/shengweian/ )
-* [Ruiqi Liu](/people/ruiqiliu/)
 * [Yiqun Wang](/people/yiqunwang/)
 * [Zelin Zhao](http://moon.nju.edu.cn/spar/people/zzl/zzl.html)
 
 ## Publications
 
 ~~~{.bibtexhtml}
-
+@inproceedings{DBLP:conf/kbse/GuSMLS16,
+  author    = {Tianxiao Gu and
+               Chengnian Sun and
+               Xiaoxing Ma and
+               Jian L{\"u} and
+               Zhendong Su},
+  title     = {Automatic runtime recovery via error handler synthesis},
+  booktitle = {Proceedings of the 31st IEEE/ACM International Conference on Automated
+               Software Engineering, ASE 2016, Singapore, September 3-7, 2016},
+  pages     = {684--695},
+  year      = {2016},
+  url       = {http://doi.acm.org/10.1145/2970276.2970360},
+  doi       = {10.1145/2970276.2970360},
+}
+@inproceedings{wang_qrs_2016,
+    author    = {Wang, Yiqun and An, Shengwei and Ma, Xiaoxing and Cao, Chun and Xu, Chang},
+    booktitle = {2016 IEEE International Conference on Software Quality, Reliability and Security (QRS)},
+    title     = {Verifying Distributed Controllers with Local Invariants},
+    year      = {2016},
+    month     = {Aug},
+}
 @inproceedings{an_qrs_2015,
 	author={An, Shengwei and Ma, Xiaoxing and Cao, Chun and Yu, Ping and Xu, Chang}, 
     booktitle={2015 IEEE International Conference on Software Quality, Reliability and Security (QRS)}, 
@@ -31,38 +57,16 @@ title: Dynamic Software Evolution Group
  author = {Zhao, Zelin and Ma, Xiaoxing and Xu, Chang and Yang, Wenhua},
  title = {Automated Recommendation of Dynamic Software Update Points: An Exploratory Study},
  booktitle = {Proceedings of the 6th Asia-Pacific Symposium on Internetware on Internetware},
- series = {INTERNETWARE 2014},
  year = {2014},
- isbn = {978-1-4503-3303-0},
  location = {Hong Kong, China},
  pages = {136--144},
  numpages = {9},
  url = {http://doi.acm.org/10.1145/2677832.2677853},
  doi = {10.1145/2677832.2677853},
- acmid = {2677853},
- publisher = {ACM},
- address = {New York, NY, USA},
- keywords = {Dynamic software updating (DSU), automated recommendation, update points},
 }
 
 @article{JavelusIST14,
-	Abstract = {Context
-In-use software systems are destined to change in order to fix bugs or add new features. Shutting down a running system before updating it is a normal practice, but the service unavailability can be annoying and sometimes unacceptable. Dynamic software updating (DSU) migrates a running software system to a new version without stopping it. State-of-the-art Java DSU systems are unsatisfactory as they may cause a non-negligible system pause during updating.
-
-Objective
-In this paper we present Javelus, a Java HotSpot VM-based Java DSU system with very short pausing time.
-
-Method
-Instead of updating everything at once when the running application is suspended, Javelus only updates the changed code during the suspension, and migrates stale objects on-demand after the application is resumed. With a careful design this lazy approach neither sacrifices the update flexibility nor introduces unnecessary object validity checks or access indirections.
-
-Results
-Evaluation experiments show that Javelus can reduce the updating pausing time by one to two orders of magnitude without introducing observable overheads before and after the dynamic updating.
-
-Conclusion
-Our experience with Javelus indicates that low-disruptive and type-safe dynamic updating of Java applications can be practically achieved with a lazy updating approach.},
 	Author = {Gu, Tianxiao and Cao, Chun and Xu, Chang and Ma, Xiaoxing and Zhang, Linghao and L\"{u}, Jian},
-	Date-Added = {2014-04-10 07:59:01 +0000},
-	Date-Modified = {2015-01-03 08:01:12 +0000},
 	Journal = {Information and Software Technology},
 	Keywords = {Dynamic software updating; JVM; Lazy updating; Low disruption},
 	Number = {9},
@@ -83,12 +87,8 @@ Our experience with Javelus indicates that low-disruptive and type-safe dynamic 
   booktitle = {Proceedings of the 20th Asia-Pacific Software Engineering Conference},
   pages     = {450--458},
   year      = {2013},
-  crossref  = {DBLP:conf/apsec/2013-1},
   url       = {http://dx.doi.org/10.1109/APSEC.2013.66},
   doi       = {10.1109/APSEC.2013.66},
-  timestamp = {Mon, 15 Jun 2015 19:00:08 +0200},
-  biburl    = {http://dblp.uni-trier.de/rec/bib/conf/apsec/SuCML13},
-  bibsource = {dblp computer science bibliography, http://dblp.org}
 }
 
 @inproceedings{Gu:2012:JLD:2452575.2454416,
@@ -134,12 +134,21 @@ Our experience with Javelus indicates that low-disruptive and type-safe dynamic 
 
 ## Software
 
-* [Javelus](http://lab.artemisprojects.org/javelus/javelus)
+We have a couple of projects hacking the Java HotSpot JVM and Android ART.
+
+* [Javelus](http://lab.artemisprojects.org/javelus/javelus): A dynamic-updating-enabled JVM
+* [Ares](http://lab.artemisprojects.org/group/ares): Automatic Runtime Recovery
+* [AOTES](http://lab.artemisprojects.org/group/aotes): Synthesizing object transformations for DSU
+* MiniTracing and MiniTracing for ART: Whole Program Tracing in JVM
 
 ## Former Group Members
 
+
+* Shengwei An (M.S., 2016)
+* Ruiqi Liu (M.S., 2016)
+    * First employment: Huawei
 * Tongbao Zhang (M.S., 2015)
-    * First employment: Alibaba
+    * First employment: Alibaba, JVM Group
 * Guozhao Ren (M.S., 2014)
     * First employment: China Telecom
 * Ping Su (M.S., 2014)
