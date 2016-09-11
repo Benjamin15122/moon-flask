@@ -67,8 +67,8 @@
                                 <li ><a href="{{ url_for('short_news', path='scholarships') }}">Scholarships</a></li>
                             </ul>
                         </li>
-                        <li>
-                            <a href="#" title="">Events</a>
+                        <li {% if request.path == url_for('events') %} class="current-menu-item" {% endif %}>
+                            <a href="{{ url_for('events') }}" title="">Events</a>
                             <ul class="sub-menu">
                                 <li {% if request.path == url_for('events', path='phd') %} class="current-menu-item" {% endif %}><a href="{{ url_for('events', path='phd') }}">PhD Seminar</a></li>
                                 <li {% if request.path == url_for('events', path='master') %} class="current-menu-item" {% endif %}><a href="{{ url_for('events', path='master') }}">Master Seminar </a></li>
