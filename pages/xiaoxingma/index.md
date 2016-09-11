@@ -116,9 +116,12 @@ He worked as a Borsa Post-Doc in the [[http://deepse.dei.polimi.it/][DEEP-SE gro
 
 I am interested in various topics in software engineering, especially
 
-* Adaptive software systems ( _newly funded by [NSFC](http://www.nsfc.gov.cn/): [ESEEPS](eseeps)_)
+* Adaptive software systems
+   * System-environment modeling and sensing 
+   * Dynamic system reconfiguration
+   * Adaptation planning 
 * Software architectures and middleware systems
-* Service-oriented computing
+* Assurance of non-functional software qualities
 
 ## [Publications](publications)
 **Some recent papers:**
