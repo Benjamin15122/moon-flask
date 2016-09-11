@@ -117,9 +117,9 @@ He worked as a Borsa Post-Doc in the [[http://deepse.dei.polimi.it/][DEEP-SE gro
 I am interested in various topics in software engineering, especially
 
 * Adaptive software systems
-** System-environment sensing and understanding 
-** Dynamic system reconfiguration
-** Adaptation planning 
+  * System-environment sensing and understanding 
+  * Dynamic system reconfiguration
+  * Adaptation planning 
 * Software architectures and middleware systems
 * Assurance of non-functional software qualities
 
