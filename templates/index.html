@@ -92,12 +92,17 @@
                                 <li class="up-event-wrap">
                                 <h1 class="title-median"><a href="{{ e.url }}" title="{{ e.title }}">{{ e.title }}</a></h1>
                                     <div class="up-event-meta clearfix">
-                                        <div class="up-event-date">{{ e.date | to_date }}</div><div class="up-event-time">{{ e.date | to_time }} {% if e.end %} - {{ e.end | to_time}} {% endif %}</div>
+                                        <div class="up-event-date">{{ e.date | to_date }}{% if e.endDate %} - {{ e.endDate | to_date }}{% endif %}</div>
+                                        {% if e.time %}
+                                            <div class="up-event-time">{{ e.time | to_time }} {% if e.endTime %} - {{ e.endTime | to_time}} {% endif %}</div>
+                                        {% endif %}
                                     </div>
+                                    {% if e.summary %}
                                     <p>
                                         {{ e.summary|truncate(100)|safe}}
                                         <!--<a href="{{ e.events }}" class="moretag" title="read more">MORE</a>-->
                                     </p>
+                                    {% endif %}
                                 </li>
                             {% endif %}
                         {% endfor %}
