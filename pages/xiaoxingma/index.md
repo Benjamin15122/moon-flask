@@ -121,13 +121,11 @@ I am interested in various topics in software engineering, especially
 * Service-oriented computing
 
 ## [Publications](publications)
-
-* *[English publications](publications)*
-* *[Chinese publications](http://www.cdblp.cn/search_result.php?author_name=%E9%A9%AC%E6%99%93%E6%98%9F&domain=computer)*
-
-### Some recent publications:
+**Some recent papers:**
 
 {{ render_bib_file('selected.bib', hl='Xiaoxing Ma') }}
+
+**More publications:** [_In English_](publications), [_In Chinese_](http://www.c-dblp.cn/search_result.php?author_name=%E9%A9%AC%E6%99%93%E6%98%9F)
 
 ## Teaching
    * 2015, Spring: [Discrete Mathematics and Its Applications](http://moon.nju.edu.cn/courses/course/view.php?id=31) (Dept. CSE)
