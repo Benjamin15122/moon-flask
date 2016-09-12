@@ -104,9 +104,12 @@ phd:
     group: spar
   - name: Jue Wang 王珏
     from: 2016
+    group: spar
   - name: Da Li 李达
+    url: /spar/people/ld/ld.html
     from: 2016
     avatar: /spar/img/avatar/ld.png
+    group: spar
   - name: Ying Zhang 张营
     from: 2016
     avatar: /spar/img/avatar/zhangying.jpg
@@ -114,10 +117,12 @@ phd:
     group: spar
   - name: Yanxiang Tong 童燕翔
     from: 2016
+    group: spar
   - name: Xue Jiang 江雪
     from: 2016
   - name: Wenjie Li 李文杰
     from: 2016
+    group: spar
   - name: Yuqi Zhang 张宇奇
     from: 2016
 
