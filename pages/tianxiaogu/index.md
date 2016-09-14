@@ -3,9 +3,16 @@ title: Tianxiao Gu
 # Tianxiao Gu
 
 
+
+## Information
+
 * Institute of Computer Software, Nanjing University
 * Room 812, Computer Science and Technology Building
 * tianxiao.gu (at) gmail dot com
+
+<div>
+<img width="200" src="static/tianxiaogu.png" alt="Tianxiao Gu"/>
+</div>
 
 
 ## Supervisor
@@ -40,12 +47,7 @@ title: Tianxiao Gu
                Software Engineering, ASE 2016, Singapore, September 3-7, 2016},
   pages     = {684--695},
   year      = {2016},
-  crossref  = {DBLP:conf/kbse/2016},
   url       = {http://doi.acm.org/10.1145/2970276.2970360},
-  doi       = {10.1145/2970276.2970360},
-  timestamp = {Mon, 29 Aug 2016 15:09:35 +0200},
-  biburl    = {http://dblp.uni-trier.de/rec/bib/conf/kbse/GuSMLS16},
-  bibsource = {dblp computer science bibliography, http://dblp.org}
 }
 @article{DBLP:journals/infsof/GuCXMZL14,
   author    = {Tianxiao Gu and
@@ -61,10 +63,6 @@ title: Tianxiao Gu
   pages     = {1086--1098},
   year      = {2014},
   url       = {http://dx.doi.org/10.1016/j.infsof.2014.04.003},
-  doi       = {10.1016/j.infsof.2014.04.003},
-  timestamp = {Tue, 17 Jun 2014 01:00:00 +0200},
-  biburl    = {http://dblp.uni-trier.de/rec/bib/journals/infsof/GuCXMZL14},
-  bibsource = {dblp computer science bibliography, http://dblp.org}
 }
 
 @inproceedings{DBLP:conf/icse/JiangGXML14,
@@ -78,12 +76,7 @@ title: Tianxiao Gu
                Hyderabad, India - May 31 - June 07, 2014},
   pages     = {457--467},
   year      = {2014},
-  crossref  = {DBLP:conf/icse/2014},
   url       = {http://doi.acm.org/10.1145/2568225.2568236},
-  doi       = {10.1145/2568225.2568236},
-  timestamp = {Tue, 28 Jul 2015 01:00:00 +0200},
-  biburl    = {http://dblp.uni-trier.de/rec/bib/conf/icse/JiangGXML14},
-  bibsource = {dblp computer science bibliography, http://dblp.org}
 }
 
 @inproceedings{DBLP:conf/apsec/ZhangXMGHCL12,
@@ -99,12 +92,7 @@ title: Tianxiao Gu
                Kong, China, December 4-7, 2012},
   pages     = {184--193},
   year      = {2012},
-  crossref  = {DBLP:conf/apsec/2012},
   url       = {http://dx.doi.org/10.1109/APSEC.2012.62},
-  doi       = {10.1109/APSEC.2012.62},
-  timestamp = {Tue, 12 Mar 2013 11:04:50 +0100},
-  biburl    = {http://dblp.uni-trier.de/rec/bib/conf/apsec/ZhangXMGHCL12},
-  bibsource = {dblp computer science bibliography, http://dblp.org}
 }
 
 @inproceedings{DBLP:conf/apsec/GuCXMZL12,
@@ -119,12 +107,7 @@ title: Tianxiao Gu
                Kong, China, December 4-7, 2012},
   pages     = {527--536},
   year      = {2012},
-  crossref  = {DBLP:conf/apsec/2012},
   url       = {http://dx.doi.org/10.1109/APSEC.2012.55},
-  doi       = {10.1109/APSEC.2012.55},
-  timestamp = {Tue, 12 Mar 2013 11:04:50 +0100},
-  biburl    = {http://dblp.uni-trier.de/rec/bib/conf/apsec/GuCXMZL12},
-  bibsource = {dblp computer science bibliography, http://dblp.org}
 }
 ~~~
 
