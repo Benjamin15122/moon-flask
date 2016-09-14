@@ -4,12 +4,10 @@ from views import get_user_dir
 from flask import request, g, safe_join
 
 
+import time
 def render_bib_file(path=None, keys=None, hl='', group_by_year=False):
     if not path:
         return g.site.paper.render_all(hl, group_by_year)
-
-
-    print('No keys')
 
     if request.endpoint == 'page':
         name = request.view_args['name']

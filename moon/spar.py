@@ -2,32 +2,27 @@ import os, flask, markdown
 from moon import *
 
 from citation import makeJinjaBlockPattern
-from spar_ext import ArithmatexExtension, SparPeople
+from spar_extensions import ArithmatexExtension, SparPeopleExtension
 
 def render_markdown(path, md_path):
-    kwiki = path.startswith('kwiki/')  # is this page belong to KWiki?
-    index = (path == '/') # is this page the index page?
-
     with open(md_path, 'r') as fp:
         extensions = [
             'markdown.extensions.extra',
             'markdown.extensions.meta',
             'markdown.extensions.toc',
+            SparPeopleExtension(), # [SPAR_PEOPLE]
+            ArithmatexExtension(), # $...$
         ]
 
-        if kwiki:
-            extensions += [
-                ArithmatexExtension(),
-            ]
-            
         raw = fp.read().decode('utf-8')
-        if index: raw += SparPeople() # TODO: replace it with a plugin
 
         md = markdown.Markdown(extensions = extensions)
-        makeJinjaBlockPattern(md) # render bibtex; TODO: refactor code to have meaningful names
+        makeJinjaBlockPattern(md) 
+
+    kwiki = path.startswith('kwiki/')  # is this page belong to KWiki?
 
     return flask.render_template(
-        'wiki.html' if kwiki else 'spar.html',  # template
+        'wiki.html' if kwiki else 'spar.html', # wiki.html loads LaTeX support.
         content = md.convert(raw), # contents
         title = ''.join(md.Meta.get('title', [''])), # title
         nofooter = True
