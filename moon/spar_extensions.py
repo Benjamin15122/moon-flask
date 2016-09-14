@@ -39,7 +39,7 @@ class SparPeopleProcessor(Preprocessor):
         ret.append('''<div class="spar-people"><div class="row people" >''')
         for (key, name) in zip(
             ['faculty', 'phd', 'graduates', 'alumni'],
-            ['Mentors', 'Ph. D students', 'M. Sc students', 'Alumni/ae'],
+            ['Mentors', 'Ph.D. students', 'M.Sc. students', 'Alumni/ae'],
         ):
             ret.append("### %s" % name)
             ret.append('<div class="row small k-equal-height">')
