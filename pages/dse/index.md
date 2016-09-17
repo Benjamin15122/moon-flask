@@ -9,6 +9,9 @@ We hack JVM to implement tools and conduct research on
 * Whole-Program Dynamic Program Analysis
 * Android Testing
 
+Check out [gif](./dsegif) showing
+what dynamic software updating and automatic runtime recovery are.
+
 ## People
 
 * Prof. [Xiaoxing Ma](http://moon.nju.edu.cn/~xxm)
@@ -189,6 +192,4 @@ transform: translateX(-50%);
 </svg>
 </div>
 
-## Dynamic Software Evolution
 
-![](/static/img/dse.gif)

@@ -209,8 +209,11 @@ def research():
 
 @app.route('/dse/', methods=['GET'])
 @app.route('/dse/<path:path>', methods=['GET'])
-def dse():
-    page = get_page(DSE_DIR, 'index')
+def dse(path=None):
+    if path is None:
+        page = get_page(DSE_DIR, 'index')
+    else:
+        page = get_page(DSE_DIR, path)
     template = page.meta.get('template', 'people-page.html')
     return render_template(template, page=page)
 
