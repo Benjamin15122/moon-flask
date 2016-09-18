@@ -10,4 +10,12 @@
   label: ICST 2017 (Tokyo, Japan)
   url: http://aster.or.jp/conference/icst2017/
   date: 2016-09-23
+- id: saner17
+  label: SANER 2017 (Klagenfurt, Austria)
+  url: http://saner.aau.at/
+  date: 2016-10-12
+- id: pldi2017
+  label: PLDI 2017
+  url: http://conf.researchr.org/track/pldi-2017/pldi-2017-papers
+  date: 2016-11-15
 
