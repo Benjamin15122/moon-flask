@@ -22,6 +22,21 @@ what dynamic software updating and automatic runtime recovery are.
 ## Publications
 
 ~~~{.bibtexhtml}
+@inproceedings{gu_improving_2016,
+  author    = {Tianxiao Gu and Zelin Zhao and Xiaoxing Ma and Chang Xu and Chun Cao and Jian L{\"u}},
+  title     = {Improving Reliability of Dynamic Software Updating Using Runtime Recovery},
+  booktitle = {Proceedings of the 23rd Asia-Pacific Software Engineering Conference (APSEC)},
+  pages     = {to appear},
+  year      = {2016},
+}
+
+@inproceedings{zhao_cure_2016,
+  author    = {Zelin Zhao and Tianxiao Gu and Xiaoxing Ma and Chang Xu and Jian L{\"u}},
+  title     = {CURE: Automated Patch Generation for Dynamic Software Update},
+  booktitle = {Proceedings of the 23rd Asia-Pacific Software Engineering Conference (APSEC)},
+  pages     = {to appear},
+  year      = {2016},
+}
 @inproceedings{DBLP:conf/kbse/GuSMLS16,
   author    = {Tianxiao Gu and
                Chengnian Sun and
