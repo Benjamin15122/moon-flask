@@ -58,3 +58,26 @@
 .text {
     text-align:justify;
 }
+
+
+#drop-down-left > li {
+    margin-left: 10px;
+    width: 100px;
+}
+
+
+#drop-down-left > li > a {
+    font-size: 18px;
+    text-align: center;
+    padding: 5px 0 5px !important;
+    border-top: 5px solid #CCCCCC;
+    border-bottom: 5px solid #CCCCCC;
+}
+
+
+#drop-down-left > li > ul > li > a {
+    font-size: 14px;
+    padding: 5px 10px 5px !important;
+    border-left: 5px solid #CCCCCC;
+}
+
