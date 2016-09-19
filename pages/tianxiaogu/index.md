@@ -7,8 +7,12 @@ title: Tianxiao Gu
 ## Information
 
 * Institute of Computer Software, Nanjing University
+* Dynamic Software Evolution Group ([DSE](/dse/))
 * Room 812, Computer Science and Technology Building
 * tianxiao.gu (at) gmail dot com
+* <a href="http://www.linkedin.com/in/tianxiaogu"><i class="fa fa-linkedin-square"></i></a>
+  <a href="https://twitter.com/Xiaotiangu"><i class="fa fa-twitter-square"></i></a>
+  <a href="https://www.facebook.com/eric.ku.505"><i class="fa fa-facebook-square"></i></a>
 
 <div>
 <img width="200" src="static/tianxiaogu.png" alt="Tianxiao Gu"/>
@@ -134,6 +138,9 @@ title: Tianxiao Gu
 
 ## Projects
 
+I use [artemisprojects](http://lab.artemisprojects.org) to host most of my projects.
+You can checkout my profile (only publicly accessible projects) at [here](https://lab.artemisprojects.org/u/tianxiaogu).
+
 * [Javelus](http://lab.artemisprojects.org/javelus/javelus)
     * A dynamic-updating-enabled JVM
 * [Ares](http://lab.artemisprojects.org/groups/ares)
@@ -145,11 +152,9 @@ title: Tianxiao Gu
     * Currently only support tracing events like method entry/exit, object allocation, object moving by GC (for identifying objects in the log).
 * [MiniTracingForAndroidART](http://lab.artemisprojects.org/tianxiaogu/mini-tracing-for-art)
     * This project extends the built-in trace mechanism of Android ART by supporting logging Field Read/Written events.
-    * Obviously, it is an experimantal extension and I only add 170 lines of code.
 * [myblog](http://lab.artemisprojects.org/tianxiaogu/myblog)
     * A quite simple blog system built on top of `flask`, `SQLAlchemy`, `bootstrap`, `font-awesome` and many open source plugins.
     * It is simple as I almost do no customization on the style.
-    * It can be deployed on Sina App Engine, a cheap PaaS cloud in China.
 * [web-crawler](http://lab.artemisprojects.org/tianxiaogu/web-crawler)
     * A simple crawler based on selenium
 
