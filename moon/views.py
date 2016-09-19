@@ -214,7 +214,7 @@ def dse(path=None):
         page = get_page(DSE_DIR, 'index')
     else:
         page = get_page(DSE_DIR, path)
-    template = page.meta.get('template', 'people-page.html')
+    template = page.meta.get('template', 'dse-page.html')
     return render_template(template, page=page)
 
 def get_user_dir(name):
