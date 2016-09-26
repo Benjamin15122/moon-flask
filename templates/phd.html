@@ -17,11 +17,11 @@ PhD Seminar
             </div><!-- row end -->
             <div class="row gutter"><!-- row -->
                 <div class="col-lg-12 col-md-12">
-                    <table class="table table-hover">
+                    <table class="table table-bordered">
                         <thead>
                             <tr>
                                 <th>#</th>
-                                <th>Title</th>
+                                <th>Title &amp; Location</th>
                                 <th>Speaker</th>
                                 <th>Time</th>
                             </tr>
@@ -29,19 +29,19 @@ PhD Seminar
                         <tbody>
                         {% for p in phd %}
                         {% if p.location %}
-                        <tr>
+                        <tr {% if loop.index == 1%}class="success" {% endif %}>
                             <td rowspan="2" style="vertical-align:middle">{{ loop.index }}</td>
-                            <td>{{ p.title  }}</td>
-                            <td>{{ p.speaker }} </td>
-                            <td>{{ p.date.strftime("%b %d (%A), %Y %H:%M") }} </td>
+                            <td><i>{{ p.title  }}</i></td>
+                            <td rowspan="2" style="vertical-align:middle">{{ p.speaker }} </td>
+                            <td rowspan="2" style="vertical-align:middle">{{ p.date.strftime("%b %d (%A), %Y %H:%M") }} </td>
                         </tr>
-                        <tr>
-                            <td colspan="3" >{{ p.location }}</td>
+                        <tr {% if loop.index == 1%}class="success" {% endif %}>
+                            <td><b>{{ p.location }}</b></td>
                         </tr>
                         {% else %}
-                        <tr>
+                        <tr {% if loop.index == 1%}class="success" {% endif %}>
                             <td>{{ loop.index }}</td>
-                            <td>{{ p.title  }}</td>
+                            <td><i>{{ p.title  }}</i></td>
                             <td>{{ p.speaker }} </td>
                             <td>{{ p.date.strftime("%b %d (%A), %Y %H:%M") }} </td>
                         </tr>
