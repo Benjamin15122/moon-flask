@@ -25,6 +25,7 @@ title: Tianxiao Gu
 
 ## Education and Work Experience
 
+* 2015.6 - 2015.7: Intern at the JVM Optimization Group in [Ant Financial](http://www.antgroup.com) (formerly known as [Alipay](https://www.alipay.com))
 * 2013.9 - 2014.9: Visiting Student, University of California, Davis, [Professor Zhendong Su](http://www.cs.ucdavis.edu/~su/).
 * 2012.9 - Present: Ph.D. Candidate, Department of Computer Science and Technology, Nanjing University
 * 2010.9 - 2012.7: Ph.D. Student, Department of Computer Science and Technology, Nanjing University
