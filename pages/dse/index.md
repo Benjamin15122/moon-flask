@@ -158,6 +158,7 @@ We have a couple of projects hacking the Java HotSpot JVM and Android ART.
 * [Ares](http://lab.artemisprojects.org/group/ares): Automatic Runtime Recovery
 * [AOTES](http://lab.artemisprojects.org/group/aotes): Synthesizing object transformations for DSU
 * MiniTracing and MiniTracing for ART: Whole Program Tracing in JVM
+    * [PHD](/dse/phd): Precise Heap Differentiating Using Access Path and Execution Index
 
 ## Former Group Members
 
