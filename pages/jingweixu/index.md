@@ -27,6 +27,17 @@ title: Jingwei Xu
 ## Publications
 
 ~~~{.bibtexhtml hl_lines="Jingwei Xu"}
+@article{TKDE16,
+  author    = {Jingwei Xu and
+               Yuan Yao and
+               Hanghang Tong and
+               Xianping Tao and
+               Jian Lu},
+  title     = {RaPare: A Generic Strategy for Cold-Start Rating Prediction Problem},
+  journal   = {IEEE Transactions on Knowledge and Data Engineering},
+  pages     = {to appear},
+  year      = {2016},
+}
 
 @inproceedings{DBLP:conf/ijcai/XuYTTL15,
   author    = {Jingwei Xu and
@@ -52,7 +63,7 @@ title: Jingwei Xu
   author    = {Haibo Ye and
                Tao Gu and
                Xiaorui Zhu and
-               Jinwei Xu and
+               Jingwei Xu and
                Xianping Tao and
                Jian Lu and
                Ning Jin},
