@@ -83,6 +83,8 @@ title: Jingwei Xu
 
 ## Services
 * PC Member for: ASONAM 2016
+* Reviewer
+    * IEEE Transactions on Knowledge Discovery from Data (TKDD)
 
 ## Projects
 
