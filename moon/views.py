@@ -217,15 +217,15 @@ def dse(path=None):
     template = page.meta.get('template', 'dse-page.html')
     return render_template(template, page=page)
 
-@app.route('/<path:path>', methods=['GET'])
-def general_page(path):
-    if path.endswith('/'):
-        page = get_page(PAGES_DIR, path + 'index')
-    else:
-        page = get_page(PAGES_DIR, path)
-
-    template = page.meta.get('template', 'general-page.html')
-    return render_template(template, page=page)
+#@app.route('/<path:path>', methods=['GET'])
+#def general_page(path):
+#    if path.endswith('/'):
+#        page = get_page(PAGES_DIR, path + 'index')
+#    else:
+#        page = get_page(PAGES_DIR, path)
+#
+#    template = page.meta.get('template', 'general-page.html')
+#    return render_template(template, page=page)
 
 
 def get_user_dir(name):
