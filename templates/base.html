@@ -35,13 +35,20 @@
             -->
             <!-- functional navig end -->
             <div class="col-lg-12">
-                <div id="k-site-logo" class="pull-left"><!-- site logo -->
+                <div id="k-site-logo" class="pull-left" style="padding:5pt;"><!-- site logo -->
                     <h1 class="k-logo">
                         <a href="{{ url_for('index') }}" title="Home Page">
-                            <img src="{{ url_for('static', filename='img/ICS_LOGO.png') }}" width="180" alt="Site Logo" class="img-responsive" />
+                            <img src="{{ url_for('static', filename='img/ICS_LOGO_left.png') }}" width="170" alt="Site Logo" class="img-responsive" />
                         </a>
                     </h1>
                     <a id="mobile-nav-switch" href="#drop-down-left"><span class="alter-menu-icon"></span></a><!-- alternative menu button -->
+                </div><!-- site logo end -->
+                <div id="k-site-logo" class="" style="padding:5pt;float:right!important;"><!-- site logo -->
+                    <h1 class="k-logo">
+                        <a href="{{ url_for('index') }}" title="Home Page">
+                            <img src="{{ url_for('static', filename='img/ICS_LOGO_right.png') }}" width="170" alt="Site Logo" class="img-responsive" />
+                        </a>
+                    </h1>
                 </div><!-- site logo end -->
                 <nav id="k-menu" class="k-main-navig"><!-- main navig -->
                     <ul id="drop-down-left" class="k-dropdown-menu">
