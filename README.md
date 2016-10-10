@@ -52,4 +52,20 @@ Suppose that you want to add an entry for Tom.
 
 ## 重构计划
 
-只有一个基本模版，所有页面均为Markdown (包括首页)，以插件形式渲染全部内容。
+### 基本设计
+
+整个系统只有一个template (`doc.html`)，所有页面元素均为Markdown控制。特殊页面内容以插件形式渲染。
+
+实现在`moon/newview.py`。
+
+### 插件
+
+插件存放在`moon/extensions/`。
+
+* 已经支持的插件：
+    * latex: 将`$...$`和`$$...$$`替换为公式。
+* 开发中的插件：
+    * index: 将单行`[INDEXPAGE]`替换为主页。
+* 计划开发的插件：
+    * bibtex: 显示一个参考文献。支持作者高亮。
+
