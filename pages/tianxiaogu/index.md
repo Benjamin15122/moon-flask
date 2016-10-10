@@ -139,25 +139,18 @@ title: Tianxiao Gu
 
 ## Projects
 
-I use [artemisprojects](http://lab.artemisprojects.org) to host most of my projects.
-You can checkout my profile (only publicly accessible projects) at [here](https://lab.artemisprojects.org/u/tianxiaogu).
+I move from [artemisprojects](http://lab.artemisprojects.org) to bitbucket to host most of my projects.
+You can checkout my profile (only publicly accessible projects) at [here](https://bitbucket.org/txgu/).
 
-* [Javelus](http://lab.artemisprojects.org/javelus/javelus)
-    * A dynamic-updating-enabled JVM
-* [Ares](http://lab.artemisprojects.org/groups/ares)
+* [Javelus](http://bitbucket.org/javelus/)
+    * A dynamic-updating-enabled JVM built on top the HotSpot JVM in OpenJDK 8
+    * In fact, I have merged all JVM based projects (Javleus, Ares and MiniTracing) into this repository.
+* [MiniTracing](http://bitbucket.org/javelus/javelus):
+    * Checkout the branch `mini-tracing` of `javelus`
+    * [PHD](https://bitbucket.org/txgu/phd): Precise Heap Differentiating: An experimental tool aiming at precisely differentiating two heap snapshots.
+* [Ares](http://bitbucket.org/txgu/ares)
     * An automatic-runtime-recovery-enabled JVM
-* [AOTES](http://lab.artemisprojects.org/javelus/aotes)
+* [AOTES](https://bitbucket.org/txgu/aotes-asm)
     * Automating object transformations for dynamic software updating via execution synthesis
-* [MiniTracing](http://lab.artemisprojects.org/tianxiaogu/mini-tracing)
-    * A light-weight tracing tool built on top of the HotSpot JVM in OpenJDK 7.
-    * Currently only support tracing events like method entry/exit, object allocation, object moving by GC (for identifying objects in the log).
-* [MiniTracingForAndroidART](http://lab.artemisprojects.org/tianxiaogu/mini-tracing-for-art)
-    * This project extends the built-in trace mechanism of Android ART by supporting logging Field Read/Written events.
-* [myblog](http://lab.artemisprojects.org/tianxiaogu/myblog)
-    * A quite simple blog system built on top of `flask`, `SQLAlchemy`, `bootstrap`, `font-awesome` and many open source plugins.
-    * It is simple as I almost do no customization on the style.
-* [web-crawler](http://lab.artemisprojects.org/tianxiaogu/web-crawler)
-    * A simple crawler based on selenium
-
 
 <div id="clustrmaps-widget"></div><script type="text/javascript">var _clustrmaps = {'url' : 'http://moon.nju.edu.cn/~TianxiaoGu', 'user' : 995449, 'server' : '3', 'id' : 'clustrmaps-widget', 'version' : 1, 'date' : '2012-03-15', 'lang' : 'zh', 'corners' : 'square' };(function (){ var s = document.createElement('script'); s.type = 'text/javascript'; s.async = true; s.src = 'http://www3.clustrmaps.com/counter/map.js'; var x = document.getElementsByTagName('script')[0]; x.parentNode.insertBefore(s, x);})();</script><noscript><a href="http://www3.clustrmaps.com/user/94ef3079"><img src="http://www3.clustrmaps.com/stats/maps-no_clusters/moon.nju.edu.cn-~TianxiaoGu-thumb.jpg" alt="Locations of visitors to this page" /></a></noscript>
