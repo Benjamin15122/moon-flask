@@ -6,7 +6,7 @@ from flask import Flask, render_template, redirect, send_from_directory, request
 #from flask_frozen import Freezer
 import sys, os, subprocess
 
-from datetime import datetime
+from datetime import datetime, timedelta
 from utils import to_date, to_time, to_datetime
 
 
@@ -18,8 +18,8 @@ from citation import makeJinjaExpressionPattern
 
 
 def remove_dead_events(events):
-    now = datetime.now();
-    return filter(lambda e: now < to_datetime(e.get('date', '')), events)
+    yesterday = datetime.now() + timedelta(days=-1)
+    return filter(lambda e: yesterday < to_datetime(e.get('date', '')), events)
 
 
 def create_markdown():
