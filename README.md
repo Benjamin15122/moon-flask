@@ -48,3 +48,8 @@ Suppose that you want to add an entry for Tom.
         git submodule add git@git.artemisprojects.org:moon/moon-tom.git pages/tom
 
 4. Edit `pages/people.yaml` and add an entry. You can learn from other entries.
+
+
+## 重构计划
+
+只有一个基本模版，所有页面均为Markdown (包括首页)，以插件形式渲染全部内容。

@@ -43,4 +43,3 @@ def spar(path = '/'):
 
     # otherwise sends the raw data
     return flask.send_from_directory(SPAR_DIR, path)
-
