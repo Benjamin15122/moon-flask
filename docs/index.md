@@ -1,11 +1,9 @@
 title: Institute of Computer Software (new)
-template: index
 extensions: latex
+    index
 
-[indexpage]
+[INDEXPAGE]
 
-We need an index page plugin here to handle the above case.
-
-The `latex` extension makes it display math like $e=mc^2$.
+The `latex` extension lets it display math like $e=mc^2$.
 
 

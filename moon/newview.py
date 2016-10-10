@@ -36,6 +36,7 @@ EXTENSIONS = {
     'latex': ('moon.extensions.latex:ArithmatexExtension',
               ['/static/katex/katex.min.css'],
               ['/static/katex/katex.min.js', '/static/katex/render.js']),
+    'index': ('moon.extensions.index:IndexPageExtension', [], []),
 }
 
 def render_markdown(md_path):
