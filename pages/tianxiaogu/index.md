@@ -139,15 +139,26 @@ title: Tianxiao Gu
 
 ## Projects
 
-I move from [artemisprojects](http://lab.artemisprojects.org) to bitbucket to host most of my projects.
-You can checkout my profile (only publicly accessible projects) at [here](https://bitbucket.org/txgu/).
+I have moved from [artemisprojects](http://lab.artemisprojects.org) (now [njuics.cn](http://git.njuics.cn)) to bitbucket to host most of my projects.
+You can checkout my profile (only publicly accessible projects) at [here](https://bitbucket.org/txgu/) or [here](https://git.njuics.cn/u/tianxiaogu).
 
 * [Javelus](http://bitbucket.org/javelus/)
     * A dynamic-updating-enabled JVM built on top the HotSpot JVM in OpenJDK 8
-    * In fact, I have merged all JVM based projects (Javleus, Ares and MiniTracing) into this repository.
 * [MiniTracing](http://bitbucket.org/javelus/javelus):
+    * A whole program tracing tool that can trace method entrance/exit, object allocation, gc moving events in the JVM.
     * Checkout the branch `mini-tracing` of `javelus`
-    * [PHD](https://bitbucket.org/txgu/phd): Precise Heap Differentiating: An experimental tool aiming at precisely differentiating two heap snapshots.
+    * Other tools based on this project:
+        * [PHD](https://bitbucket.org/txgu/phd): Precise Heap Differentiating: An experimental tool aiming at precisely differentiating two heap snapshots.
+* [MiniTracing for Android ART](https://bitbucket.org/txgu/mini-tracing-for-art): `android-6.0.1_r41` only
+    * Based on the built-in `trace.cc`
+    * Under developing to support more runtime information tracing, e.g., statement coverage.
+* [Ape](https://bitbucket.org/txgu/ape): `android-6.0.1_r41` only
+    * A more intelligent `monkey`
+    * Use  `uiautomator dump`(in fact based on [Accessibility Service](https://developer.android.com/reference/android/accessibilityservice/AccessibilityService.html) of android framework) to guide monkey.
+        * The command `uiautomator dump` has a delay.
+          This tool uses the API used by the `uiautomator` to capture UI information immediately without any delay.
+    * Currently only two simple strategies: A random strategy and a DFS strategy. You can extend this tool with your own strategy.
+        * By using MiniTracing for ART to profile the runtime, we could implement various kinds of feedback directed testing tools.
 * [Ares](http://bitbucket.org/txgu/ares)
     * An automatic-runtime-recovery-enabled JVM
 * [AOTES](https://bitbucket.org/txgu/aotes-asm)
