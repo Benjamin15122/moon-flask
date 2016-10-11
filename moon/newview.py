@@ -2,12 +2,6 @@ from moon import *
 import markdown, flask, re
 from flask import g
 
-class DocTemplate:
-    def __init__(self, styles, scripts, extensions):
-        self.styles = styles
-        self.scripts = scripts
-        self.extensions = extensions
-
 # TODO: use classes to hold extensions
 EXTENSIONS = {
     'math': 'moon.md.math:ArithmatexExtension',
@@ -22,8 +16,7 @@ def render_markdown(md_path):
     # First pass to get md.Meta
     md = markdown.Markdown(extensions = ['markdown.extensions.meta'])
     md.convert(md_data)
-    meta = md.Meta
-
+    meta = md.Meta 
     # Second (full) pass with all extensions
     extensions = [ 'markdown.extensions.extra', 'markdown.extensions.toc', 'markdown.extensions.meta'] + \
         [ EXTENSIONS[ext] for ext in meta.get('extensions', []) ]
@@ -51,18 +44,22 @@ REDIRECTS = {
 }
 
 def view(path):
-    if path in REDIRECTS:
-        return flask.redirect(REDIRECTS[path])
+    try:
+        if path in REDIRECTS:
+            return flask.redirect(REDIRECTS[path])
 
-    if path.endswith('.html'):
-        base = MOON_DIR + os.path.sep + path[:-5]
-        if os.path.exists(base + '.md'):
-            return render_markdown(base + '.md')
-        elif os.path.exists(base + '.html'):
-            return render_html(base + '.html')
+        if path.endswith('.html'):
+            base = MOON_DIR + os.path.sep + path[:-5]
+            if os.path.exists(base + '.md'):
+                return render_markdown(base + '.md')
+            elif os.path.exists(base + '.html'):
+                return render_html(base + '.html')
+            flask.abort(404)
+
+        return flask.send_file(MOON_DIR + os.path.sep + path)
+    except:
         flask.abort(404)
-
-    return flask.send_file(MOON_DIR + os.path.sep + path)
+        
 
 @app.route('/spar/')
 @app.route('/spar/<path:path>', methods=['GET'])
