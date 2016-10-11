@@ -49,7 +49,7 @@ app = Flask(__name__,
 app.config.from_object(__name__)
 
 
-import moon.views, moon.shorturl, moon.gitlet, moon.jinja2Support
+import moon.views, moon.shorturl, moon.models, moon.jj, moon.md
 
 # new view, temporarily parallel with old codes
 DOC_ROOT = os.path.join(MOON_DIR, 'docs')

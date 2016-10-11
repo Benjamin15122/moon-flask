@@ -1,73 +1,11 @@
 from moon import *
-from gitlet import git_update_check
-from citation import Citations
-from utils import to_date, to_time, to_datetime
+from moon.utils import to_date, to_time, to_datetime, get_date
 
 import os, yaml, codecs
 
-import os
 from flask import safe_join, abort, g
 
-def get_page(page_dir, path):
-    page_path = None
-
-    # 1) Test markdown
-    try:
-        md_path = safe_join(page_dir, path + '.md')
-        if os.path.exists(md_path):
-            page_path = md_path
-    except Exception as e:
-        print(e)
-        print("Cannot find md path for " + path)
-
-    if page_path:
-        return get_markdown_page_or_404(page_path)
-
-    abort(404)
-
-def get_markdown_page_or_none(page_path):
-    try:
-        return get_markdown_page(page_path)
-    except Exception as e:
-        print(e)
-        return None
-
-def get_markdown_page(page_path):
-    page = Page()
-    with open(page_path, 'r') as f:
-        #if not hasattr(g, 'md'):
-        #    g.md = markdown.Markdown(['markdown.extensions.extra', 'markdown.extensions.meta'])
-
-        page.html = g.md.convert(f.read().decode('utf-8'))
-        page.meta = g.md.Meta # flask-pages naming covention
-        for key, value in page.meta.iteritems():
-            page.meta[key] = ''.join(value) # meta is a list
-        return page
-
-    abort(404)
-
-def get_markdown_page_or_404(page_path):
-    try:
-        return get_markdown_page(page_path)
-    except Exception as e:
-        print(e)
-        abort(404)
-
-    abort(404)
-
-
-
-class Pagination(object):
-    ''' A plain object to facilitate add attr as it has __dict__
-
-    '''
-    pass
-
-class Page(object):
-    ''' A plain object to hold page information instead of using a dict
-
-    '''
-    pass
+from moon.models.bibtex import Citations
 
 class Site(object):
 
@@ -143,14 +81,34 @@ class Site(object):
 
 #####################################
 
-def get_date(e):
-    ''' A helper method used to sort entries
-        No crash but will result in a bad page, e.g., incorrect date
-    '''
-    return e.get('date', '')
+def lazy_load(path):
+    def wrapper(method):
+        def wrapper2():
+            #return GitPathChecker(path, method)
+            return GitValueChecker(method)
+        return wrapper2
+    return wrapper
+
+class GitValueChecker:
+
+    def __init__(self, callback):
+        self.callback = callback
+        self.value = None
+
+    def update(self, *args, **kwargs):
+
+        if self.value is None:
+            self.value = self.callback(*args, **kwargs)
+
+        return self.value
+
+    def __call__(self, *args, **kwargs):
+        ''' shortcut for update
+        '''
+        return self.update(*args, **kwargs)
 
 
-@git_update_check(DEADLINES_YAML)
+@lazy_load(DEADLINES_YAML)
 def load_deadlines():
     ''' Load all deadlines, see events/deadlines.yaml
 
@@ -162,7 +120,7 @@ def load_deadlines():
 
     return e if e else {}
 
-@git_update_check(PHD_EVENTS_YAML)
+@lazy_load(PHD_EVENTS_YAML)
 def load_phd_events():
     ''' Load all PhD seminar events, see events/phd.yaml
 
@@ -174,7 +132,7 @@ def load_phd_events():
 
     return e if e else {}
 
-@git_update_check(MASTER_EVENTS_YAML)
+@lazy_load(MASTER_EVENTS_YAML)
 def load_master_events():
     ''' Load all Master seminar events, see events/master.yaml
 
@@ -187,7 +145,7 @@ def load_master_events():
     return e if e else {}
 
 
-@git_update_check(PAPER_NEWS_YAML)
+@lazy_load(PAPER_NEWS_YAML)
 def load_paper_news():
     ''' Load all Master seminar events, see events/master.yaml
 
@@ -200,7 +158,7 @@ def load_paper_news():
     return e if e else {}
 
 
-@git_update_check(AWARD_NEWS_YAML)
+@lazy_load(AWARD_NEWS_YAML)
 def load_award_news():
     ''' Load all Master seminar events, see events/master.yaml
 
@@ -213,7 +171,7 @@ def load_award_news():
     return e if e else {}
 
 
-@git_update_check(SCHOLARSHIP_NEWS_YAML)
+@lazy_load(SCHOLARSHIP_NEWS_YAML)
 def load_scholarship_news():
     ''' Load all Master seminar events, see events/master.yaml
 
@@ -225,7 +183,7 @@ def load_scholarship_news():
 
     return e if e else {}
 
-@git_update_check(PHOTO_YAML)
+@lazy_load(PHOTO_YAML)
 def load_photos():
     ''' Load all photos shown in gallery
 
@@ -236,7 +194,7 @@ def load_photos():
 
     return sorted(p, key=get_date, reverse=True) if p else {}
 
-@git_update_check(NEWS_DIR)
+@lazy_load(NEWS_DIR)
 def load_news():
     ''' Load all news and paginations
 
@@ -255,22 +213,9 @@ def load_news():
             # TODO raise 404 or 500?
             abort(500)
         n = sorted(n, key=get_date, reverse=True)
+        n = filter(lambda news : news.get('status') != 'draft', n)
 
-    pg = Pagination()
-    pg.first = n[0]['page_num']
-    pg.last  = n[-1]['page_num']
-
-    return n, pg
-
-
-def pagination(news_pages):
-    ''' Set all news with a page_num
-
-    '''
-    num_per_page = 10
-
-    for index, page in enumerate(news_pages):
-        page['page_num'] = index / num_per_page + 1 # page number starts from 1
+    return n
 
 def update_news_yaml():
     ''' Scan news folder and save all news into a single yaml file
@@ -322,7 +267,7 @@ def update_news_yaml():
     with codecs.open(NEWS_YAML, 'w', 'utf-8') as f:
         f.write(news_cache.decode("utf-8"))
 
-@git_update_check(PEOPLE_YAML)
+@lazy_load(PEOPLE_YAML)
 def load_people():
     ''' Load all people
     '''
@@ -335,7 +280,7 @@ def load_people():
 
     return p if p else {}
 
-@git_update_check(EVENTS_YAML)
+@lazy_load(EVENTS_YAML)
 def load_events():
     '''Load general events,
 
@@ -350,13 +295,13 @@ def load_events():
 
     return sorted(e, key=get_date, reverse=False) if e else {}
 
-@git_update_check(SITE_PAPER)
+@lazy_load(SITE_PAPER)
 def load_paper():
     '''Create a shared site paper
     '''
     return Citations(SITE_PAPER)
 
-@git_update_check(SPAR_PAPER)
+@lazy_load(SPAR_PAPER)
 def load_spar_paper():
     '''Create a shared site paper
     '''

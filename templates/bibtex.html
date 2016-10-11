@@ -46,7 +46,7 @@
 <li><a href="#journal">Journal</a>
 </ul>
 <h2><a name="conference"></a>Conference</h2>
-{% for year,__ in years %}
+{% for year in years %}
 [<a href="#conference-{{ year }}">{{ year }}</a>]
 {% endfor %}
 </p>
@@ -57,7 +57,7 @@
 <hr/>
 {% endfor %}
 <h2><a name="journal"></a>Journal</h2>
-{% for year,__ in years2 %}
+{% for year in years2 %}
 [<a href="#journal-{{ year }}">{{ year }}</a>]
 {% endfor %}
 </p>

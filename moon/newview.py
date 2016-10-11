@@ -91,18 +91,18 @@ def render_html(html_path):
 
     return flask.render_template('doc.html', content = data)
 
-def view(path):
+def view(root_dir, path):
     if path.endswith('.html'):
-        base = SPAR_DIR + '/' + path[:-5]
+        base = root_dir + '/' + path[:-5]
         if os.path.exists(base + '.md'):
             return render_markdown(base + '.md')
         elif os.path.exists(base + '.html'):
             return render_html(base + '.html')
         flask.abort(404)
 
-    return flask.send_from_directory(SPAR_DIR, path)
+    return flask.send_from_directory(root_dir, path)
 
 @app.route('/spar/')
 @app.route('/spar/<path:path>', methods=['GET'])
 def spar(path = 'index.html'):
-    return view(path)
+    return view(SPAR_DIR, path)
