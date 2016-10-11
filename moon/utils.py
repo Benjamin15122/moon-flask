@@ -65,3 +65,12 @@ def to_datetime(d):
     return datetime.now()
 
 
+
+########################
+# safe getter
+
+def get_date(e):
+    ''' A helper method used to sort entries
+        No crash but will result in a bad page, e.g., incorrect date
+    '''
+    return e.get('date', datetime.now())

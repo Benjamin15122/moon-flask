@@ -1,34 +1,23 @@
 from moon import *
-from models import Site, get_page
+#from models import Site, get_page
+
+from models.site import Site
+from models.page import get_page, get_user_dir, Pagination
 
 from flask import Flask, render_template, redirect, send_from_directory, request, abort, make_response, safe_join, Markup, abort, g, render_template_string
-#from flask_flatpages import FlatPages
-#from flask_frozen import Freezer
 import sys, os, subprocess
 
 from datetime import datetime, timedelta
 from utils import to_date, to_time, to_datetime
 
 
-
-import markdown
-
-from citation import makeExtension as makeCitationExtension
-from citation import makeJinjaExpressionPattern
+from moon.md import create_markdown
 
 
 def remove_dead_events(events):
     yesterday = datetime.now() + timedelta(days=-1)
     return filter(lambda e: yesterday < to_datetime(e.get('date', '')), events)
 
-
-def create_markdown():
-    md = markdown.Markdown(['markdown.extensions.extra',
-            'markdown.extensions.meta',
-            makeCitationExtension()])
-
-    makeJinjaExpressionPattern(md)
-    return md
 
 ##################
 
@@ -67,10 +56,9 @@ def news(page_num=None):
         page_num = 1
 
     #load_news()
-    n, pg = g.site.news
+    n = g.site.news
+    pg = Pagination(n)
     pg.current = page_num
-
-    n = [news for news in n if news.get('status') != 'draft']
     return render_template('news.html', news=n, pg=pg)
 
 @app.route('/news/<path>', methods=['GET'])
@@ -136,7 +124,7 @@ def events(path=None):
 @app.route('/', methods=['GET'])
 def index():
     # remove dead events on index page
-    return render_template('index.html', news=g.site.news[0], \
+    return render_template('index.html', news=g.site.news, \
             events=g.site.events, members=g.site.people, \
             deadlines=remove_dead_events(g.site.deadlines), \
             phd=remove_dead_events(g.site.phd_events), \
@@ -185,17 +173,6 @@ def general_page(path):
 
     template = page.meta.get('template', 'general-page.html')
     return render_template(template, page=page)
-
-
-def get_user_dir(name):
-    user_dir = safe_join(PAGES_DIR, name)
-
-    # pages in the 'share' folder can be either
-    # accessed by /people/share/haosun/ or /people/haosun/
-    if not os.path.exists(user_dir):
-        user_dir = safe_join(PAGES_SHARE_DIR, name)
-
-    return user_dir
 
 @app.route('/people/<name>/', methods=['GET'])
 @app.route('/people/<name>/<path:path>', methods=['GET'])

@@ -1,7 +1,7 @@
 import os, flask, markdown
 from moon import *
 
-from citation import makeJinjaBlockPattern
+from moon.md import jinja2
 from spar_extensions import ArithmatexExtension, SparPeopleExtension
 
 def render_markdown(path, md_path):
@@ -17,7 +17,7 @@ def render_markdown(path, md_path):
         raw = fp.read().decode('utf-8')
 
         md = markdown.Markdown(extensions = extensions)
-        makeJinjaBlockPattern(md) 
+        jinja2.makeJinjaExpressionPattern(md)
 
     kwiki = path.startswith('kwiki/')  # is this page belong to KWiki?
 
