@@ -2,6 +2,7 @@ from moon import *
 #from models import Site, get_page
 
 from models.site import Site
+from models.bundle import Bundle
 from models.page import get_page, get_user_dir, Pagination
 
 from flask import Flask, render_template, redirect, send_from_directory, request, abort, make_response, safe_join, Markup, abort, g, render_template_string
@@ -21,13 +22,17 @@ def remove_dead_events(events):
 
 ##################
 
+def decorate_g():
+    g.site = Site()
+    g.bundle = Bundle()
+
 @app.errorhandler(404)
 def page_not_found(e):
     '''Custom 404 page
 
     '''
     if not hasattr(g, 'site'):
-        g.site = Site()
+        decorate_g()
     return render_template('404.html'), 404
 
 @app.before_request
@@ -41,7 +46,7 @@ def before_request():
     # Currently, we check whether there is a `/static/' in the path
     if '/static/' not in request.path:
         g.md = create_markdown()
-        g.site = Site()
+        decorate_g()
 
 @app.teardown_request
 def teardown_request(exception):

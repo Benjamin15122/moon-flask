@@ -220,6 +220,16 @@
     <!-- Theme -->
     <script src="{{ url_for('static', filename='js/theme.js') }}"></script>
 
-    {% block customjs %}{% endblock %}
+    {% if g.bundle.js %}
+        {% for js in g.bundle.js %}
+    <script src="{{ js }}"></script>
+        {% endfor %}
+    {% endif %}
+
+    {% if g.bundle.code %}
+        {% for code in g.bundle.code %}
+    <script>{{ code|safe }}</script>
+        {% endfor %}
+    {% endif %}
   </body>
 </html>
