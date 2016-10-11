@@ -34,10 +34,10 @@ DOC_TEMPLATES = {
     }
 
 EXTENSIONS = {
-    'math': ('moon.extensions.math:ArithmatexExtension',
+    'math': ('moon.md.math:ArithmatexExtension',
               ['/static/katex/katex.min.css'],
               ['/static/katex/katex.min.js', '/static/katex/render.js']),
-    'spar': ('moon.extensions.spar:SparExtension', [], []),
+    'spar': ('moon.md.spar:SparExtension', [], []),
 }
 
 def render_markdown(md_path):
@@ -93,7 +93,7 @@ def render_html(html_path):
 
 def view(root_dir, path):
     if path.endswith('.html'):
-        base = root_dir + '/' + path[:-5]
+        base = flask.safe_join(root_dir, path[:-5])
         if os.path.exists(base + '.md'):
             return render_markdown(base + '.md')
         elif os.path.exists(base + '.html'):

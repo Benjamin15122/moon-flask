@@ -86,7 +86,7 @@ def convert_bibentries_to_html(entries, hl=''):
 
 def render_bib_entry(entry, hl=''):
     render = get_template_attribute('bibtex.html', 'render_entry')
-    return render(entry, hl)
+    return render(entry, hl).replace('\n', '')
 
 
 def render_bib_entries(entries, hl='', group_by_year=False):
