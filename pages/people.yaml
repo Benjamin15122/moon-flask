@@ -267,9 +267,12 @@ alumni:
   - name: Kesheng Qi 戚可生
     url:  default
     from: 2013
-  - name: Jun Sui 睢骏
+  - name: Jun Sui 眭骏
     url:  default
     from: 2013
+    url: /spar/peoples/jsui/
+    avatar: /spar/img/avatar/jsui.jpg
+    group: spar
   - name: Jie Wei 魏杰
     url:  default
     from: 2013
