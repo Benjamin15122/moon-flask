@@ -8,7 +8,7 @@ class DocTemplate:
         self.extensions = extensions
 
 # TODO: maybe we should put these information in another place
-
+# TODO: use url_for() instead of absolute paths
 DOC_TEMPLATES = {
     'base': DocTemplate(
         styles = [
@@ -33,6 +33,7 @@ DOC_TEMPLATES = {
         ]),
     }
 
+# TODO: use classes to hold extensions
 EXTENSIONS = {
     'math': ('moon.md.math:ArithmatexExtension',
               ['/static/katex/katex.min.css'],
@@ -91,19 +92,30 @@ def render_html(html_path):
 
     return flask.render_template('doc.html', content = data)
 
-def view(root_dir, path):
+
+# TODO: we'd move this out of here.
+
+REDIRECTS = {
+    '/spar/people/wxy/sogr.html': '/spar/peoples/xywu/sogr.html',
+}
+
+def view(path):
+    if path in REDIRECTS:
+        return flask.redirect(REDIRECTS[path])
+
     if path.endswith('.html'):
-        base = flask.safe_join(root_dir, path[:-5])
+        base = MOON_DIR + os.path.sep + path[:-5]
         if os.path.exists(base + '.md'):
             return render_markdown(base + '.md')
         elif os.path.exists(base + '.html'):
             return render_html(base + '.html')
         flask.abort(404)
 
-    return flask.send_from_directory(root_dir, path)
+    return flask.send_from_directory(MOON_DIR, path)
 
 @app.route('/spar/')
 @app.route('/spar/<path:path>', methods=['GET'])
-def spar(path = 'index.html'):
+def spar(path = None):
+    path = flask.request.path
     if path.endswith('/'): path += 'index.html'
-    return view(SPAR_DIR, path)
+    return view(path)
