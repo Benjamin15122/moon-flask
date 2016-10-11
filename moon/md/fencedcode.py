@@ -10,6 +10,7 @@ from markdown.util import etree
 import re
 
 from moon.models.bibtex import convert_bibtex
+from moon.models.flowchart import make_flowchart
 
 """Copied from FencedCodeExtension
 """
@@ -77,6 +78,8 @@ class MoonFencedBlockPreprocessor(Preprocessor):
                     code = highliter.hilite()
                 elif m.group('lang') == 'bibtexhtml':
                     code = self.parse_bibtex(m.group('code'), m.group('hl_lines'));
+                elif m.group('lang') == 'flowchart':
+                    code = self.parse_flowchart(m.group('code'), m.group('hl_lines'));
                 else:
                     code = self.CODE_WRAP % (lang, self._escape(m.group('code')))
 
@@ -96,6 +99,9 @@ class MoonFencedBlockPreprocessor(Preprocessor):
 
     def parse_bibtex(self, bibtex, hl=None):
         return convert_bibtex(bibtex, hl)
+
+    def parse_flowchart(self, code, diagramid=None):
+        return make_flowchart(code, diagramid)
 
 
 def makeExtension(**kwargs):
