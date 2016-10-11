@@ -105,4 +105,5 @@ def view(root_dir, path):
 @app.route('/spar/')
 @app.route('/spar/<path:path>', methods=['GET'])
 def spar(path = 'index.html'):
+    if path.endswith('/'): path += 'index.html'
     return view(SPAR_DIR, path)
