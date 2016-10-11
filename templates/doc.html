@@ -5,8 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{% if title %}{{ title }}{% else %}Untitled page{% endif %}</title>
-    {% for stylefile in styles %}  <!-- loop over style files -->
-        <link href="{{stylefile}}" rel="stylesheet" type="text/css">
+
+    <link href="{{ url_for('static', filename='font-awesome/css/font-awesome.min.css') }}" rel="stylesheet" type="text/css"><!-- font-awesome -->
+    <link href="{{ url_for('static', filename='js/dropdown-menu/dropdown-menu.css') }}" rel="stylesheet" type="text/css"><!-- dropdown-menu -->
+    <link href="{{ url_for('static', filename='bootstrap/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css"><!-- Bootstrap -->
+    <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet" type="text/css"><!-- theme styles -->
+    <link href="{{ url_for('static', filename='css/bibtex.css') }}" rel="stylesheet" type="text/css"><!-- bibtex styles -->
+    <link href="{{ url_for('static', filename='css/moon.css') }}" rel="stylesheet" type="text/css"><!-- moon overridden styles -->
+    {% for css in g.bundle.css %}
+    <link href="{{ css }}" rel="stylesheet" type="text/css">
     {% endfor %}
   </head>
 
@@ -125,8 +132,18 @@
         </div><!-- container end -->
     </div><!-- subfooter end -->
 
-    {% for scriptfile in scripts %}  <!-- loop over style files -->
-        <script src="{{ scriptfile }}"></script>
+    <script src="{{ url_for('static', filename='jQuery/jquery-2.1.1.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='jQuery/jquery-migrate-1.2.1.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='bootstrap/js/bootstrap.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/dropdown-menu/dropdown-menu.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/theme.js') }}"></script>
+
+    {% for js in g.bundle.js %}
+        <script src="{{ js }}"></script>
+    {% endfor %}
+
+    {% for code in g.bundle.code %}
+        <script>{{ code|safe }}</script>
     {% endfor %}
 
   </body>

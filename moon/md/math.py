@@ -8,6 +8,7 @@ from markdown import Extension
 from markdown.inlinepatterns import Pattern
 from markdown.blockprocessors import BlockProcessor
 from markdown.preprocessors import Preprocessor
+from flask import g
 import re
 
 RE_MATH = r'((?<!\\)(?:\\{2})*)([$])(?!\s)((?:\\.|[^$])+?)(?<!\s)(\3)'
@@ -97,6 +98,33 @@ class ArithmatexExtension(Extension):
 
     def extendMarkdown(self, md, md_globals):
         """Extend the inline and block processor objects."""
+
+        g.bundle.enable('math')
+        g.bundle.code.append(
+'''function decode(h) {
+    var textArea = document.createElement('textarea');
+    textArea.innerHTML = h;
+    val = textArea.value;
+    if ('remove' in Element.prototype) textArea.remove();
+    return val;
+}
+
+$(function() {
+  $("span.math").each(function(idx, e) {
+    try {
+      var d = katex.renderToString(decode(e.innerHTML), { displayMode: true, throwOnError: false });
+      e.innerHTML = d;
+    } catch (err) {}
+  });
+
+  $("span.inline_math").each(function(idx, e) {
+    try {
+      var d = katex.renderToString(decode(e.innerHTML), { throwOnError: false });
+      e.innerHTML = d;
+    } catch (err) {}
+  });
+
+});''')
 
         md.registerExtension(self)
         if "$" not in md.ESCAPED_CHARS:
