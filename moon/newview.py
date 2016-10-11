@@ -37,6 +37,7 @@ EXTENSIONS = {
     'math': ('moon.extensions.math:ArithmatexExtension',
               ['/static/katex/katex.min.css'],
               ['/static/katex/katex.min.js', '/static/katex/render.js']),
+    'spar': ('moon.extensions.spar:SparExtension', [], []),
 }
 
 def render_markdown(md_path):
@@ -84,16 +85,15 @@ def render_markdown(md_path):
         if key not in args: args[key] = meta[key]
     return flask.render_template('doc.html', **args)
 
-@app.route('/spar/', methods=['GET'])
-@app.route('/spar/<path:path>', methods=['GET'])
-def view(path = 'index.html'):
+def view(path):
     if path.endswith('.html'):
         md_path = SPAR_DIR + '/' + path[:-4] + 'md'
+        if not os.path.exists(md_path): flask.abort(404)
         return render_markdown(md_path)
 
     return flask.send_from_directory(SPAR_DIR, path)
 
-# stub for not generating errors
-@app.route('/spar/', methods=['GET'])
-def spar():
-    pass
+@app.route('/spar/')
+@app.route('/spar/<path:path>', methods=['GET'])
+def spar(path = 'index.html'):
+    return view(path)
