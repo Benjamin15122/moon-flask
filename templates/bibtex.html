@@ -29,10 +29,10 @@
         {%- endif %}
     {%- endfor %}
     {%- endif %}</span>{% endif %}
-{% if entry.title %}<span class="bibtex title">“{{ entry.title }}”{% if entry.pdf %}<span><a href="{{ entry.pdf }}" target="_blank" title="Local copy of this paper"> <img src='/static/img/icon-pdf.png'/></a></span>{% endif %},</span>{% endif %}
+{% if entry.title %}<span class="bibtex title">“{{ entry.title }}”{% if entry.pdf %}<span><a href="{{ entry.pdf }}" target="_blank" title="Local copy of this paper"> <img src='/static/img/icon-pdf.png'/></a></span>{% endif %}, </span>{% endif %}
 {% if entry.booktitle %}<span class="bibtex pages">in </span><span class="bibtex booktitle">{{ entry.booktitle }}</span>{% endif %}{% if entry.journal %}<span class="bibtex journal">{{ entry.journal }}</span>{% endif %}
-{% if entry.link %}<span><a href="{{ entry.link }}" target="_blank" title="Publication site of this paper"><img src='/static/img/icon-link.png'/></a></span>{% endif %}{% if entry.booktitle or entry.journal %}<span>, </span>{% endif %}
-{% if entry.pages %}<span class="bibtex pages">{{ entry.pages }},</span>{% endif %}
+{% if entry.link %}<span><a href="{{ entry.link }}" target="_blank" title="Publication site of this paper"> <img src='/static/img/icon-link.png'/></a></span>{% endif %}{% if entry.booktitle or entry.journal %}<span>, </span>{% endif %}
+{% if entry.pages %}<span class="bibtex pages">{{ entry.pages }}, </span>{% endif %}
 {% if entry.year %}<span class="bibtex year">{{ entry.year}}.</span>{% endif %}
 {% if entry.ppt %}<span><a href="{{ entry.ppt }}" target="_blank" title="Slides of this paper"> <img src="/static/img/icon-ppt.png"></a></span>{% endif %}
 {% if entry.code %}<span><a href="{{ entry.code }}" target="_blank" title="Code of this paper"> <img src="/static/img/icon-package.png"></a></span>{% endif %}

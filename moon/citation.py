@@ -183,7 +183,7 @@ def convert_bibentries_to_html(entries, hl=''):
 def render_bib_entry(entry, hl=''):
     render = get_template_attribute('bibtex.html', 'render_entry')
 
-    return render(entry, hl)
+    return render(entry, hl).replace('\n', '')
 
 def getyear(e):
     return e.get('year', 'Unknown')

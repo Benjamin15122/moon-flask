@@ -17,6 +17,7 @@ DOC_TEMPLATES = {
             '/static/bootstrap/css/bootstrap.min.css',
             '/static/css/style.css',
             '/static/css/moon.css',
+            '/static/css/bibtex.css',
         ],
         scripts = [
             '/static/jQuery/jquery-2.1.1.min.js',
@@ -83,13 +84,16 @@ def render_markdown(md_path):
         if key not in args: args[key] = meta[key]
     return flask.render_template('doc.html', **args)
 
-@app.route('/new/', methods=['GET'])
-@app.route('/new/<path:path>', methods=['GET'])
+@app.route('/spar/', methods=['GET'])
+@app.route('/spar/<path:path>', methods=['GET'])
 def view(path = 'index.html'):
-    doc_path = os.path.join(DOC_ROOT, path)
-
-    if doc_path.endswith('.html'):
-        md_path = doc_path[:-4] + 'md'
+    if path.endswith('.html'):
+        md_path = SPAR_DIR + '/' + path[:-4] + 'md'
         return render_markdown(md_path)
 
-    return 'Not supported.'
+    return flask.send_from_directory(SPAR_DIR, path)
+
+# stub for not generating errors
+@app.route('/spar/', methods=['GET'])
+def spar():
+    pass
