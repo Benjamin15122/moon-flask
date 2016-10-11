@@ -6,6 +6,7 @@ import os, yaml, codecs
 from flask import safe_join, abort, g
 
 from moon.models.bibtex import Citations
+from moon.models.page import get_markdown_page, Pagination
 
 class Site(object):
 
@@ -237,7 +238,7 @@ def update_news_yaml():
         for f in files:
             f = os.path.join(curdir, f)
             if f.endswith('.md'):
-                page = get_markdown_page_or_none(f)
+                page = get_markdown_page(f)
             else:
                 continue
 
@@ -259,7 +260,7 @@ def update_news_yaml():
 
     news_pages = sorted(news_pages, key=get_date, reverse=True)
 
-    pagination(news_pages)
+    pg = Pagination(news_pages)
 
     news_cache = yaml.safe_dump(news_pages, default_flow_style=False, allow_unicode=True, encoding='utf-8')
     # news_cache is a utf-8 encoded str object
