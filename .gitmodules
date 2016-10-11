@@ -1,6 +1,6 @@
 [submodule "spar"]
 	path = spar
-	url = git@lab.artemisprojects.org:spar/homepage.git
+	url = git@git.njuics.cn:spar/homepage.git
 [submodule "pages/share"]
 	path = pages/share
-	url = git@lab.artemisprojects.org:moon/moon-share.git
+	url = git@git.njuics.cn:moon/moon-share.git
