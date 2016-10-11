@@ -111,7 +111,7 @@ def view(path):
             return render_html(base + '.html')
         flask.abort(404)
 
-    return flask.send_from_directory(MOON_DIR, path)
+    return flask.send_file(MOON_DIR + os.path.sep + path)
 
 @app.route('/spar/')
 @app.route('/spar/<path:path>', methods=['GET'])
