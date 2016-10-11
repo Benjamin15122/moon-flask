@@ -33,10 +33,9 @@ DOC_TEMPLATES = {
     }
 
 EXTENSIONS = {
-    'latex': ('moon.extensions.latex:ArithmatexExtension',
+    'math': ('moon.extensions.math:ArithmatexExtension',
               ['/static/katex/katex.min.css'],
               ['/static/katex/katex.min.js', '/static/katex/render.js']),
-    'index': ('moon.extensions.index:IndexPageExtension', [], []),
 }
 
 def render_markdown(md_path):
@@ -71,14 +70,18 @@ def render_markdown(md_path):
     (styles, scripts, extensions) = (dedup(styles), dedup(scripts), dedup(extensions))
     md = markdown.Markdown(extensions = extensions)
 
-            
-    return flask.render_template(
-        'doc.html',
-        content = md.convert(md_data),
-        title = ''.join(meta.get('title', [''])),
-        styles = styles,
-        scripts = scripts,
-    )
+    templated = flask.render_template_string(md_data)
+    rendered = md.convert(templated)
+
+    args = {
+        'content': rendered,
+        'title': ''.join(meta.get('title', [''])),
+        'styles': styles,
+        'scripts': scripts,
+    }
+    for key in meta:
+        if key not in args: args[key] = meta[key]
+    return flask.render_template('doc.html', **args)
 
 @app.route('/new/', methods=['GET'])
 @app.route('/new/<path:path>', methods=['GET'])

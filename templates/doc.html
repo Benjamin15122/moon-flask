@@ -99,13 +99,17 @@
             </div><!-- breadcrumbs end -->
         </div><!-- row end -->
 
-        <div class="row no-gutter fullwidth"><!-- row -->
-            <div class="col-lg-12 col-md-12"><!-- doc body wrapper -->
-                <div class="col-padded"><!-- inner custom column -->
-                    {{ content | safe }}
-                </div><!-- inner custom column end -->
-            </div><!-- doc body wrapper end -->
-        </div><!-- row end -->
+        {% if compact_layout %}
+            {{ content | safe }}
+        {% else %}
+            <div class="row no-gutter fullwidth"><!-- row -->
+                <div class="col-lg-12 col-md-12"><!-- doc body wrapper -->
+                    <div class="col-padded"><!-- inner custom column -->
+                        {{ content | safe }}
+                    </div><!-- inner custom column end -->
+                </div><!-- doc body wrapper end -->
+            </div><!-- row end -->
+        {% endif %}
 
         </div><!-- container end -->
     </div><!-- content wrapper end -->
