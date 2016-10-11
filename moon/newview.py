@@ -1,5 +1,5 @@
 from moon import *
-import markdown, flask
+import markdown, flask, re
 
 class DocTemplate:
     def __init__(self, styles, scripts, extensions):
@@ -85,11 +85,20 @@ def render_markdown(md_path):
         if key not in args: args[key] = meta[key]
     return flask.render_template('doc.html', **args)
 
+def render_html(html_path):
+    with open(html_path, 'r') as fp:
+        data = fp.read().decode('utf-8')
+
+    return flask.render_template('doc.html', content = data)
+
 def view(path):
     if path.endswith('.html'):
-        md_path = SPAR_DIR + '/' + path[:-4] + 'md'
-        if not os.path.exists(md_path): flask.abort(404)
-        return render_markdown(md_path)
+        base = SPAR_DIR + '/' + path[:-5]
+        if os.path.exists(base + '.md'):
+            return render_markdown(base + '.md')
+        elif os.path.exists(base + '.html'):
+            return render_html(base + '.html')
+        flask.abort(404)
 
     return flask.send_from_directory(SPAR_DIR, path)
 
