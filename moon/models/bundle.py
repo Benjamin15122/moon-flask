@@ -1,7 +1,6 @@
-
 from flask import url_for
 
-BUNDLES={
+BUNDLES = {
     'raphael':[
         [], # style file
         ['js/raphael/raphael.min.js'], # js file
@@ -12,6 +11,12 @@ BUNDLES={
         [], # style file
         ['js/flowchart/flowchart.min.js'], # js file
         ['raphael'], # deps
+        ],
+
+    'math': [
+        ['css/katex.min.css'], # style file
+        ['js/katex/katex.min.js'], # js file
+        [], # deps
         ],
 }
 
