@@ -19,10 +19,11 @@ def get_page(page_dir, path):
 
     try:
         md_path = safe_join(page_dir, path + '.md')
-        try:
-            return get_markdown_page(md_path)
-        except Exception as e:
-            traceback.print_exc(e)
+        if os.path.exists(md_path):
+            try:
+                return get_markdown_page(md_path)
+            except Exception as e:
+                traceback.print_exc(e)
     except Exception as e:
         pass
 

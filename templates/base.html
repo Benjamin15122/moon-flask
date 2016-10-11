@@ -13,6 +13,7 @@
     <link href="{{ url_for('static', filename='js/audioplayer/audioplayer.css') }}" rel="stylesheet" type="text/css"><!-- Audioplayer -->
     <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet" type="text/css"><!-- theme styles -->
     <link href="{{ url_for('static', filename='css/bibtex.css') }}" rel="stylesheet" type="text/css"><!-- bibtex styles -->
+    <link href="{{ url_for('static', filename='css/pygments.css') }}" rel="stylesheet" type="text/css"><!-- pygments, copied from Shengwei An -->
     <link href="{{ url_for('static', filename='css/moon.css') }}" rel="stylesheet" type="text/css"><!-- moon overridden styles -->
 
     {% block customcss %}{% endblock %}
@@ -112,6 +113,7 @@
             </div><!-- top search end -->
             <div class="k-breadcrumbs col-lg-12 clearfix"><!-- breadcrumbs -->
                 <ol class="breadcrumb">
+                    {{ render_parent_breadcrumb()|safe }}
                 {% block page_path %}{% endblock %}
                 </ol>
             </div><!-- breadcrumbs end -->

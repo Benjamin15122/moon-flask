@@ -11,7 +11,7 @@ faculty:
     avatar: /people/xianpingtao/static/avatar.jpg
   - name: Xiaoxing Ma 马晓星
     title: Professor
-    url: /people/xiaoxingma
+    url: xiaoxingma
     avatar: /people/xiaoxingma/static/avatar.jpg
     group: spar, dse
   - name: Feng Xu 徐锋

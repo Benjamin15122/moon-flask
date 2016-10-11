@@ -65,7 +65,13 @@ class MoonFencedBlockPreprocessor(Preprocessor):
 
                 # If config is not empty, then the codehighlite extension
                 # is enabled, so we call it to highlight the code
-                if self.codehilite_conf:
+                if m.group('lang') == 'bibtexhtml':
+                    code = self.parse_bibtex(m.group('code'), m.group('hl_lines'));
+                elif m.group('lang') == 'flowchart':
+                    code = self.parse_flowchart(m.group('code'), m.group('hl_lines'));
+                elif m.group('lang') == 'raphael':
+                    code = self.parse_raphael(m.group('code'), m.group('hl_lines'));
+                elif self.codehilite_conf:
                     highliter = CodeHilite(m.group('code'),
                             linenums=self.codehilite_conf['linenums'][0],
                             guess_lang=self.codehilite_conf['guess_lang'][0],
@@ -76,12 +82,6 @@ class MoonFencedBlockPreprocessor(Preprocessor):
                             hl_lines=parse_hl_lines(m.group('hl_lines')))
 
                     code = highliter.hilite()
-                elif m.group('lang') == 'bibtexhtml':
-                    code = self.parse_bibtex(m.group('code'), m.group('hl_lines'));
-                elif m.group('lang') == 'flowchart':
-                    code = self.parse_flowchart(m.group('code'), m.group('hl_lines'));
-                elif m.group('lang') == 'raphael':
-                    code = self.parse_raphael(m.group('code'), m.group('hl_lines'));
                 else:
                     code = self.CODE_WRAP % (lang, self._escape(m.group('code')))
 
