@@ -1,0 +1,23 @@
+
+{% import 'pagination.html' as pagination %}
+
+{% macro render_post(post) -%}
+<h1><a href="{{ request.url }}">{{ post.meta.title }}</a></h1>
+<br/>
+<div class="content">
+    {{ post.html|safe }}
+</div>
+{%- endmacro %}
+
+{% macro render_posts(posts) -%}
+{% for post in posts.current_pages %}
+<h1><a href="{{ request.url }}">{{ post.meta.title }}</a></h1>
+<br/>
+<div class="content">
+    {{ post.html|safe }}
+</div>
+<hr/>
+<br/>
+{% endfor %}
+{{ pagination.render_pagination(posts) }}
+{%- endmacro %}

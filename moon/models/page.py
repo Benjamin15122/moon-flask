@@ -2,6 +2,8 @@ from moon import *
 from flask import safe_join, abort, g
 import traceback
 
+from moon.md import create_markdown
+
 def get_user_dir(name):
     user_dir = safe_join(PAGES_DIR, name)
 
@@ -32,8 +34,9 @@ def get_page(page_dir, path):
 def get_markdown_page(page_path):
     page = Page()
     with open(page_path, 'r') as f:
-        page.html = g.md.convert(f.read().decode('utf-8'))
-        page.meta = g.md.Meta # flask-pages naming convention
+        md = create_markdown()
+        page.html = md.convert(f.read().decode('utf-8'))
+        page.meta = md.Meta # flask-pages naming convention
         for key, value in page.meta.iteritems():
             page.meta[key] = ''.join(value) # meta is a list
         return page

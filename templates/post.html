@@ -1,19 +1,14 @@
+{% import 'post_render.html' as post_render %}
+
 {% extends 'people-page.html' %}
 {% block content %}
 
 <hr/>
 {% if page %}
-{{ render_post(page) }}
+{{ post_render.render_post(page) }}
 {% endif %}
 <hr/>
 <br/>
 <hr/>
 {% endblock %}
 
-{% macro render_post(post) -%}
-<h1><a href="{{ request.url }}">{{ post.meta.title }}</a></h1>
-<br/>
-<div class="content">
-    {{ post.html|safe }}
-</div>
-{%- endmacro %}

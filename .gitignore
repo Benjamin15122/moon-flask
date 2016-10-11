@@ -9,3 +9,5 @@ __pycache__/
 .directory
 
 /pages/news/news.yaml
+
+blogs.yaml

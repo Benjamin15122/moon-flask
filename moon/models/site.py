@@ -3,10 +3,12 @@ from moon.utils import to_date, to_time, to_datetime, get_date
 
 import os, yaml, codecs
 
+import traceback
+
 from flask import safe_join, abort, g
 
 from moon.models.bibtex import Citations
-from moon.models.page import get_markdown_page, Pagination
+from moon.models.page import get_markdown_page, Pagination, get_user_dir, get_page
 
 class Site(object):
 
@@ -91,12 +93,9 @@ class Site(object):
 
 #####################################
 
-def lazy_load(path):
-    def wrapper(method):
-        def wrapper2():
-            #return GitPathChecker(path, method)
-            return GitValueChecker(method)
-        return wrapper2
+def lazy_load(method):
+    def wrapper():
+        return GitValueChecker(method)
     return wrapper
 
 class GitValueChecker:
@@ -118,7 +117,7 @@ class GitValueChecker:
         return self.update(*args, **kwargs)
 
 
-@lazy_load(DEADLINES_YAML)
+@lazy_load
 def load_deadlines():
     ''' Load all deadlines, see events/deadlines.yaml
 
@@ -130,7 +129,7 @@ def load_deadlines():
 
     return e if e else {}
 
-@lazy_load(PHD_EVENTS_YAML)
+@lazy_load
 def load_phd_events():
     ''' Load all PhD seminar events, see events/phd.yaml
 
@@ -142,7 +141,7 @@ def load_phd_events():
 
     return e if e else {}
 
-@lazy_load(MASTER_EVENTS_YAML)
+@lazy_load
 def load_master_events():
     ''' Load all Master seminar events, see events/master.yaml
 
@@ -155,7 +154,7 @@ def load_master_events():
     return e if e else {}
 
 
-@lazy_load(PAPER_NEWS_YAML)
+@lazy_load
 def load_paper_news():
     ''' Load all Master seminar events, see events/master.yaml
 
@@ -168,7 +167,7 @@ def load_paper_news():
     return e if e else {}
 
 
-@lazy_load(AWARD_NEWS_YAML)
+@lazy_load
 def load_award_news():
     ''' Load all Master seminar events, see events/master.yaml
 
@@ -181,7 +180,7 @@ def load_award_news():
     return e if e else {}
 
 
-@lazy_load(SCHOLARSHIP_NEWS_YAML)
+@lazy_load
 def load_scholarship_news():
     ''' Load all Master seminar events, see events/master.yaml
 
@@ -193,7 +192,7 @@ def load_scholarship_news():
 
     return e if e else {}
 
-@lazy_load(PHOTO_YAML)
+@lazy_load
 def load_photos():
     ''' Load all photos shown in gallery
 
@@ -204,7 +203,7 @@ def load_photos():
 
     return sorted(p, key=get_date, reverse=True) if p else {}
 
-@lazy_load(NEWS_DIR)
+@lazy_load
 def load_news():
     ''' Load all news and paginations
 
@@ -277,7 +276,7 @@ def update_news_yaml():
     with codecs.open(NEWS_YAML, 'w', 'utf-8') as f:
         f.write(news_cache.decode("utf-8"))
 
-@lazy_load(PEOPLE_YAML)
+@lazy_load
 def load_people():
     ''' Load all people
     '''
@@ -290,7 +289,7 @@ def load_people():
 
     return p if p else {}
 
-@lazy_load(EVENTS_YAML)
+@lazy_load
 def load_events():
     '''Load general events,
 
@@ -305,14 +304,131 @@ def load_events():
 
     return sorted(e, key=get_date, reverse=False) if e else {}
 
-@lazy_load(SITE_PAPER)
+@lazy_load
 def load_paper():
     '''Create a shared site paper
     '''
     return Citations(SITE_PAPER)
 
-@lazy_load(SPAR_PAPER)
+@lazy_load
 def load_spar_paper():
     '''Create a shared site paper
     '''
     return Citations(SPAR_PAPER)
+
+
+####################################
+
+class Blogs(object):
+
+    def __init__(self, name, p):
+        self.name = name
+        self.blogs = load_blogs(name)
+        self.current = p
+        if self.blogs and len(self.blogs) > 0:
+            self.first = self.blogs[0].page_num
+            self.last = self.blogs[-1].page_num
+        else:
+            self.first = self.last = 1
+
+    @property
+    def current_pages(self):
+        return [b.page for b in self.blogs if b.page_num == self.current]
+
+
+def load_blogs(name):
+    user_dir = get_user_dir(name)
+    return list([Blog(user_dir, y) for y in load_blog_yaml(user_dir)])
+
+def load_blog_yaml(user_dir):
+    rootdir = safe_join(user_dir, 'blog')
+    blog_yaml = safe_join(rootdir, 'blogs.yaml')
+
+    if not os.path.exists(blog_yaml):
+        dirty = True
+    else:
+        cache_last_mtime = os.path.getmtime(blog_yaml) # mtime is a number in seconds
+        dirty = False
+
+    blog_pages = []
+    blog_md_files = []
+    for subdir, dirs, files in os.walk(rootdir):
+        curdir = os.path.join(rootdir, subdir)
+        for f in files:
+            if f == 'index.md':
+                continue
+            f = os.path.join(curdir, f)
+            if f.endswith('.md'):
+                blog_md_files.append(f)
+                if not dirty and os.path.getmtime(f) > cache_last_mtime:
+                    dirty = True
+            else:
+                continue
+
+    if dirty:
+        return update_blog_yaml(user_dir, blog_yaml, blog_md_files)
+
+
+    with open(blog_yaml, 'r') as f:
+        try:
+            return yaml.load(f)
+        except Exception as e:
+            pass
+
+    return {}
+
+
+def update_blog_yaml(user_dir, blog_yaml, blog_md_files):
+    blog_pages = []
+
+    for md_file in blog_md_files:
+        try:
+            page = get_markdown_page(md_file)
+
+            # ignore draft
+            if page.meta.get('status') == 'draft':
+                continue
+
+            blog_dict = {}
+
+            blog_dict['path'] = os.path.splitext(os.path.relpath(md_file, user_dir).replace('\\','/'))[0]
+            blog_dict['title'] = page.meta.get('title', 'Please add a title')
+            blog_dict['date'] = to_datetime(get_date(page.meta))
+            blog_dict['category'] = page.meta.get('category')
+            blog_dict['tags'] = page.meta.get('tags')
+
+            blog_pages.append(blog_dict)
+        except Exception as e:
+            traceback.print_exc(e)
+            continue
+
+    Pagination(blog_pages)
+
+    blog_cache = yaml.safe_dump(blog_pages, default_flow_style=False, allow_unicode=True, encoding='utf-8')
+    # cache is a utf-8 encoded str object
+    # convert it into an unicode object
+    with codecs.open(blog_yaml, 'w', 'utf-8') as f:
+        f.write(blog_cache.decode("utf-8"))
+
+    return blog_pages
+
+
+class Blog(object):
+
+    def __init__(self, user_dir, yaml_dict):
+        self.user_dir = user_dir
+        self.__dict__.update(yaml_dict)
+        self._page = None
+
+    @property
+    def page(self):
+        if self._page:
+            return self._page
+
+        try:
+            self._page = get_page(self.user_dir, self.path)
+        except Exception as e:
+            traceback.print_exc(e)
+            abort(500)
+
+        return self._page

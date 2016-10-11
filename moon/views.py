@@ -45,7 +45,6 @@ def before_request():
     # However, not all static files are fetched from global static directory
     # Currently, we check whether there is a `/static/' in the path
     if '/static/' not in request.path:
-        g.md = create_markdown()
         decorate_g()
 
 @app.teardown_request
