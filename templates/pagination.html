@@ -1,0 +1,28 @@
+{% macro render_pagination(pg) %}
+{% if pg.current == pg.last and pg.current == pg.first %}
+{% else %}
+<div class="row gutter"><!-- row -->
+    <div class="col-lg-12">
+        <ul class="pagination pull-right"><!-- pagination -->
+            {% if pg.current != pg.first %}
+                <li><a href="{{ request.base_url }}?p={{ pg.current - 1 }}">Prev</a></li>
+            {% endif %}
+            {% if pg.last == pg.first %}
+            <li {% if pg.current == pg.last %}class="active"{% endif %}><a href="{{ request.base_url }}?p=1">{{ pg.last }}</a></li>
+            {% else %}
+                {% for index in range(pg.first, pg.last) %}
+                    {% if pg.current == index %}
+                        <li class="active"><a href="{{ request.base_url }}?p={{ pg.current }}">{{ index }}</a></li>
+                    {% else %}
+                        <li><a href="{{ request.base_url }}?p={{ pg.current }}">{{ index }}</a></li>
+                    {% endif %}
+                {% endfor %}
+            {% endif %}
+            {% if pg.current != pg.last %}
+                <li><a href="{{ request.base_url }}?p={{ pg.current + 1 }}">Next</a></li>
+            {% endif %}
+        </ul><!-- pagination end -->
+    </div>
+</div><!-- row end -->
+{% endif %}
+{% endmacro %}

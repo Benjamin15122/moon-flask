@@ -1,8 +1,7 @@
-from moon import app
-from citation import Citations, render_bib_entry
-from views import get_user_dir
+from moon.models.bibtex import Citations, render_bib_entry
+from moon.models.page import get_user_dir
 from flask import request, g, safe_join
-
+import traceback
 
 import time
 def render_bib_file(path=None, keys=None, hl='', group_by_year=False):
@@ -28,11 +27,7 @@ def render_bib_file(path=None, keys=None, hl='', group_by_year=False):
         else:
             return c.render_entries(keys, hl, group_by_year)
     except Exception as e:
+        traceback.print_exc(e)
         return "<em>render path=%s, keys=%s, hl=%s, group_by_year=%s failed! </em>" % (path, keys, hl, group_by_year)
 
     return "<em>No such bib file " + path + "</em>"
-
-
-
-app.jinja_env.globals.update(render_bib_entry=render_bib_entry)
-app.jinja_env.globals.update(render_bib_file=render_bib_file)

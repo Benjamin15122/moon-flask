@@ -3,8 +3,7 @@
 {{ title }} |
 {% endblock%}
 {% block page_path %}
-<li><a href="{{ url_for('index') }}">Home</a></li>
-<li>News</li>
+<li><a href="{{ url_for('news') }}">News</a></li>
 <li class="active">{{ title }}</li>
 {% endblock %}
 {% block content %}

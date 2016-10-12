@@ -1,80 +1,15 @@
 """
-Extensions
-    SparPeople: replace a line containing "[PEOPLE]" into a list of peoples
-    Arithmatex: replace $...$ quoted into inline math
+Arithmatex.
+MIT license.
+Copyright (c) 2014 - 2015 Isaac Muse <isaacmuse@gmail.com>
 """
+
 from markdown import Extension
 from markdown.inlinepatterns import Pattern
 from markdown.blockprocessors import BlockProcessor
 from markdown.preprocessors import Preprocessor
 from flask import g
 import re
-
-class SparPeopleProcessor(Preprocessor):
-    def run(self, lines):
-        def display_people(p):
-            d = []
-            d.append('<div class="col-lg-2 col-md-3 col-sm-6">')
-            d.append('<div class="pblock">')
-
-            if 'url' in p: d.append('<a href="%s">' % p['url'])
-
-            d.append('<table><tr>')
-            avatar = p.get('avatar', '/static/img/avatar/default.jpg')
-            name = p['name'].split(' ')
-            if len(name) == 2: name = ' '.join(name)
-            else: name = ' '.join(name[:-1]) + '<br>' + name[-1]
-                
-            d.append('<td><img class="avatar" src="%s"/></td>' % avatar)
-            d.append('<td><span class="spar-name">%s</span></td>' % name)
-
-            d.append('</tr></table>')
-
-            if 'url' in p: d.append('</a>')
-            d.append('</div>')
-            d.append('</div>')
-            return '\n'.join(d)
-
-        ret = []
-        ret.append('''<div class="spar-people"><div class="row people" >''')
-        for (key, name) in zip(
-            ['faculty', 'phd', 'graduates', 'alumni'],
-            ['Mentors', 'Ph.D. students', 'M.Sc. students', 'Alumni/ae'],
-        ):
-            ret.append("### %s" % name)
-            ret.append('<div class="row small k-equal-height">')
-            for p in g.site.people[key]:
-                groups = [i.strip() for i in p.get('group', '').split(',')]
-                if 'spar' in groups:
-                    ret.append(display_people(p))
-            ret.append('</div>')
-
-        ret.append('</div></div>')
-
-        peoples = '\n'.join(ret)
-        new_lines = []
-        for line in lines:
-            if line == '[SPAR_PEOPLE]':
-                new_lines.append(peoples)
-            else:
-                new_lines.append(line)
-        return new_lines
-
-class SparPeopleExtension(Extension):
-    def extendMarkdown(self, md, md_globals):
-        md.registerExtension(self)
-
-        md.preprocessors.add(
-                "spar-people",
-                SparPeopleProcessor(),
-                "_end"
-            )
-
-"""
-Arithmatex.
-MIT license.
-Copyright (c) 2014 - 2015 Isaac Muse <isaacmuse@gmail.com>
-"""
 
 RE_MATH = r'((?<!\\)(?:\\{2})*)([$])(?!\s)((?:\\.|[^$])+?)(?<!\s)(\3)'
 RE_DOLLAR_ESCAPE = re.compile(r'\\.')
@@ -163,6 +98,33 @@ class ArithmatexExtension(Extension):
 
     def extendMarkdown(self, md, md_globals):
         """Extend the inline and block processor objects."""
+
+        g.bundle.enable('math')
+        g.bundle.code.append(
+'''function decode(h) {
+    var textArea = document.createElement('textarea');
+    textArea.innerHTML = h;
+    val = textArea.value;
+    if ('remove' in Element.prototype) textArea.remove();
+    return val;
+}
+
+$(function() {
+  $("span.math").each(function(idx, e) {
+    try {
+      var d = katex.renderToString(decode(e.innerHTML), { displayMode: true, throwOnError: false });
+      e.innerHTML = d;
+    } catch (err) {}
+  });
+
+  $("span.inline_math").each(function(idx, e) {
+    try {
+      var d = katex.renderToString(decode(e.innerHTML), { throwOnError: false });
+      e.innerHTML = d;
+    } catch (err) {}
+  });
+
+});''')
 
         md.registerExtension(self)
         if "$" not in md.ESCAPED_CHARS:

@@ -3,7 +3,6 @@ import os
 
 DEBUG = True
 
-MOON_GIT_URL = 'git@git.artemisprojects.org:moon.git'
 MOON_DIR = os.path.dirname(
     os.path.sep.join ( os.path.abspath(__file__).split(os.path.sep)[:-1] )
 )
@@ -48,4 +47,9 @@ app = Flask(__name__,
     static_folder = MOON_DIR + os.path.sep + 'static')
 app.config.from_object(__name__)
 
-import moon.views, moon.shorturl, moon.spar, moon.gitlet, moon.jinja2Support
+
+import moon.views, moon.shorturl, moon.models, moon.jj, moon.md, moon.webhook
+
+# new view, temporarily parallel with old codes
+DOC_ROOT = os.path.join(MOON_DIR, 'docs')
+import moon.newview

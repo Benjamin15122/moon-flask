@@ -4,37 +4,25 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>{% block title%}{% endblock %} Institute of Computer Software</title>
-    <!-- Styles -->
+    <title>{% if title %}{{ title }}{% else %}Untitled page{% endif %}</title>
+
     <link href="{{ url_for('static', filename='font-awesome/css/font-awesome.min.css') }}" rel="stylesheet" type="text/css"><!-- font-awesome -->
     <link href="{{ url_for('static', filename='js/dropdown-menu/dropdown-menu.css') }}" rel="stylesheet" type="text/css"><!-- dropdown-menu -->
     <link href="{{ url_for('static', filename='bootstrap/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css"><!-- Bootstrap -->
-    <link href="{{ url_for('static', filename='js/fancybox/jquery.fancybox.css') }}" rel="stylesheet" type="text/css"><!-- Fancybox -->
-    <link href="{{ url_for('static', filename='js/audioplayer/audioplayer.css') }}" rel="stylesheet" type="text/css"><!-- Audioplayer -->
     <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet" type="text/css"><!-- theme styles -->
     <link href="{{ url_for('static', filename='css/bibtex.css') }}" rel="stylesheet" type="text/css"><!-- bibtex styles -->
-    <link href="{{ url_for('static', filename='css/pygments.css') }}" rel="stylesheet" type="text/css"><!-- pygments, copied from Shengwei An -->
     <link href="{{ url_for('static', filename='css/moon.css') }}" rel="stylesheet" type="text/css"><!-- moon overridden styles -->
-
-    {% block customcss %}{% endblock %}
-
+    {% for css in g.bundle.css %}
+    <link href="{{ css }}" rel="stylesheet" type="text/css">
+    {% endfor %}
   </head>
+
   <body role="document">
     <!-- device test, don't remove. javascript needed! -->
     <span class="visible-xs"></span><span class="visible-sm"></span><span class="visible-md"></span><span class="visible-lg"></span>
     <!-- device test end -->
     <div id="k-head" class="container"><!-- container + head wrapper -->
         <div class="row"><!-- row -->
-            <!-- functional navig -->
-            <!--
-            <nav class="k-functional-navig">
-                <ul class="list-inline pull-right">
-                    <li><a href="#">English</a></li>
-                    <li><a href="#">简体中文</a></li>
-                </ul>
-            </nav>]
-            -->
-            <!-- functional navig end -->
             <div class="col-lg-12">
                 <div id="k-site-logo" class="pull-left" style="padding:5pt;"><!-- site logo -->
                     <h1 class="k-logo">
@@ -113,125 +101,50 @@
             </div><!-- top search end -->
             <div class="k-breadcrumbs col-lg-12 clearfix"><!-- breadcrumbs -->
                 <ol class="breadcrumb">
-                    {{ render_parent_breadcrumb()|safe }}
                 {% block page_path %}{% endblock %}
                 </ol>
             </div><!-- breadcrumbs end -->
         </div><!-- row end -->
-        {% block content %}{% endblock %}
+
+        {% if compact_layout %}
+            {{ content | safe }}
+        {% else %}
+            <div class="row no-gutter fullwidth"><!-- row -->
+                <div class="col-lg-12 col-md-12"><!-- doc body wrapper -->
+                    <div class="col-padded"><!-- inner custom column -->
+                        {{ content | safe }}
+                    </div><!-- inner custom column end -->
+                </div><!-- doc body wrapper end -->
+            </div><!-- row end -->
+        {% endif %}
+
         </div><!-- container end -->
     </div><!-- content wrapper end -->
-    {% if not nofooter %}
-    <div id="k-footer"><!-- footer -->
-        <div class="container"><!-- container -->
-            <div class="row no-gutter"><!-- row -->
-                <div class="col-lg-4 col-md-4"><!-- widgets column left -->
-                    <div class="col-padded col-naked">
-                        <ul class="list-unstyled clear-margins"><!-- widgets -->
-                            <li class="widget-container widget_nav_menu"><!-- widgets list -->
-                                <h1 class="title-widget">Links</h1>
-                                <ul>
-                                    <li><a href="http://cs.nju.edu.cn/" title="menu item">Department of Computer Science and Technology</a></li>
-                                    <li><a href="http://www.nju.edu.cn/" title="menu item">Nanjing University</a></li>
-                                    <li><a href="http://keysoftlab.nju.edu.cn/site/ndjsjx/" title="menu item">State Key Laboratory for Novel Software Technology</a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </div>
-                </div><!-- widgets column left end -->
-                <div class="col-lg-4 col-md-4"><!-- widgets column center -->
-                    <div class="col-padded col-naked">
-                        <ul class="list-unstyled clear-margins"><!-- widgets -->
-                            <li class="widget-container widget_recent_news"><!-- widgets list -->
-                                <h1 class="title-widget">Contact</h1>
-                                <div itemscope itemtype="http://data-vocabulary.org/Organization"> 
-                                    <h2 class="title-median m-contact-subject" itemprop="name">Institute of Computer Software</h2>
-                                    <div class="m-contact-address" itemprop="address" itemscope itemtype="http://data-vocabulary.org/Address">
-                                        <span class="m-contact-street" itemprop="street-address">No. 163 Xianlin Avenue, Qixia</span>
-                                        <span class="m-contact-city-region"><span class="m-contact-city" itemprop="locality">Nanjing</span>, <span class="m-contact-region" itemprop="region">Jiangsu</span></span>
-                                        <span class="m-contact-zip-country"><span class="m-contact-zip" itemprop="postal-code">210023</span> <span class="m-contact-country" itemprop="country-name">China</span></span>
-                                    </div>
-                                    <div class="m-contact-tel-fax">
-                                        <span class="m-contact-tel">Tel: <span itemprop="tel">025-89686068</span></span>
-                                        <span class="m-contact-fax">Fax: <span itemprop="fax">025-83593283</span></span>
-                                    </div>
-                                </div>
-                                <!--
-                                <div class="social-icons">
-                                    <ul class="list-unstyled list-inline">
-                                        <li><a href="#" title="Contact us"><i class="fa fa-envelope"></i></a></li>
-                                        <li><a href="#" title="Twitter"><i class="fa fa-twitter"></i></a></li>
-                                        <li><a href="#" title="Facebook"><i class="fa fa-facebook"></i></a></li>
-                                    </ul>
-                                </div>
-                                -->
-                            </li>
-                        </ul>
-                    </div>
-                </div><!-- widgets column center end -->
-                {% if g.site %}
-                <div class="col-lg-4 col-md-4"><!-- widgets column right -->
-                    <div class="col-padded col-naked">
-                        <ul class="list-unstyled clear-margins"><!-- widgets -->
-                            <li class="widget-container widget_sofa_flickr"><!-- widgets list -->
-                                <h1 class="title-widget">Photo</h1>
-                                <ul class="k-flickr-photos list-unstyled">
-                                    {% for p in g.site.photos %}
-                                        {% if loop.index <= 8 %}
-                                           <li><a href="{{ p.url }}" title="{{ p.title }}"><img src="{{ url_for('static', filename=p.src) }}" alt="{{ p.title }}" /></a></li>
-                                        {% endif %}
-                                    {% endfor %}
-                                </ul>
-                            </li>
-                        </ul>
-                    </div>
-                </div><!-- widgets column right end -->
-                {% endif %}
-            </div><!-- row end -->
-        </div><!-- container end -->
-    </div><!-- footer end -->
-    {% endif %}
     <div id="k-subfooter"><!-- subfooter -->
         <div class="container"><!-- container -->
             <div class="row"><!-- row -->
                 <div class="col-lg-12">
                     <p class="copy-text text-inverse">
-                    &copy; 2015 Institute of Computer Software, Nanjing University. All rights reserved.
+                    &copy; 2016 Institute of Computer Software, Nanjing University. All rights reserved.
                     </p>
                 </div>
             </div><!-- row end -->
         </div><!-- container end -->
     </div><!-- subfooter end -->
 
-    <!-- jQuery -->
     <script src="{{ url_for('static', filename='jQuery/jquery-2.1.1.min.js') }}"></script>
     <script src="{{ url_for('static', filename='jQuery/jquery-migrate-1.2.1.min.js') }}"></script>
-    <!-- Bootstrap -->
     <script src="{{ url_for('static', filename='bootstrap/js/bootstrap.min.js') }}"></script>
-    <!-- Drop-down -->
     <script src="{{ url_for('static', filename='js/dropdown-menu/dropdown-menu.js') }}"></script>
-    <!-- Fancybox -->
-    <script src="{{ url_for('static', filename='js/fancybox/jquery.fancybox.pack.js') }}"></script>
-    <script src="{{ url_for('static', filename='js/fancybox/jquery.fancybox-media.js') }}"></script><!-- Fancybox media -->
-    <!-- Responsive videos -->
-    <script src="{{ url_for('static', filename='js/jquery.fitvids.js') }}"></script>
-    <!-- Audio player -->
-    <script src="{{ url_for('static', filename='js/audioplayer/audioplayer.min.js') }}"></script>
-    <!-- Pie charts -->
-    <script src="{{ url_for('static', filename='js/jquery.easy-pie-chart.js') }}"></script>
-    <!-- Theme -->
     <script src="{{ url_for('static', filename='js/theme.js') }}"></script>
 
-    {% if g.bundle.js %}
-        {% for js in g.bundle.js %}
-    <script src="{{ js }}"></script>
-        {% endfor %}
-    {% endif %}
+    {% for js in g.bundle.js %}
+        <script src="{{ js }}"></script>
+    {% endfor %}
 
-    {% if g.bundle.code %}
-        {% for code in g.bundle.code %}
-    <script>{{ code|safe }}</script>
-        {% endfor %}
-    {% endif %}
+    {% for code in g.bundle.code %}
+        <script>{{ code|safe }}</script>
+    {% endfor %}
+
   </body>
 </html>
