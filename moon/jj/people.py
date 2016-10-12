@@ -1,6 +1,6 @@
 
 import flask, itertools
-from flask import g
+from flask import g, url_for
 
 # People and people block (small)
 PEOPLE_TEMPLATE_SM = u"""
@@ -43,6 +43,19 @@ BLOCK_TEMPLATE_LG = u"""
 </div>
 """
 
+def make_people_url(url):
+    if url is None:
+        return None
+
+    if url.startswith('/'):
+        return url
+
+    if url.startswith('http://') or url.startswith('https://'):
+        return url
+
+    # the url is directory name
+    return url_for('page', name=url)
+
 def render_people(cond = None, category = None, large = False, group = None):
     if type(category) == str: category = [category]
 
@@ -57,7 +70,7 @@ def render_people(cond = None, category = None, large = False, group = None):
 
         return flask.render_template_string(
             PEOPLE_TEMPLATE_LG if large else PEOPLE_TEMPLATE_SM,
-            url = p.get('url', None),
+            url = make_people_url(p.get('url', None)),
             name1 = name1, name2 = name2,
             avatar = avatar)
 
