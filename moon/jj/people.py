@@ -49,7 +49,7 @@ def render_people(cond = None, category = None, large = False, group = None):
 
     def render_one(p):
         avatar = p.get('avatar', '/static/img/avatar/default.jpg')
-        name = p['name'].decode('utf-8').split(' ')
+        name = p['name'].split(' ')
         if len(name) == 2: (name1, name2) = ('', '')
         elif large:
             (name1, name2) = (' '.join(name), p.get('title', str(p.get('from', '??')) + ' –'))
@@ -59,7 +59,7 @@ def render_people(cond = None, category = None, large = False, group = None):
         return flask.render_template_string(
             PEOPLE_TEMPLATE_LG if large else PEOPLE_TEMPLATE_SM,
             url = p.get('url', None),
-            name1 = name1, name2 = name2,
+            name1 = name1.decode('utf-8'), name2 = name2.decode('utf-8'),
             avatar = avatar)
 
     types = category if category else ['faculty', 'phd', 'graduates', 'alumni']
