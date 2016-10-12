@@ -4,8 +4,8 @@
         <li {% if request.path == url_for('page') %} class="current-menu-item" {% endif %}>
             <a href="{{ url_for('page') }}" title="">Home</a>
         </li>
-        <li {% if request.path == url_for('people') %} class="current-menu-item" {% endif %}>
-            <a href="{{ url_for('people') }}" title="">People</a>
+        <li {% if request.path == url_for('page', path='people/') %} class="current-menu-item" {% endif %}>
+            <a href="{{ url_for('page', path='people/') }}" title="">People</a>
         </li>
         <li>
             <a href="#" title="">Research</a>

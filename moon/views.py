@@ -3,7 +3,7 @@ from moon import *
 
 from models.site import Site
 from models.bundle import Bundle
-from models.page import get_page, get_user_dir, Pagination
+from models.page import get_page, get_user_dir
 
 from flask import Flask, render_template, redirect, send_from_directory, g, request
 
@@ -38,12 +38,6 @@ def before_request():
 @app.teardown_request
 def teardown_request(exception):
     pass
-
-@app.route('/people/', methods=['GET'])
-def people():
-    return render_template('people.html', people=g.site.people)
-
-
 
 @app.route('/', methods=['GET'])
 @app.route('/<path:path>', methods=['GET'])
