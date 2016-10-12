@@ -39,11 +39,7 @@ def teardown_request(exception):
 # TODO: handle redirect
 # '/spar/people/wxy/sogr.html': '/spar/peoples/xywu/sogr.html',
 
-@app.route('/', methods=['GET'])
-@app.route('/<path:path>', methods=['GET'])
-@app.route('/people/<name>/', methods=['GET'])
-@app.route('/people/<name>/<path:path>', methods=['GET'])
-def page(name = None, path = None):
+def spar():
     fullpath = request.path
 
     # TODO: this code barely works, but should not be like this.
@@ -64,26 +60,34 @@ def page(name = None, path = None):
         return render_template('page.html', page = content)
     elif os.path.exists(base):
         return send_file(PAGES_DIR + os.path.sep + fullpath)
+
+@app.route('/', methods=['GET'])
+@app.route('/<path:path>', methods=['GET'])
+@app.route('/people/<name>/', methods=['GET'])
+@app.route('/people/<name>/<path:path>', methods=['GET'])
+def page(name = None, path = None):
+    if path is None:
+        path = 'index'
+    elif name is None and path.startswith('spar/'):
+        return spar()
+    elif path.endswith('/'):
+        path += 'index'
+
+    if name:
+        user_dir = get_user_dir(name)
+        # Personal static folder
+        if path.startswith('static/'):
+            return send_from_directory(user_dir, path)
+        page = get_page(user_dir, path)
     else:
-        # Tianxiao's old code.
-        if path is None: path = 'index'
-        if path.endswith('/'): path += 'index'
+        page = get_page(PAGES_DIR, path)
 
-        if name:
-            user_dir = get_user_dir(name)
-            # Personal static folder
-            if path.startswith('static/'):
-                return send_from_directory(user_dir, path)
-            page = get_page(user_dir, path)
-        else:
-            page = get_page(PAGES_DIR, path)
+    # support redirect
+    rd = page.meta.get('redirect')
+    if rd is not None:
+        return redirect(rd)
 
-        # support redirect
-        rd = page.meta.get('redirect')
-        if rd is not None:
-            return redirect(rd)
-
-        template = page.meta.get('template', 'page.html')
-        return render_template(template, page = page)
+    template = page.meta.get('template', 'page.html')
+    return render_template(template, page = page)
 
 
