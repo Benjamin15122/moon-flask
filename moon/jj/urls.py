@@ -19,7 +19,7 @@ def render_parent_breadcrumb():
         name = request.view_args.get('name')
 
         if name:
-            path_list.append(['People', url_for('people')])
+            path_list.append(['People', url_for('page', path='people/')])
             people = g.site.find_people_by_url(name)
 
             if path and path.startswith('blog/'):
