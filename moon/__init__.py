@@ -7,7 +7,6 @@ MOON_DIR = os.path.dirname(
     os.path.sep.join ( os.path.abspath(__file__).split(os.path.sep)[:-1] )
 )
 
-
 PAGES_DIR = MOON_DIR + os.path.sep + 'pages'
 PAGES_SHARE_DIR = PAGES_DIR + os.path.sep + 'share'
 SPAR_DIR = PAGES_DIR + os.path.sep + 'spar'

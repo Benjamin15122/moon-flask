@@ -206,6 +206,10 @@ def page(name, path=None):
 
 
 import flask, models
+
+# TODO: redirect
+# '/spar/people/wxy/sogr.html': '/spar/peoples/xywu/sogr.html',
+
 @app.route('/spar/', methods=['GET'])
 @app.route('/spar/<path:path>', methods=['GET'])
 def spar(path = None):
