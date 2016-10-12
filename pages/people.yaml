@@ -98,6 +98,7 @@ phd:
     url:  /spar/peoples/zlzhao/
     avatar: /spar/img/avatar/zlzhao.jpg
     from: 2014
+    group: dse
   - name: Huiyan Wang 王慧妍
     url: /spar/peoples/hywang/
     avatar: /spar/img/avatar/hywang.jpg
@@ -159,6 +160,7 @@ graduates:
   - name: Yiqun Wang 王逸群
     url:  yiqunwang
     from: 2014
+    group: dse
   - name: Xiangyu Wu 武翔宇
     url:  /spar/peoples/xywu/
     from: 2014
@@ -249,6 +251,7 @@ alumni:
     url:  shengweian
     from: 2013
     avatar: /people/shengweian/static/img/avatar.jpg
+    group: dse
   - name: Huating Liu 刘华艇
     url:  default
     from: 2013
@@ -258,6 +261,7 @@ alumni:
   - name: Ruiqi Liu 刘锐奇
     url:  ruiqiliu
     from: 2013
+    group: dse
   - name: Yang Liang 梁阳
     url:  default
     from: 2013

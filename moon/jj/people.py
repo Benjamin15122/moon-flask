@@ -34,7 +34,7 @@ def render_people(group = None):
         ret.append('<div class="row small k-equal-height">')
         for p in g.site.people[key]:
             groups = [i.strip() for i in p.get('group', '').split(',')]
-            if 'spar' in groups:
+            if group and group in groups:
                 ret.append(display_people(p))
         ret.append('</div>')
 
