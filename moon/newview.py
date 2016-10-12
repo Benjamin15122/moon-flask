@@ -5,7 +5,6 @@ from flask import g
 # TODO: use classes to hold extensions
 EXTENSIONS = {
     'math': 'moon.md.math:ArithmatexExtension',
-    'spar': 'moon.md.spar:SparExtension',
     'fencedcode': 'moon.md.fencedcode:MoonFencedCodeExtension',
 }
 
@@ -59,7 +58,7 @@ def view(path):
 
 
 @app.route('/spar/')
-@app.route('/spar/<path:path>', methods=['GET'])
+@app.route('/spar/<path:path>')
 def spar(path = None):
     path = flask.request.path
     if path.endswith('/'): path += 'index.html'
