@@ -21,7 +21,6 @@ DSE_DIR = PAGES_DIR + os.path.sep + 'dse'
 
 PEOPLE_YAML = PAGES_DIR + os.path.sep + 'people.yaml'
 PHOTO_YAML  = PAGES_DIR + os.path.sep + 'photo.yaml'
-SHORTURL_YAML = PAGES_DIR + os.path.sep + 'shorturl.yaml'
 NEWS_YAML= NEWS_DIR + os.path.sep + 'news.yaml'
 PAPER_NEWS_YAML= NEWS_DIR + os.path.sep + 'papers.yaml'
 AWARD_NEWS_YAML= NEWS_DIR + os.path.sep + 'awards.yaml'
