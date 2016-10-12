@@ -333,7 +333,7 @@ class Blogs(object):
 
     @property
     def current_pages(self):
-        return [b.page for b in self.blogs if b.page_num == self.current]
+        return [b for b in self.blogs if b.page_num == self.current]
 
 
 def load_blogs(name):

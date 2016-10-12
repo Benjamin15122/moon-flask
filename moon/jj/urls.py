@@ -19,5 +19,5 @@ def render_parent_breadcrumb():
                 path_list.append(['Blog', url_for('page', name=name, path='blog/')])
 
 
-    return '    \n'.join(['<li><a href="{1}">{0}</a></li>'.format(*e) for e in path_list])
+    return '    \n'.join([u'<li><a href="{1}">{0}</a></li>'.format(*e) for e in path_list])
 
