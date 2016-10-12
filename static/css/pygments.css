@@ -4,7 +4,7 @@
 }
 
 .codehilitetable {
-    font: 12px/20px "Source Code Pro",monospace;
+    font: 12px/20px "Source Code Pro",Consolas,Menlo,Monaco,Lucida Console,Liberation Mono,DejaVu Sans Mono,Bitstream Vera Sans Mono,Courier New,monospace,sans-serif;
     overflow-x: auto;
     display: block;
     border-left: 3px solid #FF8000;
