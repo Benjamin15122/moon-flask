@@ -5,19 +5,7 @@ from models.site import Site
 from models.bundle import Bundle
 from models.page import get_page, get_user_dir, Pagination
 
-from flask import Flask, render_template, redirect, send_from_directory, request, abort, make_response, safe_join, Markup, abort, g, render_template_string
-import sys, os, subprocess
-
-from datetime import datetime, timedelta
-from utils import to_date, to_time, to_datetime
-
-
-from moon.md import create_markdown
-
-
-def remove_dead_events(events):
-    yesterday = datetime.now() + timedelta(days=-1)
-    return filter(lambda e: yesterday < to_datetime(e.get('date', '')), events)
+from flask import Flask, render_template, redirect, send_from_directory, g, request
 
 
 ##################

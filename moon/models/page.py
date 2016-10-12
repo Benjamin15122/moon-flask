@@ -60,7 +60,6 @@ def check_cache(cache_file, rootdir, blacklist):
         dirty = True
     else:
         cache_last_mtime = os.path.getmtime(cache_file) # mtime is a number in seconds
-        print(cache_last_mtime)
         dirty = False
 
     md_files = []
@@ -70,7 +69,6 @@ def check_cache(cache_file, rootdir, blacklist):
             if f.endswith('.md') and f not in blacklist:
                 f = os.path.join(curdir, f)
                 md_files.append(f)
-                print(os.path.getmtime(f))
                 if not dirty and os.path.getmtime(f) > cache_last_mtime:
                     dirty = True
 
