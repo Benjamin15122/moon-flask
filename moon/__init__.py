@@ -49,6 +49,3 @@ app.config.from_object(__name__)
 
 
 import moon.views, moon.shorturl, moon.models, moon.jj, moon.md, moon.webhook
-
-# TODO: this is temporary
-import moon.newview

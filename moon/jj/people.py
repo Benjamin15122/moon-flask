@@ -1,45 +1,50 @@
+import flask, itertools
 from flask import g
 
-def render_people(group = None):
-    def display_people(p):
-        d = []
-        d.append('<div class="col-lg-2 col-md-3 col-sm-6">')
-        d.append('<div class="pblock">')
+PEOPLE_TEMPLATE = """
+<div class="col-lg-2 col-md-3 col-sm-6">
+<div class="pblock">
+    {% if url %} <a href="{{ url }}"> {% endif %}
+    <table><tr>
+        <td><img class="avatar" src="{{ avatar }}"/></td>
+        <td><span class="spar-name">{{ name | safe }}</span></td>
+    </tr></table>
+    {% if url %} </a> {% endif %}
+</div>
+</div>
+"""
 
-        if 'url' in p: d.append('<a href="%s">' % p['url'])
+BLOCK_TEMPLATE = """
+<div class="spar-people">
+<div class="row people">
+<div class="row small">
+{% for block in peoples %}{{ block | safe }}{% endfor %}
+</div>
+</div>
+</div>
+"""
 
-        d.append('<table><tr>')
+def render_people(cond = None, category = None, group = None):
+    if type(category) == str: category = [category]
+
+    def render_one(p):
         avatar = p.get('avatar', '/static/img/avatar/default.jpg')
+        if 'name' not in p: return ''
         name = p['name'].split(' ')
         if len(name) == 2: name = ' '.join(name)
         else: name = ' '.join(name[:-1]) + '<br>' + name[-1]
-            
-        d.append('<td><img class="avatar" src="%s"/></td>' % avatar)
-        d.append('<td><span class="spar-name">%s</span></td>' % name)
 
-        d.append('</tr></table>')
+        return flask.render_template_string(PEOPLE_TEMPLATE,
+            url = p.get('url', None),
+            name = name,
+            avatar = avatar)
 
-        if 'url' in p: d.append('</a>')
-        d.append('</div>')
-        d.append('</div>')
-        return '\n'.join(d)
+    types = category if category else ['faculty', 'phd', 'graduates', 'alumni']
+    peoples = sum([g.site.people[i] for i in types], [])
 
-    ret = []
-    ret.append('''<div class="spar-people"><div class="row people" >''')
-    for (key, name) in zip(
-        ['faculty', 'phd', 'graduates', 'alumni'],
-        ['Mentors', 'Ph.D. students', 'M.Sc. students', 'Alumni/ae'],
-    ):
-        ret.append("\n<h3>%s</h3>\n" % name)
-        ret.append('<div class="row small k-equal-height">')
-        for p in g.site.people[key]:
-            groups = [i.strip() for i in p.get('group', '').split(',')]
-            if group and group in groups:
-                ret.append(display_people(p))
-        ret.append('</div>')
+    def need_render(p):
+        return not group or group in p.get('group', '')
 
-    ret.append('</div></div>')
-
-    peoples = '\n'.join(ret)
-    return peoples
+    return flask.render_template_string(BLOCK_TEMPLATE,
+        peoples = [render_one(p) for p in peoples if need_render(p)])
 

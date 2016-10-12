@@ -36,7 +36,7 @@ def render_html(html_path):
     return flask.render_template('doc.html', content = data)
 
 
-# TODO: we'd move this out of here.
+# TODO: this should be placed elsewhere
 
 REDIRECTS = {
     '/spar/people/wxy/sogr.html': '/spar/peoples/xywu/sogr.html',
@@ -57,9 +57,9 @@ def view(path):
     return flask.send_file(PAGES_DIR + os.path.sep + path)
 
 
-@app.route('/spar/')
-@app.route('/spar/<path:path>')
-def spar(path = None):
-    path = flask.request.path
-    if path.endswith('/'): path += 'index.html'
-    return view(path)
+#@app.route('/spar/')
+#@app.route('/spar/<path:path>')
+#def spar(path = None):
+#    path = flask.request.path
+#    if path.endswith('/'): path += 'index.html'
+#    return view(path)
