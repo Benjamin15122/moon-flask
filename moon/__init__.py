@@ -50,6 +50,5 @@ app.config.from_object(__name__)
 
 import moon.views, moon.shorturl, moon.models, moon.jj, moon.md, moon.webhook
 
-# new view, temporarily parallel with old codes
-DOC_ROOT = os.path.join(MOON_DIR, 'docs')
+# TODO: this is temporary
 import moon.newview
