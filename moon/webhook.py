@@ -1,5 +1,9 @@
-from moon import app
+from moon import *
 import os, subprocess
+
+import traceback
+
+from flask import request, abort, make_response
 
 #################
 
@@ -19,8 +23,6 @@ def refresh_moon():
     ret_code = subprocess.call(GIT_PULL_SUBMODULES)
     print('execute "%s" with ret %d' % (' '.join(GIT_PULL_SUBMODULES), ret_code))
 
-    os.remove(NEWS_YAML)
-
 ##################
 
 
@@ -29,11 +31,11 @@ def gitlab_webhooks():
     ''' Gitlab webhooks
 
     '''
-    data = request.get_json()
 
     try:
         refresh_moon()
-    except Exception:
+    except Exception as e:
+        traceback.print_exc(e)
         abort(500)
 
     return make_response("", 200)
