@@ -7,6 +7,11 @@ title: Jingwei Xu
 * Room 812, Computer Science and Technology Building
 * jingwei.xu.nju (at) gmail dot com
 
+<div>
+<img width="200" src="static/jingweixu.jpg" alt="Jingwei Xu"/>
+</div>
+
+
 
 ## Supervisor
 
