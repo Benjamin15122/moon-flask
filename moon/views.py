@@ -205,5 +205,24 @@ def page(name, path=None):
     return render_template(template, page=page)
 
 
+import flask, models
+@app.route('/spar/', methods=['GET'])
+@app.route('/spar/<path:path>', methods=['GET'])
+def spar(path = None):
+    path = request.path
+    if path.endswith('/'): path += 'index.html'
+    tokens = path.split('/')
 
+    dir = '/'.join(tokens[:-1])
+    fname = tokens[-1]
+
+    if path.endswith('.html'):
+        base = PAGES_DIR + dir + '/' + fname[:-5]
+        if os.path.exists(base + '.md'):
+            page = models.page.get_markdown_page(base + '.md')
+        else:
+            page = models.page.get_markdown_page(base + '.html')
+        return render_template('people-page.html', page = page)
+
+    return flask.send_file(PAGES_DIR + os.path.sep + path)
 
