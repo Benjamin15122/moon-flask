@@ -1,12 +1,9 @@
 from moon import *
-#from models import Site, get_page
-
 from models.site import Site
 from models.bundle import Bundle
-from models.page import get_page, get_user_dir
+from models.page import get_page, get_user_dir, get_markdown_page
 
-from flask import Flask, render_template, redirect, send_from_directory, g, request
-
+from flask import Flask, render_template, redirect, send_file, send_from_directory, g, request
 
 ##################
 
@@ -39,57 +36,54 @@ def before_request():
 def teardown_request(exception):
     pass
 
+# TODO: handle redirect
+# '/spar/people/wxy/sogr.html': '/spar/peoples/xywu/sogr.html',
+
 @app.route('/', methods=['GET'])
 @app.route('/<path:path>', methods=['GET'])
 @app.route('/people/<name>/', methods=['GET'])
 @app.route('/people/<name>/<path:path>', methods=['GET'])
-def page(name=None, path=None):
-    if path is None:
-        path = 'index'
+def page(name = None, path = None):
+    fullpath = request.path
 
-    #print("Incoming path: " + path)
-    if path.endswith('/'):
-        path = path + 'index'
-
-    if name:
-        user_dir = get_user_dir(name)
-        # Personal static folder
-        if path.startswith('static/'):
-            return send_from_directory(user_dir, path)
-        page = get_page(user_dir, path)
-    else:
-        page = get_page(PAGES_DIR, path)
-
-    # support redirect
-    rd = page.meta.get('redirect')
-    if rd is not None:
-        return redirect(rd)
-
-    template = page.meta.get('template', 'page.html')
-    return render_template(template, page=page)
-
-import flask, models
-
-# TODO: redirect
-# '/spar/people/wxy/sogr.html': '/spar/peoples/xywu/sogr.html',
-
-@app.route('/spar/', methods=['GET'])
-@app.route('/spar/<path:path>', methods=['GET'])
-def spar(path = None):
-    path = request.path
-    if path.endswith('/'): path += 'index.html'
-    tokens = path.split('/')
-
-    dir = '/'.join(tokens[:-1])
+    # TODO: this code barely works, but should not be like this.
+    if fullpath == '/': fullpath = '/index'
+    elif fullpath.endswith('/'): fullpath += 'index.html'
+    tokens = fullpath.split('/')
+    dir = os.path.sep.join(tokens[:-1])
     fname = tokens[-1]
 
-    if path.endswith('.html'):
-        base = PAGES_DIR + dir + '/' + fname[:-5]
-        if os.path.exists(base + '.md'):
-            page = models.page.get_markdown_page(base + '.md')
-        else:
-            page = models.page.get_markdown_page(base + '.html')
-        return render_template('page.html', page = page)
+    base = PAGES_DIR + os.path.sep + fullpath
 
-    return flask.send_file(PAGES_DIR + os.path.sep + path)
+    if fullpath.endswith('.html'):
+        base = PAGES_DIR + dir + os.path.sep + fname[:-5]
+        if os.path.exists(base + '.md'):
+            content = get_markdown_page(base + '.md')
+        else:
+            content = get_markdown_page(base + '.html')
+        return render_template('page.html', page = content)
+    elif os.path.exists(base):
+        return send_file(PAGES_DIR + os.path.sep + fullpath)
+    else:
+        # Tianxiao's old code.
+        if path is None: path = 'index'
+        if path.endswith('/'): path += 'index'
+
+        if name:
+            user_dir = get_user_dir(name)
+            # Personal static folder
+            if path.startswith('static/'):
+                return send_from_directory(user_dir, path)
+            page = get_page(user_dir, path)
+        else:
+            page = get_page(PAGES_DIR, path)
+
+        # support redirect
+        rd = page.meta.get('redirect')
+        if rd is not None:
+            return redirect(rd)
+
+        template = page.meta.get('template', 'page.html')
+        return render_template(template, page = page)
+
 
