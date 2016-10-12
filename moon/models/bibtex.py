@@ -93,7 +93,7 @@ def render_bib_entries(entries, hl='', group_by_year=False):
     if group_by_year:
         entries = sorted(entries, key=getyear, reverse=True)
         conferences = filter(lambda e: e['ENTRYTYPE'] in ['inproceedings','proceedings'], entries)
-        journals = filter(lambda e: e['ENTRYTYPE'] in ['inproceedings','proceedings'], entries)
+        journals = filter(lambda e: e['ENTRYTYPE'] in ['article'], entries)
 
         conf_years = sorted(set([getyear(e) for e in conferences]), reverse=True)
         jour_years = sorted(set([getyear(e) for e in journals]), reverse=True)
