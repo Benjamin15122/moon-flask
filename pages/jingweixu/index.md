@@ -27,16 +27,15 @@ title: Jingwei Xu
 ## Publications
 
 ~~~{.bibtexhtml hl_lines="Jingwei Xu"}
-@article{TKDE16,
-  author    = {Jingwei Xu and
-               Yuan Yao and
-               Hanghang Tong and
-               Xianping Tao and
-               Jian Lu},
-  title     = {RaPare: A Generic Strategy for Cold-Start Rating Prediction Problem},
-  journal   = {IEEE Transactions on Knowledge and Data Engineering},
-  pages     = {to appear},
-  year      = {2016},
+@article{Xu_2016,
+    doi = {10.1109/tkde.2016.2615039},
+    url = {http://dx.doi.org/10.1109/TKDE.2016.2615039},
+    year = 2016,
+    publisher = {Institute of Electrical and Electronics Engineers ({IEEE})},
+    pages = {1--1},
+    author = {Jingwei Xu and Yuan Yao and Hanghang Tong and Xianping Tao and Jian Lu},
+    title = {{RaPare}: A Generic Strategy for Cold-Start Rating Prediction Problem},
+    journal = {{IEEE} Transactions on Knowledge and Data Engineering}
 }
 
 @inproceedings{DBLP:conf/ijcai/XuYTTL15,
