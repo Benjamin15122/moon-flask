@@ -3,7 +3,7 @@ title: Tianxiao Gu
 # Tianxiao Gu
 
 
-
+----------------
 ## Information
 
 * Institute of Computer Software, Nanjing University
@@ -19,9 +19,10 @@ title: Tianxiao Gu
 </div>
 
 
+----------------
 ## Supervisor
 
-* Professor Jian Lü, [Xiaoxing Ma](http://moon.nju.edu.cn/~XiaoxingMa "Xiaoxing Ma"), [Chang Xu](http://cs.nju.edu.cn/changxu/ "Chang Xu"), Chun Cao
+* Professor Jian Lü, [Xiaoxing Ma](http://moon.nju.edu.cn/people/xiaoxingma "Xiaoxing Ma"), [Chang Xu](http://cs.nju.edu.cn/changxu/ "Chang Xu"), Chun Cao
 
 ## Education and Work Experience
 
@@ -32,12 +33,14 @@ title: Tianxiao Gu
 * 2006.9 - 2010.6: B.S., Department of Computer Science and Technology, Nanjing University
 
 
+----------------
 ## Research Interests
 
 * Dynamic Software Updating (DSU)
 * Program Analysis
 * Programming Languages
 
+----------------
 ## Publications
 
 ~~~{.bibtexhtml hl_lines="Tianxiao Gu"}
@@ -137,6 +140,7 @@ title: Tianxiao Gu
 }
 ~~~
 
+----------------
 ## Projects
 
 I have moved from [artemisprojects](http://lab.artemisprojects.org) (now [njuics.cn](http://git.njuics.cn)) to bitbucket to host most of my projects.
@@ -163,5 +167,12 @@ You can checkout my profile (only publicly accessible projects) at [here](https:
     * An automatic-runtime-recovery-enabled JVM
 * [AOTES](https://bitbucket.org/txgu/aotes-asm)
     * Automating object transformations for dynamic software updating via execution synthesis
+
+----------------
+## Misc.
+
+* [Blog](blog/): in Chinese
+
+--------------------
 
 <div id="clustrmaps-widget"></div><script type="text/javascript">var _clustrmaps = {'url' : 'http://moon.nju.edu.cn/~TianxiaoGu', 'user' : 995449, 'server' : '3', 'id' : 'clustrmaps-widget', 'version' : 1, 'date' : '2012-03-15', 'lang' : 'zh', 'corners' : 'square' };(function (){ var s = document.createElement('script'); s.type = 'text/javascript'; s.async = true; s.src = 'http://www3.clustrmaps.com/counter/map.js'; var x = document.getElementsByTagName('script')[0]; x.parentNode.insertBefore(s, x);})();</script><noscript><a href="http://www3.clustrmaps.com/user/94ef3079"><img src="http://www3.clustrmaps.com/stats/maps-no_clusters/moon.nju.edu.cn-~TianxiaoGu-thumb.jpg" alt="Locations of visitors to this page" /></a></noscript>

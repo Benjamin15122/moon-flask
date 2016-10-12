@@ -3,7 +3,7 @@ date: 2015-10-25
 category: programming
 tags: java,android
 template: post.html
-
+status: draft
 
 
 最近因为科研需要，花了几天时间，自己修改HotSpot JVM实现了一个MiniTracing。

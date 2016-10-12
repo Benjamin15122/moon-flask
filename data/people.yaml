@@ -68,7 +68,7 @@ phd:
     avatar: /static/img/avatar/jingweixu.jpg
     from: 2012
   - name: Tianxiao Gu 顾天晓
-    url:  /people/tianxiaogu
+    url:  tianxiaogu
     avatar: /static/img/avatar/gutianxiao.jpg
     from: 2012
     group: dse

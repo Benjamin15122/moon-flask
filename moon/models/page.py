@@ -79,7 +79,7 @@ def check_cache(cache_file, rootdir, blacklist):
 
 def get_cache_dir(page_path):
     path = os.path.relpath(page_path, PAGES_DIR)
-    return safe_join(CACHE_DIR, path)
+    return os.path.join(CACHE_DIR, path)
 
 def get_user_dir(name):
     user_dir = safe_join(PEOPLE_DIR, name)

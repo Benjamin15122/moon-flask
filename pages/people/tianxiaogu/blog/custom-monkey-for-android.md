@@ -12,7 +12,7 @@ monkey做的touch是随机的，不考虑当前界面的具体点击后有反应
 因此，我们可以很方便的将其结合起来。
 
 由于我从来没有开发过一个android的app，对工具链也不是很熟悉，所以我直接在下载的AOSP里的monkey源码上修改了。
-具体的修改就是把monkey的源码和uiautomator的源码结合起来，得到一个新的被我命名为ape的随机测试工具。
+具体的修改就是把monkey的源码和uiautomator的源码结合起来，得到一个新的被我命名为[ape](http://bitbucket.org/txgu/ape)的随机测试工具。
 ape继承了monkey生成事件的能力和uiautomator获得界面layout的能力。
 
 编译很简单，直接在AOSP里通过`make monkey`即可，最后生成一个空的`monkey.jar`和包含`arm/monkey.odex`文件。
@@ -45,3 +45,10 @@ $ADB shell su -c chmod 644 /system/framework/monkey.jar
 $ADB shell su -c chown root:root /system/framework/monkey.jar
 ~~~
 
+
+## **2016-10-13更新**
+
+之前的系统是在`android-5.0.1`上的，
+后来换到了`android-6.0.1_r41`，在`make monkey`之后搜索`javalib.jar`，无需`dx`，直接替换即可。
+
+项目在[bitbucket](https://bitbucket.org/txgu/ape)上。
