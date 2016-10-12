@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block title%}
+{{ page.meta.title }} |
+{% endblock%}
+{% block page_path %}
+<li class="active">{{ page.meta.title }}</li>
+{% endblock %}
+{% block content %}
+{{ page.html|safe }}
+{% endblock content %}

@@ -1,6 +1,13 @@
 from flask import url_for
 
 BUNDLES = {
+    'qqmap': [
+        [],
+        [ 'http://map.qq.com/api/js?v=2.exp&key=WBEBZ-EL6WS-A4ZOR-643I5-VIJE5-SYBU7',
+          'http://open.map.qq.com/plugin/v2/PanoramaOverview/PanoramaOverview-min.js'],
+        [],
+        ],
+
     'raphael':[
         [], # style file
         ['js/raphael/raphael.min.js'], # js file
@@ -20,6 +27,12 @@ BUNDLES = {
         ],
 }
 
+def make_url(path):
+
+    if path.startswith('http://') or path.startswith('https://'):
+        return path
+
+    return url_for('static', filename=path)
 
 class Bundle(object):
     def __init__(self):
@@ -44,7 +57,7 @@ class Bundle(object):
         for name, b in BUNDLES.iteritems():
             if name in self.enabled:
                 for j in b[1]:
-                    ret.append(url_for('static', filename=j))
+                    ret.append(make_url(j))
 
         return ret
 
@@ -54,7 +67,7 @@ class Bundle(object):
         for name, b in BUNDLES.iteritems():
             if name in self.enabled:
                 for c in b[0]:
-                    ret.append(url_for('static', filename=c))
+                    ret.append(make_url(c))
 
         return ret
 

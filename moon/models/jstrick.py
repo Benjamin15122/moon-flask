@@ -26,3 +26,8 @@ def make_raphael(code, diagramid):
     g.bundle.code.append(code)
 
     return u'<div id="{0}" style="width:100%%;height:100%%;"></div>'.format(diagramid)
+
+
+def make_customjs(code):
+    g.bundle.code.append(code)
+    return ''
