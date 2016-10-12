@@ -59,7 +59,7 @@ def render_people(cond = None, category = None, large = False, group = None):
         return flask.render_template_string(
             PEOPLE_TEMPLATE_LG if large else PEOPLE_TEMPLATE_SM,
             url = p.get('url', None),
-            name1 = name1.decode('utf-8'), name2 = name2.decode('utf-8'),
+            name1 = name1, name2 = name2,
             avatar = avatar)
 
     types = category if category else ['faculty', 'phd', 'graduates', 'alumni']
