@@ -82,7 +82,7 @@ def get_cache_dir(page_path):
     return safe_join(CACHE_DIR, path)
 
 def get_user_dir(name):
-    user_dir = safe_join(PAGES_DIR, name)
+    user_dir = safe_join(PEOPLE_DIR, name)
 
     # pages in the 'share' folder can be either
     # accessed by /people/share/haosun/ or /people/haosun/

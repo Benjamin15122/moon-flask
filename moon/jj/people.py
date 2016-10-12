@@ -1,10 +1,9 @@
-# -*- coding:utf-8
 
 import flask, itertools
 from flask import g
 
 # People and people block (small)
-PEOPLE_TEMPLATE_SM = """
+PEOPLE_TEMPLATE_SM = u"""
 <div class="col-lg-2 col-md-3 col-sm-6">
 <div class="pblock">
 {% if url %} <a href="{{ url }}"> {% endif %}
@@ -17,14 +16,14 @@ PEOPLE_TEMPLATE_SM = """
 </div>
 """
 
-BLOCK_TEMPLATE_SM = """
+BLOCK_TEMPLATE_SM = u"""
 <div class="row people small people-small">
 {% for block in peoples %}{{ block | safe }}{% endfor %}
 </div>
 """
 
 # People and people block (large)
-PEOPLE_TEMPLATE_LG = """
+PEOPLE_TEMPLATE_LG = u"""
 <div class="col-lg-3 col-md-6 col-sm-12">
 <div class="pblock">
 {% if url %} <a href="{{ url }}"> {% endif %}
@@ -38,7 +37,7 @@ PEOPLE_TEMPLATE_LG = """
 </div>
 """
 
-BLOCK_TEMPLATE_LG = """
+BLOCK_TEMPLATE_LG = u"""
 <div class="row people small people-small">
 {% for block in peoples %}{{ block | safe }}{% endfor %}
 </div>
@@ -52,7 +51,7 @@ def render_people(cond = None, category = None, large = False, group = None):
         name = p['name'].split(' ')
         if len(name) == 2: (name1, name2) = ('', '')
         elif large:
-            (name1, name2) = (' '.join(name), p.get('title', str(p.get('from', '??')) + ' –'))
+            (name1, name2) = (' '.join(name), p.get('title', str(p.get('from', '??')) + ' ' + u'\u2013' ))
         else:
             (name1, name2) = (' '.join(name[:-1]), name[-1])
 
