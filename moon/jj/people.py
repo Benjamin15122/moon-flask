@@ -49,7 +49,7 @@ def render_people(cond = None, category = None, large = False, group = None):
 
     def render_one(p):
         avatar = p.get('avatar', '/static/img/avatar/default.jpg')
-        name = p['name'].split(' ')
+        name = p['name'].decode('utf-8').split(' ')
         if len(name) == 2: (name1, name2) = ('', '')
         elif large:
             (name1, name2) = (' '.join(name), p.get('title', str(p.get('from', '??')) + ' –'))
