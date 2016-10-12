@@ -44,22 +44,19 @@ REDIRECTS = {
 }
 
 def view(path):
-    try:
-        if path in REDIRECTS:
-            return flask.redirect(REDIRECTS[path])
+    if path in REDIRECTS:
+        return flask.redirect(REDIRECTS[path])
 
-        if path.endswith('.html'):
-            base = MOON_DIR + os.path.sep + path[:-5]
-            if os.path.exists(base + '.md'):
-                return render_markdown(base + '.md')
-            elif os.path.exists(base + '.html'):
-                return render_html(base + '.html')
-            flask.abort(404)
-
-        return flask.send_file(MOON_DIR + os.path.sep + path)
-    except:
+    if path.endswith('.html'):
+        base = PAGES_DIR + os.path.sep + path[:-5]
+        if os.path.exists(base + '.md'):
+            return render_markdown(base + '.md')
+        elif os.path.exists(base + '.html'):
+            return render_html(base + '.html')
         flask.abort(404)
-        
+
+    return flask.send_file(PAGES_DIR + os.path.sep + path)
+
 
 @app.route('/spar/')
 @app.route('/spar/<path:path>', methods=['GET'])
