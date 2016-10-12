@@ -1,3 +1,4 @@
+{% import 'menu_render.html' as menu %}
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -39,51 +40,7 @@
                         </a>
                     </h1>
                 </div><!-- site logo end -->
-                <nav id="k-menu" class="k-main-navig"><!-- main navig -->
-                    <ul id="drop-down-left" class="k-dropdown-menu">
-                        <li {% if request.path == url_for('index') %} class="current-menu-item" {% endif %}>
-                            <a href="{{ url_for('index') }}" title="">Home</a>
-                        </li>
-                        <li {% if request.path == url_for('people') %} class="current-menu-item" {% endif %}>
-                            <a href="{{ url_for('people') }}" title="">People</a>
-                        </li>
-                        <li>
-                            <a href="#" title="">Research</a>
-                            <ul class="sub-menu">
-                                <li ><a href="http://alg-nju.github.io/mipa">MIPA</a></li>
-                                <li ><a href="{{ url_for('dse') }}">DSE</a></li>
-                                <li ><a href="{{ url_for('spar') }}">SPAR</a></li>
-                            </ul>
-                        </li>
-                        <li {% if request.path == url_for('news') %} class="current-menu-item" {% endif %}>
-                            <a href="{{ url_for('news') }}" title="">News</a>
-                            <ul class="sub-menu">
-                                <li ><a href="{{ url_for('short_news', path='papers') }}">Papers</a></li>
-                                <li ><a href="{{ url_for('short_news', path='awards') }}">Awards</a></li>
-                                <li ><a href="{{ url_for('short_news', path='scholarships') }}">Scholarships</a></li>
-                            </ul>
-                        </li>
-                        <li {% if request.path == url_for('events') %} class="current-menu-item" {% endif %}>
-                            <a href="{{ url_for('events') }}" title="">Events</a>
-                            <ul class="sub-menu">
-                                <li {% if request.path == url_for('events', path='phd') %} class="current-menu-item" {% endif %}><a href="{{ url_for('events', path='phd') }}">PhD Seminar</a></li>
-                                <li {% if request.path == url_for('events', path='master') %} class="current-menu-item" {% endif %}><a href="{{ url_for('events', path='master') }}">Master Seminar </a></li>
-                                <li {% if request.path == url_for('events', path='deadlines') %} class="current-menu-item" {% endif %}><a href="{{ url_for('events', path='deadlines')}}">Deadlines</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="http://moon.nju.edu.cn/courses/" title="">Courses</a>
-                        </li>
-                        <li>
-                            <a href="{{ url_for('about') }}" title="">About</a>
-                            <ul class="sub-menu">
-                                <li {% if request.path == url_for('contact') %} class="current-menu-item" {% endif %}><a href="{{ url_for('contact') }}" title="">Contact</a></li>
-                                <li {% if request.path == url_for('awards') %} class="current-menu-item" {% endif %}><a href="{{ url_for('awards') }}">Awards</a></li>
-                            </ul>
-
-                        </li>
-                    </ul>
-                </nav><!-- main navig end -->
+                {{ menu.render_menu() }}
             </div>
         </div><!-- row end -->
     </div><!-- container + head wrapper end -->
