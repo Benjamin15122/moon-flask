@@ -15,7 +15,10 @@ def render_blogs():
     name = request.view_args.get('name')
 
     # ?p=#
-    p = request.args.get('p', 1)
+    try:
+        p = int(request.args.get('p', 1))
+    except:
+        p = 1
 
     blogs = Blogs(name, p)
 
