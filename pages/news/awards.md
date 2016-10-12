@@ -1,4 +1,5 @@
 title: Awards
-template: newslist.html
-type: award
 
+
+# Awards
+{{ render_short_news(g.site.award_news) }}

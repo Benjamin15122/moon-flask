@@ -5,7 +5,7 @@ img_title: Jingwei Xu
 img_path: img/avatar/jingweixu.jpg
 
 
-
+# Jingwei Xu's Paper Accepted to TKDE
 
 [Jingwei Xu](/people/jingweixu), [Yuan Yao](/people/yuanyao), Hanghang Tong, [Xianping Tao](/people/xianpingtao), Jian Lu's paper, titled
 *"RaPare: A Generic Strategy for Cold-Start Rating Prediction Problem"*,

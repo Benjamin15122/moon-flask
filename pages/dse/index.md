@@ -14,10 +14,7 @@ what dynamic software updating and automatic runtime recovery are.
 
 ## People
 
-* Prof. [Xiaoxing Ma](http://moon.nju.edu.cn/~xxm)
-* [Tianxiao Gu](/people/tianxiaogu/)
-* [Yiqun Wang](/people/yiqunwang/)
-* [Zelin Zhao](http://moon.nju.edu.cn/spar/people/zzl/zzl.html)
+{{ render_people(group = "dse", category = ["faculty", "phd", "graduates"]) | safe }}
 
 ## Publications
 
@@ -163,9 +160,8 @@ We have a couple of projects hacking the Java HotSpot JVM and Android ART.
 ## Former Group Members
 
 
-* Shengwei An (M.S., 2016)
-* Ruiqi Liu (M.S., 2016)
-    * First employment: Huawei
+{{ render_people(group = "dse", category = ["alumni"]) | safe }}
+
 * Tongbao Zhang (M.S., 2015)
     * First employment: Alibaba, JVM Group
 * Guozhao Ren (M.S., 2014)
