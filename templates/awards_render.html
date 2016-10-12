@@ -1,0 +1,14 @@
+{% macro render_awards() %}
+    <div class="row gutter k-equal-height"><!-- row -->
+    {% for award in g.site.awards %}
+        <div class="col-lg-4 col-md-4 col-sm-12">
+            <figure class="gallery-photo-thumb">
+                <a href="{{ url_for('static', filename=award.src) }}" title="award.title" data-fancybox-group="gallery-bssb" class="fancybox"><img src="{{ url_for('static', filename=award.src) }}" alt="award.title" /></a>
+            </figure>
+            <div class="gallery-photo-description">
+                {{ award.title }}
+            </div>
+        </div>
+    {% endfor %}
+    </div><!-- row end -->
+{% endmacro %}
