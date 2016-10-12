@@ -34,8 +34,8 @@ title: Jingwei Xu
     publisher = {Institute of Electrical and Electronics Engineers ({IEEE})},
     pages = {1--1},
     author = {Jingwei Xu and Yuan Yao and Hanghang Tong and Xianping Tao and Jian Lu},
-    title = {{RaPare}: A Generic Strategy for Cold-Start Rating Prediction Problem},
-    journal = {{IEEE} Transactions on Knowledge and Data Engineering}
+    title = {RaPare: A Generic Strategy for Cold-Start Rating Prediction Problem},
+    journal = {IEEE Transactions on Knowledge and Data Engineering}
 }
 
 @inproceedings{DBLP:conf/ijcai/XuYTTL15,
