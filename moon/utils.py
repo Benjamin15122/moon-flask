@@ -1,4 +1,4 @@
-from datetime import datetime, date
+from datetime import datetime, date, timedelta
 from datetime import time as dtime
 
 from moon import app
@@ -23,6 +23,12 @@ def to_time(st):
 
     return to_datetime(st).strftime("%H:%M")
 
+
+def before_yesterday(events):
+    yesterday = datetime.now() + timedelta(days=-1)
+    return filter(lambda e: yesterday < to_datetime(e.get('date', '')), events)
+
+app.jinja_env.filters['before_yesterday'] = before_yesterday
 app.jinja_env.filters['to_date'] = to_date
 app.jinja_env.filters['to_time'] = to_time
 
@@ -47,21 +53,43 @@ def to_datetime(d):
     try:
         return datetime.strptime(d, "%Y-%m-%d")
     except Exception as e:
-        print("Not the %Y-%m-%d " + str(e)) # 2012-02-01
-        print(type(d))
+        #print("Not the %Y-%m-%d " + str(e)) # 2012-02-01
+        #print(type(d))
+        pass
 
     try:
         return datetime.strptime(d, "%Y-%m")
     except Exception as e:
-        print("Not the %Y-%m " + str(e)) # 2012-02
-        print(type(d))
+        #print("Not the %Y-%m " + str(e)) # 2012-02
+        #print(type(d))
+        pass
 
     try:
         return datetime.strptime(d, "%Y-%m-%d %H:%M")
     except Exception as e:
-        print("Not the %Y-%m-%d %H:%M" + str(e)) # 2012-02-01 19:00
-        print(type(d))
+        #print("Not the %Y-%m-%d %H:%M" + str(e)) # 2012-02-01 19:00
+        #print(type(d))
+        pass
 
     return datetime.now()
 
 
+
+########################
+# safe getter
+
+def get_date(e):
+    ''' A helper method used to sort entries
+        No crash but will result in a bad page, e.g., incorrect date
+    '''
+    if hasattr(e, 'date'):
+        return to_date(getattr(e, 'date'))
+    return to_date(e.get('date', datetime.now()))
+
+def get_datetime(e):
+    ''' A helper method used to sort entries
+        No crash but will result in a bad page, e.g., incorrect date
+    '''
+    if hasattr(e, 'date'):
+        return to_datetime(getattr(e, 'date'))
+    return to_datetime(e.get('date', datetime.now()))

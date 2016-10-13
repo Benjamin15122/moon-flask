@@ -3,6 +3,9 @@ date: 2016-05-25
 summary: Congratulations to them!
 
 
+
+# Xuansong Li and Haibo Ye Defended Their Dissertations
+
 Xuansong Li and Haibo Ye have defended their dissertations.
 
 ![](/static/photo/XuansongLi_2016-05-26.jpg)

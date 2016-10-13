@@ -1,3 +1,4 @@
+{% import 'menu_render.html' as menu %}
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -13,6 +14,7 @@
     <link href="{{ url_for('static', filename='js/audioplayer/audioplayer.css') }}" rel="stylesheet" type="text/css"><!-- Audioplayer -->
     <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet" type="text/css"><!-- theme styles -->
     <link href="{{ url_for('static', filename='css/bibtex.css') }}" rel="stylesheet" type="text/css"><!-- bibtex styles -->
+    <link href="{{ url_for('static', filename='css/pygments.css') }}" rel="stylesheet" type="text/css"><!-- pygments, copied from Shengwei An -->
     <link href="{{ url_for('static', filename='css/moon.css') }}" rel="stylesheet" type="text/css"><!-- moon overridden styles -->
 
     {% block customcss %}{% endblock %}
@@ -35,62 +37,26 @@
             -->
             <!-- functional navig end -->
             <div class="col-lg-12">
-                <div id="k-site-logo" class="pull-left"><!-- site logo -->
+                <div id="k-site-logo" class="pull-left" style="padding:5pt;"><!-- site logo -->
                     <h1 class="k-logo">
-                        <a href="{{ url_for('index') }}" title="Home Page">
-                            <img src="{{ url_for('static', filename='img/ICS_NJU.png') }}" alt="Site Logo" class="img-responsive" />
+                        <a href="{{ url_for('page') }}" title="Home Page">
+                            <img src="{{ url_for('static', filename='img/ICS_LOGO_left.png') }}" width="170" alt="Site Logo" class="img-responsive" />
                         </a>
                     </h1>
                     <a id="mobile-nav-switch" href="#drop-down-left"><span class="alter-menu-icon"></span></a><!-- alternative menu button -->
                 </div><!-- site logo end -->
-                <nav id="k-menu" class="k-main-navig"><!-- main navig -->
-                    <ul id="drop-down-left" class="k-dropdown-menu">
-                        <li {% if request.path == url_for('index') %} class="current-menu-item" {% endif %}>
-                            <a href="{{ url_for('index') }}" title="">Home</a>
-                        </li>
-                        <li {% if request.path == url_for('people') %} class="current-menu-item" {% endif %}>
-                            <a href="{{ url_for('people') }}" title="">People</a>
-                        </li>
-                        <li>
-                            <a href="#" title="">Research</a>
-                            <ul class="sub-menu">
-                                <li ><a href="http://alg-nju.github.io/mipa">MIPA</a></li>
-                                <li ><a href="{{ url_for('dse') }}">DSE</a></li>
-                                <li ><a href="{{ url_for('spar') }}">SPAR</a></li>
-                            </ul>
-                        </li>
-                        <li {% if request.path == url_for('news') %} class="current-menu-item" {% endif %}>
-                            <a href="{{ url_for('news') }}" title="">News</a>
-                            <ul class="sub-menu">
-                                <li ><a href="{{ url_for('short_news', path='papers') }}">Papers</a></li>
-                                <li ><a href="{{ url_for('short_news', path='awards') }}">Awards</a></li>
-                                <li ><a href="{{ url_for('short_news', path='scholarships') }}">Scholarships</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="#" title="">Events</a>
-                            <ul class="sub-menu">
-                                <li {% if request.path == url_for('events', path='phd') %} class="current-menu-item" {% endif %}><a href="{{ url_for('events', path='phd') }}">PhD Seminar</a></li>
-                                <li {% if request.path == url_for('events', path='master') %} class="current-menu-item" {% endif %}><a href="{{ url_for('events', path='master') }}">Master Seminar </a></li>
-                                <li {% if request.path == url_for('events', path='deadlines') %} class="current-menu-item" {% endif %}><a href="{{ url_for('events', path='deadlines')}}">Deadlines</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="http://moon.nju.edu.cn/courses/" title="">Courses</a>
-                        </li>
-                        <li>
-                            <a href="{{ url_for('about') }}" title="">About</a>
-                            <ul class="sub-menu">
-                                <li {% if request.path == url_for('contact') %} class="current-menu-item" {% endif %}><a href="{{ url_for('contact') }}" title="">Contact</a></li>
-                                <li {% if request.path == url_for('awards') %} class="current-menu-item" {% endif %}><a href="{{ url_for('awards') }}">Awards</a></li>
-                            </ul>
-
-                        </li>
-                    </ul>
-                </nav><!-- main navig end -->
+                <div id="k-site-logo" class="" style="padding:5pt;float:right!important;"><!-- site logo -->
+                    <h1 class="k-logo">
+                        <a href="{{ url_for('page') }}" title="Home Page">
+                            <img src="{{ url_for('static', filename='img/ICS_LOGO_right.png') }}" width="170" alt="Site Logo" class="img-responsive" />
+                        </a>
+                    </h1>
+                </div><!-- site logo end -->
+                {{ menu.render_menu() }}
             </div>
         </div><!-- row end -->
     </div><!-- container + head wrapper end -->
+    {% block body %}
     <div id="k-body"><!-- content wrapper -->
         <div class="container"><!-- container -->
         <div class="row"><!-- row -->
@@ -103,15 +69,27 @@
                 </form>
                 <div id="bt-toggle-search" class="search-icon text-center"><i class="s-open fa fa-search"></i><i class="s-close fa fa-times"></i></div><!-- toggle search button -->
             </div><!-- top search end -->
+            {% block breadcrumbs %}
             <div class="k-breadcrumbs col-lg-12 clearfix"><!-- breadcrumbs -->
                 <ol class="breadcrumb">
+                    {{ render_parent_breadcrumb()|safe }}
                 {% block page_path %}{% endblock %}
                 </ol>
             </div><!-- breadcrumbs end -->
+            {% endblock %}
         </div><!-- row end -->
-        {% block content %}{% endblock %}
+        {% block innerbody %}
+        <div class="row no-gutter fullwidth"><!-- row -->
+            <div class="col-lg-12 col-md-12"><!-- doc body wrapper -->
+                <div class="col-padded"><!-- inner custom column -->
+                   {% block content %}{% endblock %}
+                </div><!-- inner custom column end -->
+            </div><!-- doc body wrapper end -->
+        </div><!-- row end -->
+        {% endblock %}
         </div><!-- container end -->
     </div><!-- content wrapper end -->
+    {% endblock %}
     {% if not nofooter %}
     <div id="k-footer"><!-- footer -->
         <div class="container"><!-- container -->
@@ -182,6 +160,7 @@
         </div><!-- container end -->
     </div><!-- footer end -->
     {% endif %}
+    {% block subfooter %}
     <div id="k-subfooter"><!-- subfooter -->
         <div class="container"><!-- container -->
             <div class="row"><!-- row -->
@@ -193,7 +172,7 @@
             </div><!-- row end -->
         </div><!-- container end -->
     </div><!-- subfooter end -->
-
+    {% endblock %}
     <!-- jQuery -->
     <script src="{{ url_for('static', filename='jQuery/jquery-2.1.1.min.js') }}"></script>
     <script src="{{ url_for('static', filename='jQuery/jquery-migrate-1.2.1.min.js') }}"></script>
@@ -212,6 +191,18 @@
     <script src="{{ url_for('static', filename='js/jquery.easy-pie-chart.js') }}"></script>
     <!-- Theme -->
     <script src="{{ url_for('static', filename='js/theme.js') }}"></script>
+
+    {% if g.bundle.js %}
+        {% for js in g.bundle.js %}
+    <script src="{{ js }}"></script>
+        {% endfor %}
+    {% endif %}
+
+    {% if g.bundle.code %}
+        {% for code in g.bundle.code %}
+    <script>{{ code|safe }}</script>
+        {% endfor %}
+    {% endif %}
 
     {% block customjs %}{% endblock %}
   </body>

@@ -48,3 +48,4 @@ Suppose that you want to add an entry for Tom.
         git submodule add git@git.artemisprojects.org:moon/moon-tom.git pages/tom
 
 4. Edit `pages/people.yaml` and add an entry. You can learn from other entries.
+

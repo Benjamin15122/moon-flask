@@ -1,0 +1,161 @@
+%% This BibTeX bibliography file was created using BibDesk.
+%% http://bibdesk.sourceforge.net/
+
+
+%% Created for Xiaoxing Ma at 2016-09-10 14:28:28 +0800 
+
+
+%% Saved with string encoding Unicode (UTF-8) 
+
+
+
+@article{ConUpTSE,
+	Author = {Baresi, Luciano and Ghezzi, Carlo and Ma, Xiaoxing and Panzica La Manna, Valerio},
+	Date-Added = {2016-09-10 02:04:32 +0000},
+	Date-Modified = {2016-09-10 06:27:59 +0000},
+	Doi = {10.1109/TSE.2016.2592913},
+	Issn = {0098-5589},
+	Journal = {IEEE Transactions on Software Engineering},
+	Keywords = {Model checking;Runtime;Safety;Software systems;Component-based distributed system;Dynamic update;Version-consistency},
+	Month = {Dec},
+	Title = {Efficient Dynamic Updates of Distributed Components through Version Consistency},
+	Volume = {99},
+	Number = {99},
+ 	pages = {to appear},
+	Year = {2017},
+	Url = {http://dx.doi.org/10.1109/TSE.2016.2592913}}
+
+@inproceedings{jiang_online_2016,
+  author    = {Yanyan Jiang and Chang Xu and Du Li and Xiaoxing Ma and Jian Lu},
+  title     = {Online shared memory dependence reduction via bisectional coordination},
+  booktitle = {Proceedings of the 24th International Symposium on the Foundations of Software Engineering (FSE)},
+  year      = {2016},
+  pages = {to appear},
+  pdf = {/spar/publication/jiang_online_2016.pdf},
+}
+
+@inproceedings{jiang_crash_2016,
+  author    = {Yanyan Jiang and Haicheng Chen and Feng Qin and Chang Xu and Xiaoxing Ma and Jian Lu},
+  title     = {Crash consistency validation made easy},
+  booktitle = {Proceedings of 24th International Symposium on the Foundations of Software Engineering (FSE)},
+  year      = {2016},
+  pages = {to appear},
+  code = {http://jiangyy.github.io/c3/},
+  pdf = {/spar/publication/jiang_crash_2016.pdf},
+}
+
+@inproceedings{Gu:2016:ARR:2970276.2970360,
+ author = {Gu, Tianxiao and Sun, Chengnian and Ma, Xiaoxing and L\"{u}, Jian and Su, Zhendong},
+ title = {Automatic Runtime Recovery via Error Handler Synthesis},
+ booktitle = {Proceedings of the 31st IEEE/ACM International Conference on Automated Software Engineering},
+ series = {ASE 2016},
+ year = {2016},
+ isbn = {978-1-4503-3845-5},
+ location = {Singapore, Singapore},
+ pages = {684--695},
+ numpages = {12},
+ url = {http://doi.acm.org/10.1145/2970276.2970360},
+ doi = {10.1145/2970276.2970360},
+ acmid = {2970360},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+ keywords = {JVM, automatic runtime recovery, exception handling},
+} 
+
+
+@article{MIPA2016TC,
+	Author = {Yiling Yang and Yu Huang and Xiaoxing Ma and Jian Lu},
+	Date-Added = {2016-09-10 02:22:53 +0000},
+	Date-Modified = {2016-09-10 06:21:47 +0000},
+	Doi = {10.1109/TC.2015.2424879},
+	Issn = {0018-9340},
+	Journal = {IEEE Transactions on Computers},
+	Keywords = {middleware;ubiquitous computing;MIPA;PD-CA maps;abstract predicate detection theory;asynchronous environments;autonomous communicating devices;autonomous computing devices;chemical plant safety management application;logical-physical environment;middleware infrastructure for predicate detection in asynchronous environments;middleware support;predicate detection-based context-awareness framework;programming toolkit;Context;Context modeling;Context-aware services;Middleware;Robot kinematics;Synchronization;Context-awareness;asynchrony;context-aware middleware;predicate detection},
+	Month = {Feb},
+	Number = {2},
+	Pages = {522-534},
+	Title = {Enabling Context-Awareness by Predicate Detection in Asynchronous Environments},
+	Volume = {65},
+	Year = {2016},
+	Url = {http://dx.doi.org/10.1109/TC.2015.2424879}}
+
+@article{CINA2015TSE,
+  author    = {Chang Xu and
+               Wang Xi and
+               Shing{-}Chi Cheung and
+               Xiaoxing Ma and
+               Chun Cao and
+               Jian Lu},
+  title     = {Cina: Suppressing the Detection of Unstable Context Inconsistency},
+  journal   = {{IEEE} Transactions on Software Engineering},
+  volume    = {41},
+  number    = {9},
+  pages     = {842--865},
+  year      = {2015},
+  url       = {http://dx.doi.org/10.1109/TSE.2015.2418760},
+  doi       = {10.1109/TSE.2015.2418760},
+}
+
+@inproceedings{jiang_optimistic_2015,
+    author = {Jiang, Yanyan and Li, Du and Xu, Chang and Ma, Xiaoxing and Lu, Jian},
+    title = {Optimistic shared memory dependence tracing},
+    booktitle = {Proceedings of the 30th International Conference on Automated Software Engineering (ASE)},
+    year = {2015},
+    pages = {524--534},
+    url = {http://ieeexplore.ieee.org/xpl/articleDetails.jsp?arnumber=7372040},
+    pdf = {/spar/publication/jiang_optimistic_2015.pdf},
+}
+
+
+
+@article{JavelusIST14,
+	Abstract = {Context
+In-use software systems are destined to change in order to fix bugs or add new features. Shutting down a running system before updating it is a normal practice, but the service unavailability can be annoying and sometimes unacceptable. Dynamic software updating (DSU) migrates a running software system to a new version without stopping it. State-of-the-art Java DSU systems are unsatisfactory as they may cause a non-negligible system pause during updating.
+
+Objective
+In this paper we present Javelus, a Java HotSpot VM-based Java DSU system with very short pausing time.
+
+Method
+Instead of updating everything at once when the running application is suspended, Javelus only updates the changed code during the suspension, and migrates stale objects on-demand after the application is resumed. With a careful design this lazy approach neither sacrifices the update flexibility nor introduces unnecessary object validity checks or access indirections.
+
+Results
+Evaluation experiments show that Javelus can reduce the updating pausing time by one to two orders of magnitude without introducing observable overheads before and after the dynamic updating.
+
+Conclusion
+Our experience with Javelus indicates that low-disruptive and type-safe dynamic updating of Java applications can be practically achieved with a lazy updating approach.},
+	Author = {Gu, Tianxiao and Cao, Chun and Xu, Chang and Ma, Xiaoxing and Zhang, Linghao and L\"{u}, Jian},
+	Date-Added = {2014-04-10 07:59:01 +0000},
+	Date-Modified = {2015-01-03 08:01:12 +0000},
+	Journal = {Information and Software Technology},
+	Keywords = {Dynamic software updating; JVM; Lazy updating; Low disruption},
+	Month = {September},
+	Number = {9},
+	Pages = {1086-1098},
+	Title = {Low-disruptive Dynamic Updating of Java Applications},
+	Url = {http://dx.doi.org/10.1016/j.infsof.2014.04.003},
+	Volume = {56},
+	Year = {2014},
+	Bdsk-Url-1 = {http://dx.doi.org/10.1016/j.infsof.2014.04.003}}
+
+
+
+@inproceedings{JYY:2014:ICSE,
+	Acmid = {2568236},
+	Address = {New York, NY, USA},
+	Author = {Jiang, Yanyan and Gu, Tianxiao and Xu, Chang and Ma, Xiaoxing and Lu, Jian},
+	Booktitle = {Proceedings of the 36th International Conference on Software Engineering},
+	Confabbr = {ICSE '14},
+	Confdate = {May 31 - June 7, 2014},
+	Doi = {10.1145/2568225.2568236},
+	Isbn = {978-1-4503-2756-5},
+	Keywords = {Cache, Concurrency, Debugging, Replay},
+	Location = {Hyderabad, India},
+	Month = {June},
+	Numpages = {11},
+	Pages = {457--467},
+	Publisher = {ACM},
+	Title = {CARE: Cache guided deterministic replay for concurrent Java programs},
+	Url = {http://doi.acm.org/10.1145/2568225.2568236},
+	Year = {2014},
+	Bdsk-Url-1 = {http://doi.acm.org/10.1145/2568225.2568236},
+	Bdsk-Url-2 = {http://dx.doi.org/10.1145/2568225.2568236}}
