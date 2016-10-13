@@ -1,0 +1,8 @@
+{% extends 'base.html' %}
+{% block content %}
+<ol>
+{% for s in seminars %}
+<li><a href="{{ s.url }}"><strong>{{ s.title }}</strong><small>{{ s.date }}</small></a></li>
+{% endfor %}
+</ol>
+{% endblock %}

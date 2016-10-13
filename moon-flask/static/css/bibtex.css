@@ -1,0 +1,23 @@
+.bibtex {
+    font-size: 10pt;
+}
+
+.bibtex.title {
+//    font-style: italic;
+//    font-weight : bold;
+}
+
+.bibtex.author {
+}
+
+.bibtex.author.hl{
+    font-weight: bold;
+}
+
+.bibtex.booktitle {
+    font-style: italic;
+}
+
+.bibtex.journal {
+    font-style: italic;
+}

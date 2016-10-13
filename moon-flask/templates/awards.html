@@ -1,0 +1,118 @@
+{% extends 'base.html' %}
+{% block page_path %}
+<li><a href="{{ url_for('index') }}">Home</a></li>
+<li class="active">Awards</li>
+{% endblock %}
+{% block content %}
+<div class="row no-gutter fullwidth"><!-- row -->
+                
+    <div class="col-lg-12 col-md-12"><!-- doc body wrapper -->
+        
+        <div class="col-padded"><!-- inner custom column -->
+            
+            <h1 class="page-title">Awards of ICS <span class="label label-info">10 photos</span></h1>
+            
+            <div class="news-body">
+                
+                <div class="row gutter k-equal-height"><!-- row -->
+                
+                    <div class="col-lg-4 col-md-4 col-sm-12">
+                        <figure class="gallery-photo-thumb">
+                            <a href="{{ url_for('static', filename='photo/National_2011.jpg') }}" title="2011 National Award for Progress in Science and Technology" data-fancybox-group="gallery-bssb" class="fancybox"><img src="{{ url_for('static', filename='photo/National_2011.jpg') }}" alt="2011 National Award for Progress in Science and Technology" /></a>
+                        </figure>
+                        <div class="gallery-photo-description">
+                            2011 National Award for Progress in Science and Technology
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-4 col-md-4 col-sm-12">
+                        <figure class="gallery-photo-thumb">
+                            <a href="{{ url_for('static', filename='photo/National_2006.jpg') }}" title="2006 National Award for Progress in Science and Technology" data-fancybox-group="gallery-bssb" class="fancybox"><img src="{{ url_for('static', filename='photo/National_2006.jpg') }}" alt="2006 National Award for Progress in Science and Technology" /></a>
+                        </figure>
+                        <div class="gallery-photo-description">
+                            2006 National Award for Progress in Science and Technology
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-4 col-md-4 col-sm-12">
+                        <figure class="gallery-photo-thumb">
+                            <a href="{{ url_for('static', filename='photo/MOE_2011.jpg') }}" title="2011 MOE Award for Technology Invention" data-fancybox-group="gallery-bssb" class="fancybox"><img src="{{ url_for('static', filename='photo/MOE_2011.jpg') }}" alt="2011 MOE Award for Technology Invention" /></a>
+                        </figure>
+                        <div class="gallery-photo-description">
+                            2011 MOE Award for Technology Invention
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-4 col-md-4 col-sm-12">
+                        <figure class="gallery-photo-thumb">
+                            <a href="{{ url_for('static', filename='photo/MOE_2003.jpg') }}" title="2003 MOE Award for Progress in Science and Technology" data-fancybox-group="gallery-bssb" class="fancybox"><img src="{{ url_for('static', filename='photo/MOE_2003.jpg') }}" alt="2003 MOE Award for Progress in Science and Technology" /></a>
+                        </figure>
+                        <div class="gallery-photo-description">
+                            2003 MOE Award for Progress in Science and Technology
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-4 col-md-4 col-sm-12">
+                        <figure class="gallery-photo-thumb">
+                            <a href="{{ url_for('static', filename='photo/ICSE_2014.jpg') }}" title="ICSE 2014 ACM SigSoft Distinguished Paper Award" data-fancybox-group="gallery-bssb" class="fancybox"><img src="{{ url_for('static', filename='photo/ICSE_2014.jpg') }}" alt="ICSE 2014 ACM SigSoft Distinguished Paper Award" /></a>
+                        </figure>
+                        <div class="gallery-photo-description">
+                            ICSE 2014 ACM SigSoft Distinguished Paper Award
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-4 col-md-4 col-sm-12">
+                        <figure class="gallery-photo-thumb">
+                            <a href="{{ url_for('static', filename='photo/APSEC_2014.jpg') }}" title="APSEC 2014 Best Paper Award" data-fancybox-group="gallery-bssb" class="fancybox"><img src="{{ url_for('static', filename='photo/APSEC_2014.jpg') }}" alt="APSEC 2014 Best Paper Award" /></a>
+                        </figure>
+                        <div class="gallery-photo-description">
+                            APSEC 2014 Best Paper Award
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-4 col-md-4 col-sm-12">
+                        <figure class="gallery-photo-thumb">
+                            <a href="{{ url_for('static', filename='photo/NASAC_2012.jpg') }}" title="NASAC 2012 Best Student Paper Award" data-fancybox-group="gallery-bssb" class="fancybox"><img src="{{ url_for('static', filename='photo/NASAC_2012.jpg') }}" alt="NASAC 2012 Best Student Paper Award" /></a>
+                        </figure>
+                        <div class="gallery-photo-description">
+                            NASAC 2012 Best Student Paper Award
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-4 col-md-4 col-sm-12">
+                        <figure class="gallery-photo-thumb">
+                            <a href="{{ url_for('static', filename='photo/Chang_ZC_2012.jpg') }}" title="CVIC SE Talents 2012" data-fancybox-group="gallery-bssb" class="fancybox"><img src="{{ url_for('static', filename='photo/Chang_ZC_2012.jpg') }}" alt="CVIC SE Talents 2012" /></a>
+                        </figure>
+                        <div class="gallery-photo-description">
+                            CVIC SE Talents 2012
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-4 col-sm-12">
+                        <figure class="gallery-photo-thumb">
+                            <a href="{{ url_for('static', filename='photo/Xiaoxing_ZC_2009.jpg') }}" title="CVIC SE Talents 2009" data-fancybox-group="gallery-bssb" class="fancybox"><img src="{{ url_for('static', filename='photo/Xiaoxing_ZC_2009.jpg') }}" alt="CVIC SE Talents 2009" /></a>
+                        </figure>
+                        <div class="gallery-photo-description">
+                            CVIC SE Talents 2009
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-4 col-sm-12">
+                        <figure class="gallery-photo-thumb">
+                            <a href="{{ url_for('static', filename='photo/Chang_ACM_2014.jpg') }}" title="2014 ACM Nanjing Rising Star Award" data-fancybox-group="gallery-bssb" class="fancybox"><img src="{{ url_for('static', filename='photo/Chang_ACM_2014.jpg') }}" alt="2014 ACM Nanjing Rising Star Award" /></a>
+                        </figure>
+                        <div class="gallery-photo-description">
+                            2014 ACM Nanjing Rising Star Award
+                        </div>
+                    </div>
+                
+                </div><!-- row end -->
+                
+            </div>
+        
+        </div><!-- inner custom column end -->
+        
+    </div><!-- doc body wrapper end -->
+
+</div><!-- row end -->
+{% endblock %}

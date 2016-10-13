@@ -1,0 +1,98 @@
+@article{JavelusIST14,
+  abstract = {Context
+In-use software systems are destined to change in order to fix bugs or add new features. Shutting down a running system before updating it is a normal practice, but the service unavailability can be annoying and sometimes unacceptable. Dynamic software updating (DSU) migrates a running software system to a new version without stopping it. State-of-the-art Java DSU systems are unsatisfactory as they may cause a non-negligible system pause during updating.
+
+Objective
+In this paper we present Javelus, a Java HotSpot VM-based Java DSU system with very short pausing time.
+
+Method
+Instead of updating everything at once when the running application is suspended, Javelus only updates the changed code during the suspension, and migrates stale objects on-demand after the application is resumed. With a careful design this lazy approach neither sacrifices the update flexibility nor introduces unnecessary object validity checks or access indirections.
+
+Results
+Evaluation experiments show that Javelus can reduce the updating pausing time by one to two orders of magnitude without introducing observable overheads before and after the dynamic updating.
+
+Conclusion
+Our experience with Javelus indicates that low-disruptive and type-safe dynamic updating of Java applications can be practically achieved with a lazy updating approach.},
+  author = {Gu, Tianxiao and Cao, Chun and Xu, Chang and Ma, Xiaoxing and Zhang, Linghao and L\"{u}, Jian},
+  date-added = {2014-04-10 07:59:01 +0000},
+  date-modified = {2015-01-03 08:01:12 +0000},
+  journal = {Information and Software Technology},
+  keywords = {Dynamic software updating; JVM; Lazy updating; Low disruption},
+  number = {9},
+  month = {September},
+  pages = {1086-1098},
+  title = {Low-disruptive Dynamic Updating of Java Applications},
+  volume = {56},
+  year = {2014},
+  url = {http://dx.doi.org/10.1016/j.infsof.2014.04.003}
+}
+@article{Yang:2014tpds,
+  author = {Yiling Yang and Yu Huang and Jiannong Cao and Xiaoxing Ma and Jian Lu},
+  doi = {10.1109/TPDS.2013.233},
+  issn = {1045-9219},
+  journal = {IEEE Transactions on Parallel and Distributed Systems},
+  keywords = {Clocks;Lattices;Maintenance engineering;Middleware;Monitoring;Runtime;Sensors;Asynchronous event streams;Lattice of snapshots;Predicate detection;Sliding window},
+  title = {Design of a sliding window over distributed and asynchronous event streams},
+  volume = {25},
+  number = {10},
+  pages = {2551-2560},
+  year = {2014},
+  month = {October},
+  url = {http://dx.doi.org/10.1109/TPDS.2013.233}
+}
+@inproceedings{JYY:2014:ICSE,
+  author = {Jiang, Yanyan and Gu, Tianxiao and Xu, Chang and Ma, Xiaoxing and Lu, Jian},
+  title = {CARE: Cache guided deterministic replay for concurrent Java programs},
+  booktitle = {Proceedings of the 36th International Conference on Software Engineering},
+  confabbr = {ICSE '14},
+  year = {2014},
+  isbn = {978-1-4503-2756-5},
+  location = {Hyderabad, India},
+  confdate = {May 31 - June 7, 2014},
+  pages = {457--467},
+  numpages = {11},
+  month = {June},
+  url = {http://doi.acm.org/10.1145/2568225.2568236},
+  doi = {10.1145/2568225.2568236},
+  acmid = {2568236},
+  publisher = {ACM},
+  address = {New York, NY, USA},
+  keywords = {Cache, Concurrency, Debugging, Replay}
+}
+@article{Yang2013TPDS,
+  abstract = {Formal specification and runtime detection of contextual properties is one of the primary approaches to enabling context awareness in pervasive computing environments. Due to the intrinsic dynamism of the pervasive computing environment, dynamic properties, which delineate concerns of context-aware applications on the temporal evolution of the environment state, are of great importance. However, detection of dynamic properties is challenging, mainly due to the intrinsic asynchrony among computing entities in the pervasive computing environment. Moreover, the detection must be conducted at runtime in pervasive computing scenarios, which makes existing schemes do not work. To address these challenges, we propose the property detection for asynchronous context (PDAC) framework, which consists of three essential parts: 1) Logical time is employed to model the temporal evolution of environment state as a lattice. The active surface of the lattice is introduced as the key notion to model the runtime evolution of the environment state; 2) Specification of dynamic properties is viewed as a formal language defined over the trace of environment state evolution; and 3) The SurfMaint algorithm is proposed to achieve runtime maintenance of the active surface of the lattice, which further enables runtime detection of dynamic properties. A case study is conducted to demonstrate how the PDAC framework enables context awareness in asynchronous pervasive computing scenarios. The SurfMaint algorithm is implemented and evaluated over MIPA--the open-source context-aware middleware we developed. Performance measurements show the accuracy and cost-effectiveness of SurfMaint, even when faced with dynamic changes in the asynchronous pervasive computing environment.},
+  author = {Yang, Yiling and Huang, Yu and Cao, Jiannong and Ma, Xiaoxing and Lu, Jian},
+  date-added = {2013-06-28 02:01:55 +0000},
+  date-modified = {2013-06-28 02:02:29 +0000},
+  doi = {10.1109/TPDS.2012.259},
+  issn = {1045-9219},
+  journal = {IEEE Transactions on Parallel and Distributed Systems},
+  keywords = {Context;Formal languages;Heuristic algorithms;Labeling;Lattices;Pervasive computing;Runtime;Dynamic property;asynchrony;context awareness;lattice;predicate detection},
+  number = {8},
+  pages = {1546-1555},
+  title = {Formal Specification and Runtime Detection of Dynamic Properties in Asynchronous Pervasive Computing Environments},
+  volume = {24},
+  year = {2013},
+  url = {http://dx.doi.org/10.1109/TPDS.2012.259}
+}
+@inproceedings{Ma:2011:FSE,
+  acmid = {2025148},
+  address = {New York, NY, USA},
+  author = {Ma, Xiaoxing and Baresi, Luciano and Ghezzi, Carlo and Panzica La Manna, Valerio and Lu, Jian},
+  booktitle = {Proceedings of the 19th ACM SIGSOFT symposium and the 13th European conference on Foundations of software engineering},
+  date-added = {2013-04-05 06:50:02 +0000},
+  date-modified = {2014-04-10 13:25:34 +0000},
+  doi = {10.1145/2025113.2025148},
+  isbn = {978-1-4503-0443-6},
+  keywords = {component-based distributed system, dynamic reconfiguration, version-consistency},
+  location = {Szeged, Hungary},
+  numpages = {11},
+  pages = {245--255},
+  publisher = {ACM},
+  confabbr = {ESEC/FSE '11},
+  confdate = {September 05 - 09, 2011},
+  title = {Version-consistent dynamic reconfiguration of component-based distributed systems},
+  url = {http://doi.acm.org/10.1145/2025113.2025148},
+  year = {2011},
+  bdsk-url-1 = {http://doi.acm.org/10.1145/2025113.2025148}
+}

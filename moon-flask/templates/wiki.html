@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% block customcss %}
+<link rel="stylesheet" href="/static/katex/katex.min.css">
+{% endblock %}
+
+{% block title%}{{ title }} | Wiki | {% endblock %}
+
+
+{% block page_path %}
+<li><a href="/">Home</a></li>
+{% endblock %}
+
+{% block content %}
+
+<script src="/static/katex/katex.min.js"></script>
+
+<div class="row no-gutter fullwidth"><!-- row -->
+    <div class="col-lg-12 col-md-12"><!-- doc body wrapper -->
+        <div class="col-padded"><!-- inner custom column -->
+            {{ content | safe }}
+        </div><!-- inner custom column end -->
+    </div><!-- doc body wrapper end -->
+</div><!-- row end -->
+
+{% endblock %}
+
+{% block customjs %}
+<script>
+function decode(h) {
+    var textArea = document.createElement('textarea');
+    textArea.innerHTML = h;
+    val = textArea.value;
+    if ('remove' in Element.prototype) textArea.remove();
+    return val;
+}
+
+$(function() {
+  $("span.math").each(function(idx, e) {
+    try {
+      var d = katex.renderToString(decode(e.innerHTML), { displayMode: true, throwOnError: false });
+      e.innerHTML = d;
+    } catch (err) {}
+  });
+
+  $("span.inline_math").each(function(idx, e) {
+    try {
+      var d = katex.renderToString(decode(e.innerHTML), { throwOnError: false });
+      e.innerHTML = d;
+    } catch (err) {}
+  });
+
+});</script>
+{% endblock %}

@@ -1,0 +1,70 @@
+{% macro render_entries(entries, hl="") -%}
+<ul class="bibtex">
+{% for entry in entries %}
+<li><a name="{{ entry.ID }}"></a>
+{{ render_entry(entry, hl) }}
+</li>
+{% endfor %}
+</ul>
+{%- endmacro %}
+
+{% macro render_author(author, hl="") -%}
+  {% if hl == author -%}
+     <span class="bibtex author hl">{{ author }}</span>
+  {%- else -%}
+     {{ author }}
+  {%- endif%}
+{%- endmacro %}
+
+{% macro render_entry(entry, hl="") %}
+{% if entry.author -%}
+<span class="bibtex author">{% if entry.author|length == 1 -%}
+        {{ render_author(entry.author|first, hl) }}{{ ', ' }}
+    {%- else -%}
+    {% for a in entry.author -%}
+        {% if loop.index == entry.author|length -%}
+        and {{ render_author(a, hl) }}{{ ', ' }}
+        {%- else -%}
+        {{ render_author(a, hl) }}{{ ', ' }}
+        {%- endif %}
+    {%- endfor %}
+    {%- endif %}</span>{% endif %}
+{% if entry.title %}<span class="bibtex title">“{{ entry.title }}”{% if entry.pdf %}<span><a href="{{ entry.pdf }}" target="_blank" title="Local copy of this paper"> <img src='/static/img/icon-pdf.png'/></a></span>{% endif %},</span>{% endif %}
+{% if entry.booktitle %}<span class="bibtex pages">in </span><span class="bibtex booktitle">{{ entry.booktitle }}</span>{% endif %}{% if entry.journal %}<span class="bibtex journal">{{ entry.journal }}</span>{% endif %}
+{% if entry.link %}<span><a href="{{ entry.link }}" target="_blank" title="Publication site of this paper"><img src='/static/img/icon-link.png'/></a></span>{% endif %}{% if entry.booktitle or entry.journal %}<span>, </span>{% endif %}
+{% if entry.pages %}<span class="bibtex pages">{{ entry.pages }},</span>{% endif %}
+{% if entry.year %}<span class="bibtex year">{{ entry.year}}.</span>{% endif %}
+{% if entry.ppt %}<span><a href="{{ entry.ppt }}" target="_blank" title="Slides of this paper"> <img src="/static/img/icon-ppt.png"></a></span>{% endif %}
+{% if entry.code %}<span><a href="{{ entry.code }}" target="_blank" title="Code of this paper"> <img src="/static/img/icon-package.png"></a></span>{% endif %}
+{% if entry.slides %}<span><a href="{{ entry.slides }}" target="_blank" title="Slides of this paper"> <img src="/static/img/icon-slides.png"></a></span>{% endif %}
+{%- endmacro %}
+
+{% macro render_entries_group_by_year(years, grouped_entries, years2, grouped_entries2, hl="") -%}
+<p>
+<ul>
+<li><a href="#conference">Conference</a>
+<li><a href="#journal">Journal</a>
+</ul>
+<h2><a name="conference"></a>Conference</h2>
+{% for year,__ in years %}
+[<a href="#conference-{{ year }}">{{ year }}</a>]
+{% endfor %}
+</p>
+{% for year, entries in grouped_entries %}
+<h3><a name="conference-{{ year }}"></a>{{ year }}</h3>
+<hr/>
+{{ render_entries(entries, hl) }}
+<hr/>
+{% endfor %}
+<h2><a name="journal"></a>Journal</h2>
+{% for year,__ in years2 %}
+[<a href="#journal-{{ year }}">{{ year }}</a>]
+{% endfor %}
+</p>
+{% for year, entries in grouped_entries2 %}
+<h3><a name="journal-{{ year }}"></a>{{ year }}</h3>
+<hr/>
+{{ render_entries(entries, hl) }}
+<hr/>
+{% endfor %}
+{%- endmacro %}
