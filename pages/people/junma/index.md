@@ -67,12 +67,12 @@ My current interests focus on following topics:
 
 
 1.Pervasive Computing
-* Context-aware Computing
-* Smart Space
+	* Context-aware Computing
+	* Smart Space
 
 2. Software Analysis and Testing of Android Apps
-* Resource Leaks Detection
-* Repackaging App Detection
+	* Resource Leak Detection
+	* Repackaging App Detection
 
 # Publications
 
