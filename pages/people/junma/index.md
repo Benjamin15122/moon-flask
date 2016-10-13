@@ -66,7 +66,7 @@
 My current interests focus on following topics:
 
 
-1.Pervasive Computing
+1. Pervasive Computing
 	* Context-aware Computing
 	* Smart Space
 
