@@ -11,7 +11,7 @@
                     <h1>马 骏</h1>
                 </div>
                 <div class="col-lg-8 col-md-8 col-sm-12">
-                    <h1>Jun Ma</h1>
+                    <h1>Jun MA</h1>
                 </div>
             </div><!-- nesting row end -->
             <div class="row gutter k-equal-height"><!-- nesting row -->
@@ -72,16 +72,18 @@ My current interests focus on following topics:
 
 2. Software Analysis and Testing of Android Apps
 	* Resource Leak Detection
-	* Repackaging App Detection
+	* Repackaging/Cloned App Detection
+	* ...
 
 # Publications
 
 * [English publications](publications)
 
 ## Teaching
-
-* 2015, Autumn: [Problem Solving(1)](http://cslab.nju.edu.cn/problem_solving/index.php/2015%E7%BA%A7) (Dept. CSE)
-* 2015, Spring: [Problem Solving(4)](http://cslab.nju.edu.cn/problem_solving/index.php/2013%E7%BA%A7--%E5%AD%A6%E6%9C%9F%E5%AE%89%E6%8E%92_(%E7%AC%AC%E5%9B%9B%E5%AD%A6%E6%9C%9F)) (Dept. CSE)
-* 2014, Autumn: [Problem Solving(3)](http://cslab.nju.edu.cn/problem_solving/index.php/2013%E7%BA%A7--%E5%AD%A6%E6%9C%9F%E5%AE%89%E6%8E%92_(%E7%AC%AC%E4%B8%89%E5%AD%A6%E6%9C%9F)) (Dept. CSE)
+* 2016, Autumn: [Problem Solving(3)](http://cslabcms.nju.edu.cn/problem_solving/index.php/2015%E7%BA%A7--%E5%AD%A6%E6%9C%9F%E5%AE%89%E6%8E%92_(%E7%AC%AC%E4%B8%89%E5%AD%A6%E6%9C%9F)) (Dept. CSE)
+* 2016, String: [Problem Solving(2)](http://cslabcms.nju.edu.cn/problem_solving/index.php/2015%E7%BA%A7--%E5%AD%A6%E6%9C%9F%E5%AE%89%E6%8E%92_(%E7%AC%AC%E4%BA%8C%E5%AD%A6%E6%9C%9F)) (Dept. CSE)
+* 2015, Autumn: [Problem Solving(1)](http://cslabcms.nju.edu.cn/problem_solving/index.php/2015%E7%BA%A7) (Dept. CSE)
+* 2015, Spring: [Problem Solving(4)](http://cslabcms.nju.edu.cn/problem_solving/index.php/2013%E7%BA%A7--%E5%AD%A6%E6%9C%9F%E5%AE%89%E6%8E%92_(%E7%AC%AC%E5%9B%9B%E5%AD%A6%E6%9C%9F)) (Dept. CSE)
+* 2014, Autumn: [Problem Solving(3)](http://cslabcms.nju.edu.cn/problem_solving/index.php/2013%E7%BA%A7--%E5%AD%A6%E6%9C%9F%E5%AE%89%E6%8E%92_(%E7%AC%AC%E4%B8%89%E5%AD%A6%E6%9C%9F)) (Dept. CSE)
 * 2012-2014, Summer:ACM/ICPC Programming (Dept. CSE)
 * 2009, Autumn:Preliminary Problem Solving (Dept. CSE)
