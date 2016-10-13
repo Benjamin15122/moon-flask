@@ -60,7 +60,7 @@ Data mining with application to social media, recommender systems, software repo
 
 ## Selected Publications
 
-{{ render_bib_file('yuanyao.bib', ['KDD16', 'IJCAI15', 'TKDE14', 'KDD14', 'CIKM14', 'WWW13'], hl='Yuan Yao') }}
+{{ render_bib_file('yuanyao.bib', ['TKDE16', 'KDD16', 'IJCAI15', 'TKDE14', 'KDD14', 'CIKM14', 'WWW13'], hl='Yuan Yao') }}
 
 More [publications](publications).
 
