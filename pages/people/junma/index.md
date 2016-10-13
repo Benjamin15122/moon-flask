@@ -1,4 +1,4 @@
-title: Jun Ma
+﻿title: Jun Ma
 
 <div class="news-body">
     <div class="row gutter k-equal-height"><!-- row -->
@@ -63,10 +63,14 @@ title: Jun Ma
 ## Research interests
 
 
-I am interested in various topics in pervasive computing, especially
+My current interests focus on following topics:
+*Pervasive Computing
+** Context-aware Computing
+** Smart Space
 
-* Context-aware computing
-* Smart Space
+* Software Analysis and Testing of Android Apps
+** Resource Leaks Detection
+** Repackaging App Detection
 
 ## Publications
 
