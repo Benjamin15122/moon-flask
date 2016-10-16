@@ -37,6 +37,9 @@ class Site(object):
 
         # awards
         self._awards = load_awards()
+        
+        # shorturl
+        self._shorturl = load_shorturl()
 
     @property
     def photos(self):
@@ -90,7 +93,9 @@ class Site(object):
     def awards(self):
         return self._awards()
 
-
+    @property
+    def shorturl(self):
+        return self._shorturl()
 
     def find_people_by_url(self, url):
         for role,folks in self.people.iteritems():
@@ -288,3 +293,15 @@ def load_awards():
 
     return sorted(e, key=get_datetime, reverse=False) if e else {}
 
+@lazy_load
+def load_shorturl():
+    '''Load url shortcuts for personal homepage
+       e.g., /~txgu -> /people/tianxiaogu
+    '''
+    e = None
+    with open(SHORTURL_YAML, 'r') as f:
+        try:
+            e = yaml.load(f)
+        except Exception as ex:
+            e = None
+    return e if e else {}
