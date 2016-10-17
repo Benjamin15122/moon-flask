@@ -32,6 +32,16 @@ def gitlab_webhooks():
 
     '''
 
+    KEY = 'GITLabWebHook$'
+
+    try:
+        token = request.headers.get('X-Gitlab-Token')
+    except Exception as e:
+        abort(500)
+
+    if token != KEY:
+        abort(400)
+
     try:
         refresh_moon()
     except Exception as e:
