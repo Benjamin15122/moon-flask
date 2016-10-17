@@ -4,18 +4,24 @@ title: Tianxiao Gu
 
 
 ----------------
-## Information
 
-* Institute of Computer Software, Nanjing University
-* Dynamic Software Evolution Group ([DSE](/dse/))
-* Room 812, Computer Science and Technology Building
-* tianxiao.gu (at) gmail dot com
-* <a href="http://www.linkedin.com/in/tianxiaogu"><i class="fa fa-linkedin-square"></i></a>
+<div class="row gutter" markdown="1">
+<div class="col-lg-2 col-md-2 col-sm-12">
+<img src="static/tianxiaogu.png" alt="Tianxiao Gu"/>
+</div>
+<div class="col-lg-10 col-md-10 col-sm-12" style="vertical-align:middle">
+<ul>
+<li>[Dynamic Software Evolution Group](/dse/)
+<li>[Institute of Computer Software](http://moon.nju.edu.cn), [Nanjing University](http://www.nju.edu.cn)
+<li>[Department of Computer Science and Technology](http://cs.nju.edu.cn), [Nanjing University](http://www.nju.edu.cn)
+<li>Address: Room 812, Computer Science and Technology Building
+<li>Email: tianxiao.gu (at) gmail dot com
+<li><a href="http://www.linkedin.com/in/tianxiaogu"><i class="fa fa-linkedin-square"></i></a>
   <a href="https://twitter.com/Xiaotiangu"><i class="fa fa-twitter-square"></i></a>
   <a href="https://www.facebook.com/eric.ku.505"><i class="fa fa-facebook-square"></i></a>
-
-<div>
-<img width="200" src="static/tianxiaogu.png" alt="Tianxiao Gu"/>
+  <a href="https://www.bitbucket.org/txgu/"><i class="fa fa-bitbucket"></i></a>
+</ul>
+</div>
 </div>
 
 
@@ -23,6 +29,8 @@ title: Tianxiao Gu
 ## Supervisor
 
 * Professor Jian Lü, [Xiaoxing Ma](http://moon.nju.edu.cn/people/xiaoxingma "Xiaoxing Ma"), [Chang Xu](http://cs.nju.edu.cn/changxu/ "Chang Xu"), Chun Cao
+
+----------------
 
 ## Education and Work Experience
 
@@ -167,11 +175,6 @@ You can checkout my profile (only publicly accessible projects) at [here](https:
     * An automatic-runtime-recovery-enabled JVM
 * [AOTES](https://bitbucket.org/txgu/aotes-asm)
     * Automating object transformations for dynamic software updating via execution synthesis
-
-----------------
-## Misc.
-
-* [Blog](blog/): in Chinese
 
 --------------------
 
