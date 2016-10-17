@@ -96,8 +96,8 @@ phd:
     avatar: /static/img/avatar/yaojingwang.jpg
     from: 2014
   - name: Zelin Zhao 赵泽林
-    url:  /spar/peoples/zlzhao/
-    avatar: /spar/img/avatar/zlzhao.jpg
+    url:  zelinzhao
+    avatar: /people/zelinzhao/static/avatar.jpg
     from: 2014
     group: dse
   - name: Huiyan Wang 王慧妍
