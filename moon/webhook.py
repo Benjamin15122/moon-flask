@@ -26,7 +26,7 @@ def refresh_moon():
 ##################
 
 
-@app.route('/gitlabwebhooks', methods=['POST'])
+@app.route('/gitlabwebhooks', methods=['POST','GET'])
 def gitlab_webhooks():
     ''' Gitlab webhooks
 
