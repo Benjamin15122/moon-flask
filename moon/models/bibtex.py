@@ -28,7 +28,7 @@ def decorate_author(author):
             new_authors.append(ns[0])
         else:
             # should not happen
-            new_authors.append[a.strip()]
+            new_authors.append(a.strip())
 
     # if you modify here, you should modify your template
     #return ' and '.join(new_authors)
