@@ -6,6 +6,7 @@ def create_markdown():
             'markdown.extensions.meta',
             'markdown.extensions.admonition',
             'markdown.extensions.codehilite',
+            'markdown.extensions.toc',
             fencedcode.makeExtension()],
             extension_configs= {
                 'markdown.extensions.codehilite' : {
