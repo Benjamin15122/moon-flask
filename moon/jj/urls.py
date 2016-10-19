@@ -37,3 +37,10 @@ def render_parent_breadcrumb():
 
     return '    \n'.join([u'<li><a href="{1}">{0}</a></li>'.format(*e) for e in path_list])
 
+
+def static_for(filename):
+    return url_for('static', filename=filename)
+
+
+def page_for(name=None, path=None):
+    return url_for('page', name=name, path=path)

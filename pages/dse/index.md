@@ -151,16 +151,19 @@ what dynamic software updating and automatic runtime recovery are.
 
 We have a couple of projects hacking the Java HotSpot JVM and Android ART.
 
-* [Javelus](http://lab.artemisprojects.org/javelus/javelus): A dynamic-updating-enabled JVM
-* [Ares](http://lab.artemisprojects.org/group/ares): Automatic Runtime Recovery
-* [AOTES](http://lab.artemisprojects.org/group/aotes): Synthesizing object transformations for DSU
+* [Javelus]({{ page_for(path='/dse/javelus') }}): A dynamic-updating-enabled JVM
+* [Ares]({{ page_for(path='/dse/ares') }}): Automatic Runtime Recovery
+* [AOTES]({{ page_for(path='/dse/aotes') }}): Synthesizing object transformations for DSU
 * MiniTracing and MiniTracing for ART: Whole Program Tracing in JVM
-    * [PHD](/dse/phd): Precise Heap Differentiating Using Access Path and Execution Index
+    * [PHD]({{ page_for(path='/dse/phd') }}): Precise Heap Differentiating Using Access Path and Execution Index
 
 ## Former Group Members
 
+-------------------
 
 {{ render_people(group = "dse", category = ["alumni"]) | safe }}
+
+-------------------
 
 * Tongbao Zhang (M.S., 2015)
     * First employment: Alibaba, JVM Group
@@ -184,11 +187,12 @@ transform: translateX(-50%);
 </style>
 
 <div style="position: relative;">
-<svg height="200" width="700">
+<svg height="200" width="200">
   <path id="D"  d="M0 0 L75 0 L100 100 L50 200 L0 200 Z" fill="#e1004c"/>
   <path id="S"  d="M75 0 L100 100 L50 200 L125 200 L100 100 L150 0 Z" fill="#ffee00"/>
   <path id="E1" d="M150 0 L100 100 L200 100 L200 0 Z" fill="#e1004c"/>
   <path id="E2" d="M125 200 L100 100 L200 100 L200 200 Z" fill="#06799f"/>
+  <!--
   <text x="440" y="100" fill="#e1004c"
        font-size="200" font-family="Courier New" font-weight="bold"
        text-anchor="middle"
@@ -198,6 +202,7 @@ transform: translateX(-50%);
        font-size="25" font-family="Courier New" font-weight="bold"
        text-anchor="middle"
        dominant-baseline="middle">Dynamic Software Evolution</text>
+  -->
 
 
   Sorry, your browser does not support inline SVG.
