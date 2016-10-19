@@ -18,4 +18,4 @@ Features:
 
 ## Documentation
 
-To be added
+* [Build on Windows](build_windows)

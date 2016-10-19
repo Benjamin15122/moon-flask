@@ -2,15 +2,34 @@ title: Dynamic Software Evolution Group
 
 # Dynamic Software Evolution Group
 
+<div class="row gutter" markdown="1">
+<div class="col-lg-9 col-md-9 col-sm-12">
 We hack JVM to implement tools and conduct research on
 
-* Dynamic Software Updating
-* Automatic Runtime Recovery
-* Whole-Program Dynamic Program Analysis
-* Android Testing
+<ul>
+<li> Dynamic Software Updating
+<li> Automatic Runtime Recovery
+<li> Whole-Program Dynamic Program Analysis
+<li> Android Testing
+</ul>
 
 Check out [gif](./dsegif) showing
 what dynamic software updating and automatic runtime recovery are.
+
+</div>
+<div class="col-lg-3 col-md-3 col-sm-12">
+
+<svg height="200" width="200">
+  <path id="D"  d="M0 0 L75 0 L100 100 L50 200 L0 200 Z" fill="#660066" stroke="#FFFFFF" stroke-width="10"/>
+  <path id="S"  d="M75 0 L100 100 L50 200 L125 200 L100 100 L150 0 Z" fill="#8E7A0F" stroke="#FFFFFF" stroke-width="10"/>
+  <path id="E1" d="M150 0 L100 100 L200 100 L200 0 Z" fill="#660066" stroke="#FFFFFF" stroke-width="10"/>
+  <path id="E2" d="M125 200 L100 100 L200 100 L200 200 Z" fill="#660066" stroke="#FFFFFF" stroke-width="10"/>
+  Sorry, your browser does not support inline SVG.
+</svg>
+
+</div>
+</div>
+
 
 ## People
 
@@ -151,11 +170,11 @@ what dynamic software updating and automatic runtime recovery are.
 
 We have a couple of projects hacking the Java HotSpot JVM and Android ART.
 
-* [Javelus]({{ page_for(path='/dse/javelus') }}): A dynamic-updating-enabled JVM
-* [Ares]({{ page_for(path='/dse/ares') }}): Automatic Runtime Recovery
-* [AOTES]({{ page_for(path='/dse/aotes') }}): Synthesizing object transformations for DSU
+* [Javelus](javelus/): A dynamic-updating-enabled JVM
+* [Ares](ares): Automatic Runtime Recovery
+* [AOTES](aotes): Synthesizing object transformations for DSU
 * MiniTracing and MiniTracing for ART: Whole Program Tracing in JVM
-    * [PHD]({{ page_for(path='/dse/phd') }}): Precise Heap Differentiating Using Access Path and Execution Index
+    * [PHD](phd): Precise Heap Differentiating Using Access Path and Execution Index
 
 ## Former Group Members
 
@@ -176,37 +195,6 @@ We have a couple of projects hacking the Java HotSpot JVM and Android ART.
 * Yan Yao (M.S., 2012)
     * First employment: Microsoft
 
-<style>
-svg {
-position: relative;
-left: 50%;
--webkit-transform: translateX(-50%);
--ms-transform: translateX(-50%);
-transform: translateX(-50%);
-}
-</style>
 
-<div style="position: relative;">
-<svg height="200" width="200">
-  <path id="D"  d="M0 0 L75 0 L100 100 L50 200 L0 200 Z" fill="#e1004c"/>
-  <path id="S"  d="M75 0 L100 100 L50 200 L125 200 L100 100 L150 0 Z" fill="#ffee00"/>
-  <path id="E1" d="M150 0 L100 100 L200 100 L200 0 Z" fill="#e1004c"/>
-  <path id="E2" d="M125 200 L100 100 L200 100 L200 200 Z" fill="#06799f"/>
-  <!--
-  <text x="440" y="100" fill="#e1004c"
-       font-size="200" font-family="Courier New" font-weight="bold"
-       text-anchor="middle"
-       dominant-baseline="middle">DSE</text>
-
-  <text x="440" y="175" fill="#06799f"
-       font-size="25" font-family="Courier New" font-weight="bold"
-       text-anchor="middle"
-       dominant-baseline="middle">Dynamic Software Evolution</text>
-  -->
-
-
-  Sorry, your browser does not support inline SVG.
-</svg>
-</div>
 
 
