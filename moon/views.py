@@ -1,9 +1,11 @@
 from moon import *
-from models.site import Site
-from models.bundle import Bundle
-from models.page import get_page, get_user_dir, get_markdown_page
+from .models.site import Site
+from .models.bundle import Bundle
+from .models.page import get_page, get_user_dir, get_markdown_page
 
-from flask import Flask, render_template, redirect, send_file, send_from_directory, g, request
+from flask import Flask, render_template, redirect, send_file, send_from_directory, g, request, abort, url_for
+
+import os
 
 ##################
 
@@ -85,9 +87,24 @@ def page(name = None, path = None):
     # support redirect
     rd = page.meta.get('redirect')
     if rd is not None:
-        return redirect(rd)
+        return redirect_url(rd)
 
     template = page.meta.get('template', 'page.html')
     return render_template(template, page = page)
 
+def redirect_url(url):
+    if url is None:
+        abort(404)
+
+    if isinstance(url, unicode):
+        url = url.encode('utf8')
+
+    if url.startswith('http://') or url.startswith('https://'):
+        return redirect(url)
+
+    if url.startswith('/'):
+        return redirect(url_for('page', path=url[1:]))
+
+    base_path = os.path.dirname(request.path)
+    return redirect(base_path + '/' + url)
 
