@@ -2,14 +2,22 @@
 from flask import request, url_for, g
 
 
-SECOND= [
+ORDERED_BREADCRUMB = [
+        # Second level
         ['dse/', 'DSE'],
         ['news/', 'News'],
         ['events/', 'Events'],
-        # ['spar/', 'SPAR']
+        # Third level
+        ['dse/javelus/', 'Javelus'],
+        ['dse/aotes/', 'AOTES'],
         ]
 
+
+
 def render_parent_breadcrumb():
+    ''' Hard coded breadcrumb
+        TODO: scan the page fold to collect title or short title of each index.md
+    '''
     endpoint = request.endpoint
 
     path_list = [['Home', url_for('page')]]
@@ -27,9 +35,10 @@ def render_parent_breadcrumb():
                 if path != 'blog/':
                     path_list.append(['Blog', url_for('page', name=name, path='blog/')])
         elif path:
-            for s in SECOND:
-                if path.startswith(s[0]) and path  != s[0]:
+            for s in ORDERED_BREADCRUMB:
+                if path.startswith(s[0]) and path != s[0]:
                     path_list.append([s[1], url_for('page', path=s[0])])
+
         else:
             # Hide breadcrumb in home page
             return ''
