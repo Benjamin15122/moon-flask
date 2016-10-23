@@ -22,4 +22,16 @@
   label: ECOOP 2017
   url: http://conf.researchr.org/home/ecoop-2017 
   date: 2017-01-07
+- id: fse2017
+  label: FSE 2017 (Paderborn, Germany)
+  url: http://esec-fse17.uni-paderborn.de/
+  date: 2017-02-27
+- id: oopsla2017
+  label: OOPSLA 2017 (Vancouver, Canada)
+  url: http://2017.splashcon.org/
+  date: 2017-04-13
+- id: sosp2017
+  label: SOSP 2017 (Shanghai, China)
+  url: https://www.sigops.org/sosp/sosp17/index.html
+  date: 2017-04-14
 
