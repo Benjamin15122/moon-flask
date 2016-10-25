@@ -100,7 +100,7 @@ class Site(object):
     def find_people_by_url(self, url):
         for role,folks in self.people.iteritems():
             for folk in folks:
-                if folk.get('url') == url:
+                if folk.get('id') == url or folk.get('url') == url:
                     return folk
 
         return None

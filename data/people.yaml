@@ -11,6 +11,7 @@ faculty:
     avatar: /people/xianpingtao/static/avatar.jpg
   - name: Xiaoxing Ma 马晓星
     title: Professor
+    id: xiaoxingma
     url: /people/xiaoxingma
     avatar: /people/xiaoxingma/static/avatar.jpg
     group: spar, dse

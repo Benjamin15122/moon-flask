@@ -30,9 +30,9 @@ def render_parent_breadcrumb():
             path_list.append(['People', url_for('page', path='people/')])
             people = g.site.find_people_by_url(name)
 
-            if path and path.startswith('blog/'):
+            if people and path and path != 'index':
                 path_list.append([people.get('name'), url_for('page', name=name)])
-                if path != 'blog/':
+                if path != 'blog/' and path.startswith('blog/'):
                     path_list.append(['Blog', url_for('page', name=name, path='blog/')])
         elif path:
             for s in ORDERED_BREADCRUMB:
