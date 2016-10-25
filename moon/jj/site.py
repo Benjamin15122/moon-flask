@@ -26,8 +26,8 @@ def render_blogs():
 
     try:
         return render(blogs)
-    except Exception as e:
-        traceback.print_exc(e)
+    except Exception:
+        traceback.print_exc()
         abort(500)
 
     abort(404)
@@ -57,8 +57,8 @@ def _render_macro(template, macro, *args):
     try:
         render = get_template_attribute(template, macro)
         return render(*args)
-    except Exception as e:
-        traceback.print_exc(e)
+    except Exception:
+        traceback.print_exc()
         abort(500)
 
     abort(404)

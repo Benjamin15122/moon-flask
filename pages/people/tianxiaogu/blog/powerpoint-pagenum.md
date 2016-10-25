@@ -5,7 +5,86 @@ date: 2016-10-13
 template: post.html
 
 
-弃用`beamer`改用`powerpoint`，
+最近弃用`beamer`改用`powerpoint`，
+但是PowerPoint的插入页脚功能简直不能用，
+为此先是找了一段VBA代码，再改为了python代码。
+
+## pywin32
+
+`pywin32com`参考了如下链接：
+
+* <http://www.s-anand.net/blog/automating-powerpoint-with-python/>
+* <http://docs.activestate.com/activepython/3.3/pywin32/html/com/win32com/HTML/QuickStartClientCom.html#UsingComConstants>
+
+
+
+~~~{.py}
+#!/use/bin/python3
+
+import os, sys, traceback, itertools
+
+import win32com.client
+
+# Run `makepy.py -o ..\gen_py\office.py "Microsoft Office 15.0 Object Library"` in the fold
+# `Python35\Lib\site-packages\win32com\client` first
+import win32com.gen_py.office
+
+PowerPoint = win32com.client.gencache.EnsureDispatch('PowerPoint.Application')
+
+def RGB(r,g,b):
+    return r + g * 256 + b * 256 ** 2
+
+def get_opened_presentation(ppt_file):
+    for p in PowerPoint.Presentations:
+        if os.path.samefile(p.FullName, ppt_file):
+            return p
+
+    return PowerPoint.Presentations.Open(ppt_file)
+
+def add_page_number(ppt_file):
+    ppt = get_opened_presentation(ppt_file)
+
+    SlideHeight= ppt.PageSetup.SlideHeight
+    SlideWidth = ppt.PageSetup.SlideWidth
+    msoShapeRectangle = win32com.client.constants.msoShapeRectangle
+
+    slides_count = int(ppt.Slides.Count)
+
+    # ignore the first and the last slides
+    slides = list([ppt.Slides(i) for i in range(2, slides_count)])
+
+    invisible_slides = list([slide for slide in slides if slide.SlideShowTransition.Hidden])
+    for slide in invisible_slides:
+        for shape in slide.Shapes:
+            if shape.Name.startswith('Slide Number'):
+                shape.TextFrame.TextRange.Text = ''
+
+    visible_slides = list([slide for slide in slides if not slide.SlideShowTransition.Hidden])
+    total_visible_count = len(visible_slides)
+    for page_number,slide in enumerate(visible_slides, 1):
+        for shape in slide.Shapes:
+            if shape.Name.startswith('Slide Number'):
+                shape.TextFrame.TextRange.Text = '{0}/{1}'.format(page_number, total_visible_count)
+
+        try:
+            slide.Shapes("PB").Delete
+        except:
+            pass
+
+        s = slide.Shapes.AddShape(msoShapeRectangle, 0, SlideHeight - 3, page_number * SlideWidth / total_visible_count, 3)
+        s.Fill.ForeColor.RGB = RGB(255, 0, 0)
+        s.Line.ForeColor.RGB = RGB(0, 0, 255)
+        s.Name = "PB"
+
+if __name__ == '__main__':
+    try:
+        add_page_number(os.path.abspath(sys.argv[1]))
+    except:
+        traceback.print_exc()
+~~~
+
+## PowerPoint VBA
+
 网上不记得从哪里找到的一段插入进度条的VBA代码，
 加以改造，留待以后复制使用。
 

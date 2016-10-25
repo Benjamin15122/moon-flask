@@ -45,8 +45,8 @@ def gitlab_webhooks():
 
     try:
         refresh_moon()
-    except Exception as e:
-        traceback.print_exc(e)
+    except Exception:
+        traceback.print_exc()
         abort(500)
 
     return make_response("", 200)

@@ -1,5 +1,5 @@
 from markdown.inlinepatterns import Pattern
-from markdown.util import etree
+from markdown.util import etree, AtomicString
 
 from flask import render_template_string
 
@@ -18,21 +18,15 @@ class JinjaExpressionPattern(Pattern):
         try:
             # render returns a unicode object
             html = render_template_string(m.group(2))
+            place_holder = self.markdown.htmlStash.store(html)
+            return place_holder
         except Exception as e:
-            traceback.print_exc(e)
-            return etree.fromstring('<em>Error %s in rendering %s</em>' % (e, m.group(2)))
+            traceback.print_exc()
 
-        try:
-            return etree.fromstring(html.encode('utf-8'))
-        except Exception as e:
-            pass
+            el = etree.Element('em')
+            el.text = AtomicString('Error %s in rendering %s' % (e, m.group(2)))
+            return el
 
-        try:
-            e = etree.Element(None)
-            e.text = html
-            return e
-        except Exception as e:
-            return html
 
 
 

@@ -24,8 +24,8 @@ def update_page_yaml(page_yaml, page_md_files, base_dir):
             page_dict['path'] = os.path.splitext(urllib.pathname2url(os.path.relpath(md_file, base_dir)))[0]
 
             pages.append(page_dict)
-        except Exception as e:
-            traceback.print_exc(e)
+        except Exception:
+            traceback.print_exc()
             continue
 
     pages = sorted(pages, key=get_datetime, reverse=True)
@@ -101,9 +101,9 @@ def get_page(page_dir, path):
         if os.path.exists(md_path):
             try:
                 return get_markdown_page(md_path)
-            except Exception as e:
-                traceback.print_exc(e)
-    except Exception as e:
+            except Exception:
+                traceback.print_exc()
+    except Exception:
         pass
 
     abort(404)
@@ -192,8 +192,8 @@ class Blog(object):
 
         try:
             self._page = get_page(self.user_dir, self.path)
-        except Exception as e:
-            traceback.print_exc(e)
+        except Exception:
+            traceback.print_exc()
             abort(500)
 
         return self._page

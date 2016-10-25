@@ -235,8 +235,8 @@ def load_news():
 
         pg = load_page_yaml(page_yaml, root_dir, blacklist=blacklist)
         return pg
-    except Exception as e:
-        traceback.print_exc(e)
+    except Exception:
+        traceback.print_exc()
 
 @lazy_load
 def load_people():

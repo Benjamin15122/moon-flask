@@ -26,8 +26,8 @@ def render_bib_file(path=None, keys=None, hl='', group_by_year=False):
             return c.render_entry(keys, hl)
         else:
             return c.render_entries(keys, hl, group_by_year)
-    except Exception as e:
-        traceback.print_exc(e)
+    except Exception:
+        traceback.print_exc()
         return "<em>render path=%s, keys=%s, hl=%s, group_by_year=%s failed! </em>" % (path, keys, hl, group_by_year)
 
     return "<em>No such bib file " + path + "</em>"
