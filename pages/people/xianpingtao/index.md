@@ -118,3 +118,9 @@ title: Xianping Tao
 {{ render_bib_file('2015.bib', hl='Xianping Tao') }}
 
 ([More...](publications))
+
+## Teaching
+
+* 计算思维导论(Introduction to  Computational Thinking)
+    * [讲义1](./static/讲义1.pptx)
+    * [云中漫步讲义](./static/云中漫步讲义.pptx)
