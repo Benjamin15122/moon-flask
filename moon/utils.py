@@ -26,7 +26,8 @@ def to_time(st):
 
 def before_yesterday(events):
     yesterday = datetime.now() + timedelta(days=-1)
-    return filter(lambda e: yesterday < to_datetime(e.get('date', '')), events)
+    filtered = filter(lambda e: yesterday < to_datetime(e.get('date', '')), events)
+    return filtered
 
 app.jinja_env.filters['before_yesterday'] = before_yesterday
 app.jinja_env.filters['to_date'] = to_date

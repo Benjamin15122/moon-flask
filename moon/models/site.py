@@ -37,7 +37,7 @@ class Site(object):
 
         # awards
         self._awards = load_awards()
-        
+
         # shorturl
         self._shorturl = load_shorturl()
 

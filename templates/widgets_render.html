@@ -78,8 +78,8 @@
                     <ul class="list-unstyled">
                          <!-- the most close deadline -->
                          <!-- -->
-                         {% set phd = g.site.phd|before_yesterday %}
-                         {% set master = g.site.master|before_yesterday %}
+                         {% set phd = g.site.phd_events|before_yesterday %}
+                         {% set master = g.site.master_events|before_yesterday %}
                          {% set events = g.site.events|before_yesterday %}
                          {% set deadlines = g.site.deadlines|before_yesterday %}
                          {% if phd|first %}
