@@ -52,3 +52,37 @@ $ADB shell su -c chown root:root /system/framework/monkey.jar
 后来换到了`android-6.0.1_r41`，在`make monkey`之后搜索`javalib.jar`，无需`dx`，直接替换即可。
 
 项目在[bitbucket](https://bitbucket.org/txgu/ape)上。
+
+~~~{.bash}
+#! /bin/bash
+
+ADB=$(which adb)
+
+if [[ "x$ADB" == "x"  ]];
+then
+    echo "No adb in $PATH"
+    exit 1
+fi
+
+ANDROID_HOME=$(pushd "$(dirname "$BASH_SOURCE[0]")" > /dev/null && pwd && popd > /dev/null )
+
+#"${ANDROID_HOME}/out/host/linux-x86/bin/dx" --dex --output=${ANDROID_HOME}/out/monkey.jar "${ANDROID_HOME}/out/target/common/obj/JAVA_LIBRARIES/monkey_intermediates/classes.jar"
+$ADB push ${ANDROID_HOME}/out/target/common/obj/JAVA_LIBRARIES/monkey_intermediates/javalib.jar /sdcard/monkey.jar
+#$ADB push "${ANDROID_HOME}/out/target/product/generic/system/framework/monkey.jar" /sdcard/
+#$ADB push "${ANDROID_HOME}/out/target/product/generic/system/framework/oat/arm/monkey.odex" /sdcard/
+$ADB shell su -c mount -o remount,rw /system
+$ADB shell su -c mv /sdcard/monkey.jar /system/framework/monkey.jar
+#$ADB shell su -c mv /sdcard/monkey.odex /system/framework/oat/arm/monkey.odex
+$ADB shell su -c chmod 644 /system/framework/monkey.jar #/system/framework/oat/arm/monkey.odex
+$ADB shell su -c chown root:root /system/framework/monkey.jar #/system/framework/oat/arm/monkey.odex
+#$ADB shell su -c chmod 644 /system/framework/arm/monkey.odex
+#$ADB shell su -c chown root:root /system/framework/arm/monkey.odex
+#$ADB shell su -c cp /system/framework/arm/monkey.odex /data/dalvik-cache/arm/system@framework@monkey.jar@classes.dex
+#$ADB shell su -c chmod 644 /data/dalvik-cache/arm/system@framework@monkey.jar@classes.dex
+#$ADB shell su -c chown system:system /data/dalvik-cache/arm/system@framework@monkey.jar@classes.dex
+#$ADB shell su -c patchoat --instruction-set=arm --input-oat-location=/system/framework/arm/monkey.odex --output-oat-file=/data/dalvik-cache/arm/system@framework@monkey.jar@classes.dex
+
+#$ADB shell su -c stop zygote
+#$ADB shell su -c start zygote
+
+~~~
