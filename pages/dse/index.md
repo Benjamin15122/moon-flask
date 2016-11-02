@@ -1,24 +1,30 @@
 title: Dynamic Software Evolution Group
 
-# Dynamic Software Evolution Group
+# Dynamic Software Evolution Group {{ img_for("img/DSE_LOGO.png")|safe }}
 
+<!--
 <div class="row gutter" markdown="1">
-<div class="col-lg-9 col-md-9 col-sm-12">
+<div class="col-lg-9 col-md-9 col-sm-12" markdown="1">
+-->
 We hack JVM to implement tools and conduct research on
 
-<ul>
-<li> Dynamic Software Updating
-<li> Automatic Runtime Recovery
-<li> Whole-Program Dynamic Program Analysis
-<li> Android Testing
-</ul>
 
-Check out [gif](./dsegif) showing
-what dynamic software updating and automatic runtime recovery are.
+* Dynamic Software Updating
+* Automatic Runtime Recovery
+* Whole-Program Dynamic Program Analysis
+* Android Testing
 
+
+Check out [gifs](./dsegif) that help understanding dynamic software updating and automatic runtime recovery.
+
+<!--
 </div>
-<div class="col-lg-3 col-md-3 col-sm-12">
 
+<div class="col-lg-3 col-md-3 col-sm-12" markdown="1">
+-->
+
+<!--
+{{ img_for("img/DSE_LOGO.png")|safe }}
 <svg height="200" width="200">
   <path id="D"  d="M0 0 L75 0 L100 100 L50 200 L0 200 Z" fill="#660066" stroke="#FFFFFF" stroke-width="10"/>
   <path id="S"  d="M75 0 L100 100 L50 200 L125 200 L100 100 L150 0 Z" fill="#8E7A0F" stroke="#FFFFFF" stroke-width="10"/>
@@ -26,18 +32,36 @@ what dynamic software updating and automatic runtime recovery are.
   <path id="E2" d="M125 200 L100 100 L200 100 L200 200 Z" fill="#660066" stroke="#FFFFFF" stroke-width="10"/>
   Sorry, your browser does not support inline SVG.
 </svg>
+-->
 
+<!--
 </div>
 </div>
-
+-->
 
 ## People
+
+
 
 {{ render_people(group = "dse", category = ["faculty", "phd", "graduates"]) | safe }}
 
 ## Publications
 
 ~~~{.bibtexhtml}
+@article{ConUpTSE,
+    author = {Baresi, Luciano and Ghezzi, Carlo and Ma, Xiaoxing and Panzica La Manna, Valerio},
+    doi = {10.1109/TSE.2016.2592913},
+    journal = {IEEE Transactions on Software Engineering},
+    month = {Dec},
+    title = {Efficient Dynamic Updates of Distributed Components through Version Consistency},
+    volume = {99},
+    number = {99},
+    pages = {to appear},
+    year = {2017},
+    url = {http://dx.doi.org/10.1109/TSE.2016.2592913},
+}
+
+
 @inproceedings{gu_improving_2016,
   author    = {Tianxiao Gu and Zelin Zhao and Xiaoxing Ma and Chang Xu and Chun Cao and Jian L{\"u}},
   title     = {Improving reliability of dynamic software updating using runtime recovery},
@@ -168,8 +192,9 @@ what dynamic software updating and automatic runtime recovery are.
 
 ## Software
 
-We have a couple of projects hacking the Java HotSpot JVM and Android ART.
 
+
+* [CONUP](https://github.com/brickinwall/conup): Consistent Updates of Distributed Components at Runtime
 * [Javelus](javelus/): A dynamic-updating-enabled JVM
 * [Ares](ares): Automatic Runtime Recovery
 * [AOTES](aotes): Synthesizing object transformations for DSU

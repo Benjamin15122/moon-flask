@@ -1,6 +1,6 @@
 from moon import app
 from moon.jj.bibtex import render_bib_entry, render_bib_file
-from moon.jj.urls import render_parent_breadcrumb, static_for, page_for
+from moon.jj.urls import render_parent_breadcrumb, static_for, page_for, img_for
 #from moon.jj.site import render_blogs, render_awards
 from moon.jj.people import render_people
 
@@ -20,3 +20,4 @@ for key in dir(site):
 
 app.jinja_env.globals.update(static_for=static_for)
 app.jinja_env.globals.update(page_for=page_for)
+app.jinja_env.globals.update(img_for=img_for)

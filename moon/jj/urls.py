@@ -51,5 +51,13 @@ def static_for(filename):
     return url_for('static', filename=filename)
 
 
+def img_for(filename, width=None, height=None):
+    width = u'width="{0}"'.format(width) if width else ""
+    height = u'height="{0}"'.format(height) if height else ""
+    ret = u'<img src="{0}" {1} {2}/>'.format(url_for('static', filename=filename), width, height)
+    return ret
+
+
+
 def page_for(name=None, path=None):
     return url_for('page', name=name, path=path)
