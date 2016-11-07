@@ -26,6 +26,7 @@ faculty:
     group: spar
   - name: Hao Hu 胡昊
     title: Associate Professor
+    avatar: /static/img/avatar/huhao.jpg
   - name: Yu Huang 黄宇
     title: Associate Professor
     url: http://cs.nju.edu.cn/yuhuang
