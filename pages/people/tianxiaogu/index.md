@@ -157,21 +157,26 @@ You can checkout my profile (only publicly accessible projects) at [here](https:
 * [Javelus](http://bitbucket.org/javelus/)
     * A dynamic-updating-enabled JVM built on top the HotSpot JVM in OpenJDK 8
 * [MiniTracing](http://bitbucket.org/javelus/javelus):
-    * A whole program tracing tool that can trace method entrance/exit, object allocation, gc moving events in the JVM.
+    * A whole program tracing tool that can trace method entrance/exit, object allocation, GC moving events in the JVM.
     * Checkout the branch `mini-tracing` of `javelus`
     * Other tools based on this project:
         * [PHD](https://bitbucket.org/txgu/phd): Precise Heap Differentiating: An experimental tool aiming at precisely differentiating two heap snapshots.
 * MiniTracing on Android ART
     * Based on the built-in `trace.cc`
-    * Under developing to support more runtime information tracing, e.g., statement coverage.
     * [android-5.0.1](https://bitbucket.org/txgu/mini-tracing-art5)
+        * Tracing: method entrance/exit, field read/written, bytecode coverage
+        * Fuzzing: throw exceptions and sleep for a while at method entrance and exit
+        * Concurrent Fuzzing: reschedule access to shared objects.
+            * A basic implementation of [RaceFuzzer](http://dl.acm.org/citation.cfm?id=1375584)
     * [android-6.0.1](https://bitbucket.org/txgu/mini-tracing-art6)
+        * This project aims to make MiniTracing modular by maintaining different functionanilties in different branches.
+        * Under developing.
 * [Ape](https://bitbucket.org/txgu/ape): `android-6.0.1_r41` only
     * A more intelligent `monkey`
     * Use  `uiautomator dump`(in fact based on [Accessibility Service](https://developer.android.com/reference/android/accessibilityservice/AccessibilityService.html) of android framework) to guide monkey.
         * The command `uiautomator dump` has a delay.
           This tool uses the API used by the `uiautomator` to capture UI information immediately without any delay.
-    * Currently only two simple strategies: A random strategy and a DFS strategy. You can extend this tool with your own strategy.
+    * Currently only two simple strategies: A random strategy and a Death-First strategy. You can extend this tool with your own strategy.
         * By using MiniTracing for ART to profile the runtime, we could implement various kinds of feedback directed testing tools.
 * [Ares](http://bitbucket.org/txgu/ares)
     * An automatic-runtime-recovery-enabled JVM
