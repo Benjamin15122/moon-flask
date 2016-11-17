@@ -163,3 +163,11 @@ Otherwise, send an email to me.
 * [GanttProject](https://git.njuics.cn/ares/ares-ganttproject)
 * [JMeter](https://git.njuics.cn/ares/ares-jmeter)
 * If you cannot access this web site, send an email to me.
+
+
+!!! warn
+    Ares is only a prototype.
+    If you encounter any crash,
+    disable compiler by adding a VM option `-Xint` and then make a retry.
+
+
