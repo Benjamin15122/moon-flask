@@ -1,15 +1,4 @@
-title: Automatic Runtime Recovery via Error Handler Synthesis
+title: asdf
+redirect: ares/
 
 
-# Automatic Runtime Recovery via Error Handler Synthesis
-
-
-
-## Source Code
-
-* [git.njuics.cn](https://git.njuics.cn/groups/ares)
-
-## Documentation
-
-
-To be added
