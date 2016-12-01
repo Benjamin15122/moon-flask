@@ -163,7 +163,7 @@ You can checkout my profile (only publicly accessible projects) at [here](https:
         * [PHD](https://bitbucket.org/txgu/phd): Precise Heap Differentiating: An experimental tool aiming at precisely differentiating two heap snapshots.
 * MiniTracing on Android ART
     * Based on the built-in `trace.cc`
-    * [android-5.0.1](https://bitbucket.org/txgu/mini-tracing-art5)
+    * [android-5.1.1](https://bitbucket.org/txgu/mini-tracing-art5)
         * Tracing: method entrance/exit, field read/written, bytecode coverage
         * Fuzzing: throw exceptions and sleep for a while at method entrance and exit
         * Concurrent Fuzzing: reschedule access to shared objects.
@@ -176,7 +176,7 @@ You can checkout my profile (only publicly accessible projects) at [here](https:
     * Use  `uiautomator dump`(in fact based on [Accessibility Service](https://developer.android.com/reference/android/accessibilityservice/AccessibilityService.html) of android framework) to guide monkey.
         * The command `uiautomator dump` has a delay.
           This tool uses the API used by the `uiautomator` to capture UI information immediately without any delay.
-    * Currently only two simple strategies: A random strategy and a Death-First strategy. You can extend this tool with your own strategy.
+    * Currently only two simple strategies: A random strategy and a Depth-First strategy. You can extend this tool with your own strategy.
         * By using MiniTracing for ART to profile the runtime, we could implement various kinds of feedback directed testing tools.
 * [Ares](http://bitbucket.org/txgu/ares)
     * An automatic-runtime-recovery-enabled JVM
