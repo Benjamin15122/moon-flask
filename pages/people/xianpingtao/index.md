@@ -124,3 +124,5 @@ title: Xianping Tao
 * 计算思维导论(Introduction to  Computational Thinking)
     * [讲义1](./static/讲义1.pptx)
     * [云中漫步讲义](./static/云中漫步讲义.pptx)
+    * [计算的滥用](./static/计算的滥用.pptx)
+    * [计算思维的导论部分ppt](./static/计算思维导论部分PPT.zip)
