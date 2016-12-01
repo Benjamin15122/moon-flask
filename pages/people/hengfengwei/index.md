@@ -1,4 +1,5 @@
 title: Hengfeng Wei
+redirect: http://www.bigoh.net/wiki/index.php/user:Hengfeng-Wei
 
 # Hengfeng Wei
 
