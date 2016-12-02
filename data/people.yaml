@@ -125,6 +125,7 @@ phd:
     group: spar
   - name: Yanxiang Tong 童燕翔
     from: 2016
+    avatar: /static/img/avatar/tongyanxiang.jpg
     url: /spar/peoples/yxtong/
     group: spar
   - name: Xue Jiang 江雪
