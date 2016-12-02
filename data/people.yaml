@@ -64,6 +64,7 @@ phd:
     from: 2010
   - name: Hengfeng Wei 魏恒峰
     url:  hengfengwei
+    avatar: /static/img/avatar/weihengfeng.png
     from: 2011
   - name: Jingwei Xu 徐经纬
     url:  jingweixu 
