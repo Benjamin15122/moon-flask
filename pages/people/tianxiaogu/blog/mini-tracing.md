@@ -25,11 +25,18 @@ template: post.html
 
 ## 编译
 
-**To be added**
+准备编译环境
+
+1. `source build/envsetup.sh`
+2. `lunch aosp_eng-arm`，注意替换上你自己的configuration
+
+编译
+
+1. `make libart libart-comipler`
 
 ## 安装
 
-**To be added**
+运行`art/install_libart.sh`即可，注意替换为你自己的`TARGET`，例如`flo`。
 
 ## 使用
 
