@@ -89,11 +89,18 @@ adb shell su -c setenforce 0
     3. `/data/mini_trace_${UID}_info.log`: 记录方法执行和对象访问的信息，暂时未完全移植成功。
 
 为了方便在windows下也使用该工具，
-我提供一个Python脚本文件去准备这四个文件。
+我提供一个Python脚本文件([push\_config.py](https://bitbucket.org/txgu/android-toolkit/src/master/minitrace/scripts/push_config.py?at=master&fileviewer=file-view-default))去准备这四个文件。
 其中配置文件只要存在就会出发记录，
 而数据文件会在每次写数据的时候覆盖。
 
-1. [`push_config.py`](https://bitbucket.org/txgu/android-toolkit/src/master/minitrace/scripts/push_config.py?at=master&fileviewer=file-view-default)
+
+!!! note:
+    `push_config.py`脚本的参数是UID减去10000。
+    例如在我的Nexus 5上，计算器应用的UID是10032。
+    为了确定计算器的UID，我先打开计算器，
+    通过`ps | grep -i calculator`可以查看到一个对应`u0_a32`的信息，
+    其中32加上10000就是计算器的UID。
+
 
 
 默认在读到配置文件存在的时候就会开启各种trace功能，
