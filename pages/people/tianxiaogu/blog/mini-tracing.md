@@ -32,7 +32,7 @@ template: post.html
 
 编译
 
-1. `make libart libart-comipler`
+1. `make libart libart-compiler`
 
 ## 安装
 
