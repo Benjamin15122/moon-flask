@@ -1,4 +1,5 @@
 title: My Tips on LyX
+status: draft
 
 ## Why LyX
 
