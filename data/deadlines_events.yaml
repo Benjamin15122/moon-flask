@@ -22,6 +22,10 @@
   label: ECOOP 2017
   url: http://conf.researchr.org/home/ecoop-2017 
   date: 2017-01-07
+- id: issta2017
+  label: ISSTA 2017 (Santa Barbara, USA)
+  url: http://conf.researchr.org/track/issta-2017/issta-2017-research
+  date: 2017-02-03
 - id: fse2017
   label: FSE 2017 (Paderborn, Germany)
   url: http://esec-fse17.uni-paderborn.de/
