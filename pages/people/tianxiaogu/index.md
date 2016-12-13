@@ -151,7 +151,6 @@ title: Tianxiao Gu
 ----------------
 ## Projects
 
-I have moved from [artemisprojects](http://lab.artemisprojects.org) (now [njuics.cn](http://git.njuics.cn)) to bitbucket to host most of my projects.
 You can checkout my profile (only publicly accessible projects) at [here](https://bitbucket.org/txgu/) or [here](https://git.njuics.cn/u/tianxiaogu).
 
 * [Javelus](http://bitbucket.org/javelus/)
@@ -182,6 +181,9 @@ You can checkout my profile (only publicly accessible projects) at [here](https:
     * An automatic-runtime-recovery-enabled JVM
 * [AOTES](https://bitbucket.org/txgu/aotes-asm)
     * Automating object transformations for dynamic software updating via execution synthesis
+
+!!!note:
+    A project may not be publicly available if we are working on a paper about it.
 
 --------------------
 

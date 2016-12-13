@@ -84,13 +84,15 @@
 
 
 .admonition {
-  padding: 15px;
-  margin-bottom: 20px;
+  padding: 5px 5px 0px 10px;
+/*  margin-bottom: 20px; */
   border: 1px solid transparent;
   border-radius: 4px;
 }
 .admonition-title {
+  margin: 0px 0px 5px;
   font-weight: 700;
+  border-bottom: solid;
 }
 /* "attention", "caution", "danger", "error", "hint", "important", "note", "tip", "warning", "admonition" */
 .admonition.important,.admonition.attention,.admonition.admonition {
