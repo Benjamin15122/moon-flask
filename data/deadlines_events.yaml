@@ -38,4 +38,8 @@
   label: SOSP 2017 (Shanghai, China)
   url: https://www.sigops.org/sosp/sosp17/index.html
   date: 2017-04-14
+- id: ase2017
+  label: ASE 2017 (Urbana-Champaign, Illinois, USA)
+  url: http://ase2017.org
+  date: 2017-05-03
 
