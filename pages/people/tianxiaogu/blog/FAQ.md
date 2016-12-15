@@ -1,7 +1,10 @@
 title: FAQ
+date: 2016-12-12
+category: programming
+tags: java
+template: post.html
 
 
-# FAQ
 
 ## Maven
 

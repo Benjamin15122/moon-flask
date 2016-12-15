@@ -1,4 +1,4 @@
-title: MiniTrace for Android ART
+title: MiniTracing for Android ART
 date: 2016-12-12
 category: programming
 tags: java,android
@@ -18,7 +18,7 @@ template: post.html
 这个工具分两个项目，
 第一个项目是修改后的ART，第二个用于解析生成的日志文件。
 
-* [MiniTrace for Android ART](https://bitbucket.org/txgu/mini-tracing-art6)
+* [MiniTracing for Android ART](https://bitbucket.org/txgu/mini-tracing-art6)
 * [Android Toolkit](https://bitbucket.org/txgu/android-toolkit)：用于解析记录的信息
 
 
@@ -48,7 +48,7 @@ template: post.html
 
 ### 准备配置文件和数据文件
 
-使用MiniTrace需要配置哪些应用中的哪些类中的方法需要记录覆盖信息。
+使用MiniTracing需要配置哪些应用中的哪些类中的方法需要记录覆盖信息。
 由于所有应用执行的art进程都是从zygote进程fork来的，
 因此我修改了art，
 使得其在fork之后的初始化阶段读取特定的配置文件，
@@ -131,20 +131,6 @@ adb shell su -c ps | grep xxx
 ~~~
 adb shell su -c kill -USR2 $PID
 ~~~
-
-为了方便知晓何时dump结束，
-我打印了两条信息用于标记dump的开始和结束。
-具体代码如下：
-
-~~~
-void SignalCatcher::HandleSigUsr2() {
-  LOG(INFO) << "SIGUSR2 dumping coverage data begin";
-  MiniTrace::DumpCoverageData();
-  LOG(INFO) << "SIGUSR2 dumping coverage data end";
-}
-~~~
-
-因此，用户当通过logcat监控到`SIGUSR2 dumping coverage data end`就可以知晓何时dump结束了。
 
 
 ### 解析记录的覆盖率信息
