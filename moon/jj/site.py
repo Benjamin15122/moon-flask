@@ -32,6 +32,27 @@ def render_blogs():
 
     abort(404)
 
+def render_blog_list():
+    endpoint = request.endpoint
+
+    if endpoint != 'page':
+        abort(404)
+
+    name = request.view_args.get('name')
+
+    blogs = load_blog_yaml(name)
+
+    render = get_template_attribute('page_render.html', 'render_post_list')
+
+    try:
+        return render(blogs)
+    except Exception:
+        traceback.print_exc()
+        abort(500)
+
+    abort(404)
+
+
 
 def render_awards():
     return _render_macro('awards_render.html', 'render_awards')

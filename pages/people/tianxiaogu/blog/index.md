@@ -7,4 +7,4 @@ title: Blog
 
 -----------------
 
-{{ render_blogs() }}
+{{ render_blog_list() }}

@@ -21,6 +21,16 @@
 {{ pagination.render_pagination(posts) }}
 {%- endmacro %}
 
+{% macro render_post_list(posts) -%}
+<ol>
+{%-for post in posts.current_items-%}
+<li><a href="{{ url_for('page', name=post.name, path=post.path) }}">{{ post.page.meta.title }}</a></li>
+{%-endfor-%}
+</ol>
+{%- endmacro %}
+
+
+
 {% macro render_short_news(news) -%}
 <ol>
     {% for n in news-%}
