@@ -12,7 +12,7 @@ We hack JVM to implement tools and conduct research on
 * Dynamic Software Updating
 * Automatic Runtime Recovery
 * Whole-Program Dynamic Program Analysis
-* Android Testing
+* Android
 
 
 Check out [gifs](./dsegif) that help understanding dynamic software updating and automatic runtime recovery.
@@ -198,8 +198,9 @@ Check out [gifs](./dsegif) that help understanding dynamic software updating and
 * [Javelus](javelus/): A dynamic-updating-enabled JVM
 * [Ares](ares): Automatic Runtime Recovery
 * [AOTES](aotes): Synthesizing object transformations for DSU
-* MiniTracing and MiniTracing for ART: Whole Program Tracing in JVM
+* MiniTracing: Whole Program Tracing in JVM
     * [PHD](phd): Precise Heap Differentiating Using Access Path and Execution Index
+* [Projects on Android](android/): Tracing/Fuzzing/Testing
 
 ## Former Group Members
 
