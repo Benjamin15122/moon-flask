@@ -36,22 +36,25 @@ template: post.html
 1. 直接运行
 
 
-    mvn exec:java -Dexec.mainClass="com.example.Main"
-
+~~~
+mvn exec:java -Dexec.mainClass="com.example.Main"
+~~~
 
 2. 生成classpath
 
 
-    mvn dependency:build-classpath -Dmdep.outputFile="classpath.txt"
-
+~~~
+mvn dependency:build-classpath -Dmdep.outputFile="classpath.txt"
+~~~
 
 ## Bash
 
 1. 获取脚本当前目录
 
 
-    DIR=$(pushd "$(dirname "$BASH_SOURCE[0]")" > /dev/null && pwd -P && popd > /dev/null)
-
+~~~
+DIR=$(pushd "$(dirname "$BASH_SOURCE[0]")" > /dev/null && pwd -P && popd > /dev/null)
+~~~
 
 ## VIM
 
