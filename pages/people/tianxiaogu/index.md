@@ -52,6 +52,20 @@ title: Tianxiao Gu
 ## Publications
 
 ~~~{.bibtexhtml hl_lines="Tianxiao Gu"}
+@inproceedings{gu_synthesize_2017,
+  author    = {Tianxiao Gu and Xiaoxing Ma and Chang Xu and Yanyan Jiang and Chun Cao and Jian L{\"u}},
+  title     = {Synthesizing Object Transformation for Dynamic Software Updating},
+  booktitle = {ICSE 2017 Poster Track},
+  pages     = {to appear},
+  year      = {2017},
+}
+@inproceedings{gu_precise_2016,
+  author    = {Gu, Tianxiao and Liu, Ruiqi and Ma, Xiaoxing and Zhao, Zelin},
+  title     = {Precise Heap Differentiating Using Access Path and Execution Index},
+  booktitle = {NASAC English Track},
+  pages     = {to appear},
+  year      = {2016},
+}
 @inproceedings{li_effectively_2016,
   author    = {Qiwei Li and Yanyan Jiang and Tianxiao Gu and Chang Xu and Jun Ma and Xiaoxing Ma and Jian L{\"u}},
   title     = {Effectively manifesting concurrency bugs in Android apps},
