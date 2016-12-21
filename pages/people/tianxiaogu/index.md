@@ -165,7 +165,7 @@ title: Tianxiao Gu
 ----------------
 ## Projects
 
-You can checkout my profile (only publicly accessible projects) at [here](https://bitbucket.org/txgu/) or [here](https://git.njuics.cn/u/tianxiaogu).
+You can check my profile (only publicly accessible projects) at [here](https://bitbucket.org/txgu/) or [here](https://git.njuics.cn/u/tianxiaogu).
 
 
 !!!note:
