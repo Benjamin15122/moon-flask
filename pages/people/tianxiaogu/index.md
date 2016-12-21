@@ -153,6 +153,11 @@ title: Tianxiao Gu
 
 You can checkout my profile (only publicly accessible projects) at [here](https://bitbucket.org/txgu/) or [here](https://git.njuics.cn/u/tianxiaogu).
 
+
+!!!note:
+    A project may not be publicly available if we are working on a paper about it.
+
+
 * [Javelus](http://bitbucket.org/javelus/)
     * A dynamic-updating-enabled JVM built on top the HotSpot JVM in OpenJDK 8
 * [MiniTracing](http://bitbucket.org/javelus/javelus):
@@ -181,9 +186,6 @@ You can checkout my profile (only publicly accessible projects) at [here](https:
     * An automatic-runtime-recovery-enabled JVM
 * [AOTES](https://bitbucket.org/txgu/aotes-asm)
     * Automating object transformations for dynamic software updating via execution synthesis
-
-!!!note:
-    A project may not be publicly available if we are working on a paper about it.
 
 --------------------
 
