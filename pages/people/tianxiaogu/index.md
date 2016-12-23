@@ -68,21 +68,21 @@ title: Tianxiao Gu
 }
 @inproceedings{li_effectively_2016,
   author    = {Qiwei Li and Yanyan Jiang and Tianxiao Gu and Chang Xu and Jun Ma and Xiaoxing Ma and Jian L{\"u}},
-  title     = {Effectively manifesting concurrency bugs in Android apps},
+  title     = {Effectively Manifesting Concurrency Bugs in Android Apps},
   booktitle = {Proceedings of the 23rd Asia-Pacific Software Engineering Conference (APSEC)},
   pages     = {to appear},
   year      = {2016},
 }
 @inproceedings{gu_improving_2016,
   author    = {Tianxiao Gu and Zelin Zhao and Xiaoxing Ma and Chang Xu and Chun Cao and Jian L{\"u}},
-  title     = {Improving reliability of dynamic software updating using runtime recovery},
+  title     = {Improving Reliability of Dynamic Software Updating Using Runtime Recovery},
   booktitle = {Proceedings of the 23rd Asia-Pacific Software Engineering Conference (APSEC)},
   pages     = {to appear},
   year      = {2016},
 }
 @inproceedings{zhao_cure_2016,
   author    = {Zelin Zhao and Tianxiao Gu and Xiaoxing Ma and Chang Xu and Jian L{\"u}},
-  title     = {CURE: Automated patch generation for dynamic software update},
+  title     = {CURE: Automated Patch Generation for Dynamic Software Update},
   booktitle = {Proceedings of the 23rd Asia-Pacific Software Engineering Conference (APSEC)},
   pages     = {to appear},
   year      = {2016},
@@ -93,7 +93,7 @@ title: Tianxiao Gu
                Xiaoxing Ma and
                Jian L{\"u} and
                Zhendong Su},
-  title     = {Automatic runtime recovery via error handler synthesis},
+  title     = {Automatic Runtime Recovery via Error Handler Synthesis},
   booktitle = {Proceedings of the 31st IEEE/ACM International Conference on Automated
                Software Engineering, ASE 2016, Singapore, September 3-7, 2016},
   pages     = {684--695},
@@ -107,7 +107,7 @@ title: Tianxiao Gu
                Xiaoxing Ma and
                Linghao Zhang and
                Jian L{\"u}},
-  title     = {Low-disruptive dynamic updating of Java applications},
+  title     = {Low-disruptive Dynamic Updating of Java Applications},
   journal   = {Information & Software Technology},
   volume    = {56},
   number    = {9},
@@ -122,7 +122,7 @@ title: Tianxiao Gu
                Chang Xu and
                Xiaoxing Ma and
                Jian L{\"u}},
-  title     = {CARE: cache guided deterministic replay for concurrent Java programs},
+  title     = {CARE: Cache Guided Deterministic Replay for Concurrent Java Programs},
   booktitle = {36th International Conference on Software Engineering, ICSE '14,
                Hyderabad, India - May 31 - June 07, 2014},
   pages     = {457--467},
