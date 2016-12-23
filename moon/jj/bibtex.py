@@ -3,16 +3,19 @@ from moon.models.page import get_user_dir
 from flask import request, g, safe_join
 import traceback
 
-import time
+from moon import PAGES_DIR, MOON_DIR
+
+import time, os
+
 def render_bib_file(path=None, keys=None, hl='', group_by_year=False):
     if not path:
         return g.site.paper.render_all(hl, group_by_year)
 
     if request.endpoint == 'page':
-        name = request.view_args['name']
-
-        user_dir = get_user_dir(name)
-        bibfile = safe_join(user_dir, path)
+        base_dir = request.path[1:] # remove leading '/'
+        if not base_dir.endswith('/'):
+            base_dir = os.path.dirname(base_dir) # get dir
+        bibfile = safe_join(PAGES_DIR, base_dir + '/' + path)
     else:
         bibfile = safe_join(MOON_DIR, path)
 
