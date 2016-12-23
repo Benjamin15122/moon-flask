@@ -327,8 +327,10 @@ alumni:
     group: dse
   - name: Guozhen Xie 谢国珍
     group: dse
+    avatar: /static/img/avatar/xieguozhen.jpg
   - name: Yan Yao 姚燕
     group: dse
+    avatar: /static/img/avatar/yaoyan.jpg
   - name: Yiling Yang
     姓名: 杨怡玲
   - 姓名: 董凯
