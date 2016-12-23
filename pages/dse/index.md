@@ -67,7 +67,7 @@ Full [publications](publications).
     * [PHD](phd): Precise Heap Differentiating Using Access Path and Execution Index
 * [Projects on Android](android/): Tracing/Fuzzing/Testing
 
-## Former Group Members
+## Alumni/ae
 
 -------------------
 
