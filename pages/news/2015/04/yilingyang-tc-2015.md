@@ -1,7 +1,9 @@
-title: Yiling Yang's paper accepted by TC
+title: Yiling Yang's Paper Accepted by TC
 date: 2015-04-21
 summary:  Yiling Yang's paper <a href="http://ieeexplore.ieee.org/xpl/articleDetails.jsp?arnumber=7090967"><em>“Enabling Context-awareness by Predicate Detection in Asynchronous Environments”</em></a>, was accepted by IEEE Transactions on Computers.
 
+
+# Yiling Yang's Paper Accepted by TC
 
 Yiling Yang, Yu Huang, Xiaoxing Ma and Jian Lu's paper, titled as [“Enabling Context-awareness by Predicate Detection in Asynchronous Environments"](http://ieeexplore.ieee.org/xpl/articleDetails.jsp?arnumber=7090967), was accepted by IEEE Transactions on Computers.
 Congratulations to them

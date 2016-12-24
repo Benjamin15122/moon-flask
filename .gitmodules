@@ -1,15 +1,6 @@
-[submodule "pages/shengweian"]
-	path = pages/shengweian
-	url = git@lab.artemisprojects.org:moon/moon-shengweian.git
-[submodule "pages/ruiqiliu"]
-	path = pages/ruiqiliu
-	url = git@lab.artemisprojects.org:moon/moon-ruiqiliu.git
-[submodule "pages/chenglinmeng"]
-	path = pages/chenglinmeng
-	url = git@lab.artemisprojects.org:moon/moon-chenglinmeng.git
 [submodule "spar"]
-	path = spar
-	url = git@lab.artemisprojects.org:spar/homepage.git
+	path = pages/spar
+	url = git@git.njuics.cn:spar/homepage.git
 [submodule "pages/share"]
 	path = pages/share
-	url = git@lab.artemisprojects.org:moon/moon-share.git
+	url = git@git.njuics.cn:moon/moon-share.git

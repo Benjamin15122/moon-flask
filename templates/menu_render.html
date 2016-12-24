@@ -1,0 +1,47 @@
+{% macro render_menu() %}
+<nav id="k-menu" class="k-main-navig"><!-- main navig -->
+    <ul id="drop-down-left" class="k-dropdown-menu">
+        <li {% if request.path == url_for('page') %} class="current-menu-item" {% endif %}>
+            <a href="{{ url_for('page') }}" title="">Home</a>
+        </li>
+        <li {% if request.path == url_for('page', path='people/') %} class="current-menu-item" {% endif %}>
+            <a href="{{ url_for('page', path='people/') }}" title="">People</a>
+        </li>
+        <li>
+            <a href="#" title="">Groups</a>
+            <ul class="sub-menu">
+                <li ><a href="http://www.bigoh.net/wiki/">Dis-Alg</a></li>
+                <li ><a href="{{ url_for('page', path='dse/') }}">DSE</a></li>
+                <li ><a href="{{ url_for('page', path='spar/') }}">SPAR</a></li>
+            </ul>
+        </li>
+        <li {% if request.path == url_for('page', path='news/') %} class="current-menu-item" {% endif %}>
+            <a href="{{ url_for('page', path='news/') }}" title="">News</a>
+            <ul class="sub-menu">
+                <li ><a href="{{ url_for('page', path='news/papers') }}">Papers</a></li>
+                <li ><a href="{{ url_for('page', path='news/awards') }}">Awards</a></li>
+                <li ><a href="{{ url_for('page', path='news/scholarships') }}">Scholarships</a></li>
+            </ul>
+        </li>
+        <li {% if request.path == url_for('page', path='events') %} class="current-menu-item" {% endif %}>
+            <a href="{{ url_for('page', path='events/') }}" title="">Events</a>
+            <ul class="sub-menu">
+                <li {% if request.path == url_for('page', path='events/phd') %} class="current-menu-item" {% endif %}><a href="{{ url_for('page', path='events/phd') }}">PhD Seminar</a></li>
+                <li {% if request.path == url_for('page', path='events/master') %} class="current-menu-item" {% endif %}><a href="{{ url_for('page', path='events/master') }}">Master Seminar </a></li>
+                <li {% if request.path == url_for('page', path='events/deadlines') %} class="current-menu-item" {% endif %}><a href="{{ url_for('page', path='events/deadlines')}}">Deadlines</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="http://moon.nju.edu.cn/courses/" title="">Courses</a>
+        </li>
+        <li>
+            <a href="{{ url_for('page', path='about') }}" title="">About</a>
+            <ul class="sub-menu">
+                <li {% if request.path == url_for('page', path='contact') %} class="current-menu-item" {% endif %}><a href="{{ url_for('page', path='contact') }}" title="">Contact</a></li>
+                <li {% if request.path == url_for('page', path='awards') %} class="current-menu-item" {% endif %}><a href="{{ url_for('page', path='awards') }}">Awards</a></li>
+            </ul>
+
+        </li>
+    </ul>
+</nav><!-- main navig end -->
+{% endmacro %}

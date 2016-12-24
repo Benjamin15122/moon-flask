@@ -1,0 +1,396 @@
+faculty:
+  - name: Jiafu Xu 徐家福
+    title: Professor
+    avatar: /static/img/avatar/xujiafu.jpg
+  - name: Jian Lü 吕建
+    title: Professor
+    avatar: /static/img/avatar/lujian.jpg
+  - name: Xianping Tao 陶先平
+    title: Professor
+    url: xianpingtao
+    avatar: /people/xianpingtao/static/avatar.jpg
+  - name: Xiaoxing Ma 马晓星
+    title: Professor
+    id: xiaoxingma
+    url: /people/xiaoxingma
+    avatar: /people/xiaoxingma/static/avatar.jpg
+    group: spar, dse
+  - name: Feng Xu 徐锋
+    title: Professor
+    avatar: /people/fengxu/static/img/avatar.jpg
+    url: fengxu
+  - name: Chang Xu 许畅
+    title: Professor
+    url: http://cs.nju.edu.cn/changxu
+    avatar: /static/img/avatar/xuchang.jpg
+    group: spar
+  - name: Hao Hu 胡昊
+    title: Associate Professor
+    avatar: /static/img/avatar/huhao.jpg
+  - name: Yu Huang 黄宇
+    title: Associate Professor
+    url: http://cs.nju.edu.cn/yuhuang
+    avatar: /static/img/avatar/huangyu.jpg
+  - name: Chun Cao 曹春
+    title: Associate Professor
+    avatar: /static/img/avatar/caochun.jpg
+  - name: Ping Yu 余萍
+    title: Associate Professor
+    url: http://cs.nju.edu.cn/yuping
+    avatar: /static/img/avatar/yuping.jpg
+  - name: Jun Ma 马骏
+    title: Assistant Professor
+    url: junma
+    avatar: /static/img/avatar/majun.jpg
+  - name: Liang Wang 汪亮
+    title: Assistant Professor
+    url: http://cs.nju.edu.cn/wangliang
+    avatar: /static/img/avatar/wangliang.jpg
+  - name: Yuan Yao 姚远
+    title: Assistant Professor
+    avatar: /static/img/avatar/yaoyuan.jpg
+    url: yuanyao
+  - name: Jianying Zhang 张建莹
+    title: Senior Engineer
+    avatar: /static/img/avatar/mrszhang.jpg
+
+phd:
+  - name: Hongyu Kuang 匡宏宇
+    from: 2010
+  - name: Xiaorui Zhu 朱晓瑞
+    from: 2010
+    url:  xiaoruizhu
+  - name: Haibin Yang 杨海滨
+    from: 2010
+  - name: Hengfeng Wei 魏恒峰
+    url:  hengfengwei
+    avatar: /static/img/avatar/weihengfeng.png
+    from: 2011
+  - name: Jingwei Xu 徐经纬
+    url:  jingweixu 
+    avatar: /static/img/avatar/jingweixu.jpg
+    from: 2012
+  - name: Tianxiao Gu 顾天晓
+    url:  tianxiaogu
+    avatar: /static/img/avatar/gutianxiao.jpg
+    from: 2012
+    group: dse
+  - name: Yanyan Jiang 蒋炎岩
+    url:  /spar/peoples/yyjiang/
+    avatar: /spar/img/avatar/yyjiang.jpg
+    from: 2013
+    group: spar
+  - name: Yi Qin 秦逸
+    url:  /spar/peoples/yqin/
+    avatar: /spar/img/avatar/yqin.jpg
+    from: 2013
+    group: spar
+  - name: Wenhua Yang 杨文华
+    url:  /spar/peoples/whyang/
+    avatar: /spar/img/avatar/whyang.jpg
+    from: 2014
+    group: spar
+  - name: Shengqu Xi 席圣渠
+    url:  shengquxi
+    from: 2014
+    avatar: /people/shengquxi/static/face.png
+  - name: Yaojing Wang 王瑶菁
+    url:  yaojingwang
+    avatar: /static/img/avatar/yaojingwang.jpg
+    from: 2014
+  - name: Zelin Zhao 赵泽林
+    url:  zelinzhao
+    avatar: /people/zelinzhao/static/avatar.jpg
+    from: 2014
+    group: dse
+  - name: Huiyan Wang 王慧妍
+    url: /spar/peoples/hywang/
+    avatar: /spar/img/avatar/hywang.jpg
+    from: 2015
+    group: spar
+  - name: Jue Wang 王珏
+    url: /spar/peoples/jwang/
+    avatar: /spar/img/avatar/jwang.jpg
+    from: 2016
+    group: spar
+  - name: Da Li 李达
+    url: /spar/peoples/dli/
+    from: 2016
+    avatar: /spar/img/avatar/dli.png
+    group: spar
+  - name: Ying Zhang 张营
+    from: 2016
+    avatar: /spar/img/avatar/yzhang.jpg
+    url:  /spar/peoples/yzhang/
+    group: spar
+  - name: Yanxiang Tong 童燕翔
+    from: 2016
+    avatar: /static/img/avatar/tongyanxiang.jpg
+    url: /spar/peoples/yxtong/
+    group: spar
+  - name: Xue Jiang 江雪
+    from: 2016
+  - name: Wenjie Li 李文杰
+    from: 2016
+    avatar: /spar/img/avatar/wjli.jpg
+    url: /spar/peoples/wjli/
+    group: spar
+  - name: Yuqi Zhang 张宇奇
+    from: 2016
+
+graduates:
+  - name: Jinqi Cui 崔金琦
+    url:  default
+    from: 2014
+  - name: Yuhao Gong 龚宇豪
+    url:  default
+    from: 2014
+  - name: Qiwei Li 李其玮
+    url:  /spar/peoples/qwli/
+    from: 2014
+    avatar: /spar/img/avatar/qwli.jpg
+    group: spar
+  - name: Xiaofan Li 李晓帆
+    url:  /spar/peoples/xfli/
+    from: 2014
+    avatar: /spar/img/avatar/xfli.jpg
+    group: spar
+  - name: Ziling Lu 陆子凌
+    url:  zilinglu
+    from: 2014
+    avatar: /people/zilinglu/static/lzl.jpg
+  - name: Chenglin Meng 孟成林
+    url:  chenglinmeng
+    from: 2014
+    avatar: /people/chenglinmeng/static/avatar.png
+  - name: Yiqun Wang 王逸群
+    url:  /people/yiqunwang
+    from: 2014
+    group: dse
+    avatar: /static/img/avatar/wangyiqun.jpg
+  - name: Xiangyu Wu 武翔宇
+    url:  /spar/peoples/xywu/
+    from: 2014
+    avatar: /spar/img/avatar/xywu.jpg
+    group: spar
+  - name: Yong Wu 吴勇
+    url:  yongwu
+    from: 2014
+  - name: Hengzhi Yao 姚恒志
+    url:  default
+    from: 2014
+  - name: Zhongliang Yuan 袁忠良
+    url:  zhongliangyuan
+    from: 2014
+    avatar: /people/zhongliangyuan/static/handsome.jpg
+  - name: Ruiqing Zhang 张瑞青
+    url:  /spar/peoples/rqzhang/
+    from: 2014
+    avatar: /spar/img/avatar/rqzhang.jpg
+    group: spar
+  - name: Shuo Cheng 程硕
+    url:  shuocheng
+    from: 2015
+  - name: Jiaxing Dong 董加星
+    url:  /spar/peoples/jxdong/
+    from: 2015
+    avatar: /spar/img/avatar/jxdong.jpg
+    group: spar
+  - name: Bingying Guo 郭冰莹
+    url:  /spar/peoples/byguo/
+    from: 2015
+    avatar: /spar/img/avatar/byguo.png
+    group: spar
+  - name: Maosen Huang 黄茂森
+    url:  maosenhuang
+    from: 2015
+  - name: Tianchi Liu 刘天驰
+    url:  tianchiliu
+    from: 2015
+    avatar: /people/tianchiliu/static/avatar.jpg
+  - name: Zhanshuai Meng 孟占帅
+    url:  /spar/peoples/zsmeng/
+    from: 2015
+    group: spar
+    avatar: /spar/img/avatar/zsmeng.jpg
+  - name: Hao Sun 孙浩
+    url:  haosun
+    from: 2015
+  - name: Weiyi Wang 王惟一
+    url:  weiyiwang
+    from: 2015
+  - name: Yong Wang 王勇
+    url:  default
+    from: 2015
+  - name: Xiang Xu 徐翔
+    url:  xiangxu
+    from: 2015
+  - name: Shentao Yue 岳胜涛
+    url:  default
+    from: 2015
+  - name: Zongfei Zhang 张宗飞
+    url:  default
+    from: 2015
+  - name: Yang Cao 曹阳
+    avatar: /spar/img/avatar/ycao.jpg
+    url: /spar/peoples/ycao/
+    from: 2016
+    group: spar
+  - name: Dongjie Chen 陈冬杰
+    url: /spar/peoples/djchen/
+    avatar: /spar/img/avatar/djchen.jpg
+    from: 2016
+    group: spar
+  - name: Yuju Shen 沈宇桔
+    from: 2016
+    url: /spar/peoples/yjshen/
+    avatar: /spar/img/avatar/yjshen.jpg
+    group: spar
+  - name: Xiaofei Zhang 张晓飞
+    from: 2016
+    url: xiaofeizhang
+
+
+
+
+
+
+alumni:
+  - name: Haibo Ye 叶海波
+    from: 2011
+  - name: Shengwei An 安圣威
+    url:  shengweian
+    from: 2013
+    avatar: /people/shengweian/static/img/avatar.jpg
+    group: dse
+  - name: Huating Liu 刘华艇
+    url:  default
+    from: 2013
+  - name: Licheng Li 李立成
+    url:  lichengli
+    from: 2013
+  - name: Ruiqi Liu 刘锐奇
+    url:  ruiqiliu
+    from: 2013
+    group: dse
+    avatar: /static/img/avatar/liuruiqi.jpg
+  - name: Yang Liang 梁阳
+    url:  default
+    from: 2013
+  - name: Jia Nie 聂佳
+    url:  default
+    from: 2013
+  - name: Kesheng Qi 戚可生
+    url:  default
+    from: 2013
+  - name: Jun Sui 眭骏
+    url:  default
+    from: 2013
+    url: /spar/peoples/jsui/
+    avatar: /spar/img/avatar/jsui.jpg
+    group: spar
+  - name: Jie Wei 魏杰
+    url:  default
+    from: 2013
+  - name: Fei Yang 杨飞
+    url:  feiyang
+    from: 2013
+  - name: Guo Yan 严国
+    url:  default
+    from: 2013
+  - name: Yang Zou 邹阳
+    from: 2008
+  - name: Xuansong Li 李晅松
+    from: 2009
+  - name: Xiujiang Li 李秀江
+    url:  /spar/peoples/xjli/
+    group: spar
+    avatar: /spar/img/avatar/xjli.jpg
+  - name: Wang Xi 奚旺
+    url:  /spar/peoples/wxi/
+    group: spar
+    avatar: /spar/img/avatar/wxi.jpg
+  - name: Hao Jin 金昊
+    url:  /spar/peoples/hjin/
+    avatar: /spar/img/avatar/hjin.jpg
+    group: spar
+  - name: Yuan Yao
+    姓名: 姚远
+  - name: Tongbao Zhang 张同宝
+    group: dse
+    avatar: /static/img/avatar/zhangtongbao.jpg
+  - name: Guochao Ren 任国超
+    group: dse
+    avatar: /static/img/avatar/renguochao.jpg
+  - name: Ping Su 苏萍
+    group: dse
+    avatar: /static/img/avatar/suping.jpg
+  - name: Jiang Wang 王姜
+    group: dse
+  - name: Guozhen Xie 谢国珍
+    group: dse
+    avatar: /static/img/avatar/xieguozhen.jpg
+  - name: Yan Yao 姚燕
+    group: dse
+    avatar: /static/img/avatar/yaoyan.jpg
+  - name: Yiling Yang
+    姓名: 杨怡玲
+  - 姓名: 董凯
+  - 姓名: 张凌浩
+  - 姓名: 杨启亮
+  - 姓名: 周宇
+  - 姓名: 葛季栋
+  - 姓名: 宋巍
+  - 姓名: 潘静
+  - 姓名: 吴绽青
+  - 姓名: 华婷婷
+  - 姓名: 谢国珍
+  - 姓名: 姚燕
+  - 姓名: 陈昊
+  - 姓名: 王宁
+  - 姓名: 袁国泉
+  - 姓名: 胡海洋
+  - 姓名: 冉平
+  - 姓名: 张林
+  - 姓名: 石兵
+  - 姓名: 郭卿
+  - 姓名: 林强
+  - 姓名: 谢德平
+  - 姓名: 关连伟
+  - 姓名: 曹流
+  - 姓名: 陈秀
+  - 姓名: 方超
+  - 姓名: 刘涛
+  - 姓名: 施文波
+  - 姓名: 徐刚
+  - 姓名: 陈小康
+  - 姓名: 苏萍
+  - 姓名: 孙辉
+  - 姓名: 张浩
+  - 姓名: 王守涛
+  - 姓名: 葛海龙
+  - 姓名: 匡大虎
+  - 姓名: 王珏
+  - 姓名: 钟敏
+  - 姓名: 李兴宇
+  - 姓名: 王远
+  - 姓名: 殷琴
+  - 姓名: 罗滨
+  - 姓名: 陆闻天
+  - 姓名: 毛晓炜
+  - 姓名: 潘健
+  - 姓名: 李叶青
+  - 姓名: 陈威
+  - 姓名: 陈智勇
+  - 姓名: 黄阳
+  - 姓名: 陆掾
+  - 姓名: 王姜
+  - 姓名: 徐俊
+  - 姓名: 江磊
+  - 姓名: 任国超
+  - 姓名: 冯仁君
+  - 姓名: 张栋栋
+  - 姓名: 宗波
+  - 姓名: 余建平
+  - 姓名: 张璟璟
+  - 姓名: 辛显龙

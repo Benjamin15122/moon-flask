@@ -1,0 +1,67 @@
+{% import 'pagination.html' as pagination %}
+
+{% macro render_post(post) -%}
+<h1><a href="{{ request.url }}">{{ post.meta.title }}</a></h1>
+<br/>
+<div class="content">
+    {{ post.html|safe }}
+</div>
+{%- endmacro %}
+
+{% macro render_posts(posts) -%}
+{%-for post in posts.current_items-%}
+<h1><a href="{{ url_for('page', name=post.name, path=post.path) }}">{{ post.page.meta.title }}</a></h1>
+<br/>
+<div class="content">
+    {{ post.page.html|safe }}
+</div>
+<hr/>
+<br/>
+{%-endfor-%}
+{{ pagination.render_pagination(posts) }}
+{%- endmacro %}
+
+{% macro render_post_list(posts) -%}
+<ol>
+{%-for post in posts.current_items-%}
+<li><a href="{{ url_for('page', name=post.name, path=post.path) }}">{{ post.page.meta.title }}</a></li>
+{%-endfor-%}
+</ol>
+{%- endmacro %}
+
+
+
+{% macro render_short_news(news) -%}
+<ol>
+    {% for n in news-%}
+    <li>{{ n.title }}</li>
+    {%-endfor %}
+</ol>
+{%- endmacro %}
+
+{% macro render_all_news() -%}
+<div class="row gutter"><!-- row -->
+    <div class="col-lg-12 col-md-12">
+        <h1 class="page-title">Latest News</h1><!-- category title -->
+    </div>
+</div><!-- row end -->
+<div class="row gutter"><!-- row -->
+    <div class="col-lg-12 col-md-12">
+        {% set news = g.site.news %}
+        {%-for n in news.items-%}
+        <div class="up-event-wrapper"><!-- event summary -->
+            <h1 class="title-median"><a href="{{ url_for('page', path=n.path) }}" title="{{ n.title }}">{{ n.title }}</a></h1>
+            <div class="up-event-meta clearfix">
+                <div class="up-event-date">{{ n.date|to_date }}</div>
+            </div>
+            <p>
+            {% if n.summary %}{{ n.summary|truncate(255)|safe }} <a href="{{ url_for('page', path=n.path) }}" class="moretag" title="read more">MORE</a>{% endif %}
+            </p>
+        </div><!-- event summary end -->
+        {%-endfor-%}
+    </div>
+</div><!-- row end -->
+{{ pagination.render_pagination(news) }}
+{%- endmacro %}
+
+

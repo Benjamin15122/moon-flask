@@ -1,0 +1,45 @@
+- id: apsec16
+  label: APSEC 2016 (Hamilton, New Zealand)
+  url: http://www.apsec2016.org
+  date: 2016-07-15
+- id: icse17
+  label: ICSE 2017 (Buenos Aires, Argentina)
+  url: http://icse2017.gatech.edu
+  date: 2016-08-26
+- id: icst17
+  label: ICST 2017 (Tokyo, Japan)
+  url: http://aster.or.jp/conference/icst2017/
+  date: 2016-09-23
+- id: saner17
+  label: SANER 2017 (Klagenfurt, Austria)
+  url: http://saner.aau.at/
+  date: 2016-10-12
+- id: pldi2017
+  label: PLDI 2017
+  url: http://conf.researchr.org/track/pldi-2017/pldi-2017-papers
+  date: 2016-11-15
+- id: ecoop2017
+  label: ECOOP 2017
+  url: http://conf.researchr.org/home/ecoop-2017 
+  date: 2017-01-07
+- id: issta2017
+  label: ISSTA 2017 (Santa Barbara, USA)
+  url: http://conf.researchr.org/track/issta-2017/issta-2017-research
+  date: 2017-02-03
+- id: fse2017
+  label: FSE 2017 (Paderborn, Germany)
+  url: http://esec-fse17.uni-paderborn.de/
+  date: 2017-02-27
+- id: oopsla2017
+  label: OOPSLA 2017 (Vancouver, Canada)
+  url: http://2017.splashcon.org/
+  date: 2017-04-13
+- id: sosp2017
+  label: SOSP 2017 (Shanghai, China)
+  url: https://www.sigops.org/sosp/sosp17/index.html
+  date: 2017-04-14
+- id: ase2017
+  label: ASE 2017 (Urbana-Champaign, Illinois, USA)
+  url: http://ase2017.org
+  date: 2017-05-03
+
