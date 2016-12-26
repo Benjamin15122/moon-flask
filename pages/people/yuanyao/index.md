@@ -66,5 +66,5 @@ More [publications](publications).
 
 ## Services
 
-* PC Member for: AAAI 2017, IJCAI 2016, ASONAM 2016, CIKM 2015, IJCAI 2015, DMCCI 2011
+* PC Member for: AAAI 2017, IJCAI 2015-2017, ASONAM 2016, CIKM 2015, DMCCI 2011
 
