@@ -65,7 +65,7 @@ Full [publications](publications).
 * [AOTES](aotes): Synthesizing object transformations for DSU
 * MiniTracing: Whole Program Tracing in JVM
     * [PHD](phd): Precise Heap Differentiating Using Access Path and Execution Index
-* [Projects on Android](android/): Tracing/Fuzzing/Testing
+* Projects on Android: Tracing/Fuzzing/Testing
 
 ## Alumni/ae
 
