@@ -5,6 +5,9 @@ faculty:
   - name: Jian Lü 吕建
     title: Professor
     avatar: /static/img/avatar/lujian.jpg
+  - name: Jianying Zhang 张建莹
+    title: Senior Engineer
+    avatar: /static/img/avatar/mrszhang.jpg
   - name: Xianping Tao 陶先平
     title: Professor
     url: xianpingtao
@@ -43,16 +46,17 @@ faculty:
     url: junma
     avatar: /static/img/avatar/majun.jpg
   - name: Liang Wang 汪亮
-    title: Assistant Professor
+    title: Assistant Researcher
     url: http://cs.nju.edu.cn/wangliang
     avatar: /static/img/avatar/wangliang.jpg
   - name: Yuan Yao 姚远
-    title: Assistant Professor
+    title: Assistant Researcher
     avatar: /static/img/avatar/yaoyuan.jpg
     url: yuanyao
-  - name: Jianying Zhang 张建莹
-    title: Senior Engineer
-    avatar: /static/img/avatar/mrszhang.jpg
+  - name: Hengfeng Wei 魏恒峰
+    title: Assistant Researcher
+    url:  hengfengwei
+    avatar: /static/img/avatar/weihengfeng.png
 
 phd:
   - name: Hongyu Kuang 匡宏宇
@@ -62,12 +66,8 @@ phd:
     url:  xiaoruizhu
   - name: Haibin Yang 杨海滨
     from: 2010
-  - name: Hengfeng Wei 魏恒峰
-    url:  hengfengwei
-    avatar: /static/img/avatar/weihengfeng.png
-    from: 2011
   - name: Jingwei Xu 徐经纬
-    url:  jingweixu 
+    url:  jingweixu
     avatar: /static/img/avatar/jingweixu.jpg
     from: 2012
   - name: Tianxiao Gu 顾天晓
