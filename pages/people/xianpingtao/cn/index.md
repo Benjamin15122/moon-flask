@@ -121,7 +121,7 @@ title: Xianping Tao (Chinese)
 
 近期部分论文：
 
-{{ render_bib_file('2015.bib', hl='Xianping Tao') }}
+{{ render_bib_file('../recent-CCF-A-and-B.bib', hl='Xianping Tao') }}
 
 
 ([还有...](../publications))
