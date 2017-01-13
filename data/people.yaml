@@ -137,6 +137,10 @@ phd:
     group: spar
   - name: Yuqi Zhang 张宇奇
     from: 2016
+  - name: Yi Huang 黄羿
+    from: 2017
+
+
 
 graduates:
   - name: Jinqi Cui 崔金琦
@@ -249,15 +253,25 @@ graduates:
   - name: Xiaofei Zhang 张晓飞
     from: 2016
     url: xiaofeizhang
-
+  - name: Hongjun Ge 葛红军
+    from: 2016
 
 
 
 
 
 alumni:
+  - name: Kai Dong 董恺
+    from: 2009
+    url:  http://cse.seu.edu.cn/PersonalPage/dk/index.htm
+  - name: Xuansong Li 李晅松
+    from: 2009
+    url:  http://cs.njust.edu.cn/16/3e/c1735a136766/page.htm
   - name: Haibo Ye 叶海波
     from: 2011
+    url: http://lovesport.duapp.com/yhb.htm
+
+oldalumni:
   - name: Shengwei An 安圣威
     url:  shengweian
     from: 2013
