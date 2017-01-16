@@ -43,17 +43,25 @@
                                     </div>
                                     <div class="recent-news-content clearfix">
                                         {% if n.img_path %}
-                                        <figure class="recent-news-thumb">
-                                            <a href="{{ url_for('page', path=n.path) }}" title="{{ n.img_title }}"><img src="{{url_for('static', filename=n.img_path)}}" class="attachment-thumbnail wp-post-image" alt="Thumbnail 1" /></a>
-                                        </figure>
-                                        <div class="recent-news-text">
-                                            <p>{{ n.summary|truncate(110)|safe }}</p>
-                                        </div>
+                                            {% if n.summary %}
+                                                <figure class="recent-news-thumb">
+                                                    <a href="{{ url_for('page', path=n.path) }}" title="{{ n.img_title }}"><img src="{{url_for('static', filename=n.img_path)}}" class="" alt="{{ n.img_title }}" /></a>
+                                                </figure>
+                                                <div class="recent-news-text">
+                                                    <p>{{ n.summary|truncate(110)|safe }}</p>
+                                                </div>
+                                            {% else %}
+                                                <figure class="recent-news-thumb">
+                                                    <a href="{{ url_for('page', path=n.path) }}" title="{{ n.img_title }}"><img src="{{url_for('static', filename=n.img_path)}}" style="width:320px;" alt="{{ n.img_title }}" /></a>
+                                                </figure>
+                                            {% endif %}
                                         {% else %}
-                                        <div class="recent-news-text" style="margin-left:0px">
-                                            <!-- no image, show more words use 200 -->
-                                            <p>{{ n.summary|truncate(300)|safe }}</p>
-                                        </div>
+                                            {% if n.summary %}
+                                            <div class="recent-news-text" style="margin-left:0px">
+                                                <!-- no image, show more words use 200 -->
+                                                <p>{{ n.summary|truncate(300)|safe }}</p>
+                                            </div>
+                                            {% endif %}
                                         {% endif %}
                                     </div>
                                 </li>
