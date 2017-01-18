@@ -3,7 +3,7 @@ from .models.site import Site
 from .models.bundle import Bundle
 from .models.page import get_page, get_user_dir, get_markdown_page
 
-from flask import Flask, render_template, redirect, send_file, send_from_directory, g, request, abort, url_for
+from flask import Flask, render_template, redirect, send_file, send_from_directory, g, request, abort, url_for, safe_join
 
 import os
 
@@ -63,6 +63,18 @@ def spar():
     elif os.path.exists(base):
         return send_file(PAGES_DIR + os.path.sep + fullpath)
 
+def check_static(folder, path):
+    try:
+        localpath = safe_join(folder, path)
+        if os.path.exists(localpath):
+            if os.path.isfile(localpath):
+                return localpath
+    except:
+        # not handle here
+        return None
+    else:
+        return None
+
 @app.route('/', methods=['GET'])
 @app.route('/<path:path>', methods=['GET'])
 @app.route('/people/<name>/', methods=['GET'])
@@ -76,13 +88,15 @@ def page(name = None, path = None):
         path += 'index'
 
     if name:
-        user_dir = get_user_dir(name)
-        # Personal static folder
-        if path.startswith('static/'):
-            return send_from_directory(user_dir, path)
-        page = get_page(user_dir, path)
+        root_dir = get_user_dir(name)
     else:
-        page = get_page(PAGES_DIR, path)
+        root_dir = PAGES_DIR
+
+    localpath = check_static(root_dir, path)
+    if localpath:
+        return send_file(localpath)
+
+    page = get_page(root_dir, path)
 
     # support redirect
     rd = page.meta.get('redirect')
