@@ -34,8 +34,9 @@ moon-share/
     |         +---publication.md
     |         |
     |         +---static/
-    |                |
-    |                +---pic.jpg
+    |         |      |
+    |         |      +---pic.jpg
+    |         +---paper1.pdf
     |
     +---zelinzhao/
 ~~~
@@ -43,11 +44,10 @@ moon-share/
 文档按照如下规则解析：
 
 
-* `http://moon.nju.edu.cn/people/yaojingwang/`和`http://moon.nju.edu.cn/people/yaojingwang/index`会显示`index.md`对应的文档
+* `http://moon.nju.edu.cn/people/yaojingwang`、`http://moon.nju.edu.cn/people/yaojingwang/`和`http://moon.nju.edu.cn/people/yaojingwang/index`会显示`index.md`对应的文档
 * `http://moon.nju.edu.cn/people/yaojingwang/publication`会显示`publication.md`对应的文档
 * `http://moon.nju.edu.cn/people/yaojingwang/publication/`会导致404
-* 所有静态文件必须放在`static`目录下，可以通过相对位置去引用。
-    * 例如，在`index.md`里可以通过`![](static/pic.jpg)`去显示在static里的照片。
+* `http://moon.nju.edu.cn/people/yaojingwang/paper1.pdf`会下载`paper1.pdf`
 
 ## 编写主页
 

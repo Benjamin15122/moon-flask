@@ -82,8 +82,8 @@ def check_static(folder, path):
 def page(name = None, path = None):
     if path is None:
         path = 'index'
-    elif name is None and path.startswith('spar/'):
-        return spar()
+    #elif name is None and path.startswith('spar/'):
+    #    return spar()
     elif path.endswith('/'):
         path += 'index'
 
