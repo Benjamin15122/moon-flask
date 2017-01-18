@@ -113,12 +113,15 @@ def redirect_url(url):
     if isinstance(url, unicode):
         url = url.encode('utf8')
 
+    # absolute path with domain
     if url.startswith('http://') or url.startswith('https://'):
         return redirect(url)
 
+    # absolute path without domain
     if url.startswith('/'):
         return redirect(url_for('page', path=url[1:]))
 
+    # relative path (w.r.t. request.path)
     base_path = os.path.dirname(request.path)
-    return redirect(base_path + '/' + url)
+    return redirect_url(base_path + '/' + url)
 
