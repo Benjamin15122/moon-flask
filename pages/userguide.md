@@ -13,9 +13,9 @@ moon需要两台服务器协作
 * 作为Web服务器的<http://moon.nju.edu.cn>
 * 作为GitLab服务器的<http://git.njuics.cn>
 
-!!! note: "注意："
+!!! warning "注意："
     本文的【GitLab服务器】以及【GitLab账号】不是指的是<https://about.gitlab.com/>以及其上的账号，
-    而是指的我们搭建的<git.njuics.cn>以及其上的账号，感谢曹总提供`njuics.cn`的域名支持。
+    而是指的我们搭建的<https://git.njuics.cn>以及其上的账号，感谢曹总提供`njuics.cn`的域名支持。
 
 用户所有的编辑修改都是需要push到GitLab服务器上，
 然后Web服务器检测到更新之后将数据从GitLab抓取到Web服务器本地，最终通过Web服务器展现出更新。
