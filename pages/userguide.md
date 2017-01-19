@@ -2,23 +2,49 @@ title: 使用说明
 
 # 使用说明
 
+
 moon主要用于软件所成员的个人主页的编写和发布。
 我们采用`markdown`为主要的文档编写格式，而通过`git`来发布。
+
+由于历史原因，以及避免多人修改带来的合并、冲突问题，
+目前moon的用户分为三种，分别对应三个项目
+
+* `moon-flask`
+* `moon-share`
+* `spar`
+
+这三个项目只要是gitlab的成员都有权限clone，但是只有项目的成员才能push。
 
 这篇文档主要是针对通过项目`moon-share`，`spar`用户请咨询[Yanyan Jiang](/spar/peoples/yyjiang/)
 
 ## 快速使用步骤
 
 1. 确认自己的[njuics](git.njuics.cn)的gitlab用户名，无账户在QQ群里吼一声，联系gitlab管理员创建。
+    * 最好在自己机器上通过配置sshkey免密码访问gitlab
 2. 联系管理员，将自己的信息加入到[people](/people/)页面。
     * 提供姓名、入学年份、博士研究生或硕士研究生或本科生、头像avatar。
-3. 管理员会将你加入gitlab上的`moon-share`项目，确认自己有权限了，克隆[moon-share](https://git.njuics.cn/moon/moon-share)
+3. 管理员会将你加入gitlab上的`moon-share`项目，确认自己有权限了。
 4. 创建自己的页面，最直接的方式是拷贝已有师兄的复制修改。
     * 例如张三可以复制`yaojingwang`目录，将其重命名为`sanzhang`，管理员会默认将其页面指向`/people/sanzhang/`
 5. 最后，通过`git`递交和上传自己的修改。
 
 !!! note "说明："
     当前管理员有顾天晓、蒋炎岩、孟占帅
+
+!!! warning "注意："
+    所有文件必须保存为无BOM的UTF-8编码，尤其Windows用户。
+
+### 高级用户使用说明
+
+需要在本地调试的成员可以按照如下步骤
+
+1. 在机器上安装`python2`，目前`moon-flask`一直在python2环境下开发，对于python3有一些不兼容的地方。
+2. 克隆`moon-flask`项目，其余项目（`spar`和`moon-share`）作为`moon-flask`的子模块（submodule）通过一组命令克隆，具体可以直接执行`pull.py`。
+    * 通过执行`pull.py`脚本，`moon-share`会被克隆并放置在`/pages/share`，而`spar`会被放置在`/pages/spar`。
+    * 如果在`moon-flask`项目里通过submodule克隆了`moon-share`，则无需再另外克隆`moon-share`。
+3. 查看`README.md`, 安装对应的python依赖包
+4. 启动系统`python moon.py`
+5. 打开浏览器，访问`localhost:8000/userguide`
 
 ## 目录结构
 
@@ -48,6 +74,13 @@ moon-share/
 * `http://moon.nju.edu.cn/people/yaojingwang/publication`会显示`publication.md`对应的文档
 * `http://moon.nju.edu.cn/people/yaojingwang/publication/`会导致404
 * `http://moon.nju.edu.cn/people/yaojingwang/paper1.pdf`会下载`paper1.pdf`
+
+!!! note "说明："
+    在markdown文档里，建议使用相对路径，因为每一个markdown的地址是固定的，这样可以保持文档简洁，而且在服务端可以很容易的解析到绝对路径。
+    而在其余文件里(例如，配置文件，bibtex文件)，建议使用完整路径或者完整的URL。
+    因为这些内容可能会在多出出现，因此相对路径是不稳定的。
+    另外，moon的域名一般来说不会更改，实在不清楚就使用完整的URL链接。
+
 
 ## 编写主页
 
