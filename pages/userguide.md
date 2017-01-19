@@ -3,30 +3,69 @@ title: 使用说明
 # 使用说明
 
 
+## 网站架构
+
 moon主要用于软件所成员的个人主页的编写和发布。
 我们采用`markdown`为主要的文档编写格式，而通过`git`来发布。
 
+moon需要两台服务器协作
+
+* 作为web服务器的<http://moon.nju.edu.cn>
+* 作为gitlab服务器的<http://git.njuics.cn>
+
+用户所有的编辑修改都是需要push到gitlab服务器上，
+然后Web服务器检测到更新之后将数据从gitlab抓取到Web服务器本地，最终通过Web服务器展现出更新。
+具体而言，我们利用了gitlab的webhook功能。
+当有新的内容push到gitlab服务器时，对应项目的webhook会被触发，
+进而触发Web服务器向gitlab服务器请求新数据。
+
 由于历史原因，以及避免多人修改带来的合并、冲突问题，
-目前moon的用户分为三种，分别对应三个项目
+目前moon的用户分为两种，分别对应两个项目
 
-* `moon-flask`
-* `moon-share`
-* `spar`
+* `moon-flask`: 包含站点全局的信息、内容、数据、代码。
+* `moon-share`: 包含个人主页内容
 
-这三个项目只要是gitlab的成员都有权限clone，但是只有项目的成员才能push。
+这两个项目只要是gitlab的成员都有权限克隆，但是只有项目的成员才能push。
+分配的原则是非管理员一般放置在`moon-share`，而管理员一般放置在`moon-flask`。
 
-这篇文档主要是针对通过项目`moon-share`，`spar`用户请咨询[Yanyan Jiang](/spar/peoples/yyjiang/)
+
+
 
 ## 快速使用步骤
 
 1. 确认自己的[njuics](git.njuics.cn)的gitlab用户名，无账户在QQ群里吼一声，联系gitlab管理员创建。
     * 最好在自己机器上通过配置sshkey免密码访问gitlab
+    !!! note "说明："
+        由于学校限制使用22端口，因此我们需要将git.njuics.cn配置为2222端口，具体见[【配置gitlab】](#configure-gitlab)。
 2. 联系管理员，将自己的信息加入到[people](/people/)页面。
     * 提供姓名、入学年份、博士研究生或硕士研究生或本科生、头像avatar。
-3. 管理员会将你加入gitlab上的`moon-share`项目，确认自己有权限了。
+3. 管理员会将你加入gitlab上的`moon-share`项目，确认自己有权限了，克隆项目。
+
+        git clone git@git.njuics.cn:moon/moon-share.git
+
 4. 创建自己的页面，最直接的方式是拷贝已有师兄的复制修改。
     * 例如张三可以复制`yaojingwang`目录，将其重命名为`sanzhang`，管理员会默认将其页面指向`/people/sanzhang/`
-5. 最后，通过`git`递交和上传自己的修改。
+    !!! note "说明："
+        这里推荐拷贝[孟占帅](/people/zsmeng)，即目录`zsmeng`。
+5. 学习如何[添加、修改、编辑主页内容](#writing)：
+    * 了解[moon-flask的目录结构](#folder-structure)，以学会如何添加文件，通过URL访问文件。
+    * 了解[markdown](#markdown)，了解Parser支持的特性。
+    * 了解[List](#list)，学会如何创建多级列表。
+    * 了解[Boostrap](#bootstrap)，学会如何创建表格以及responsive的内容。
+    * 了解[Font-awesome](#icon)，学会如何插入丰富的矢量图标。
+    * 了解[bibtex](#bibtex)，如果通过bibtex的内容展示你的论文列表
+    * 查看其他人的主页的内容是如何撰写的，例如这篇[使用说明](https://git.njuics.cn/moon/moon-flask/raw/master/pages/userguide.md)
+6. 最后，通过`git`递交和上传自己的修改。
+
+    !!! note "说明："
+        因为是多人协同项目，但是各自一般只修改自己的目录下的内容，因此存在不能自动合并的冲突的情况十分少见。
+        因此，建议每次先commit，再pull，然后再push。
+
+            git commit -am "Update xxx"
+            git pull origin master
+            git push origin master
+
+-------------
 
 !!! note "说明："
     当前管理员有顾天晓、蒋炎岩、孟占帅
@@ -39,14 +78,17 @@ moon主要用于软件所成员的个人主页的编写和发布。
 需要在本地调试的成员可以按照如下步骤
 
 1. 在机器上安装`python2`，目前`moon-flask`一直在python2环境下开发，对于python3有一些不兼容的地方。
-2. 克隆`moon-flask`项目，其余项目（`spar`和`moon-share`）作为`moon-flask`的子模块（submodule）通过一组命令克隆，具体可以直接执行`pull.py`。
-    * 通过执行`pull.py`脚本，`moon-share`会被克隆并放置在`/pages/share`，而`spar`会被放置在`/pages/spar`。
+2. 克隆`moon-flask`项目，`moon-share`作为`moon-flask`的子模块（submodule）通过一组命令克隆，具体可以直接执行`pull.py`。
+    * 通过执行`pull.py`脚本，`moon-share`会被克隆并放置在`/pages/share`。
     * 如果在`moon-flask`项目里通过submodule克隆了`moon-share`，则无需再另外克隆`moon-share`。
 3. 查看`README.md`, 安装对应的python依赖包
 4. 启动系统`python moon.py`
 5. 打开浏览器，访问`localhost:8000/userguide`
 
-## 目录结构
+
+## <a name="writing"></a>编写主页
+
+### <a name="folder-structure"></a>目录结构
 
 每个人都有一个目录，这个目录的名字一般是拼音的全拼小写，例如王瑶菁的就是`yaojingwang`。
 
@@ -78,11 +120,12 @@ moon-share/
 !!! note "说明："
     在markdown文档里，建议使用相对路径，因为每一个markdown的地址是固定的，这样可以保持文档简洁，而且在服务端可以很容易的解析到绝对路径。
     而在其余文件里(例如，配置文件，bibtex文件)，建议使用完整路径或者完整的URL。
-    因为这些内容可能会在多出出现，因此相对路径是不稳定的。
+    因为这些内容可能会在多处出现，因此相对路径是不稳定的。
     另外，moon的域名一般来说不会更改，实在不清楚就使用完整的URL链接。
 
 
-## 编写主页
+
+### <a name="markdown"></a>Markdown
 
 文档采用`markdown`，使用的parser是python中的[markdown](https://pythonhosted.org/Markdown/index.html)，支持的[extension](https://pythonhosted.org/Markdown/extensions/index.html)主要有
 
@@ -92,7 +135,7 @@ moon-share/
 * `markdown.extensions.codehilite`
 * `markdown.extensions.toc`
 
-所以，如果你通过第三方或者其他的`markdown`编辑器preview你的文档，可能和最终moon上出现的不一致。
+所以，如果你通过第三方或者其他的`markdown`编辑器预览你的文档，可能和最终moon上出现的不一致。
 
 
 文档开头的部分是元数据定义，不会出现在正文中，至少提供`title`。
@@ -106,7 +149,7 @@ title: Yaojing Wang
 ~~~
 
 
-## List
+### <a name="list"></a>List
 
 特别需要注意的是多级列表需要四个空格：
 
@@ -120,7 +163,7 @@ title: Yaojing Wang
     * 第二层
         * 第三层
 
-## Bootstrap
+### <a name="list"></a>Bootstrap
 
 
 moon通过[bootstrap](http://getbootstrap.com/)支持mobile和responsive的效果。
@@ -175,13 +218,13 @@ moon通过[bootstrap](http://getbootstrap.com/)支持mobile和responsive的效�
 !!! note "说明："
     `markdown`和`html`混合具体参照[这里](https://pythonhosted.org/Markdown/extensions/extra.html#markdown-inside-html-blocks)
 
-## Font-Awesome
+### <a name="icon"></a>Font-Awesome
 
 通过font-awesome可以实现插入矢量icon，具体的查看[example](http://fontawesome.io/examples/)。
 
 * `<i class="fa fa-bitbucket"></i>`可以得到<i class="fa fa-bitbucket"></i>
 
-## bibtex
+### <a name="bibtex"></a>bibtex
 
 我们通过[fenced code](https://pythonhosted.org/Markdown/extensions/fenced_code_blocks.html)来实现对bibtex的渲染。
 
@@ -261,4 +304,15 @@ moon通过[bootstrap](http://getbootstrap.com/)支持mobile和responsive的效�
 
 
 
+## <a name="configure-gitlab"></a>配置gitlab
 
+1. 配置使用SSH Key，具体见<https://git.njuics.cn/help/ssh/README#generating-a-new-ssh-key-pair>
+2. 编辑或创建`~/.ssh/config`，添加如下内容，将端口设置为2222。
+
+        Host git.njuics.cn
+        Port 2222
+
+3. 通过链接<git@git.njuics.cn:moon/moon-share.git>克隆项目，已经克隆的项目可以更改remote
+
+        git remote rm origin
+        git remote add origin git@git.njuics.cn:moon/moon-share.git
