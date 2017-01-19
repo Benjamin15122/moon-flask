@@ -76,17 +76,17 @@ phd:
     from: 2012
     group: dse
   - name: Yanyan Jiang 蒋炎岩
-    url:  /spar/peoples/yyjiang/
+    url:  yyjiang
     avatar: /spar/img/avatar/yyjiang.jpg
     from: 2013
     group: spar
   - name: Yi Qin 秦逸
-    url:  /spar/peoples/yqin/
+    url:  yqin
     avatar: /spar/img/avatar/yqin.jpg
     from: 2013
     group: spar
   - name: Wenhua Yang 杨文华
-    url:  /spar/peoples/whyang/
+    url:  whyang
     avatar: /spar/img/avatar/whyang.jpg
     from: 2014
     group: spar
@@ -104,36 +104,36 @@ phd:
     from: 2014
     group: dse
   - name: Huiyan Wang 王慧妍
-    url: /spar/peoples/hywang/
+    url: hywang
     avatar: /spar/img/avatar/hywang.jpg
     from: 2015
     group: spar
   - name: Jue Wang 王珏
-    url: /spar/peoples/jwang/
+    url: jwang
     avatar: /spar/img/avatar/jwang.jpg
     from: 2016
     group: spar
   - name: Da Li 李达
-    url: /spar/peoples/dli/
+    url: dli
     from: 2016
     avatar: /spar/img/avatar/dli.png
     group: spar
   - name: Ying Zhang 张营
     from: 2016
     avatar: /spar/img/avatar/yzhang.jpg
-    url:  /spar/peoples/yzhang/
+    url:  yzhang
     group: spar
   - name: Yanxiang Tong 童燕翔
     from: 2016
     avatar: /static/img/avatar/tongyanxiang.jpg
-    url: /spar/peoples/yxtong/
+    url: yxtong
     group: spar
   - name: Xue Jiang 江雪
     from: 2016
   - name: Wenjie Li 李文杰
     from: 2016
     avatar: /spar/img/avatar/wjli.jpg
-    url: /spar/peoples/wjli/
+    url: wjli
     group: spar
   - name: Yuqi Zhang 张宇奇
     from: 2016
@@ -150,12 +150,12 @@ graduates:
     url:  default
     from: 2014
   - name: Qiwei Li 李其玮
-    url:  /spar/peoples/qwli/
+    url:  qwli
     from: 2014
     avatar: /spar/img/avatar/qwli.jpg
     group: spar
   - name: Xiaofan Li 李晓帆
-    url:  /spar/peoples/xfli/
+    url:  xfli
     from: 2014
     avatar: /spar/img/avatar/xfli.jpg
     group: spar
@@ -173,7 +173,7 @@ graduates:
     group: dse
     avatar: /static/img/avatar/wangyiqun.jpg
   - name: Xiangyu Wu 武翔宇
-    url:  /spar/peoples/xywu/
+    url:  xywu
     from: 2014
     avatar: /spar/img/avatar/xywu.jpg
     group: spar
@@ -188,7 +188,7 @@ graduates:
     from: 2014
     avatar: /people/zhongliangyuan/static/handsome.jpg
   - name: Ruiqing Zhang 张瑞青
-    url:  /spar/peoples/rqzhang/
+    url:  rqzhang
     from: 2014
     avatar: /spar/img/avatar/rqzhang.jpg
     group: spar
@@ -196,12 +196,12 @@ graduates:
     url:  shuocheng
     from: 2015
   - name: Jiaxing Dong 董加星
-    url:  /spar/peoples/jxdong/
+    url:  jxdong
     from: 2015
     avatar: /spar/img/avatar/jxdong.jpg
     group: spar
   - name: Bingying Guo 郭冰莹
-    url:  /spar/peoples/byguo/
+    url:  byguo
     from: 2015
     avatar: /spar/img/avatar/byguo.png
     group: spar
@@ -213,7 +213,7 @@ graduates:
     from: 2015
     avatar: /people/tianchiliu/static/avatar.jpg
   - name: Zhanshuai Meng 孟占帅
-    url:  /spar/peoples/zsmeng/
+    url:  zsmeng
     from: 2015
     group: spar
     avatar: /spar/img/avatar/zsmeng.jpg
@@ -237,17 +237,17 @@ graduates:
     from: 2015
   - name: Yang Cao 曹阳
     avatar: /spar/img/avatar/ycao.jpg
-    url: /spar/peoples/ycao/
+    url: ycao
     from: 2016
     group: spar
   - name: Dongjie Chen 陈冬杰
-    url: /spar/peoples/djchen/
+    url: djchen
     avatar: /spar/img/avatar/djchen.jpg
     from: 2016
     group: spar
   - name: Yuju Shen 沈宇桔
     from: 2016
-    url: /spar/peoples/yjshen/
+    url: yjshen
     avatar: /spar/img/avatar/yjshen.jpg
     group: spar
   - name: Xiaofei Zhang 张晓飞
@@ -298,7 +298,7 @@ alumni:
   - name: Jun Sui 眭骏
     url:  default
     from: 2013
-    url: /spar/peoples/jsui/
+    url: jsui
     avatar: /spar/img/avatar/jsui.jpg
     group: spar
   - name: Jie Wei 魏杰
@@ -313,15 +313,15 @@ alumni:
   - name: Yang Zou 邹阳
     from: 2008
   - name: Xiujiang Li 李秀江
-    url:  /spar/peoples/xjli/
+    url:  xjli
     group: spar
     avatar: /spar/img/avatar/xjli.jpg
   - name: Wang Xi 奚旺
-    url:  /spar/peoples/wxi/
+    url:  wxi
     group: spar
     avatar: /spar/img/avatar/wxi.jpg
   - name: Hao Jin 金昊
-    url:  /spar/peoples/hjin/
+    url:  hjin
     avatar: /spar/img/avatar/hjin.jpg
     group: spar
   - name: Yuan Yao
