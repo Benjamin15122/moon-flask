@@ -1,6 +1,3 @@
-[submodule "spar"]
-	path = pages/spar
-	url = git@git.njuics.cn:spar/homepage.git
 [submodule "pages/share"]
 	path = pages/share
 	url = git@git.njuics.cn:moon/moon-share.git
