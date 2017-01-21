@@ -5,17 +5,10 @@ title: Dynamic Software Evolution Group
 <!--
 <div class="row gutter" markdown="1">
 <div class="col-lg-9 col-md-9 col-sm-12" markdown="1">
--->
 We hack JVM to implement tools and conduct research on
+-->
 
 
-* Dynamic Software Updating
-* Automatic Runtime Recovery
-* Dynamic Program Analysis
-* Android Testing/Fuzzing/Security
-
-
-Check out [gifs](./dsegif) that help understanding dynamic software updating and automatic runtime recovery.
 
 <!--
 </div>
@@ -44,6 +37,15 @@ Check out [gifs](./dsegif) that help understanding dynamic software updating and
 
 
 {{ render_people(group = "dse", category = ["faculty", "phd", "graduates"]) | safe }}
+
+## Research Interests
+
+* Dynamic Software Update
+* Automatic Runtime Recovery
+* Dynamic Program Analysis
+* Android Testing/Fuzzing/Security
+
+
 
 ## Publications
 
