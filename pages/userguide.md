@@ -10,14 +10,18 @@ moon主要用于软件所成员的个人主页的编写和发布。
 
 moon需要两台服务器协作
 
-* 作为web服务器的<http://moon.nju.edu.cn>
-* 作为gitlab服务器的<http://git.njuics.cn>
+* 作为Web服务器的<http://moon.nju.edu.cn>
+* 作为GitLab服务器的<http://git.njuics.cn>
 
-用户所有的编辑修改都是需要push到gitlab服务器上，
-然后Web服务器检测到更新之后将数据从gitlab抓取到Web服务器本地，最终通过Web服务器展现出更新。
-具体而言，我们利用了gitlab的webhook功能。
-当有新的内容push到gitlab服务器时，对应项目的webhook会被触发，
-进而触发Web服务器向gitlab服务器请求新数据。
+!!! warning "注意："
+    本文的【GitLab服务器】以及【GitLab账号】不是指的是<https://about.gitlab.com/>以及其上的账号，
+    而是指的我们搭建的<https://git.njuics.cn>以及其上的账号，感谢曹总提供`njuics.cn`的域名支持。
+
+用户所有的编辑修改都是需要push到GitLab服务器上，
+然后Web服务器检测到更新之后将数据从GitLab抓取到Web服务器本地，最终通过Web服务器展现出更新。
+具体而言，我们利用了GitLab的webhook功能。
+当有新的内容push到GitLab服务器时，对应项目的webhook会被触发，
+进而触发Web服务器向GitLab服务器请求新数据。
 
 由于历史原因，以及避免多人修改带来的合并、冲突问题，
 目前moon的用户分为两种，分别对应两个项目
@@ -25,7 +29,7 @@ moon需要两台服务器协作
 * `moon-flask`: 包含站点全局的信息、内容、数据、代码。
 * `moon-share`: 包含个人主页内容
 
-这两个项目只要是gitlab的成员都有权限克隆，但是只有项目的成员才能push。
+这两个项目只要是GitLab的成员都有权限克隆，但是只有项目的成员才能push。
 分配的原则是非管理员一般放置在`moon-share`，而管理员一般放置在`moon-flask`。
 
 
@@ -33,13 +37,13 @@ moon需要两台服务器协作
 
 ## 快速使用步骤
 
-1. 确认自己的[njuics](git.njuics.cn)的gitlab用户名，无账户在QQ群里吼一声，联系gitlab管理员创建。
-    * 最好在自己机器上通过配置sshkey免密码访问gitlab
+1. 确认自己的[njuics](git.njuics.cn)的GitLab用户名，无账户在QQ群里吼一声，联系GitLab管理员创建。
+    * 最好在自己机器上通过配置sshkey免密码访问GitLab
     !!! note "说明："
-        由于学校限制使用22端口，因此我们需要将git.njuics.cn配置为2222端口，具体见[【配置gitlab】](#configure-gitlab)。
+        由于学校限制使用22端口，因此我们需要将`git.njuics.cn`配置为2222端口，具体见[【配置GitLab】](#configure-gitlab)。
 2. 联系管理员，将自己的信息加入到[people](/people/)页面。
     * 提供姓名、入学年份、博士研究生或硕士研究生或本科生、头像avatar。
-3. 管理员会将你加入gitlab上的`moon-share`项目，确认自己有权限了，克隆项目。
+3. 管理员会将你加入GitLab上的`moon-share`项目，确认自己有权限了，克隆项目。
 
         git clone git@git.njuics.cn:moon/moon-share.git
 
@@ -77,11 +81,11 @@ moon需要两台服务器协作
 
 需要在本地调试的成员可以按照如下步骤
 
-1. 在机器上安装`python2`，目前`moon-flask`一直在python2环境下开发，对于python3有一些不兼容的地方。
+1. 在机器上安装`python2`，目前`moon-flask`一直在`python2`环境下开发，对于`python3`有一些不兼容的地方。
 2. 克隆`moon-flask`项目，`moon-share`作为`moon-flask`的子模块（submodule）通过一组命令克隆，具体可以直接执行`pull.py`。
     * 通过执行`pull.py`脚本，`moon-share`会被克隆并放置在`/pages/share`。
     * 如果在`moon-flask`项目里通过submodule克隆了`moon-share`，则无需再另外克隆`moon-share`。
-3. 查看`README.md`, 安装对应的python依赖包
+3. 查看`README.md`, 安装对应的Python依赖包
 4. 启动系统`python moon.py`
 5. 打开浏览器，访问`localhost:8000/userguide`
 
@@ -166,7 +170,7 @@ title: Yaojing Wang
 ### <a name="list"></a>Bootstrap
 
 
-moon通过[bootstrap](http://getbootstrap.com/)支持mobile和responsive的效果。
+moon通过[bootstrap](http://getbootstrap.com/)支持Mobile和responsive的效果。
 最常用的就是[Grid system](http://getbootstrap.com/css/#grid-example-basic)。
 
 ~~~{.html}
@@ -291,20 +295,20 @@ moon通过[bootstrap](http://getbootstrap.com/)支持mobile和responsive的效�
 ~~~
 
 
-如果你paper很多，可以将bibtex存在一个`.bib`文件里，然后通过`jinja2`插件调用`render_bib_file`渲染。
+如果你论文很多，可以将bibtex存在一个`.bib`文件里，然后通过`jinja2`插件调用`render_bib_file`渲染。
 
-例如[姚老师](/people/yuanyao)的主页就是通过如下语句，显示selected publications
+例如[姚老师](/people/yuanyao)的主页就是通过如下语句，显示【selected publications】
 
 ~~~
 {{ render_bib_file('yuanyao.bib', ['TKDE16', 'KDD16', 'IJCAI15', 'TKDE14', 'KDD14', 'CIKM14', 'WWW13'], hl='Yuan Yao') }}
 ~~~
 
 !!! note "说明："
-    `yuanyao.bib`是相对位置，不是存放在`static`里的。
+    `yuanyao.bib`是相对位置。
 
 
 
-## <a name="configure-gitlab"></a>配置gitlab
+## <a name="configure-gitlab"></a>配置GitLab
 
 1. 配置使用SSH Key，具体见<https://git.njuics.cn/help/ssh/README#generating-a-new-ssh-key-pair>
 2. 编辑或创建`~/.ssh/config`，添加如下内容，将端口设置为2222。
