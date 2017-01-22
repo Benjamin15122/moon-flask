@@ -31,7 +31,7 @@
     {%- endif %}</span>{% endif %}
 {% if entry.title %}<span class="bibtex title">“{{ entry.title }}”{% if entry.pdf %}<span><a href="{{ entry.pdf }}" target="_blank" title="Local copy of this paper"> <i class="fa fa-file-pdf-o" aria-hidden="true"></i></a></span>{% endif %}, </span>{% endif %}
 {% if entry.booktitle %}<span class="bibtex pages">in </span><span class="bibtex booktitle">{{ entry.booktitle }}</span>{% endif %}{% if entry.journal %}<span class="bibtex journal">{{ entry.journal }}</span>{% endif %}
-{% if entry.link %}<span class="bibtex"><a href="{{ entry.link }}" target="_blank" title="Publication site of this paper"> <i class="fa fa-external-link" aria-hidden="true"></i></a></span>{% endif %}{% if entry.booktitle or entry.journal %}<span>, </span>{% endif %}
+{% if entry.link %}<span class="bibtex"><a href="{{ entry.link }}" target="_blank" title="Publication site of this paper"> <i class="fa fa-external-link-square" aria-hidden="true"></i></a></span>{% endif %}{% if entry.booktitle or entry.journal %}<span>, </span>{% endif %}
 {% if entry.pages %}<span class="bibtex pages">{{ entry.pages }}, </span>{% endif %}
 {% if entry.year %}<span class="bibtex year">{{ entry.year}}.</span>{% endif %}
 {% if entry.ppt %}<span class="bibtex"><a href="{{ entry.ppt }}" target="_blank" title="Slides of this paper"> <i class="fa fa-file-powerpoint-o" aria-hidden="true"></i></a></span>{% endif %}
