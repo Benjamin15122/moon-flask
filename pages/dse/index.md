@@ -47,10 +47,7 @@ We hack JVM to implement tools and conduct research on
 
 
 
-## Publications
-
-
-### Selected Publications
+## Selected Publications
 
 {{ render_bib_file('dse.bib', ['gu_synthesize_2017', 'ConUpTSE', 'gu_automatic_2016', 'JavelusIST14', 'Ma:2011:FSE'] ) }}
 
@@ -62,10 +59,10 @@ Full [publications](publications).
 
 
 * [CONUP](https://github.com/brickinwall/conup): Consistent Updates of Distributed Components at Runtime
-* [Javelus](javelus/): A dynamic-updating-enabled JVM
-* [Ares](ares): Automatic Runtime Recovery
-* [AOTES](aotes): Synthesizing object transformations for DSU
-* MiniTracing: Whole Program Tracing in JVM
+* [Javelus](javelus/): A dynamic-updating-enabled JVM on top of the HotSpot VM
+* [Ares](ares/): Automatic Runtime Recovery
+* [AOTES](aotes/): Synthesizing object transformations for DSU
+* [MiniTracing](minitracing/): Whole-Program Tracing in Java HotSpot VM
     * [PHD](phd): Precise Heap Differentiating Using Access Path and Execution Index
 * Projects on Android: Tracing/Fuzzing/Testing
 
