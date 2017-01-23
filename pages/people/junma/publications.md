@@ -1,6 +1,6 @@
 title: Publications of Jun Ma
 
-## Qiwei Li, Yanyan Jiang, Tianxiao Gu, Chang Xu, Jun Ma, Xiaoxing Ma and Jian Lu, Effectively Manifesting Concurrency Bugs in Android Apps, APSEC 2016,the 23nd Asia-Pacific Software Engineering Conference, 6th-9th December 2016, Hamilton, New Zealand£¬pp.209-216.
+## Qiwei Li, Yanyan Jiang, Tianxiao Gu, Chang Xu, Jun Ma, Xiaoxing Ma and Jian Lu, Effectively Manifesting Concurrency Bugs in Android Apps, APSEC 2016,the 23nd Asia-Pacific Software Engineering Conference, 6th-9th December 2016, Hamilton, New Zealand, pp.209-216.
 ## MA Jun, TAO Xianping, LV Jian, *ReCEC: Resolving Conflicts of Environmental Constraints among Multiple Applications in a Smart Space*,  In Proceedings of the 2015 IEEE 39th Annual Computer Software and Applications Conference - Volume 02 (COMPSAC '15), Vol. 2. IEEE Computer Society, Washington, DC, USA, 784-789. 
 ## MA Jun, TAO Xianping, CHAO Chun, LV Jian, *Handling Influence among Multiple Applications in a Smart Space*, in Proceedings of the 11th International Conference on Ubiquitous Intelligence and Computing (UIC) 2014, Bali, Indonesia,2014.
 ## MA Jun, TAO Xianping, LU Jian, *Presence-pattern aware Service Selection and Composition in a Smart Space*, The Fifth Asia-Pacific Symposium on Internetware (Internetware'2013), ACM 978-1-4503-2369-7/13/10, Oct. 23-24, 2013, Changsha, China, p49-56.
