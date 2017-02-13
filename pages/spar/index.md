@@ -27,7 +27,7 @@ Welcome to the home page of [SPAR](/spar): System & Program Analysis Research Gr
 * {{ render_bib_entry(g.site.spar_paper.sui_hybird_2016) }}
 * {{ render_bib_entry(g.site.spar_paper.xi_suppressing_2016) }}
 
-Here is the [full list of SPAR publications](pubs.html).
+Here is the [full list of SPAR publications](pubs).
 
 #### Mentors
 {{ render_people(category = "faculty", group = "spar") | safe }}
