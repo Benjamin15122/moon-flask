@@ -552,7 +552,7 @@ qemu 2.0.0 支持 vbe 3.0 扩展，扩展提供了更多高分辨率的显式模
 
 一个取巧的策略是，虽然旧的模式官方不要求兼容，但是实际上也没谁会没事找事去不兼容，所以可以从[这里](https://en.wikipedia.org/wiki/VESA_BIOS_Extensions#VBE_mode_numbers)找到一些通用的模式编号，试出可用的模式。比如，在 qemu 2.0.0 上，模式 800 x 600 x 24-bit (对应编号0115H) 就确实是可用的，显示图片的效果如下：
 
-![img](../assets/qemu-vesa.png)
+![img](assets/qemu-vesa.png)
 
 一个额外需要注意的问题就是显存的位置。做过 PA 的各位都知道标准 VGA 模式的显存地址从 0xA0000 开始，但是 vbe 模式则没有统一规定，虽然 0xA0000 映射了一部分显存，但是 0xA0000 一般不会是真正的显存起始地址。所以还是需要根据上面提供的链接去获取 Mode Info。从[Memory Map](http://wiki.osdev.org/Memory_Map_(x86)#Overview)中查看在 1MB 内存中哪些部分可以用来存放数据，然后内核和 boot loader 互相约定一个相同的物理地址当做 Mode Info 的地址，然后在内核初始化时用 Mode Info 的 physbase 域确定显存的**物理地址**。
 
