@@ -179,7 +179,7 @@ mbr.close
 
 将上述代码保存成 mkmbr.rb，然后执行命令 `ruby mkmbr.rb mbr`，之后就可以用 `qemu-system-i386` 查看运行效果：
 
-![img](../assets/hello-world.png)
+![img](assets/hello-world.png)
 
 下面提供关于上述文字输出的参考资料：<br />
 [VGA相关的BIOS中断](http://www.ctyme.com/intr/int-10.htm)<br />
