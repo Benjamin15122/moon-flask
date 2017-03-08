@@ -59,22 +59,10 @@ faculty:
     avatar: /static/img/avatar/weihengfeng.png
 
 phd:
-  - name: Hongyu Kuang 匡宏宇
-    from: 2010
-  - name: Xiaorui Zhu 朱晓瑞
-    from: 2010
-    url:  xiaoruizhu
-  - name: Haibin Yang 杨海滨
-    from: 2010
   - name: Jingwei Xu 徐经纬
     url:  jingweixu
     avatar: /static/img/avatar/jingweixu.jpg
     from: 2012
-  - name: Tianxiao Gu 顾天晓
-    url:  tianxiaogu
-    avatar: /static/img/avatar/gutianxiao.jpg
-    from: 2012
-    group: dse
   - name: Yanyan Jiang 蒋炎岩
     url:  yyjiang
     avatar: /spar/img/avatar/yyjiang.jpg
@@ -261,6 +249,18 @@ graduates:
 
 
 alumni:
+  - name: Hongyu Kuang 匡宏宇
+    from: 2010
+  - name: Xiaorui Zhu 朱晓瑞
+    from: 2010
+    url:  xiaoruizhu
+  - name: Haibin Yang 杨海滨
+    from: 2010
+  - name: Tianxiao Gu 顾天晓
+    url:  tianxiaogu
+    avatar: /static/img/avatar/gutianxiao.jpg
+    from: 2012
+    group: dse
   - name: Kai Dong 董恺
     from: 2009
     url:  http://cse.seu.edu.cn/PersonalPage/dk/index.htm
