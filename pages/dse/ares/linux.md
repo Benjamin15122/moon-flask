@@ -2,6 +2,7 @@ title: Run Ares on Linux
 
 # Run Ares on Linux
 
+[TOC]
 
 ## Get Source
 
@@ -155,19 +156,19 @@ Checkout the output and try to understand Ares how to mitigate an unchecked exce
 
 Subjects are hosted in [git.njuics.cn](https://git.njuics.cn/ares).
 
-Every bug should has a `run.sh`.
+Every bug should have a `run.sh`.
 Otherwise, send an email to me.
 
 * [Tomcat](https://git.njuics.cn/ares/ares-tomcat)
 * [Jetty](https://git.njuics.cn/ares/ares-jetty)
 * [GanttProject](https://git.njuics.cn/ares/ares-ganttproject)
 * [JMeter](https://git.njuics.cn/ares/ares-jmeter)
-* If you cannot access this web site, send an email to me.
+* If you cannot access this web site [git.njuics.cn](https://git.njuics.cn), send an email to me.
 
 
-!!! warn
+!!! warnning
     Ares is only a prototype.
     If you encounter any crash,
-    disable compiler by adding a VM option `-Xint` and then make a retry.
+    disable the JIT compiler by adding a VM option `-Xint` and then make a retry.
 
 
