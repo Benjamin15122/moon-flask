@@ -186,6 +186,20 @@ You can check my profile (only publicly accessible projects) at [here](https://b
 
 --------------------
 
+## Awards
+
+
+* Supported by the Program B for Outstanding PhD candidate of Nanjing University, 2015
+* Tung OOCL Scholarship, Nanjing University, 2014
+* Outstanding Graduate Student Scholarship, Nanjing University, 2012
+* People Scholarship, Second Prize, Nanjing University, 2009
+* First Provincial-level in Mathematical Contest in Modeling for College Students, 2008
+* People Scholarship, Third Prize, Nanjing University, 2008
+* People Scholarship, Third Prize, Nanjing University, 2007
+
+
+
+--------------------
 
 <div style="width:150px;">
 <script type="text/javascript" id="clustrmaps" src="//cdn.clustrmaps.com/map_v2.js?d=I1T5oEaSW-FJIJ_bZCvK8XMDQ35ouGHQP_ixsLYwvOo&cl=ffffff&w=a"></script>
