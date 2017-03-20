@@ -58,7 +58,7 @@
     </div><!-- row end -->
 </div>
 ## News
-*  <img src="static/img/new.jpg" width = "20" height = "20" align=center />Congratulations on Shengtao Yue's ICPC'17 paper: "RepDroid: An Automated Tool for Android Application Repackaging Detection"!
+*  <img src="static/img/new.jpg" width = "40" height = "40" align=center />Congratulations on Shengtao Yue's ICPC'17 paper: "RepDroid: An Automated Tool for Android Application Repackaging Detection"!
 ## Research interests
 
 
