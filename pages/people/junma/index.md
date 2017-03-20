@@ -1,6 +1,4 @@
-﻿title: Jun Ma
-
-<div class="news-body">
+﻿<div class="news-body">
     <div class="row gutter k-equal-height"><!-- row -->
         <div class="col-lg-3 col-md-3 col-sm-12">
             <img src="static/img/head.jpg" alt="Jun Ma" class="aligncenter" />
