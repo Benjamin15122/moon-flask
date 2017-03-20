@@ -58,7 +58,7 @@
     </div><!-- row end -->
 </div>
 ## News
-* ![](static/img/new.jpg =30x30) Congratulations on Shengtao Yue's ICPC'17 paper: "RepDroid: An Automated Tool for Android Application Repackaging Detection"!
+* ![](static/img/new.jpg) Congratulations on Shengtao Yue's ICPC'17 paper: "RepDroid: An Automated Tool for Android Application Repackaging Detection"!
 ## Research interests
 
 
