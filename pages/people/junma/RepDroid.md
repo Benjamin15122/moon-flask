@@ -2,7 +2,7 @@ Materials of the paper "RepDroid: An Automated Tool for Android Application Repa
 
 #Tools
 ***
-***
+
 #DataSets
 ##DataSet S1
 **38 original apps from Wandoujia**
@@ -47,6 +47,7 @@ Materials of the paper "RepDroid: An Automated Tool for Android Application Repa
 | ahsan.my.lytish                      	| 1            	| cd658482f32da663c4b1497b9b5eeb6d 	|
 | com.sundaybugs.spring.free           	| 2.0.14       	| 69ed19b350404acc09044414477efadd 	|
 | com.ideal.zsyy.glzyy                 	| 2.1.7        	| 9eed604fab82ba7f352855e9e721b805 	|
+
 ***
 
 **20 original apps from FDroid**
@@ -73,6 +74,7 @@ Materials of the paper "RepDroid: An Automated Tool for Android Application Repa
 | org.connectbot                  	| 1.8.7   	| b20c423b08eee4923311b8a8ff50f987 	|
 | org.smerty.zooborns             	| 1.4.4   	| 2ee1e3752b5dd4442b1abf07f3bd3e38 	|
 | org.yuttadhammo.tipitaka        	| 9.2     	| 4419863a06ad3f922cbbcf47242c507b 	|
+
 ***
 
 ##DataSet S2(125 original apps from Wandoujia)
