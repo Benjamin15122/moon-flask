@@ -3,3 +3,44 @@ Materials of the paper "RepDroid: An Automated Tool for Android Application Repa
 #Tools
 
 #DataSets
+##DataSet S1（38 apps from Wandoujia, 20 apps from FDroid）
+| Package   Name                       | Version      | MD5                              |
+|--------------------------------------|--------------|----------------------------------|
+| COM.Bangso.FitMiss                   | 4.1.5        | 48fb8a43ff94471258cc97fd1575cf36 |
+| org.dayup.gnotes                     | 1.0.20       | 292b3408e3ac0e5afa4e457be2c0176f |
+| com.android.mediacenter              | V6.8.3       | 581939723441129cc2740d97a04e0769 |
+| com.a0soft.gphone.app2sd             | 3.65         | 0c39b4de4069dd49213d8737024444f6 |
+| com.kabouzeid.gramophone             | 0.9.44 beta5 | 4235891568de0fdd219eb888bef92086 |
+| com.pophub.androidiqtest.free        | 3.4          | d948759243a54b919488a01bcd89e5d0 |
+| com.autoconnectwifi.app              | 3.7.9        | 87c4876ea3d3221e3572ca77dfe823be |
+| dopool.player                        | 6.1.2        | 43569d0e9d0f78aa8674064e79edc19f |
+| com.geomme.geomme                    | 1.0.4        | 07639007c52b2dcd87430d2a8c4321a0 |
+| com.anddoes.launcher                 | 3.1.0        | 4dbbc7a83dc9575ff2fa5423b4ba9c9e |
+| com.baidu.homework                   | 5.1.2        | f5e75dd91c3deff0e3f14271d7911184 |
+| com.weirdvoice                       | 78           | 71bca11d17fcce9721385248b1b3c410 |
+| com.wyl.mlf3                         | 2.2          | e80b6337c6f038f4fe45abbeed0ce3f5 |
+| com.gombosdev.ampere                 | v1.54        | 899f33aa11f2bb5cd4bdc2c6530c561a |
+| com.xuecs.ChinaTrainTime             | 2.8          | 1ac17ec934f45e4de5ad3d3943f40d45 |
+| mobi.omegacentauri.ScreenDim.Trial   | 1.64         | 80ab509995d569f9d1a2cb5f094b0c59 |
+| com.enjoy.music                      | 1.1.0        | ba4b75746192471646ddab96f8104f92 |
+| klb.android.lovelive                 | 3            | 0b11f9defe47078de7b6b1bf93c2e98b |
+| jp.naver.linecamera.android          | 10.2.1       | c68602049b45f4e66035c0a04d91e4d6 |
+| ch.smalltech.ledflashlight.free      | 1.86.6       | badb1b1030376b2d76fd6ae7b4eaaa60 |
+| com.wukongtv.wkremote.client         | 1.7.6.2      | 7c88fc7d51cb43756cb0544e225e6257 |
+| com.gotokeep.keep                    | 2.1.0        | 6d0ed30890b35bd09944e456d0ff6817 |
+| com.cav.foobar2000controller         | 0.9.3.7      | 287cc3dcc3624b973cf7e5a2fec6efe3 |
+| com.river.qiyuan                     | 1.6.1        | 1add81d8cbacc64e1b1b145b21852639 |
+| com.yunmall.ymctoc                   | 3.3.1        | 69c90fdce081fc225446fb008103a515 |
+| com.tencent.reading                  | 1.2.1        | c838d6939d0d7be54f1ceff4b16a2813 |
+| com.meiguihunlian                    | 1.7.7        | 28287245c8eebc5f81f0ac570cbeb442 |
+| com.tencent.ibg.joox                 | 1.3          | 585276ea914e19c62bb054e15e8bec72 |
+| com.duowan.groundhog.mctools         | 1.3.18       | fc24ddb7b12420c830622fe2ee9147c7 |
+| jp.tkgktyk.xposed.forcetouchdetector | 0.4.4        | 2605c4357d97b20548d6a05bc9d4bc29 |
+| com.tadu.android                     | 3.16         | e8b87d1f6ad940e56d315c4b301dfca4 |
+| com.topfreegames.bikeracefreeworld   | 5.7.1        | 5c4359f45d0fac0e8e406acf7ffff974 |
+| com.sskj.flashlight                  | 5.1.0        | aa967922e4277b9b3545d015b3b6cdb7 |
+| com.sskj.flashlight                  | 5.1.0        | 82c1d347d59699aaf385ba2a8c68802d |
+| com.appshare.android.ilisten         | 6.6.0821020  | 49637388809ed26e9026a76e05252936 |
+| ahsan.my.lytish                      | 1            | cd658482f32da663c4b1497b9b5eeb6d |
+| com.sundaybugs.spring.free           | 2.0.14       | 69ed19b350404acc09044414477efadd |
+| com.ideal.zsyy.glzyy                 | 2.1.7        | 9eed604fab82ba7f352855e9e721b805 |
