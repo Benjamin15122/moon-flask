@@ -5,6 +5,7 @@ Materials of the paper "RepDroid: An Automated Tool for Android Application Repa
 #DataSets
 ##DataSet S1
 - 38 original apps from Wandoujia
+
 | Package Name                         	| Version      	| MD5                              	|
 |--------------------------------------	|--------------	|----------------------------------	|
 | COM.Bangso.FitMiss                   	| 4.1.5        	| 48fb8a43ff94471258cc97fd1575cf36 	|
@@ -47,6 +48,7 @@ Materials of the paper "RepDroid: An Automated Tool for Android Application Repa
 | com.ideal.zsyy.glzyy                 	| 2.1.7        	| 9eed604fab82ba7f352855e9e721b805 	|
 
 - 20 original apps from FDroid
+
 | Package  Name                   	| Version 	| MD5                              	|
 |---------------------------------	|---------	|----------------------------------	|
 | aarddict.android                	| 1.6.11  	| 67b44d779578cbddf6e17db92290e987 	|
@@ -71,6 +73,7 @@ Materials of the paper "RepDroid: An Automated Tool for Android Application Repa
 | org.yuttadhammo.tipitaka        	| 9.2     	| 4419863a06ad3f922cbbcf47242c507b 	|
 
 ##DataSet S2(125 original apps from Wandoujia)
+
 | Package  Name                   	| Version           	| MD5                              	|
 |---------------------------------	|-------------------	|----------------------------------	|
 | sina.mobile.tianqitong          	| 5.15              	| ee5612ef8d5f207fa567561ff0a65376 	|
