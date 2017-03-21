@@ -6,7 +6,7 @@ title: Materials of the paper "RepDroid: An Automated Tool for Android Applicati
 
 ## Tools
 
-[RepDroid](http://moon.nju.edu.cn/people/junma/static/projects/RepDroid.zip)
+- [RepDroid.zip](http://moon.nju.edu.cn/people/junma/static/projects/RepDroid.zip)
 ----------------
 
 ## DataSets
