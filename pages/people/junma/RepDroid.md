@@ -5,7 +5,7 @@ title: Materials of the paper "RepDroid: An Automated Tool for Android Applicati
 # Materials of the paper "RepDroid: An Automated Tool for Android Application Repackaging Detection" (ICPC 2017)
 
 ## Tools
-[RepDroid](file:///static/projects/RepDroid.zip)
+[RepDroid](http://moon.nju.edu.cn/people/junma/static/projects/RepDroid.zip)
 ----------------
 
 ## DataSets
