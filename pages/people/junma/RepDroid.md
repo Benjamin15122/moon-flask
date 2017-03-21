@@ -1,10 +1,11 @@
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script>
 Materials of the paper "RepDroid: An Automated Tool for Android Application Repackaging Detection" (ICPC 2017)
 
 #Tools
 ***
 
 #DataSets
-##DataSet for Determining Thresdholds \(theta_c\\) and \\(theta_l\)
+##DataSet for Determining Thresdholds \\(theta_c\\) and \\(theta_l\\)
 \\(x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}\\)
 
 ##DataSet S1
