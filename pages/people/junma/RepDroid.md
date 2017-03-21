@@ -5,13 +5,12 @@ title: Materials of the paper "RepDroid: An Automated Tool for Android Applicati
 #Materials of the paper "RepDroid: An Automated Tool for Android Application Repackaging Detection" (ICPC 2017)
 
 ##Tools
-
 - [RepDroid.zip](http://moon.nju.edu.cn/people/junma/static/projects/RepDroid.zip)
 ----------------
 
 ##DataSets
 
-###DataSet for Determining Thresdholds \\(\delta_c\\) and \\(\delta_l\\)
+- ###DataSet for Determining Thresdholds \\(\delta_c\\) and \\(\delta_l\\)
 
 | Package Name                                                       	| Version              	| MD5                              	|
 |--------------------------------------------------------------------	|----------------------	|----------------------------------	|
@@ -98,7 +97,7 @@ title: Materials of the paper "RepDroid: An Automated Tool for Android Applicati
 
 ***
 
-###DataSet S1
+- ###DataSet S1
 **38 original apps from Wandoujia**
 
 | Package Name                         	| Version      	| MD5                              	|
