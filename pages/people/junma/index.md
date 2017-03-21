@@ -79,6 +79,7 @@ My current interests focus on following topics:
 * [English publications](publications)
 
 ## Teaching
+* 2017, Spring: [Problem Solving(4)](http://cslabcms.nju.edu.cn/problem_solving/index.php/2015%E7%BA%A7--%E5%AD%A6%E6%9C%9F%E5%AE%89%E6%8E%92_(%E7%AC%AC%E5%9B%9B%E5%AD%A6%E6%9C%9F)) (Dept. CSE)
 * 2016, Autumn: [Problem Solving(3)](http://cslabcms.nju.edu.cn/problem_solving/index.php/2015%E7%BA%A7--%E5%AD%A6%E6%9C%9F%E5%AE%89%E6%8E%92_(%E7%AC%AC%E4%B8%89%E5%AD%A6%E6%9C%9F)) (Dept. CSE)
 * 2016, String: [Problem Solving(2)](http://cslabcms.nju.edu.cn/problem_solving/index.php/2015%E7%BA%A7--%E5%AD%A6%E6%9C%9F%E5%AE%89%E6%8E%92_(%E7%AC%AC%E4%BA%8C%E5%AD%A6%E6%9C%9F)) (Dept. CSE)
 * 2015, Autumn: [Problem Solving(1)](http://cslabcms.nju.edu.cn/problem_solving/index.php/2015%E7%BA%A7) (Dept. CSE)
