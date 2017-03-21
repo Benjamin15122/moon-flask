@@ -6,7 +6,89 @@ Materials of the paper "RepDroid: An Automated Tool for Android Application Repa
 
 #DataSets
 ##DataSet for Determining Thresdholds \\(\delta_c\\) and \\(\delta_l\\)
-\\(x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}\\)
+
+| Package Name                                                       	| Version              	| MD5                              	|
+|--------------------------------------------------------------------	|----------------------	|----------------------------------	|
+| com.seacow.kdsg.appchina                                           	| 2.9                  	| 003e69fe7363bd28a0aac500cd7f219f 	|
+| org.vv.voa                                                         	| 5.01                 	| 007be9caca00eefcf524d5b698767612 	|
+| com.liwushuo.gifttalk                                              	| 2.6.6                	| 00a3351eb49aa89980d46c754f94e945 	|
+| com.hiby.music                                                     	| 2.0.3 build 1078     	| 00b1bcddb640a04dd477e694946210c2 	|
+| com.baihe                                                          	| 5.8.0                	| 00fb2fb95ec463d66fa35930661a3ce8 	|
+| com.timconstant.tikitakasoccer                                     	| 1.0.01.003           	| 00ff9ecf7a428ffc3ae944af040a9792 	|
+| net.mobigame.zombietsunami.yyh                                     	| 2.0.7                	| 015bcdeb6e764ca92d5cab297f754639 	|
+| com.com2us.acefishing.normal.freefull.google.global.android.common 	| 2.1.0                	| 01ab0e3d594c1eb846fd036eea0be4ea 	|
+| com.g2us.armedwarriorsappc                                         	| 4.03.06              	| 03d26a85e960c5e114ad5a6ff060cf9f 	|
+| com.yx.sunnykitty                                                  	| 1.2.27               	| 046de545d625b9cd87e56a59e24fade8 	|
+| com.Kingdee.Express                                                	| 3.1.9                	| 049690a65ab16c0d9b624c38ededd226 	|
+| com.gameloft.android.ANMP.GloftDMCN                                	| 3.6.4                	| 0704809d45c9f69c5d00b1b7f6df7bca 	|
+| com.outfit7.mytalkingtomfree                                       	| 2.7                  	| 0778fece37db54efdccf1f20a8cbdc55 	|
+| com.breadtrip                                                      	| 5.3.0                	| 078093d41248b74d0c6fbc80037ad1b4 	|
+| com.joym.xiongchumo2.yyh                                           	| 1.1.0                	| 07b7ec18e5fd3b7e81bdeca4bce34a21 	|
+| com.neusoft.td.android.wo116114                                    	| 5.0.4                	| 07ba6421c3ac978ed5fc4c0f8bbbe1dc 	|
+| com.fal.game.mslug4                                                	| 1                    	| 07cf96fd1155dce0ad7a579fcaa4ece1 	|
+| smskb.com                                                          	| 2015.09.25           	| 087222419e49953cd12f57326edee035 	|
+| cn.cloudia.djdtfy.yyh                                              	| 1.0.8251             	| 08931a89fb345ba2184fa1d069f06d1a 	|
+| com.qwbcg.emord                                                    	| 2.2.3                	| 08b0fe6dfc0f55c123919558698a601f 	|
+| com.joym.xiongdakuaipao                                            	| 2.1.3                	| 0a59b42a51dc0e5cc6a320e9a8820fe1 	|
+| com.tuyoo.scmahjong                                                	| 3.372                	| 0b3d5c8b937c00df6735212d544750b8 	|
+| com.daohang2345                                                    	| 4.4.5                	| 0ba24ec2ea0342a57882ff679bb2bf45 	|
+| com.dianziquan.android                                             	| 2.2                  	| 0db4fa15ba23a81dcdb6cb8e7b8020e1 	|
+| com.ezone.Diversion                                                	| 1.65                 	| 0e4427828c52158ceb65973439911588 	|
+| COM.Bangso.FitMiss                                                 	| 4.1.5                	| 0f549bf753685d02049f0f87750fbdbc 	|
+| com.sy4399.wk                                                      	| 1.7.12               	| 0f8e5462c9f94d7c88414f45e79087d4 	|
+| com.zen.hnpdk.p365you                                              	| 1.09.130             	| 0f93a0f03113ae255aaa82e9590a1597 	|
+| com.kong.app.book                                                  	| 2.2.4                	| 1129e7147127b7df658f46e929713c21 	|
+| com.qz.qsg2.yyh                                                    	| 1.6.1                	| 116c566675bcbfe2fdb364d5cb290e26 	|
+| com.ophone.reader.ui                                               	| 5.0.0                	| 11abe8ea55003e3766c86f8e7eeb7ec5 	|
+| com.android.mediacenter                                            	| V6.8.3               	| 1241ad55f6f752b5572fa0492de00759 	|
+| com.tencent.peng                                                   	| 1.0.23.0Build56      	| 12afbe5be41340480d54cd9fa9e9b958 	|
+| com.webineti.P714CalendarHD                                        	| 1.7                  	| 12e918ab282bb6c5f7a480161d38ff21 	|
+| com.netease.cake.appchina                                          	| 1.0.5                	| 132c68d12ef5fd16016f06bfad2799a0 	|
+| com.andersen.wsqnr                                                 	| 1.2.0                	| 1342eb2ba5a5034fb763734c17683456 	|
+| com.a0soft.gphone.app2sd                                           	| 3.65                 	| 14eb576d3064fcbd57f7802c5fb43d09 	|
+| com.tencent.qqmusic                                                	| 5.5.0.28             	| 151167c4f14db27e18d54857e6bf7934 	|
+| com.doudizhu.mainhuanle.yyh                                        	| 3.503                	| 171231d1a8d3a7c8300249465831b2eb 	|
+| com.jewels.activity                                                	| 1.6                  	| 1790a5f8466f66efdbfd4a81b37560ff 	|
+| com.yangyu.realskate                                               	| 1.4                  	| 18a848aff143e0465074930a8f315941 	|
+| org.wikipedia                                                      	| 2.0.108-r-2015-08-04 	| 19aaa92e91059e555ebd9d2e0bbdb375 	|
+| com.waze                                                           	| 3.9.5.4              	| 1aae46492939ee5fdb6cecafbb43dacb 	|
+| com.ubisoft.redlynx.trialsgo.yyh                                   	| 3.1.0                	| 1b397c9247dd53a6d83fa61c39d40d00 	|
+| com.mhs.personal                                                   	| 3.2.3                	| 1b835d9ae962b7ee578fe59f391e148c 	|
+| com.snailfighter.game.bigtower                                     	| 1.89                 	| 1bbc268694dc30a01c973145630f11bd 	|
+| com.amazon.kindle                                                  	| 4.16.0.75            	| 1ebe31041db4824c9f83a43d04d74668 	|
+| com.baidu.browser.apps                                             	| 6.0.23.0             	| 1ed9acaaa7895cd5aee2381a33353fc4 	|
+| com.hr1288.android.combination                                     	| 1.1.0                	| 1f1ae304186f2c0201d696d0dd0ca22e 	|
+| com.gyyx.demo.yyh                                                  	| 1.0.33               	| 1f363d184b422cf7035c71cb11e9660e 	|
+| com.melodis.midomiMusicIdentifier.freemium                         	| 6.8.5                	| 1fe8149b7ed320e596642b5cefaa24e4 	|
+| com.cg.tennis                                                      	| 1.7.0                	| 213797a374f143ccc91226aeee3dd5fc 	|
+| com.centurysoft.fruityrobo                                         	| 3                    	| 218324b3134d243d88c659c5fe85eeb3 	|
+| com.djinnworks.StickmanSoccer2014                                  	| 2                    	| 222455cf95ac5b2b2fc55bb4f676b646 	|
+| com.qysoft.cyjl                                                    	| 5                    	| 23e341973888bc2664847603db06eeac 	|
+| com.youku.tv                                                       	| 2.7.1                	| 24f8762807a6e12151765881c1c26c7f 	|
+| com.autoconnectwifi.app                                            	| 3.7.9                	| 2539177cab27a3a1f59adb9fc2b893e4 	|
+| com.chinaihs.btchinaihs_songlite                                   	| 2.6                  	| 2581a88bdb91ba9f4ff4fd6b5592839f 	|
+| dopool.player                                                      	| 6.1.2                	| 263119756f20e372e705d075bc49f57a 	|
+| com.marvelous.runbot                                               	| 2.2.2.0              	| 270210140d0846dc7c1f4727899ce46c 	|
+| com.lingdong.client.android                                        	| 2.8                  	| 27cca5c6358dd17842ef570a628f2c20 	|
+| com.duoduo.passenger                                               	| 4.3.3                	| 283e3d433cb4ed0a3a8f5835743e73c7 	|
+| com.esbook.reader                                                  	| 2.3.0                	| 2882a8d2fcdd14c508b61974372c1b4a 	|
+| com.qq.reader                                                      	| 5.2.6.888            	| 2889d0c0b6764b5492fb845178533484 	|
+| com.ea.games.nfs13_row.yyh                                         	| 2.2.0                	| 2918222ec843c3b5a0e54c8c1775bb7a 	|
+| com.hn.client.consignor                                            	| 1.0.2.13             	| 294ff2a002aa02a3e6f0add9255af745 	|
+| com.tencent.pao                                                    	| 1.0.24.0             	| 295abecdc49760ed4b74fbc0d36c3ebb 	|
+| com.carrot.iceworld                                                	| 2.0.1                	| 2a973bb89bca799ff1fcaebfb1d31c2c 	|
+| com.funcity.simextremeflight                                       	| 2.1                  	| 2b1dc8a9513ca74aca53d20223929469 	|
+| com.reliantongcheng.main                                           	| 1.5.0                	| 2ba59987d35f9c41c10690c57d2dc64e 	|
+| air.com.elextech.appchina                                          	| 4.7.03               	| 2c1981d488dea7d2285ea88dd1e26a4c 	|
+| com.happyelements.canon.yyh.yingyonghui                            	| 10.0.35              	| 2ccc7b50793f6bed1cc395880b3ce473 	|
+| com.amazon.games.tofufury                                          	| 1.2.7553             	| 2f341d3cab3a8f59210096e42189fb08 	|
+| com.mgyun.shua.su                                                  	| 2.2.3                	| 2f76c1f5a66e9ba15e79f427b93d9224 	|
+| com.meiyu.chainchronicle.cn                                        	| 2.0.4                	| 30365624bf4af61963bf96025c238081 	|
+| com.king.candycrushsaga                                            	| 1.58.0.4             	| 30f42d1e69524a943b3591eb516e4324 	|
+| com.koyonapps.alice_white                                          	| 1.0.0                	| 316b45492c186153eb3e058232d11504 	|
+| com.mfw.voiceguide                                                 	| 4.5.0                	| 31cca54cd35b26baa4cf8504afdd6bb4 	|
+| com.xunlei.kankan                                                  	| 4.5.1.2              	| 3317f2a0948d377f069658a343bd9155 	|
+| com.geomme.geomme                                                  	| 1.0.4                	| 334a8c466273fa8e27af8ad10fc7f093 	|
 
 ##DataSet S1
 **38 original apps from Wandoujia**
