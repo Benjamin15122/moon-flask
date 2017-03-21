@@ -5,6 +5,8 @@ Materials of the paper "RepDroid: An Automated Tool for Android Application Repa
 
 #DataSets
 ##DataSet for Determining Thresdholds \\(theta_c\\) and \\(theta_l\\)
+\\(x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}\\)
+
 ##DataSet S1
 **38 original apps from Wandoujia**
 
