@@ -11,7 +11,7 @@ title: Materials of the paper "RepDroid: An Automated Tool for Android Applicati
 
 ##DataSets
 
--##DataSet for Determining Thresdholds \\(\delta_c\\) and \\(\delta_l\\)
+###DataSet for Determining Thresdholds \\(\delta_c\\) and \\(\delta_l\\)
 
 | Package Name                                                       	| Version              	| MD5                              	|
 |--------------------------------------------------------------------	|----------------------	|----------------------------------	|
@@ -98,7 +98,7 @@ title: Materials of the paper "RepDroid: An Automated Tool for Android Applicati
 
 ***
 
--##DataSet S1
+###DataSet S1
 **38 original apps from Wandoujia**
 
 | Package Name                         	| Version      	| MD5                              	|
@@ -172,7 +172,7 @@ title: Materials of the paper "RepDroid: An Automated Tool for Android Applicati
 
 ***
 
-##DataSet S2(125 original apps from Wandoujia)
+###DataSet S2(125 original apps from Wandoujia)
 
 | Package  Name                   	| Version           	| MD5                              	|
 |---------------------------------	|-------------------	|----------------------------------	|
