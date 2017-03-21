@@ -90,6 +90,8 @@ Materials of the paper "RepDroid: An Automated Tool for Android Application Repa
 | com.xunlei.kankan                                                  	| 4.5.1.2              	| 3317f2a0948d377f069658a343bd9155 	|
 | com.geomme.geomme                                                  	| 1.0.4                	| 334a8c466273fa8e27af8ad10fc7f093 	|
 
+***
+
 ##DataSet S1
 **38 original apps from Wandoujia**
 
