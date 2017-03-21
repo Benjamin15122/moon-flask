@@ -4,7 +4,7 @@ Materials of the paper "RepDroid: An Automated Tool for Android Application Repa
 ***
 
 #DataSets
-##DataSet for Determining Thresdholds \\theta_c\\ and \\theta_l\\
+##DataSet for Determining Thresdholds \\(theta_c\\) and \\(theta_l\\)
 ##DataSet S1
 **38 original apps from Wandoujia**
 
