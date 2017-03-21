@@ -1,4 +1,5 @@
-title: Publications of **Jun Ma**
+title: Publications of Jun Ma
+
 - <img src="static/img/new.jpg" width = "40" height = "40" align=center />Yue Shengtao, Feng Weizan, **Ma Jun**, Jiang Yanyan, Tao Xianping, Xu Chang and Lu Jian. RepDroid: An Automated Tool for Android Application Repackaging Detection, accepted by ICPC 2017.
 - Qiwei Li, Yanyan Jiang, Tianxiao Gu, Chang Xu, **Jun Ma**, Xiaoxing Ma and Jian Lu, Effectively Manifesting Concurrency Bugs in Android Apps, APSEC 2016,the 23nd Asia-Pacific Software Engineering Conference, 6th-9th December 2016, Hamilton, New Zealand, pp.209-216.
 - **Ma Jun**, TAO Xianping, LV Jian, *ReCEC: Resolving Conflicts of Environmental Constraints among Multiple Applications in a Smart Space*,  In Proceedings of the 2015 IEEE 39th Annual Computer Software and Applications Conference - Volume 02 (COMPSAC '15), Vol. 2. IEEE Computer Society, Washington, DC, USA, 784-789. 

@@ -1,4 +1,11 @@
-﻿<div class="news-body">
+title: Jun Ma
+
+
+
+
+# Jun Ma
+
+<div class="news-body">
     <div class="row gutter k-equal-height"><!-- row -->
         <div class="col-lg-3 col-md-3 col-sm-12">
             <img src="static/img/head.jpg" alt="Jun Ma" class="aligncenter" />
@@ -38,10 +45,10 @@
             </div><!-- nesting row end -->
             <div class="row gutter k-equal-height"><!-- nesting row -->
                 <div class="col-lg-4 col-md-4 col-sm-12">
-                计算机系楼819
+                    计算机系楼819
                 </div>
                 <div class="col-lg-8 col-md-8 col-sm-12">
-                Computer Building 819
+                    Computer Building 819
                 </div>
             </div><!-- nesting row end -->
             <div class="row gutter k-equal-height"><!-- nesting row -->
@@ -57,10 +64,12 @@
         </div>
     </div><!-- row end -->
 </div>
-## News
-*  <img src="static/img/new.jpg" width = "40" height = "40" align=center />Congratulations on Shengtao Yue's ICPC'17 paper: "RepDroid: An Automated Tool for Android Application Repackaging Detection"!
-## Research interests
 
+## News
+
+*  <img src="static/img/new.jpg" width = "40" height = "40" align=center />Congratulations on Shengtao Yue's ICPC'17 paper: "RepDroid: An Automated Tool for Android Application Repackaging Detection"!
+
+## Research interests
 
 My current interests focus on following topics:
 

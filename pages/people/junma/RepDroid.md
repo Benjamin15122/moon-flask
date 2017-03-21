@@ -1,10 +1,13 @@
+title: Materials of the paper "RepDroid: An Automated Tool for Android Application Repackaging Detection" (ICPC 2017)
 <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script>
-Materials of the paper "RepDroid: An Automated Tool for Android Application Repackaging Detection" (ICPC 2017)
 
-#Tools
-***
 
-#DataSets
+# Materials of the paper "RepDroid: An Automated Tool for Android Application Repackaging Detection" (ICPC 2017)
+
+## Tools
+----------------
+
+## DataSets
 ##DataSet for Determining Thresdholds \\(\delta_c\\) and \\(\delta_l\\)
 
 | Package Name                                                       	| Version              	| MD5                              	|

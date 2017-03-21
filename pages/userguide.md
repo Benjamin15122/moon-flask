@@ -141,6 +141,18 @@ moon-share/
 
 所以，如果你通过第三方或者其他的`markdown`编辑器预览你的文档，可能和最终moon上出现的不一致。
 
+### 文档编码
+
+所有的文件必须满足如下条件
+
+1. `.md`结尾，我们根据这个模式映射其为html
+2. `utf-8`**无BOM**编码。BOM编码会在文件开头加几个字符，造成markdown插件解析失败。
+3. `unix`行尾。
+
+以上几点Windows用户需要特别注意。
+
+
+### 文档结构
 
 文档开头的部分是元数据定义，不会出现在正文中，至少提供`title`。
 
@@ -151,6 +163,11 @@ title: Yaojing Wang
 
 ...
 ~~~
+
+
+!!! warning "注意："
+    `title: Yaojing Wang`里面存储的是原始的meta data，不支持任何`html`以及`markdown`的style。
+
 
 
 ### <a name="list"></a>List
