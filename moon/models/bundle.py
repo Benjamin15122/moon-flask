@@ -1,5 +1,7 @@
 from flask import url_for
 
+
+## A URL is either a full URL starting with http:// or https://, or a path relative to 'static'.
 BUNDLES = {
     'qqmap': [
         [],

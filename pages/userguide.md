@@ -337,3 +337,23 @@ moon通过[bootstrap](http://getbootstrap.com/)支持Mobile和responsive的效�
 
         git remote rm origin
         git remote add origin git@git.njuics.cn:moon/moon-share.git
+
+## 使用扩展
+
+moon目前支持如下扩展
+
+- `qqmap`
+- `math`（katex）
+- `flowchart`以及其依赖的`raphael`[【用例】](/test/flowchart)
+
+此外，还支持jQuery，可以通过customjs来实现，所有代码将会在页面结尾插入。
+
+例如，以下代码会将所有的table添加css类，并设置其宽度为100%。
+
+```{.js}
+~~~{.customjs}
+// add Bootstrap css class via jQuery
+$('table').addClass('table-responsive').addClass('table').addClass('table-bordered').css('width', '100%')
+~~~
+```
+
