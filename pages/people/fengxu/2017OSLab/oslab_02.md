@@ -356,6 +356,7 @@ TR (Task state segment Register) 是任务状态段寄存器, 它是一个 16 �
 结构和 CS, DS, SS 这些段寄存器完全一样，它存放了 GDT 或 IDT 的一个索引，通过 TR 可以在 GDT 或 IDT 中找到一个 TSS 段描述符。
 
 TSS (Task State Segment) 是任务状态段, 其结构如下图所示：
+
 ![TSS](assets/Tss.jpg)
 
 TSS 和代码段，数据段不同，是一个有特殊作用的段。
