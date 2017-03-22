@@ -6,7 +6,7 @@ title: Materials of the paper "RepDroid: An Automated Tool for Android Applicati
 
 ## Tools
 
-- [Obfuscation Tool.zip <i class="fa fa-archive"></i>](https://git.njuics.cn/junma/Repdroid-materials/blob/master/Obfuscation Tool.zip) consists of the two obsfucation tools, FakeActivity and NestedLayout;
+- [Obfuscation Tool.zip <i class="fa fa-archive"></i>](https://git.njuics.cn/junma/Repdroid-materials/blob/master/Obfuscation Tool.zip) consists of the two obsfucation tools, FakeActivity and NestedLayout; 
 - [RepDroid.zip <i class="fa fa-archive"></i>](https://git.njuics.cn/junma/Repdroid-materials/blob/master/RepDroid.zip)
 
 ----------------
