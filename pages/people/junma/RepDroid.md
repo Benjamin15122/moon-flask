@@ -6,7 +6,7 @@ title: Materials of the paper "RepDroid: An Automated Tool for Android Applicati
 
 ## Tools
 
-- [RepDroid.zip <i class="fa fa-archive"></i>](static/projects/RepDroid.zip)
+- [RepDroid.zip <i class="fa fa-archive"></i>](https://git.njuics.cn/junma/Repdroid-materials/blob/master/RepDroid.zip)
 
 ----------------
 
