@@ -1,5 +1,6 @@
 title: FAQ
 date: 2016-12-12
+author: tianxiaogu
 category: programming
 tags: java
 template: post.html

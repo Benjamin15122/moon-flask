@@ -19,11 +19,13 @@ faculty:
     avatar: /people/xiaoxingma/static/avatar.jpg
     group: spar, dse
   - name: Feng Xu 徐锋
+    id: fengxu
     title: Professor
     avatar: /people/fengxu/static/img/avatar.jpg
     url: fengxu
   - name: Chang Xu 许畅
     title: Professor
+    id: changxu
     url: http://cs.nju.edu.cn/changxu
     avatar: /static/img/avatar/xuchang.jpg
     group: spar
@@ -42,6 +44,7 @@ faculty:
     url: http://cs.nju.edu.cn/yuping
     avatar: /static/img/avatar/yuping.jpg
   - name: Jun Ma 马骏
+    id: junma
     title: Assistant Professor
     url: junma
     avatar: /static/img/avatar/majun.jpg
@@ -50,6 +53,7 @@ faculty:
     url: http://cs.nju.edu.cn/wangliang
     avatar: /static/img/avatar/wangliang.jpg
   - name: Yuan Yao 姚远
+    id: yuanyao
     title: Assistant Researcher
     avatar: /static/img/avatar/yaoyuan.jpg
     url: yuanyao
@@ -257,6 +261,7 @@ alumni:
   - name: Haibin Yang 杨海滨
     from: 2010
   - name: Tianxiao Gu 顾天晓
+    id: tianxiaogu
     url:  tianxiaogu
     avatar: /static/img/avatar/gutianxiao.jpg
     from: 2012

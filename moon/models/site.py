@@ -105,6 +105,21 @@ class Site(object):
 
         return None
 
+    def find_people_by_id(self, ID):
+        for role,folks in self.people.iteritems():
+            for folk in folks:
+                if folk.get('id') == ID:
+                    return folk
+
+        return None
+
+    def get_user_name_by_id(self, ID):
+        for role,folks in self.people.iteritems():
+            for folk in folks:
+                if folk.get('id') == ID:
+                    return folk.get('name')
+
+        return ID
 
 #####################################
 

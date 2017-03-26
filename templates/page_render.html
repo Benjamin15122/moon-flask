@@ -1,11 +1,21 @@
 {% import 'pagination.html' as pagination %}
 
 {% macro render_post(post) -%}
+<article>
 <h1><a href="{{ request.url }}">{{ post.meta.title }}</a></h1>
 <br/>
+<section class="post-meta">
+    By <a rel="author" href="{{ url_for('page', name=post.meta.author) }}" >{{ g.site.get_user_name_by_id(post.meta.author) }}</a>
+    on <time class="post-date" datetime="{{ post.meta.date }}">{{ post.meta.date |to_date}}</time>
+</section>
+<section class="post-content">
 <div class="content">
     {{ post.html|safe }}
 </div>
+</section>
+<section class="post-footer">
+</section>
+</article>
 {%- endmacro %}
 
 {% macro render_posts(posts) -%}

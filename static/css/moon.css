@@ -117,4 +117,13 @@
   border-color: #ebccd1;
 }
 
-
+.post-meta {
+  padding: 5px;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #73116f;
+}
+.post-footer {
+  padding: 5px;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #73116f;
+}

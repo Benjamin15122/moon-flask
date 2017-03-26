@@ -1,6 +1,8 @@
 title: Paper Writing Guidelines
+author: changxu
+date: 2017-03-26
+template: post.html
 
-# Paper Writing Guidelines
 
 1. Papers should be prepared in a two-phase process, namely, framework phase and content phase.
 2. Framework phase:
