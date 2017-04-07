@@ -64,8 +64,8 @@ title: Jun Ma
 
 ## News
 
-*  <img src="static/img/new.jpg" width = "40" height = "40" align=center />New paper "LeakDAF: an Automated Tool for Detecting Leaked Activities and Fragments of Android Applications" is accepted to Compsac'17!
-*  <img src="static/img/new.jpg" width = "40" height = "40" align=center />Congratulations on Shengtao Yue's ICPC'17 paper: "RepDroid: An Automated Tool for Android Application Repackaging Detection"!
+*  <img src="static/img/new.jpg" width = "40" height = "40" align=center />New paper "LeakDAF: an Automated Tool for Detecting Leaked Activities and Fragments of Android Applications" is accepted to Compsac'17! ([Pre-print version](static/files/LeakDAF(pre-print).pdf))
+*  <img src="static/img/new.jpg" width = "40" height = "40" align=center />Congratulations on Shengtao Yue's ICPC'17 paper: "RepDroid: An Automated Tool for Android Application Repackaging Detection"!([Pre-print version](static/files/RepDroid(pre-print).pdf))
 
 ## Research interests
 
