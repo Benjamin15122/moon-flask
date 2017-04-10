@@ -83,7 +83,7 @@ My current interests focus on following topics:
 
 # Publications
 
-* [English publications](publications)
+* [Please click here to see my publications](publications)
 
 ## Teaching
 * 2017, Spring: [Problem Solving(4)](http://cslabcms.nju.edu.cn/problem_solving/index.php/2015%E7%BA%A7--%E5%AD%A6%E6%9C%9F%E5%AE%89%E6%8E%92_(%E7%AC%AC%E5%9B%9B%E5%AD%A6%E6%9C%9F)) (Dept. CSE)
