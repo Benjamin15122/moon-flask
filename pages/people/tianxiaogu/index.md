@@ -1,1 +1,1 @@
-redirect: tianxiaogu.github.io
+redirect: http://tianxiaogu.github.io
