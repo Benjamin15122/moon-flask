@@ -60,9 +60,7 @@ git 版本控制：我们建议你使用 git 管理你的项目，如果你提�
 
 ### POSIX对信号量的解释
 
-这是对信号量的一些说明，请务必仔细阅读相关原语：
-
-http://linux.die.net/man/7/sem_overview
+这是对信号量的一些说明，请务必仔细阅读[相关原语](http://linux.die.net/man/7/sem_overview)
 
 ####具名信号量
 
@@ -88,16 +86,12 @@ POSIX中对匿名信号量的要求是这样的：
 - sem\_post：相当于V操作，将信号量加1，如果该信号量本来为0，则唤醒因该信号量而挂起的进程/线程
 - sem\_destroy: 当不需要使用某个信号量后，就可以销毁该信号量
 
-对此感兴趣的同学可以看看这个问题：
-http://stackoverflow.com/questions/16400820/c-how-to-use-posix-semaphores-on-forked-processes
-
-这个题主没有好好RTFM，遇到了问题。然后得票最高的答主给题主介绍了
-通过共享内存方式使用匿名信号量的方法。
+对此感兴趣的同学可以看看这个[问题](http://stackoverflow.com/questions/16400820/c-how-to-use-posix-semaphores-on-forked-processes)
+这个题主没有好好RTFM，遇到了问题。然后得票最高的答主给题主介绍了通过共享内存方式使用匿名信号量的方法。
 
 ### 实现信号量相关的参考资料
 
-- Linux的PV操作的实现可以作为一个参考（感人的中文资料）：
-http://www.cnblogs.com/biyeymyhjob/archive/2012/07/21/2602015.html
+- Linux的PV操作的实现可以作为一个参考[感人的中文资料](http://www.cnblogs.com/biyeymyhjob/archive/2012/07/21/2602015.html)
 
 
 ### 实现多线程
