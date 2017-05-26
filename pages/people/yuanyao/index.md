@@ -60,11 +60,11 @@ Data mining with application to social media, recommender systems, software repo
 
 ## Selected Publications
 
-{{ render_bib_file('yuanyao.bib', ['TKDE16', 'KDD16', 'IJCAI15', 'TKDE14', 'KDD14', 'CIKM14', 'WWW13'], hl='Yuan Yao') }}
+{{ render_bib_file('yuanyao.bib', ['TKDE18', 'KDD17', 'TOIS17', 'TKDE17', 'KDD16', 'IJCAI15', 'TKDE14', 'KDD14', 'CIKM14', 'WWW13'], hl='Yuan Yao') }}
 
 More [publications](publications).
 
 ## Services
 
-* PC Member for: AAAI 2017, IJCAI 2015-2017, ASONAM 2016, CIKM 2015, DMCCI 2011
+* PC Member for: KDD 2017 (Applied data science track), AAAI 2017, IJCAI 2015-2017, CIKM 2015 2017, ASONAM 2016-2017
 
