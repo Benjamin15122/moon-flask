@@ -362,4 +362,4 @@ FCB数组和文件描述符的维护分配与 PCB 如出一辙。PCB 中要增�
 磁盘驱动来自 JOS, 删除了不必要的文件，但是没有删除不必要的代码。别看这
 里面有很多定义，你只要会用ide.c中的ide_read和ide_write两个函数就行了。
 
-[下载](../assets/ide.zip)
+[下载](assets/ide.zip)
