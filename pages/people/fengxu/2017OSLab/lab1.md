@@ -230,7 +230,7 @@ gdtDesc:
 
 * [BIOS中断表](/taohuang/manual/BIOS中断表.xlsx)
 * [AT&T汇编语法](/taohuang/manual/AT&T汇编语言.ppt)
-* [代码框架](/taohuang/manual/lab1.zip)
+* [代码框架](lab1.zip)
 
 # 6. 作业提交
 
