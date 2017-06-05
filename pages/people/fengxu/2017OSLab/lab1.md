@@ -229,7 +229,7 @@ gdtDesc:
 # 5. 相关资源
 
 * [BIOS中断表](BIOS中断表.xlsx)
-* [AT&T汇编语法](/taohuang/manual/AT&T汇编语言.ppt)
+* [AT&T汇编语法](汇编语言.ppt)
 * [代码框架](lab1.zip)
 
 # 6. 作业提交
