@@ -131,12 +131,10 @@ I am interested in various topics in software engineering, especially
 **More publications:** [_In English_](publications), [_In Chinese_](http://www.c-dblp.cn/search_result.php?author_name=%E9%A9%AC%E6%99%93%E6%98%9F)
 
 ## Teaching
-   * 2015, Spring: [Discrete Mathematics and Its Applications](http://moon.nju.edu.cn/courses/course/view.php?id=31) (Dept. CSE)
-   * 2014, Autumn: [Discrete Mathematical Structures] (Inst. Softw.)
-   * 2014, Spring: [Discrete Mathematics and Its Applications](http://moon.nju.edu.cn/courses/course/view.php?id=25) (Dept. CSE)
-   * 2008-2014, Spring: [Concepts of Programming Languages](copl)
-   * 2013, Autumn: [Discrete Mathematical Structures](DMS2013.html) (Inst. Softw.)
-   * Before 2007:  [Object-Oriented Software Construction](OOT2007.html)
+   * Discrete Mathematical Structures: [2014-2017, Autumn](DMS2013.html) (Inst. Softw.)
+   * Discrete Mathematics and Its Applications: [2014-2017, Spring](http://cslabcms.nju.edu.cn/course/view.php?id=274) (Dept. CS)
+   * Concepts of Programming Languages: [2008-2014, Spring](copl)
+   * Object-Oriented Software Construction: [Before 2007](OOT2007.html)
 
 ## Awards
    * 2006: China National Award for Science and Technology Progress, 2nd prize. Dr. Ma is the 2nd awardee of the team. （国家科技进步二等奖，第二完成人）
