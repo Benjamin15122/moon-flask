@@ -118,7 +118,7 @@ title: Xiaoxing Ma (Chinese)
 ## [发表论文](../publications)
 近期部分论文：
 
-{{ render_bib_file('selected.bib', hl='Xiaoxing Ma') }}
+{{ render_bib_file('../selected.bib', hl='Xiaoxing Ma') }}
 
 
 ([还有...](../publications))
@@ -128,6 +128,8 @@ title: Xiaoxing Ma (Chinese)
 * [Projects](../projects)
 
 ## 课程教学
+* 离散数学 [2014-2017](http://cslabcms.nju.edu.cn/course/view.php?id=274) 计算机系
+* 离散数学 [2013-2017](DMS2013.html) 软件学院
 * [程序设计语言概论](../copl)
 * [面向对象的软件构造](../oot2007)
 
