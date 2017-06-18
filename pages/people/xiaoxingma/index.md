@@ -128,7 +128,7 @@ I am interested in various topics in software engineering, especially
 
 {{ render_bib_file('selected.bib', hl='Xiaoxing Ma') }}
 
-**More publications:** [_In English_](publications), [_In Chinese_](http://www.c-dblp.cn/search_result.php?author_name=%E9%A9%AC%E6%99%93%E6%98%9F)
+**More publications:** [_In English_](publications), [_In Chinese_](http://www.c-dblp.cn/search_result.php?author_name=%E9%A9%AC%E6%99%93%E6%98%9F); or in [DBLP](http://dblp.uni-trier.de/pers/hd/m/Ma:Xiaoxing), [Google Scholar](https://scholar.google.com/citations?user=44WpWR4AAAAJ).
 
 ## Teaching
    * Discrete Mathematical Structures: [2014-2017, Autumn](DMS2013.html) (Inst. Softw.)
@@ -155,5 +155,6 @@ I am interested in various topics in software engineering, especially
 * Editorial Board Member 
     * [Journal of Software](http://www.jos.org.cn) (in Chinese), since Jan. 2011.
 * Guest Editor 
+    * [Special Section on Software Systems](http://jcst.ict.ac.cn:8080/jcst/EN/column/item161.shtml), _Journal of Computer Science and Technology_, September 2017.
     * Special Focus on Internetware, _Science China: Information Sciences_ Volume 56, Number 1, January 2013.
     * Special Focus on Self-adaptive Software Systems: Development Methods and Runtime Supports. _Journal of Software_ Volume 26, Number 4, April 2015.
