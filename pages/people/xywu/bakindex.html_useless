@@ -1,0 +1,143 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>Xiangyu Wu's Homepage</title>
+<meta name="keywords" content="Xiangyu Wu" />
+<meta name="description" content="Xiangyu Wu's Homepage" />
+<link href="style.css" rel="stylesheet" type="text/css" media="screen" />
+</head>
+<body>
+	<div id="header-wrapper">
+	<div id="header">
+		<div id="menu">
+			<ul>
+				<li><a href="#" class="first">Home</a></li>
+				<li><a href="#Biography">Biography</a></li>
+				<li><a href="#Research">Research</a></li>
+				<li><a href="#Publication">Publication</a></li>
+				<li><a href="#Link">Link</a></li>
+				<li><a href="#Contact">Contact</a></li> 
+				<li><a href="#Other">Other</a></li>
+			</ul>
+		</div>
+		<!-- end #menu -->
+	</div>
+	</div>
+	<!-- end #header -->
+	<!-- end #header-wrapper -->
+	<div id="wrapper">
+	<div id="page">
+		<div id="logo">
+			<table>
+				<tr>
+					<td>
+						<h1><a href="#">Xiangyu Wu (&#x6b66&#x7fd4&#x5b87)</a></h1>
+						<p></p>
+						<p>M. Sc student<br />
+						<a href="http://cs.nju.edu.cn/">Department of Computer Science and Technology</a> 
+						<br /> <a href="http://www.nju.edu.cn/">Nanjing University</a>, Nanjing, China
+						</p>
+					</td>
+					<td>
+						<pre>&#9;&#9;&#9;</pre>
+					</td>
+					<td>
+						<img src="wxy.jpg" width="225"/>
+					</td>
+				</tr>
+			</table>
+		</div>
+		<hr />
+		<!-- end #logo -->
+		<div id="content">
+			<div class="post">
+				<h2 class="title"><a name="Biography">Biography</a></h2>
+				<div class="entry">
+					<p>I received my B. Sc degree in Department of Computer Science and Technology from Nanjing University in July 2014. From then on, I am enrolled in the Graduate School of Nanjing University under the supervision of Prof. <a href="http://cs.nju.edu.cn/changxu/" target="_blank">Chang Xu</a>.</p>
+				</div>
+			</div>
+			<div class="post">
+				<h2 class="title"><a name="Research">Research</a></h2>
+				<div class="entry">
+					<p>I am interested in software engineering, software testing and analysis. I have worked on the offloading(remote execution) of Android apps. Now I am focusing on testing Android apps via guided gesture event generation.</p>
+				</div>
+			</div>
+			<div class="post">
+				<h2 class="title"><a name="Publication">Publication</a></h2>
+				<div class="entry">
+					<li><p><b>Xiangyu Wu</b>, Chang Xu, Ziling Lu, Yanyan Jiang, Chun Cao, Xiaoxing Ma, Jian Lu. CoseDroid: Effective computation- and sensing-offloading for Android apps. In <i>Proceedings of the 39th IEEE Computer Software and Applications Conference</i>, (COMPSAC), pages 632-637, 2015.</p>
+					
+					<li><p><b>Xiangyu Wu</b>, Yanyan Jiang, Chang Xu, Chun Cao, Xiaoxing Ma, Jian Lu. Testing Android Apps via Guided Gesture Event Generation. In APSEC 2016.</p>
+
+
+				</div>
+			</div>
+			<div class="post">
+				<h2 class="title"><a name="Link">Link</a></h2>
+				<div class="entry">
+					<p>1.App selection for CoseDroid <a href="CoseDroidapp.html"> click here</a></p>
+					<p>2.Doodlejump demo for sensing offloading <a href="./DoodleJumpDemo.mp4"> no longer available</a></p>
+					<p>3.Study of gesture recognition <a href="sogr.html"> click here</a></p>
+				
+				</div>
+			</div>			
+			<div class="post">
+				<h2 class="title"><a name="Contact">Contact</a></h2>
+				<div class="entry">
+					<table font size="8">
+					<tr>
+					<td valign="top" width="70px">Email: </td>
+					<td><img src="email.png" height="28px"/>
+					</tr>
+					<tr>
+					<td valign="top">Office:</td>
+					<td>Room 812, Building of Computer Science and Technology, Xianlin Campus of Nanjing University</td>
+					</tr>
+					<tr>
+					<td valign="top">Addr:</td>
+					<td>Xiangyu Wu<br />Department of Computer Science and Technology,<br />Nanjing University, 163 Xianlin Avenue, Qixia District, <br />Nanjing 210023, China</td>
+					</tr>
+					</table>
+				</div>
+			</div>
+			<div class="post">
+				<h2 class="title"><a name="Other">Other</a></h2>
+				<div class="entry">
+					<!--hobbies-->
+					<tr>
+					<td> <br />
+					<div style="margin-right: 40px; text-align: justify; margin-left: 40px;"><big><span style="font-weight: bold;">Hobbies</span></big><br />
+					<hr color=#1884CD size="1px" noshade=False/>
+					<li>Running, Reading Network Novels, Thinking and Playing Computer Games</li>
+					</div>
+					</td>
+					</tr>
+					<tr>
+					<!--teaching assistant-->
+					<tr>
+					<td> <br />
+					<div style="margin-right: 40px; text-align: justify; margin-left: 40px;"><big><span style="font-weight: bold;">Honors and Awards</span></big><br />
+					<hr color=#1884CD size="1px" noshade=False/>
+					<li> National Scholarship, 2013 </li>
+					<li> First Prize of RenMing Scholarship of Nanjing University, 2011 & 2012 
+					</div>
+					</td>
+					</tr>
+					<tr>
+				</div>
+			</div>
+		</div>
+		<!-- end #content -->
+		<div style="clear: both;">&nbsp;</div>
+	</div>
+	</div>
+	<!-- end #page -->
+	<div id="footer-bgcontent">
+	<div id="footer">
+		<p>Page maintained by Xiangyu Wu. <br />Last updated: Dec 15, 2016.</p>
+	</div>
+	</div>
+	<!-- end #footer -->
+</body>
+</html>

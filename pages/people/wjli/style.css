@@ -1,0 +1,230 @@
+
+body {
+	margin: 0;
+	padding: 0;
+	font-family: Constantia, Helvetica, sans-serif;
+	font-size: 16px;
+}
+
+h1, h2, h3 {
+	margin: 0;
+	font-weight: normal;
+}
+
+h1 { font-size: 44px; }
+
+h2 { font-size: 18px; }
+
+h3 { }
+
+p, ul, ol {
+	margin-top: 0;
+	line-height: 150%;
+	text-align: justify;
+}
+
+p { font-size: 18px; }
+
+ul, ol { font-size: 18px; }
+
+
+
+#wrapper {
+	margin: 0 auto;
+	padding: 0px;
+}
+
+/* Header */
+
+#header-wrapper {
+	margin: 0 auto;
+	padding: 0px;
+}
+
+#header {
+	width: 960px;
+	height: 45px;
+	margin: 0 auto;
+}
+
+/* Menu */
+
+#menu {
+	float: left;
+	width: 960px;
+	height: 45px;
+	margin: 0 auto;
+}
+
+#menu ul {
+	margin: 0 auto;
+	width: 960px;
+	padding: 0px 0px 0px 5px;
+	list-style: none;
+	line-height: normal;
+}
+
+#menu li {
+	display: block;
+	float: left;
+}
+
+#menu a {
+	display: block;
+	float: left;
+	height: 31px;
+	margin-right: 3px;
+	padding: 14px 20px 0px 20px;
+	background: url(images/img04.jpg) no-repeat left 18px;
+	text-decoration: none;
+	text-transform: capitalize;
+	font-family: Constantia, Helvetica, sans-serif;
+	font-size: 20px;
+}
+
+#menu a:hover { text-decoration: underline; }
+
+#menu .current_page_item a {
+	height: 50px;
+}
+
+#menu .first {
+	background: none;
+}
+
+
+
+/* Page */
+
+#page {
+	width: 960px;
+	margin: 0 auto;
+	background: url(images/img01.jpg) repeat-y left top;
+}
+
+
+/** LOGO 
+
+#logo {
+	width: 980px;
+	height: 180px;
+	margin: 0 auto;
+}
+*/
+
+#logo h1, #logo p {
+	margin: 0 auto;
+	line-height: normal;
+	/*text-transform: lowercase;*/
+	font-weight: normal;
+}
+
+#logo p {
+	padding-left: 25px;
+	font-size: 20px;
+	font-weight: bold;
+}
+
+#logo h1 {
+	padding-left: 20px;
+	padding-top: 30px;
+	font-size: 30px;
+}
+
+#logo a {
+	text-decoration: none;
+}
+
+#logo h1 a {
+	text-decoration: none;
+}
+
+
+#banner {
+	padding-bottom: 20px;
+}
+
+/* Content */
+
+#content {
+	float: left;
+	width: 920px;
+	padding: 30px 30px 0px 20px;
+}
+
+/* Post */
+
+.post {
+	margin-bottom: 30px;
+	background: url(images/img02.jpg) repeat-x left bottom;
+}
+
+.post .title {
+	height: 30px;
+}
+
+.post .title a {
+	text-decoration: none;
+	text-transform: capitalize;
+	font-size: 30px;
+}
+
+.post .date {
+}
+
+.post .meta {
+	margin-left: 2px;
+	padding: 2px 30px 2px 16px;
+	background: url(images/img05.jpg) no-repeat left 8px;
+	font-family: Constantia, Helvetica, sans-serif;
+	font-weight: normal;
+	font-size: 10px;
+}
+
+.post .meta span {
+	display: block;
+	margin-top: -10px;
+}
+
+.post .meta a { }
+
+.post .entry {
+	padding: 10px 0 30px 0;
+}
+
+.post .links {
+	margin: 0 250px 0 0;
+	padding: 0 0 0 0px;
+}
+
+.post .links .comments {
+}
+
+.post .links .permalink {
+	padding-left: 17px;
+}
+
+/* Footer */
+
+#footer {
+	width: 960px;
+	height: 49px;
+	margin: 0 auto;
+	padding-top: 50px;
+}
+
+#footer-bgcontent {
+	margin: 0px;
+	padding: 0px;
+	height: 99px;
+}
+
+#footer p {
+	margin: 0;
+	text-align: center;
+	line-height: normal;
+	font-size: 15px;
+}
+
+#footer a {
+}

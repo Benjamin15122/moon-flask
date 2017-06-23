@@ -1,0 +1,42 @@
+<h1>Topcoder Challenger</h1>
+The download link is <a href="tcc-visualvm-plugin.nbm">here</a>. View <a href="tcc-manual.pdf">PDF manual</a> or <a href="manual/manual.html">online manual</a>.
+
+<P>
+<I>TopcoderChallenger</I> (we use <I>TCC</I> for short) is a cheating
+program designed for challenge phase of algorithm <I>Topcoder</I>
+contests.
+
+<P>
+<I>TCC</I> works as follows: user firstly specify contest meta-data
+such as class names, entry method names, entry method signatures and
+several test cases. Then each time one opens up a challenge window,
+he/she could use the heap dump functionality provided by VisualVM
+to obtain the coder's actual code. At any time, a mini "system test"
+could be performed to run each program against every test case. The
+system test results will be displayed for your reference. Below is
+a screenshot taken from codes crawled from SRM597 practice room with
+two manual test cases.
+
+<P>
+
+<DIV ALIGN="CENTER">
+<IMG
+  WIDTH="396" HEIGHT="239" ALIGN="BOTTOM" BORDER="0"
+ SRC="manual/srm597.jpg"
+ ALT="Image srm597">
+
+</DIV>
+
+<P>
+In this demo, we tested all example test cases and two extra manual
+corner test cases which is easily for coders to ignore. The system
+test result finds several wrong submissions in the practice room.
+It also surprisingly finds one coder's submission even cannot pass
+all the examples. All submissions marked red are being successfully
+challenged.
+
+<p>
+
+
+<p>
+For Linux users, if your VisualVM GUI freezes, it is due to a bug (feature) of Swing implementation in OpenJDK. This can be fixed by replacing with Oracle's JRE.
