@@ -74,7 +74,7 @@ And now, I am doing some research on the buggy file detecting based-on bug repor
 * 2014 (Fall) Problem Solving
 * 2015 (Spring) Operating System
 * [2016 (Spring) Operating System (Experiment)](static/OS/main.html)
-* 2017 (Spring) Operating System ([Download Test Here](static/test.pptx))
+* 2017 (Spring) Operating System ([Download Test Here](static/test.pptx),[Download Test B](static/test.pdf))
 
 ## Other
 ##### Hobbies
