@@ -23,14 +23,7 @@ moon需要两台服务器协作
 当有新的内容push到GitLab服务器时，对应项目的webhook会被触发，
 进而触发Web服务器向GitLab服务器请求新数据。
 
-由于历史原因，以及避免多人修改带来的合并、冲突问题，
-目前moon的用户分为两种，分别对应两个项目
-
 * `moon-flask`: 包含站点全局的信息、内容、数据、代码。
-* `moon-share`: 包含个人主页内容
-
-这两个项目只要是GitLab的成员都有权限克隆，但是只有项目的成员才能push。
-分配的原则是非管理员一般放置在`moon-share`，而管理员一般放置在`moon-flask`。
 
 
 
@@ -43,9 +36,11 @@ moon需要两台服务器协作
         由于学校限制使用22端口，因此我们需要将`git.njuics.cn`配置为2222端口，具体见[【配置GitLab】](#configure-gitlab)。
 2. 联系管理员，将自己的信息加入到[people](/people/)页面。
     * 提供姓名、入学年份、博士研究生或硕士研究生或本科生、头像avatar。
-3. 管理员会将你加入GitLab上的`moon-share`项目，确认自己有权限了，克隆项目。
+3. 管理员会将你加入GitLab上的`moon-flask`项目，确认自己有权限了，克隆项目。
 
-        git clone git@git.njuics.cn:moon/moon-share.git
+        git clone git@git.njuics.cn:moon/moon-flask.git
+!!! warning "注意："
+    每个人都会在`moon-flask/pages/people/`下有一个文件夹
 
 4. 创建自己的页面，最直接的方式是拷贝已有师兄的复制修改。
     * 例如张三可以复制`yaojingwang`目录，将其重命名为`sanzhang`，管理员会默认将其页面指向`/people/sanzhang/`
@@ -82,9 +77,7 @@ moon需要两台服务器协作
 需要在本地调试的成员可以按照如下步骤
 
 1. 在机器上安装`python2`，目前`moon-flask`一直在`python2`环境下开发，对于`python3`有一些不兼容的地方。
-2. 克隆`moon-flask`项目，`moon-share`作为`moon-flask`的子模块（submodule）通过一组命令克隆，具体可以直接执行`pull.py`。
-    * 通过执行`pull.py`脚本，`moon-share`会被克隆并放置在`/pages/share`。
-    * 如果在`moon-flask`项目里通过submodule克隆了`moon-share`，则无需再另外克隆`moon-share`。
+2. 克隆`moon-flask`项目
 3. 查看`README.md`, 安装对应的Python依赖包
 4. 启动系统`python moon.py`
 5. 打开浏览器，访问`localhost:8000/userguide`
@@ -97,7 +90,7 @@ moon需要两台服务器协作
 每个人都有一个目录，这个目录的名字一般是拼音的全拼小写，例如王瑶菁的就是`yaojingwang`。
 
 ~~~
-moon-share/
+moon-flask/pages/people/
     |
     +---yaojingwang/
     |         |
@@ -333,10 +326,10 @@ moon通过[bootstrap](http://getbootstrap.com/)支持Mobile和responsive的效�
         Host git.njuics.cn
         Port 2222
 
-3. 通过链接<git@git.njuics.cn:moon/moon-share.git>克隆项目，已经克隆的项目可以更改remote
+3. 通过链接<git@git.njuics.cn:moon/moon-flask.git>克隆项目，已经克隆的项目可以更改remote
 
         git remote rm origin
-        git remote add origin git@git.njuics.cn:moon/moon-share.git
+        git remote add origin git@git.njuics.cn:moon/moon-flask.git
 
 ## 使用扩展
 
