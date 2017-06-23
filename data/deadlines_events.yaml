@@ -42,4 +42,8 @@
   label: ASE 2017 (Urbana-Champaign, Illinois, USA)
   url: http://ase2017.org
   date: 2017-05-03
+- id: icse2018
+  label: ICSE 2018 (Gothenburg, Sweden)
+  url: http://conf.researchr.org/home/icse-2018
+  date: 2017-08-25
 
