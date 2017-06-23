@@ -10,3 +10,74 @@
     {{ widgets.render_all_short_news_widget() }}
 </div><!-- row end -->
 {% endblock %}
+    {% block footer %}
+    <div id="k-footer"><!-- footer -->
+        <div class="container"><!-- container -->
+            <div class="row no-gutter"><!-- row -->
+                <div class="col-lg-4 col-md-4"><!-- widgets column left -->
+                    <div class="col-padded col-naked">
+                        <ul class="list-unstyled clear-margins"><!-- widgets -->
+                            <li class="widget-container widget_nav_menu"><!-- widgets list -->
+                                <h1 class="title-widget">Links</h1>
+                                <ul>
+                                    <li><a href="http://cs.nju.edu.cn/" title="menu item">Department of Computer Science and Technology</a></li>
+                                    <li><a href="http://www.nju.edu.cn/" title="menu item">Nanjing University</a></li>
+                                    <li><a href="http://keysoftlab.nju.edu.cn/site/ndjsjx/" title="menu item">State Key Laboratory for Novel Software Technology</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div><!-- widgets column left end -->
+                <div class="col-lg-4 col-md-4"><!-- widgets column center -->
+                    <div class="col-padded col-naked">
+                        <ul class="list-unstyled clear-margins"><!-- widgets -->
+                            <li class="widget-container widget_recent_news"><!-- widgets list -->
+                                <h1 class="title-widget">Contact</h1>
+                                <div itemscope itemtype="http://data-vocabulary.org/Organization"> 
+                                    <h2 class="title-median m-contact-subject" itemprop="name">Institute of Computer Software</h2>
+                                    <div class="m-contact-address" itemprop="address" itemscope itemtype="http://data-vocabulary.org/Address">
+                                        <span class="m-contact-street" itemprop="street-address">No. 163 Xianlin Avenue, Qixia</span>
+                                        <span class="m-contact-city-region"><span class="m-contact-city" itemprop="locality">Nanjing</span>, <span class="m-contact-region" itemprop="region">Jiangsu</span></span>
+                                        <span class="m-contact-zip-country"><span class="m-contact-zip" itemprop="postal-code">210023</span> <span class="m-contact-country" itemprop="country-name">China</span></span>
+                                    </div>
+                                    <div class="m-contact-tel-fax">
+                                        <span class="m-contact-tel">Tel: <span itemprop="tel">025-89686068</span></span>
+                                        <span class="m-contact-fax">Fax: <span itemprop="fax">025-83593283</span></span>
+                                    </div>
+                                </div>
+                                <!--
+                                <div class="social-icons">
+                                    <ul class="list-unstyled list-inline">
+                                        <li><a href="#" title="Contact us"><i class="fa fa-envelope"></i></a></li>
+                                        <li><a href="#" title="Twitter"><i class="fa fa-twitter"></i></a></li>
+                                        <li><a href="#" title="Facebook"><i class="fa fa-facebook"></i></a></li>
+                                    </ul>
+                                </div>
+                                -->
+                            </li>
+                        </ul>
+                    </div>
+                </div><!-- widgets column center end -->
+                {% if g.site %}
+                <div class="col-lg-4 col-md-4"><!-- widgets column right -->
+                    <div class="col-padded col-naked">
+                        <ul class="list-unstyled clear-margins"><!-- widgets -->
+                            <li class="widget-container widget_sofa_flickr"><!-- widgets list -->
+                                <h1 class="title-widget">Photo</h1>
+                                <ul class="k-flickr-photos list-unstyled">
+                                    {% for p in g.site.photos %}
+                                        {% if loop.index <= 8 %}
+                                           <li><a href="{{ p.url }}" title="{{ p.title }}"><img src="{{ url_for('static', filename=p.src) }}" alt="{{ p.title }}" /></a></li>
+                                        {% endif %}
+                                    {% endfor %}
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div><!-- widgets column right end -->
+                {% endif %}
+            </div><!-- row end -->
+        </div><!-- container end -->
+    </div><!-- footer end -->
+    {% endblock %}
+
