@@ -134,7 +134,7 @@ uint32_t getKeyCode() {
 
 # 3. 相关资源
 
-* [框架代码](lab4.zip)
+* [框架代码](lab04.zip)
 * [US-QWERTY键盘扫描码](http://wiki.osdev.org/PS2_Keyboard)
 
 # 4. 作业提交
