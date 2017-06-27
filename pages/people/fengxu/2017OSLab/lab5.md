@@ -283,7 +283,7 @@ union DirEntry {                                  // 目录文件的表项
 
 # 4. 相关资源
 
-* [框架代码](lab5.zip)
+* [框架代码](lab05.zip)
 * [EXT4文件系统](https://ext4.wiki.kernel.org/index.php/Ext4_Disk_Layout)
 
 # 5. 作业提交
