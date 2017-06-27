@@ -69,7 +69,7 @@ title: Feng Xu
 
 ## Some recent publications
 
-   * Yuan Yao, Hanghang Tong, *Feng Xu*, and Jian Lu, “Scalable Algorithms for CQA Post Voting Prediction”, IEEE Transactions on Knowledge and Data Engineering (accepted), 2017
+   * Yuan Yao, Hanghang Tong, *Feng Xu*, and Jian Lu, “Scalable Algorithms for CQA Post Voting Prediction”, IEEE Transactions on Knowledge and Data Engineering, 2017
    * Yuan Yao, Xin Zhao, Yaojing Wang, Hanghang Tong, *Feng Xu*, and Jian Lu, “Version-Aware Rating Prediction for Mobile App Recommendation”, ACM Transactions on Information Systems, 2017
    * Yong Wu, Yuan Yao, *Feng Xu*, Hanghang Tong, and Jian Lu, “Tag2Word: Using Tags to Generate Words for Content Based Tag Recommendation” , in CIKM, Indianapolis, USA, October 24-28 , 2016
    * Licheng Li, Yuan Yao, *Feng Xu*, Jian Lu. MATAR: Keywords Enhanced Multi- Label Learning for Tag Recommendation. The 17th Asia-Pacific Web Conference (APWeb), 2015.
