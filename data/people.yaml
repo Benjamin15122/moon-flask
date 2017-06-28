@@ -135,55 +135,7 @@ phd:
 
 
 graduates:
-  - name: Jinqi Cui 崔金琦
-    url:  default
-    from: 2014
-  - name: Yuhao Gong 龚宇豪
-    url:  default
-    from: 2014
-  - name: Qiwei Li 李其玮
-    url:  qwli
-    from: 2014
-    avatar: /spar/img/avatar/qwli.jpg
-    group: spar
-  - name: Xiaofan Li 李晓帆
-    url:  xfli
-    from: 2014
-    avatar: /spar/img/avatar/xfli.jpg
-    group: spar
-  - name: Ziling Lu 陆子凌
-    url:  zilinglu
-    from: 2014
-    avatar: /people/zilinglu/static/lzl.jpg
-  - name: Chenglin Meng 孟成林
-    url:  chenglinmeng
-    from: 2014
-    avatar: /people/chenglinmeng/static/avatar.png
-  - name: Yiqun Wang 王逸群
-    url:  /people/yiqunwang
-    from: 2014
-    group: dse
-    avatar: /static/img/avatar/wangyiqun.jpg
-  - name: Xiangyu Wu 武翔宇
-    url:  xywu
-    from: 2014
-    avatar: /spar/img/avatar/xywu.jpg
-    group: spar
-  - name: Yong Wu 吴勇
-    url:  yongwu
-    from: 2014
-  - name: Hengzhi Yao 姚恒志
-    url:  default
-    from: 2014
-  - name: Zhongliang Yuan 袁忠良
-    url:  zhongliangyuan
-    from: 2014
-    avatar: /people/zhongliangyuan/static/handsome.jpg
-  - name: Ruiqing Zhang 张瑞青
-    url:  rqzhang
-    from: 2014
-    avatar: /spar/img/avatar/rqzhang.jpg
-    group: spar
+
   - name: Shuo Cheng 程硕
     url:  shuocheng
     from: 2015
@@ -253,6 +205,55 @@ graduates:
 
 
 alumni:
+  - name: Jinqi Cui 崔金琦
+    url:  default
+    from: 2014
+  - name: Yuhao Gong 龚宇豪
+    url:  default
+    from: 2014
+  - name: Qiwei Li 李其玮
+    url:  qwli
+    from: 2014
+    avatar: /spar/img/avatar/qwli.jpg
+    group: spar
+  - name: Xiaofan Li 李晓帆
+    url:  xfli
+    from: 2014
+    avatar: /spar/img/avatar/xfli.jpg
+    group: spar
+  - name: Ziling Lu 陆子凌
+    url:  zilinglu
+    from: 2014
+    avatar: /people/zilinglu/static/lzl.jpg
+  - name: Chenglin Meng 孟成林
+    url:  chenglinmeng
+    from: 2014
+    avatar: /people/chenglinmeng/static/avatar.png
+  - name: Yiqun Wang 王逸群
+    url:  /people/yiqunwang
+    from: 2014
+    group: dse
+    avatar: /static/img/avatar/wangyiqun.jpg
+  - name: Xiangyu Wu 武翔宇
+    url:  xywu
+    from: 2014
+    avatar: /spar/img/avatar/xywu.jpg
+    group: spar
+  - name: Yong Wu 吴勇
+    url:  yongwu
+    from: 2014
+  - name: Hengzhi Yao 姚恒志
+    url:  default
+    from: 2014
+  - name: Zhongliang Yuan 袁忠良
+    url:  zhongliangyuan
+    from: 2014
+    avatar: /people/zhongliangyuan/static/handsome.jpg
+  - name: Ruiqing Zhang 张瑞青
+    url:  rqzhang
+    from: 2014
+    avatar: /spar/img/avatar/rqzhang.jpg
+    group: spar
   - name: Hongyu Kuang 匡宏宇
     from: 2010
   - name: Xiaorui Zhu 朱晓瑞
