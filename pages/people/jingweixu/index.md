@@ -32,6 +32,18 @@ title: Jingwei Xu
 ## Publications
 
 ~~~{.bibtexhtml hl_lines="Jingwei Xu"}
+@inproceedings{KDD17,
+  author    = {Jingwei Xu and
+               Yuan Yao and
+               Hanghang Tong and
+               XianPing Tao and
+               Jian Lu},
+  title     = {HoORaYs: High-order Optimization of Rating Distance for Recommender Systems},
+  booktitle = {KDD (accepted)},
+  year      = {2017},
+  pdf       = {http://moon.nju.edu.cn/people/yuanyao/static/kdd2017.pdf}
+}
+
 @article{Xu_2016,
     doi = {10.1109/tkde.2016.2615039},
     url = {http://dx.doi.org/10.1109/TKDE.2016.2615039},
