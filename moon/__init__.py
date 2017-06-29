@@ -57,4 +57,4 @@ app = Flask(__name__,
 app.config.from_object(__name__)
 
 
-import moon.views, moon.shorturl, moon.models, moon.jj, moon.md, moon.webhook
+import moon.views, moon.shorturl, moon.models, moon.jj, moon.md
