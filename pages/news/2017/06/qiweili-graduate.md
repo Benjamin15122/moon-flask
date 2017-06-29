@@ -12,7 +12,7 @@ img_path: photo/QiweiLi-news.jpg
 
 
 Qiwei Li is supervised by Prof. [Chang Xu](http://cs.nju.edu.cn/changxu). His research helps Android app developers to diagnose energy and concurrency bugs.
-Before joining ICS, he obtained his bachelor degree from the Elite Class of Department of Computer Science Nanjing University (with the highest GPA ranked No. 1) at 2014.
+Before joining ICS, he obtained his bachelor degree from the Elite Class of Department of Computer Science at Nanjing University (with the highest GPA ranked No. 1) in 2014.
 He received a special offer from Huawei and will join Huawei Nanjing R&D Center this summer.
 
 Every year many excellent students graduate from ICS.
