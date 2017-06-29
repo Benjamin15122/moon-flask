@@ -41,7 +41,7 @@ title: Jingwei Xu
   title     = {HoORaYs: High-order Optimization of Rating Distance for Recommender Systems},
   booktitle = {KDD (accepted)},
   year      = {2017},
-  pdf       = {http://moon.nju.edu.cn/people/yuanyao/static/kdd2017.pdf}
+  pdf       = {http://moon.nju.edu.cn/people/jingweixu/static/kdd2017.pdf}
 }
 
 @article{Xu_2016,
