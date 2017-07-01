@@ -1,13 +1,13 @@
-title:  Qiwei Li Gave The Valedictory Speech At This Year's CS Graduation Ceremony
+title: Qiwei Li: The Valedictorian At This Year's CS Graduation Ceremony
 date: 2017-06-21
 img_title: Qiwei Li
 img_path: photo/QiweiLi-news.jpg
 
 
 
-# Qiwei Li Gave The Valedictory Speech At This Year's CS Graduation Ceremony
+# Qiwei Li: The Valedictorian At This Year's CS Graduation Ceremony
 
-[Qiwei Li](http://moon.nju.edu.cn/people/qwli), a graduate student in [ICS](http://moon.nju.edu.cn), just obtained his master degree and gave the valedictory speech at this year's CS graduation ceremony on behalf of all graduate students.
+[Qiwei Li](http://moon.nju.edu.cn/people/qwli), a graduate student in [ICS](http://moon.nju.edu.cn), just obtained his master degree and gave the valedictorian speech at this year's CS graduation ceremony on behalf of all graduate students.
 
 
 
