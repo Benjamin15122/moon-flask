@@ -1,0 +1,124 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Writing Contest Configuration Files</TITLE>
+<META NAME="description" CONTENT="Writing Contest Configuration Files">
+<META NAME="keywords" CONTENT="manual">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-15">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="manual.css">
+
+<LINK REL="previous" HREF="node5.html">
+<LINK REL="up" HREF="node5.html">
+<LINK REL="next" HREF="node7.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html68"
+  HREF="node7.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html66"
+  HREF="node5.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html62"
+  HREF="node5.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/lib/latex2html/icons/prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html69"
+  HREF="node7.html">About this document ...</A>
+<B> Up:</B> <A NAME="tex2html67"
+  HREF="node5.html">Play with TopcoderChallenger</A>
+<B> Previous:</B> <A NAME="tex2html63"
+  HREF="node5.html">Play with TopcoderChallenger</A>
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00031000000000000000">
+Writing Contest Configuration Files</A>
+</H2>
+
+<P>
+Contest configuration file should be written in <I>YAML</I> format.
+You should describe each problem separately with its class name, and
+each problem must contain the following fields:
+
+<P>
+<I><B>method</B></I>. Method entry must be provided.
+
+<P>
+<I><B>signature</B></I>. Signature is described by a string in
+shape <TT>[type of arg0], [type of arg1], ... [type
+of last arg] -&gt; [return type]</TT>. Basic type <TT>int</TT>, <TT>long
+long</TT>, <TT>double</TT>, <TT>string</TT> are indicated by <TT>I</TT>,
+<TT>L</TT>, <TT>D</TT>, <TT>S</TT>, respectively. Vectors are indicated
+by <TT>V</TT>. For instance, signature of <TT>vector&lt;int&gt; f(vector
+&lt;vector&lt;string&gt;&gt;, double)</TT> is indicated by <TT>VVS,D-&gt;VI</TT>.
+
+<P>
+<I><B>tests</B></I>. Tests consists of several test cases, which
+each one is described as a key-value pair. The key is the name of
+that test case and the value is the detailed description of that test
+case. You may use any meaningful names, but you should avoid spaces
+and special characters because the test case name will be part of
+a file name. For how to write test inputs and outputs, please refer
+to the example below showing a configuration file of <TT>ConvexPolygonGame</TT>
+in SRM597. Of course, you can describe multiple problems in a single
+contest configuration file.
+
+<P>
+<BR>
+<IMG
+ WIDTH="567" HEIGHT="344" ALIGN="BOTTOM" BORDER="0"
+ SRC="img2.png"
+ ALT="\begin{lstlisting}[basewidth={0.55em, 0.5em},basicstyle={\small\ttfamily },frame...
+...,4,5,4]-&gt;''Petya''
+jyy2: \vert
+[0,3,5,2],[0,2,5,3]-&gt;''Petya''
+\end{lstlisting}">
+<BR>
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html68"
+  HREF="node7.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html66"
+  HREF="node5.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html62"
+  HREF="node5.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/lib/latex2html/icons/prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html69"
+  HREF="node7.html">About this document ...</A>
+<B> Up:</B> <A NAME="tex2html67"
+  HREF="node5.html">Play with TopcoderChallenger</A>
+<B> Previous:</B> <A NAME="tex2html63"
+  HREF="node5.html">Play with TopcoderChallenger</A>
+<!--End of Navigation Panel-->
+<ADDRESS>
+
+2013-11-27
+</ADDRESS>
+</BODY>
+</HTML>
