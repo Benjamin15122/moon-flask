@@ -42,7 +42,7 @@ title: Jingwei Xu
   booktitle = {KDD (accepted)},
   year      = {2017},
   pdf       = {http://moon.nju.edu.cn/people/jingweixu/static/kdd2017.pdf}
-}[code](https://github.com/ParagonLight/hoorays)
+}
 
 @article{Xu_2016,
     doi = {10.1109/tkde.2016.2615039},
@@ -111,3 +111,5 @@ title: Jingwei Xu
 
 * The proof that the derivative of Eq. (12) is Lipschitz continuous in our TKDE submission.
     * [Proof.pdf](./static/proof.pdf)
+* Another implimentation for our KDD paper.
+    * [code](https://github.com/ParagonLight/hoorays)
