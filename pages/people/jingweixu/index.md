@@ -42,7 +42,7 @@ title: Jingwei Xu
   booktitle = {KDD (accepted)},
   year      = {2017},
   pdf       = {http://moon.nju.edu.cn/people/jingweixu/static/kdd2017.pdf}
-}
+}[code](https://github.com/ParagonLight/hoorays)
 
 @article{Xu_2016,
     doi = {10.1109/tkde.2016.2615039},
