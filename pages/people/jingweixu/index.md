@@ -32,15 +32,24 @@ title: Jingwei Xu
 ## Publications
 
 ~~~{.bibtexhtml hl_lines="Jingwei Xu"}
-@inproceedings{xu2017hoorays,
-  title={HoORaYs: High-order Optimization of Rating Distance for Recommender Systems},
-  author={Xu, Jingwei and Yao, Yuan and Tong, Hanghang and Tao, Xianping and Lu, Jian},
-  booktitle={Proceedings of the 23rd ACM SIGKDD International Conference on Knowledge Discovery and Data Mining},
-  pages={525--534},
-  year={2017},
-  organization={ACM},
+@inproceedings{Xu:2017:HHO:3097983.3098019,
+ author = {Jingwei Xu and Yuan Yao and Hanghang Tong and Xianping Tao and Jian Lu},
+ title = {HoORaYs: High-order Optimization of Rating Distance for Recommender Systems},
+ booktitle = {Proceedings of the 23rd ACM SIGKDD International Conference on Knowledge Discovery and Data Mining},
+ series = {KDD '17},
+ year = {2017},
+ isbn = {978-1-4503-4887-4},
+ location = {Halifax, NS, Canada},
+ pages = {525--534},
+ numpages = {10},
+ url = {http://doi.acm.org/10.1145/3097983.3098019},
+ doi = {10.1145/3097983.3098019},
+ acmid = {3098019},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+ keywords = {collaborative filtering, high-order distance, latent factor model, recommender systems},
   pdf={http://moon.nju.edu.cn/people/jingweixu/static/kdd2017.pdf}
-}
+} 
 
 @article{Xu_2016,
     doi = {10.1109/tkde.2016.2615039},
