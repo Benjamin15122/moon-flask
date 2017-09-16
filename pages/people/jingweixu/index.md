@@ -32,16 +32,14 @@ title: Jingwei Xu
 ## Publications
 
 ~~~{.bibtexhtml hl_lines="Jingwei Xu"}
-@inproceedings{KDD17,
-  author    = {Jingwei Xu and
-               Yuan Yao and
-               Hanghang Tong and
-               XianPing Tao and
-               Jian Lu},
-  title     = {HoORaYs: High-order Optimization of Rating Distance for Recommender Systems},
-  booktitle = {KDD (accepted)},
-  year      = {2017},
-  pdf       = {http://moon.nju.edu.cn/people/jingweixu/static/kdd2017.pdf}
+@inproceedings{xu2017hoorays,
+  title={HoORaYs: High-order Optimization of Rating Distance for Recommender Systems},
+  author={Xu, Jingwei and Yao, Yuan and Tong, Hanghang and Tao, Xianping and Lu, Jian},
+  booktitle={Proceedings of the 23rd ACM SIGKDD International Conference on Knowledge Discovery and Data Mining},
+  pages={525--534},
+  year={2017},
+  organization={ACM},
+  pdf={http://moon.nju.edu.cn/people/jingweixu/static/kdd2017.pdf}
 }
 
 @article{Xu_2016,
@@ -98,9 +96,7 @@ title: Jingwei Xu
 ~~~
 
 ## Services
-* PC Member for: ASONAM 2016-2017, CIKM 2017 (Short papers)
-* Reviewer
-    * IEEE Transactions on Knowledge Discovery from Data (TKDD)
+* PC Member for: ASONAM 2016-2017, CIKM 2017 (Short papers), AAAI 2018
 
 ## Projects
 
