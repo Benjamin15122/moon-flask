@@ -15,13 +15,7 @@
 #  title: Internetware 2016 (Beijing, China)
 #  url: http://stap.sjtu.edu.cn/internetware2016/
 #  date: 2016-09-18
-- id: nasac16
-  title: NASAC 2016 (Yunnan, China)
-  url: http://www.nasac2016.ynu.edu.cn/
-  date: 2016-11-03
-  endDate: 2016-11-5
-- id: fse16
-  title: ACM FSE 2016 (Seattle, USA)
-  url: http://www.cs.ucdavis.edu/fse2016/
-  date: 2016-11-13
-  endDate: 2016-11-18
+- id: internetware17
+  title: Internetware 2017 (Shanghai, China)
+  url: http://www.se.fudan.edu.cn/events/Internetware2017/
+  date: 2017-09-23
