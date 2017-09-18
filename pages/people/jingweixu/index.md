@@ -104,6 +104,9 @@ title: Jingwei Xu
 }
 ~~~
 
+## Awards
+* KDD2017 Student Travel Awards
+
 ## Services
 * PC Member for: ASONAM 2016-2017, CIKM 2017 (Short papers), AAAI 2018
 
