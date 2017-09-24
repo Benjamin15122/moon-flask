@@ -1,7 +1,7 @@
 title: Publications of Jun Ma
 **2017**
 
-- <img src="static/img/new.jpg" width = "40" height = "40" align=center />**MA Jun**, LIU Sheng, YUE Shengtao, TAO Xianping, and LU Jian, *LeakDAF: an Automated Tool for Detecting Leaked Activities and Fragments of Android Applications*, accepted to Compsac 2017.
+- <img src="static/img/new.jpg" width = "40" height = "40" align=center />**MA Jun**, LIU Sheng, YUE Shengtao, TAO Xianping, and LU Jian, *LeakDAF: an Automated Tool for Detecting Leaked Activities and Fragments of Android Applications*, (DOI:[10.1109/COMPSAC.2017.161](https://doi.org/10.1109/COMPSAC.2017.161)).
 - <img src="static/img/new.jpg" width = "40" height = "40" align=center />Yue Shengtao, Feng Weizan, **Ma Jun**, Jiang Yanyan, Tao Xianping, Xu Chang and Lu Jian. *RepDroid: An Automated Tool for Android Application Repackaging Detection*, (DOI: [10.1109/ICPC.2017.16](https://doi.org/10.1109/ICPC.2017.16)).
 
 **2016**
