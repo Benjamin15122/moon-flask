@@ -2,18 +2,16 @@ title: Yanyan Jiang
 
 # Yanyan Jiang 蒋炎岩 ![](img/email.png) [![](img/github.png)](http://github.com/jiangyy)
 
-**Ph.D. Candidate**, Department of Computer Science and Technology, *Nanjing University* ![](img/nju_logo.png)
-
 <table width="640px"><tr><td>
 
 <img style="float:left; margin-right:10px; height:135px; display: inline" src="img/yanyan-portrait.png">
+
 <p>
-I am supervised by Prof. Jian Lu (吕建).<br>
+Ph.D. (<em>Nanjing University</em> <img src="img/nju_logo.png"/>, 2017)
 </p>
 
 <p>
-I had a half-year visit to <a href="http://web.cse.ohio-state.edu/%7Eqin/">Feng Qin</a>'s group at The Ohio State University <img src="img/buckeye.png"/> in 2015.<br>
-I received my B.Sc. degree on computer science and technology from Nanjing University <img src="img/nju_logo.png"/> in 2011.<br>
+I visited the <em>Ohio State University</em> <img src="img/buckeye.png"/> in 2015.
 </p>
 
 </td></tr></table>
@@ -39,8 +37,7 @@ A [gallery](gallery) of our research projects, [the full publication list](pub),
 
 ## Services
 
-* Reviewer: Frontier of Computer Science.
-* Program Committee member of Jiangsu Olympiad in Informatics (the official programming contest hoster for high school students) since 2015 after serving 9 years as volunteer problem setter, coach, and judge.
+* Scientific Program Committee member of Jiangsu Olympiad in Informatics (the official programming contest hoster for high school students).
 
 ## Honors and Awards
 * 2016 Distinguished Student of Nanjing University (the only PhD student out of ten winners).
