@@ -11,6 +11,10 @@ Ph.D. (<em>Nanjing University</em> <img src="img/nju_logo.png"/>, 2017)
 </p>
 
 <p>
+I will soon be an Assistant Researcher at Nanjing University.
+</p>
+
+<p>
 I visited the <em>Ohio State University</em> <img src="img/buckeye.png"/> in 2015.
 </p>
 
@@ -18,19 +22,33 @@ I visited the <em>Ohio State University</em> <img src="img/buckeye.png"/> in 201
 
 ## Research
 
-I'm interested in *testing and analysis* technologies that make better computer software.
+I'm a coder striving to make programming less miserable. I'm interested in technologies that can *automatically* make computer software better: testing, analysis, and synthesis.
 
-A [gallery](gallery) of our research projects, [the full publication list](pub), with selected publications:
+* Understanding shared memory dependences:
+    * CARE [[ICSE14]()], RWTrace [[ASE15]()], BC [[FSE16]()], Survey [[JoS17]()], and my [PhD Thesis]().
+* Software testing and analysis
+    * mobile apps
+        * platform: ATT [[Internetware15]()], CoseDroid [[COMPSAC15]()]
+        * event generation: GAT [[APSEC16]()], AATT [[APSEC16](), [SCP18]()];
+        * mobile meets human insights: UGA [[APSEC14]()];
+        * analysis: RepDroid [[ICPC17]()];
+    * reliability
+        * crash consistency: C3 [[FSE16]()];
+    * symbolic analysis
+        * fault localization: Comedy [[COMPSAC15]()];
+* Software technologies
+    * building technologies: ABC [[APSEC15]()];
+    * runtime verification: GAIN [[APSEC14](), [IST16]()].
 
-* {{ render_bib_entry(g.site.spar_paper.jiang_crash_2016, hl='Yanyan Jiang') }}
-* {{ render_bib_entry(g.site.spar_paper.jiang_online_2016, hl='Yanyan Jiang') }}
-* {{ render_bib_entry(g.site.spar_paper.jiang_optimistic_2015, hl='Yanyan Jiang') }}
-* {{ render_bib_entry(g.site.spar_paper.jiang_care_2014, hl='Yanyan Jiang') }}
+All publications are listed chronologically [here](pub).
+
+## Students
+
+招生：欢迎有意愿从事软件工程/程序分析研究的同学！
 
 ## Teaching
 
-* I am working on the *Project-N* in which students build a complete computer system (NPC SoC, NEMU system emulator, Nanos operating system, NCC compiler, and applications) from scratch.
-* I am the inventor of Nanos, a teaching OS and taught the practicum part of *Operating System* course at Nanjing University from 2010 to 2014.
+* I am working on the *Project-N* in which students build a complete computer system (NPC SoC, NEMU system emulator, Nanos operating system, NCC compiler, and applications) from scratch. I am the inventor of Nanos (Nano-OS and Nan-OS) in the Project-N.
 * Selected talks
     * 计算：万物的起源和终点 [![](/static/img/icon-pdf.png)](teach/20140121.pdf) (Keynote speech at 2014 JSOI Winter Camp at Mudu high school).
     * 从逻辑门到电子计算机 [![](/static/img/icon-pdf.png)](teach/20141008.pdf) (Guest lecture for 2014 Introduction to Computer System at NJU).
