@@ -36,8 +36,10 @@ I'm a coder striving to make programming less miserable. I'm interested in techn
         * crash consistency: C3 [[FSE16](pubs/c3)];
     * symbolic analysis
         * fault localization: Comedy [[COMPSAC15](pubs/comedy)];
+* Program synthesis
+    * heap transformation: AOTES [[ICSE17 Poster](pubs/aotes)];
 * Software technologies
-    * building technologies: ABC [[APSEC15](pubs/abc)];
+    * software building: ABC [[APSEC15](pubs/abc)];
     * runtime verification: GAIN [[APSEC14](pubs/gain), [IST16](pubs/gain1)].
 
 All publications are listed chronologically [here](pub).
