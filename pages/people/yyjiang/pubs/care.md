@@ -1,0 +1,6 @@
+## CARE: Cache guided deterministic replay for concurrent Java programs
+
+{{ render_bib_entry(g.site.spar_paper.jiang_care_2014, hl="Yanyan Jiang") }}
+
+#### Abstract
+Deterministic replay tools help programmers debug concurrent programs. However, for long-running programs, a replay tool may generate huge log of shared memory access dependences. In this paper, we present CARE, an application-level deterministic record and replay technique reducing log size. The key idea of CARE is to log read-write dependences only at per-thread value prediction cache misses. This strategy records only a subset of all exact read-write dependences, and reduces synchronizations protecting memory reads in the instrumented code. Realizing that such recording strategy provides only value-deterministic replay, CARE also adopts variable grouping and action prioritization heuristics to synthesize sequentially consistent executions at replay in linear time. We implemented CARE in Java and experimentally evaluated it with recognized benchmarks. Results showed that CARE successfully resolved all missing read-write dependences, producing sequentially consistent replay for all benchmarks. CARE exhibited 1.7–40× (median 3.4×) smaller runtime overhead, and 1.1–309× (median 7.0×) smaller log size against state-of-the-art technique LEAP.

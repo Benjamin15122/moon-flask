@@ -25,26 +25,22 @@ I visited the <em>Ohio State University</em> <img src="img/buckeye.png"/> in 201
 I'm a coder striving to make programming less miserable. I'm interested in technologies that can *automatically* make computer software better: testing, analysis, and synthesis.
 
 * Understanding shared memory dependences:
-    * CARE [[ICSE14]()], RWTrace [[ASE15]()], BC [[FSE16]()], Survey [[JoS17]()], and my [PhD Thesis]().
+    * CARE [[ICSE14](pubs/care)], RWTrace [[ASE15](pubs/rwtrace)], BC [[FSE16](pubs/bc)], Survey [[JoS17](pubs/survey)], and my [PhD Thesis](pubs/thesis).
 * Software testing and analysis
     * mobile apps
-        * platform: ATT [[Internetware15]()], CoseDroid [[COMPSAC15]()]
-        * event generation: GAT [[APSEC16]()], AATT [[APSEC16](), [SCP18]()];
-        * mobile meets human insights: UGA [[APSEC14]()];
-        * analysis: RepDroid [[ICPC17]()];
+        * platform: ATT [[Internetware15](pubs/att)], CoseDroid [[COMPSAC15](pubs/cosedroid)]
+        * event generation: GAT [[APSEC16](pubs/gat)], AATT [[APSEC16](pubs/aatt), [SCP18](pubs/aattplus)];
+        * mobile meets human insights: UGA [[APSEC14](pubs/uga)];
+        * analysis: RepDroid [[ICPC17](pubs/repdroid)];
     * reliability
-        * crash consistency: C3 [[FSE16]()];
+        * crash consistency: C3 [[FSE16](pubs/c3)];
     * symbolic analysis
-        * fault localization: Comedy [[COMPSAC15]()];
+        * fault localization: Comedy [[COMPSAC15](pubs/comedy)];
 * Software technologies
-    * building technologies: ABC [[APSEC15]()];
-    * runtime verification: GAIN [[APSEC14](), [IST16]()].
+    * building technologies: ABC [[APSEC15](pubs/abc)];
+    * runtime verification: GAIN [[APSEC14](pubs/gain), [IST16](pubs/gain1)].
 
 All publications are listed chronologically [here](pub).
-
-## Students
-
-招生：欢迎有意愿从事软件工程/程序分析研究的同学！
 
 ## Teaching
 
