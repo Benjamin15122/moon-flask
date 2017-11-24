@@ -1,6 +1,7 @@
 import yaml, bibtexparser
 
 papers = [
+    ('aotes', 'gu_synthesizing_2017'),
     ('survey', 'jiang_approaches_2017'),
     ('aattplus', 'wang_aatt_2017'),
     ('repdroid', 'yue_repdroid_2017'),
@@ -45,7 +46,7 @@ for p in bibtexparser.load(open('../../spar/spar.bib'), parser=parser).entries:
     db[paper.id] = paper
     
 
-for p in papers:
-    render(p[0], p[1], db[p[1]], 'pubs/{0}.md'.format(p[0]))
+for (name, id) in papers:
+    render(name, id, db[id], 'pubs/{0}.md'.format(name))
 
 
