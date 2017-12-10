@@ -77,11 +77,6 @@ phd:
     avatar: /spar/img/avatar/yqin.jpg
     from: 2013
     group: spar
-  - name: Wenhua Yang 杨文华
-    url:  whyang
-    avatar: /spar/img/avatar/whyang.jpg
-    from: 2014
-    group: spar
   - name: Shengqu Xi 席圣渠
     url:  shengquxi
     from: 2014
@@ -137,8 +132,10 @@ phd:
     from: 2017
   - name: Weiyu Ye 叶伟煜
     from: 2017
+    group: spar
   - name: Chenxi Zhang 张晨曦
     from: 2017
+    group: spar
 
 
 graduates:
@@ -216,31 +213,61 @@ graduates:
     from: 2016
   - name: Dawei Cheng 程大卫
     from: 2016
+    group: spar
   - name: Xiang Hu 胡翔
     from: 2017
   - name: Qingping Li 李青坪
     from: 2017
   - name: Rui Qiu 邱睿
     from: 2017
+    group: spar
   - name: Shijie Tang 唐士杰
     from: 2017
   - name: Simeng Wu 吴思萌
     from: 2017
   - name: Suwei Zhang 张素威
     from: 2017
-  - name: Lei Zhou 周蕾
-    from: 2017
   - name: Yi Liu 刘毅
     from: 2017
     url: yiliu
   - name: Qingwei Sun 孙清伟
     from: 2017
+    group: spar
   - name: Tianheng Wu 吴天珩
     from: 2017
 
-
+undergraduates:
+  - name: Jiarong Wu 吴嘉荣
+    from: 2017
+    group: spar
+  - name: Xianfei Ou 欧先飞
+    from: 2017
+    group: spar
+  - name: Cong Li 李聪
+    from: 2017
+    group: spar
+  - name: Shaocong Liu 刘少聪
+    from: 2017
+    group: spar
+  - name: Jinci Chen 陈锦赐
+    from: 2017
+    group: spar
+  - name: Jingxin Fan 范景新
+    from: 2017
+    group: spar
+  - name: Yuehuan Wang 王月欢
+    from: 2017
+    group: spar
+  - name: Zhao Gang 刚昭
+    from: 2017
+    group: spar
 
 alumni:
+  - name: Wenhua Yang 杨文华
+    url:  whyang
+    avatar: /spar/img/avatar/whyang.jpg
+    from: 2014
+    group: spar
   - name: Jinqi Cui 崔金琦
     url:  default
     from: 2014
