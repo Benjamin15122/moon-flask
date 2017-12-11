@@ -5,25 +5,8 @@
 <title>Xiaofan Li's Homepage</title>
 <meta name="keywords" content="Xiaofan Li" />
 <meta name="description" content="Xiaofan Li's Homepage" />
-<link href="style.css" rel="stylesheet" type="text/css" media="screen" />
 </head>
 <body>
-	<div id="header-wrapper">
-	<div id="header">
-		<div id="menu">
-			<ul>
-				<li><a href="#" class="first">Home</a></li>
-				<li><a href="#Biography">Biography</a></li>
-				<li><a href="#Research">Research</a></li>
-				<li><a href="#Contact">Contact</a></li> 
-				<li><a href="#Other">Other</a></li>
-			</ul>
-		</div>
-		<!-- end #menu -->
-	</div>
-	</div>
-	<!-- end #header -->
-	<!-- end #header-wrapper -->
 	<div id="wrapper">
 	<div id="page">
 		<div id="logo">
@@ -36,9 +19,6 @@
 						<a href="http://cs.nju.edu.cn/">Department of Computer Science and Technology</a> 
 						<br /> <a href="http://www.nju.edu.cn/">Nanjing University</a>, Nanjing, China
 						</p>
-					</td>
-					<td>
-						<pre>&#9;&#9;&#9;</pre>
 					</td>
 					<td>
 						<img src="lxf.jpg" width="225"/>

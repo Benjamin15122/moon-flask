@@ -1,16 +1,9 @@
 <!DOCTYPE html>
 
 <!-- Bootstrap Core CSS -->
-<link href="css/bootstrap.min.css" rel="stylesheet">
-
-<!-- Custom CSS -->
-<link href="css/xiujiang.css" rel="stylesheet">
-
 <body>
-<div class="brand">Xiujiang Li</div>
+<h1>Xiujiang Li</h1>
 <div class="address-bar">SPAR | Nanjing University</div>
-
-<script language="JavaScript" src="js/navbar.js"></script>
 
 <div class="container">
 <div class="row">
