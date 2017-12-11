@@ -36,6 +36,7 @@ faculty:
     title: Associate Professor
     url: http://cs.nju.edu.cn/yuhuang
     avatar: /static/img/avatar/huangyu.jpg
+    group: disalg
   - name: Chun Cao 曹春
     title: Associate Professor
     avatar: /static/img/avatar/caochun.jpg
@@ -61,6 +62,7 @@ faculty:
     title: Assistant Researcher
     url:  hengfengwei
     avatar: /static/img/avatar/weihengfeng.png
+    group: disalg
 
 phd:
   - name: Jingwei Xu 徐经纬
@@ -89,7 +91,7 @@ phd:
     url:  zelinzhao
     avatar: /people/zelinzhao/static/avatar.jpg
     from: 2014
-    group: dse
+    group: dse, spar
   - name: Huiyan Wang 王慧妍
     url: hywang
     avatar: /spar/img/avatar/hywang.jpg
@@ -117,6 +119,7 @@ phd:
     group: spar
   - name: Xue Jiang 江雪
     from: 2016
+    group: disalg
   - name: Wenjie Li 李文杰
     from: 2016
     avatar: /spar/img/avatar/wjli.jpg
@@ -124,10 +127,13 @@ phd:
     group: spar
   - name: Yuqi Zhang 张宇奇
     from: 2016
+    group: disalg
   - name: Yi Huang 黄羿
     from: 2017
+    group: disalg
   - name: Lingzhi Ouyang 欧阳凌志
     from: 2017
+    group: disalg
   - name: Shengbin Xu 徐圣斌
     from: 2017
   - name: Weiyu Ye 叶伟煜
@@ -156,6 +162,7 @@ graduates:
   - name: Maosen Huang 黄茂森
     url:  maosenhuang
     from: 2015
+    group: disalg
   - name: Tianchi Liu 刘天驰
     url:  tianchiliu
     from: 2015
@@ -295,7 +302,7 @@ alumni:
   - name: Yiqun Wang 王逸群
     url:  /people/yiqunwang
     from: 2014
-    group: dse
+    group: dse, spar
     avatar: /static/img/avatar/wangyiqun.jpg
   - name: Xiangyu Wu 武翔宇
     url:  xywu
@@ -329,7 +336,7 @@ alumni:
     url:  tianxiaogu
     avatar: /static/img/avatar/gutianxiao.jpg
     from: 2012
-    group: dse
+    group: dse, spar
   - name: Kai Dong 董恺
     from: 2009
     url:  http://cse.seu.edu.cn/PersonalPage/dk/index.htm
@@ -343,7 +350,7 @@ alumni:
     url:  shengweian
     from: 2013
     avatar: /people/shengweian/static/img/avatar.jpg
-    group: dse
+    group: dse, spar
   - name: Huating Liu 刘华艇
     url:  default
     from: 2013
@@ -353,7 +360,7 @@ alumni:
   - name: Ruiqi Liu 刘锐奇
     url:  ruiqiliu
     from: 2013
-    group: dse
+    group: dse, spar
     avatar: /static/img/avatar/liuruiqi.jpg
   - name: Yang Liang 梁阳
     url:  default
