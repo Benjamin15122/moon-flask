@@ -2,8 +2,6 @@ title: 使用说明
 
 # 使用说明
 
-**项目的master分支被保护。大家的修改以merge request的形式发出，由管理员合并到主分支。**
-
 ## 网站架构
 
 moon主要用于软件所成员的个人主页的编写和发布。
@@ -40,6 +38,13 @@ moon需要两台服务器协作
 3. 管理员会将你加入GitLab上的`moon-flask`项目，确认自己有权限了，克隆项目。
 
         git clone git@git.njuics.cn:moon/moon-flask.git
+
+    然后用
+
+        git checkout -b your_branch_name
+    
+    命令切换到新的分支工作。
+
 !!! warning "注意："
     每个人都会在`moon-flask/pages/people/`下有一个文件夹
 
@@ -59,16 +64,18 @@ moon需要两台服务器协作
 
     !!! note "说明："
         因为是多人协同项目，但是各自一般只修改自己的目录下的内容，因此存在不能自动合并的冲突的情况十分少见。
-        因此，建议每次先commit，再pull，然后再push。
 
             git commit -am "Update xxx"
-            git pull origin master
-            git push origin master
+            git push origin your_branch_name
+
+        然后通过网页发起merge request，等待管理员code review之后即可进入。
+
+    !!! warning "注意："
+        **moon-flask的master分支被保护，不能直接提交代码。**
+        
+        所有修改都以merge request的形式发出，由管理员合并到主分支。
 
 -------------
-
-!!! note "说明："
-    当前管理员有顾天晓、蒋炎岩、孟占帅
 
 !!! warning "注意："
     所有文件必须保存为无BOM的UTF-8编码，尤其Windows用户。
