@@ -17,7 +17,7 @@ faculty:
     id: xiaoxingma
     url: /people/xiaoxingma
     avatar: /people/xiaoxingma/static/avatar.jpg
-    group: spar, dse
+    group: dse, spar
   - name: Feng Xu 徐锋
     id: fengxu
     title: Professor
@@ -28,15 +28,15 @@ faculty:
     id: changxu
     url: http://cs.nju.edu.cn/changxu
     avatar: /static/img/avatar/xuchang.jpg
-    group: spar
-  - name: Hao Hu 胡昊
-    title: Associate Professor
-    avatar: /static/img/avatar/huhao.jpg
+    group: spar, castle
   - name: Yu Huang 黄宇
-    title: Associate Professor
+    title: Professor
     url: http://cs.nju.edu.cn/yuhuang
     avatar: /static/img/avatar/huangyu.jpg
     group: disalg
+  - name: Hao Hu 胡昊
+    title: Associate Professor
+    avatar: /static/img/avatar/huhao.jpg
   - name: Chun Cao 曹春
     title: Associate Professor
     avatar: /static/img/avatar/caochun.jpg
@@ -73,7 +73,8 @@ phd:
     url:  yyjiang
     avatar: /spar/img/avatar/yyjiang.jpg
     from: 2013
-    group: spar
+    group: spar, castle
+
   - name: Yi Qin 秦逸
     url:  yqin
     avatar: /spar/img/avatar/yqin.jpg
@@ -101,12 +102,14 @@ phd:
     url: jwang
     avatar: /spar/img/avatar/jwang.jpg
     from: 2016
-    group: spar
+    group: spar, castle
+
   - name: Da Li 李达
     url: dli
     from: 2016
     avatar: /spar/img/avatar/dli.png
-    group: spar
+    group: spar, castle
+
   - name: Ying Zhang 张营
     from: 2016
     avatar: /spar/img/avatar/yzhang.jpg
@@ -124,7 +127,8 @@ phd:
     from: 2016
     avatar: /spar/img/avatar/wjli.jpg
     url: wjli
-    group: spar
+    group: spar, castle
+
   - name: Yuqi Zhang 张宇奇
     from: 2016
     group: disalg
@@ -247,7 +251,7 @@ graduates:
 undergraduates:
   - name: Jiarong Wu 吴嘉荣
     from: 2017
-    group: spar
+    group: spar, castle
   - name: Xianfei Ou 欧先飞
     from: 2017
     group: spar
@@ -275,7 +279,7 @@ alumni:
     url:  whyang
     avatar: /spar/img/avatar/whyang.jpg
     from: 2014
-    group: spar
+    group: spar, castle
   - name: Jinqi Cui 崔金琦
     url:  default
     from: 2014
@@ -286,7 +290,7 @@ alumni:
     url:  qwli
     from: 2014
     avatar: /spar/img/avatar/qwli.jpg
-    group: spar
+    group: spar, castle
   - name: Xiaofan Li 李晓帆
     url:  xfli
     from: 2014
@@ -324,7 +328,7 @@ alumni:
     url:  rqzhang
     from: 2014
     avatar: /spar/img/avatar/rqzhang.jpg
-    group: spar
+    group: spar, castle
   - name: Hongyu Kuang 匡宏宇
     from: 2010
   - name: Xiaorui Zhu 朱晓瑞
@@ -391,7 +395,7 @@ alumni:
     from: 2008
   - name: Xiujiang Li 李秀江
     url:  xjli
-    group: spar
+    group: spar, castle
     avatar: /spar/img/avatar/xjli.jpg
   - name: Wang Xi 奚旺
     url:  wxi
