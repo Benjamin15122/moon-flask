@@ -5,25 +5,8 @@
 <title>YANG Wenhua's Homepage</title>
 <meta name="keywords" content="Wenhua yang" />
 <meta name="description" content="Wenhua Yang's Homepage" />
-<link href="style.css" rel="stylesheet" type="text/css" media="screen" />
 </head>
 <body>
-	<div id="header-wrapper">
-	<div id="header">
-		<div id="menu">
-			<ul>
-				<li><a href="#" class="first">Home</a></li>
-				<li><a href="#Research">Research</a></li>
-				<li><a href="#Publication">Publication</a></li>
-				<li><a href="#Contact">Contact</a></li> 
-				<li><a href="#Other">Other</a></li>
-			</ul>
-		</div>
-		<!-- end #menu -->
-	</div>
-	</div>
-	<!-- end #header -->
-	<!-- end #header-wrapper -->
 <div id="wrapper">
 	<div id="page">
 	<div id="logo">
@@ -38,7 +21,6 @@
 					</p>
 				</td>
 				<td>
-					<pre>&#9;&#9;&#9;</pre>
 				</td>
 				<td>
 					<img src="portrait.JPG" width="200"/>
