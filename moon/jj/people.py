@@ -6,6 +6,7 @@ GROUP_LOGO = {
     'dse': '<img src="/static/img/logo-dse-small.png"/> ',
     'spar': '<img src="/static/img/logo-spar-small.png"/> ',
     'disalg': '<img src="/static/img/logo-disalg-small.png"/> ',
+    'castle': '<img src="/static/img/logo-castle-small.png"/> ',
 }
 
 # People and people block (small)
