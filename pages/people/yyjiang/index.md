@@ -9,7 +9,7 @@ title: Yanyan Jiang
 Ph.D. (*Nanjing University* ![](img/nju_logo.png), 2017)
 
 I will join Nanjing University as an Assistant Researcher
-[![](/static/img/logo-spar-small.png)](http://moon.nju.edu.cn/spar/)
+[![](/static/img/logo-spar-small.png)](/spar/)
 [![](/static/img/logo-castle-small.png)](http://sccpu2.cse.ust.hk/castle/index.html)
 
 I visited the *Ohio State University* ![](img/buckeye.png) in 2015.
@@ -20,7 +20,7 @@ I visited the *Ohio State University* ![](img/buckeye.png) in 2015.
 I'm a coder striving to make programming less miserable. I'm interested in technologies that can *automatically* make computer software better: testing, analysis, and synthesis. ([知乎专栏 ![](img/zhihu.png)](https://zhuanlan.zhihu.com/se-research/) and chronological list of [my publications](pub).)
 
 <div class="row gutter" markdown="1">
-<div class="col-lg-8 col-md-8 col-sm-12">
+<div class="col-lg-7 col-md-7 col-sm-12">
 <ul>
   <li>**Software Testing and Analysis**</li>
   <ul>
@@ -39,8 +39,7 @@ I'm a coder striving to make programming less miserable. I'm interested in techn
   </ul>
 </ul>
 </div>
-<div class="col-lg-4 col-md-4 col-sm-12" style="vertical-align:middle">
-<center>![](img/research.png)</center>
+<div class="col-lg-5 col-md-5 col-sm-12" style="vertical-align:middle">
 </div>
 </div>
 
@@ -68,3 +67,6 @@ I'm a coder striving to make programming less miserable. I'm interested in techn
 
 Last Update: December 11, 2017 
 
+~~~{.customjs}
+$('ul').css('margin-left', '-15px');
+~~~
