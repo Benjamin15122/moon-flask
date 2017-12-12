@@ -11,7 +11,7 @@ GROUP_LOGO = {
 
 # People and people block (small)
 PEOPLE_TEMPLATE_SM = u"""
-<div class="col-lg-2 col-md-3 col-sm-6">
+<div class="col-lg-2 col-md-3 col-sm-4 col-xs-6">
 <div class="pblock">
 {% if url %} <a href="{{ url }}"> {% endif %}
 <table><tr>
@@ -31,7 +31,7 @@ BLOCK_TEMPLATE_SM = u"""
 
 # People and people block (large)
 PEOPLE_TEMPLATE_LG = u"""
-<div class="col-lg-3 col-md-6 col-sm-12">
+<div class="col-lg-3 col-md-4 col-sm-6 col-xs-6">
 <div class="pblock">
 {% if url %} <a href="{{ url }}"> {% endif %}
 <table><tr>

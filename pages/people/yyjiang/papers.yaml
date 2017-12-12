@@ -1,0 +1,36 @@
+thesis:
+  id: jiang_understanding_2017
+aotes:
+  id: gu_synthesizing_2017
+survey:
+  id: jiang_approaches_2017
+aattplus:
+  id: wang_aatt_2017
+repdroid:
+  id: yue_repdroid_2017
+c3:
+  id: jiang_crash_2016
+bc:
+  id: jiang_online_2016
+aatt:
+  id: li_effectively_2016
+gat:
+  id: wu_testing_2016
+gain1:
+  id: sui_hybird_2016
+rwtrace:
+  id: jiang_optimistic_2015
+comedy:
+  id: jin_concolic_2015
+abc:
+  id: zhang_abc_2015
+att:
+  id: meng_facilitating_2015
+cosedroid:
+  id: wu_cosedroid_2015
+care:
+  id: jiang_care_2014
+uga:
+  id: li_user_2014
+gain:
+  id: sui_gain_2014

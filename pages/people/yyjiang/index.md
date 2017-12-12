@@ -2,45 +2,47 @@ title: Yanyan Jiang
 
 # Yanyan Jiang 蒋炎岩 ![](img/email.png)
 
+<div class="row gutter" markdown="1">
+<div class="col-lg-3 col-md-3 col-sm-4 col-xs-5">
+  <center>![](img/yanyan-portrait.png)</center>
+</div>
+Ph.D. (*Nanjing University* ![](img/nju_logo.png), 2017)
 
-<table width="640px"><tr><td>
-
-<img style="float:left; margin-right:10px; height:135px; display: inline" src="img/yanyan-portrait.png">
-
-<p>
-Ph.D. (<em>Nanjing University</em> <img src="img/nju_logo.png"/>, 2017)
-</p>
-
-<p>
 I will join Nanjing University as an Assistant Researcher
-<a href="http://moon.nju.edu.cn/spar/"><img src="/static/img/logo-spar-small.png"/></a>
+[![](/static/img/logo-spar-small.png)](/spar/)
+[![](/static/img/logo-castle-small.png)](http://sccpu2.cse.ust.hk/castle/index.html)
 
-
-<a href="http://sccpu2.cse.ust.hk/castle/index.html"><img src="/static/img/logo-castle-small.png"/></a>
-
-<p>
-I visited the <em>Ohio State University</em> <img src="img/buckeye.png"/> in 2015.
-</p>
-
-</td></tr></table>
+I visited the *Ohio State University* ![](img/buckeye.png) in 2015.
+</div>
 
 ## Research
 
-I'm a coder striving to make programming less miserable. I'm interested in technologies that can *automatically* make computer software better: testing, analysis, and synthesis. ([知乎专栏 ![](img/zhihu.png)](https://zhuanlan.zhihu.com/se-research/) and chronological list of [my publications](pub).)
+I'm a coder striving to make programming less miserable. I'm interested in technologies that can *automatically* make computer software better: *testing*, *analysis*, and *synthesis*. ([知乎专栏 ![](img/zhihu.png)](https://zhuanlan.zhihu.com/se-research/) and chronological list of [my publications](pub).)
 
-* Understanding Shared Memory Dependences
-    * CARE [[ICSE14](pubs/care)], RWTrace [[ASE15](pubs/rwtrace)], BC [[FSE16](pubs/bc)], Survey [[JoS17](pubs/survey)], and my [PhD Thesis](pubs/thesis).
-* Software Testing and Analysis
-    * Mobile Apps
-        * *Platform* (ATT [[Internetware15](pubs/att)], CoseDroid [[COMPSAC15](pubs/cosedroid)]); *Event Generation* (GAT [[APSEC16](pubs/gat)], AATT [[APSEC16](pubs/aatt), [SCP18](pubs/aattplus)]); *Leveraging Human Insights* (UGA [[APSEC14](pubs/uga)]); *Analysis* (RepDroid [[ICPC17](pubs/repdroid)]);
-    * Reliability
-        * *Crash Consistency* (C3 [[FSE16](pubs/c3)]);
-    * Symbolic Analysis
-        * *Fault Localization* (Comedy [[COMPSAC15](pubs/comedy)]);
-* Program Synthesis
-    * *Transformers* (AOTES [[ICSE17 Poster](pubs/aotes)]);
-* Software Technologies
-    * *Software Building* (ABC [[APSEC15](pubs/abc)]); *Runtime Verification* (GAIN [[APSEC14](pubs/gain), [IST16](pubs/gain1)]).
+<div class="row gutter" markdown="1">
+<div class="col-lg-7 col-md-7 col-sm-12">
+<ul>
+  <li>**Software Testing and Analysis**</li>
+  <ul>
+    <li>Concurrent Programs: *Understanding Shared Memory Dependences* (CARE [[ICSE14](pubs/care)], RWTrace [[ASE15](pubs/rwtrace)], BC [[FSE16](pubs/bc)], Survey [[JoS17](pubs/survey)], and my [PhD Thesis](pubs/thesis));</li>
+    <li>Mobile Apps: *Platform* (ATT [[Internetware15](pubs/att)], CoseDroid [[COMPSAC15](pubs/cosedroid)]); *Event Generation* (GAT [[APSEC16](pubs/gat)], AATT [[APSEC16](pubs/aatt), [SCP18](pubs/aattplus)]); *Leveraging Human Insights* (UGA [[APSEC14](pubs/uga)]); *Analysis* (RepDroid [[ICPC17](pubs/repdroid)]);</li>
+    <li>Reliability: *Crash Consistency* (C3 [[FSE16](pubs/c3)]);</li>
+    <li>Symbolic Analysis: *Fault Localization* (Comedy [[COMPSAC15](pubs/comedy)]);</li>
+  </ul>
+  <li>**Program Synthesis**</li>
+  <ul>
+    <li>*Transformers* (AOTES [[ICSE17 Poster](pubs/aotes)]);</li>
+  </ul>
+  <li>**Programming Tricks for Fun and Profits**</li>
+  <ul>
+    <li>*Software Building* (ABC [[APSEC15](pubs/abc)]); *Runtime Verification* (GAIN [[APSEC14](pubs/gain), [IST16](pubs/gain1)]).</li>
+  </ul>
+</ul>
+</div>
+<div class="col-lg-5 col-md-5 col-sm-12" style="vertical-align:middle">
+</div>
+</div>
+
 
 ## Teaching
 
@@ -58,10 +60,15 @@ I'm a coder striving to make programming less miserable. I'm interested in techn
 ## Honors and Awards
 * 2016 *Distinguished Student* of Nanjing University (the only PhD student out of ten winners).
 * 2014 *MSRA Fellowship Award*; 2015 and 2010 *National Scholarship*;
-* First Place in the 2014 Huawei Cup Regional Programming Contest; Second Place in the 2012 Tencent Hackathon.
-* During my collegiate years, I competed in *ACM-ICPC* regional contests for two Gold Medals and earned 49th place in the 2009 World Finals.
+* First Place in the 2014 Huawei Cup *Regional Programming Contest*; Second Place in the 2012 *Tencent Hackathon*.
+* During my collegiate years, I competed in *ACM-ICPC* regional contests for two Gold Medals and earned 49th Place in the 2009 World Finals.
 
 <hr>
 
 Last Update: December 11, 2017 
 
+~~~{.customjs}
+$('ul').css('margin-left', '-15px');
+$('h2').css('margin-top', '15px');
+$('h2').css('margin-bottom', '5px');
+~~~
