@@ -128,7 +128,6 @@ phd:
     avatar: /spar/img/avatar/wjli.jpg
     url: wjli
     group: spar, castle
-
   - name: Yuqi Zhang 张宇奇
     from: 2016
     group: disalg
@@ -189,9 +188,10 @@ graduates:
   - name: Xiang Xu 徐翔
     url:  xiangxu
     from: 2015
-  - name: Shentao Yue 岳胜涛
+  - name: Shengtao Yue 岳胜涛
     url:  default
     from: 2015
+    group: spar
   - name: Zongfei Zhang 张宗飞
     url:  default
     from: 2015
