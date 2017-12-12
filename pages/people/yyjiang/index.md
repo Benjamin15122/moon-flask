@@ -3,7 +3,7 @@ title: Yanyan Jiang
 # Yanyan Jiang 蒋炎岩 ![](img/email.png)
 
 <div class="row gutter" markdown="1">
-<div class="col-lg-3 col-md-3 col-sm-4">
+<div class="col-lg-3 col-md-3 col-sm-4 col-xs-5">
   <center>![](img/yanyan-portrait.png)</center>
 </div>
 Ph.D. (*Nanjing University* ![](img/nju_logo.png), 2017)
@@ -17,7 +17,7 @@ I visited the *Ohio State University* ![](img/buckeye.png) in 2015.
 
 ## Research
 
-I'm a coder striving to make programming less miserable. I'm interested in technologies that can *automatically* make computer software better: testing, analysis, and synthesis. ([知乎专栏 ![](img/zhihu.png)](https://zhuanlan.zhihu.com/se-research/) and chronological list of [my publications](pub).)
+I'm a coder striving to make programming less miserable. I'm interested in technologies that can *automatically* make computer software better: *testing*, *analysis*, and *synthesis*. ([知乎专栏 ![](img/zhihu.png)](https://zhuanlan.zhihu.com/se-research/) and chronological list of [my publications](pub).)
 
 <div class="row gutter" markdown="1">
 <div class="col-lg-7 col-md-7 col-sm-12">
@@ -69,4 +69,6 @@ Last Update: December 11, 2017
 
 ~~~{.customjs}
 $('ul').css('margin-left', '-15px');
+$('h2').css('margin-top', '15px');
+$('h2').css('margin-bottom', '5px');
 ~~~
