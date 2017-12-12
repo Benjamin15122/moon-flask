@@ -31,7 +31,7 @@ BLOCK_TEMPLATE_SM = u"""
 
 # People and people block (large)
 PEOPLE_TEMPLATE_LG = u"""
-<div class="col-lg-3 col-md-6 col-sm-12">
+<div class="col-lg-3 col-md-4 col-sm-6">
 <div class="pblock">
 {% if url %} <a href="{{ url }}"> {% endif %}
 <table><tr>
