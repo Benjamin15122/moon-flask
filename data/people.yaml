@@ -139,11 +139,12 @@ phd:
     group: disalg
   - name: Shengbin Xu 徐圣斌
     from: 2017
-  - name: Weiyu Ye 叶伟煜
+  - name: Weiyu Ye 叶炜煜
     from: 2017
     group: spar
   - name: Chenxi Zhang 张晨曦
     from: 2017
+    avatar: /spar/img/avatar/cxzhang.png
     group: spar
 
 
@@ -241,6 +242,7 @@ graduates:
   - name: Yi Liu 刘毅
     from: 2017
     url: yiliu
+    avatar: /spar/img/avatar/yliu.jpg
     group: spar
   - name: Qingwei Sun 孙清伟
     from: 2017
