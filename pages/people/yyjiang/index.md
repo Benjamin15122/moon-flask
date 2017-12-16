@@ -31,7 +31,7 @@ I'm a coder striving to make programming less miserable. I'm interested in techn
   </ul>
   <li>**Program Synthesis**</li>
   <ul>
-    <li>*Transformers* (AOTES [[ICSE17 Poster](pubs/aotes)]);</li>
+    <li>*Transformers* (AOTES [[ICSE17 Poster](pubs/aotes)], ENTER [[ICSE18 Poster](pubs/enter)]);</li>
   </ul>
   <li>**Programming Tricks for Fun and Profits**</li>
   <ul>
@@ -65,7 +65,7 @@ I'm a coder striving to make programming less miserable. I'm interested in techn
 
 <hr>
 
-Last Update: December 11, 2017 
+Last Update: December 16, 2017 
 
 ~~~{.customjs}
 $('ul').css('margin-left', '-15px');
