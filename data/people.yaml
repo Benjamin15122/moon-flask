@@ -232,6 +232,7 @@ graduates:
     from: 2017
   - name: Rui Qiu 邱睿
     from: 2017
+    avatar: /spar/img/avatar/rqiu.jpg
     group: spar
   - name: Shijie Tang 唐士杰
     from: 2017
@@ -265,12 +266,15 @@ undergraduates:
     group: spar
   - name: Jinci Chen 陈锦赐
     from: 2017
+    avatar: /spar/img/avatar/jcchen.png
     group: spar
   - name: Jingxin Fan 范景新
     from: 2017
+    avatar: /spar/img/avatar/jxfan.jpg
     group: spar
   - name: Yuehuan Wang 王月欢
     from: 2017
+    avatar: /spar/img/avatar/yhwang.jpg
     group: spar
   - name: Zhao Gang 刚昭
     from: 2017
