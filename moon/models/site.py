@@ -19,6 +19,7 @@ class Site(object):
         # events
         self._events = load_events()
         self._phd_events = load_phd_events()
+        self._spar_events = load_spar_events()
         self._deadlines = load_deadlines()
         self._master_events = load_master_events()
 
@@ -53,6 +54,10 @@ class Site(object):
     def phd_events(self):
         return self._phd_events()
 
+    @property
+    def spar_events(self):
+        return self._spar_events()
+    
     @property
     def master_events(self):
         return self._master_events()
@@ -167,6 +172,18 @@ def load_phd_events():
     '''
     e = None
     with open(PHD_EVENTS_YAML, 'r') as f:
+        e = yaml.load(f)
+
+    return e if e else {}
+
+@lazy_load
+def load_spar_events():
+    ''' Load all spar seminar events, see events/spar.yaml
+
+    All spar seminar events have been sorted manually
+    '''
+    e = None
+    with open(SPAR_EVENTS_YAML, 'r') as f:
         e = yaml.load(f)
 
     return e if e else {}
