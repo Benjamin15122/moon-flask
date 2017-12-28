@@ -29,6 +29,7 @@
                 <li {% if request.path == url_for('page', path='events/phd') %} class="current-menu-item" {% endif %}><a href="{{ url_for('page', path='events/phd') }}">PhD Seminar</a></li>
                 <li {% if request.path == url_for('page', path='events/master') %} class="current-menu-item" {% endif %}><a href="{{ url_for('page', path='events/master') }}">Master Seminar </a></li>
                 <li {% if request.path == url_for('page', path='events/deadlines') %} class="current-menu-item" {% endif %}><a href="{{ url_for('page', path='events/deadlines')}}">Deadlines</a></li>
+                <li {% if request.path == url_for('page', path='events/spar') %} class="current-menu-item" {% endif %}><a href="{{ url_for('page', path='events/spar') }}">Spar Seminar</a></li>
             </ul>
         </li>
         <li>
