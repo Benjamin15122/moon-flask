@@ -225,6 +225,7 @@ graduates:
     from: 2016
   - name: Dawei Cheng 程大卫
     from: 2016
+    avatar: /spar/img/avatar/dwcheng.jpg
     group: spar
   - name: Xiang Hu 胡翔
     from: 2017
@@ -247,6 +248,7 @@ graduates:
     group: spar
   - name: Qingwei Sun 孙清伟
     from: 2017
+    avatar: /spar/img/avatar/qwsun.jpg
     group: spar
   - name: Tianheng Wu 吴天珩
     from: 2017
