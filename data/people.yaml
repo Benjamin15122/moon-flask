@@ -63,18 +63,17 @@ faculty:
     url:  hengfengwei
     avatar: /static/img/avatar/weihengfeng.png
     group: disalg
-
-phd:
   - name: Jingwei Xu 徐经纬
+    title: Assistant Researcher
     url:  jingweixu
     avatar: /static/img/avatar/jingweixu.jpg
-    from: 2012
   - name: Yanyan Jiang 蒋炎岩
+    title: Assistant Researcher
     url:  yyjiang
     avatar: /spar/img/avatar/yyjiang.jpg
-    from: 2013
     group: spar, castle
 
+phd:
   - name: Yi Qin 秦逸
     url:  yqin
     avatar: /spar/img/avatar/yqin.jpg
