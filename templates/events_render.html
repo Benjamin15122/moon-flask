@@ -107,7 +107,11 @@
                 {%-if p.location-%}
                 <tr {% if loop.index == 1%}class="success" {% endif %}>
                     <td rowspan="2" style="vertical-align:middle">{{ loop.index }}</td>
+                    {%-if p.link-%}
+                    <td><i>{{ p.title }} (<a href="{{ p.link.url }}">{{ p.link.text }}</a>)</i></td>
+                    {%-else-%}
                     <td><i>{{ p.title  }}</i></td>
+                    {%-endif-%}
                     <td rowspan="2" style="vertical-align:middle">{{ p.speaker }} </td>
                     <td rowspan="2" style="vertical-align:middle">{{ p.date.strftime("%b %d (%A), %Y %H:%M") }} </td>
                 </tr>
