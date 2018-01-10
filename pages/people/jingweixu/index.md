@@ -3,6 +3,7 @@ title: Jingwei Xu
 # Jingwei Xu 
 
 
+* Assistant Researcher
 * Institute of Computer Software, Nanjing University
 * Room 812, Computer Science and Technology Building
 * jingwei.xu.nju (at) gmail dot com
@@ -10,19 +11,6 @@ title: Jingwei Xu
 <div>
 <img width="200" src="static/jingweixu.jpg" alt="Jingwei Xu"/>
 </div>
-
-
-
-## Supervisor
-
-* Professor Jian Lü, Xianping Tao
-
-## Education and Work Experience
-
-* 2014.10 - 2015.10: Visiting Student, University of Illinois at Urbana-Champaign, [Professor ChengXiang Zhai](http://czhai.cs.illinois.edu/).
-* 2012.9 - Present: Ph.D. Student, Department of Computer Science and Technology, Nanjing University
-* 2009.9 - 2012.6: Master, Department of Computer Science and Technology, Nanjing University
-* 2005.9 - 2009.6: B.S., Department of Computer Science, Nanjing University of Posts and Telecommunications
 
 ## Research Interests
 
@@ -108,7 +96,7 @@ title: Jingwei Xu
 * KDD2017 Student Travel Awards
 
 ## Services
-* PC Member for: ASONAM 2016-2017, CIKM 2017 (Short papers), AAAI 2018
+* PC Member for: ASONAM 2016-2017, CIKM 2017 (Short papers), AAAI 2018, PAKDD 2018
 
 ## Projects
 
