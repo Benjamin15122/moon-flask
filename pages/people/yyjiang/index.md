@@ -6,13 +6,10 @@ title: Yanyan Jiang
 <div class="col-lg-3 col-md-3 col-sm-4 col-xs-5">
   <center>![](img/yanyan-portrait.png)</center>
 </div>
-Ph.D. (*Nanjing University* ![](img/nju_logo.png), 2017)
+Assistant Researcher,<br>[SPAR ![](/static/img/logo-spar-small.png)](/spar/) - [CASTLE ![](/static/img/logo-castle-small.png)](http://sccpu2.cse.ust.hk/castle/index.html) Joint Group<br>Dept. of Computer Science and Technology, Nanjing University
 
-I will join Nanjing University as an Assistant Researcher
-[![](/static/img/logo-spar-small.png)](/spar/)
-[![](/static/img/logo-castle-small.png)](http://sccpu2.cse.ust.hk/castle/index.html)
+Ph.D. (*Nanjing University* ![](img/nju_logo.png), 2017)<br>Visiting Scholar (*Ohio State University* ![](img/buckeye.png), 2015)
 
-I visited the *Ohio State University* ![](img/buckeye.png) in 2015.
 </div>
 
 ## Research
@@ -31,7 +28,7 @@ I'm a coder striving to make programming less miserable. I'm interested in techn
   </ul>
   <li>**Program Synthesis**</li>
   <ul>
-    <li>*Transformers* (AOTES [[ICSE17 Poster](pubs/aotes)]);</li>
+    <li>*Transformers* (AOTES [[ICSE17 Poster](pubs/aotes)], ENTER [[ICSE18 Poster](pubs/enter)]);</li>
   </ul>
   <li>**Programming Tricks for Fun and Profits**</li>
   <ul>
@@ -46,6 +43,7 @@ I'm a coder striving to make programming less miserable. I'm interested in techn
 
 ## Teaching
 
+* Operating Systems (Spring 2018).
 * I am working on the *Project-N* ![](img/logo-n.png) in which students build a complete computer system (NPC SoC, NEMU system emulator, Nanos operating system, NCC compiler, and applications) from scratch. I am the inventor of *Nanos* and *AbstractMachine* in Project-N, and contributed to the overall system-stack design.
     * We got Second Place in the 2017 Loongson Cup computer system design contest.
 * Selected talks:
@@ -65,7 +63,7 @@ I'm a coder striving to make programming less miserable. I'm interested in techn
 
 <hr>
 
-Last Update: December 11, 2017 
+Last Update: Janurary 3, 2017 
 
 ~~~{.customjs}
 $('ul').css('margin-left', '-15px');

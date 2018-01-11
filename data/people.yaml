@@ -67,14 +67,11 @@ faculty:
     title: Assistant Researcher
     url:  jingweixu
     avatar: /static/img/avatar/jingweixu.jpg
-    from: 2012
   - name: Yanyan Jiang 蒋炎岩
     title: Assistant Researcher
     url:  yyjiang
     avatar: /spar/img/avatar/yyjiang.jpg
-    from: 2013
     group: spar, castle
-
 
 phd:
   - name: Yi Qin 秦逸
@@ -227,6 +224,7 @@ graduates:
     from: 2016
   - name: Dawei Cheng 程大卫
     from: 2016
+    avatar: /spar/img/avatar/dwcheng.jpg
     group: spar
   - name: Xiang Hu 胡翔
     from: 2017
@@ -234,6 +232,7 @@ graduates:
     from: 2017
   - name: Rui Qiu 邱睿
     from: 2017
+    avatar: /spar/img/avatar/rqiu.jpg
     group: spar
   - name: Shijie Tang 唐士杰
     from: 2017
@@ -248,6 +247,7 @@ graduates:
     group: spar
   - name: Qingwei Sun 孙清伟
     from: 2017
+    avatar: /spar/img/avatar/qwsun.jpg
     group: spar
   - name: Tianheng Wu 吴天珩
     from: 2017
@@ -267,12 +267,15 @@ undergraduates:
     group: spar
   - name: Jinci Chen 陈锦赐
     from: 2017
+    avatar: /spar/img/avatar/jcchen.png
     group: spar
   - name: Jingxin Fan 范景新
     from: 2017
+    avatar: /spar/img/avatar/jxfan.jpg
     group: spar
   - name: Yuehuan Wang 王月欢
     from: 2017
+    avatar: /spar/img/avatar/yhwang.jpg
     group: spar
   - name: Zhao Gang 刚昭
     from: 2017

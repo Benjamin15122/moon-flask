@@ -34,6 +34,7 @@ SCHOLARSHIP_NEWS_YAML= os.path.join(DATA_DIR, 'scholarships_news.yaml')
 EVENTS_YAML = os.path.join(DATA_DIR, 'events.yaml')
 DEADLINES_YAML = os.path.join(DATA_DIR, 'deadlines_events.yaml')
 PHD_EVENTS_YAML = os.path.join(DATA_DIR, 'phd_events.yaml')
+SPAR_EVENTS_YAML = os.path.join(DATA_DIR, 'spar_events.yaml')
 MASTER_EVENTS_YAML = os.path.join(DATA_DIR, 'master_events.yaml')
 NEWS_YAML = os.path.join(CACHE_DIR, 'news.yaml')
 
