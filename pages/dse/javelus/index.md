@@ -19,3 +19,4 @@ Features:
 ## Documentation
 
 * [Build on Windows](build_windows)
+* [Build on Linux](build_linux)
