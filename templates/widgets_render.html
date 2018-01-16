@@ -1,21 +1,21 @@
-{% macro render_all_short_news_widget() %}
-    <div class="col-lg-4 col-md-4"><!-- misc wrapper -->
-        <div class="col-padded col-shaded"><!-- inner custom column -->
-            <ul class="list-unstyled clear-margins"><!-- widgets -->
-{{ render_short_news_widget('Papers', g.site.paper_news, 'news/papers') }}
-{{ render_short_news_widget('Awards', g.site.award_news, 'news/awards') }}
-{{ render_short_news_widget('Scholarships', g.site.scholarship_news, 'news/scholarships') }}
-            </ul><!-- widgets end -->
-        </div><!-- inner custom column end -->
-    </div><!-- misc wrapper end -->
+{% macro render_index_left() %}
+<ul class="list-unstyled clear-margins">
+{{ render_short_news_widget('Papers', g.site.paper_news, 'news/papers', 15) }}
+</ul>
 {% endmacro %}
 
-{% macro render_short_news_widget(title, news, path) %}
+{% macro render_index_right() %}
+<ul class="list-unstyled clear-margins">
+{{ render_short_news_widget('Awards', g.site.award_news, 'news/awards', 10) }}
+</ul>
+{% endmacro %}
+
+{% macro render_short_news_widget(title, news, path, maxn) %}
  <li class="widget-container widget_nav_menu"><!-- widget -->
-     <h1 class="title-widget">{{ title }}</h1>
+    <h1 class="title-widget">{{ title }}</h1>
     <ul class="list-unstyled">
         {%-for n in news-%}
-            {%-if loop.index <= 3-%}
+            {%-if loop.index <= maxn-%}
                 <li style="text-transform: none">{{ n.title }}</li>
             {%-endif-%}
         {%-endfor-%}
@@ -26,55 +26,51 @@
 </li><!-- widget end -->
 {% endmacro %}
 
-{% macro render_news_widget() %}
-    <div class="col-lg-4 col-md-4"><!-- recent news wrapper -->
-        <div class="col-padded"><!-- inner custom column -->
-            <ul class="list-unstyled clear-margins"><!-- widgets -->
-                <li class="widget-container widget_recent_news"><!-- widgets list -->
-                    <h1 class="title-widget">News</h1>
-                    <ul class="list-unstyled">
-                        {% set news = g.site.news.items %}
-                        {% for n in news %}
-                            {% if loop.index <= 3 %}
-                                <li class="recent-news-wrap">
-                                <h1 class="title-median"><a href="{{ url_for('page', path=n.path) }}" title="{{n.title}}">{{ n.title }}</a></h1>
-                                    <div class="recent-news-meta">
-                                        <div class="recent-news-date">{{ n.date | to_date }}</div>
+{% macro render_index_middle() %}
+<ul class="list-unstyled clear-margins"><!-- widgets -->
+    <li class="widget-container widget_recent_news"><!-- widgets list -->
+        <h1 class="title-widget">News</h1>
+        <ul class="list-unstyled">
+            {% set news = g.site.news.items %}
+            {% for n in news %}
+                {% if loop.index <= 3 %}
+                    <li class="recent-news-wrap">
+                    <h1 class="title-median"><a href="{{ url_for('page', path=n.path) }}" title="{{n.title}}">{{ n.title }}</a></h1>
+                        <div class="recent-news-meta">
+                            <div class="recent-news-date">{{ n.date | to_date }}</div>
+                        </div>
+                        <div class="recent-news-content clearfix">
+                            {% if n.img_path %}
+                                {% if n.summary %}
+                                    <figure class="recent-news-thumb">
+                                        <a href="{{ url_for('page', path=n.path) }}" title="{{ n.img_title }}"><img src="{{url_for('static', filename=n.img_path)}}" class="" alt="{{ n.img_title }}" /></a>
+                                    </figure>
+                                    <div class="recent-news-text">
+                                        <p>{{ n.summary|truncate(110)|safe }}</p>
                                     </div>
-                                    <div class="recent-news-content clearfix">
-                                        {% if n.img_path %}
-                                            {% if n.summary %}
-                                                <figure class="recent-news-thumb">
-                                                    <a href="{{ url_for('page', path=n.path) }}" title="{{ n.img_title }}"><img src="{{url_for('static', filename=n.img_path)}}" class="" alt="{{ n.img_title }}" /></a>
-                                                </figure>
-                                                <div class="recent-news-text">
-                                                    <p>{{ n.summary|truncate(110)|safe }}</p>
-                                                </div>
-                                            {% else %}
-                                                <figure class="recent-news-thumb">
-                                                    <a href="{{ url_for('page', path=n.path) }}" title="{{ n.img_title }}"><img src="{{url_for('static', filename=n.img_path)}}" style="width:320px;" alt="{{ n.img_title }}" /></a>
-                                                </figure>
-                                            {% endif %}
-                                        {% else %}
-                                            {% if n.summary %}
-                                            <div class="recent-news-text" style="margin-left:0px">
-                                                <!-- no image, show more words use 200 -->
-                                                <p>{{ n.summary|truncate(300)|safe }}</p>
-                                            </div>
-                                            {% endif %}
-                                        {% endif %}
-                                    </div>
-                                </li>
+                                {% else %}
+                                    <figure class="recent-news-thumb">
+                                        <a href="{{ url_for('page', path=n.path) }}" title="{{ n.img_title }}"><img src="{{url_for('static', filename=n.img_path)}}" style="width:320px;" alt="{{ n.img_title }}" /></a>
+                                    </figure>
+                                {% endif %}
+                            {% else %}
+                                {% if n.summary %}
+                                <div class="recent-news-text" style="margin-left:0px">
+                                    <!-- no image, show more words use 200 -->
+                                    <p>{{ n.summary|truncate(300)|safe }}</p>
+                                </div>
+                                {% endif %}
                             {% endif %}
-                        {% endfor %}
-                    </ul>
-                    <div class="recent-news-wrap" style="text-align:right">
-                       <a href="{{ url_for('page', path='news/') }}" class="moretag" title="read more">more</a>
-                    <div>
-                </li><!-- widgets list end -->
-            </ul><!-- widgets end -->
-        </div><!-- inner custom column end -->
-    </div><!-- recent news wrapper end -->
+                        </div>
+                    </li>
+                {% endif %}
+            {% endfor %}
+        </ul>
+        <div class="recent-news-wrap" style="text-align:right">
+           <a href="{{ url_for('page', path='news/') }}" class="moretag" title="read more">more</a>
+        <div>
+    </li><!-- widgets list end -->
+</ul><!-- widgets end -->
 {% endmacro %}
 
 {% macro render_all_events_widget() %}
@@ -89,7 +85,6 @@
                          {% set phd = g.site.phd_events|before_yesterday %}
                          {% set master = g.site.master_events|before_yesterday %}
                          {% set events = g.site.events|before_yesterday %}
-                         {% set deadlines = g.site.deadlines|before_yesterday %}
                          {% if phd|first %}
                          <li class="up-event-wrap">
                          <h1 class="title-median"><a href="{{ url_for('page', path='events/phd') }}" title="{{ phd[0].speaker }}">PhD Seminar: {{ phd[0].speaker }}</a></h1>
@@ -127,23 +122,6 @@
                         {% endfor %}
                     </ul>
                 </li><!-- widgets list end -->
-                {% if deadlines | first %}
-                <li class="widget-container widget_up_events" style="margin-top: 10px"><!-- widgets list -->
-                    <h1 class="title-widget">Deadlines</h1>
-                    <ul class="list-unstyled">
-                          {% for e in deadlines %}
-                            {% if loop.index <= 3 %}
-                         <li class="">
-                         <h1 class="title-median"><a href="{{ url_for('page', path='events/deadlines') }}" title="{{ e.label}}">DEADLINE: {{ e.label }}</a></h1>
-                             <div class="up-event-meta clearfix">
-                                 <div class="up-event-date">{{ e.date | to_date }}</div>
-                             </div>
-                         </li>
-                         {% endif %}
-                         {% endfor %}
-                    </ul>
-                </li><!-- widgets list end -->
-                {% endif %}
              </ul><!-- widgets end -->
         </div><!-- inner custom column end -->
     </div><!-- upcoming events wrapper end -->
@@ -176,7 +154,7 @@
                 <img src="{{ url_for('static', filename='img/slide-2.jpg') }}" alt="Professor Jiafu Xu" />
                 <div class="k-carousel-caption pos-2-3-right scheme-dark">
                     <div class="caption-content">
-                        <h3 class="caption-title">Professor Jiafu Xu, Founding Director</h3>
+                        <h3 class="caption-title">In Memory of Professor Jiafu Xu, The Founding Director</h3>
                         <p>
                             Pioneering researcher and educator of software technolgoy in China. 
                         </p><p>

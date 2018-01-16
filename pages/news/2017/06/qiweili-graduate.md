@@ -1,4 +1,4 @@
-title: Qiwei Li: The Valedictorian At This Year's CS Graduation Ceremony
+title: Qiwei Li: The Valedictorian at This Year's CS Graduation Ceremony
 date: 2017-06-21
 img_title: Qiwei Li
 img_path: photo/QiweiLi-news.jpg
