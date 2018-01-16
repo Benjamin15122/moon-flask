@@ -1,10 +1,12 @@
+title: Groups
+
 # Research Groups of ICS
 
 ICS research groups are listed in alphabetical order.
 
 ### [DIS-ALG: Distributed-Algorithm](http://www.bigoh.net/wiki/)
 
-![](/static/img/logo-disalg-small.png) Lead by [Prof. Yu Huang](http://cs.nju.edu.cn/yuhuang).
+![](/static/img/logo-disalg-small.png) Lead by [Prof. Yu Huang](http://cs.nju.edu.cn/yuhuang) and [Dr. Hengfeng Wei](/people/hengfengwei/).
 
 ### [DSE: Dynamic Software Evolution](/dse/)
 
