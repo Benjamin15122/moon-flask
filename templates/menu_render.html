@@ -8,7 +8,7 @@
             <a href="{{ url_for('page', path='people/') }}" title="">People</a>
         </li>
         <li>
-            <a href="#" title="">Groups</a>
+            <a href="{{ url_for('page', path='groups/') }}" title="">Groups</a>
             <ul class="sub-menu">
                 <li ><a href="http://www.bigoh.net/wiki/">Dis-Alg</a></li>
                 <li ><a href="{{ url_for('page', path='dse/') }}">DSE</a></li>
@@ -29,7 +29,7 @@
                 <li {% if request.path == url_for('page', path='events/phd') %} class="current-menu-item" {% endif %}><a href="{{ url_for('page', path='events/phd') }}">PhD Seminar</a></li>
                 <li {% if request.path == url_for('page', path='events/master') %} class="current-menu-item" {% endif %}><a href="{{ url_for('page', path='events/master') }}">Master Seminar </a></li>
                 <li {% if request.path == url_for('page', path='events/deadlines') %} class="current-menu-item" {% endif %}><a href="{{ url_for('page', path='events/deadlines')}}">Deadlines</a></li>
-                <li {% if request.path == url_for('page', path='events/spar') %} class="current-menu-item" {% endif %}><a href="{{ url_for('page', path='events/spar') }}">Spar Seminar</a></li>
+                <li {% if request.path == url_for('page', path='/spar/seminar/') %} class="current-menu-item" {% endif %}><a href="{{ url_for('page', path='/spar/seminar/') }}">Spar Seminar</a></li>
             </ul>
         </li>
         <li>

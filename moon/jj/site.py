@@ -71,9 +71,6 @@ def render_events():
 def render_phd_events():
     return _render_macro('events_render.html', 'render_phd_events')
 
-def render_spar_events():
-    return _render_macro('events_render.html', 'render_spar_events')
-
 def render_master_events():
     return _render_macro('events_render.html', 'render_master_events')
 
