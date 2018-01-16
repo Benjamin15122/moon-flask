@@ -1,10 +1,14 @@
-# SPAR Seminar (Fall 2017)
+title: SPAR Seminar
 
-*Every Tuesday 4pm* @ Computer Science and Technology Building 225
+# SPAR Seminar (2017 Fall)
+
+Discuss software engineering, programming language, and system papers that have *novel* and *significant* contributions. Tool tutorials are also welcomed.
+
+*Every Tuesday 4pm* @ Computer Science and Technology Building 225.
 
 ## Upcoming
 
-Shengtao Yue (Jan 23) and Rui Qiu (Jan 30)
+Shengtao Yue (Jan 23) and Rui Qiu (Jan 30).
 
 ## Past
 
@@ -15,4 +19,4 @@ Shengtao Yue (Jan 23) and Rui Qiu (Jan 30)
 
 ## Past Seminars
 
-No record.
+* [2017 Fall](2017fall).
