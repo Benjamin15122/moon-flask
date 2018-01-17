@@ -8,7 +8,8 @@ Discuss software engineering, programming language, and system papers that have 
 
 ## Upcoming
 
-Shengtao Yue (Jan 23) and Rui Qiu (Jan 30).
+* Shengtao Yue (Jan 23): TBD.
+* Rui Qiu (Jan 30): TBD.
 
 ## Past
 
