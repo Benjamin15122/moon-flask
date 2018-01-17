@@ -12,8 +12,9 @@ title: Publications
 
 ## Journal/Magazine Publications
 
-* {{ render_bib_entry(g.site.spar_paper.li_cyandroid_2016) }}
+* {{ render_bib_entry(g.site.spar_paper.wang_aatt_2018) }}
 * {{ render_bib_entry(g.site.spar_paper.jiang_approaches_2017) }}
+* {{ render_bib_entry(g.site.spar_paper.li_cyandroid_2016) }}
 * {{ render_bib_entry(g.site.spar_paper.sui_hybird_2016) }}
 * {{ render_bib_entry(g.site.spar_paper.xi_suppressing_2016) }}
 * {{ render_bib_entry(g.site.spar_paper.yang_survey_2015) }}
@@ -21,6 +22,9 @@ title: Publications
 ---
 
 ## Conference/Symposium/Workshop Publications
+* {{ render_bib_entry(g.site.spar_paper.wu_synthesizing_2018) }}
+* {{ render_bib_entry(g.site.spar_paper.gu_synthesizing_2017) }}
+* {{ render_bib_entry(g.site.spar_paper.yue_repdroid_2017) }}
 * {{ render_bib_entry(g.site.spar_paper.wang_EGreenDroid_2016) }}
 * {{ render_bib_entry(g.site.spar_paper.wu_testing_2016) }}
 * {{ render_bib_entry(g.site.spar_paper.li_effectively_2016) }}

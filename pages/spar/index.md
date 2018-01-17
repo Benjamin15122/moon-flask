@@ -15,7 +15,7 @@ Welcome to the home page of [SPAR](/spar): System & Program Analysis Research Gr
 * We focus on research of testing and analysis techniques for quality software.
 * SPAR has joint research with the [DSE](/dse) group led by Prof. [Xiaoxing Ma](/people/xiaoxingma/).
 
-Here is the [full list of SPAR publications](pubs).
+Here is the [full list of SPAR publications](pubs). We also have weekly [seminar](seminar/) for paper discussion.
 
 ---
 
