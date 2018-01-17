@@ -2,6 +2,7 @@ faculty:
   - name: Jiafu Xu 徐家福
     title: Professor
     avatar: /static/img/avatar/xujiafu.jpg
+    url: /news/2018/01/jiafu
   - name: Jian Lü 吕建
     title: Professor
     avatar: /static/img/avatar/lujian.jpg

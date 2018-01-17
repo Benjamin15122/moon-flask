@@ -8,7 +8,7 @@ summary: Professor Jiafu Xu, a pioneering Researcher and educator of software te
 <div class="row gutter" markdown="1">
 <div class="col-lg-2 col-md-2 col-sm-3 col-xs-4"> ![](1.jpg) </div>
 
-Professor Jiafu Xu, a pioneering researcher and educator of software technology in China, CCF Lifetime Achievement Award winner, and the Founding Director of ICS, dies at home in Nanjing Jan. 16.
+Professor Jiafu Xu, a pioneering researcher and educator of software technology in China, CCF Lifetime Achievement Award winner, and the Founding Director of ICS, dies at home in Nanjing Jan. 16. He was 94.
 
 Professor Jiafu Xu was a leading scientist of computer software and a pioneer of Chinese software, and was widely recognized by his contributions to the first ALGOL system in China, the system programming language XCY, and contributions to the software automation.
 
