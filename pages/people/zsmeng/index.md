@@ -29,7 +29,7 @@ title: Zhanshuai Meng
 
 ## Research
 
-* My research interests focus on Android Application Testing and Analysis.
+* My research interests focus on Mobile Application Testing and Analysis.
 
 ## Publication List
 
@@ -50,7 +50,7 @@ title: Zhanshuai Meng
 
 * I am fond of reading before bed and I am good at billiards.
 * I have kept on running and fitness since 2012.
-* I am developing advanced techniques in photography now.
+* I am developing advanced techniques in photography for a few years.
 
 
 ## Honors and Awards
