@@ -8,7 +8,7 @@ Discuss software engineering, programming language, and system papers that have 
 
 ## Upcoming
 
-* Shengtao Yue (Jan 23): TBD.
+* Shengtao Yue (Jan 23): Mobile Application Impersonation Detection Using Dynamic User Interface Extraction [[ESORICS16]](https://link.springer.com/content/pdf/10.1007%2F978-3-319-45744-4_11.pdf).
 * Rui Qiu (Jan 30): TBD.
 
 ## Past
