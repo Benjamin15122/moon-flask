@@ -23,3 +23,4 @@ Features:
 
 * [Build on Windows](build_windows)
 * [Build on Linux](build_linux)
+* [Run Javelus](run-javelus)
