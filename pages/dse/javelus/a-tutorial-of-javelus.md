@@ -17,7 +17,6 @@ Before start, you may need to first learn how to build and install Javelus.
 
 Now we assume that your fold layout is the same as follows.
 
-
 ```
 javelus-tutorial/
 ├── developer-interface
@@ -33,8 +32,7 @@ javelus-tutorial/
 
 The `tutorial.zip` contains all files that are required to invoke a dynamic update.
 
-First, check the output of the old version.
-
+**You need to learn how to [run Javelus](run-javelus) first.**
 
 ```
 cd tutorial/
@@ -72,10 +70,6 @@ cd tutorial/
 ../javelus/build/linux/linux_amd64_compiler2/fastdebug/hotspot -cp old/ -Dorg.javelus.dynamicPatch=javelus.dsu Main
 ```
 
-!!! note
-    To locate your `javelus` launcher,
-    Linux users search for a script named `hotspot` in the build directory and
-    Windows users search for an exe file named `hospot.exe` in the build directory.
 
 Then you will get the following output.
 
