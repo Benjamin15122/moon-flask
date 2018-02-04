@@ -28,4 +28,4 @@ Actually, you can start Javelus by the jvm launcher.
 where `target-dir` is the directory containing all built objects, e.g., `./build/linux/linux_amd64_compiler2/fastdebug`.
 
 !!! note
-    Windows users should write a DOS script to facilitate launch Javelus.
+    Windows users should write a DOS batch script to facilitate launching Javelus.
