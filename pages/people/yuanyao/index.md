@@ -58,6 +58,10 @@ title: Yuan Yao
 
 Mining social media and software repositories.
 
+## Preprint
+{{ render_bib_file('yuanyao_pre.bib', ['KDD18'], hl='Yuan Yao') }}
+
+
 ## Selected Publications
 
 {{ render_bib_file('yuanyao.bib', ['TKDE17b', 'KDD17', 'TOIS17', 'TKDE17a', 'KDD16', 'IJCAI15', 'TKDE14', 'KDD14', 'CIKM14', 'WWW13'], hl='Yuan Yao') }}
@@ -67,10 +71,11 @@ More [publications](publications).
 ## Services
 
 * PC Member
-    * KDD [2017 (Applied data science track)](http://www.kdd.org/kdd2017/)
+    * KDD [2017 (Applied data science track)](http://www.kdd.org/kdd2017/) [2018](http://www.kdd.org/kdd2018/)
     * AAAI [2018](https://aaai.org/Conferences/AAAI/aaai18.php), [2017](https://www.aaai.org/Conferences/AAAI/aaai17.php)
     * IJCAI [2017](https://ijcai-17.org/), [2016](http://ijcai-16.org/), [2015](https://ijcai-15.org/)
     * CIKM [2017](http://cikm2017.org/), [2015](http://www.cikm-2015.org/)
+    * PAKDD [2018](http://prada-research.net/pakdd18/)
     * ASONAM [2017](http://asonam.cpsc.ucalgary.ca/2017/), [2016](http://asonam.cpsc.ucalgary.ca/2016/)
     * SMP [2017](http://www.cips-smp.org/smp2017/)
     * NLPCC [2017](http://tcci.ccf.org.cn/conference/2017/)
