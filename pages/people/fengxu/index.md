@@ -83,9 +83,8 @@ title: Feng Xu
 
 ## Teaching
 
-* 2008-2016, Spring: Operating System
-* 2017, Spring: [Operating System](OS2017)
-* 2017, Spring: [Modern Operating Systems(Elite Class)](OS2017E)
+* 2008-2017, Spring: Operating System
+* 2018, Spring: [Operating System](OS2018)
 
 ## Awards
 
