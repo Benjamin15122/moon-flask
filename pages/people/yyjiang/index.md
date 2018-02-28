@@ -43,7 +43,7 @@ I'm a coder striving to make programming less miserable. I'm interested in techn
 
 ## Teaching
 
-* Operating Systems (Spring 2018).
+* [Operating Systems (Spring 2018)](/~jyywiki).
 * I am working on the *Project-N* ![](img/logo-n.png) in which students build a complete computer system (NPC SoC, NEMU system emulator, Nanos operating system, NCC compiler, and applications) from scratch. I am the inventor of *Nanos* and *AbstractMachine* in Project-N, and contributed to the overall system-stack design.
     * We got Second Place in the 2017 Loongson Cup computer system design contest.
     * Papers: *Plagiarism Detection* (Needle [[SIGCSE-China18](pubs/needle)]).
