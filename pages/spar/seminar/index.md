@@ -4,7 +4,7 @@ title: SPAR Seminar
 
 Discuss software engineering, programming language, and system papers that have *novel* and *significant* contributions. Tool tutorials are also welcomed.
 
-Time and date: TBD.
+Every Wednesday 4pm* @ Computer Science and Technology Building 229.
 
 ## Upcoming
 
