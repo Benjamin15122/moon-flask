@@ -6,9 +6,45 @@ Discuss software engineering, programming language, and system papers that have 
 
 Every Wednesday 4pm* @ Computer Science and Technology Building 229.*
 
-Report order: Yang Cao, Zhanshuai Meng, Dawei Cheng, Jiaxing Dong, Dongjie Chen, Huiyan Wang, Qingwei Sun, Jue Wang, Yanxiang Tong, Zenan Li, Shengtao Yue,Weiyu Ye, Yi Liu, Rui Qiu, Bingying Guo, Da Li, Wenjie Li, Yuju Shen, Chenxi Zhang.
-
 ## Upcoming
+
+* Yang Cao
+
+* Zhanshuai Meng
+
+* Dawei Cheng
+
+* Jiaxing Dong
+
+* Dongjie Chen
+
+* Huiyan Wang
+
+* Qingwei Sun
+
+* Jue Wang
+
+* Yanxiang Tong
+
+* Zenan Li
+
+* Shengtao Yue
+
+* Weiyu Ye
+
+* Yi Liu 
+
+* Rui Qiu
+
+* Bingying Guo
+
+* Da Li
+
+* Wenjie Li
+
+* Yuju Shen
+
+* Chenxi Zhang
 
 ## Past Seminars
 
