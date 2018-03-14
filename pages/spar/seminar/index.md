@@ -8,23 +8,22 @@ Every *Wednesday 4pm* @ *Computer Science and Technology Building 229*.
 
 ## Upcoming Talks
 
-* Yang Cao (Mar 21): TBD
-* Zhanshuai Meng (Mar 28): TBD
+* (Mar 21) Jiarong Wu: TBD
+* (Mar 28) Jinci Chen: TBD; Xianfei Ou: TBD
+* Yuehuan Wang
+* Cong Li; Jingxin Fan
+* Shaocong Liu
+* Yang Cao; Zhanshuai Meng
 * Dawei Cheng (TBD): TBD
-* Jiaxing Dong
-* Dongjie Chen
+* Jiaxing Dong; Dongjie Chen
 * Huiyan Wang
-* Qingwei Sun
-* Jue Wang
+* Qingwei Sun; Jue Wang
 * Yanxiang Tong
-* Zenan Li
-* Shengtao Yue
+* Zenan Li; Shengtao Yue
 * Weiyu Ye
-* Yi Liu 
-* Rui Qiu
+* Yi Liu; Rui Qiu
 * Bingying Guo
-* Da Li
-* Wenjie Li
+* Da Li; Wenjie Li
 * Yuju Shen
 * Chenxi Zhang
 
