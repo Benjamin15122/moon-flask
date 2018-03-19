@@ -8,7 +8,7 @@ Every *Wednesday 4pm* @ *Computer Science and Technology Building 229*.
 
 ## Upcoming Talks
 
-* (Mar 21) Jiarong Wu: TBD
+* (Mar 21) Jiarong Wu: Neural-Guided Deductive Search for Real-Time Program Synthesis from Examples [[ICLR 2018]](https://openreview.net/forum?id=rywDjg-RW).
 * (Mar 28) Jinci Chen: TBD; Xianfei Ou: TBD
 * Yuehuan Wang
 * Cong Li; Jingxin Fan
