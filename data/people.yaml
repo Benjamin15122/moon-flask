@@ -252,6 +252,9 @@ graduates:
     group: spar
   - name: Tianheng Wu 吴天珩
     from: 2017
+  - name: Di Huang 黄頔
+    from: 2018
+    group: dse
 
 undergraduates:
   - name: Jiarong Wu 吴嘉荣
@@ -282,6 +285,9 @@ undergraduates:
   - name: Zhao Gang 刚昭
     from: 2017
     group: spar
+
+
+
 
 alumni:
   - name: Wenhua Yang 杨文华
