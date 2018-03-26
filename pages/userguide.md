@@ -25,6 +25,12 @@ moon需要两台服务器协作
 * `moon-flask`: 包含站点全局的信息、内容、数据、代码。
 
 
+## FAQ
+
+1. 500 Error `'utf8' codec can't decode byte 0xc0 in position 32: invalid start byte"`
+
+    确保你的markdown文件是无BOM的utf-8编码。
+
 
 
 ## 快速使用步骤

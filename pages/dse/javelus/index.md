@@ -14,6 +14,7 @@ Features:
 ## Tutorial
 
 * [A Tutorial](a-tutorial-of-javelus)
+* [Benchmark](benchmark)
 
 ## Source code
 

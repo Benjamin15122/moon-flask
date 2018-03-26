@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% block title%}
+Server Internal Error
+{% endblock%}
+{% block page_path %}
+<li class="active">500 Error</li>
+{% endblock %}
+{% block content %}
+<div class="row"><!-- row -->
+    <div class="col-lg-12 col-md-12"><!-- doc body wrapper -->
+        <div class="col-padded"><!-- inner custom column -->
+            <h1 class="page-title text-center">500 Error</h1>
+            <div class="news-body">
+                <div class="row"><!-- row -->
+                    <div class="col-lg-12">
+                        <figure class="thumb-404">
+                            <img src="{{ url_for('static', filename='img/404_error_image.png') }}" alt="Error Image" class="img-responsive aligncenter" />
+                        </figure>
+                    </div>
+                    <div class="col-lg-12">
+                        <h6 class="text-center">Ooops!</h6>
+                        <p class="text-center">
+                            {{ description['message'] }}
+                        </p>
+                        <p class="text-center">
+                        Please refer to <a href="{{ url_for('page', path='userguide') }}">User Guide</a>.
+                        </p>
+                    </div>
+                </div><!-- row end -->
+            </div>
+        </div><!-- inner custom column end -->
+    </div><!-- doc body wrapper end -->
+</div><!-- row end -->
+{% endblock %}

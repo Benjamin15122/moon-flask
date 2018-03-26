@@ -22,6 +22,17 @@ def page_not_found(e):
         decorate_g()
     return render_template('404.html'), 404
 
+@app.errorhandler(500)
+def page_not_found(e):
+    '''Custom 500 page
+
+    '''
+    if not hasattr(g, 'site'):
+        decorate_g()
+    return render_template('500.html', description=e.description), 500
+
+
+
 @app.before_request
 def before_request():
     ''' Callback before each request
