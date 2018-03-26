@@ -22,7 +22,7 @@ I'm a coder striving to make programming less miserable. I'm interested in techn
   <li>**Software Testing and Analysis**</li>
   <ul>
     <li>Concurrent Programs: *Understanding Shared Memory Dependences* (CARE [[ICSE14](pubs/care)], RWTrace [[ASE15](pubs/rwtrace)], BC [[FSE16](pubs/bc)], Survey [[JoS17](pubs/survey)], and my [PhD Thesis](pubs/thesis));</li>
-    <li>Mobile Apps: *Platform* (ATT [[Internetware15](pubs/att)], CoseDroid [[COMPSAC15](pubs/cosedroid)]); *Event Generation* (GAT [[APSEC16](pubs/gat)], AATT [[APSEC16](pubs/aatt), [SCP18](pubs/aattplus)]); *Leveraging Human Insights* (UGA [[APSEC14](pubs/uga)]); *Analysis* (RepDroid [[ICPC17](pubs/repdroid)]);</li>
+    <li>Mobile Apps: *Platform* (ATT [[Internetware15](pubs/att)], CoseDroid [[COMPSAC15](pubs/cosedroid)]); *Event Generation* (GAT [[APSEC16](pubs/gat)], AATT [[APSEC16](pubs/aatt), [SCP18](pubs/aattplus)]); *Leveraging Human Insights* (UGA [[APSEC14](pubs/uga)]); *Analysis* (RepDroid [[ICPC17](pubs/repdroid)], LESDroid [[ICPC18](pubs/lesdroid)]);</li>
     <li>Reliability: *Crash Consistency* (C3 [[FSE16](pubs/c3)]);</li>
     <li>Symbolic Analysis: *Fault Localization* (Comedy [[COMPSAC15](pubs/comedy)]);</li>
   </ul>
@@ -32,7 +32,7 @@ I'm a coder striving to make programming less miserable. I'm interested in techn
   </ul>
   <li>**Programming Tricks for Fun and Profits**</li>
   <ul>
-    <li>*Software Building* (ABC [[APSEC15](pubs/abc)]); *Runtime Verification* (GAIN [[APSEC14](pubs/gain), [IST16](pubs/gain1)]).</li>
+    <li>*Software Building* (ABC [[APSEC15](pubs/abc)]); *Runtime Verification* (GAIN [[APSEC14](pubs/gain), [IST16](pubs/gain1)]);</li>
   </ul>
 </ul>
 </div>
@@ -43,9 +43,10 @@ I'm a coder striving to make programming less miserable. I'm interested in techn
 
 ## Teaching
 
-* Operating Systems (Spring 2018).
+* [Operating Systems (Spring 2018)](/~jyywiki).
 * I am working on the *Project-N* ![](img/logo-n.png) in which students build a complete computer system (NPC SoC, NEMU system emulator, Nanos operating system, NCC compiler, and applications) from scratch. I am the inventor of *Nanos* and *AbstractMachine* in Project-N, and contributed to the overall system-stack design.
     * We got Second Place in the 2017 Loongson Cup computer system design contest.
+    * Papers: *Plagiarism Detection* (Needle [[SIGCSE-China18](pubs/needle)]).
 * Selected talks:
     * “计算：万物的起源和终点” [![](/static/img/icon-pdf.png)](teach/20140121.pdf) (Keynote speech at 2014 JSOI Winter Camp at Mudu high school).
     * “从逻辑门到电子计算机” [![](/static/img/icon-pdf.png)](teach/20141008.pdf) (Guest lecture for 2014 Introduction to Computer System at NJU).
@@ -63,7 +64,7 @@ I'm a coder striving to make programming less miserable. I'm interested in techn
 
 <hr>
 
-Last Update: Janurary 3, 2017 
+Last Update: March 5, 2018
 
 ~~~{.customjs}
 $('ul').css('margin-left', '-15px');

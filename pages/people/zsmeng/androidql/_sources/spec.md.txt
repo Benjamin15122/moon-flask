@@ -1,0 +1,364 @@
+The AndroidQL Specification
+=======
+
+**by: mzs**
+
+- [中文](#中文)
+    - [AndroidQL的使用](#AndroidQL的使用)
+    - [AndroidQL通信协议](#AndroidQL协议规范)
+- [English](#English)
+- [AndroidQL releases](#Releases)
+    
+
+## 中文
+
+**AndroidQL**是一个基于Android Runtime虚拟机开发的可扩展的Android应用测试和分析的框架，它由aql-vm和aql-client俩个独立的部分组成(在文档中，aql，Aql，AQL均是**AndroidQL**可能存在的名称)，支持用户使用预定义的操作快速开发自己的测试和分析脚本，同时也支持更高级的插件扩展.
+
+在本篇规范中，会涉及到以下的概念.
+
+* **agent**: 每一个Android device抽象成一个**AndroidQL agent**
+* **client**: 正在运行且进行**AQL通信**的Android app就是一个**AndroidQL client** 
+* **VM**: **AndroidQL**修改了Android Runtime也就是ART虚拟机部分源码，因此，下文中提到的VM除非特别说明均是指aql-cm项目中实现的**custom ART**虚拟机
+* **probe**: **AndroidQL**支持的可扩展插件，实现在VM内部，可以对程序运行状态执行**W/R**操作通常配合java客户端来进行使用，**AndroidQL**提供了一些常用的probe，当然用户也可以根据需要来扩展实现更多的probe
+* **通信**: **AndroidQL**中指aql-vm和aql-client之间的通信，该信道复用**ADB**工具管理，通常状况下用户不需要对通信进行任何的设置
+* **table**: probe中用来存储运行时数据的数据结构，支持查询删除插入等操作
+
+### **AndroidQL**已实现的的probe
+
+**AndroidQL**已经实现完成了一些probe, 它们包括
+
+1. **aql**: aql-vm在VM中实现的probe，扮演着probe manager的角色，VM中其他probe均是它的管理对象，来自aql-client的部分操作请求会被**aql probe**接收，从而对其他所有probe的状态进行有效的管理，这里之所以把它定义为一个probe，一方面是因为**AndroidQL**本身就是probe-base的，另一方面，**AndroidQL**中预定义的几种操作往往需要显示地指定目标probe，但是部分操作是无法指定目标的，比如需要通过某个操作(**TOGGLE**)打开一个probe时，此时请求的数据包被aql-client发送到aql-vm，但是该目标probe在数据包到达时并没有启动，当然无法接收并处理这个操作. 此时，使用**aql**模块完成响应是一个可选的实现方式，因此，**aql** probe在aql-vm中是一个相对特殊的probe，主要对其他probe的状态进行维护，事实上，aql这个特殊的probe负责一切核心的功能，包括通信维护，数据包分发处理，probe池的管理等
+2. **brv**: 实现断点逻辑帮助用户劫持(hijack)Android应用的运行过程
+3. **mcov, bcov, icov**: 帮助统计测试需要的覆盖率, 包括method, branch, instruction三种级别的覆盖率统计
+4. **gui**: 辅助进行gui测试，查询当前的layout数据，执行常用的GUI操作
+5. **excp**: 可在程序运行过程中任何时刻模拟抛出特定类型的异常，配合**brk**使用，可以在某些特定方法执行过程中抛出异常
+
+通常情况下，完成一份完整的测试或者分析工作事是需要多个probe的协作的，**AndroidQL**支持probe的扩展，用户可以自定义添加更多probe，每一个probe可以完成一个或者多个分析功能. probe的实现可以参考另一篇文档_**如何实现一个AndroidQL probe**_
+
+
+
+### AndroidQL框架java客户端aql-client的使用
+
+#### 一个demo：如何hijack一个app的运行
+
+该demo展示如何方便地使用AndroidQL**启动一个Android应用并且劫持程序的运行过程**
+
+```shell
+> INSTALL a.apk
+> LAUNCH a.apk brk
+> BREAKPOINT SET org.demo.MainActivitty:demoActivtiy:0
+> PERFORM gui.CLICK (345, 678)
+[...] Breakpoint Hit, Suspend
+```
+demo中初步使用到了**AndroidQL**定义的几种操作(**INSTALL**，**LAUNCH**，**BREAKPOINT**，**PERFORM**). **INSTALL**和**LAUNCH**操作帮助用户安装并且启动一个全新的Android应用，同时在程序启动时开启**brk**这个probe. 接下来通过**BREAKPOINT**操作，可以在MainActivity的demoActivity方法的入口设置了一个断点(方法入口的指令偏移为0)，这样当程序执行到该位置时，应用进程就暂停在该点. 这个操作可以帮助用户执行一些类似于debug的功能，比如在某些特定的情境下，可以方便地hijack程序运行的过程，插入一些park/sleep操作，从而实现一个粗粒度的线程调度器，去做并发相关的测试. 事实上，breakpoint这一利器可以帮助实现几乎所有的**GUIDED**的逻辑.
+
+#### AndroidQL接口
+
+**AndroidQL**提供包括以上提及的4种操作在内的**8**种操作类型(其余4种分别为**TOGGLE**, **RESUME**, **SELECT**, **HIT**)，其中**HIT**作为一种内部特殊的操作，并不开放给用户使用，关于它的更多介绍会在下文提及，这里提到它更多是基于形式统一的考虑. **AndroidQL**定义的**8**种操作类型包括:
+
+* **INSTALL**: 安装app
+* **LAUNCH**: 启动app
+* **TOGGLE**: 打开／关闭一个probe
+* **PERFORM**: 执行用户定义的操作，比如UI操作，throw exception等
+* **BREAKPOINT**: 设置断点，suspend程序的运行
+* **HIT**: 特殊操作，通知aql-client当前测试程序已运行至某个断点，app进程当前已被suspend
+* **RESUME**: 恢复程序运行
+* **SELECT**: 查询操作，主要用来查询运行时数据
+
+一个可执行的**AndroidQL**操作是由以上任意一种操作类型加一些特定形式的参数组成的，通常来说，一个可执行的**AndroidQL**语句是这样的：
+
+> **INSTALL** | **LAUNCH** | **PERFORM** | **BREAKPOINT** | **RESUME** | **SELECT** [probe.action] [args] [from probe.table] [args]
+
+**probe.action**的书写形式表明，一个实现在VM中的probe可以注册一些感兴趣的action列表，从而对外部的某些行为(比如click)产生响应，而**probe.table**从另一个角度表明一个probe可以在内存中实现很多的table，用来存储运行时产生的数据(比如当前覆盖到的所有方法). VM中可能同时存在上百个probe，因此理论上在AndroidQL的所有操作中，都需要唯一地指定目标probe，这样该指令会被VM部分的核心运行逻辑(**aql** probe)分发至对应的probe模块进行处理. 然而在具体实现上，**AndroidQL**针对不同的操作进行了一些特殊化的处理，也就是说不是所有的使用情境下，都需要指定目标probe.
+
+**AndroidQL**的运行机制设定所有probe均存在于VM中，probe注册感兴趣的action，同时对每一个action注册执行处理逻辑的handler. 所有来自aql-client的操作都会被分装成格式化的数据包，通过**AndroiQL**的通信机制发送给aql-vm，VM根据数据包中的目标probe对操作进行分发，由目标probe完成实际的数据处理和响应. 
+
+VM在app启动时被动态地创建，在**INSTALL**指令执行时，app并没有被启动，因此，**INSTALL**指令无需显示地指定目标probe. 此外，**LAUNCH**操作用来启动app创建VM，在它被aql-vm响应前，VM也并没有启动，因此它也不需要指定probe. 而**BREAKPOINT**的所有实现逻辑都天然地绑定在**brk**这个probe内，也不再需要对目标probe进行显示的指定. 在**AndroidQL**的设计中，只有**PERFORM**，**TOGGLE**，**SELECT**三种操作是需要指定probe的.
+
+总结一下，需要目标probe参数的操作和无需指定probe的操作是这样区分的:
+
+* 需要指定probe: **TOGGLE**, **PERFORM**，**SELECT**
+
+并不是所有的**AndroidQL**操作类型都需要显示地指定目标probe，然而以上的三种操作在不指定目标probe时，却可能会产生**无法预期的错误**.
+
+接下来，针对不同的**AndroidQL**操作指令格式分别进行详细的介绍.
+
+##### INSTALL
+
+**INSTALL**操作格式最为简单，其中apk_path指定要安装的apk的路径，这个路径是指本地apk的路径，需要确保该apk文件存在且可用，否则会导致安装错误的出现.
+
+> INSTALL apk_path 
+
+##### LAUNCH
+
+在一些使用情境下，可能需要在启动app的同时伴随开启某些probe，所以**LAUNCH**操作格式如下
+
+> LAUNCH apk_path [probes]
+
+在demo中，启动app同时开启了brk这个用来执行breakpoint逻辑的probe模块，我们可以一次开启更多的probe，也可以只是单纯地想启动一个app而已，并不打开任何probe，以上的俩种使用需求可以通过以下的俩个操作完成.
+ 	
+> LAUNCH a.apk brk,mcov
+ 	
+> LAUNCH a.apk //不开启任何probe
+
+##### BREAKPOINT
+
+> BREAKPOINT SET/CLEAN class_descriptor:method_name:offset
+
+**BREAKPOINT**操作可以帮助添加和清除断点，method_name指断点所在方法的方法名，而offset参数指定断点在方法中的偏移，如果想在调用某个方法入口就设置断点，可将offset置于0. 通过这三个参数，**AndroidQL**可以唯一地定位所有的断点.
+
+> BREAKPOINT SET org.aql.doc:demo:0
+
+> BREAKPOINT CLEAN org.aql.doc:demo:7
+
+##### HIT
+
+> HIT class:method:offset
+
+**HIT**操作由VM发起，告诉aql-client进程，当前有断点被响应，返回的数据包括当前app已处于暂停运行的状态以及断点的位置(类限定符，方法名，方法体内指令偏移)等信息.
+
+##### RESUME
+
+**RESUME**指令只有一种形式，它用于恢复VM的运行状态
+
+> RESUME
+ 
+以上的操作类型是**无需指定目标probe**的. 下边介绍**必须指定**probe的**AndroidQL**接口的语法.
+
+
+##### TOGGLE
+
+**TOGGLE**
+
+可以用切换某个probe的运行状态.
+
+因此，打开/关闭一个probe只需要
+
+> TOGGLE probes on/off [probes off/on]
+
+	
+
+* TOGGLE icov,brk off ui on
+* TOGGLE mcov,brk off ui on
+* TOGGLE mcov on icov off
+* TOGGLE bcov on
+
+
+##### PROFORM
+
+> PERFORM probe.action [args]
+
+**PERFORM**操作的action在满足probe处理逻辑可以响应的条件下可由用户定制添加，当然处理逻辑需要目标probe支持实现. 因此在probe的扩展中，**PERFORM**操作会扮演极其重要的角色. 当前**AndroidQL**已经使用**PERFORM**操作完成实现gui这个probe，来辅助进行GUI方面的测试和分析，注册并支持的action包括
+
+- CLICK
+- LONGCLICK
+- SWIPE
+- DOUBLECLICK
+- MENU
+- HOME
+- BACK
+- UNLOCK
+- DUMPLAYOUT
+
+使用方法如下：
+
+> PERFORM gui.CLICK/gui.LONGCLICK/gui.DOUBLECLICK (x,y)
+	
+> PERFORM gui.MENU/gui.HOME/gui.BACK/gui.UNLOCK
+
+> PERFORM gui.SWIPE (x1,y1) (x2,y2)   //()内无任何空白符
+
+> PERFORM gui.DUMPLAYOUT
+
+
+此外，**AndroidQL**使用PERFORM实现完成另外一个probe—**excp**，它可以在程序运行过程任意时刻抛出异常，模拟一些极端的app运行环境，比如配合**excp**和**PERRORM**可以完成抛io异常的操作：
+
+> PERORM excp.THROW java.io.Excption("Mock exception") 
+
+
+##### SELECT
+
+> SELECT stmt_body
+
+stmt_body除table名前需要用probe.table形式进行唯一的限定外，它本身就是可执行的sql语句。**SELECT**查询操作需要目标probe进行响应，而一个probe的所有table都由该probe自行实现和管理，比如可以把当前的layout实现为**gui**这一probe中的一张表，也可以把当前覆盖到的方法抽象成一张表. 在**AndroidQL**中，**all is table**，这里的all，指的是一个app所有的可读取的运行时数据.
+
+查询所有方法覆盖的指令如下：
+
+> SELECT * from mcov.method_table
+	
+最后，在**AndroidQL**的实现中，每个probe可以响应什么操作是由用户开发的probe指定的，当然**AndroidQL**原始提供了一些probe完成一些常用的操作，用户完全可以在VM中实现自己的probe，并且实现probe对应的指令响应逻辑.
+
+**注**: **所有的AndroidQL操作都是大小写不敏感的**.
+
+
+行文至此，文档已经可以帮助用户上手使用**AndroidQL**的接口了. 因此，以下的章节主要针对想要进一步了解**AndroidQL通信实现机制**的使用者
+
+### AndroidQL协议规范
+
+
+AndroidQL数据包格式
+
+| Length | Dataload             |
+| ------      | :--------------------- |
+| 4 bytes |  可变长度            |
+
+
+
+- AndroidQL的格式化数据包用于aql-client和aql-client通信, 数据包分为request和reply俩种，在具体的实现中，这俩种包的格式是基本一致的.
+
+- AndroidQL数据包分为头部和数据部分, 头部只包括length一个域，占4个字节，length部分表示全部数据包的字节数，也包括头部在内.
+
+- Dataload部分使用JSON格式序列化数据传输. 
+
+Dataload部分的格式如:
+
+    {
+        "id": id
+        "probe": probe_name,
+        "cmd": cmd_name,
+        "data": {
+            ...
+        }
+    }
+
+id用来唯一地区分一个数据包，对某一个request的响应reply包应该使用一致的id取值. probe是预定义在AndroidQL中的目标插件名字，它会对这个数据包进行拆解响应，并且会回复reply数据包给aql-client. cmd指令是指除HIT操作外其余7种操作类型. 当VM执行到预定义的breakpoint时，它会向aql-client发送一个packet通知虚拟机已经执行到对应的断点并暂停app的运行，此时cmd被定义为HIT，因此HIT是一种特殊的操作. 在AndroidQL用来装载request的packet中，cmd一共有8种类型，每种操作对应的data格式是不一样的. 
+
+**注**: **AndroidQL协议中规定传输过程中所有的字符串都采用小写格式(probe_name除外)**.
+
+不同cmd数据包对应data部分的格式是不尽相同的.
+
+##### INSTALL
+
+  	{
+       "id": id
+       "probe": "aql",
+       "cmd": "install",
+       "data": {
+            path: apk_path
+       }
+   }
+   
+   
+##### LAUNCH
+
+带有probe启动参数的LANCH语句会由AndroidQL自动封装成LAUNCH和TOGGLE逻辑(并不意味着一定会衍生出附加的TOGGLE数据包)
+
+	{
+        "id": id
+        "probe": "aql",
+        "cmd": "launch",
+        "data": {
+            "pkg": "a",
+            "activity": "b",
+            "probes": [probe1, probe2,...] 
+        }
+   }
+
+
+#### SELECT
+    
+    {
+        "id": id
+        "probe": probe_name,
+        "cmd": "select",
+        "data": {
+            stmt: executable SQL stmt
+        }
+    }
+
+
+### TOGGLE
+
+切换probe(aql是特殊的probe，用作probe manager)
+
+	{
+        "id": id
+        "probe": "aql",
+        "cmd": "toggle",
+        "data": {
+            probe1: "on",
+            probe2: "off",
+            ...
+        }
+    }
+
+    
+
+### BREAKPONIT
+
+    {
+        "id": id
+        "probe": probe_name,
+        "cmd": "break_point",
+        "data": {
+            "class": class_name,
+            "method": method_signature,
+            "offset": int number,
+            "option": set/clear
+        }
+    }
+
+    
+### RESUME
+    
+    {
+        "id": id
+        "probe": probe_name,
+        "cmd": "resume",
+        "data": {
+        }
+    }
+    
+### PERFORM
+    
+    {
+        "id": id
+        "probe": probe_name,
+        "cmd": "perform",
+        "data": {
+            "action": action_name
+            "args": args list
+        }
+    }
+
+ 
+### HIT
+ 
+    {
+        "id": id
+        "probe": probe_name,
+        "cmd": "hit",
+        "data": {
+        		"class": class_name,
+            	"method": method_signature,
+            	"offset": int number
+        }
+    }
+
+
+在**AndroidQL**通信中，所有的request发送之后都要同步的等待reply包的返回(HIT包不在这一规定范围之内).
+### Reply包格式
+    
+    {
+      "id": id
+      "status": “fail”/"ok",
+      "data": {
+      }
+    }
+    
+### PERFORM
+	{
+		"id": id
+		"status": "fail"/"ok",
+		"data": {
+			"message": "str"
+		}
+	}
+    
+    
+## English
+
+##### TBD
+    
+## Releases
+#####  TBD
