@@ -53,6 +53,7 @@ I'm a coder striving to make programming less miserable. I'm interested in techn
 
 ## Services
 
+* PC Member: [SATE2018](http://sei.pku.edu.cn/~xiongyf04/confs/sate18/index_en.html) ([中文](http://sei.pku.edu.cn/~xiongyf04/confs/sate18/index.html))
 * ![](img/noi.png) Scientific Program Committee member of Jiangsu Olympiad in Informatics (the official programming contest hoster for high school students).
 * ![](img/acmicpc.png) Coach of the programming contest training team at Nanjing University.
 
