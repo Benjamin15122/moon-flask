@@ -34,7 +34,7 @@ And now, I'm focusing on algorithmic complexity attack.
 
 ## Others
 
-* A Metamorphic Relation verification system: [MR.Hunter](http://mr.dennyspace.xyz).
+* A Metamorphic Relation verification system: [MR.Hunter](https://www.dennyspace.org).
 
 <hr>
 
