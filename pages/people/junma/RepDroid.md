@@ -13,7 +13,7 @@ title: Materials of the paper "RepDroid: An Automated Tool for Android Applicati
 
 ## DataSets
 
-[DataSet-S1.zip](https://pan.baidu.com/s/1RndpqqpOcLwTnSdkXpoECg)(Please contact majun@nju.edu.cn for unzip key)
+[DataSets.zip](https://pan.baidu.com/s/1RndpqqpOcLwTnSdkXpoECg)(Please contact majun@nju.edu.cn for unzip key)(Containing DataSet S1 and S2)
 
 ### DataSet for Determining Thresdholds \\(\delta_c\\) and \\(\delta_l\\)
 
@@ -152,6 +152,7 @@ title: Materials of the paper "RepDroid: An Automated Tool for Android Applicati
 #### **20 original apps from FDroid**
 
 | Package  Name                   | Version | MD5                              |
+|---------------------------------|---------|----------------------------------|
 | aarddict.android                | 1.6.11  | 67b44d779578cbddf6e17db92290e987 |
 | org.jtb.alogcat                 | 2.6.1   | a131119fc7e54d2d65e78509d7a6a725 |
 | apps.babycaretimer              | 1.5     | 5f6a0876abf113023bfea31318bf519b |
