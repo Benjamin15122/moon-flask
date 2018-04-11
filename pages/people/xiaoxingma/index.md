@@ -126,26 +126,28 @@ I am interested in various topics in software engineering, especially
 ## [Publications](publications)
 **Some recent papers:**
 
-{{ render_bib_file('selected.bib', hl='Xiaoxing Ma') }}
+{{ render_bib_file('xiaoxingma.bib', ['WSongTSE2018','ConUpTSE_2017','TGuASE2016','YYangTC16MIPA','jiang_crash_2016','jiang_online_2016','Xu:2015:TSE','JavelusIST14','JYY:2014:ICSE'}], hl='Xiaoxing Ma') }}
 
 **More publications:** [_In English_](publications), [_In Chinese_](http://www.c-dblp.cn/search_result.php?author_name=%E9%A9%AC%E6%99%93%E6%98%9F); or in [DBLP](http://dblp.uni-trier.de/pers/hd/m/Ma:Xiaoxing), [Google Scholar](https://scholar.google.com/citations?user=44WpWR4AAAAJ).
 
 ## Teaching
    * Discrete Mathematical Structures: [2014-2017, Autumn](DMS2013.html) (Inst. Softw.)
-   * Discrete Mathematics and Its Applications: [2014-2017, Spring](http://cslabcms.nju.edu.cn/course/view.php?id=274) (Dept. CS)
+   * Discrete Mathematics and Its Applications: [2014-2018, Spring](http://cslabcms.nju.edu.cn/course/view.php?id=274) (Dept. CS)
    * Concepts of Programming Languages: [2008-2014, Spring](copl)
    * Object-Oriented Software Construction: [Before 2007](OOT2007.html)
 
 ## Awards
    * 2006: China National Award for Science and Technology Progress, 2nd prize. Dr. Ma is the 2nd awardee of the team. （国家科技进步二等奖，第二完成人）
    * 2011: China National Award for Science and Technology Progress, 2nd prize. Dr. Ma is the 4th awardee of the team. （国家科技进步二等奖，第四完成人）
-   * 2009: _CVIC SE_ Award for Software Researchers. （中创软件人才奖）
    * 2010: MOE Award for S&T Research in Universities, 1st class, Ministry of Education. I am the 2nd awardee of the team. （教育部高校优秀科研成果技术发明一等奖，第二完成人）
+   * 2009: _CVIC SE_ Award for Software Researchers. （中创软件人才奖）
 
 ## Professional activities
 
 * Member of program committees 
-    * SEAMS [2016](http://seams2016.jgreen.de/), [2014](http://seams2014.uni-paderborn.de/), [2013](http://www.yorku.ca/mlitoiu/seams2013/), [2012](http://www.seams2012.cs.uvic.ca/): 11th/9th/8th/7th International Symposium on Software Engineering for Adaptive and Self-Managing Systems
+    * [ICECCS 2018](http://formal-analysis.com/iceccs/2018/): 23rd International Conference on Engineering of Complex Computer Systems
+    * [IEEE ATC 2018](http://www.smart-world.org/2018/atc/): 15th International Conference on Advanced and Trusted Computing. PC Co-Chair.
+    * SEAMS [2018](https://conf.researchr.org/home/seams-2018), [2017](https://wp.doc.ic.ac.uk/seams2017/), [2016](http://seams2016.jgreen.de/), [2014](http://seams2014.uni-paderborn.de/), [2013](http://www.yorku.ca/mlitoiu/seams2013/), [2012](http://www.seams2012.cs.uvic.ca/):  International Symposium on Software Engineering for Adaptive and Self-Managing Systems
     * Internetware [2015 PC Co-Chair](http://internetware2015.trustie.net/), 2014, 2013: 7th/6th/5th Asia-Pacific Symposium on Internetware 
     * [SOSE 2013](http://sei.pku.edu.cn/conference/sose2013/): 7th International Symposium on Service Oriented System Engineering
     * [WICSA/ECSA 2012 - Joint 10th Working IEEE/IFIP Conference on Software Architecture & 6th European Conference on Software Architecture](http://www.wicsa.net/)
