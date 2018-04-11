@@ -22,7 +22,7 @@ I'm a coder striving to make programming less miserable. I'm interested in techn
   <li>**Software Testing and Analysis**</li>
   <ul>
     <li>Concurrent Programs: *Understanding Shared Memory Dependences* (CARE [[ICSE14](pubs/care)], RWTrace [[ASE15](pubs/rwtrace)], BC [[FSE16](pubs/bc)], Survey [[JoS17](pubs/survey)], and my [PhD Thesis](pubs/thesis));</li>
-    <li>Mobile Apps: *Platform* (ATT [[Internetware15](pubs/att)], CoseDroid [[COMPSAC15](pubs/cosedroid)]); *Event Generation* (GAT [[APSEC16](pubs/gat)], AATT [[APSEC16](pubs/aatt), [SCP18](pubs/aattplus)]); *Leveraging Human Insights* (UGA [[APSEC14](pubs/uga)]); *Analysis* (RepDroid [[ICPC17](pubs/repdroid)]);</li>
+    <li>Mobile Apps: *Platform* (ATT [[Internetware15](pubs/att)], CoseDroid [[COMPSAC15](pubs/cosedroid)]); *Event Generation* (GAT [[APSEC16](pubs/gat)], AATT [[APSEC16](pubs/aatt), [SCP18](pubs/aattplus)]); *Leveraging Human Insights* (UGA [[APSEC14](pubs/uga)]); *Analysis* (RepDroid [[ICPC17](pubs/repdroid)], LESDroid [[ICPC18](pubs/lesdroid)]);</li>
     <li>Reliability: *Crash Consistency* (C3 [[FSE16](pubs/c3)]);</li>
     <li>Symbolic Analysis: *Fault Localization* (Comedy [[COMPSAC15](pubs/comedy)]);</li>
   </ul>
@@ -43,7 +43,7 @@ I'm a coder striving to make programming less miserable. I'm interested in techn
 
 ## Teaching
 
-* Operating Systems (Spring 2018).
+* [Operating Systems (Spring 2018)](/~jyywiki).
 * I am working on the *Project-N* ![](img/logo-n.png) in which students build a complete computer system (NPC SoC, NEMU system emulator, Nanos operating system, NCC compiler, and applications) from scratch. I am the inventor of *Nanos* and *AbstractMachine* in Project-N, and contributed to the overall system-stack design.
     * We got Second Place in the 2017 Loongson Cup computer system design contest.
     * Papers: *Plagiarism Detection* (Needle [[SIGCSE-China18](pubs/needle)]).
@@ -53,6 +53,7 @@ I'm a coder striving to make programming less miserable. I'm interested in techn
 
 ## Services
 
+* PC Member: [SATE2018](http://sei.pku.edu.cn/~xiongyf04/confs/sate18/index_en.html) ([中文](http://sei.pku.edu.cn/~xiongyf04/confs/sate18/index.html))
 * ![](img/noi.png) Scientific Program Committee member of Jiangsu Olympiad in Informatics (the official programming contest hoster for high school students).
 * ![](img/acmicpc.png) Coach of the programming contest training team at Nanjing University.
 
@@ -64,7 +65,7 @@ I'm a coder striving to make programming less miserable. I'm interested in techn
 
 <hr>
 
-Last Update: February 12, 2018 
+Last Update: March 5, 2018
 
 ~~~{.customjs}
 $('ul').css('margin-left', '-15px');

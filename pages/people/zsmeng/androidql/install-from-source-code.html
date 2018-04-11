@@ -1,0 +1,162 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>使用make编译和测试AndroidQL-vm项目 &#8212; AndroidQL 1.0 documentation</title>
+    <link rel="stylesheet" href="_static/pyramid.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="&lt;no title&gt;" href="adapter.html" />
+    <link rel="prev" title="使用AndroidQL-client" href="install-androidql-client.html" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Neuton&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nobile:regular,italic,bold,bolditalic&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
+<!--[if lte IE 6]>
+<link rel="stylesheet" href="_static/ie6.css" type="text/css" media="screen" charset="utf-8" />
+<![endif]-->
+
+  </head><body>
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="adapter.html" title="&lt;no title&gt;"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="install-androidql-client.html" title="使用AndroidQL-client"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">AndroidQL 1.0 documentation</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="makeandroidql-vm">
+<span id="makeandroidql-vm"></span><h1>使用make编译和测试AndroidQL-vm项目<a class="headerlink" href="#makeandroidql-vm" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="">
+<span id="id1"></span><h2>运行前设置环境变量<a class="headerlink" href="#" title="Permalink to this headline">¶</a></h2>
+<p><strong>AndroidQL</strong>项目当前支持的AOSP版本为5，6，7，8. 在使用make命令执行编译和测试操作前，对应每个不同的版本，需要设置AOSP项目的根目录.</p>
+<p>具体操作前需要配置**AOSP?__HOME<strong>环境变量，其中?为对应版本号，如果在本地需要同时支持多个AOSP版本，同时配置对应的</strong>AOSP?__HOME**环境变量即可.</p>
+<p>例如在同一个上下文环境需要对AOSP5和AOSP8提供支持，只需要在.bashrc(bash)文件中添加：</p>
+<blockquote>
+<div>export AOSP5_HOME=/home/aosp5</div></blockquote>
+<blockquote>
+<div>export AOSP8_HOME=/home/aosp8</div></blockquote>
+<p>这里aosp项目的根目录为/home，在使用时设置具体的路径即可.</p>
+</div>
+<div class="section" id="">
+<span id="id2"></span><h2>编译<a class="headerlink" href="#" title="Permalink to this headline">¶</a></h2>
+<p>AndroidQL支持的编译版本为x86, x86_64, arm, arm64, 假设当前已经成功设置AOSP?_HOME环境变量(?为具体版本号，取值为5，6，7，8)</p>
+<div class="section" id="android">
+<span id="android"></span><h3>编译Android镜像<a class="headerlink" href="#android" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>make img?-x86</li>
+<li>make img?-x86_64</li>
+<li>make img?-arm</li>
+<li>make img?-arm64</li>
+</ul>
+</div>
+<div class="section" id="libart-so">
+<span id="libart-so"></span><h3>编译libart.so文件<a class="headerlink" href="#libart-so" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>make art?-x86</li>
+<li>make art?-x86_64</li>
+<li>make art?-arm</li>
+<li>make art?-arm64</li>
+</ul>
+</div>
+</div>
+<div class="section" id="">
+<span id="id3"></span><h2>测试<a class="headerlink" href="#" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>make test?</li>
+</ul>
+<p>其中?均是具体版本号.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">使用make编译和测试AndroidQL-vm项目</a><ul>
+<li><a class="reference internal" href="#">运行前设置环境变量</a></li>
+<li><a class="reference internal" href="#">编译</a><ul>
+<li><a class="reference internal" href="#android">编译Android镜像</a></li>
+<li><a class="reference internal" href="#libart-so">编译libart.so文件</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#">测试</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="install-androidql-client.html"
+                        title="previous chapter">使用AndroidQL-client</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="adapter.html"
+                        title="next chapter">&lt;no title&gt;</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/install-from-source-code.md.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="adapter.html" title="&lt;no title&gt;"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="install-androidql-client.html" title="使用AndroidQL-client"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">AndroidQL 1.0 documentation</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2018, mzs.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.1.
+    </div>
+  </body>
+</html>

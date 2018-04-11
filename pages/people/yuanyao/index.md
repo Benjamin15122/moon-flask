@@ -68,6 +68,12 @@ Mining social media and software repositories.
 
 More [publications](publications).
 
+
+## Courses
+* [Probability and Statistics, fall 2017](https://cs.nju.edu.cn/tb/prob.htm)
+* [Discrete Mathematics, spring 2018](dismath)
+
+
 ## Services
 
 * PC Member

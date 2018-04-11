@@ -248,5 +248,7 @@
 	$( window ).resize( function() {
 		CHEF.chckNavigOpened(); // check if mobile nav is opened while the screen res is sufficient
 	} );
+
+	setTimeout(CHEF.chckNavigOpened); // trick: bug fixing for `navigation-mobile not compatible with safari'
 	
 } )( jQuery );

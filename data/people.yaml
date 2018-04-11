@@ -103,13 +103,11 @@ phd:
     avatar: /spar/img/avatar/jwang.jpg
     from: 2016
     group: spar, castle
-
   - name: Da Li 李达
     url: dli
     from: 2016
     avatar: /spar/img/avatar/dli.png
     group: spar, castle
-
   - name: Ying Zhang 张营
     from: 2016
     avatar: /spar/img/avatar/yzhang.jpg
@@ -131,6 +129,11 @@ phd:
   - name: Yuqi Zhang 张宇奇
     from: 2016
     group: disalg
+  - name: Dongjie Chen 陈冬杰
+    url: djchen
+    avatar: /spar/img/avatar/djchen.jpg
+    from: 2016
+    group: spar
   - name: Yi Huang 黄羿
     from: 2017
     group: disalg
@@ -147,9 +150,7 @@ phd:
     avatar: /spar/img/avatar/cxzhang.png
     group: spar
 
-
 graduates:
-
   - name: Shuo Cheng 程硕
     url:  shuocheng
     from: 2015
@@ -200,11 +201,6 @@ graduates:
     url: ycao
     from: 2016
     group: spar
-  - name: Dongjie Chen 陈冬杰
-    url: djchen
-    avatar: /spar/img/avatar/djchen.jpg
-    from: 2016
-    group: spar
   - name: Yuju Shen 沈宇桔
     from: 2016
     url: yjshen
@@ -252,6 +248,9 @@ graduates:
     group: spar
   - name: Tianheng Wu 吴天珩
     from: 2017
+  - name: Di Huang 黄頔
+    from: 2018
+    group: dse
 
 undergraduates:
   - name: Jiarong Wu 吴嘉荣
@@ -282,6 +281,9 @@ undergraduates:
   - name: Zhao Gang 刚昭
     from: 2017
     group: spar
+
+
+
 
 alumni:
   - name: Wenhua Yang 杨文华

@@ -6,6 +6,13 @@ from moon.md import create_markdown
 
 from moon.utils import get_datetime
 
+from werkzeug.exceptions import (
+    Forbidden,
+    InternalServerError,
+    HTTPException,
+    NotFound
+    )
+
 import os, codecs, urllib, yaml
 
 def update_page_yaml(page_yaml, page_md_files, base_dir):
@@ -99,11 +106,12 @@ def get_page(page_dir, path):
     try:
         md_path = safe_join(page_dir, path + '.md')
         if os.path.exists(md_path):
-            try:
-                return get_markdown_page(md_path)
-            except Exception:
-                traceback.print_exc()
+            return get_markdown_page(md_path)
+    except InternalServerError as e:
+        print('asdfasdfads')
+        raise e
     except Exception:
+        traceback.print_exc()
         pass
 
     abort(404)
@@ -112,7 +120,10 @@ def get_markdown_page(page_path):
     page = Page()
     with open(page_path, 'r') as f:
         md = create_markdown()
-        page.html = md.convert(f.read().decode('utf-8'))
+        try:
+            page.html = md.convert(f.read().decode('utf-8'))
+        except UnicodeDecodeError as e:
+            abort(500, {'message' : str(e)})
         page.meta = md.Meta # flask-pages naming convention
         for key, value in page.meta.iteritems():
             page.meta[key] = ''.join(value) # meta is a list

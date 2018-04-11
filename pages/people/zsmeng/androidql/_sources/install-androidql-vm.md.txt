@@ -1,0 +1,24 @@
+安装AndroidQL VM
+======
+
+## 下载system镜像文件
+
+AndroidQL框架包括vm和client俩个模块，其中vm模块需要定制Android系统部分完成，运行在Android设备上。用户可以下载预编译的Android system镜像文件并安装到本地移动设备使用，也可以下载源码自己编译system镜像文件出来, 关于后一种使用方式，请参照文档XXXXX.
+
+点击链接可下载相应版本镜像文件
+* [android5](./)
+* [android6](./)
+* [android7](./)
+* [android8](./)
+
+## 安装system.img到设备
+
+需要安装adb和fastboot工具，执行以下操作完成安装
+
+```
+fastboot flash system system.img
+```
+
+重新启动设备，如果设备启动失败，推荐使用源码安装方式
+
+
