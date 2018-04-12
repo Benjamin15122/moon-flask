@@ -22,13 +22,13 @@ I'm a coder striving to make programming less miserable. I'm interested in techn
   <li>**Software Testing and Analysis**</li>
   <ul>
     <li>Concurrent Programs: *Understanding Shared Memory Dependences* (CARE [[ICSE14](pubs/care)], RWTrace [[ASE15](pubs/rwtrace)], BC [[FSE16](pubs/bc)], Survey [[JoS17](pubs/survey)], and my [PhD Thesis](pubs/thesis));</li>
-    <li>Mobile Apps: *Platform* (ATT [[Internetware15](pubs/att)], CoseDroid [[COMPSAC15](pubs/cosedroid)]); *Event Generation* (GAT [[APSEC16](pubs/gat)], AATT [[APSEC16](pubs/aatt), [SCP18](pubs/aattplus)]); *Leveraging Human Insights* (UGA [[APSEC14](pubs/uga)]); *Analysis* (RepDroid [[ICPC17](pubs/repdroid)], LESDroid [[ICPC18](pubs/lesdroid)]);</li>
+    <li>Mobile Apps: *Platform* (ATT [[Internetware15](pubs/att)], CoseDroid [[COMPSAC15](pubs/cosedroid)]); *Event Generation* (GAT [[APSEC16](pubs/gat)], AATT [[APSEC16](pubs/aatt), [SCP18](pubs/aattplus)]); *Human Insights* (UGA [[APSEC14](pubs/uga)]); *Analysis* (RepDroid [[ICPC17](pubs/repdroid)], LESDroid [[ICPC18](pubs/lesdroid)]);</li>
     <li>Reliability: *Crash Consistency* (C3 [[FSE16](pubs/c3)]);</li>
     <li>Symbolic Analysis: *Fault Localization* (Comedy [[COMPSAC15](pubs/comedy)]);</li>
   </ul>
   <li>**Program Synthesis**</li>
   <ul>
-    <li>*Transformers* (AOTES [[ICSE17 Poster](pubs/aotes)], ENTER [[ICSE18 Poster](pubs/enter)]);</li>
+    <li>*Transformers* (AOTES [[ICSE17 Poster](pubs/aotes), [ECOOP18](pubs/aotes1)], ENTER [[ICSE18 Poster](pubs/enter)]);</li>
   </ul>
   <li>**Programming Tricks for Fun and Profits**</li>
   <ul>
@@ -65,7 +65,7 @@ I'm a coder striving to make programming less miserable. I'm interested in techn
 
 <hr>
 
-Last Update: March 5, 2018
+Last Update: April 12, 2018
 
 ~~~{.customjs}
 $('ul').css('margin-left', '-15px');
