@@ -4,7 +4,7 @@ title: Yanyan Jiang
 
 <div class="row gutter" markdown="1">
 <div class="col-lg-3 col-md-3 col-sm-4 col-xs-5">
-  <center>![](img/yanyan-portrait.png)</center>
+  <center>![](img/yanyan-portrait.jpg)</center>
 </div>
 Assistant Researcher,<br>[SPAR ![](/static/img/logo-spar-small.png)](/spar/) - [CASTLE ![](/static/img/logo-castle-small.png)](http://sccpu2.cse.ust.hk/castle/index.html) Joint Group<br>Dept. of Computer Science and Technology, Nanjing University
 
