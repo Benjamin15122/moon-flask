@@ -3,7 +3,7 @@ title: Ying ZHANG
 # Ying ZHANG
 
 <div>
-<img width="160" src="yingzhang.png" alt=""/>
+<img width="160" src="yingzhang.jpg" alt=""/>
 </div>
 
 ## Information
