@@ -15,7 +15,7 @@ Every *Wednesday 4pm* @ *Computer Science and Technology Building 229*.
 * (Apr 18)Shaocong Liu: Systematically Testing Background Services of Mobile Apps [[ASE 17]](https://dl.acm.org/citation.cfm?id=3155568).
 * (Apr 25) Yang Cao: Skyfire: Data-Driven Seed Generation for Fuzzing [[SP 17]](https://ieeexplore.ieee.org/document/7958599/); Dongjie Chen: Repairing sequential consistency in C/C++11 [[PLDI 17]](https://dl.acm.org/citation.cfm?id=3062352).
 * (May 2)Dawei Cheng: LAMP: data provenance for graph based machine learning algorithms through derivative computation [[FSE 17]](https://dl.acm.org/citation.cfm?id=3106291). 
-* Jiaxing Dong; Zhanshuai Meng
+* (May 9)Jiaxing Dong; Zhanshuai Meng: Large-Scale Analysis of Framework-Specific Exceptions in Android Apps [[ICSE 2018?]](https://arxiv.org/abs/1801.07009).
 * Huiyan Wang
 * Qingwei Sun; Jue Wang
 * Yanxiang Tong
