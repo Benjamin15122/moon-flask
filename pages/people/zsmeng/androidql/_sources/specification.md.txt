@@ -1,0 +1,161 @@
+# AndroidQL 规范
+
+## 通信协议规范
+
+AndroidQL数据包格式
+
+| Length | Dataload             |
+| ------      | :--------------------- |
+| 4 bytes |  可变长度            |
+
+- AndroidQL的格式化数据包用于aql-client和aql-vm通信, 数据包分为request和reply俩种，在具体的实现中，这俩种包的格式是基本一致的.
+
+- AndroidQL数据包分为头部和数据部分, 头部只包括length一个域，占4个字节，length部分表示全部数据包的字节数，也包括头部在内.
+
+- Dataload部分使用JSON格式序列化数据传输.
+
+Dataload部分的格式如:
+
+    {
+        "id": id
+        "probe": probe_name,
+        "cmd": cmd_name,
+        "data": {
+            ...
+        }
+    }
+
+id用来唯一地区分一个数据包，对某一个request的响应reply包应该使用一致的id取值. probe是预定义在AndroidQL中的目标插件名字，它会对这个数据包进行拆解响应，并且会回复reply数据包给aql-client. cmd指令是指除HIT操作外其余7种操作类型. 当VM执行到预定义的breakpoint时，它会向aql-client发送一个packet通知虚拟机已经执行到对应的断点并暂停app的运行，此时cmd被定义为HIT，因此HIT是一种特殊的操作. 在AndroidQL用来装载request的packet中，cmd一共有8种类型，每种操作对应的data格式是不一样的.
+
+**注**: **AndroidQL协议中规定传输过程中所有的字符串都采用小写格式(probe_name除外)**.
+
+不同cmd数据包对应data部分的格式是不尽相同的.
+
+### INSTALL
+
+  	{
+       "id": id
+       "probe": "aql",
+       "cmd": "install",
+       "data": {
+            path: apk_path
+       }
+   }
+
+
+### LAUNCH
+
+带有probe启动参数的LANCH语句会由AndroidQL自动封装成LAUNCH和TOGGLE逻辑(并不意味着一定会衍生出附加的TOGGLE数据包)
+
+	{
+        "id": id
+        "probe": "aql",
+        "cmd": "launch",
+        "data": {
+            "pkg": "a",
+            "activity": "b",
+            "probes": [probe1, probe2,...]
+        }
+   }
+
+
+### SELECT
+
+    {
+        "id": id
+        "probe": probe_name,
+        "cmd": "select",
+        "data": {
+            stmt: executable SQL stmt
+        }
+    }
+
+
+### TOGGLE
+
+切换probe(aql是特殊的probe，用作probe manager)
+
+	{
+        "id": id
+        "probe": "aql",
+        "cmd": "toggle",
+        "data": {
+            probe1: "on",
+            probe2: "off",
+            ...
+        }
+    }
+
+
+
+### BREAKPONIT
+
+    {
+        "id": id
+        "probe": probe_name,
+        "cmd": "break_point",
+        "data": {
+            "class": class_name,
+            "method": method_signature,
+            "offset": int number,
+            "option": set/clear
+        }
+    }
+
+
+### RESUME
+
+    {
+        "id": id
+        "probe": probe_name,
+        "cmd": "resume",
+        "data": {
+        }
+    }
+
+### PERFORM
+
+    {
+        "id": id
+        "probe": probe_name,
+        "cmd": "perform",
+        "data": {
+            "action": action_name
+            "args": args list
+        }
+    }
+
+
+### HIT
+
+    {
+        "id": id
+        "probe": probe_name,
+        "cmd": "hit",
+        "data": {
+        		"class": class_name,
+            	"method": method_signature,
+            	"offset": int number
+        }
+    }
+
+
+在**AndroidQL**通信中，所有的request发送之后都要同步的等待reply包的返回(HIT包不在这一规定范围之内).
+
+### Reply包格式
+
+    {
+      "id": id
+      "status": “fail”/"ok",
+      "data": {
+      }
+    }
+
+### PERFORM
+	{
+		"id": id
+		"status": "fail"/"ok",
+		"data": {
+			"message": "str"
+		}
+	}

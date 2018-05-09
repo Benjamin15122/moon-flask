@@ -1,0 +1,280 @@
+如何实现一个 probe
+======
+
+AndroidQL(AQL)包含俩个独立的项目，分别是aql-vm和aql-client.
+
+在这个文档里，你可以看到aql-vm项目基本的实现方式和一些功能性的描述，也可以了解如何去方便地扩展实现一个aql probe插件.
+
+我们先来看下一个AQL工具是如何支持probe的正常工作的，这些知识可能会更好的帮助你更快地上手开发一个probe出来.
+
+## probe怎么work
+
+我们知道AQL工具支持probe扩展，用户可以开发自己的probe插件. 因此在aql-vm中，可以同时存在很多完成不同功能的probe插件. AQL在ART虚拟机内部会维护一个probe池, 在虚拟机启动过程中打开某些特定的probe，也就是说AQL同时对probe的状态进行了有效地维护.
+
+所有的probe作为ART的独立组件存在于虚拟机层. 我们知道，在Android系统中，每一个进程都有一个独立的ART虚拟机实例, 所有的运行时数据都存在于独立的地址空间. probe的工作流程就是去有选择地**读写**app的运行时数据. 所谓的选择性就是依照某种策略去在特定的时刻执行某些特定的操作, aql client就是那个制定策略做出决策的组件，它去控制aql probe来执行读写ART虚拟机运行时数据的的操作.
+
+aql-client存在于ART虚拟机外部，我们的另一个项目[AndroidQL](https://git.njuics.cn/android/AndroidQL)可以帮助用户很快的开发自己的client工具. aql client和aql-vm中的probe作为俩个独立的组件，需要进行通信来同步地完成某些操作. 通常来说，这个通信会有俩个目的，首先，client发送指令查询app当前的运行状态，也就是profile的功能. 此外，client和probe之间也会同步某些command来控制app的运行，完成一些hijack性质的操作.
+
+我们来看下AQL工具需要处理的部分，首先，它应该在aql-client和probe之间维护一种鲁邦的连接，需要在二者之间格式化任何需要传输的数据，这样会进一步简化到达probe插件的数据的封装和解析过程. 此外，可能会存在很多probe实现某些profile性质的操作，也就是说它们需要记录app的运行时数据，这些数据量对于Android设备的物理支持来说可能会显得很大，因此，aql-vm需要对数据存储提供支持，需要在内存中有效地组织这些数据，这样才会使得查询操作变得高效. 最后一点，因为AQL支持probe扩展，所以用户可以开发很多的probe插件，AQL需要维护一个probe池之类的数据结构，并且需要记录每一个probe的状态，对probe的启动和关闭提供支持.
+
+## 数据结构
+
+在开发一个新的probe插件时，我们不妨先假设你没有任何关于ART虚拟机的领域知识. 因此，这里用一个章节的篇幅介绍一些ART项目中提供的数据结构，它们部分封装了运行时数据，并且最终会被暴露给probe开发者使用. 这些数据结构包括:
+
+1. Thread
+2. ShadowFrame
+3. Instruction
+4. ArtMethod
+
+#### Thread
+**Thread**是art提供的一个类，用来描述app运行过程中的线程。在ART实现中，应用程序中的每一个java线程都对应一个底层的native线程. Thread类封装的信息有助于我们实现某些profile功能，例如我们可以通过如下方式记录当前线程号:
+
+	Thread* self = Thread::Current();
+	pid_t tid = self->GetTid();
+
+在并发测试中，得到tid信息往往是有用的.
+
+
+
+#### ShadowFrame
+
+我们知道，在程序运行过程中，每一个线程都有一个对应的栈结构，栈中记录了该线程的方法调用信息，而每一个方法调用都是用一个存在于栈中栈帧来描述的，因此，在一个线程的栈中，可以同时存在很多这样的栈帧，这些栈帧自栈底向栈顶连接组成一个栈帧链，这个栈帧链就描述了该线程中方法的调用情况.
+
+在ART实现中，方法调用产生的栈帧是用ShadowFrame结构来描述的，那么从一个ShadowFrame对象中我们可以得到哪些有用的信息呢(假设已经存在名为shadow_frame的对象来描述当前的栈帧)？
+
+1. 栈帧对应的method, 使用ArtMethod类来描述. 相关知识会在下文作讲解.
+
+	```
+	ArtMethod* method = shadow_frame.GetMethod();
+	```
+
+2. 当前的pc指针. 一般情况下，解释器顺序执行一个方法中所有的指令，pc指针用来描述当前指令在该方法体中的偏移，这个信息有助于唯一地定位当前的指令位置.
+
+	```
+	uint32_t dex_pc = shadow_frame.GetDexPc();
+	```
+
+3. 调用当前方法的caller的栈帧.
+
+	```
+	ShadowFrame* sf = shadow_frame.GetLink();
+	```
+
+	使用如上方法，我们可以很容易地遍历完一个完整的栈.
+
+4. 对应object.
+
+	```
+	Object* ibject = shadow_frame.GetThisObject();
+	```
+
+5. 指令的寄存器参数. 和JVM基于栈结构的指令不同的是，ART的指令是基于寄存器的	，也就是每条指令的参数存在于寄存器中. 因此在ShadowFrame类中预先定义若干个寄存器用来存储这些数据. 不同的指令使用的寄存器是不同的(在ART中，指令被封装成Instruciton类，该类中记录了指令实例在ShadowFrame中寄存器的索引)，比如取到**IF_EQ**指令的俩个参数，可以使用如下代码
+
+	```
+	inst_data = inst->Opcode();
+	int32_t arg1 = shadow_frame.GetVReg(inst->VRegA_22t(inst_data));
+	int32_t arg2 = shadow_frame.GetVReg(inst->VRegB_22t(inst_data));
+	```
+
+#### Instruction
+
+ART解释器逐条执行内存方法区的指令，这些指令在ART内存中是作为Instruction类的对象存在的. Instruction类有一些metadata来描述指令的性质.
+
+```
+// 存在一个Instruction指针inst
+// 得到指令的opcode
+uint16_t opcode = inst->OpCode();
+// 得到指令的pc值
+uint32_t offset = inst->GetDexPc();
+// 判断指令是否是RETURN指令
+if (inst->IsReturn()) {
+}
+// 判断指令是否是IF_EQ指令
+if (inst->OpCode() == Instruction::IF_EQ) {
+}
+```
+
+#### ArtMethod
+
+我们在前边讲过，ART中的一次方法调用对应于线程栈中的一个栈帧，这个方法在ART中是使用ArtMethod的数据结构来描述的. ArtMethod和Java中的method概念是存在一一对应关系的. ArtMethod对象中存储了该方法的描述性信息.
+
+```
+ArtMethod* method = shadow_frame->GetMethod();
+// 得到方法名
+const char* method_name = method->GetName();
+// 得到方法所在的类
+Class* class = method->GetDeclaringClass();
+// 得到方法所在文件的文件名
+const char* file_name = method->GetDeclaringClassSourceFile();
+```
+此外，ART还封装了Class，Object等这样的类，这些数据结构与Java层中的同类概念都是存在一一对应的关系的.
+
+### probe需要实现的API
+
+probe应该如何有效地组织到AQL工具内部呢。无论用户自定义添加多少个probe都不应该导致代码失控的出现. 此外，probe的开发应该尽量简单，这样才会使得用户上手的成本最低. 因此，本节的内容可以视为probe开发的教程.
+
+#### **Probe**基类接口
+
+在开发probe时，用户应该很快知道需要关注ART中的哪些细节. 因此，我们提供了一个Probe抽象类作为给用户的接口，AQL工具通过一些回调函数将ART内部的运行时数据暴露给probe. probe插件的开发很大程度上就是重写Probe基类中的虚函数的过程. 那么，新的probe插件都应该重写哪些基类虚函数呢.
+
+1. 在inst指令被执行之前被调用的回调函数:
+
+	```
+	virtual void BeforeInst(Thread* thread, ShadowFrame& shadow_frame,
+                          Instruction* inst);
+	```
+
+	函数参数中的thread, shadow_frame, inst对象分别封装当前的线程，栈帧，指令，这些对象中携带了几乎所有的运行时数据，probe可以看到这些内部状态数据.
+
+2. 在inst指令被执行之后被调用的回调函数:
+
+	```
+	virtual void AfterInst(Thread* thread, ShadowFrame& shadow_frame,
+                         Instruction* inst)；
+	```
+
+3. HandkePacket用来处理aql client发送来的aql_packet数据结构:
+
+	```
+	virtual bool HandlePacket(const Json& json, ExpandBuf* pReply);
+	```
+	json是aql_packet包中的data部分，pReply为aql probe返回给client的数据包，probe可以将某个操作的执行结果写入pReply传输给client进行解析.
+
+#### 其他一些有用的API
+
+1. 指令类型绑定
+
+	```
+	bool Wire(const std::vector<uint16_t>& opcode_group);
+	bool UnWire(const std::vector<uint16_t>& opcode_group);
+	```
+
+	通过Wire操作(UnWire操作实现的功能与之恰恰相反)，我们可以在某个probe的构造函数中指定感兴趣的指令类型集合. 这样，当解释器执行到相应的指令时，就会去调用该probe的AfterInst和BeforeInst回调函数. 比如，对于一个用来统计方法覆盖情况的probe **mcov**，我们可能会进行如下的绑定:
+
+	```
+	// 当新的方法被调用时，进行回调
+	mcov->Wire(Instruction::Invoke);
+	```
+	此外，AQL还提供了**WireAll(), WireReturn(), WireBranch(), WireInvoke(), WireSwitch(), WireThrow()**等helper函数.
+
+2. **Probe**基类构造函数
+
+	```
+	Probe(const std::string& name);
+	```
+
+3. probe状态切换
+
+	```
+	// 返回probe的状态
+	bool IsEnabled();
+
+	//切换probe状态
+  	void Enable();
+  	void Disable();
+	```
+
+
+### 实现AQL第一个插件: 统计branch覆盖率
+
+假设我们要简单地实现一个叫作**bcov**的probe，对它功能的设定只是用来简单地统计一个app测试过程中的branch覆盖率数据.那么**bcov**在实现上应该解决哪些问题呢，或者说实现这样的AQL插件会面临哪些挑战呢.
+
+首先，我们应该在ART内存中有效地存储覆盖率数据，随着测试过程的持续进行，这个数据或许会变得很可观. 进一步考虑其实它可以分解成俩个更小的问题，包括在**bcov**情境下到底什么是感兴趣的数据以及这些数据应该被怎么存储. 其次，还应该解决数据传输的问题，因为**bcov**记录下的覆盖率数据最终需要通过client反馈给用户，而在**bcov**和client之间格式化传输数据有助于数据的封装和解析. 另外一个潜在的挑战是**bcov**怎么得到每条分支指令的布尔取值？
+
+**mbov**处理以上问题的过程表现为几个API的具体实现:
+
+1. bcov构造函数
+
+	在AQL中，app运行状态数据是用表来存储的，所以在bcov构造函数应该会建立一张这样的表来存储branch数据. 那么哪些数据需要存下来呢，首先指令所在的方法，类以及dex_pc偏移元数据应该被记录下来，这些信息可以帮助我们唯一地定位该条指令. 此外，我们还需要记录该条指令的布尔取值.
+
+	```c++
+	bcov() : Probe("bcov") {
+		TableColumn branch_columns[] = {
+      		{"class_descriptor", 200},
+      		{"method_name", 200},  {"method_signature", 200},
+      		{"source_file", 200},  {"dex_pc", 5},
+      		{"condition_value", 2}};
+     	// 新建数据表
+		btable_ = new Table("bcov", branch_columns, 7);
+		// 指令类型绑定
+		WireBranch();
+		// 注册select操作的handler
+		commands_.emplace("select", SelectHandler);
+		...
+	}
+	```
+
+2. 确定condition取值
+
+	branch指令在布尔取值不同时，跳转目标指令的位置是不一样的，因此我们根据这个性质得到具体的condition取值.
+
+	```c++
+	bool GetBranchConditionValue(ShadowFrame& shadow_frame,
+                                               Instruction* inst) {
+  		CHECK(inst->IsBranch() && !inst->IsUnconditional());
+  		bool value = false;
+  		switch (inst->Opcode()) {
+    		case Instruction::IF_EQ:
+    		case Instruction::IF_NE:
+    		case Instruction::IF_LT:
+    		case Instruction::IF_GE:
+    		case Instruction::IF_GT:
+    		case Instruction::IF_LE: {
+    		uint32_t dex_pc = inst->VRegC_22t();
+    		value = (dex_pc == 2);
+    		break;
+    		}
+    		case Instruction::IF_EQZ:
+    		case Instruction::IF_NEZ:
+    		case Instruction::IF_LTZ:
+    		case Instruction::IF_GEZ:
+    		case Instruction::IF_GTZ:
+    		case Instruction::IF_LEZ: {
+    		uint32_t dex_pc = inst->VRegB_21t();
+    		value = (dex_pc == 2);
+    		break;
+    		}
+  		}
+  		return value;
+	}
+	```
+3. 重写AfterInst
+	在该回调函数中，bcov会将分支覆盖信息写到缓冲区中，然后批处理插入到表中.
+
+	```c++
+	if (inst->IsBranch() && (!inst->IsUnconditional())) {
+        bool value = GetBranchConditionValue(shadow_frame, inst);
+        std::string branch_key = method_key + StringPrintf("%d", dex_pc) +
+                                 static_cast<uint32_t>(value);
+        !icov_ ? items.emplace(StringPrintf("%d", dex_pc)) : true;
+        items.emplace(StringPrintf("%d", static_cast<uint32_t>(value)));
+        // 写出到缓冲区中，缓冲区满时插入到表中，INSERT_RECORD宏执行该操作
+        INSERT_RECORD(branch_key, btable_, inst_record_buf_, new Record(items));
+      }
+    ```
+
+4. 重写HandlePacket
+
+	client向**bcov**发送查询操作，**bcov**在HandlePacket中完成该request的处理并返回查询结果给client.
+
+	```c++
+	bool SelectHandler(const Json& json, ExpandBuf* reply) {
+  		std::string aql_stmt = json["stmt"].string_value();
+  		std::ostringstream os;
+  		bool result = Table::Select(os, aql_stmt);
+  		GEN_OK_REPLY(reply, os.str());
+  		return result;
+	}
+	```
+	因为我们在**bcov**构造函数中注册了select操作的handler，因此对于查询操作，在HandlePacket中调用SelectHandler即可.
+
+5. 启动**bcov**
+
+	AQL会统一维护probe池的数据结构，并且管理每个probe的状态，因此AQL中probe的启动都初始化在Aql::Create()函数内，在该函数中添加以下代码即可完成**bcov**的启动.
+
+	```c++
+	Probe* bcov = new Bcov("bcov");
+	bcov->Enable();
+	```
+
+其它probe开发的基本都是遵照这样的流程.

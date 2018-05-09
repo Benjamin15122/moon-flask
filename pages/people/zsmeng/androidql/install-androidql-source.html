@@ -1,0 +1,185 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>从源码安装 AndroidQL &#8212; AndroidQL 1.0 documentation</title>
+    <link rel="stylesheet" href="_static/pyramid.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Get Started" href="get-started.html" />
+    <link rel="prev" title="安装 AndroidQL" href="install-androidql.html" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Neuton&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nobile:regular,italic,bold,bolditalic&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
+<!--[if lte IE 6]>
+<link rel="stylesheet" href="_static/ie6.css" type="text/css" media="screen" charset="utf-8" />
+<![endif]-->
+
+  </head><body>
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="get-started.html" title="Get Started"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="install-androidql.html" title="安装 AndroidQL"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">AndroidQL 1.0 documentation</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="androidql">
+<span id="androidql"></span><h1>从源码安装 AndroidQL<a class="headerlink" href="#androidql" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="aosp">
+<span id="aosp"></span><h2>下载 AOSP 源代码<a class="headerlink" href="#aosp" title="Permalink to this headline">¶</a></h2>
+<p>AndroidQL 是基于 Android Runtime 进行的定制化修改，需要基于 AOSP (Android Open Source Project) 的Makefile系统进行编译。
+因此，需要首先下载 <a class="reference external" href="https://source.android.com/source/downloading.html">AOSP源码</a>。AndroiQL 支持的 Android 版本包括 5, 6, 7, 8，推荐下载 <strong>android-7.1.2_r28</strong> 版本源码。在国内可以使用<a class="reference external" href="https://lug.ustc.edu.cn/wiki/mirrors/help/aosp">中科大的 AOSP 源</a>进行下载（校内有线环境下，可以将配置中的 <code class="docutils literal notranslate"><span class="pre">mirrors.ustc.edu.cn</span></code> 替换为 <code class="docutils literal notranslate"><span class="pre">mirrors6.ustc.edu.cn</span></code> ，利用IPv6信道加快下载速度）。</p>
+<div class="section" id="">
+<span id="id1"></span><h3>设置环境变量<a class="headerlink" href="#" title="Permalink to this headline">¶</a></h3>
+<p>下载 AOSP 源代码之后，需要将 AOSP 项目的路径配置在环境变量中，以便 AndroidQL 识别。需要配置 <code class="docutils literal notranslate"><span class="pre">AOSP?_HOME</span></code> 环境变量，其中<code class="docutils literal notranslate"><span class="pre">?</span></code>为版本号（5, 6, 7, 8 之一）。如果本地同时存在多个 AOSP 版本，同时配置对应的 <code class="docutils literal notranslate"><span class="pre">AOSP?_HOME</span></code> 环境变量即可。</p>
+<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span> <span class="nv">AOSP7_HOME</span><span class="o">=</span>/your/path/to/aosp/7
+</pre></div>
+</div>
+</div>
+<div class="section" id="aosp">
+<span id="id2"></span><h3>编译 AOSP 源代码<a class="headerlink" href="#aosp" title="Permalink to this headline">¶</a></h3>
+<p>在 AOSP 源代码下载完成之后，建议首先进行编译。否则第一次编译 AndroidQL 将耗费非常长的时间。使用如下的命令进行编译：</p>
+<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span><span class="nb">source</span> build/envsetup.sh
+lunch aosp_arm-eng
+make
+</pre></div>
+</div>
+<p>其中 <code class="docutils literal notranslate"><span class="pre">lunch</span></code> 命令用于指定编译出的镜像文件的适配类型，不带参数的 <code class="docutils literal notranslate"><span class="pre">lunch</span></code> 命令可以查看所有的支持的适配类型。现在市场上大多数 Android 手机 CPU 为 ARM 架构，因此可以使用 <code class="docutils literal notranslate"><span class="pre">lunch</span> <span class="pre">aosp_arm-eng</span></code> 编译出可在真机上运行的安卓系统。编译生成的镜像文件在 <code class="docutils literal notranslate"><span class="pre">&lt;AOSP_HOME&gt;/out/target/product</span></code> 子目录下。此时，在 &lt;AOSP_HOME&gt; 根目录下输入 <code class="docutils literal notranslate"><span class="pre">emulator</span></code> 命令可以启动一个 Android 模拟器。</p>
+</div>
+</div>
+<div class="section" id="">
+<span id="id3"></span><h2>编译<a class="headerlink" href="#" title="Permalink to this headline">¶</a></h2>
+<p>在编译前，请保证你已经下载了 AOSP 源代码，并设置了 <code class="docutils literal notranslate"><span class="pre">AOSP?_HOME</span></code> 环境变量（<code class="docutils literal notranslate"><span class="pre">?</span></code> 为 5, 6, 7, 8 之一）。</p>
+<p>AndroidQL 支持的编译目标平台包括 x86, x86_64, arm, arm64。</p>
+<ul class="simple">
+<li>编译 Android 系统镜像</li>
+</ul>
+<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>make img?-x86
+make img?-x86_64
+make img?-arm
+make img?-arm64
+</pre></div>
+</div>
+<ul class="simple">
+<li>编译 libart.so 文件</li>
+</ul>
+<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>make art?-x86
+make art?-x86_64
+make art?-arm
+make art?-arm64
+</pre></div>
+</div>
+<ul class="simple">
+<li>测试</li>
+</ul>
+<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>make test?
+</pre></div>
+</div>
+<p>上述命令中，<code class="docutils literal notranslate"><span class="pre">?</span></code> 均代表 AOSP 版本号（5, 6, 7, 8 之一）。</p>
+</div>
+<div class="section" id="">
+<span id="id4"></span><h2>运行模拟器<a class="headerlink" href="#" title="Permalink to this headline">¶</a></h2>
+<p>编译好系统镜像以后，就可以使用该系统镜像启动模拟器：</p>
+<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> &lt;AOSP_HOME&gt;
+<span class="nb">source</span> build/envsetup.sh
+lunch aosp_x86_64-eng
+emulator
+</pre></div>
+</div>
+<p>注意这里 lunch 的架构类型必须与之前 make 编译的架构类型一致。</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">从源码安装 AndroidQL</a><ul>
+<li><a class="reference internal" href="#aosp">下载 AOSP 源代码</a><ul>
+<li><a class="reference internal" href="#">设置环境变量</a></li>
+<li><a class="reference internal" href="#aosp">编译 AOSP 源代码</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#">编译</a></li>
+<li><a class="reference internal" href="#">运行模拟器</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="install-androidql.html"
+                        title="previous chapter">安装 AndroidQL</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="get-started.html"
+                        title="next chapter">Get Started</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/install-androidql-source.md.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="get-started.html" title="Get Started"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="install-androidql.html" title="安装 AndroidQL"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">AndroidQL 1.0 documentation</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2018, mzs.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.1.
+    </div>
+  </body>
+</html>

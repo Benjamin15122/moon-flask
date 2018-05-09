@@ -1,0 +1,37 @@
+# Get Started
+
+**AndroidQL**是一个基于Android Runtime虚拟机开发的可扩展的Android应用测试和分析的框架，它由aql-vm和aql-client俩个独立的部分组成(在文档中，aql，Aql，AQL均是**AndroidQL**可能存在的名称)，支持用户使用预定义的操作快速开发自己的测试和分析脚本，同时也支持更高级的插件扩展.
+
+## 一个demo：如何hijack一个app的运行
+
+该demo展示如何方便地使用AndroidQL**启动一个Android应用并且劫持程序的运行过程**
+
+```shell
+> INSTALL a.apk
+> LAUNCH a.apk brk
+> BREAKPOINT SET org.demo.MainActivitty:demoActivtiy:0
+> PERFORM gui.CLICK (345, 678)
+[...] Breakpoint Hit, Suspend
+```
+demo中初步使用到了**AndroidQL**定义的几种操作(**INSTALL**，**LAUNCH**，**BREAKPOINT**，**PERFORM**). **INSTALL**和**LAUNCH**操作帮助用户安装并且启动一个全新的Android应用，同时在程序启动时开启**brk**这个probe. 接下来通过**BREAKPOINT**操作，可以在MainActivity的demoActivity方法的入口设置了一个断点(方法入口的指令偏移为0)，这样当程序执行到该位置时，应用进程就暂停在该点. 这个操作可以帮助用户执行一些类似于debug的功能，比如在某些特定的情境下，可以方便地hijack程序运行的过程，插入一些park/sleep操作，从而实现一个粗粒度的线程调度器，去做并发相关的测试. 事实上，breakpoint这一利器可以帮助实现几乎所有的**GUIDED**的逻辑.
+
+## 基本概念
+
+* **agent**: 每一个Android device抽象成一个**AndroidQL agent**
+* **client**: 正在运行且进行**AQL通信**的Android app就是一个**AndroidQL client**
+* **VM**: **AndroidQL**修改了Android Runtime也就是ART虚拟机部分源码，因此，下文中提到的VM除非特别说明均是指aql-cm项目中实现的**custom ART**虚拟机
+* **probe**: **AndroidQL**支持的可扩展插件，实现在VM内部，可以对程序运行状态执行**W/R**操作通常配合java客户端来进行使用，**AndroidQL**提供了一些常用的probe，当然用户也可以根据需要来扩展实现更多的probe
+* **通信**: **AndroidQL**中指aql-vm和aql-client之间的通信，该信道复用**ADB**工具管理，通常状况下用户不需要对通信进行任何的设置
+* **table**: probe中用来存储运行时数据的数据结构，支持查询删除插入等操作
+
+### **AndroidQL**已实现的的probe
+
+**AndroidQL**已经实现完成了一些probe, 它们包括
+
+1. **aql**: aql-vm在VM中实现的probe，扮演着probe manager的角色，VM中其他probe均是它的管理对象，来自aql-client的部分操作请求会被**aql probe**接收，从而对其他所有probe的状态进行有效的管理，这里之所以把它定义为一个probe，一方面是因为**AndroidQL**本身就是probe-base的，另一方面，**AndroidQL**中预定义的几种操作往往需要显示地指定目标probe，但是部分操作是无法指定目标的，比如需要通过某个操作(**TOGGLE**)打开一个probe时，此时请求的数据包被aql-client发送到aql-vm，但是该目标probe在数据包到达时并没有启动，当然无法接收并处理这个操作. 此时，使用**aql**模块完成响应是一个可选的实现方式，因此，**aql** probe在aql-vm中是一个相对特殊的probe，主要对其他probe的状态进行维护，事实上，aql这个特殊的probe负责一切核心的功能，包括通信维护，数据包分发处理，probe池的管理等
+2. **brv**: 实现断点逻辑帮助用户劫持(hijack)Android应用的运行过程
+3. **mcov, bcov, icov**: 帮助统计测试需要的覆盖率, 包括method, branch, instruction三种级别的覆盖率统计
+4. **gui**: 辅助进行gui测试，查询当前的layout数据，执行常用的GUI操作
+5. **excp**: 可在程序运行过程中任何时刻模拟抛出特定类型的异常，配合**brk**使用，可以在某些特定方法执行过程中抛出异常
+
+通常情况下，完成一份完整的测试或者分析工作事是需要多个probe的协作的，**AndroidQL**支持probe的扩展，用户可以自定义添加更多probe，每一个probe可以完成一个或者多个分析功能. probe的实现可以参考另一篇文档_**如何实现一个AndroidQL probe**_
