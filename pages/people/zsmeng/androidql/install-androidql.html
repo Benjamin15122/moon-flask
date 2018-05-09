@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>AndroidQL Documentation &#8212; AndroidQL 1.0 documentation</title>
+    <title>安装 AndroidQL &#8212; AndroidQL 1.0 documentation</title>
     <link rel="stylesheet" href="_static/pyramid.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <script type="text/javascript" src="_static/documentation_options.js"></script>
@@ -15,7 +15,8 @@
     <script type="text/javascript" src="_static/doctools.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="安装 AndroidQL" href="install-androidql.html" />
+    <link rel="next" title="从源码安装 AndroidQL" href="install-androidql-source.html" />
+    <link rel="prev" title="AndroidQL Documentation" href="index.html" />
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Neuton&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nobile:regular,italic,bold,bolditalic&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
 <!--[if lte IE 6]>
@@ -31,9 +32,12 @@
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="install-androidql.html" title="安装 AndroidQL"
+          <a href="install-androidql-source.html" title="从源码安装 AndroidQL"
              accesskey="N">next</a> |</li>
-        <li class="nav-item nav-item-0"><a href="#">AndroidQL 1.0 documentation</a> &#187;</li> 
+        <li class="right" >
+          <a href="index.html" title="AndroidQL Documentation"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">AndroidQL 1.0 documentation</a> &#187;</li> 
       </ul>
     </div>  
 
@@ -42,35 +46,26 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="androidql-documentation">
-<h1>AndroidQL Documentation<a class="headerlink" href="#androidql-documentation" title="Permalink to this headline">¶</a></h1>
- <embed>
- <a href="http://moon.nju.edu.cn/spar/"><img width="30%" height="22%" align="bottom" src="http://moon.nju.edu.cn/spar/img/logo_large.png"></a>
-</embed><p><em>Welcome to AndroidQL’s Documentation.</em></p>
-<p>View the <a class="reference external" href="https://git.njuics.cn/android/aql-vm">codebase on GitHub</a>.</p>
-<div class="toctree-wrapper compound">
-<p class="caption"><span class="caption-text">Installation</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="install-androidql.html">安装 AndroidQL</a></li>
-<li class="toctree-l1"><a class="reference internal" href="install-androidql-source.html">从源码安装 AndroidQL</a></li>
+  <div class="section" id="androidql">
+<span id="androidql"></span><h1>安装 AndroidQL<a class="headerlink" href="#androidql" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="system">
+<span id="system"></span><h2>下载system镜像文件<a class="headerlink" href="#system" title="Permalink to this headline">¶</a></h2>
+<p>AndroidQL框架包括vm和client俩个模块，其中vm模块需要定制Android系统部分完成，运行在Android设备上。用户可以下载预编译的Android system镜像文件并安装到本地移动设备使用，也可以下载源码自己编译system镜像文件出来, 关于后一种使用方式，请参照文档XXXXX.</p>
+<p>点击链接可下载相应版本镜像文件</p>
+<ul class="simple">
+<li><a class="reference external" href="./">android5</a></li>
+<li><a class="reference external" href="./">android6</a></li>
+<li><a class="reference external" href="./">android7</a></li>
+<li><a class="reference external" href="./">android8</a></li>
 </ul>
 </div>
-<div class="toctree-wrapper compound">
-<p class="caption"><span class="caption-text">User guide</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="get-started.html">Get Started</a></li>
-<li class="toctree-l1"><a class="reference internal" href="aql-query-language.html">AQL 查询语言简介</a></li>
-</ul>
+<div class="section" id="system-img">
+<span id="system-img"></span><h2>安装system.img到设备<a class="headerlink" href="#system-img" title="Permalink to this headline">¶</a></h2>
+<p>需要安装adb和fastboot工具，执行以下操作完成安装</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fastboot</span> <span class="n">flash</span> <span class="n">system</span> <span class="n">system</span><span class="o">.</span><span class="n">img</span>
+</pre></div>
 </div>
-<div class="toctree-wrapper compound">
-<p class="caption"><span class="caption-text">Development</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="develop-env.html">搭建 AndroidQL 开发环境</a></li>
-<li class="toctree-l1"><a class="reference internal" href="code-structure.html">代码结构说明 (aql-vm 部分)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="code-comment.html">AndroidQL 代码详解</a></li>
-<li class="toctree-l1"><a class="reference internal" href="adapter.html">如何兼容不同的 AOSP 版本</a></li>
-<li class="toctree-l1"><a class="reference internal" href="specification.html">AndroidQL 规范</a></li>
-</ul>
+<p>重新启动设备，如果设备启动失败，请从源码安装AndroidQL。</p>
 </div>
 </div>
 
@@ -80,13 +75,25 @@
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">安装 AndroidQL</a><ul>
+<li><a class="reference internal" href="#system">下载system镜像文件</a></li>
+<li><a class="reference internal" href="#system-img">安装system.img到设备</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="index.html"
+                        title="previous chapter">AndroidQL Documentation</a></p>
   <h4>Next topic</h4>
-  <p class="topless"><a href="install-androidql.html"
-                        title="next chapter">安装 AndroidQL</a></p>
+  <p class="topless"><a href="install-androidql-source.html"
+                        title="next chapter">从源码安装 AndroidQL</a></p>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
-      <li><a href="_sources/index.rst.txt"
+      <li><a href="_sources/install-androidql.md.txt"
             rel="nofollow">Show Source</a></li>
     </ul>
    </div>
@@ -113,9 +120,12 @@
           <a href="genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="install-androidql.html" title="安装 AndroidQL"
+          <a href="install-androidql-source.html" title="从源码安装 AndroidQL"
              >next</a> |</li>
-        <li class="nav-item nav-item-0"><a href="#">AndroidQL 1.0 documentation</a> &#187;</li> 
+        <li class="right" >
+          <a href="index.html" title="AndroidQL Documentation"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">AndroidQL 1.0 documentation</a> &#187;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">

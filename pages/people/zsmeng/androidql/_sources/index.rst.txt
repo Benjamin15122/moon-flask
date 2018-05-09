@@ -1,5 +1,5 @@
 AndroidQL Documentation
-======
+=======================
 
 .. raw:: html
 
@@ -17,22 +17,23 @@ View the `codebase on GitHub`_.
    :maxdepth: 1
    :caption: Installation
 
-   install-androidql-vm.md
-   install-androidql-client.md
-   install-from-source-code.md
+   install-androidql.md
+   install-androidql-source.md
 
 .. toctree::
    :maxdepth: 1
-   :caption: Getting Started
+   :caption: User guide
 
-   adapter.md
-   spec.md
-   start.md
+   get-started.md
+   aql-query-language.md
 
 .. toctree::
    :maxdepth: 1
    :caption: Development
 
-   dev-env.md
+   develop-env.md
+   code-structure.md
+   code-comment.md
+   adapter.md
    how-probe.md
-
+   specification.md

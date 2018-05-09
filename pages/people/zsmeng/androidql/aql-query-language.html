@@ -1,0 +1,249 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>AQL 查询语言简介 &#8212; AndroidQL 1.0 documentation</title>
+    <link rel="stylesheet" href="_static/pyramid.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="搭建 AndroidQL 开发环境" href="develop-env.html" />
+    <link rel="prev" title="Get Started" href="get-started.html" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Neuton&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nobile:regular,italic,bold,bolditalic&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
+<!--[if lte IE 6]>
+<link rel="stylesheet" href="_static/ie6.css" type="text/css" media="screen" charset="utf-8" />
+<![endif]-->
+
+  </head><body>
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="develop-env.html" title="搭建 AndroidQL 开发环境"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="get-started.html" title="Get Started"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">AndroidQL 1.0 documentation</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="aql">
+<span id="aql"></span><h1>AQL 查询语言简介<a class="headerlink" href="#aql" title="Permalink to this headline">¶</a></h1>
+<p>AndroidQL 提供一种类似 SQL 的语言作为交互的接口，这种语言称为 AQL。用户可以使用 AQL 语言对 AndroidQL 进行操控。AndroidQL 共定义了 7 种命令：</p>
+<ul class="simple">
+<li><strong>INSTALL</strong>: 安装 app</li>
+<li><strong>LAUNCH</strong>: 启动 app</li>
+<li><strong>TOGGLE</strong>: 打开／关闭一个 probe</li>
+<li><strong>PERFORM</strong>: 执行某个 probe 预定义的操作，或是执行用户定义的操作（如UI操作，throw exception等）</li>
+<li><strong>BREAKPOINT</strong>: 设置断点</li>
+<li><strong>RESUME</strong>: 恢复程序运行</li>
+<li><strong>SELECT</strong>: 查询操作，主要用来查询运行时数据</li>
+</ul>
+<p>一个可执行的<strong>AndroidQL</strong>操作是由以上任意一种操作类型加一些特定形式的参数组成的，通常来说，一个可执行的<strong>AndroidQL</strong>语句是这样的：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">INSTALL</span> <span class="o">|</span> <span class="n">LAUNCH</span> <span class="o">|</span> <span class="n">PERFORM</span> <span class="o">|</span> <span class="n">BREAKPOINT</span> <span class="o">|</span> <span class="n">RESUME</span> <span class="o">|</span> <span class="n">SELECT</span> <span class="p">[</span><span class="n">probe</span><span class="o">.</span><span class="n">action</span><span class="p">]</span> <span class="p">[</span><span class="n">args</span><span class="p">]</span> <span class="p">[</span><span class="kn">from</span> <span class="nn">probe.table</span><span class="p">]</span> <span class="p">[</span><span class="n">args</span><span class="p">]</span>
+</pre></div>
+</div>
+<p><strong>probe.action</strong>的书写形式表明，一个实现在VM中的probe可以注册一些感兴趣的action列表，从而对外部的某些行为(比如click)产生响应，而<strong>probe.table</strong>从另一个角度表明一个probe可以在内存中实现很多的table，用来存储运行时产生的数据(比如当前覆盖到的所有方法). VM中可能同时存在上百个probe，因此理论上在AndroidQL的所有操作中，都需要唯一地指定目标probe，这样该指令会被VM部分的核心运行逻辑(<strong>aql</strong> probe)分发至对应的probe模块进行处理. 然而在具体实现上，<strong>AndroidQL</strong>针对不同的操作进行了一些特殊化的处理，也就是说不是所有的使用情境下，都需要指定目标probe.</p>
+<p><strong>AndroidQL</strong>的运行机制设定所有probe均存在于VM中，probe注册感兴趣的action，同时对每一个action注册执行处理逻辑的handler. 所有来自aql-client的操作都会被分装成格式化的数据包，通过<strong>AndroiQL</strong>的通信机制发送给aql-vm，VM根据数据包中的目标probe对操作进行分发，由目标probe完成实际的数据处理和响应.</p>
+<p>VM在app启动时被动态地创建，在<strong>INSTALL</strong>指令执行时，app并没有被启动，因此，<strong>INSTALL</strong>指令无需显示地指定目标probe. 此外，<strong>LAUNCH</strong>操作用来启动app创建VM，在它被aql-vm响应前，VM也并没有启动，因此它也不需要指定probe. 而<strong>BREAKPOINT</strong>的所有实现逻辑都天然地绑定在<strong>brk</strong>这个probe内，也不再需要对目标probe进行显示的指定. 在<strong>AndroidQL</strong>的设计中，只有<strong>PERFORM</strong>，<strong>TOGGLE</strong>，<strong>SELECT</strong>三种操作是需要指定probe的.</p>
+<p>总结一下，需要目标probe参数的操作和无需指定probe的操作是这样区分的:</p>
+<ul class="simple">
+<li>需要指定probe: <strong>TOGGLE</strong>, <strong>PERFORM</strong>，<strong>SELECT</strong></li>
+</ul>
+<p>并不是所有的<strong>AndroidQL</strong>操作类型都需要显示地指定目标probe，然而以上的三种操作在不指定目标probe时，却可能会产生<strong>无法预期的错误</strong>.</p>
+<p>接下来，针对不同的<strong>AndroidQL</strong>操作指令格式分别进行详细的介绍.</p>
+<div class="section" id="install">
+<span id="install"></span><h2>INSTALL<a class="headerlink" href="#install" title="Permalink to this headline">¶</a></h2>
+<p><strong>INSTALL</strong>操作格式最为简单，其中apk_path指定要安装的apk的路径，这个路径是指本地apk的路径，需要确保该apk文件存在且可用，否则会导致安装错误的出现.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">INSTALL</span> <span class="n">apk_path</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="launch">
+<span id="launch"></span><h2>LAUNCH<a class="headerlink" href="#launch" title="Permalink to this headline">¶</a></h2>
+<p>在一些使用情境下，可能需要在启动app的同时伴随开启某些probe，所以<strong>LAUNCH</strong>操作格式如下</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">LAUNCH</span> <span class="n">apk_path</span> <span class="p">[</span><span class="n">probes</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>在demo中，启动app同时开启了brk这个用来执行breakpoint逻辑的probe模块，我们可以一次开启更多的probe，也可以只是单纯地想启动一个app而已，并不打开任何probe，以上的俩种使用需求可以通过以下的俩个操作完成.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">LAUNCH</span> <span class="n">a</span><span class="o">.</span><span class="n">apk</span> <span class="n">brk</span><span class="p">,</span><span class="n">mcov</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">LAUNCH</span> <span class="n">a</span><span class="o">.</span><span class="n">apk</span> <span class="o">//</span><span class="n">不开启任何probe</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="breakpoint">
+<span id="breakpoint"></span><h2>BREAKPOINT<a class="headerlink" href="#breakpoint" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">BREAKPOINT</span> <span class="n">SET</span><span class="o">/</span><span class="n">CLEAN</span> <span class="n">class_descriptor</span><span class="p">:</span><span class="n">method_name</span><span class="p">:</span><span class="n">offset</span>
+</pre></div>
+</div>
+<p><strong>BREAKPOINT</strong>操作可以帮助添加和清除断点，method_name指断点所在方法的方法名，而offset参数指定断点在方法中的偏移，如果想在调用某个方法入口就设置断点，可将offset置于0. 通过这三个参数，<strong>AndroidQL</strong>可以唯一地定位所有的断点.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">BREAKPOINT</span> <span class="n">SET</span> <span class="n">org</span><span class="o">.</span><span class="n">aql</span><span class="o">.</span><span class="n">doc</span><span class="p">:</span><span class="n">demo</span><span class="p">:</span><span class="mi">0</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">BREAKPOINT</span> <span class="n">CLEAN</span> <span class="n">org</span><span class="o">.</span><span class="n">aql</span><span class="o">.</span><span class="n">doc</span><span class="p">:</span><span class="n">demo</span><span class="p">:</span><span class="mi">7</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="resume">
+<span id="resume"></span><h2>RESUME<a class="headerlink" href="#resume" title="Permalink to this headline">¶</a></h2>
+<p><strong>RESUME</strong>指令只有一种形式，它用于恢复VM的运行状态</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">RESUME</span>
+</pre></div>
+</div>
+<p>以上的操作类型是<strong>无需指定目标probe</strong>的. 下边介绍<strong>必须指定</strong>probe的<strong>AndroidQL</strong>接口的语法.</p>
+</div>
+<div class="section" id="toggle">
+<span id="toggle"></span><h2>TOGGLE<a class="headerlink" href="#toggle" title="Permalink to this headline">¶</a></h2>
+<p><strong>TOGGLE</strong>可以用切换某个probe的运行状态.</p>
+<p>打开/关闭一个probe只需要</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">TOGGLE</span> <span class="n">probes</span> <span class="n">on</span><span class="o">/</span><span class="n">off</span> <span class="p">[</span><span class="n">probes</span> <span class="n">off</span><span class="o">/</span><span class="n">on</span><span class="p">]</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">TOGGLE</span> <span class="n">icov</span><span class="p">,</span><span class="n">brk</span> <span class="n">off</span> <span class="n">ui</span> <span class="n">on</span>
+<span class="n">TOGGLE</span> <span class="n">mcov</span><span class="p">,</span><span class="n">brk</span> <span class="n">off</span> <span class="n">ui</span> <span class="n">on</span>
+<span class="n">TOGGLE</span> <span class="n">mcov</span> <span class="n">on</span> <span class="n">icov</span> <span class="n">off</span>
+<span class="n">TOGGLE</span> <span class="n">bcov</span> <span class="n">on</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="proform">
+<span id="proform"></span><h2>PROFORM<a class="headerlink" href="#proform" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">PERFORM</span> <span class="n">probe</span><span class="o">.</span><span class="n">action</span> <span class="p">[</span><span class="n">args</span><span class="p">]</span>
+</pre></div>
+</div>
+<p><strong>PERFORM</strong>操作的action在满足probe处理逻辑可以响应的条件下可由用户定制添加，当然处理逻辑需要目标probe支持实现. 因此在probe的扩展中，<strong>PERFORM</strong>操作会扮演极其重要的角色. 当前<strong>AndroidQL</strong>已经使用<strong>PERFORM</strong>操作完成实现gui这个probe，来辅助进行GUI方面的测试和分析，注册并支持的action包括</p>
+<ul class="simple">
+<li>CLICK</li>
+<li>LONGCLICK</li>
+<li>SWIPE</li>
+<li>DOUBLECLICK</li>
+<li>MENU</li>
+<li>HOME</li>
+<li>BACK</li>
+<li>UNLOCK</li>
+<li>DUMPLAYOUT</li>
+</ul>
+<p>使用方法如下：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">PERFORM</span> <span class="n">gui</span><span class="o">.</span><span class="n">CLICK</span><span class="o">/</span><span class="n">gui</span><span class="o">.</span><span class="n">LONGCLICK</span><span class="o">/</span><span class="n">gui</span><span class="o">.</span><span class="n">DOUBLECLICK</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">PERFORM</span> <span class="n">gui</span><span class="o">.</span><span class="n">MENU</span><span class="o">/</span><span class="n">gui</span><span class="o">.</span><span class="n">HOME</span><span class="o">/</span><span class="n">gui</span><span class="o">.</span><span class="n">BACK</span><span class="o">/</span><span class="n">gui</span><span class="o">.</span><span class="n">UNLOCK</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">PERFORM</span> <span class="n">gui</span><span class="o">.</span><span class="n">SWIPE</span> <span class="p">(</span><span class="n">x1</span><span class="p">,</span><span class="n">y1</span><span class="p">)</span> <span class="p">(</span><span class="n">x2</span><span class="p">,</span><span class="n">y2</span><span class="p">)</span>   <span class="o">//</span><span class="p">()</span><span class="n">内无任何空白符</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">PERFORM</span> <span class="n">gui</span><span class="o">.</span><span class="n">DUMPLAYOUT</span>
+</pre></div>
+</div>
+<p>此外，<strong>AndroidQL</strong>使用PERFORM实现完成另外一个probe—<strong>excp</strong>，它可以在程序运行过程任意时刻抛出异常，模拟一些极端的app运行环境，比如配合<strong>excp</strong>和<strong>PERRORM</strong>可以完成抛io异常的操作：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">PERORM</span> <span class="n">excp</span><span class="o">.</span><span class="n">THROW</span> <span class="n">java</span><span class="o">.</span><span class="n">io</span><span class="o">.</span><span class="n">Excption</span><span class="p">(</span><span class="s2">&quot;Mock exception&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="select">
+<span id="select"></span><h2>SELECT<a class="headerlink" href="#select" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">SELECT</span> <span class="n">stmt_body</span>
+</pre></div>
+</div>
+<p>stmt_body除table名前需要用probe.table形式进行唯一的限定外，与 SQL中的 SELECT 语句格式相同。<strong>SELECT</strong>查询操作需要指定目标probe进行响应，而一个probe的所有table都由该probe自行实现和管理，比如可以把当前的layout实现为<strong>gui</strong>这一probe中的一张表，也可以把当前覆盖到的方法抽象成一张表. 在<strong>AndroidQL</strong>中，<strong>all is table</strong>，这里的all，指的是一个app所有的可读取的运行时数据.</p>
+<p>查询所有方法覆盖的指令如下：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">SELECT</span> <span class="o">*</span> <span class="kn">from</span> <span class="nn">mcov.mcov</span>
+</pre></div>
+</div>
+<p>最后，在<strong>AndroidQL</strong>的实现中，每个probe可以响应什么操作是由用户开发的probe指定的，当然<strong>AndroidQL</strong>原始提供了一些probe完成一些常用的操作，用户完全可以在VM中实现自己的probe，并且实现probe对应的指令响应逻辑.</p>
+<p><strong>注</strong>: <strong>所有的AndroidQL操作都是大小写不敏感的</strong>.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">AQL 查询语言简介</a><ul>
+<li><a class="reference internal" href="#install">INSTALL</a></li>
+<li><a class="reference internal" href="#launch">LAUNCH</a></li>
+<li><a class="reference internal" href="#breakpoint">BREAKPOINT</a></li>
+<li><a class="reference internal" href="#resume">RESUME</a></li>
+<li><a class="reference internal" href="#toggle">TOGGLE</a></li>
+<li><a class="reference internal" href="#proform">PROFORM</a></li>
+<li><a class="reference internal" href="#select">SELECT</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="get-started.html"
+                        title="previous chapter">Get Started</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="develop-env.html"
+                        title="next chapter">搭建 AndroidQL 开发环境</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/aql-query-language.md.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="develop-env.html" title="搭建 AndroidQL 开发环境"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="get-started.html" title="Get Started"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">AndroidQL 1.0 documentation</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2018, mzs.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.1.
+    </div>
+  </body>
+</html>

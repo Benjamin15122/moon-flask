@@ -1,0 +1,110 @@
+# AndroidQL 代码详解
+
+AndroidQL 的源代码除了 `art/runtime/aql` 目录下的内容，还对 Android Runtime 进行了几个地方的改动：
+
+1. `art/runtime/runtime.cc`：随着 `Runtime` 对象的创建和销毁，创建和销毁`Aql`对象
+1. `art/runtime/jdwp/jdwp_adb.cc`：进行 AndroidQL 主要的初始化工作，包括初始化连接状态、建立通信等
+1. `art/runtime/interpreter_switch_impl.cc`：在指令解释执行的前后进行插桩
+1. `art/runtime/thread_list.cc`：支持线程 suspend，以实现断点功能
+
+## 全局定义
+
+`aql/core/base/aql_macros.h`里定义了`LOGI`和`LOGE`，都是使用ART里已有的log功能（`art/runtime/base/logging.h`里的`LOG`），在输入前面附加AQL标签。
+
+## 插桩
+
+### 入口
+
+`art/runtime/interpreter/interpreter_switch_impl.cc`里的`PREAMBLE()`插入了`AQL_BEFORE_INST`，`POSTAMBLE`插入了`AQL_AFTER_INST`。经过一系列的宏定义解开之后，会调用`AqlInstrumentationListener::BeforeInst`和`AqlInstrumentationListener::AfterInst`。
+
+总结来说，在每个指令执行时，找到注册在这个指令的opcode上的listener，调用这些listener的`BeforeInst`和`AfterInst`。
+
+### Listener
+
+Listener的类为`AqlInstrumentationListener`。管理listener的类是`AqlInstrumentation`。`AqlInstrumentation`维护一个从opcode到listeners的map。每次指令执行时，根据这个map来查询注册在这个opcode上的listeners。
+
+`AqlInstrumentation`的`AddListener`和`RemoveListener`是用来注册listener的接口。但实际使用的时候都是调用`Probe::Wire`和`Probe::Unwire`来进行批量的注册。
+
+### Probe
+
+Probe实际上就是做具体功能的listener，每个功能类继承自`AqlInstrumentationListener`。这些功能类又有一个共同的抽象父类`Probe`。
+
+`Probe`类提供了`WireAll`、`WireInvoke`、`WireBranch`以支持常用的批量注册操作。`Probe`类的`Wire*`会调用`AqlInstrumentation::AddListener`，把自己（this，本身就是listener）注册在某个指令上。其中`WireAll`将listener注册在了一个特殊的opcode `ALL_INSTS`上。任何指令的执行都会触发注册在`ALL_INSTS`上的listeners。`Probe`类并未重写`AqlInstrumentationListener`的`BeforeInst`和`AfterInst`方法，而是交给具体的功能类去完成。
+
+功能类 | Wire* | 重写BeforeInst | 重写AfterInst
+--- | --- | --- | ---
+Breakpoint | `WireAll` | Yes | No
+ICov | `WireAll` | No | Yes
+BCov | `WireBranch` | No | Yes
+MCov | `WireInvoke` | No | Yes
+
+## 通信
+
+### Connection
+
+`art/runtime/jdwp/jdwp_adb.cc` 里调用`Aql::GoActive(sock)`。这里`sock`是一个FD（文件描述符）。
+
+JDWP是一个Android的调试协议，规定了一个debug client（DDMS）如何和debug server（运行在VM中）进行通信。在正常情况下，VM只允许建立一条连接。这里进行了修改，打开了第二条连接通道，进行AQL相关的通信。代码中使用`jdwp_socket`和`aql_socket`来区分这两个连接通道。
+
+当一个app启动时，会添加一个断点到主函数之前，保证在app运行前就完成AQL的初始化工作。
+
+`Aql::GoActive`启动AQL模块，初始化probes，切换至解释器模式，创建一个`AqlConnState`对象，调用`AqlConnState::Run`进入主循环。其中，`Aql::SwitchToInterpreter`切换成了解释器模式。
+
+
+### `AqlConnState`类
+
+主循环在`Run`，启动之后不断调用`ProcessIncoming`。`ProcessIncoming`模仿了`art/runtime/jdwp/jdwp_adb.cc`里的`JdwpAdbState::ProcessIncoming`的实现。
+
+`ProcessIncoming`从sock这个FD读（调用`read`）。如果buffer里有了一个完整的packet，就会调用`HandlePacket`进行处理。`HandlePacket`会调用`ProcessRequest`，由packet得到reply。
+
+`ProcessRequest`处理请求，根据packet的dataload json里的probe字段，将请求patch到不同的probe，调用`probe->HandlePacket`，输入dataload json，输出reply。
+
+得到reply后，调用`WritePacket`将reply写到sock里。
+
+### Probe如何处理请求
+
+`Probe::HandlePacket`负责处理请求，输入dataload json，输出reply。
+
++ 首先，从json里提取出command
++ 其次，调用`GetHandlerByCmd`，根据command找到handler（实际上就是从map里找）
+  + handler的类型是`AqlPacketHandler`，实际上是一个函数指针）
++ 然后，调用handler处理请求。
+
+具体的probe类会调用`RegisterHandler`，声明支持哪个command，并给出对应的handler。例如，`Breakpoint`支持BREAKPOINT和RESUME两个command，handler分别是`BreakpointHandler`和`ResumeHandler`。
+
+handler处理的过程是多层dispatch。例如`Probe::HandlePacket`可以dispatch到`Breakpoint:BreakpointHandler`和`Breakpoint::ResumeHandler`，`Breakpoint:BreakpointHandler`又可以dispatch到`Breakpoint::SetHandler`和`Breakpoint::ClearHandler`。Dispatch之后，具体的handler负责写reply的内容。如果dispatch出错，会调用`box_reply`来返回错误信息。`box_reply`会生成一个reply对象，包含status与message。
+
+## 功能模块
+
+### Breakpoint
+
+断点由两个值标识：一个是method signature，另一个是PC，其中method signature包括class name和method name。
+
+每次执行一个指令**前**，判断当前method signature和PC是不是断点。如果是断点，进行一些suspend操作。因为断点需要监控所有的指令，所以调用`WireAll`
+
+### Cov (MCov, BCov, ICov)
+
+大部分逻辑都是共有的，实现在抽象父类`Cov`中。每个功能类重写了`BeforeInst`和`AfterInst`。
+三个功能类都只注册了`SelectHandler`，即对于SELECT语句调用该handler。至于收集覆盖信息，是在执行过程中通过listener来完成的。
+MCov监控方法调用，使用`WireInvoke`; BCov监控分支，使用`WireBranch`；ICov监控指令执行，使用`WireAll`。
+
+`SelectHandler`也是定义在`Cov`类中，由三个功能类共享。`SelectHandler`的功能实际上就是把SELECT语句交给SQLite执行，因此AQL有能力支持各种复杂的查询语句。
+
+由于coverage不考虑覆盖次数，`Cov::InsertRecord`判断是否visited，已visited的不记录。
+
+## 数据存储
+
+### SQLite接口的含义
+
++ `sqlite3_open`：打开/创建数据库
++ `sqlite3_exec`：执行一条语句
++ `sqlite3_get_table`：SELECT语句，不需要回调函数的简洁查询方法
++ `sqlite3_free_table`：和`sqlite3_get_table`配套，用来将查询结果对象释放掉
+
+
+### `Table`类和SQL语句的关系
+
+`Table::Table`创建数据库（内存数据库），并调用`Create`创建table（CREATE TABLE语句）。数据类型只支持NVARCHAR类型（变长字符串类型）。
+`Table::~Table`调用`Drop`删除table（DROP TABLE语句）。
+`Table::Insert`插入record，支持单个插入和批量插入，都是使用INSERT INTO语句。批量插入会将多个INSERT INTO语句包含在一个trasaction中（使用BEGIN/COMMIT语句）。
+`Table::Select`查询数据（SELECT语句）。

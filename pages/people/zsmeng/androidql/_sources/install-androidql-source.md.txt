@@ -1,0 +1,72 @@
+从源码安装 AndroidQL
+======
+
+## 下载 AOSP 源代码
+
+AndroidQL 是基于 Android Runtime 进行的定制化修改，需要基于 AOSP (Android Open Source Project) 的Makefile系统进行编译。
+因此，需要首先下载 [AOSP源码](https://source.android.com/source/downloading.html)。AndroiQL 支持的 Android 版本包括 5, 6, 7, 8，推荐下载 **android-7.1.2_r28** 版本源码。在国内可以使用[中科大的 AOSP 源](https://lug.ustc.edu.cn/wiki/mirrors/help/aosp)进行下载（校内有线环境下，可以将配置中的 `mirrors.ustc.edu.cn` 替换为 `mirrors6.ustc.edu.cn` ，利用IPv6信道加快下载速度）。
+
+### 设置环境变量
+
+下载 AOSP 源代码之后，需要将 AOSP 项目的路径配置在环境变量中，以便 AndroidQL 识别。需要配置 `AOSP?_HOME` 环境变量，其中`?`为版本号（5, 6, 7, 8 之一）。如果本地同时存在多个 AOSP 版本，同时配置对应的 `AOSP?_HOME` 环境变量即可。
+
+```Bash
+export AOSP7_HOME=/your/path/to/aosp/7
+```
+
+### 编译 AOSP 源代码
+
+在 AOSP 源代码下载完成之后，建议首先进行编译。否则第一次编译 AndroidQL 将耗费非常长的时间。使用如下的命令进行编译：
+
+```Bash
+source build/envsetup.sh
+lunch aosp_arm-eng
+make
+```
+
+其中 `lunch` 命令用于指定编译出的镜像文件的适配类型，不带参数的 `lunch` 命令可以查看所有的支持的适配类型。现在市场上大多数 Android 手机 CPU 为 ARM 架构，因此可以使用 `lunch aosp_arm-eng` 编译出可在真机上运行的安卓系统。编译生成的镜像文件在 `<AOSP_HOME>/out/target/product` 子目录下。此时，在 <AOSP_HOME> 根目录下输入 `emulator` 命令可以启动一个 Android 模拟器。
+
+## 编译
+
+在编译前，请保证你已经下载了 AOSP 源代码，并设置了 `AOSP?_HOME` 环境变量（`?` 为 5, 6, 7, 8 之一）。
+
+AndroidQL 支持的编译目标平台包括 x86, x86_64, arm, arm64。
+
++ 编译 Android 系统镜像
+
+```Bash
+make img?-x86
+make img?-x86_64
+make img?-arm
+make img?-arm64
+```
+
++ 编译 libart.so 文件
+
+```Bash
+make art?-x86
+make art?-x86_64
+make art?-arm
+make art?-arm64
+```
+
++ 测试
+
+```Bash
+make test?
+```
+
+上述命令中，`?` 均代表 AOSP 版本号（5, 6, 7, 8 之一）。
+
+## 运行模拟器
+
+编译好系统镜像以后，就可以使用该系统镜像启动模拟器：
+
+```Bash
+cd <AOSP_HOME>
+source build/envsetup.sh
+lunch aosp_x86_64-eng
+emulator
+```
+
+注意这里 lunch 的架构类型必须与之前 make 编译的架构类型一致。
