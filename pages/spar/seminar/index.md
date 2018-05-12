@@ -18,13 +18,13 @@ Every *Wednesday 4pm* @ *Computer Science and Technology Building 229*.
 * (May 9)Jiaxing Dong: DroidInjector: A process injection-based dynamic tracking system for runtime behaviors of Android applications [[Computer & Security 2017]](https://www.sciencedirect.com/science/article/pii/S0167404817301207?via%3Dihub).
 * Huiyan Wang
 * Qingwei Sun; Jue Wang
-* Yanxiang Tong
+* Yuju Shen
 * Zenan Li; Shengtao Yue
 * Weiyu Ye
 * Yi Liu; Rui Qiu
 * Bingying Guo
 * Da Li; Wenjie Li
-* Yuju Shen
+* Yanxiang Tong
 * Chenxi Zhang
 
 ## Past Talks
