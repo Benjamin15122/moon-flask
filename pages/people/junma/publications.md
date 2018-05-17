@@ -1,8 +1,8 @@
 title: Publications of Jun Ma
 **2018**
 
--  <img src="static/img/new.jpg" width = "40" height = "40" align=center /> Jue Wang, Yanyan Jiang, Chang Xu, Qiwei Li, Tianxiao Gu, **Jun Ma**, Xiaoxing Ma, Jian Lu, "AATT+: Effectively manifesting concurrency bugs in Android apps", Science of Computer Programming, Volume 163, 2018, Pages 1-18, ISSN 0167-6423, ([Available](http://www.sciencedirect.com/science/article/pii/S0167642318301047))
--  <img src="static/img/new.jpg" width = "40" height = "40" align=center />New paper "LESDroid - A Tool for Detecting Exported Service Leaks of Android Applications" is accepted to ICPC'18!([Pre-print Version](static/files/LesDroid(pre-print).pdf))
+-  <img src="static/img/new.jpg" width = "40" height = "40" align=center /> Jue Wang, Yanyan Jiang, Chang Xu, Qiwei Li, Tianxiao Gu, **Jun Ma**, Xiaoxing Ma, Jian Lu, "AATT+: Effectively manifesting concurrency bugs in Android apps", Science of Computer Programming, Volume 163, 2018, Pages 1-18, ISSN 0167-6423, (DOI:[10.1016/j.scico.2018.03.008](https://doi.org/10.1016/j.scico.2018.03.008))
+-  <img src="static/img/new.jpg" width = "40" height = "40" align=center />**Jun Ma**, Shaocong Liu, Yanyan Jiang, Xianping Tao, Chang Xu, and Jian Lu, “LESdroid: A tool for detecting exported service leaks of Android applications”, in Proceedings of the 26th International Conference on Program Comprehension (ICPC), to appear, 2018.([Pre-print Version](static/files/LesDroid(pre-print).pdf))
 
 **2017**
 
