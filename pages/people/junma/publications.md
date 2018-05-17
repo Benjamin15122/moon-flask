@@ -1,8 +1,13 @@
 title: Publications of Jun Ma
+**2018**
+
+-  <img src="static/img/new.jpg" width = "40" height = "40" align=center /> Jue Wang, Yanyan Jiang, Chang Xu, Qiwei Li, Tianxiao Gu, **Jun Ma**, Xiaoxing Ma, Jian Lu, "AATT+: Effectively manifesting concurrency bugs in Android apps", Science of Computer Programming, Volume 163, 2018, Pages 1-18, ISSN 0167-6423, ([Available](http://www.sciencedirect.com/science/article/pii/S0167642318301047))
+-  <img src="static/img/new.jpg" width = "40" height = "40" align=center />New paper "LESDroid - A Tool for Detecting Exported Service Leaks of Android Applications" is accepted to ICPC'18!([Pre-print Version](static/files/LesDroid(pre-print).pdf))
+
 **2017**
 
-- <img src="static/img/new.jpg" width = "40" height = "40" align=center />**MA Jun**, LIU Sheng, YUE Shengtao, TAO Xianping, and LU Jian, *LeakDAF: an Automated Tool for Detecting Leaked Activities and Fragments of Android Applications*, (DOI:[10.1109/COMPSAC.2017.161](https://doi.org/10.1109/COMPSAC.2017.161)).
-- <img src="static/img/new.jpg" width = "40" height = "40" align=center />Yue Shengtao, Feng Weizan, **Ma Jun**, Jiang Yanyan, Tao Xianping, Xu Chang and Lu Jian. *RepDroid: An Automated Tool for Android Application Repackaging Detection*, (DOI: [10.1109/ICPC.2017.16](https://doi.org/10.1109/ICPC.2017.16)).
+- **MA Jun**, LIU Sheng, YUE Shengtao, TAO Xianping, and LU Jian, *LeakDAF: an Automated Tool for Detecting Leaked Activities and Fragments of Android Applications*, (DOI:[10.1109/COMPSAC.2017.161](https://doi.org/10.1109/COMPSAC.2017.161)).
+- Yue Shengtao, Feng Weizan, **Ma Jun**, Jiang Yanyan, Tao Xianping, Xu Chang and Lu Jian. *RepDroid: An Automated Tool for Android Application Repackaging Detection*, (DOI: [10.1109/ICPC.2017.16](https://doi.org/10.1109/ICPC.2017.16)).
 
 **2016**
 
