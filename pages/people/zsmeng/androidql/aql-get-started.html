@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>AndroidQL Documentation &mdash; AndroidQL 1.0 documentation</title>
+  <title>从零开始AndroidQL &mdash; AndroidQL 1.0 documentation</title>
   
 
   
@@ -29,7 +29,8 @@
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="AndroidQL框架介绍" href="overview.html" /> 
+    <link rel="next" title="AQL查询语言简介" href="aql-query-language.html" />
+    <link rel="prev" title="下载AndroidQL" href="download.html" /> 
 
   
   <script src="_static/js/modernizr.min.js"></script>
@@ -48,7 +49,7 @@
           
 
           
-            <a href="#" class="icon icon-home"> AndroidQL
+            <a href="index.html" class="icon icon-home"> AndroidQL
           
 
           
@@ -94,8 +95,15 @@
 <li class="toctree-l1"><a class="reference internal" href="download.html">下载AndroidQL</a></li>
 </ul>
 <p class="caption"><span class="caption-text">使用手册</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="aql-get-started.html">从零开始AndroidQL</a></li>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">从零开始AndroidQL</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#aql">AQL</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#demo-hijackapp">一个demo：如何hijack一个app的运行</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#androidql">AndroidQL中的概念</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="aql-query-language.html">AQL查询语言简介</a></li>
 <li class="toctree-l1"><a class="reference internal" href="aql-aqlsh.html">可交互的aqlsh</a></li>
 <li class="toctree-l1"><a class="reference internal" href="aql-brk.html">AndroidQL的断点机制</a></li>
@@ -139,7 +147,7 @@
       <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="#">AndroidQL</a>
+          <a href="index.html">AndroidQL</a>
         
       </nav>
 
@@ -168,15 +176,15 @@
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="#">Docs</a> &raquo;</li>
+      <li><a href="index.html">Docs</a> &raquo;</li>
         
-      <li>AndroidQL Documentation</li>
+      <li>从零开始AndroidQL</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="_sources/index.rst.txt" rel="nofollow"> View page source</a>
+            <a href="_sources/aql-get-started.md.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -189,70 +197,46 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="androidql-documentation">
-<h1>AndroidQL Documentation<a class="headerlink" href="#androidql-documentation" title="Permalink to this headline">¶</a></h1>
- <embed>
- <a href="http://moon.nju.edu.cn/spar/"><img width="30%" height="22%" align="bottom" src="http://moon.nju.edu.cn/spar/img/logo_large.png"></a>
-</embed><p><em>Welcome to AndroidQL’s Documentation.</em></p>
-<p>View the <a class="reference external" href="https://git.njuics.cn/android/aql-vm">codebase on GitLab</a>.</p>
-<div class="toctree-wrapper compound">
-<p class="caption"><span class="caption-text">框架介绍</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="overview.html">AndroidQL框架介绍</a></li>
+  <div class="section" id="androidql">
+<span id="androidql"></span><h1>从零开始AndroidQL<a class="headerlink" href="#androidql" title="Permalink to this headline">¶</a></h1>
+<p>AndroidQL是一个基于<strong>Android Runtime虚拟机</strong>开发的可扩展的Android应用测试和分析的框架，它提供了AQL (Android Query Language)作为给用户使用的一致的接口。AQL预定义的操作可以帮助使用者以脚本的方式开发测试和分析工具。</p>
+<div class="section" id="aql">
+<span id="aql"></span><h2>AQL<a class="headerlink" href="#aql" title="Permalink to this headline">¶</a></h2>
+<p>AQL指令由AndroidQL内部的模块进行解析和处理。以下的例子展示如何使用AQL来hijack应用程序的运行过程。</p>
+<div class="section" id="demo-hijackapp">
+<span id="demo-hijackapp"></span><h3>一个demo：如何hijack一个app的运行<a class="headerlink" href="#demo-hijackapp" title="Permalink to this headline">¶</a></h3>
+<p>该demo展示如何方便地使用AndroidQL<strong>启动一个Android应用并且劫持程序的运行过程</strong></p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>&gt; INSTALL a.apk
+&gt; LAUNCH a.apk
+&gt; BREAKPOINT SET org.demo.MainActivitty:demoActivtiy:0
+&gt; PERFORM gui.CLICK <span class="o">(</span><span class="m">345</span>, <span class="m">678</span><span class="o">)</span>
+<span class="o">[</span>...<span class="o">]</span> Breakpoint Hit, Suspend
+</pre></div>
+</div>
+<p>demo中初步使用到了AQL定义的几种操作(<strong>INSTALL</strong>，<strong>LAUNCH</strong>，<strong>BREAKPOINT</strong>，<strong>PERFORM</strong>). <strong>INSTALL</strong>和<strong>LAUNCH</strong>操作帮助用户安装并且启动一个全新的Android应用。接下来通过<strong>BREAKPOINT</strong>操作，可以在MainActivity的demoActivity方法的入口设置了一个断点(方法入口的指令偏移为0)，这样当程序执行到该位置时，应用进程就暂停在该点。 这个操作可以帮助用户执行一些类似于debug的功能，比如在某些特定的情境下，可以方便地hijack程序运行的过程，插入一些park/sleep操作，从而实现一个粗粒度的线程调度器，去做并发相关的测试。</p>
+<p>AndroidQL对AQL的语法格式作了详细的规范和定义。用户输入的AQL指令通过aql-client进行解析并发送给aql-vm进行处理。我们提供了一个可交互的SHELL实现aqlsh，它在内部对aql-client进行了封装。因此，以下几个文档可帮助你快速地上手AQL。</p>
+<ul class="simple">
+<li><a class="reference external" href="./aql-query-language.html">如何正确使用AQL</a></li>
+<li><a class="reference external" href="./aql-aqlsh.rst">aqlsh的使用</a></li>
 </ul>
 </div>
-<div class="toctree-wrapper compound">
-<p class="caption"><span class="caption-text">安装</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="install.html">AndroidQL的安装介绍</a></li>
-<li class="toctree-l1"><a class="reference internal" href="install-aqlvm-source.html">从源码安装aql-vm</a></li>
-<li class="toctree-l1"><a class="reference internal" href="install-aqlvm-image.html">下载镜像安装aql-vm</a></li>
-<li class="toctree-l1"><a class="reference internal" href="install-aqlvm-device.html">安装aql-vm到真实Android设备</a></li>
-</ul>
 </div>
-<div class="toctree-wrapper compound">
-<p class="caption"><span class="caption-text">下载</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="download.html">下载AndroidQL</a></li>
+<div class="section" id="androidql">
+<span id="id1"></span><h2>AndroidQL中的概念<a class="headerlink" href="#androidql" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><strong>agent</strong>: 每一个Android device抽象成一个<strong>AndroidQL agent</strong></li>
+<li><strong>client</strong>: 正在运行且进行的Android app就是一个<strong>AndroidQL client</strong></li>
+<li><strong>VM</strong>: <strong>AndroidQL</strong>修改了Android Runtime也就是ART虚拟机部分源码，因此，下文中提到的VM除非特别说明均是指aql-vm项目中实现的<strong>custom ART</strong>虚拟机</li>
+<li><strong>probe</strong>: <strong>AndroidQL</strong>支持的可扩展插件，实现在VM内部，可以对程序运行状态执行<strong>W/R</strong>操作通常配合java客户端来进行使用，<strong>AndroidQL</strong>提供了一些常用的probe，当然用户也可以根据需要来扩展实现更多的probe</li>
+<li><strong>通信</strong>: <strong>AndroidQL</strong>中指aql-vm和aql-client之间的通信，该信道复用<strong>ADB</strong>工具管理，通常状况下用户不需要对通信进行任何的设置</li>
+<li><strong>table</strong>: probe中用来存储运行时数据的数据结构，支持查询删除插入等操作</li>
 </ul>
-</div>
-<div class="toctree-wrapper compound">
-<p class="caption"><span class="caption-text">使用手册</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="aql-get-started.html">从零开始AndroidQL</a></li>
-<li class="toctree-l1"><a class="reference internal" href="aql-query-language.html">AQL查询语言简介</a></li>
-<li class="toctree-l1"><a class="reference internal" href="aql-aqlsh.html">可交互的aqlsh</a></li>
-<li class="toctree-l1"><a class="reference internal" href="aql-brk.html">AndroidQL的断点机制</a></li>
-<li class="toctree-l1"><a class="reference internal" href="aql-probe-how-work.html">AndroidQL的probe如何工作</a></li>
-<li class="toctree-l1"><a class="reference internal" href="aql-have-probe.html">可用的probe</a></li>
-<li class="toctree-l1"><a class="reference internal" href="aql-spec.html">通信协议规范</a></li>
-</ul>
-</div>
-<div class="toctree-wrapper compound">
-<p class="caption"><span class="caption-text">贡献代码</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="code.html">贡献代码介绍</a></li>
-<li class="toctree-l1"><a class="reference internal" href="code-aql-vm.html">aql-vm项目介绍</a></li>
-<li class="toctree-l1"><a class="reference internal" href="code-aql-vm-adapter.html">aql-vm之adapter</a></li>
-<li class="toctree-l1"><a class="reference internal" href="code-aql-vm-core.html">aql-vm之core</a></li>
-<li class="toctree-l1"><a class="reference internal" href="code-aql-vm-patch.html">aql-vm之patch</a></li>
-<li class="toctree-l1"><a class="reference internal" href="code-aql-vm-compile.html">aql-vm的编译</a></li>
-<li class="toctree-l1"><a class="reference internal" href="code-aql-vm-probe.html">probe需要做什么</a></li>
-<li class="toctree-l1"><a class="reference internal" href="code-aql-vm-how-probe.html">aql-vm提供的接口</a></li>
-<li class="toctree-l1"><a class="reference internal" href="code-dev-env.html">AndroidQL开发环境部署</a></li>
-<li class="toctree-l1"><a class="reference internal" href="code-add-probe.html">开发probe，你需要做什么</a></li>
-<li class="toctree-l1"><a class="reference internal" href="code-aql-vm-lock.html">aql-vm中的锁使用</a></li>
-<li class="toctree-l1"><a class="reference internal" href="code-how-bcov.html">如何实现<strong>bcov</strong></a></li>
-<li class="toctree-l1"><a class="reference internal" href="code-contact.html">联系我们</a></li>
-<li class="toctree-l1"><a class="reference internal" href="code-bug-report.html">bug报告</a></li>
-<li class="toctree-l1"><a class="reference internal" href="code-patch-submit.html">patch提交</a></li>
-</ul>
-</div>
-<div class="toctree-wrapper compound">
-<p class="caption"><span class="caption-text">帮助</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="help-troubleshooting.html">常见问题汇总</a></li>
-<li class="toctree-l1"><a class="reference internal" href="help-profile.html">aql-vm的profile</a></li>
+<p>这些概念的正确理解会帮助你更快地阅读以下相关的文档。</p>
+<ul class="simple">
+<li><a class="reference external" href="./aql-brk.html">断点功能</a></li>
+<li><a class="reference external" href="./aql-spec.html">通信协议规范</a></li>
+<li><a class="reference external" href="./aql-probe-how-work.html">probe是怎么工作的</a></li>
+<li><a class="reference external" href="./aql-have-probe.html">可用的probe</a></li>
 </ul>
 </div>
 </div>
@@ -265,8 +249,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="overview.html" class="btn btn-neutral float-right" title="AndroidQL框架介绍" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="aql-query-language.html" class="btn btn-neutral float-right" title="AQL查询语言简介" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
+      
+        <a href="download.html" class="btn btn-neutral" title="下载AndroidQL" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

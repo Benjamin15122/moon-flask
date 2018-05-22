@@ -1,34 +1,39 @@
-# AQL 查询语言简介
+AQL查询语言简介
+=============
 
-AndroidQL 提供一种类似 SQL 的语言作为交互的接口，这种语言称为 AQL。用户可以使用 AQL 语言对 AndroidQL 进行操控。AndroidQL 共定义了 7 种命令：
+AndroidQL提供一种类SQL的语言作为交互的接口，这种语言称为AQL(Android Query Language)。用户可以使用AQL语言对目标应用的运行过程进行查询和控制。
+
+AQL共定义了7种命令：
 
 * **INSTALL**: 安装 app
 * **LAUNCH**: 启动 app
 * **TOGGLE**: 打开／关闭一个 probe
-* **PERFORM**: 执行某个 probe 预定义的操作，或是执行用户定义的操作（如UI操作，throw exception等）
+* **PERFORM**: 执行某个probe预定义的操作，或是执行用户定义的操作（如UI操作，throw exception等）
 * **BREAKPOINT**: 设置断点
 * **RESUME**: 恢复程序运行
-* **SELECT**: 查询操作，主要用来查询运行时数据
+* **SELECT**: 查询操作，可对应用的运行状态进行查询
 
-一个可执行的**AndroidQL**操作是由以上任意一种操作类型加一些特定形式的参数组成的，通常来说，一个可执行的**AndroidQL**语句是这样的：
+一个可执行的`AQL`操作是由以上任意一种操作类型加一些特定形式的参数组成的，通常来说，格式是这样的：
 
 ```
 INSTALL | LAUNCH | PERFORM | BREAKPOINT | RESUME | SELECT [probe.action] [args] [from probe.table] [args]
 ```
 
-**probe.action**的书写形式表明，一个实现在VM中的probe可以注册一些感兴趣的action列表，从而对外部的某些行为(比如click)产生响应，而**probe.table**从另一个角度表明一个probe可以在内存中实现很多的table，用来存储运行时产生的数据(比如当前覆盖到的所有方法). VM中可能同时存在上百个probe，因此理论上在AndroidQL的所有操作中，都需要唯一地指定目标probe，这样该指令会被VM部分的核心运行逻辑(**aql** probe)分发至对应的probe模块进行处理. 然而在具体实现上，**AndroidQL**针对不同的操作进行了一些特殊化的处理，也就是说不是所有的使用情境下，都需要指定目标probe.
+**probe.action**的书写形式表明，一个实现在VM中的probe可以注册一些感兴趣的action列表，从而对外部的某些行为(比如click)产生响应，而**probe.table**从另一个角度表明一个probe可以在内存中实现很多的table，用来存储运行时产生的数据(比如当前覆盖到的所有方法)。aql-vm中可能同时存在上百个probe，因此理论上在AQL的所有操作中，都需要唯一地指定目标probe，这样该指令会被aql-vm部分的核心运行逻辑分发至对应的probe模块进行处理。
 
-**AndroidQL**的运行机制设定所有probe均存在于VM中，probe注册感兴趣的action，同时对每一个action注册执行处理逻辑的handler. 所有来自aql-client的操作都会被分装成格式化的数据包，通过**AndroiQL**的通信机制发送给aql-vm，VM根据数据包中的目标probe对操作进行分发，由目标probe完成实际的数据处理和响应.
+然而在具体实现上，**AndroidQL**针对不同的操作进行了一些特殊化的处理，也就是说不是所有的使用情境下，都需要指定目标probe.
 
-VM在app启动时被动态地创建，在**INSTALL**指令执行时，app并没有被启动，因此，**INSTALL**指令无需显示地指定目标probe. 此外，**LAUNCH**操作用来启动app创建VM，在它被aql-vm响应前，VM也并没有启动，因此它也不需要指定probe. 而**BREAKPOINT**的所有实现逻辑都天然地绑定在**brk**这个probe内，也不再需要对目标probe进行显示的指定. 在**AndroidQL**的设计中，只有**PERFORM**，**TOGGLE**，**SELECT**三种操作是需要指定probe的.
+**AndroidQL**的运行机制设定所有probe均存在于`ART`虚拟机中，probe注册感兴趣的action，同时对每一个action注册执行处理逻辑的`handler`。 所有来自aql-client的操作都会被分装成格式化的数据包，通过内部通信机制发送给aql-vm，根据数据包中的目标probe对操作进行分发，由目标probe完成实际的数据处理和响应.
 
-总结一下，需要目标probe参数的操作和无需指定probe的操作是这样区分的:
+ART虚拟机实例在app启动时被动态地创建，在**INSTALL**指令执行时，app并没有被启动，因此，**INSTALL**指令无需显示地指定目标probe. 此外，**LAUNCH**操作用来启动app创建VM，在它被aql-vm响应前，虚拟机也并没有启动，因此它也不需要指定probe. 而**BREAKPOINT**的所有实现逻辑都天然地绑定在**brk**这个probe内，也不再需要对目标probe进行显示的指定. 在**AndroidQL**的设计中，只有**PERFORM**，**TOGGLE**，**SELECT**三种操作是需要指定probe的。
+
+总结一下，需要目标probe参数的操作和无需指定probe的操作作如下区分：
 
 * 需要指定probe: **TOGGLE**, **PERFORM**，**SELECT**
 
-并不是所有的**AndroidQL**操作类型都需要显示地指定目标probe，然而以上的三种操作在不指定目标probe时，却可能会产生**无法预期的错误**.
+并不是所有的**AndroidQL**操作类型都需要显示地指定目标probe，然而以上的三种操作在不指定目标probe时，却可能会产生**无法预期的错误**。
 
-接下来，针对不同的**AndroidQL**操作指令格式分别进行详细的介绍.
+接下来，针对不同的**AndroidQL**操作指令格式分别进行详细的介绍。
 
 ### INSTALL
 
@@ -157,6 +162,6 @@ stmt_body除table名前需要用probe.table形式进行唯一的限定外，与 
 SELECT * from mcov.mcov
 ```
 
-最后，在**AndroidQL**的实现中，每个probe可以响应什么操作是由用户开发的probe指定的，当然**AndroidQL**原始提供了一些probe完成一些常用的操作，用户完全可以在VM中实现自己的probe，并且实现probe对应的指令响应逻辑.
+最后，在**AndroidQL**的实现中，每个probe可以响应什么操作是由用户开发的probe指定的。
 
-**注**: **所有的AndroidQL操作都是大小写不敏感的**.
+**注**: **所有的AQL操作都是大小写不敏感的**.

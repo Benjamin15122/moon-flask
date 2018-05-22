@@ -1,0 +1,34 @@
+可交互的aqlsh
+======
+
+aqlsh作为一个可交互的SHELL，可接受用户输入的AQL指令。它将AQL指令提交给aql-client进行处理。在实现上，aqlsh在内部对aql-client进行了封装。用户可以直接使用aqlsh来完成和aql-vm的交互。
+
+aqlsh的启动
+~~~~~~~~~~
+
+aqlsh是一个可运行的jar包，因此使用``java``来启动。
+
+.. code-block:: java
+
+	java -jar aqlsh.jar
+
+只有在确保以下条件得到满足时，aqlsh才会正确启动。
+
+1. 安装``aql-vm``的Android设备已经启动
+
+2. 通过``adb devices``可观察到该设备的状态为``device``
+
+aqlsh在启动过程中可以添加多种参数。
+
+aqlsh的可选启动参数
+~~~~~~~~~~~~~~~~~
+
+====================  ==============================
+       参数                	   		描述
+====================  ==============================
+-h, --help			  Show help.
+-i, --interactive     Enter interactive mode after the script or single command run over.
+-p, --path <arg>	  Set script path.
+-s, --serial <arg>    Specify the serial number of target device.
+-t, --throttle <arg>  Set the wait interval for script for script commands, default 200ms.
+====================  ==============================

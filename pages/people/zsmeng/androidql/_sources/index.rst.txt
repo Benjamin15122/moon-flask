@@ -9,31 +9,67 @@ AndroidQL Documentation
 
 *Welcome to AndroidQL's Documentation.*
 
-View the `codebase on GitHub`_.
+View the `codebase on GitLab`_.
 
-.. _`codebase on GitHub`: https://git.njuics.cn/android/aql-vm
+.. _`codebase on GitLab`: https://git.njuics.cn/android/aql-vm
 
-.. toctree::
-   :maxdepth: 1
-   :caption: Installation
-
-   install-androidql.md
-   install-androidql-source.md
 
 .. toctree::
    :maxdepth: 1
-   :caption: User guide
+   :caption: 框架介绍
 
-   get-started.md
+   overview.md
+
+.. toctree::
+   :maxdepth: 1
+   :caption: 安装
+
+   install.md
+   install-aqlvm-source.md
+   install-aqlvm-image.md
+   install-aqlvm-device.md
+
+.. toctree::
+   :maxdepth: 1
+   :caption: 下载
+
+   download.md
+
+.. toctree::
+   :maxdepth: 1
+   :caption: 使用手册
+
+   aql-get-started.md
    aql-query-language.md
+   aql-aqlsh.md
+   aql-brk.md
+   aql-probe-how-work.md
+   aql-have-probe.md
+   aql-spec.rst
 
 .. toctree::
    :maxdepth: 1
-   :caption: Development
+   :caption: 贡献代码
 
-   develop-env.md
-   code-structure.md
-   code-comment.md
-   adapter.md
-   how-probe.md
-   specification.md
+   code.md
+   code-aql-vm.md
+   code-aql-vm-adapter.md
+   code-aql-vm-core.md
+   code-aql-vm-patch.md
+   code-aql-vm-compile.md
+   code-aql-vm-probe.md
+   code-aql-vm-how-probe.md
+   code-dev-env.md
+   code-add-probe.md
+   code-aql-vm-lock.md
+   code-how-bcov.md
+   code-contact.md
+   code-bug-report.md
+   code-patch-submit.md
+
+.. toctree::
+   :maxdepth: 1
+   :caption: 帮助
+   
+   help-troubleshooting.md
+   help-profile.md

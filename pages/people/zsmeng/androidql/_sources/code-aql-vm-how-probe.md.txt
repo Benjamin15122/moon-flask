@@ -1,0 +1,162 @@
+aql-vm提供的接口
+===============
+
+在动手开发一个probe之前，不妨假设你完全没有任何ART虚拟机领域的知识，因此，首先需要对ART内部实现中一些重要的数据结构进行简单的介绍。它们部分封装了运行时数据，并且最终会被暴露给probe开发者使用. 这些数据结构包括:
+
+1. Thread
+2. ShadowFrame
+3. Instruction
+4. ArtMethod
+
+此外，为了简化probe的开发过程，所有的probe都应该继承一个共同的基类，这个基类对probe必须扩展的接口进行了定义。
+
+## 数据结构
+
+#### `Thread`
+
+`Thread`是art提供的一个类，用来描述app运行过程中的线程。在ART实现中，应用程序中的每一个java线程都对应一个底层的native线程. `Thread`类封装的信息有助于我们实现某些profile功能，例如我们可以通过如下方式记录当前线程号:
+
+```c++
+Thread* self = Thread::Current();
+pid_t tid = self->GetTid();
+```
+
+在并发测试中，得到tid信息往往是有用的。
+
+#### `ShadowFrame`
+
+我们知道，在程序运行过程中，每一个线程都有一个对应的栈结构，栈中记录了该线程的方法调用信息，而每一个方法调用都是用一个存在于栈中栈帧来描述的，因此，在一个线程的栈中，可以同时存在很多这样的栈帧，这些栈帧自栈底向栈顶连接组成一个栈帧链，这个栈帧链就描述了该线程中方法的调用情况.
+
+在ART实现中，方法调用产生的栈帧是用`ShadowFrame`结构来描述的，那么从一个`ShadowFrame`对象中我们可以得到哪些有用的信息呢(假设已经存在名为shadow_frame的对象来描述当前的栈帧)？
+
+1. 栈帧对应的method, 使用`ArtMethod`类来描述. 相关知识会在下文作讲解.
+
+	```c++
+	ArtMethod* method = shadow_frame.GetMethod();
+	```
+
+2. 当前的pc指针. 一般情况下，解释器顺序执行一个方法中所有的指令，pc指针用来描述当前指令在该方法体中的偏移，这个信息有助于唯一地定位当前的指令位置.
+
+	```c++
+	uint32_t dex_pc = shadow_frame.GetDexPc();
+	```
+
+3. 调用当前方法的caller的栈帧.
+
+	```c++
+	ShadowFrame* sf = shadow_frame.GetLink();
+	```
+
+	使用如上方法，我们可以很容易地遍历完一个完整的栈.
+
+4. 对应object.
+
+	```c++
+	Object* ibject = shadow_frame.GetThisObject();
+	```
+
+5. 指令的寄存器参数. 和JVM基于栈结构的指令不同的是，ART的指令是基于寄存器的	，也就是每条指令的参数存在于寄存器中. 因此在ShadowFrame类中预先定义若干个寄存器用来存储这些数据. 不同的指令使用的寄存器是不同的(在ART中，指令被封装成`Instruciton`类，该类中记录了指令实例在`ShadowFrame`中寄存器的索引)，比如取到**IF_EQ**指令的俩个参数，可以使用如下代码
+
+	```c++
+	inst_data = inst->Opcode();
+	int32_t arg1 = shadow_frame.GetVReg(inst->VRegA_22t(inst_data));
+	int32_t arg2 = shadow_frame.GetVReg(inst->VRegB_22t(inst_data));
+	```
+
+#### `Instruction`
+
+ART解释器逐条执行内存方法区的指令，这些指令在ART内存中是作为`Instruction`类的对象存在的. `Instruction`类有一些metadata来描述指令的性质.
+
+```c++
+// 存在一个Instruction指针inst
+// 得到指令的opcode
+uint16_t opcode = inst->OpCode();
+// 得到指令的pc值
+uint32_t offset = inst->GetDexPc();
+// 判断指令是否是RETURN指令
+if (inst->IsReturn()) {
+}
+// 判断指令是否是IF_EQ指令
+if (inst->OpCode() == Instruction::IF_EQ) {
+}
+```
+
+#### `ArtMethod`
+
+我们在前边讲过，ART中的一次方法调用对应于线程栈中的一个栈帧，这个方法在ART中是使用`ArtMethod`的数据结构来描述的. `ArtMethod`和Java中的method概念是存在一一对应关系的. `ArtMethod`对象中存储了该方法的描述性信息.
+
+```c++
+ArtMethod* method = shadow_frame->GetMethod();
+// 得到方法名
+const char* method_name = method->GetName();
+// 得到方法所在的类
+Class* class = method->GetDeclaringClass();
+// 得到方法所在文件的文件名
+const char* file_name = method->GetDeclaringClassSourceFile();
+```
+此外，ART还封装了`Class`，`Object`等这样的类，这些数据结构与Java层中的同类概念都是存在一一对应的关系的。
+
+## probe的开发
+
+#### probe基类
+
+新的probe的开发过程就是实现probe基类提供的虚函数接口的过程。那么，开发一个probe插件都应该重写哪些基类虚函数呢。
+
+1. 在inst指令执行之前的回调函数:
+
+	```c++
+	virtual void BeforeInst(Thread* thread, ShadowFrame& shadow_frame,
+                          Instruction* inst);
+	```
+
+	函数参数中的thread, shadow_frame, inst对象分别封装当前的线程，栈帧，指令，这些对象中携带了几乎所有的运行时数据，probe可以看到这些内部状态数据.
+
+2. 在inst指令执行之后的回调函数:
+
+	```c++
+	virtual void AfterInst(Thread* thread, ShadowFrame& shadow_frame,
+                         Instruction* inst)；
+	```
+
+3. HandkePacket用来处理aql-client发送来的aql_packet数据结构:
+
+	```c++
+	virtual bool HandlePacket(const Json& json, ExpandBuf* pReply);
+	```
+	json是aql_packet包中的data部分，pReply为probe返回给aql-client的数据包，probe可以将某个操作的执行结果写入pReply传输给client进行解析.
+
+#### 其他API
+
+1. 指令类型绑定
+
+	```c++
+	bool Wire(const std::vector<uint16_t>& opcode_group);
+	bool UnWire(const std::vector<uint16_t>& opcode_group);
+	```
+
+	通过Wire操作(UnWire操作实现的功能与之恰恰相反)，我们可以在某个probe的构造函数中指定感兴趣的指令类型集合。这样，当解释器执行到相应的指令时，就会去调用该probe的AfterInst和BeforeInst回调函数. 比如，对于用来统计分枝覆盖情况的**bcov**，我们可能会进行如下的绑定:
+
+	```c++
+	// 当新的方法被调用时，进行回调
+	bcov->WireBranch(); // WireBranch通过调用Wire和所有的分支指令进行了绑定
+	```
+	此外，aql-vm还提供了**WireAll(), WireReturn(), WireBranch(), WireInvoke(), WireSwitch(), WireThrow()**等helper函数。
+
+2. 构造函数
+
+	```c++
+	Probe(const std::string& name);
+	```
+
+	每一个probe都有唯一的`name`属性，它作为该probe的`id`而存在。
+
+3. probe状态切换
+
+	```c++
+	// 返回probe的状态
+	bool IsEnabled();
+
+	//切换probe状态
+  	void Enable();
+  	void Disable();
+	```

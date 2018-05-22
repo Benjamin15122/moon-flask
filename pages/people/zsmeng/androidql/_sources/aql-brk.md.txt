@@ -1,0 +1,41 @@
+AndroidQL的断点机制
+==================
+
+断点是debugger提供的功能，用来完成程序的调试，在这个过程中断点可以帮助实现单步调试、查看中间变量取值等功能。AndroidQL也提供了类似的断点功能，与debugger中的断点功能不同的是，AndroidQL的断点用来帮助用户劫持程序的执行过程。
+
+简单来说，断点可以帮助测试人员在程序运行过程的任意时刻暂停程序中所有线程的运行，并加入自定义的运行逻辑(如抛出异常)。
+
+## 运行机制
+
+aql-vm用数据结构`BreakpointLocation`来表示断点，`BreakpointLocation`中有三个数据域，类描述符、方法签名和指令在方法体内的相对位置，可以唯一地确定一个断点位置。同时，aql-vm中有全局的数据结构来存储所有的断点信息，断点可由用户添加和删除。
+
+ART中的解释器在逐条执行指令时，会确定该指令是否为用户设置的断点位置。如果是，则一个断点被HIT，ART会通过aql-vm的机制停止当前应用程序中所有线程的执行(AndroidQL线程除外)，应用程序出于suspend状态。只有在收到`RESUME`指令时，程序才会从断点处恢复执行。
+
+## 断点的使用
+
+断点可以被设置和清楚，这均可通过AQL来完成。
+
+
+```bash
+BREAKPOINT SET/CLEAN class_descriptor:method_name:offset
+```
+
+#### 添加断点
+
+```
+BREAKPOINT SET org.aql.doc:demo:0
+```
+
+#### 删除断点
+
+```
+BREAKPOINT CLEAN org.aql.doc:demo:7
+```
+
+#### 断点HIT提示
+
+当一个断点被HIT时，ART虚拟机立即处于suspend状态，同时aql-client会收到`HIT`类型的数据包，该数据包描述了当前断点信息。
+
+#### 恢复程序运行
+
+处于suspend状态的应用程序可以通过`RESUME`类型的AQL指令恢复运行。

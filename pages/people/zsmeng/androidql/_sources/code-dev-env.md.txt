@@ -1,0 +1,16 @@
+AndroidQL开发环境部署
+===================
+
+这里主要介绍aql-vm的环境部署。aql-vm源码中需要引入一些定义在AOSP项目art模块的头文件，因为这些头文件中定义的一些数据结构和函数被AndroidQL在实现过程使用。因此首先需要将aql-vm拷贝到art的aql模块，将之和art源码作为一个统一的项目导入开发环境。
+
+## 编译aql-vm
+
+aql-vm项目的下载和编译情参考[从源码安装aql-vm](./install-aqlvm-source.html)。一次编译完成之后，aql-vm已经被拷贝到AOSP项目的`art/runtime/aql`目录下，同时对应的`patch.diff`文件已经被添加到Android源码中。
+
+## 导入art项目到IDE
+
+推荐使用[Eclipse CDT](https://www.eclipse.org/cdt/)集成开发环境来对aql-vm进行开发。首先将`AOSP_HOME/art`作为一个独立的C++项目导入eclipse，此时，可能会报错`cannot resolve std`，请参照[链接](https://www.eclipse.org/forums/index.php/t/636348/)进行解决。
+
+此外，Google对于AOSP的代码缩进风格进行了统一的规定，在进行编译之前的预处理过程，AOSP的编译机制会使用格式检查脚本对代码风格进行静态的检查，不符合格式规范会导致编译失败。而在开发过程中，开发者很难确保全部代码的缩进风格一致。这个问题可以通过安装cppstyle插件到eclispe来进行解决，请参考[cppstyle文档](https://marketplace.eclipse.org/content/cppstyle)进行安装。
+
+完成以上所有步骤以后，开发者便可在IDE对aql-vm进行开发。

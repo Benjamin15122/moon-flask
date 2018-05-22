@@ -1,0 +1,85 @@
+从源码安装aql-vm
+======
+
+aql-vm提供了源码安装的方式。该过程需要下载并编译[AOSP项目](https://source.android.com/)，编译过程依赖于AOSP提供的编译机制。
+
+## 设置编译环境
+aql-vm当前可在Ubuntu(14.04或更高版本)系统完成编译，依赖于AOSP提供的编译环境。更详细的系统要求请参考[文档](https://source.android.com/setup/build/requirements)。因此，在正式编译之前，需要部署AOSP编译所需要的环境，该过程可参考[文档](https://source.android.com/setup/build/initializing)
+
+## 下载Android源码项目AOSP
+aql-vm需要部署在AOSP源码tree中进行编译。在编译之前，需要确保已经下载完成相应版本的AOSP项目。aql-vm目前支持的Android版本包括：
+
+* android-8.0.0_r4
+* android-7.1.2_r28
+* android-6.0.1_r17
+* android-5.1.1_r14
+
+AOSP的下载步骤在[文档](https://source.android.com/setup/build/downloading)中给出。在使用 `repo init` 命令指定代码库时，须使用 `-b` 指定Android版本。如无特殊要求，推荐下载 **android-7.1.2_r28** 版本源码：
+
+```Shell
+repo init -u https://android.googlesource.com/platform/manifest -b android-7.1.2_r28
+```
+
+在国内可以使用[中科大的AOSP源](https://lug.ustc.edu.cn/wiki/mirrors/help/aosp)进行下载(对于IPv6用户，可以将配置中的 `mirrors.ustc.edu.cn` 替换为 `mirrors6.ustc.edu.cn` 加快下载速度)。
+
+
+## 设置环境变量
+
+下载Android源代码之后，需要将AOSP项目的路径配置在环境变量中，aql-vm的编译脚本会使用到该环境变量完成编译。
+
+编译之前需要设置`AOSP?_HOME`环境变量，其中`?`为版本号，可取5、6、7、8值之一。如果本地同时存在多份不同版本的AOSP源代码，可同时设置多个`AOSP?_HOME`环境变量。
+
+例如，在bash环境下对于基于andoird-7.1.2_r28的aql-vm编译环境变量配置如下(可在.bashrc文件中添加)
+
+*注意*：AOSP的编译需要在bash shell环境下完成
+
+```Shell
+export AOSP7_HOME=/home/path/to/aosp/7
+```
+
+## 下载并编译aql-vm
+
+#### 下载aql-vm项目
+
+aql-vm项目目前存在于软件所内部gitlab服务器上，在编译开始之前，需要使用`git clone`命令克隆项目的master分支代码。
+
+```Shell
+git clone git@git.njuics.cn:android/aql-vm.git
+git chckout master
+```
+
+#### 编译aql-vm
+
+在编译aql-vm之前，需要保证已经下载AOSP项目源码，并设置了正确的`AOSP?_HOME`环境变量。AndroidQL目前支持的编译目标平台包括x86、x86_64、arm和arm64。首先需要进入aql-vm根目录，运行`make`命令完成编译。
+
++ 编译 Android 系统镜像
+
+```Bash
+make img?-x86
+make img?-x86_64
+make img?-arm
+make img?-arm64
+```
+
++ 编译 libart.so 文件
+
+```Bash
+make art?-x86
+make art?-x86_64
+make art?-arm
+make art?-arm64
+```
+
+上述命令中，`?`均代表AOSP版本号(5,6,7,8之一)。编译生成的镜像文件在`<AOSP_HOME>/out/target/product`子目录下。
+
+## 从AOSP根目录启动模拟器
+
+进入`AOSP?_HOME`，使用以下脚本完成x86_64架构的Android模拟器的启动。
+
+```Bash
+. build/envsetup.sh
+lunch aosp_x86_64-end
+emulator
+```
+
+`lunch`用来指定所启动的Android模拟器的CPU架构类型。

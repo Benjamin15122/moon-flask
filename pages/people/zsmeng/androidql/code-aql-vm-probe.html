@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>AndroidQL Documentation &mdash; AndroidQL 1.0 documentation</title>
+  <title>probe需要做什么 &mdash; AndroidQL 1.0 documentation</title>
   
 
   
@@ -29,7 +29,8 @@
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="AndroidQL框架介绍" href="overview.html" /> 
+    <link rel="next" title="aql-vm提供的接口" href="code-aql-vm-how-probe.html" />
+    <link rel="prev" title="aql-vm的编译" href="code-aql-vm-compile.html" /> 
 
   
   <script src="_static/js/modernizr.min.js"></script>
@@ -48,7 +49,7 @@
           
 
           
-            <a href="#" class="icon icon-home"> AndroidQL
+            <a href="index.html" class="icon icon-home"> AndroidQL
           
 
           
@@ -104,14 +105,23 @@
 <li class="toctree-l1"><a class="reference internal" href="aql-spec.html">通信协议规范</a></li>
 </ul>
 <p class="caption"><span class="caption-text">贡献代码</span></p>
-<ul>
+<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="code.html">贡献代码介绍</a></li>
 <li class="toctree-l1"><a class="reference internal" href="code-aql-vm.html">aql-vm项目介绍</a></li>
 <li class="toctree-l1"><a class="reference internal" href="code-aql-vm-adapter.html">aql-vm之adapter</a></li>
 <li class="toctree-l1"><a class="reference internal" href="code-aql-vm-core.html">aql-vm之core</a></li>
 <li class="toctree-l1"><a class="reference internal" href="code-aql-vm-patch.html">aql-vm之patch</a></li>
 <li class="toctree-l1"><a class="reference internal" href="code-aql-vm-compile.html">aql-vm的编译</a></li>
-<li class="toctree-l1"><a class="reference internal" href="code-aql-vm-probe.html">probe需要做什么</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">probe需要做什么</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#aql">处理AQL指令</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#">数据管理</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#">获取运行时数据</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#">数据存储</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#">数据传输</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="code-aql-vm-how-probe.html">aql-vm提供的接口</a></li>
 <li class="toctree-l1"><a class="reference internal" href="code-dev-env.html">AndroidQL开发环境部署</a></li>
 <li class="toctree-l1"><a class="reference internal" href="code-add-probe.html">开发probe，你需要做什么</a></li>
@@ -139,7 +149,7 @@
       <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="#">AndroidQL</a>
+          <a href="index.html">AndroidQL</a>
         
       </nav>
 
@@ -168,15 +178,15 @@
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="#">Docs</a> &raquo;</li>
+      <li><a href="index.html">Docs</a> &raquo;</li>
         
-      <li>AndroidQL Documentation</li>
+      <li>probe需要做什么</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="_sources/index.rst.txt" rel="nofollow"> View page source</a>
+            <a href="_sources/code-aql-vm-probe.md.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -189,71 +199,38 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="androidql-documentation">
-<h1>AndroidQL Documentation<a class="headerlink" href="#androidql-documentation" title="Permalink to this headline">¶</a></h1>
- <embed>
- <a href="http://moon.nju.edu.cn/spar/"><img width="30%" height="22%" align="bottom" src="http://moon.nju.edu.cn/spar/img/logo_large.png"></a>
-</embed><p><em>Welcome to AndroidQL’s Documentation.</em></p>
-<p>View the <a class="reference external" href="https://git.njuics.cn/android/aql-vm">codebase on GitLab</a>.</p>
-<div class="toctree-wrapper compound">
-<p class="caption"><span class="caption-text">框架介绍</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="overview.html">AndroidQL框架介绍</a></li>
+  <div class="section" id="probe">
+<span id="probe"></span><h1>probe需要做什么<a class="headerlink" href="#probe" title="Permalink to this headline">¶</a></h1>
+<p>从<a class="reference external" href="./aql-probe-how-work.html">AndroidQL的probe如何工作</a>可知，probe可以响应外部来自用户的AQL指令。这些指令用来完成对于应用程序内部运行数据的查询和对运行状态的改变。因此，probe具备对AQL指令的处理和数据管理的能力，具体包括：</p>
+<ul class="simple">
+<li>处理来自于用户的对于该probe的AQL操作</li>
+<li>获取应用程序运行时产生的数据</li>
+<li>对于运行时数据进行有效的存储</li>
+<li>数据读取和传输</li>
 </ul>
+<p>AndroidQL中任何probe都要具备以上的能力，当前针对这些问题，框架提供了统一的处理机制。</p>
+<div class="section" id="aql">
+<span id="aql"></span><h2>处理AQL指令<a class="headerlink" href="#aql" title="Permalink to this headline">¶</a></h2>
+<p>每一条AQL操作都会被分发至对应的目标probe。一般情况下，probe只需要处理<code class="docutils literal notranslate"><span class="pre">SELECT</span></code>或<code class="docutils literal notranslate"><span class="pre">PERFORM</span></code>类型的AQL操作。</p>
+<p><code class="docutils literal notranslate"><span class="pre">PERFORM</span></code>类型的AQL中可能会以<code class="docutils literal notranslate"><span class="pre">probe.action</span></code>的格式指定<code class="docutils literal notranslate"><span class="pre">action</span></code>，目标probe注册<code class="docutils literal notranslate"><span class="pre">handler</span></code>来对<code class="docutils literal notranslate"><span class="pre">action</span></code>进行响应。例如对于<code class="docutils literal notranslate"><span class="pre">PERFORM</span> <span class="pre">gui.CLICK</span> <span class="pre">(100,200)</span></code>，目标probe为<code class="docutils literal notranslate"><span class="pre">gui</span></code>，因此对于<code class="docutils literal notranslate"><span class="pre">CLICK</span></code>，<code class="docutils literal notranslate"><span class="pre">gui</span></code>实现了<code class="docutils literal notranslate"><span class="pre">ClickHandler</span></code>来进行处理，在这之前需要将<code class="docutils literal notranslate"><span class="pre">ClickHanlder</span></code>和<code class="docutils literal notranslate"><span class="pre">CLICK</span></code>进行绑定。</p>
+<p>对于<code class="docutils literal notranslate"><span class="pre">SELECT</span></code>类型的操作，probe需要进行查表操作，将查询结果进行有效的组织并返回。</p>
 </div>
-<div class="toctree-wrapper compound">
-<p class="caption"><span class="caption-text">安装</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="install.html">AndroidQL的安装介绍</a></li>
-<li class="toctree-l1"><a class="reference internal" href="install-aqlvm-source.html">从源码安装aql-vm</a></li>
-<li class="toctree-l1"><a class="reference internal" href="install-aqlvm-image.html">下载镜像安装aql-vm</a></li>
-<li class="toctree-l1"><a class="reference internal" href="install-aqlvm-device.html">安装aql-vm到真实Android设备</a></li>
-</ul>
+<div class="section" id="">
+<span id="id1"></span><h2>数据管理<a class="headerlink" href="#" title="Permalink to this headline">¶</a></h2>
+<p>probe的数据管理主要包括数据获取、存储和传输三个部分。</p>
+<div class="section" id="">
+<span id="id2"></span><h3>获取运行时数据<a class="headerlink" href="#" title="Permalink to this headline">¶</a></h3>
+<p>数据的获取主要是通过对ART虚拟机解释器的修改来完成的，对于实现特定测试分析目的的probe，它需要决定获取的数据内容和类型，并且确定数据的来源。</p>
 </div>
-<div class="toctree-wrapper compound">
-<p class="caption"><span class="caption-text">下载</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="download.html">下载AndroidQL</a></li>
-</ul>
+<div class="section" id="">
+<span id="id3"></span><h3>数据存储<a class="headerlink" href="#" title="Permalink to this headline">¶</a></h3>
+<p>每一个probe都会搜集所需的数据并且以内存表的形式对数据进行组织和存储。这些内存表首先需要定义一个表头，继而逐行插入数据。一个probe可以建立多个表结构，对不同的数据进行存储。当用户使用AQL语言对表发起查询时，probe应该能够高效地检索出所需的数据。</p>
+<p>AndroidQL的内存表使用SQLite的<code class="docutils literal notranslate"><span class="pre">in-memory</span></code>机制实现。</p>
 </div>
-<div class="toctree-wrapper compound">
-<p class="caption"><span class="caption-text">使用手册</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="aql-get-started.html">从零开始AndroidQL</a></li>
-<li class="toctree-l1"><a class="reference internal" href="aql-query-language.html">AQL查询语言简介</a></li>
-<li class="toctree-l1"><a class="reference internal" href="aql-aqlsh.html">可交互的aqlsh</a></li>
-<li class="toctree-l1"><a class="reference internal" href="aql-brk.html">AndroidQL的断点机制</a></li>
-<li class="toctree-l1"><a class="reference internal" href="aql-probe-how-work.html">AndroidQL的probe如何工作</a></li>
-<li class="toctree-l1"><a class="reference internal" href="aql-have-probe.html">可用的probe</a></li>
-<li class="toctree-l1"><a class="reference internal" href="aql-spec.html">通信协议规范</a></li>
-</ul>
+<div class="section" id="">
+<span id="id4"></span><h3>数据传输<a class="headerlink" href="#" title="Permalink to this headline">¶</a></h3>
+<p>probe应该能够将查询所得数据，可靠地传输给aql-client。在这个过程中，probe需要按照<a class="reference external" href="./aql-spec.md">通信协议规范</a>的格式对表中查找所得数据进行封装，并通过稳定的通信信道完成像外部的传输。</p>
 </div>
-<div class="toctree-wrapper compound">
-<p class="caption"><span class="caption-text">贡献代码</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="code.html">贡献代码介绍</a></li>
-<li class="toctree-l1"><a class="reference internal" href="code-aql-vm.html">aql-vm项目介绍</a></li>
-<li class="toctree-l1"><a class="reference internal" href="code-aql-vm-adapter.html">aql-vm之adapter</a></li>
-<li class="toctree-l1"><a class="reference internal" href="code-aql-vm-core.html">aql-vm之core</a></li>
-<li class="toctree-l1"><a class="reference internal" href="code-aql-vm-patch.html">aql-vm之patch</a></li>
-<li class="toctree-l1"><a class="reference internal" href="code-aql-vm-compile.html">aql-vm的编译</a></li>
-<li class="toctree-l1"><a class="reference internal" href="code-aql-vm-probe.html">probe需要做什么</a></li>
-<li class="toctree-l1"><a class="reference internal" href="code-aql-vm-how-probe.html">aql-vm提供的接口</a></li>
-<li class="toctree-l1"><a class="reference internal" href="code-dev-env.html">AndroidQL开发环境部署</a></li>
-<li class="toctree-l1"><a class="reference internal" href="code-add-probe.html">开发probe，你需要做什么</a></li>
-<li class="toctree-l1"><a class="reference internal" href="code-aql-vm-lock.html">aql-vm中的锁使用</a></li>
-<li class="toctree-l1"><a class="reference internal" href="code-how-bcov.html">如何实现<strong>bcov</strong></a></li>
-<li class="toctree-l1"><a class="reference internal" href="code-contact.html">联系我们</a></li>
-<li class="toctree-l1"><a class="reference internal" href="code-bug-report.html">bug报告</a></li>
-<li class="toctree-l1"><a class="reference internal" href="code-patch-submit.html">patch提交</a></li>
-</ul>
-</div>
-<div class="toctree-wrapper compound">
-<p class="caption"><span class="caption-text">帮助</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="help-troubleshooting.html">常见问题汇总</a></li>
-<li class="toctree-l1"><a class="reference internal" href="help-profile.html">aql-vm的profile</a></li>
-</ul>
 </div>
 </div>
 
@@ -265,8 +242,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="overview.html" class="btn btn-neutral float-right" title="AndroidQL框架介绍" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="code-aql-vm-how-probe.html" class="btn btn-neutral float-right" title="aql-vm提供的接口" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
+      
+        <a href="code-aql-vm-compile.html" class="btn btn-neutral" title="aql-vm的编译" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

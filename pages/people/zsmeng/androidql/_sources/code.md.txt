@@ -1,0 +1,33 @@
+贡献代码介绍
+=======
+
+## 添加新的probe
+
+AndroidQL框架的probe扩展主要在aql-vm部分进行，因此在添加新的probe之前需要开发者对aql-vm项目有初步的了解。下列的文档有助于你快速地上手此过程。
+
+
+- [aql-vm项目介绍](./code-aql-vm.md)
+- [aql-vm之adapter](./code-aql-vm-adapter.md)
+- [aql-vm之core](./code-aql-vm-core.md)
+- [aql-vm之patch](./code-aql-vm-patch.md)
+- [aql-vm的编译](./code-aql-vm-compile.md)
+- [probe需要做什么](./core-aql-probe.md)
+- [aql-vm提供的接口](./core-aql-how-probe.md)
+
+在动手实现一个probe之前，下列的文档对你可能是有用的。
+
+- [开发环境部署](./code-dev-env.md)
+- [如何开发probe](./code-add-probe.md)
+- [aql-vm的锁机制](./code-aql-vm-lock.md)
+
+
+如果你想进一步了解一些典型probe的实现过程，请参考以下的文档。
+
+- [如何实现bcov](./code-how-bcov.md)
+
+
+## 新特性和bug的反馈
+
+- [联系我们](./code-contact.md)
+- [bug报告](./code-bug-report.md)
+- [提交patch](./code-patch-submit.md)

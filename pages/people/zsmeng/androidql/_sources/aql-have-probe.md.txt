@@ -1,0 +1,102 @@
+可用的probe
+===================
+
+AndroidQL目前已实现完成部分可用的probe，它们可以用来帮助用户对移动应用进行测试。
+
+## 已有probe
+
+#### mcov
+
+probe名为`mcov`，用来在测试过程中统计方法覆盖情况，所有覆盖到的方法被存储在`mcov`表中。因此，可用如下AQL指令查询当前所有覆盖到的方法。
+
+```bash
+SELECT * from mcov.mcov
+```
+
+#### bcov
+
+probe名为`bcov`，用来在测试过程中统计分支指令覆盖情况，所有覆盖到的分支指令以及分支的取值被存储在`bcov`表中。因此，可用如下AQL指令查询当前分支指令覆盖情况。
+
+```bash
+SELECT * from bcov.bcov
+```
+
+#### icov
+
+probe名为`icov`，用来在测试过程中统计指令覆盖情况，所有覆盖到的指令被存储在`icov`表中。因此，可用如下AQL指令查询当前指令覆盖情况。
+
+```bash
+SELECT * from icov.icov
+```
+
+#### excp
+
+probe名为`excp`，用来在程序运行过程中随时随地跑出任意类型的异常。内部对`throw`注册了`handler`，因此可对这个action进行响应和处理。例如可使用如下AQL指令抛出`Runtime`异常。
+
+```bash
+PERFORM excp.THROW java.lang.RuntimeException("test")
+```
+
+#### waiter
+
+probe名为`waiter`，用来在程序运行过程中插入任意时长的延迟。内部对`sleep`注册了`handler`，因此可对这个action进行响应和处理。例如使用如下AQL指令在当前线程上下文插入1000ms的等待。
+
+```bash
+PERFORM waiter.sleep 1000
+```
+
+#### gui
+
+probe名为`gui`，对GUI测试提供支持。内部对以下的`action`都注册了`handler`：
+
+- click
+- longclick
+- doubleclick
+- swipe
+- dumplayout
+- home
+- menu
+- back
+- unlock
+
+`gui`可用来模拟一些常用的GUI手势操作。
+
+```bash
+PERFORM gui.CLICK (100,200) // 点击
+PERFORM gui.LONGCLICK (100,200) // 长按
+PERFORM gui.DOUBLECLICK (100,200) // 双击
+PERFORM gui.SWIPE (100,200) (200,300) // 滑动
+PERFORM gui.DUMPLAYOUT // 得到当前GUI界面信息
+PERFORM gui.home // 点击HOME键
+PERFORM gui.menu // 点击MENU键
+PERFOMR gui.back // 点击BACK键
+PERFORM gui.unlock // 解锁界面
+```
+
+
+## 如何使用probe
+
+#### probe的状态切换
+
+每一个probe都处于`enable`和`disable`状态二者之一。关闭一个probe更多是处于虚拟机性能的考虑，因为所有ART中的probe在运行时都彼此隔离，互不影响。但是过多的开启probe可能会拖慢应用程序的正常运行，因此当测试过程不再需要某一个probe时，可以使用`TOGGLE`指令来关闭该probe。
+
+```bash
+TOGGLE excp off // 关闭excp这个probe
+```
+
+开启一个probe也可以通过`TOGGLE`这个AQL指令来完成。
+
+```bash
+TOGGLE excp on // 开启excp这个probe
+```
+
+有时一个probe的打开需要在应用程序启动时就完成，比如使用`mcov`统计方法的覆盖情况，如果在程序启动完成时使用`TOGGLE`来开启该probe，就会遗漏应用启动过程覆盖到的方法。针对这种情况，AQL的`LAUNCH`指令也被赋予了开启probe的能力。
+
+```
+LAUNCH a.apk mcov,bcov //程序启动时打开mcov和bcov
+```
+#### 使用一个或者多个probe进行测试
+
+使用一个或者组合多个probe可以来完成对目标应用的测试和分析。例如，使用`gui`和`mcov`这俩个probe，可以对目标应用进行常规的gui测试，并在测试过程中统计方法覆盖率。
+
+此外，`excp`这个probe配合AndroidQL的断点机制，能够劫持应用程序的运行过程，在特定的时间点抛出任意类型的异常，检测应用的异常处理能力。

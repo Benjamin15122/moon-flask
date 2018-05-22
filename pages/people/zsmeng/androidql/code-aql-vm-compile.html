@@ -1,0 +1,329 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>aql-vm的编译 &mdash; AndroidQL 1.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="probe需要做什么" href="code-aql-vm-probe.html" />
+    <link rel="prev" title="aql-vm之patch" href="code-aql-vm-patch.html" /> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> AndroidQL
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">框架介绍</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="overview.html">AndroidQL框架介绍</a></li>
+</ul>
+<p class="caption"><span class="caption-text">安装</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="install.html">AndroidQL的安装介绍</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install-aqlvm-source.html">从源码安装aql-vm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install-aqlvm-image.html">下载镜像安装aql-vm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install-aqlvm-device.html">安装aql-vm到真实Android设备</a></li>
+</ul>
+<p class="caption"><span class="caption-text">下载</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="download.html">下载AndroidQL</a></li>
+</ul>
+<p class="caption"><span class="caption-text">使用手册</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="aql-get-started.html">从零开始AndroidQL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="aql-query-language.html">AQL查询语言简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="aql-aqlsh.html">可交互的aqlsh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="aql-brk.html">AndroidQL的断点机制</a></li>
+<li class="toctree-l1"><a class="reference internal" href="aql-probe-how-work.html">AndroidQL的probe如何工作</a></li>
+<li class="toctree-l1"><a class="reference internal" href="aql-have-probe.html">可用的probe</a></li>
+<li class="toctree-l1"><a class="reference internal" href="aql-spec.html">通信协议规范</a></li>
+</ul>
+<p class="caption"><span class="caption-text">贡献代码</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="code.html">贡献代码介绍</a></li>
+<li class="toctree-l1"><a class="reference internal" href="code-aql-vm.html">aql-vm项目介绍</a></li>
+<li class="toctree-l1"><a class="reference internal" href="code-aql-vm-adapter.html">aql-vm之adapter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="code-aql-vm-core.html">aql-vm之core</a></li>
+<li class="toctree-l1"><a class="reference internal" href="code-aql-vm-patch.html">aql-vm之patch</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">aql-vm的编译</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#aql-vmmakefile">aql-vm的Makefile</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#">编译过程</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#patch">patch</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#deploy">deploy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#build">build</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="code-aql-vm-probe.html">probe需要做什么</a></li>
+<li class="toctree-l1"><a class="reference internal" href="code-aql-vm-how-probe.html">aql-vm提供的接口</a></li>
+<li class="toctree-l1"><a class="reference internal" href="code-dev-env.html">AndroidQL开发环境部署</a></li>
+<li class="toctree-l1"><a class="reference internal" href="code-add-probe.html">开发probe，你需要做什么</a></li>
+<li class="toctree-l1"><a class="reference internal" href="code-aql-vm-lock.html">aql-vm中的锁使用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="code-how-bcov.html">如何实现<strong>bcov</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="code-contact.html">联系我们</a></li>
+<li class="toctree-l1"><a class="reference internal" href="code-bug-report.html">bug报告</a></li>
+<li class="toctree-l1"><a class="reference internal" href="code-patch-submit.html">patch提交</a></li>
+</ul>
+<p class="caption"><span class="caption-text">帮助</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="help-troubleshooting.html">常见问题汇总</a></li>
+<li class="toctree-l1"><a class="reference internal" href="help-profile.html">aql-vm的profile</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">AndroidQL</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>aql-vm的编译</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/code-aql-vm-compile.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="aql-vm">
+<span id="aql-vm"></span><h1>aql-vm的编译<a class="headerlink" href="#aql-vm" title="Permalink to this headline">¶</a></h1>
+<p>aql-vm的编译依赖于AOSP提供的完善的编译机制。在编译开始之前，需要首先将aql-vm项目拷贝到AOSP项目的<code class="docutils literal notranslate"><span class="pre">art/runtime/aql</span></code>目录下，利用AOSP自身提供的编译机制完成编译。</p>
+<div class="section" id="aql-vmmakefile">
+<span id="aql-vmmakefile"></span><h2>aql-vm的Makefile<a class="headerlink" href="#aql-vmmakefile" title="Permalink to this headline">¶</a></h2>
+<p>aql-vm提供了<code class="docutils literal notranslate"><span class="pre">Aql.mk</span></code>文件，该文件中定义了<code class="docutils literal notranslate"><span class="pre">aql_srcs</span></code>变量。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">aql_srcs</span> <span class="p">:</span><span class="o">=</span> <span class="n">aql</span><span class="o">/</span><span class="n">aql</span><span class="o">.</span><span class="n">cc</span> \
+    <span class="n">aql</span><span class="o">/</span><span class="n">core</span><span class="o">/</span><span class="n">aql_state</span><span class="o">.</span><span class="n">cc</span> \
+    <span class="n">aql</span><span class="o">/</span><span class="n">core</span><span class="o">/</span><span class="n">base</span><span class="o">/</span><span class="n">aql_packet</span><span class="o">.</span><span class="n">cc</span> \
+    <span class="n">aql</span><span class="o">/</span><span class="n">core</span><span class="o">/</span><span class="n">base</span><span class="o">/</span><span class="n">aql_instumentation</span><span class="o">.</span><span class="n">cc</span> \
+    <span class="o">...</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Aql.mk</span></code>和<code class="docutils literal notranslate"><span class="pre">aql_srcs</span></code>都是唯一确定的。当有新的C++源码文件被添加到项目中时，需要同步地修改<code class="docutils literal notranslate"><span class="pre">aql_srcs</span></code>变量。</p>
+</div>
+<div class="section" id="">
+<span id="id1"></span><h2>编译过程<a class="headerlink" href="#" title="Permalink to this headline">¶</a></h2>
+<p>aql-vm的编译通过脚本来自动化地完成。所有与此相关的脚本存在于<code class="docutils literal notranslate"><span class="pre">aql-vm/deploy</span></code>目录下。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>aql-vm
+└── deploy
+    └── build.sh
+    └── patch.sh
+    └── deploy.sh
+└── ...
+</pre></div>
+</div>
+<p>aql-vm的编译需要三个阶段，patch，deploy和build，分别对应于<code class="docutils literal notranslate"><span class="pre">patch.sh</span></code>，<code class="docutils literal notranslate"><span class="pre">deploy.sh</span></code>和<code class="docutils literal notranslate"><span class="pre">build.sh</span></code>脚本。</p>
+<div class="section" id="patch">
+<span id="patch"></span><h3>patch<a class="headerlink" href="#patch" title="Permalink to this headline">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">patch.sh</span></code>中使用<code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">appply</span></code>将<code class="docutils literal notranslate"><span class="pre">patch.diff</span></code>文件部署到AOSP项目，<code class="docutils literal notranslate"><span class="pre">patch.diff</span></code>中除了包含对AOSP源码的修改，也包括对于Android编译脚本的修改。</p>
+<div class="highlight-diff notranslate"><div class="highlight"><pre><span></span><span class="gh">diff --git a/art/runtime/Android.mk b/art/runtime/Android.mk</span>
+<span class="gh">index aa12c83..86e9281 100644</span>
+<span class="gd">--- a/art/runtime/Android.mk</span>
+<span class="gi">+++ b/art/runtime/Android.mk</span>
+<span class="gu">@@ -17,6 +17,7 @@</span>
+ LOCAL_PATH := $(call my-dir)
+
+ include art/build/Android.common_build.mk
+<span class="gi">+include art/runtime/aql/Aql.mk</span>
+
+ LIBART_COMMON_SRC_FILES := \
+   $(aql_srcs) \
+   art_field.cc \
+</pre></div>
+</div>
+<p>AOSP中<code class="docutils literal notranslate"><span class="pre">art</span></code>模块的<code class="docutils literal notranslate"><span class="pre">Android.mk</span></code>包含了aql-vm中的<code class="docutils literal notranslate"><span class="pre">Aql.mk</span></code>文件，并且将<code class="docutils literal notranslate"><span class="pre">aql_srcs</span></code>变量所代表的所有源文件赋值给全局的<code class="docutils literal notranslate"><span class="pre">LIBART_COMMON_SRC_FILES</span></code>变量，通过以上步骤，完成了对于AOSP编译脚本的修改。</p>
+</div>
+<div class="section" id="deploy">
+<span id="deploy"></span><h3>deploy<a class="headerlink" href="#deploy" title="Permalink to this headline">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">deply.sh</span></code>脚本用来完成deploy过程。这一过程实际上就是将aql-vm的源代码复制到AOSP项目中，<code class="docutils literal notranslate"><span class="pre">deploy.sh</span></code>脚本会简单地将<code class="docutils literal notranslate"><span class="pre">aql-vm/src/</span></code>目录下的所有源码文件（包括<code class="docutils literal notranslate"><span class="pre">Aql.mk</span></code>）拷贝到<code class="docutils literal notranslate"><span class="pre">&lt;AOSP_HOME&gt;/art/runtime/aql</span></code>目录下面。</p>
+<p>通过patch和deploy这俩个步骤，已将aql-vm的所有源码拷贝到AOSP项目内部，同时也完成了对AOSP编译脚本的修改，使得它具备对于aql-vm中所有源码进行编译的能力。</p>
+</div>
+<div class="section" id="build">
+<span id="build"></span><h3>build<a class="headerlink" href="#build" title="Permalink to this headline">¶</a></h3>
+<p>实现编译过程的是<code class="docutils literal notranslate"><span class="pre">build.sh</span></code>脚本，脚本内部调用AOSP的编译指令。</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="code-aql-vm-probe.html" class="btn btn-neutral float-right" title="probe需要做什么" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="code-aql-vm-patch.html" class="btn btn-neutral" title="aql-vm之patch" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, mzs.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1.0',
+            LANGUAGE:'None',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

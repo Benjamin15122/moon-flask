@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>AndroidQL Documentation &mdash; AndroidQL 1.0 documentation</title>
+  <title>aql-vm之adapter &mdash; AndroidQL 1.0 documentation</title>
   
 
   
@@ -29,7 +29,8 @@
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="AndroidQL框架介绍" href="overview.html" /> 
+    <link rel="next" title="aql-vm之core" href="code-aql-vm-core.html" />
+    <link rel="prev" title="aql-vm项目介绍" href="code-aql-vm.html" /> 
 
   
   <script src="_static/js/modernizr.min.js"></script>
@@ -48,7 +49,7 @@
           
 
           
-            <a href="#" class="icon icon-home"> AndroidQL
+            <a href="index.html" class="icon icon-home"> AndroidQL
           
 
           
@@ -104,10 +105,15 @@
 <li class="toctree-l1"><a class="reference internal" href="aql-spec.html">通信协议规范</a></li>
 </ul>
 <p class="caption"><span class="caption-text">贡献代码</span></p>
-<ul>
+<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="code.html">贡献代码介绍</a></li>
 <li class="toctree-l1"><a class="reference internal" href="code-aql-vm.html">aql-vm项目介绍</a></li>
-<li class="toctree-l1"><a class="reference internal" href="code-aql-vm-adapter.html">aql-vm之adapter</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">aql-vm之adapter</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#">宏定义</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#api">API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#">数据结构</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="code-aql-vm-core.html">aql-vm之core</a></li>
 <li class="toctree-l1"><a class="reference internal" href="code-aql-vm-patch.html">aql-vm之patch</a></li>
 <li class="toctree-l1"><a class="reference internal" href="code-aql-vm-compile.html">aql-vm的编译</a></li>
@@ -139,7 +145,7 @@
       <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="#">AndroidQL</a>
+          <a href="index.html">AndroidQL</a>
         
       </nav>
 
@@ -168,15 +174,15 @@
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="#">Docs</a> &raquo;</li>
+      <li><a href="index.html">Docs</a> &raquo;</li>
         
-      <li>AndroidQL Documentation</li>
+      <li>aql-vm之adapter</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="_sources/index.rst.txt" rel="nofollow"> View page source</a>
+            <a href="_sources/code-aql-vm-adapter.md.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -189,71 +195,28 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="androidql-documentation">
-<h1>AndroidQL Documentation<a class="headerlink" href="#androidql-documentation" title="Permalink to this headline">¶</a></h1>
- <embed>
- <a href="http://moon.nju.edu.cn/spar/"><img width="30%" height="22%" align="bottom" src="http://moon.nju.edu.cn/spar/img/logo_large.png"></a>
-</embed><p><em>Welcome to AndroidQL’s Documentation.</em></p>
-<p>View the <a class="reference external" href="https://git.njuics.cn/android/aql-vm">codebase on GitLab</a>.</p>
-<div class="toctree-wrapper compound">
-<p class="caption"><span class="caption-text">框架介绍</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="overview.html">AndroidQL框架介绍</a></li>
-</ul>
+  <div class="section" id="aql-vmadapter">
+<span id="aql-vmadapter"></span><h1>aql-vm之adapter<a class="headerlink" href="#aql-vmadapter" title="Permalink to this headline">¶</a></h1>
+<p><code class="docutils literal notranslate"><span class="pre">adapter</span></code>层的存在保证了aql-vm在不同AOSP版本的兼容性。目前，AndroidQL支持的Android版本包括5，6，7，8。保证aql-vm在不同版本之间的兼容，直观的处理方式就是维护aql-vm在不同Android版本的公用部分的稳定性，此外，还应该对版本之间的差异进行某种归一化处理。AndroidQL在实现上把Android版本之间的差异性总结为三个方面，包括<code class="docutils literal notranslate"><span class="pre">数据结构</span></code>、<code class="docutils literal notranslate"><span class="pre">API</span></code>和<code class="docutils literal notranslate"><span class="pre">宏定义</span></code>。</p>
+<div class="section" id="">
+<span id="id1"></span><h2>宏定义<a class="headerlink" href="#" title="Permalink to this headline">¶</a></h2>
+<p>宏定义的变化主要表现在<a class="reference external" href="https://clang.llvm.org/docs/ThreadSafetyAnalysis.html">Clang中与线程安全相关的annotation</a>，这是因为不同的AOSP源码是基于不同版本的Clang实现的。此外，AOSP中自定义的一些宏也存在版本之间的变化，这其中大部分并未被aql-vm用到，aql-vm中对涉及到的宏都进行了重新定义。</p>
+<p>AOSP版本 | 共享锁 | 互斥锁 | 不应该持有某个锁
+—-|——|—- | —-
+8 | REQUIRES_SHARED(lock)  | REQUIRES(lock)| REQUIRES(!lock)
+7 | SHARED_REQUIRES(lock)  | REQUIRES(lock)| REQUIRES(!lock)
+6 | SHARED_LOCKS_REQUIRED(lock) | EXCLUSIVE_LOCKS_REQUIRED(lock) | LOCKS_EXCLUDED(lock)
+5 | SHARED_LOCKS_REQUIRED(lock) | EXCLUSIVE_LOCKS_REQUIRED(lock) | LOCKS_EXCLUDED(lock)
+AndroidQL | REQUIRES_SHARED(lock) | REQUIRES(lock) | LOCKS_EXCLUDED(lock)</p>
 </div>
-<div class="toctree-wrapper compound">
-<p class="caption"><span class="caption-text">安装</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="install.html">AndroidQL的安装介绍</a></li>
-<li class="toctree-l1"><a class="reference internal" href="install-aqlvm-source.html">从源码安装aql-vm</a></li>
-<li class="toctree-l1"><a class="reference internal" href="install-aqlvm-image.html">下载镜像安装aql-vm</a></li>
-<li class="toctree-l1"><a class="reference internal" href="install-aqlvm-device.html">安装aql-vm到真实Android设备</a></li>
-</ul>
+<div class="section" id="api">
+<span id="api"></span><h2>API<a class="headerlink" href="#api" title="Permalink to this headline">¶</a></h2>
+<p>API的改变主要表现在，在AOSP7之前，部分提供base功能的API被定义在aosp/art/runtime/base目录下, AOSP8之后，这部分API中的一小部分被移动在了aosp/system/core/base/include目录下. AndroidQL使用到了<strong>StringPrintf</strong>来格式化std::string字符串，所以应该将这种变更考虑进来才可以实现不同Android版本的兼容。</p>
+<p>AndroidQL将这些变更统一进行进行封装，提供一致的API给AndroidQL使用，在每个版本的aosp目录中aosp/art/runtime下的makefile中添加<code class="docutils literal notranslate"><span class="pre">PLATFORM_VERSION_MAJOR</span></code>宏定义来进行条件编译。具体可见aql/adapter的源码实现。</p>
 </div>
-<div class="toctree-wrapper compound">
-<p class="caption"><span class="caption-text">下载</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="download.html">下载AndroidQL</a></li>
-</ul>
-</div>
-<div class="toctree-wrapper compound">
-<p class="caption"><span class="caption-text">使用手册</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="aql-get-started.html">从零开始AndroidQL</a></li>
-<li class="toctree-l1"><a class="reference internal" href="aql-query-language.html">AQL查询语言简介</a></li>
-<li class="toctree-l1"><a class="reference internal" href="aql-aqlsh.html">可交互的aqlsh</a></li>
-<li class="toctree-l1"><a class="reference internal" href="aql-brk.html">AndroidQL的断点机制</a></li>
-<li class="toctree-l1"><a class="reference internal" href="aql-probe-how-work.html">AndroidQL的probe如何工作</a></li>
-<li class="toctree-l1"><a class="reference internal" href="aql-have-probe.html">可用的probe</a></li>
-<li class="toctree-l1"><a class="reference internal" href="aql-spec.html">通信协议规范</a></li>
-</ul>
-</div>
-<div class="toctree-wrapper compound">
-<p class="caption"><span class="caption-text">贡献代码</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="code.html">贡献代码介绍</a></li>
-<li class="toctree-l1"><a class="reference internal" href="code-aql-vm.html">aql-vm项目介绍</a></li>
-<li class="toctree-l1"><a class="reference internal" href="code-aql-vm-adapter.html">aql-vm之adapter</a></li>
-<li class="toctree-l1"><a class="reference internal" href="code-aql-vm-core.html">aql-vm之core</a></li>
-<li class="toctree-l1"><a class="reference internal" href="code-aql-vm-patch.html">aql-vm之patch</a></li>
-<li class="toctree-l1"><a class="reference internal" href="code-aql-vm-compile.html">aql-vm的编译</a></li>
-<li class="toctree-l1"><a class="reference internal" href="code-aql-vm-probe.html">probe需要做什么</a></li>
-<li class="toctree-l1"><a class="reference internal" href="code-aql-vm-how-probe.html">aql-vm提供的接口</a></li>
-<li class="toctree-l1"><a class="reference internal" href="code-dev-env.html">AndroidQL开发环境部署</a></li>
-<li class="toctree-l1"><a class="reference internal" href="code-add-probe.html">开发probe，你需要做什么</a></li>
-<li class="toctree-l1"><a class="reference internal" href="code-aql-vm-lock.html">aql-vm中的锁使用</a></li>
-<li class="toctree-l1"><a class="reference internal" href="code-how-bcov.html">如何实现<strong>bcov</strong></a></li>
-<li class="toctree-l1"><a class="reference internal" href="code-contact.html">联系我们</a></li>
-<li class="toctree-l1"><a class="reference internal" href="code-bug-report.html">bug报告</a></li>
-<li class="toctree-l1"><a class="reference internal" href="code-patch-submit.html">patch提交</a></li>
-</ul>
-</div>
-<div class="toctree-wrapper compound">
-<p class="caption"><span class="caption-text">帮助</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="help-troubleshooting.html">常见问题汇总</a></li>
-<li class="toctree-l1"><a class="reference internal" href="help-profile.html">aql-vm的profile</a></li>
-</ul>
+<div class="section" id="">
+<span id="id2"></span><h2>数据结构<a class="headerlink" href="#" title="Permalink to this headline">¶</a></h2>
+<p>aql-vm在开发过程中本着侵入性最小的原则，对于数据结构在设计实现上的变动，都使用<code class="docutils literal notranslate"><span class="pre">PLATFORM_VERSION_MAJOR</span></code>进行条件编译处理。根据<code class="docutils literal notranslate"><span class="pre">PLATFORM_VERSION_MAJOR</span></code>的不同取值，引入不同的头文件。</p>
 </div>
 </div>
 
@@ -265,8 +228,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="overview.html" class="btn btn-neutral float-right" title="AndroidQL框架介绍" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="code-aql-vm-core.html" class="btn btn-neutral float-right" title="aql-vm之core" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
+      
+        <a href="code-aql-vm.html" class="btn btn-neutral" title="aql-vm项目介绍" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

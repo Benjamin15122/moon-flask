@@ -1,0 +1,370 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>可用的probe &mdash; AndroidQL 1.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="通信协议规范" href="aql-spec.html" />
+    <link rel="prev" title="AndroidQL的probe如何工作" href="aql-probe-how-work.html" /> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> AndroidQL
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">框架介绍</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="overview.html">AndroidQL框架介绍</a></li>
+</ul>
+<p class="caption"><span class="caption-text">安装</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="install.html">AndroidQL的安装介绍</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install-aqlvm-source.html">从源码安装aql-vm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install-aqlvm-image.html">下载镜像安装aql-vm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install-aqlvm-device.html">安装aql-vm到真实Android设备</a></li>
+</ul>
+<p class="caption"><span class="caption-text">下载</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="download.html">下载AndroidQL</a></li>
+</ul>
+<p class="caption"><span class="caption-text">使用手册</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="aql-get-started.html">从零开始AndroidQL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="aql-query-language.html">AQL查询语言简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="aql-aqlsh.html">可交互的aqlsh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="aql-brk.html">AndroidQL的断点机制</a></li>
+<li class="toctree-l1"><a class="reference internal" href="aql-probe-how-work.html">AndroidQL的probe如何工作</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">可用的probe</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#probe">已有probe</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#mcov">mcov</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#bcov">bcov</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#icov">icov</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#excp">excp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#waiter">waiter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#gui">gui</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#probe">如何使用probe</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#probe">probe的状态切换</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#probe">使用一个或者多个probe进行测试</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="aql-spec.html">通信协议规范</a></li>
+</ul>
+<p class="caption"><span class="caption-text">贡献代码</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="code.html">贡献代码介绍</a></li>
+<li class="toctree-l1"><a class="reference internal" href="code-aql-vm.html">aql-vm项目介绍</a></li>
+<li class="toctree-l1"><a class="reference internal" href="code-aql-vm-adapter.html">aql-vm之adapter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="code-aql-vm-core.html">aql-vm之core</a></li>
+<li class="toctree-l1"><a class="reference internal" href="code-aql-vm-patch.html">aql-vm之patch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="code-aql-vm-compile.html">aql-vm的编译</a></li>
+<li class="toctree-l1"><a class="reference internal" href="code-aql-vm-probe.html">probe需要做什么</a></li>
+<li class="toctree-l1"><a class="reference internal" href="code-aql-vm-how-probe.html">aql-vm提供的接口</a></li>
+<li class="toctree-l1"><a class="reference internal" href="code-dev-env.html">AndroidQL开发环境部署</a></li>
+<li class="toctree-l1"><a class="reference internal" href="code-add-probe.html">开发probe，你需要做什么</a></li>
+<li class="toctree-l1"><a class="reference internal" href="code-aql-vm-lock.html">aql-vm中的锁使用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="code-how-bcov.html">如何实现<strong>bcov</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="code-contact.html">联系我们</a></li>
+<li class="toctree-l1"><a class="reference internal" href="code-bug-report.html">bug报告</a></li>
+<li class="toctree-l1"><a class="reference internal" href="code-patch-submit.html">patch提交</a></li>
+</ul>
+<p class="caption"><span class="caption-text">帮助</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="help-troubleshooting.html">常见问题汇总</a></li>
+<li class="toctree-l1"><a class="reference internal" href="help-profile.html">aql-vm的profile</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">AndroidQL</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>可用的probe</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/aql-have-probe.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="probe">
+<span id="probe"></span><h1>可用的probe<a class="headerlink" href="#probe" title="Permalink to this headline">¶</a></h1>
+<p>AndroidQL目前已实现完成部分可用的probe，它们可以用来帮助用户对移动应用进行测试。</p>
+<div class="section" id="probe">
+<span id="id1"></span><h2>已有probe<a class="headerlink" href="#probe" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="mcov">
+<span id="mcov"></span><h3>mcov<a class="headerlink" href="#mcov" title="Permalink to this headline">¶</a></h3>
+<p>probe名为<code class="docutils literal notranslate"><span class="pre">mcov</span></code>，用来在测试过程中统计方法覆盖情况，所有覆盖到的方法被存储在<code class="docutils literal notranslate"><span class="pre">mcov</span></code>表中。因此，可用如下AQL指令查询当前所有覆盖到的方法。</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>SELECT * from mcov.mcov
+</pre></div>
+</div>
+</div>
+<div class="section" id="bcov">
+<span id="bcov"></span><h3>bcov<a class="headerlink" href="#bcov" title="Permalink to this headline">¶</a></h3>
+<p>probe名为<code class="docutils literal notranslate"><span class="pre">bcov</span></code>，用来在测试过程中统计分支指令覆盖情况，所有覆盖到的分支指令以及分支的取值被存储在<code class="docutils literal notranslate"><span class="pre">bcov</span></code>表中。因此，可用如下AQL指令查询当前分支指令覆盖情况。</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>SELECT * from bcov.bcov
+</pre></div>
+</div>
+</div>
+<div class="section" id="icov">
+<span id="icov"></span><h3>icov<a class="headerlink" href="#icov" title="Permalink to this headline">¶</a></h3>
+<p>probe名为<code class="docutils literal notranslate"><span class="pre">icov</span></code>，用来在测试过程中统计指令覆盖情况，所有覆盖到的指令被存储在<code class="docutils literal notranslate"><span class="pre">icov</span></code>表中。因此，可用如下AQL指令查询当前指令覆盖情况。</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>SELECT * from icov.icov
+</pre></div>
+</div>
+</div>
+<div class="section" id="excp">
+<span id="excp"></span><h3>excp<a class="headerlink" href="#excp" title="Permalink to this headline">¶</a></h3>
+<p>probe名为<code class="docutils literal notranslate"><span class="pre">excp</span></code>，用来在程序运行过程中随时随地跑出任意类型的异常。内部对<code class="docutils literal notranslate"><span class="pre">throw</span></code>注册了<code class="docutils literal notranslate"><span class="pre">handler</span></code>，因此可对这个action进行响应和处理。例如可使用如下AQL指令抛出<code class="docutils literal notranslate"><span class="pre">Runtime</span></code>异常。</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>PERFORM excp.THROW java.lang.RuntimeException<span class="o">(</span><span class="s2">&quot;test&quot;</span><span class="o">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="waiter">
+<span id="waiter"></span><h3>waiter<a class="headerlink" href="#waiter" title="Permalink to this headline">¶</a></h3>
+<p>probe名为<code class="docutils literal notranslate"><span class="pre">waiter</span></code>，用来在程序运行过程中插入任意时长的延迟。内部对<code class="docutils literal notranslate"><span class="pre">sleep</span></code>注册了<code class="docutils literal notranslate"><span class="pre">handler</span></code>，因此可对这个action进行响应和处理。例如使用如下AQL指令在当前线程上下文插入1000ms的等待。</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>PERFORM waiter.sleep <span class="m">1000</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="gui">
+<span id="gui"></span><h3>gui<a class="headerlink" href="#gui" title="Permalink to this headline">¶</a></h3>
+<p>probe名为<code class="docutils literal notranslate"><span class="pre">gui</span></code>，对GUI测试提供支持。内部对以下的<code class="docutils literal notranslate"><span class="pre">action</span></code>都注册了<code class="docutils literal notranslate"><span class="pre">handler</span></code>：</p>
+<ul class="simple">
+<li>click</li>
+<li>longclick</li>
+<li>doubleclick</li>
+<li>swipe</li>
+<li>dumplayout</li>
+<li>home</li>
+<li>menu</li>
+<li>back</li>
+<li>unlock</li>
+</ul>
+<p><code class="docutils literal notranslate"><span class="pre">gui</span></code>可用来模拟一些常用的GUI手势操作。</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>PERFORM gui.CLICK <span class="o">(</span><span class="m">100</span>,200<span class="o">)</span> // 点击
+PERFORM gui.LONGCLICK <span class="o">(</span><span class="m">100</span>,200<span class="o">)</span> // 长按
+PERFORM gui.DOUBLECLICK <span class="o">(</span><span class="m">100</span>,200<span class="o">)</span> // 双击
+PERFORM gui.SWIPE <span class="o">(</span><span class="m">100</span>,200<span class="o">)</span> <span class="o">(</span><span class="m">200</span>,300<span class="o">)</span> // 滑动
+PERFORM gui.DUMPLAYOUT // 得到当前GUI界面信息
+PERFORM gui.home // 点击HOME键
+PERFORM gui.menu // 点击MENU键
+PERFOMR gui.back // 点击BACK键
+PERFORM gui.unlock // 解锁界面
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="probe">
+<span id="id2"></span><h2>如何使用probe<a class="headerlink" href="#probe" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="probe">
+<span id="id3"></span><h3>probe的状态切换<a class="headerlink" href="#probe" title="Permalink to this headline">¶</a></h3>
+<p>每一个probe都处于<code class="docutils literal notranslate"><span class="pre">enable</span></code>和<code class="docutils literal notranslate"><span class="pre">disable</span></code>状态二者之一。关闭一个probe更多是处于虚拟机性能的考虑，因为所有ART中的probe在运行时都彼此隔离，互不影响。但是过多的开启probe可能会拖慢应用程序的正常运行，因此当测试过程不再需要某一个probe时，可以使用<code class="docutils literal notranslate"><span class="pre">TOGGLE</span></code>指令来关闭该probe。</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>TOGGLE excp off // 关闭excp这个probe
+</pre></div>
+</div>
+<p>开启一个probe也可以通过<code class="docutils literal notranslate"><span class="pre">TOGGLE</span></code>这个AQL指令来完成。</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>TOGGLE excp on // 开启excp这个probe
+</pre></div>
+</div>
+<p>有时一个probe的打开需要在应用程序启动时就完成，比如使用<code class="docutils literal notranslate"><span class="pre">mcov</span></code>统计方法的覆盖情况，如果在程序启动完成时使用<code class="docutils literal notranslate"><span class="pre">TOGGLE</span></code>来开启该probe，就会遗漏应用启动过程覆盖到的方法。针对这种情况，AQL的<code class="docutils literal notranslate"><span class="pre">LAUNCH</span></code>指令也被赋予了开启probe的能力。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">LAUNCH</span> <span class="n">a</span><span class="o">.</span><span class="n">apk</span> <span class="n">mcov</span><span class="p">,</span><span class="n">bcov</span> <span class="o">//</span><span class="n">程序启动时打开mcov和bcov</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="probe">
+<span id="id4"></span><h3>使用一个或者多个probe进行测试<a class="headerlink" href="#probe" title="Permalink to this headline">¶</a></h3>
+<p>使用一个或者组合多个probe可以来完成对目标应用的测试和分析。例如，使用<code class="docutils literal notranslate"><span class="pre">gui</span></code>和<code class="docutils literal notranslate"><span class="pre">mcov</span></code>这俩个probe，可以对目标应用进行常规的gui测试，并在测试过程中统计方法覆盖率。</p>
+<p>此外，<code class="docutils literal notranslate"><span class="pre">excp</span></code>这个probe配合AndroidQL的断点机制，能够劫持应用程序的运行过程，在特定的时间点抛出任意类型的异常，检测应用的异常处理能力。</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="aql-spec.html" class="btn btn-neutral float-right" title="通信协议规范" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="aql-probe-how-work.html" class="btn btn-neutral" title="AndroidQL的probe如何工作" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, mzs.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1.0',
+            LANGUAGE:'None',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

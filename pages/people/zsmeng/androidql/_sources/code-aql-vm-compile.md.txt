@@ -1,0 +1,69 @@
+aql-vm的编译
+===========
+
+aql-vm的编译依赖于AOSP提供的完善的编译机制。在编译开始之前，需要首先将aql-vm项目拷贝到AOSP项目的`art/runtime/aql`目录下，利用AOSP自身提供的编译机制完成编译。
+
+
+## aql-vm的Makefile
+
+aql-vm提供了`Aql.mk`文件，该文件中定义了`aql_srcs`变量。
+
+```
+aql_srcs := aql/aql.cc \
+	aql/core/aql_state.cc \
+	aql/core/base/aql_packet.cc \
+	aql/core/base/aql_instumentation.cc \
+	...
+
+```
+
+`Aql.mk`和`aql_srcs`都是唯一确定的。当有新的C++源码文件被添加到项目中时，需要同步地修改`aql_srcs`变量。
+
+
+## 编译过程
+
+aql-vm的编译通过脚本来自动化地完成。所有与此相关的脚本存在于`aql-vm/deploy`目录下。
+
+```
+aql-vm
+└── deploy
+	└── build.sh
+	└── patch.sh
+	└── deploy.sh
+└── ...
+```
+
+aql-vm的编译需要三个阶段，patch，deploy和build，分别对应于`patch.sh`，`deploy.sh`和`build.sh`脚本。
+
+#### patch
+
+`patch.sh`中使用`git appply`将`patch.diff`文件部署到AOSP项目，`patch.diff`中除了包含对AOSP源码的修改，也包括对于Android编译脚本的修改。
+
+```diff
+diff --git a/art/runtime/Android.mk b/art/runtime/Android.mk
+index aa12c83..86e9281 100644
+--- a/art/runtime/Android.mk
++++ b/art/runtime/Android.mk
+@@ -17,6 +17,7 @@
+ LOCAL_PATH := $(call my-dir)
+
+ include art/build/Android.common_build.mk
++include art/runtime/aql/Aql.mk
+
+ LIBART_COMMON_SRC_FILES := \
+   $(aql_srcs) \
+   art_field.cc \
+```
+
+AOSP中`art`模块的`Android.mk`包含了aql-vm中的`Aql.mk`文件，并且将`aql_srcs`变量所代表的所有源文件赋值给全局的`LIBART_COMMON_SRC_FILES`变量，通过以上步骤，完成了对于AOSP编译脚本的修改。
+
+
+#### deploy
+
+`deply.sh`脚本用来完成deploy过程。这一过程实际上就是将aql-vm的源代码复制到AOSP项目中，`deploy.sh`脚本会简单地将`aql-vm/src/`目录下的所有源码文件（包括`Aql.mk`）拷贝到`<AOSP_HOME>/art/runtime/aql`目录下面。
+
+通过patch和deploy这俩个步骤，已将aql-vm的所有源码拷贝到AOSP项目内部，同时也完成了对AOSP编译脚本的修改，使得它具备对于aql-vm中所有源码进行编译的能力。
+
+#### build
+
+实现编译过程的是`build.sh`脚本，脚本内部调用AOSP的编译指令。

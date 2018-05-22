@@ -1,0 +1,16 @@
+下载AndroidQL
+======
+
+## `aql-vm`下载
+
+当前AndroidQL已发布部分可用的`system.img`镜像文件，点击链接可完成下载。
+
+* [android-8.0.0_r4](./)
+* [android-7.1.2_r28](./) (2018-5-10,stable)
+* [android-6.0.1_r17](./) (2018-5-10,stable)
+* [android-5.1.1_r14](./) 
+
+## `aql-client`下载
+
+* [aqllib-1.0.jar](./) (2018-5-10,stable)
+* [aqlsh-1.0.jar](./) (2018-5-10,stable)
