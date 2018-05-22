@@ -1,0 +1,27 @@
+AndroidQL的probe如何工作
+======================
+
+AndroidQL作为一个框架工具，对于多种移动应用分析工具的开发提供支持。在我们的设计中，工具开发都以probe插件的形式完成。probe存在于aql-vm中，用户输入的AQL指令会被正确地分发到目标probe进行处理。
+
+## probe在ART中的组织
+
+所有的probe都存在于ART虚拟机内部，一个处于运行状态的ART虚拟机中可同时存在很多probe。这些probe在内部以线性表的形式组织起来，每个probe都有全局唯一的`name`作为`ID
+`。probe可以被`enable`和`diable`。处于	`disble`的probe不对外部的请求进行响应。probe的状态可以在运行过程中进行切换，AQL中的`TOGGLE`指令可以用来完成此操作。
+
+## AQL在probe间的分发
+
+当一条AQL指令被从aql-client传输到aql-vm时，aql-vm的`dispatcher`组件会根据AQL指令中的目标probe名对指令进行分发。分发过程如下：
+
+1. 查找所有已经注册的的probe，当目标probe不存在时，返回`probe doesn't exist`信息；
+2. 当目标probe存在时，检查probe是否处于enable状态，如果是，调用`HandlePacket`对该AQL指令进行处理，并根据处理结果返回数据；
+3. 当目标probe存在且处于disable时，返回`target probe disable`信息
+
+## AQL在probe内部的处理
+
+AQL语言帮助用户对目标程序运行时产生的数据进行查询和修改。在程序动态分析过程中，每一个处于`enable`状态的probe都会搜集感兴趣的程序运行数据并进行存储。当前在AndroidQL的实现中，所有的数据都以内存表的形式组织存储。AndroidQL中可能同时存在上百个处于enable状态的probe，而每个probe中又可能同时存在多个内存表，因此在处理机制上存在对表进行处理的模块。
+
+总的来说，一条用来查询的AQL指令会根据`目标probe`和`目标table`进行两次索引和分发。查询结果由probe调用`HandlePacket`返回。
+
+此外，AndroidQL的probe可以注册`handler`来对**PERFORM**类型的AQL指令中的`action`进行处理。AQL指令首先分发至对应的目标probe，在目标probe内部根据`action`的注册情况查找`handler`进行处理。
+
+因此，到达aql-vm的AQL指令首先根据目标probe在probe之间进行第一次分发，接着根据目标table或者目标action在目标probe内部进行第二次分发。

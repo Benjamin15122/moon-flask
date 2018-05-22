@@ -1,0 +1,426 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>aql-vm提供的接口 &mdash; AndroidQL 1.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="AndroidQL开发环境部署" href="code-dev-env.html" />
+    <link rel="prev" title="probe需要做什么" href="code-aql-vm-probe.html" /> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> AndroidQL
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">框架介绍</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="overview.html">AndroidQL框架介绍</a></li>
+</ul>
+<p class="caption"><span class="caption-text">安装</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="install.html">AndroidQL的安装介绍</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install-aqlvm-source.html">从源码安装aql-vm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install-aqlvm-image.html">下载镜像安装aql-vm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install-aqlvm-device.html">安装aql-vm到真实Android设备</a></li>
+</ul>
+<p class="caption"><span class="caption-text">下载</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="download.html">下载AndroidQL</a></li>
+</ul>
+<p class="caption"><span class="caption-text">使用手册</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="aql-get-started.html">从零开始AndroidQL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="aql-query-language.html">AQL查询语言简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="aql-aqlsh.html">可交互的aqlsh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="aql-brk.html">AndroidQL的断点机制</a></li>
+<li class="toctree-l1"><a class="reference internal" href="aql-probe-how-work.html">AndroidQL的probe如何工作</a></li>
+<li class="toctree-l1"><a class="reference internal" href="aql-have-probe.html">可用的probe</a></li>
+<li class="toctree-l1"><a class="reference internal" href="aql-spec.html">通信协议规范</a></li>
+</ul>
+<p class="caption"><span class="caption-text">贡献代码</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="code.html">贡献代码介绍</a></li>
+<li class="toctree-l1"><a class="reference internal" href="code-aql-vm.html">aql-vm项目介绍</a></li>
+<li class="toctree-l1"><a class="reference internal" href="code-aql-vm-adapter.html">aql-vm之adapter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="code-aql-vm-core.html">aql-vm之core</a></li>
+<li class="toctree-l1"><a class="reference internal" href="code-aql-vm-patch.html">aql-vm之patch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="code-aql-vm-compile.html">aql-vm的编译</a></li>
+<li class="toctree-l1"><a class="reference internal" href="code-aql-vm-probe.html">probe需要做什么</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">aql-vm提供的接口</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#">数据结构</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#thread"><code class="docutils literal notranslate"><span class="pre">Thread</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#shadowframe"><code class="docutils literal notranslate"><span class="pre">ShadowFrame</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#instruction"><code class="docutils literal notranslate"><span class="pre">Instruction</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#artmethod"><code class="docutils literal notranslate"><span class="pre">ArtMethod</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#probe">probe的开发</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#probe">probe基类</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#api">其他API</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="code-dev-env.html">AndroidQL开发环境部署</a></li>
+<li class="toctree-l1"><a class="reference internal" href="code-add-probe.html">开发probe，你需要做什么</a></li>
+<li class="toctree-l1"><a class="reference internal" href="code-aql-vm-lock.html">aql-vm中的锁使用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="code-how-bcov.html">如何实现<strong>bcov</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="code-contact.html">联系我们</a></li>
+<li class="toctree-l1"><a class="reference internal" href="code-bug-report.html">bug报告</a></li>
+<li class="toctree-l1"><a class="reference internal" href="code-patch-submit.html">patch提交</a></li>
+</ul>
+<p class="caption"><span class="caption-text">帮助</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="help-troubleshooting.html">常见问题汇总</a></li>
+<li class="toctree-l1"><a class="reference internal" href="help-profile.html">aql-vm的profile</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">AndroidQL</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>aql-vm提供的接口</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/code-aql-vm-how-probe.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="aql-vm">
+<span id="aql-vm"></span><h1>aql-vm提供的接口<a class="headerlink" href="#aql-vm" title="Permalink to this headline">¶</a></h1>
+<p>在动手开发一个probe之前，不妨假设你完全没有任何ART虚拟机领域的知识，因此，首先需要对ART内部实现中一些重要的数据结构进行简单的介绍。它们部分封装了运行时数据，并且最终会被暴露给probe开发者使用. 这些数据结构包括:</p>
+<ol class="simple">
+<li>Thread</li>
+<li>ShadowFrame</li>
+<li>Instruction</li>
+<li>ArtMethod</li>
+</ol>
+<p>此外，为了简化probe的开发过程，所有的probe都应该继承一个共同的基类，这个基类对probe必须扩展的接口进行了定义。</p>
+<div class="section" id="">
+<span id="id1"></span><h2>数据结构<a class="headerlink" href="#" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="thread">
+<span id="thread"></span><h3><code class="docutils literal notranslate"><span class="pre">Thread</span></code><a class="headerlink" href="#thread" title="Permalink to this headline">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">Thread</span></code>是art提供的一个类，用来描述app运行过程中的线程。在ART实现中，应用程序中的每一个java线程都对应一个底层的native线程. <code class="docutils literal notranslate"><span class="pre">Thread</span></code>类封装的信息有助于我们实现某些profile功能，例如我们可以通过如下方式记录当前线程号:</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">Thread</span><span class="o">*</span> <span class="n">self</span> <span class="o">=</span> <span class="n">Thread</span><span class="o">::</span><span class="n">Current</span><span class="p">();</span>
+<span class="kt">pid_t</span> <span class="n">tid</span> <span class="o">=</span> <span class="n">self</span><span class="o">-&gt;</span><span class="n">GetTid</span><span class="p">();</span>
+</pre></div>
+</div>
+<p>在并发测试中，得到tid信息往往是有用的。</p>
+</div>
+<div class="section" id="shadowframe">
+<span id="shadowframe"></span><h3><code class="docutils literal notranslate"><span class="pre">ShadowFrame</span></code><a class="headerlink" href="#shadowframe" title="Permalink to this headline">¶</a></h3>
+<p>我们知道，在程序运行过程中，每一个线程都有一个对应的栈结构，栈中记录了该线程的方法调用信息，而每一个方法调用都是用一个存在于栈中栈帧来描述的，因此，在一个线程的栈中，可以同时存在很多这样的栈帧，这些栈帧自栈底向栈顶连接组成一个栈帧链，这个栈帧链就描述了该线程中方法的调用情况.</p>
+<p>在ART实现中，方法调用产生的栈帧是用<code class="docutils literal notranslate"><span class="pre">ShadowFrame</span></code>结构来描述的，那么从一个<code class="docutils literal notranslate"><span class="pre">ShadowFrame</span></code>对象中我们可以得到哪些有用的信息呢(假设已经存在名为shadow_frame的对象来描述当前的栈帧)？</p>
+<ol>
+<li><p class="first">栈帧对应的method, 使用<code class="docutils literal notranslate"><span class="pre">ArtMethod</span></code>类来描述. 相关知识会在下文作讲解.</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">ArtMethod</span><span class="o">*</span> <span class="n">method</span> <span class="o">=</span> <span class="n">shadow_frame</span><span class="p">.</span><span class="n">GetMethod</span><span class="p">();</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">当前的pc指针. 一般情况下，解释器顺序执行一个方法中所有的指令，pc指针用来描述当前指令在该方法体中的偏移，这个信息有助于唯一地定位当前的指令位置.</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">uint32_t</span> <span class="n">dex_pc</span> <span class="o">=</span> <span class="n">shadow_frame</span><span class="p">.</span><span class="n">GetDexPc</span><span class="p">();</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">调用当前方法的caller的栈帧.</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">ShadowFrame</span><span class="o">*</span> <span class="n">sf</span> <span class="o">=</span> <span class="n">shadow_frame</span><span class="p">.</span><span class="n">GetLink</span><span class="p">();</span>
+</pre></div>
+</div>
+<p>使用如上方法，我们可以很容易地遍历完一个完整的栈.</p>
+</li>
+<li><p class="first">对应object.</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">Object</span><span class="o">*</span> <span class="n">ibject</span> <span class="o">=</span> <span class="n">shadow_frame</span><span class="p">.</span><span class="n">GetThisObject</span><span class="p">();</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">指令的寄存器参数. 和JVM基于栈结构的指令不同的是，ART的指令是基于寄存器的 ，也就是每条指令的参数存在于寄存器中. 因此在ShadowFrame类中预先定义若干个寄存器用来存储这些数据. 不同的指令使用的寄存器是不同的(在ART中，指令被封装成<code class="docutils literal notranslate"><span class="pre">Instruciton</span></code>类，该类中记录了指令实例在<code class="docutils literal notranslate"><span class="pre">ShadowFrame</span></code>中寄存器的索引)，比如取到<strong>IF_EQ</strong>指令的俩个参数，可以使用如下代码</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">inst_data</span> <span class="o">=</span> <span class="n">inst</span><span class="o">-&gt;</span><span class="n">Opcode</span><span class="p">();</span>
+<span class="kt">int32_t</span> <span class="n">arg1</span> <span class="o">=</span> <span class="n">shadow_frame</span><span class="p">.</span><span class="n">GetVReg</span><span class="p">(</span><span class="n">inst</span><span class="o">-&gt;</span><span class="n">VRegA_22t</span><span class="p">(</span><span class="n">inst_data</span><span class="p">));</span>
+<span class="kt">int32_t</span> <span class="n">arg2</span> <span class="o">=</span> <span class="n">shadow_frame</span><span class="p">.</span><span class="n">GetVReg</span><span class="p">(</span><span class="n">inst</span><span class="o">-&gt;</span><span class="n">VRegB_22t</span><span class="p">(</span><span class="n">inst_data</span><span class="p">));</span>
+</pre></div>
+</div>
+</li>
+</ol>
+</div>
+<div class="section" id="instruction">
+<span id="instruction"></span><h3><code class="docutils literal notranslate"><span class="pre">Instruction</span></code><a class="headerlink" href="#instruction" title="Permalink to this headline">¶</a></h3>
+<p>ART解释器逐条执行内存方法区的指令，这些指令在ART内存中是作为<code class="docutils literal notranslate"><span class="pre">Instruction</span></code>类的对象存在的. <code class="docutils literal notranslate"><span class="pre">Instruction</span></code>类有一些metadata来描述指令的性质.</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="c1">// 存在一个Instruction指针inst</span>
+<span class="c1">// 得到指令的opcode</span>
+<span class="kt">uint16_t</span> <span class="n">opcode</span> <span class="o">=</span> <span class="n">inst</span><span class="o">-&gt;</span><span class="n">OpCode</span><span class="p">();</span>
+<span class="c1">// 得到指令的pc值</span>
+<span class="kt">uint32_t</span> <span class="n">offset</span> <span class="o">=</span> <span class="n">inst</span><span class="o">-&gt;</span><span class="n">GetDexPc</span><span class="p">();</span>
+<span class="c1">// 判断指令是否是RETURN指令</span>
+<span class="k">if</span> <span class="p">(</span><span class="n">inst</span><span class="o">-&gt;</span><span class="n">IsReturn</span><span class="p">())</span> <span class="p">{</span>
+<span class="p">}</span>
+<span class="c1">// 判断指令是否是IF_EQ指令</span>
+<span class="k">if</span> <span class="p">(</span><span class="n">inst</span><span class="o">-&gt;</span><span class="n">OpCode</span><span class="p">()</span> <span class="o">==</span> <span class="n">Instruction</span><span class="o">::</span><span class="n">IF_EQ</span><span class="p">)</span> <span class="p">{</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="artmethod">
+<span id="artmethod"></span><h3><code class="docutils literal notranslate"><span class="pre">ArtMethod</span></code><a class="headerlink" href="#artmethod" title="Permalink to this headline">¶</a></h3>
+<p>我们在前边讲过，ART中的一次方法调用对应于线程栈中的一个栈帧，这个方法在ART中是使用<code class="docutils literal notranslate"><span class="pre">ArtMethod</span></code>的数据结构来描述的. <code class="docutils literal notranslate"><span class="pre">ArtMethod</span></code>和Java中的method概念是存在一一对应关系的. <code class="docutils literal notranslate"><span class="pre">ArtMethod</span></code>对象中存储了该方法的描述性信息.</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span>ArtMethod* method = shadow_frame-&gt;GetMethod();
+// 得到方法名
+const char* method_name = method-&gt;GetName();
+// 得到方法所在的类
+Class* class = method-&gt;GetDeclaringClass();
+// 得到方法所在文件的文件名
+const char* file_name = method-&gt;GetDeclaringClassSourceFile();
+</pre></div>
+</div>
+<p>此外，ART还封装了<code class="docutils literal notranslate"><span class="pre">Class</span></code>，<code class="docutils literal notranslate"><span class="pre">Object</span></code>等这样的类，这些数据结构与Java层中的同类概念都是存在一一对应的关系的。</p>
+</div>
+</div>
+<div class="section" id="probe">
+<span id="probe"></span><h2>probe的开发<a class="headerlink" href="#probe" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="probe">
+<span id="id2"></span><h3>probe基类<a class="headerlink" href="#probe" title="Permalink to this headline">¶</a></h3>
+<p>新的probe的开发过程就是实现probe基类提供的虚函数接口的过程。那么，开发一个probe插件都应该重写哪些基类虚函数呢。</p>
+<ol>
+<li><p class="first">在inst指令执行之前的回调函数:</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">virtual</span> <span class="kt">void</span> <span class="nf">BeforeInst</span><span class="p">(</span><span class="n">Thread</span><span class="o">*</span> <span class="kr">thread</span><span class="p">,</span> <span class="n">ShadowFrame</span><span class="o">&amp;</span> <span class="n">shadow_frame</span><span class="p">,</span>
+                      <span class="n">Instruction</span><span class="o">*</span> <span class="n">inst</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>函数参数中的thread, shadow_frame, inst对象分别封装当前的线程，栈帧，指令，这些对象中携带了几乎所有的运行时数据，probe可以看到这些内部状态数据.</p>
+</li>
+<li><p class="first">在inst指令执行之后的回调函数:</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span>virtual void AfterInst(Thread* thread, ShadowFrame&amp; shadow_frame,
+                     Instruction* inst)；
+</pre></div>
+</div>
+</li>
+<li><p class="first">HandkePacket用来处理aql-client发送来的aql_packet数据结构:</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">virtual</span> <span class="kt">bool</span> <span class="nf">HandlePacket</span><span class="p">(</span><span class="k">const</span> <span class="n">Json</span><span class="o">&amp;</span> <span class="n">json</span><span class="p">,</span> <span class="n">ExpandBuf</span><span class="o">*</span> <span class="n">pReply</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>json是aql_packet包中的data部分，pReply为probe返回给aql-client的数据包，probe可以将某个操作的执行结果写入pReply传输给client进行解析.</p>
+</li>
+</ol>
+</div>
+<div class="section" id="api">
+<span id="api"></span><h3>其他API<a class="headerlink" href="#api" title="Permalink to this headline">¶</a></h3>
+<ol>
+<li><p class="first">指令类型绑定</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">bool</span> <span class="nf">Wire</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">uint16_t</span><span class="o">&gt;&amp;</span> <span class="n">opcode_group</span><span class="p">);</span>
+<span class="kt">bool</span> <span class="nf">UnWire</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">uint16_t</span><span class="o">&gt;&amp;</span> <span class="n">opcode_group</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>通过Wire操作(UnWire操作实现的功能与之恰恰相反)，我们可以在某个probe的构造函数中指定感兴趣的指令类型集合。这样，当解释器执行到相应的指令时，就会去调用该probe的AfterInst和BeforeInst回调函数. 比如，对于用来统计分枝覆盖情况的<strong>bcov</strong>，我们可能会进行如下的绑定:</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="c1">// 当新的方法被调用时，进行回调</span>
+<span class="n">bcov</span><span class="o">-&gt;</span><span class="n">WireBranch</span><span class="p">();</span> <span class="c1">// WireBranch通过调用Wire和所有的分支指令进行了绑定</span>
+</pre></div>
+</div>
+<p>此外，aql-vm还提供了<strong>WireAll(), WireReturn(), WireBranch(), WireInvoke(), WireSwitch(), WireThrow()</strong>等helper函数。</p>
+</li>
+<li><p class="first">构造函数</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">Probe</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span> <span class="n">name</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>每一个probe都有唯一的<code class="docutils literal notranslate"><span class="pre">name</span></code>属性，它作为该probe的<code class="docutils literal notranslate"><span class="pre">id</span></code>而存在。</p>
+</li>
+<li><p class="first">probe状态切换</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="c1">// 返回probe的状态</span>
+<span class="kt">bool</span> <span class="nf">IsEnabled</span><span class="p">();</span>
+
+<span class="c1">//切换probe状态</span>
+<span class="kt">void</span> <span class="nf">Enable</span><span class="p">();</span>
+<span class="kt">void</span> <span class="nf">Disable</span><span class="p">();</span>
+</pre></div>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="code-dev-env.html" class="btn btn-neutral float-right" title="AndroidQL开发环境部署" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="code-aql-vm-probe.html" class="btn btn-neutral" title="probe需要做什么" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, mzs.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1.0',
+            LANGUAGE:'None',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

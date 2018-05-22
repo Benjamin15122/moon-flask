@@ -1,0 +1,39 @@
+aql-vm之core
+============
+
+`core`作为aql-vm的核心技术层，处理的技术细节包括：
+
+* 对于ART虚拟机解释器的修改
+* aql-vm和aql-client的连接状态的维护
+* 数据传输协议的实现
+* 数据的有效内部存储
+* probe的组织和管理
+
+`core`存在于art/runtime/aql/core，结构如下：
+
+```
+aql
+└── adapter
+└── probe
+└── core
+    └── base
+    └── json11
+    └── table  
+    └── state      
+```
+
+#### `base`
+
+`base`包含对ART虚拟机解释器的修改和用来传输的数据包数据结构的定义，对解释器的修改封装实现在`aql_instrumentation`，数据包在aql-vm中定义为`aql-packet`。
+
+#### `json11`
+
+AndroidQL数据包被分为`head`和`data`两个部分，其中`data`部分采用json序列化传输。`json11`目录下提供了json字符串`encode`和`decode`等相关的接口。
+
+#### `table`
+
+在AndroidQL的设计和实现中，应用程序的所有运行时数据都可以以表的形式存在于内存中。内存表在实现上采用SQlite的`in-memory`机制，`table`部分完成了对SQlite接口的进一步封装。
+
+#### `state`
+
+aql-vm和aql-client建立的连接在内部被抽象成`aql_state`数据结构。aql-vm使用`aql_state`对连接的建立和销毁，数据的接收和发送等核心功能进行管理。

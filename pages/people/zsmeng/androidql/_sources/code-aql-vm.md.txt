@@ -1,0 +1,22 @@
+aql-vm项目介绍
+=============
+
+## 项目结构
+
+aql-vm项目最终以AOSP(Android Open Source Project)的art模块的一个子模块的形式，存在于art/runtime/aql目录下。aql作为一个独立的部分，有独立于art模块的编译脚本，因此，在开发过程中是松耦合的。项目的目录结构为：
+
+```
+art
+└── runtime
+    └── aql
+        ├── adapter
+        ├── core
+        └── probe
+```
+
+1. `adapter`作为一个抽象的中间层，为了保证aql-vm在不同Android版本之间的兼容性而存在，可参考文档[aql-vm之adapter](./core-aql-vm-adapter.html).
+
+2. `core`作为aql-vm项目的核心，包含了系统的绝大部分实现过程。它向下完成AndroidQL和art之间的交互，向上提供可扩展的接口给`probe`层，可参考文档[aql-vm之core](./core-aql-vm-core.html)。
+
+3. `probe`层含有所有用户添加的probe，对这些probe进行统一管理。
+

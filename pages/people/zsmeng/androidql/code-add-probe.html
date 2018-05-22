@@ -1,0 +1,379 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>开发probe，你需要做什么 &mdash; AndroidQL 1.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="aql-vm中的锁使用" href="code-aql-vm-lock.html" />
+    <link rel="prev" title="AndroidQL开发环境部署" href="code-dev-env.html" /> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> AndroidQL
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">框架介绍</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="overview.html">AndroidQL框架介绍</a></li>
+</ul>
+<p class="caption"><span class="caption-text">安装</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="install.html">AndroidQL的安装介绍</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install-aqlvm-source.html">从源码安装aql-vm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install-aqlvm-image.html">下载镜像安装aql-vm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install-aqlvm-device.html">安装aql-vm到真实Android设备</a></li>
+</ul>
+<p class="caption"><span class="caption-text">下载</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="download.html">下载AndroidQL</a></li>
+</ul>
+<p class="caption"><span class="caption-text">使用手册</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="aql-get-started.html">从零开始AndroidQL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="aql-query-language.html">AQL查询语言简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="aql-aqlsh.html">可交互的aqlsh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="aql-brk.html">AndroidQL的断点机制</a></li>
+<li class="toctree-l1"><a class="reference internal" href="aql-probe-how-work.html">AndroidQL的probe如何工作</a></li>
+<li class="toctree-l1"><a class="reference internal" href="aql-have-probe.html">可用的probe</a></li>
+<li class="toctree-l1"><a class="reference internal" href="aql-spec.html">通信协议规范</a></li>
+</ul>
+<p class="caption"><span class="caption-text">贡献代码</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="code.html">贡献代码介绍</a></li>
+<li class="toctree-l1"><a class="reference internal" href="code-aql-vm.html">aql-vm项目介绍</a></li>
+<li class="toctree-l1"><a class="reference internal" href="code-aql-vm-adapter.html">aql-vm之adapter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="code-aql-vm-core.html">aql-vm之core</a></li>
+<li class="toctree-l1"><a class="reference internal" href="code-aql-vm-patch.html">aql-vm之patch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="code-aql-vm-compile.html">aql-vm的编译</a></li>
+<li class="toctree-l1"><a class="reference internal" href="code-aql-vm-probe.html">probe需要做什么</a></li>
+<li class="toctree-l1"><a class="reference internal" href="code-aql-vm-how-probe.html">aql-vm提供的接口</a></li>
+<li class="toctree-l1"><a class="reference internal" href="code-dev-env.html">AndroidQL开发环境部署</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">开发probe，你需要做什么</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#probe">probe的开发</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#">扩展基类</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#">数据管理</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#aql">响应AQL操作</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#">绑定指令类型</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#probe">probe的注册</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#">构造函数</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#probe">probe的并发一致性保证</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#probe">probe的编译</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="code-aql-vm-lock.html">aql-vm中的锁使用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="code-how-bcov.html">如何实现<strong>bcov</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="code-contact.html">联系我们</a></li>
+<li class="toctree-l1"><a class="reference internal" href="code-bug-report.html">bug报告</a></li>
+<li class="toctree-l1"><a class="reference internal" href="code-patch-submit.html">patch提交</a></li>
+</ul>
+<p class="caption"><span class="caption-text">帮助</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="help-troubleshooting.html">常见问题汇总</a></li>
+<li class="toctree-l1"><a class="reference internal" href="help-profile.html">aql-vm的profile</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">AndroidQL</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>开发probe，你需要做什么</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/code-add-probe.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="probe">
+<span id="probe"></span><h1>开发probe，你需要做什么<a class="headerlink" href="#probe" title="Permalink to this headline">¶</a></h1>
+<p>AndroidQL作为一个测试框架，支持开发者实现自定义的probe。probe以插件的形式由框架统一管理。probe集中实现在aql-vm模块，可以用来完成对应用程序运行状态的检测和控制。本文档主要介绍如何实现一个可用的probe出来。</p>
+<p>首先probe的开发者需要具备C++开发的能力，并且配置了<a class="reference external" href="./code-dev-env.html">AndroidQL开发环境</a>。接下来会围绕probe的开发和编译俩个过程进行介绍。</p>
+<div class="section" id="probe">
+<span id="id1"></span><h2>probe的开发<a class="headerlink" href="#probe" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="">
+<span id="id2"></span><h3>扩展基类<a class="headerlink" href="#" title="Permalink to this headline">¶</a></h3>
+<p>任何自定义的probe都需要继承<code class="docutils literal notranslate"><span class="pre">Probe</span></code>基类。<code class="docutils literal notranslate"><span class="pre">Probe</span></code>基类规定了子类需要实现的接口。</p>
+<div class="highlight-C++ notranslate"><div class="highlight"><pre><span></span><span class="k">virtual</span> <span class="kt">void</span> <span class="nf">BeforeInst</span><span class="p">(</span><span class="n">Thread</span><span class="o">*</span> <span class="kr">thread</span><span class="p">,</span> <span class="n">ShadowFrame</span><span class="o">&amp;</span> <span class="n">shadow_frame</span><span class="p">,</span>
+                          <span class="k">const</span> <span class="n">Instruction</span><span class="o">*</span> <span class="n">inst</span><span class="p">);</span>
+<span class="k">virtual</span> <span class="kt">void</span> <span class="nf">AfterInst</span><span class="p">(</span><span class="n">Thread</span><span class="o">*</span> <span class="kr">thread</span><span class="p">,</span> <span class="n">ShadowFrame</span><span class="o">&amp;</span> <span class="n">shadow_frame</span><span class="p">,</span>
+                         <span class="k">const</span> <span class="n">Instruction</span><span class="o">*</span> <span class="n">inst</span><span class="p">,</span> <span class="kt">int32_t</span> <span class="n">offset</span><span class="p">);</span>
+<span class="k">virtual</span> <span class="kt">bool</span> <span class="nf">HandlePacket</span><span class="p">(</span><span class="k">const</span> <span class="n">Json</span><span class="o">&amp;</span> <span class="n">json</span><span class="p">,</span> <span class="n">ExpandBuf</span><span class="o">*</span> <span class="n">pReply</span><span class="p">);</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">BeforeInst</span></code>和<code class="docutils literal notranslate"><span class="pre">AfterInst</span></code>使得自定义的probe可以在一条特定的指令执行前和后添加自定义的执行逻辑，如对于指令执行过程的劫持和运行时数据的记录。<code class="docutils literal notranslate"><span class="pre">HandlePacket</span></code>是probe中对于分发过来的AQL操作的处理函数，基类probe已经对该方法提供了通用的实现方案，probe也可以重新实现处理过程。</p>
+<p>如果probe无需实现某个接口或者没有使用到某个参数，则需要使用<code class="docutils literal notranslate"><span class="pre">UNUSED</span></code>宏显示的对参数进行指定。例如，当我们实现一个probe时，发现无需对<code class="docutils literal notranslate"><span class="pre">BeforeInst</span></code>接口进行扩展，可实现如下：</p>
+<div class="highlight-C++ notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span> <span class="nf">BeforeInst</span><span class="p">(</span><span class="n">Thread</span><span class="o">*</span> <span class="kr">thread</span><span class="p">,</span> <span class="n">ShadowFrame</span><span class="o">&amp;</span> <span class="n">shadow_frame</span><span class="p">,</span>
+                          <span class="k">const</span> <span class="n">Instruction</span><span class="o">*</span> <span class="n">inst</span><span class="p">)</span> <span class="p">{</span>
+                <span class="n">UNUSED</span><span class="p">(</span><span class="kr">thread</span><span class="p">);</span>
+                <span class="n">UNUSED</span><span class="p">(</span><span class="n">shadow_frame</span><span class="p">);</span>
+                <span class="n">UNUSED</span><span class="p">(</span><span class="n">INST</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="">
+<span id="id3"></span><h3>数据管理<a class="headerlink" href="#" title="Permalink to this headline">¶</a></h3>
+<p>probe使用<code class="docutils literal notranslate"><span class="pre">BeforeInst</span></code>和<code class="docutils literal notranslate"><span class="pre">AfterInst</span></code>接口可获取到应用程序运行过程中产生的运行时数据。probe对这些数据需要进行有效的管理。在当前aql-vm的实现中，基于<code class="docutils literal notranslate"><span class="pre">SQLite</span></code>
+的<code class="docutils literal notranslate"><span class="pre">in-memory</span></code>机制实现了内存表数据结构。</p>
+<p>与内存表使用相关的API实现在<code class="docutils literal notranslate"><span class="pre">aql-vm/src/core/table.h</span></code>中，用户可以使用以下API完成数据的插入。</p>
+<div class="highlight-C++ notranslate"><div class="highlight"><pre><span></span><span class="kt">bool</span> <span class="nf">Insert</span><span class="p">(</span><span class="k">const</span> <span class="n">Record</span><span class="o">*</span> <span class="n">record</span><span class="p">);</span>
+<span class="kt">bool</span> <span class="nf">Insert</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="k">const</span> <span class="n">Record</span><span class="o">*&gt;&amp;</span> <span class="n">records</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>其中<code class="docutils literal notranslate"><span class="pre">Record</span></code>数据结构是我们实现的中间数据抽象层，所有的运行时数据都可以抽象成Record结构，进而和内存表进行交互。关于<code class="docutils literal notranslate"><span class="pre">Record</span></code>的描述在<code class="docutils literal notranslate"><span class="pre">aql-vm/src/core/table.h</span></code>中。</p>
+</div>
+<div class="section" id="aql">
+<span id="aql"></span><h3>响应AQL操作<a class="headerlink" href="#aql" title="Permalink to this headline">¶</a></h3>
+<p>用户开发的probe可以作为AQL的目标probe对AQL操作进行响应和处理。probe会根据字符串形式的指令名对<code class="docutils literal notranslate"><span class="pre">handler</span></code>进行索引。在这之前，probe需要对一些<code class="docutils literal notranslate"><span class="pre">handler</span></code>进行注册。<code class="docutils literal notranslate"><span class="pre">Probe</span></code>基类中提供了该API。</p>
+<div class="highlight-C++ notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span> <span class="nf">RegisterHandler</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span> <span class="n">cmd</span><span class="p">,</span> <span class="n">AqlPacketHandler</span> <span class="n">handler</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>例如在一个probe的实现中，需要对<code class="docutils literal notranslate"><span class="pre">SELECT</span></code>操作进行处理，可进行如下的绑定。</p>
+<div class="highlight-C++ notranslate"><div class="highlight"><pre><span></span><span class="n">RegisterHandler</span><span class="p">(</span><span class="s">&quot;select&quot;</span><span class="p">,</span> <span class="n">SelectHandler</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>关于AqlPacketHandler的定义请参考<code class="docutils literal notranslate"><span class="pre">aql-vm/src/probe/probe.h</span></code>。</p>
+</div>
+<div class="section" id="">
+<span id="id4"></span><h3>绑定指令类型<a class="headerlink" href="#" title="Permalink to this headline">¶</a></h3>
+<p>probe实现的<code class="docutils literal notranslate"><span class="pre">BeforeInst</span></code>和<code class="docutils literal notranslate"><span class="pre">AfterInst</span></code>可以在特定指令执行过程中进行调用。AndroidQL允许probe绑定感兴趣的指令类型集合。例如一个probe对所有的进行函数调用的指令类型感兴趣，则可以使用<code class="docutils literal notranslate"><span class="pre">WireInvoke</span></code>这个API对指令集合进行绑定。<code class="docutils literal notranslate"><span class="pre">WireInvoke</span></code>的实现如下：</p>
+<div class="highlight-C++ notranslate"><div class="highlight"><pre><span></span><span class="kt">bool</span> <span class="n">Probe</span><span class="o">::</span><span class="n">WireInvoke</span><span class="p">()</span> <span class="p">{</span>
+  <span class="c1">// register the instructions related to method invoke</span>
+  <span class="k">return</span> <span class="n">Wire</span><span class="p">({</span><span class="n">Instruction</span><span class="o">::</span><span class="n">INVOKE_DIRECT</span><span class="p">,</span> <span class="n">Instruction</span><span class="o">::</span><span class="n">INVOKE_DIRECT_RANGE</span><span class="p">,</span>
+               <span class="n">Instruction</span><span class="o">::</span><span class="n">INVOKE_INTERFACE</span><span class="p">,</span>
+               <span class="n">Instruction</span><span class="o">::</span><span class="n">INVOKE_INTERFACE_RANGE</span><span class="p">,</span> <span class="n">Instruction</span><span class="o">::</span><span class="n">INVOKE_STATIC</span><span class="p">,</span>
+               <span class="n">Instruction</span><span class="o">::</span><span class="n">INVOKE_STATIC_RANGE</span><span class="p">,</span> <span class="n">Instruction</span><span class="o">::</span><span class="n">INVOKE_SUPER</span><span class="p">,</span>
+               <span class="n">Instruction</span><span class="o">::</span><span class="n">INVOKE_SUPER_RANGE</span><span class="p">,</span> <span class="n">Instruction</span><span class="o">::</span><span class="n">INVOKE_VIRTUAL</span><span class="p">,</span>
+               <span class="n">Instruction</span><span class="o">::</span><span class="n">INVOKE_VIRTUAL_QUICK</span><span class="p">,</span>
+               <span class="n">Instruction</span><span class="o">::</span><span class="n">INVOKE_VIRTUAL_RANGE</span><span class="p">,</span>
+               <span class="n">Instruction</span><span class="o">::</span><span class="n">INVOKE_VIRTUAL_RANGE_QUICK</span><span class="p">});</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>也可以直接调用<code class="docutils literal notranslate"><span class="pre">Wire</span></code>这个API，所有的probe都要进行指令类型的绑定。AndroidQL提供了<code class="docutils literal notranslate"><span class="pre">WireInvoke</span></code>，<code class="docutils literal notranslate"><span class="pre">WireReturn</span></code>，<code class="docutils literal notranslate"><span class="pre">WireBranch</span></code>，<code class="docutils literal notranslate"><span class="pre">WireAll</span></code>等helper函数。</p>
+</div>
+<div class="section" id="probe">
+<span id="id5"></span><h3>probe的注册<a class="headerlink" href="#probe" title="Permalink to this headline">¶</a></h3>
+<p>用户自定义实现的probe需要显示地注册在aql-vm内部进行统一的管理，这可以通过<code class="docutils literal notranslate"><span class="pre">Probe::AddProbe(new</span> <span class="pre">ProbeClass)</span></code>完成，这里<code class="docutils literal notranslate"><span class="pre">ProbeClass</span></code>是用户实现的probe类。probe的注册过程在
+与内存表使用相关的API实现在<code class="docutils literal notranslate"><span class="pre">aql-vm/src/aql.cc</span></code>中的<code class="docutils literal notranslate"><span class="pre">Aql::InitProbes()</span></code>完成。</p>
+</div>
+<div class="section" id="">
+<span id="id6"></span><h3>构造函数<a class="headerlink" href="#" title="Permalink to this headline">¶</a></h3>
+<p>probe的构造函数应该完成以下工作:</p>
+<ol class="simple">
+<li>probe命名，probe的name会作为probe的id，具有唯一性</li>
+<li>绑定指令类型</li>
+<li>响应AQL操作的<code class="docutils literal notranslate"><span class="pre">handler</span></code>注册</li>
+</ol>
+</div>
+<div class="section" id="probe">
+<span id="id7"></span><h3>probe的并发一致性保证<a class="headerlink" href="#probe" title="Permalink to this headline">¶</a></h3>
+<p>关于probe开发中的锁机制请参考<a class="reference external" href="./code-aql-vm-lock.html">aql-vm中的锁</a></p>
+</div>
+</div>
+<div class="section" id="probe">
+<span id="id8"></span><h2>probe的编译<a class="headerlink" href="#probe" title="Permalink to this headline">¶</a></h2>
+<p>通常情况下，一个probe的实现应该有包含一个头文件和源码文件，文件命名形式如<code class="docutils literal notranslate"><span class="pre">bcov.h</span></code>和<code class="docutils literal notranslate"><span class="pre">bcov.cc</span></code>。在probe类的实现完成之后，需要将源文件添加到<code class="docutils literal notranslate"><span class="pre">Aql.mk</span></code>的<code class="docutils literal notranslate"><span class="pre">aql_srcs</span></code>变量中。</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>aql_srcs :<span class="o">=</span> aql/aql.cc <span class="se">\</span>
+    aql/core/aql_state.cc <span class="se">\</span>
+    aql/core/base/aql_expand_buf.cc <span class="se">\</span>
+    aql/core/base/aql_instrumentation.cc <span class="se">\</span>
+    aql/core/base/aql_packet.cc <span class="se">\</span>
+    aql/core/json11/json11.cc <span class="se">\</span>
+    aql/core/table/table.cc <span class="se">\</span>
+    ...
+    aql/probe/bcov.cc
+</pre></div>
+</div>
+<p>在添加完成之后，可按照<a class="reference external" href="./code-aql-vm-compile.html">aql-vm的编译</a>对项目进行编译。</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="code-aql-vm-lock.html" class="btn btn-neutral float-right" title="aql-vm中的锁使用" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="code-dev-env.html" class="btn btn-neutral" title="AndroidQL开发环境部署" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, mzs.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1.0',
+            LANGUAGE:'None',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

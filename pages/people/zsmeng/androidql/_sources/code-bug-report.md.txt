@@ -1,0 +1,10 @@
+bug报告
+======
+
+bug的报告请使用issue完成。
+
+1. 请在[issue页面](./https://git.njuics.cn/android/aql-vm/issues)进行搜索(包括已经closed的issue)，查看是否已有针对该bug的解决方案。
+
+2. 如果查找成功，请在该issue下点击`thumbs up sign`，方便我们评估bug的重要性。
+
+3. 如果当前并未有针对该bug的任何issue信息，请提供关于该bug的尽可能详尽的信息，包括源代码位置、log文件等信息，方便我们对bug进行定位和处理。

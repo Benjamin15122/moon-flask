@@ -1,0 +1,464 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>通信协议规范 &mdash; AndroidQL 1.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="贡献代码介绍" href="code.html" />
+    <link rel="prev" title="可用的probe" href="aql-have-probe.html" /> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> AndroidQL
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">框架介绍</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="overview.html">AndroidQL框架介绍</a></li>
+</ul>
+<p class="caption"><span class="caption-text">安装</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="install.html">AndroidQL的安装介绍</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install-aqlvm-source.html">从源码安装aql-vm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install-aqlvm-image.html">下载镜像安装aql-vm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install-aqlvm-device.html">安装aql-vm到真实Android设备</a></li>
+</ul>
+<p class="caption"><span class="caption-text">下载</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="download.html">下载AndroidQL</a></li>
+</ul>
+<p class="caption"><span class="caption-text">使用手册</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="aql-get-started.html">从零开始AndroidQL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="aql-query-language.html">AQL查询语言简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="aql-aqlsh.html">可交互的aqlsh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="aql-brk.html">AndroidQL的断点机制</a></li>
+<li class="toctree-l1"><a class="reference internal" href="aql-probe-how-work.html">AndroidQL的probe如何工作</a></li>
+<li class="toctree-l1"><a class="reference internal" href="aql-have-probe.html">可用的probe</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">通信协议规范</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id2">通信协议规范</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#install">INSTALL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#launch">LAUNCH</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#select">SELECT</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#toggle">TOGGLE</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#breakponit">BREAKPONIT</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#resume">RESUME</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#perform">PERFORM</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#hit">HIT</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">PERFORM</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#reply">Reply包格式</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">贡献代码</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="code.html">贡献代码介绍</a></li>
+<li class="toctree-l1"><a class="reference internal" href="code-aql-vm.html">aql-vm项目介绍</a></li>
+<li class="toctree-l1"><a class="reference internal" href="code-aql-vm-adapter.html">aql-vm之adapter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="code-aql-vm-core.html">aql-vm之core</a></li>
+<li class="toctree-l1"><a class="reference internal" href="code-aql-vm-patch.html">aql-vm之patch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="code-aql-vm-compile.html">aql-vm的编译</a></li>
+<li class="toctree-l1"><a class="reference internal" href="code-aql-vm-probe.html">probe需要做什么</a></li>
+<li class="toctree-l1"><a class="reference internal" href="code-aql-vm-how-probe.html">aql-vm提供的接口</a></li>
+<li class="toctree-l1"><a class="reference internal" href="code-dev-env.html">AndroidQL开发环境部署</a></li>
+<li class="toctree-l1"><a class="reference internal" href="code-add-probe.html">开发probe，你需要做什么</a></li>
+<li class="toctree-l1"><a class="reference internal" href="code-aql-vm-lock.html">aql-vm中的锁使用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="code-how-bcov.html">如何实现<strong>bcov</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="code-contact.html">联系我们</a></li>
+<li class="toctree-l1"><a class="reference internal" href="code-bug-report.html">bug报告</a></li>
+<li class="toctree-l1"><a class="reference internal" href="code-patch-submit.html">patch提交</a></li>
+</ul>
+<p class="caption"><span class="caption-text">帮助</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="help-troubleshooting.html">常见问题汇总</a></li>
+<li class="toctree-l1"><a class="reference internal" href="help-profile.html">aql-vm的profile</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">AndroidQL</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>通信协议规范</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/aql-spec.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="id1">
+<h1>通信协议规范<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id2">
+<h2>通信协议规范<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>AndroidQL数据包格式</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="47%" />
+<col width="53%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Length</th>
+<th class="head">Dataload</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>4 bytes</td>
+<td>可变长度</td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li>AndroidQL的格式化数据包用于aql-client和aql-vm通信, 数据包分为`request`和`reply`两种，在具体的实现中，这两种包的格式是基本一致的。</li>
+<li>AndroidQL数据包分为头部和数据部分, 头部只包括length一个域，占4个字节，length部分表示全部数据包的字节数，也包括头部在内。</li>
+<li>Dataload部分使用JSON格式序列化数据传输。</li>
+</ul>
+<p>Dataload部分的格式如:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>{
+    &quot;id&quot;: id
+    &quot;probe&quot;: probe_name,
+    &quot;cmd&quot;: cmd_name,
+    &quot;data&quot;: {
+        ...
+    }
+}
+</pre></div>
+</div>
+<p>id用来唯一地区分一个数据包，对某一个request的响应reply包应该使用一致的id取值。probe是预定义在AndroidQL中的目标插件名字，它会对这个数据包进行拆解响应，并且会回复reply数据包给aql-client. cmd指令是指除HIT操作外其余7种操作类型。当VM执行到预定义的breakpoint时，它会向aql-client发送一个packet通知虚拟机已经执行到对应的断点并暂停app的运行，此时cmd被定义为HIT，因此HIT是一种特殊的操作。在AndroidQL用来装载request的packet中，cmd一共有8种类型，每种操作对应的data格式是不一样的。</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">AndroidQL协议中规定传输过程中所有的字符串都采用小写格式(probe_name除外)。</p>
+</div>
+<p>不同cmd数据包对应data部分的格式是不尽相同的.</p>
+<div class="section" id="install">
+<h3>INSTALL<a class="headerlink" href="#install" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>     {
+    &quot;id&quot;: id
+    &quot;probe&quot;: &quot;aql&quot;,
+    &quot;cmd&quot;: &quot;install&quot;,
+    &quot;data&quot;: {
+         path: apk_path
+    }
+}
+</pre></div>
+</div>
+</div>
+<div class="section" id="launch">
+<h3>LAUNCH<a class="headerlink" href="#launch" title="Permalink to this headline">¶</a></h3>
+<p>带有probe启动参数的LANCH语句会由AndroidQL自动封装成LAUNCH和TOGGLE逻辑(并不意味着一定会衍生出附加的TOGGLE数据包)</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>     {
+     &quot;id&quot;: id
+     &quot;probe&quot;: &quot;aql&quot;,
+     &quot;cmd&quot;: &quot;launch&quot;,
+     &quot;data&quot;: {
+         &quot;pkg&quot;: &quot;a&quot;,
+         &quot;activity&quot;: &quot;b&quot;,
+         &quot;probes&quot;: [probe1, probe2,...]
+     }
+}
+</pre></div>
+</div>
+</div>
+<div class="section" id="select">
+<h3>SELECT<a class="headerlink" href="#select" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>{
+    &quot;id&quot;: id
+    &quot;probe&quot;: probe_name,
+    &quot;cmd&quot;: &quot;select&quot;,
+    &quot;data&quot;: {
+        stmt: executable SQL stmt
+    }
+}
+</pre></div>
+</div>
+</div>
+<div class="section" id="toggle">
+<h3>TOGGLE<a class="headerlink" href="#toggle" title="Permalink to this headline">¶</a></h3>
+<p>切换probe(aql是特殊的probe，用作probe manager)</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>    {
+    &quot;id&quot;: id
+    &quot;probe&quot;: &quot;aql&quot;,
+    &quot;cmd&quot;: &quot;toggle&quot;,
+    &quot;data&quot;: {
+        probe1: &quot;on&quot;,
+        probe2: &quot;off&quot;,
+        ...
+    }
+}
+</pre></div>
+</div>
+</div>
+<div class="section" id="breakponit">
+<h3>BREAKPONIT<a class="headerlink" href="#breakponit" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>{
+    &quot;id&quot;: id
+    &quot;probe&quot;: probe_name,
+    &quot;cmd&quot;: &quot;break_point&quot;,
+    &quot;data&quot;: {
+        &quot;class&quot;: class_name,
+        &quot;method&quot;: method_signature,
+        &quot;offset&quot;: int number,
+        &quot;option&quot;: set/clear
+    }
+}
+</pre></div>
+</div>
+</div>
+<div class="section" id="resume">
+<h3>RESUME<a class="headerlink" href="#resume" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>{
+    &quot;id&quot;: id
+    &quot;probe&quot;: probe_name,
+    &quot;cmd&quot;: &quot;resume&quot;,
+    &quot;data&quot;: {
+    }
+}
+</pre></div>
+</div>
+</div>
+<div class="section" id="perform">
+<h3>PERFORM<a class="headerlink" href="#perform" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>{
+    &quot;id&quot;: id
+    &quot;probe&quot;: probe_name,
+    &quot;cmd&quot;: &quot;perform&quot;,
+    &quot;data&quot;: {
+        &quot;action&quot;: action_name
+        &quot;args&quot;: args list
+    }
+}
+</pre></div>
+</div>
+</div>
+<div class="section" id="hit">
+<h3>HIT<a class="headerlink" href="#hit" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>{
+    &quot;id&quot;: id
+    &quot;probe&quot;: probe_name,
+    &quot;cmd&quot;: &quot;hit&quot;,
+    &quot;data&quot;: {
+                    &quot;class&quot;: class_name,
+            &quot;method&quot;: method_signature,
+            &quot;offset&quot;: int number
+    }
+}
+</pre></div>
+</div>
+</div>
+<div class="section" id="id3">
+<h3>PERFORM<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>{
+    &quot;id&quot;: id
+    &quot;status&quot;: &quot;fail&quot;/&quot;ok&quot;,
+    &quot;data&quot;: {
+        &quot;message&quot;: &quot;str&quot;
+    }
+}
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">在**AndroidQL**通信中，所有的request发送之后都要同步的等待reply包的返回(HIT包不在这一规定范围之内)。</p>
+</div>
+</div>
+</div>
+<div class="section" id="reply">
+<h2>Reply包格式<a class="headerlink" href="#reply" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>{
+  &quot;id&quot;: id
+  &quot;status&quot;: “fail”/&quot;ok&quot;,
+  &quot;data&quot;: {
+  }
+}
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="code.html" class="btn btn-neutral float-right" title="贡献代码介绍" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="aql-have-probe.html" class="btn btn-neutral" title="可用的probe" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, mzs.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1.0',
+            LANGUAGE:'None',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,39 @@
+下载镜像安装aql-vm
+======
+
+aql-vm作为Android ART虚拟机的一个模块运行在Android设备上，因此下载的`system.img`需要刷入设备使用。当前发布的`system.img`镜像文件都对应于`x86_64` CPU体系架构的，不可刷入真实的Android手机使用，这是因为目前市场长几乎所有的Android设备都是ARM的。在真实的Android手机使用AndroidQL请参考[安装aql-vm到真实Android设备](./install-aqlvm-device.md)。此外，aql-vm也提供了从源码安装的方式，请参考[从源码安装aql-vm](./install-aqlvm-source.md)。
+
+## 下载system.img镜像文件
+
+当前提供的系统镜像文件均是`x86_64`的，可提供给运行于`x86_64`主机的Android模拟器使用。点击链接可下载相应版本镜像文件`system.img`。
+
+* [android-8.0.0_r4](./)
+* [android-7.1.2_r28](./)
+* [android-6.0.1_r17](./)
+* [android-5.1.1_r14](./)
+
+## 将下镜像文件刷入Android模拟器
+
+
+通常情况下，模拟器启动指令如下：
+
+```Shell
+emulator64-x86 -system ./system.img \
+				-ramdisk ./ramdisk.img \
+				-data ./userdata.img \
+				-kernel ./kernel-qemu \
+				-memory 512 \
+				-partition-size 1024
+```
+
+`emulator`、`emulator64-x86`等工具发布在[Android SDK](./https://stuff.mit.edu/afs/sipb/project/android/docs/sdk/index.html
+)，因此需要首先安装和system.img版本一致的Android SDK。除system.img之外的其他镜像文件可在SDK目录下找到。也可以通过`Android Studio`等工具新建并启动AVD，但本质上都是通过指定所有的镜像文件的路径来启动模拟器的。最后在使用`emulatorx86-64`指令启动模拟器时，将下载完成的system.img路径进行替换即可。
+
+## Troubleshooting
+
+使用下载的system.img启动模拟器时可能遇到无法启动的问题，这是由`kernel-qemu`版本之间的不一致导致的。对于这个问题有以下几个解决办法：
+
+首先，可以下载相应版本的AOSP，下载过程请参考[下载Android源码项目AOSP](./install-aqlvm-source.md)。在AOSP根目录内部的`prebuilts`目录下查找`kernel-qemu`，通常情况下，这个`kernel-qemu`文件是可用的。
+
+此外，也可以采用[从源码安装aql-vm](./install-aqlvm-source.md)的方式，这样处理的一个好处是，`emulator`所需的所有镜像文件都由AOSP提供，较少存在版本兼容的问题。
+

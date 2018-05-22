@@ -1,0 +1,41 @@
+安装aql-vm到真实Android设备
+======
+
+当前AndroidQL发布的`system.img`镜像文件均提供给模拟器使用，它是无法直接提供给真实的Android设备使用的，因为真实的Android手机需要硬件的驱动程序。
+
+因此，安装aql-vm到Android手机需要解决硬件驱动的问题，当前AndroidQL支持的Android版本和支持的手机型号对应关系如下：
+
+* android-8.0.0_r4(OPR6.170623.013)：Nexus 5X, Nexus 6P
+* android-7.1.2_r28(N2G48C)：Nexus 5X, Nexus 6P, Nexus Player, Pixel C
+* android-6.0.1_r17(MMB29V)：Nexus 5, Nexus 5X, Nexus 6, Nexus 6P, Nexus 7, Nexus 9 
+* android-5.1.1_r14(LMY48M)：Nexus 4, Nexus 5, Nexus 6, Nexus 7, Nexus 9, Nexus 10
+
+## 下载AOSP项目和aql-vm项目
+
+在任何编译过程开始之前需要先下载完成AOSP项目和aql-vm项目，并配置`AOSP?_HOME`环境变量，此过程可参考文档[从源码安装aql-vm](./install-aqlvm-device.html)
+
+## 下载并编译驱动程序
+
+#### 下载驱动程序
+
+在下载和编译之前，首先确定AOSP版本号和目标手机的型号，在网站`https://source.android.com/setup/start/build-numbers`查找驱动文件下载链接。例如，在一部Nexus6手机上刷入`6.0.1_r17`版本的Android系统，也就是`MMB29V`。根据相关条件可查找到`Nexus 6 (Mobile) binaries for Android 6.0.1 (MMB29V)`，点击`link`链接，会得到三个脚本文件。
+
+移动全部下载所得脚本文件到`AOSP?_HOME`目录下，并依次运行，运行结束之后可得到`vendor`目录。以上操作完成了驱动程序的下载过程。
+
+#### 编译AOSP项目
+
+首先部署aql-vm到`AOSP?_HOME`目录下。进入aql-vm项目根目录，运行`make deploy`完成部署。
+
+接下来编译AOSP项目。一个常见的命令行如下：
+
+```Bash
+source build/envsetup.sh # 初始化环境
+lunch aosp_arm-eng # 选择要编译的目标
+make # 编译代码
+```
+
+其中`lunch`命令用于指定编译出的镜像文件的适配类型，不带参数的`lunch`命令可以查看所有的支持的适配类型。现在市场上大多数Android手机CPU为ARM架构，因此使用`lunch aosp_arm-eng`理论上可以编译得到可在真机上运行的安卓系统。编译生成的镜像文件在 `<AOSP?_HOME>/out/target/product` 子目录下。
+
+然而，Google官方针对特定机型提供了专门的`lunch`类型，可在[官方给出的文档](https://source.android.com/setup/build/running)中查找得到，例如对于Nexus6手机，应该使用`lunch aosp_shamu-userdebug`。因此，对于不同型号的真机需要确定不同的`lunch`类型。
+
+完成以上步骤，即可编译得到可刷入真实设备使用的Android所有镜像。刷机过程在`AOSP?_HOME`目录下完成，具体请参考[官方给出的刷机文档](https://source.android.com/setup/build/running)中关于`Flashing a device`的描述。

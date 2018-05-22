@@ -1,0 +1,119 @@
+如何实现**bcov**
+================
+
+假设我们实现一个叫作**bcov**的probe，对它功能的设定只是用来简单地统计一个app测试过程中的branch覆盖率数据。那么在实现上应该解决哪些问题呢。
+
+首先，我们应该在ART内存中有效地存储覆盖率数据，随着测试过程的持续进行，这个数据规模或许会变得很可观。进一步考虑其实它可以分解成俩个更小的问题，包括在**bcov**情境下到底什么是感兴趣的数据以及这些数据应该被怎么存储. 其次，还应该解决数据传输的问题，因为**bcov**记录下的覆盖率数据最终需要通过client反馈给用户，而在**bcov**和client之间格式化传输数据有助于数据的封装和解析。另外一个潜在的挑战是**bcov**怎么得到每条分支指令的布尔取值？
+
+**bbov**处理以上问题的过程表现为几个API的具体实现:
+
+1. bcov构造函数
+
+	在AQL中，app运行状态数据是用表来存储的，所以在bcov构造函数应该会建立一张这样的表来存储branch数据。那么哪些数据需要存下来呢，首先指令所在的方法，类以及dex_pc偏移元数据应该被记录下来，这些信息可以帮助我们唯一地定位该条指令。此外，我们还需要记录该条指令的布尔取值.
+
+	```c++
+	bcov() : Probe("bcov") {
+		TableColumn branch_columns[] = {
+      		{"class_descriptor", 200},
+      		{"method_name", 200},  {"method_signature", 200},
+      		{"source_file", 200},  {"dex_pc", 5},
+      		{"condition_value", 2}};
+     	// 新建数据表
+		btable_ = new Table("bcov", branch_columns, 7);
+		// 指令类型绑定
+		WireBranch();
+		// 注册select操作的handler
+		RegisterHandler("select", SelectHandler);
+		...
+	}
+	```
+
+2. 确定condition取值
+
+	branch指令在布尔取值不同时，跳转目标指令的位置是不一样的，因此我们根据这个性质得到具体的condition取值。
+
+	```c++
+	bool GetBranchConditionValue(ShadowFrame& shadow_frame,
+                                               Instruction* inst) {
+  		CHECK(inst->IsBranch() && !inst->IsUnconditional());
+  		bool value = false;
+  		switch (inst->Opcode()) {
+    		case Instruction::IF_EQ:
+    		case Instruction::IF_NE:
+    		case Instruction::IF_LT:
+    		case Instruction::IF_GE:
+    		case Instruction::IF_GT:
+    		case Instruction::IF_LE: {
+    		uint32_t dex_pc = inst->VRegC_22t();
+    		value = (dex_pc == 2);
+    		break;
+    		}
+    		case Instruction::IF_EQZ:
+    		case Instruction::IF_NEZ:
+    		case Instruction::IF_LTZ:
+    		case Instruction::IF_GEZ:
+    		case Instruction::IF_GTZ:
+    		case Instruction::IF_LEZ: {
+    		uint32_t dex_pc = inst->VRegB_21t();
+    		value = (dex_pc == 2);
+    		break;
+    		}
+  		}
+  		return value;
+	}
+	```
+3. 重写AfterInst
+
+	在该回调函数中，bcov会将分支覆盖信息写到缓冲区中，然后批处理插入到表中。
+
+	```c++
+	if (inst->IsBranch() && (!inst->IsUnconditional())) {
+        bool value = GetBranchConditionValue(shadow_frame, inst);
+        std::string branch_key = method_key + StringPrintf("%d", dex_pc) +
+                                 static_cast<uint32_t>(value);
+        !icov_ ? items.emplace(StringPrintf("%d", dex_pc)) : true;
+        items.emplace(StringPrintf("%d", static_cast<uint32_t>(value)));
+        // 写出到缓冲区中，缓冲区满时插入到表中，INSERT_RECORD宏执行该操作
+        INSERT_RECORD(branch_key, btable_, inst_record_buf_, new Record(items));
+      }
+    ```
+
+4. 重写BeforeInst
+
+	我们无需在BeforeInst中进行处理。
+
+	```c++
+	void BCov::BeforeInst(Thread* self, ShadowFrame& shadow_frame,
+                      const Instruction* inst) {
+                UNUSED(self);
+  				UNUSED(shadow_frame);
+  				UNUSED(inst);
+	}
+	```
+
+4. 重写HandlePacket
+
+	client向**bcov**发送查询操作，**bcov**在HandlePacket中完成该request的处理并返回查询结果给client。
+
+	```c++
+	bool SelectHandler(const Json& json, ExpandBuf* reply) {
+  		std::string aql_stmt = json["stmt"].string_value();
+  		std::ostringstream os;
+  		bool result = Table::Select(os, aql_stmt);
+  		GEN_OK_REPLY(reply, os.str());
+  		return result;
+	}
+	```
+
+	因为我们在**bcov**构造函数中注册了select操作的handler，因此对于查询操作，在HandlePacket中调用SelectHandler即可。
+
+5. 启动**bcov**
+
+	AQL会统一维护probe池的数据结构，并且管理每个probe的状态，因此AQL中probe的启动都初始化在Aql::InitProbes函数内，在该函数中添加以下代码即可完成**bcov**的启动。
+
+	```c++
+	Probe::Register(new Bcov("bcov"));
+	```
+
+其它probe开发的基本都是遵照这样的流程.
+

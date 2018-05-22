@@ -1,0 +1,367 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>如何实现bcov &mdash; AndroidQL 1.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="联系我们" href="code-contact.html" />
+    <link rel="prev" title="aql-vm中的锁使用" href="code-aql-vm-lock.html" /> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> AndroidQL
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">框架介绍</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="overview.html">AndroidQL框架介绍</a></li>
+</ul>
+<p class="caption"><span class="caption-text">安装</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="install.html">AndroidQL的安装介绍</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install-aqlvm-source.html">从源码安装aql-vm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install-aqlvm-image.html">下载镜像安装aql-vm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install-aqlvm-device.html">安装aql-vm到真实Android设备</a></li>
+</ul>
+<p class="caption"><span class="caption-text">下载</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="download.html">下载AndroidQL</a></li>
+</ul>
+<p class="caption"><span class="caption-text">使用手册</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="aql-get-started.html">从零开始AndroidQL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="aql-query-language.html">AQL查询语言简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="aql-aqlsh.html">可交互的aqlsh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="aql-brk.html">AndroidQL的断点机制</a></li>
+<li class="toctree-l1"><a class="reference internal" href="aql-probe-how-work.html">AndroidQL的probe如何工作</a></li>
+<li class="toctree-l1"><a class="reference internal" href="aql-have-probe.html">可用的probe</a></li>
+<li class="toctree-l1"><a class="reference internal" href="aql-spec.html">通信协议规范</a></li>
+</ul>
+<p class="caption"><span class="caption-text">贡献代码</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="code.html">贡献代码介绍</a></li>
+<li class="toctree-l1"><a class="reference internal" href="code-aql-vm.html">aql-vm项目介绍</a></li>
+<li class="toctree-l1"><a class="reference internal" href="code-aql-vm-adapter.html">aql-vm之adapter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="code-aql-vm-core.html">aql-vm之core</a></li>
+<li class="toctree-l1"><a class="reference internal" href="code-aql-vm-patch.html">aql-vm之patch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="code-aql-vm-compile.html">aql-vm的编译</a></li>
+<li class="toctree-l1"><a class="reference internal" href="code-aql-vm-probe.html">probe需要做什么</a></li>
+<li class="toctree-l1"><a class="reference internal" href="code-aql-vm-how-probe.html">aql-vm提供的接口</a></li>
+<li class="toctree-l1"><a class="reference internal" href="code-dev-env.html">AndroidQL开发环境部署</a></li>
+<li class="toctree-l1"><a class="reference internal" href="code-add-probe.html">开发probe，你需要做什么</a></li>
+<li class="toctree-l1"><a class="reference internal" href="code-aql-vm-lock.html">aql-vm中的锁使用</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">如何实现<strong>bcov</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="code-contact.html">联系我们</a></li>
+<li class="toctree-l1"><a class="reference internal" href="code-bug-report.html">bug报告</a></li>
+<li class="toctree-l1"><a class="reference internal" href="code-patch-submit.html">patch提交</a></li>
+</ul>
+<p class="caption"><span class="caption-text">帮助</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="help-troubleshooting.html">常见问题汇总</a></li>
+<li class="toctree-l1"><a class="reference internal" href="help-profile.html">aql-vm的profile</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">AndroidQL</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>如何实现<strong>bcov</strong></li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/code-how-bcov.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="bcov">
+<span id="bcov"></span><h1>如何实现<strong>bcov</strong><a class="headerlink" href="#bcov" title="Permalink to this headline">¶</a></h1>
+<p>假设我们实现一个叫作<strong>bcov</strong>的probe，对它功能的设定只是用来简单地统计一个app测试过程中的branch覆盖率数据。那么在实现上应该解决哪些问题呢。</p>
+<p>首先，我们应该在ART内存中有效地存储覆盖率数据，随着测试过程的持续进行，这个数据规模或许会变得很可观。进一步考虑其实它可以分解成俩个更小的问题，包括在<strong>bcov</strong>情境下到底什么是感兴趣的数据以及这些数据应该被怎么存储. 其次，还应该解决数据传输的问题，因为<strong>bcov</strong>记录下的覆盖率数据最终需要通过client反馈给用户，而在<strong>bcov</strong>和client之间格式化传输数据有助于数据的封装和解析。另外一个潜在的挑战是<strong>bcov</strong>怎么得到每条分支指令的布尔取值？</p>
+<p><strong>bbov</strong>处理以上问题的过程表现为几个API的具体实现:</p>
+<ol>
+<li><p class="first">bcov构造函数</p>
+<p>在AQL中，app运行状态数据是用表来存储的，所以在bcov构造函数应该会建立一张这样的表来存储branch数据。那么哪些数据需要存下来呢，首先指令所在的方法，类以及dex_pc偏移元数据应该被记录下来，这些信息可以帮助我们唯一地定位该条指令。此外，我们还需要记录该条指令的布尔取值.</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">bcov</span><span class="p">()</span> <span class="o">:</span> <span class="n">Probe</span><span class="p">(</span><span class="s">&quot;bcov&quot;</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">TableColumn</span> <span class="n">branch_columns</span><span class="p">[]</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="p">{</span><span class="s">&quot;class_descriptor&quot;</span><span class="p">,</span> <span class="mi">200</span><span class="p">},</span>
+        <span class="p">{</span><span class="s">&quot;method_name&quot;</span><span class="p">,</span> <span class="mi">200</span><span class="p">},</span>  <span class="p">{</span><span class="s">&quot;method_signature&quot;</span><span class="p">,</span> <span class="mi">200</span><span class="p">},</span>
+        <span class="p">{</span><span class="s">&quot;source_file&quot;</span><span class="p">,</span> <span class="mi">200</span><span class="p">},</span>  <span class="p">{</span><span class="s">&quot;dex_pc&quot;</span><span class="p">,</span> <span class="mi">5</span><span class="p">},</span>
+        <span class="p">{</span><span class="s">&quot;condition_value&quot;</span><span class="p">,</span> <span class="mi">2</span><span class="p">}};</span>
+    <span class="c1">// 新建数据表</span>
+    <span class="n">btable_</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Table</span><span class="p">(</span><span class="s">&quot;bcov&quot;</span><span class="p">,</span> <span class="n">branch_columns</span><span class="p">,</span> <span class="mi">7</span><span class="p">);</span>
+    <span class="c1">// 指令类型绑定</span>
+    <span class="n">WireBranch</span><span class="p">();</span>
+    <span class="c1">// 注册select操作的handler</span>
+    <span class="n">RegisterHandler</span><span class="p">(</span><span class="s">&quot;select&quot;</span><span class="p">,</span> <span class="n">SelectHandler</span><span class="p">);</span>
+    <span class="p">...</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">确定condition取值</p>
+<p>branch指令在布尔取值不同时，跳转目标指令的位置是不一样的，因此我们根据这个性质得到具体的condition取值。</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">bool</span> <span class="nf">GetBranchConditionValue</span><span class="p">(</span><span class="n">ShadowFrame</span><span class="o">&amp;</span> <span class="n">shadow_frame</span><span class="p">,</span>
+                                           <span class="n">Instruction</span><span class="o">*</span> <span class="n">inst</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">CHECK</span><span class="p">(</span><span class="n">inst</span><span class="o">-&gt;</span><span class="n">IsBranch</span><span class="p">()</span> <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="n">inst</span><span class="o">-&gt;</span><span class="n">IsUnconditional</span><span class="p">());</span>
+    <span class="kt">bool</span> <span class="n">value</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
+    <span class="k">switch</span> <span class="p">(</span><span class="n">inst</span><span class="o">-&gt;</span><span class="n">Opcode</span><span class="p">())</span> <span class="p">{</span>
+        <span class="k">case</span> <span class="n">Instruction</span><span class="o">::</span><span class="nl">IF_EQ</span><span class="p">:</span>
+        <span class="k">case</span> <span class="n">Instruction</span><span class="o">::</span><span class="nl">IF_NE</span><span class="p">:</span>
+        <span class="k">case</span> <span class="n">Instruction</span><span class="o">::</span><span class="nl">IF_LT</span><span class="p">:</span>
+        <span class="k">case</span> <span class="n">Instruction</span><span class="o">::</span><span class="nl">IF_GE</span><span class="p">:</span>
+        <span class="k">case</span> <span class="n">Instruction</span><span class="o">::</span><span class="nl">IF_GT</span><span class="p">:</span>
+        <span class="k">case</span> <span class="n">Instruction</span><span class="o">::</span><span class="nl">IF_LE</span><span class="p">:</span> <span class="p">{</span>
+        <span class="kt">uint32_t</span> <span class="n">dex_pc</span> <span class="o">=</span> <span class="n">inst</span><span class="o">-&gt;</span><span class="n">VRegC_22t</span><span class="p">();</span>
+        <span class="n">value</span> <span class="o">=</span> <span class="p">(</span><span class="n">dex_pc</span> <span class="o">==</span> <span class="mi">2</span><span class="p">);</span>
+        <span class="k">break</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="k">case</span> <span class="n">Instruction</span><span class="o">::</span><span class="nl">IF_EQZ</span><span class="p">:</span>
+        <span class="k">case</span> <span class="n">Instruction</span><span class="o">::</span><span class="nl">IF_NEZ</span><span class="p">:</span>
+        <span class="k">case</span> <span class="n">Instruction</span><span class="o">::</span><span class="nl">IF_LTZ</span><span class="p">:</span>
+        <span class="k">case</span> <span class="n">Instruction</span><span class="o">::</span><span class="nl">IF_GEZ</span><span class="p">:</span>
+        <span class="k">case</span> <span class="n">Instruction</span><span class="o">::</span><span class="nl">IF_GTZ</span><span class="p">:</span>
+        <span class="k">case</span> <span class="n">Instruction</span><span class="o">::</span><span class="nl">IF_LEZ</span><span class="p">:</span> <span class="p">{</span>
+        <span class="kt">uint32_t</span> <span class="n">dex_pc</span> <span class="o">=</span> <span class="n">inst</span><span class="o">-&gt;</span><span class="n">VRegB_21t</span><span class="p">();</span>
+        <span class="n">value</span> <span class="o">=</span> <span class="p">(</span><span class="n">dex_pc</span> <span class="o">==</span> <span class="mi">2</span><span class="p">);</span>
+        <span class="k">break</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="n">value</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">重写AfterInst</p>
+<p>在该回调函数中，bcov会将分支覆盖信息写到缓冲区中，然后批处理插入到表中。</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="n">inst</span><span class="o">-&gt;</span><span class="n">IsBranch</span><span class="p">()</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="o">!</span><span class="n">inst</span><span class="o">-&gt;</span><span class="n">IsUnconditional</span><span class="p">()))</span> <span class="p">{</span>
+    <span class="kt">bool</span> <span class="n">value</span> <span class="o">=</span> <span class="n">GetBranchConditionValue</span><span class="p">(</span><span class="n">shadow_frame</span><span class="p">,</span> <span class="n">inst</span><span class="p">);</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">branch_key</span> <span class="o">=</span> <span class="n">method_key</span> <span class="o">+</span> <span class="n">StringPrintf</span><span class="p">(</span><span class="s">&quot;%d&quot;</span><span class="p">,</span> <span class="n">dex_pc</span><span class="p">)</span> <span class="o">+</span>
+                             <span class="k">static_cast</span><span class="o">&lt;</span><span class="kt">uint32_t</span><span class="o">&gt;</span><span class="p">(</span><span class="n">value</span><span class="p">);</span>
+    <span class="o">!</span><span class="n">icov_</span> <span class="o">?</span> <span class="n">items</span><span class="p">.</span><span class="n">emplace</span><span class="p">(</span><span class="n">StringPrintf</span><span class="p">(</span><span class="s">&quot;%d&quot;</span><span class="p">,</span> <span class="n">dex_pc</span><span class="p">))</span> <span class="o">:</span> <span class="nb">true</span><span class="p">;</span>
+    <span class="n">items</span><span class="p">.</span><span class="n">emplace</span><span class="p">(</span><span class="n">StringPrintf</span><span class="p">(</span><span class="s">&quot;%d&quot;</span><span class="p">,</span> <span class="k">static_cast</span><span class="o">&lt;</span><span class="kt">uint32_t</span><span class="o">&gt;</span><span class="p">(</span><span class="n">value</span><span class="p">)));</span>
+    <span class="c1">// 写出到缓冲区中，缓冲区满时插入到表中，INSERT_RECORD宏执行该操作</span>
+    <span class="n">INSERT_RECORD</span><span class="p">(</span><span class="n">branch_key</span><span class="p">,</span> <span class="n">btable_</span><span class="p">,</span> <span class="n">inst_record_buf_</span><span class="p">,</span> <span class="k">new</span> <span class="n">Record</span><span class="p">(</span><span class="n">items</span><span class="p">));</span>
+  <span class="p">}</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">重写BeforeInst</p>
+<p>我们无需在BeforeInst中进行处理。</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span> <span class="n">BCov</span><span class="o">::</span><span class="n">BeforeInst</span><span class="p">(</span><span class="n">Thread</span><span class="o">*</span> <span class="n">self</span><span class="p">,</span> <span class="n">ShadowFrame</span><span class="o">&amp;</span> <span class="n">shadow_frame</span><span class="p">,</span>
+                  <span class="k">const</span> <span class="n">Instruction</span><span class="o">*</span> <span class="n">inst</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">UNUSED</span><span class="p">(</span><span class="n">self</span><span class="p">);</span>
+            <span class="n">UNUSED</span><span class="p">(</span><span class="n">shadow_frame</span><span class="p">);</span>
+            <span class="n">UNUSED</span><span class="p">(</span><span class="n">inst</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">重写HandlePacket</p>
+<p>client向<strong>bcov</strong>发送查询操作，<strong>bcov</strong>在HandlePacket中完成该request的处理并返回查询结果给client。</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">bool</span> <span class="nf">SelectHandler</span><span class="p">(</span><span class="k">const</span> <span class="n">Json</span><span class="o">&amp;</span> <span class="n">json</span><span class="p">,</span> <span class="n">ExpandBuf</span><span class="o">*</span> <span class="n">reply</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">aql_stmt</span> <span class="o">=</span> <span class="n">json</span><span class="p">[</span><span class="s">&quot;stmt&quot;</span><span class="p">].</span><span class="n">string_value</span><span class="p">();</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">ostringstream</span> <span class="n">os</span><span class="p">;</span>
+    <span class="kt">bool</span> <span class="n">result</span> <span class="o">=</span> <span class="n">Table</span><span class="o">::</span><span class="n">Select</span><span class="p">(</span><span class="n">os</span><span class="p">,</span> <span class="n">aql_stmt</span><span class="p">);</span>
+    <span class="n">GEN_OK_REPLY</span><span class="p">(</span><span class="n">reply</span><span class="p">,</span> <span class="n">os</span><span class="p">.</span><span class="n">str</span><span class="p">());</span>
+    <span class="k">return</span> <span class="n">result</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>因为我们在<strong>bcov</strong>构造函数中注册了select操作的handler，因此对于查询操作，在HandlePacket中调用SelectHandler即可。</p>
+</li>
+<li><p class="first">启动<strong>bcov</strong></p>
+<p>AQL会统一维护probe池的数据结构，并且管理每个probe的状态，因此AQL中probe的启动都初始化在Aql::InitProbes函数内，在该函数中添加以下代码即可完成<strong>bcov</strong>的启动。</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">Probe</span><span class="o">::</span><span class="n">Register</span><span class="p">(</span><span class="k">new</span> <span class="n">Bcov</span><span class="p">(</span><span class="s">&quot;bcov&quot;</span><span class="p">));</span>
+</pre></div>
+</div>
+</li>
+</ol>
+<p>其它probe开发的基本都是遵照这样的流程.</p>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="code-contact.html" class="btn btn-neutral float-right" title="联系我们" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="code-aql-vm-lock.html" class="btn btn-neutral" title="aql-vm中的锁使用" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, mzs.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1.0',
+            LANGUAGE:'None',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

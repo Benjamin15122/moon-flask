@@ -1,0 +1,70 @@
+aql-vm中的锁使用
+==============
+
+AOSP(Android Open Source Project)实现复杂的锁机制。然而在aql-vm的开发中我们只需要了解其中一部分锁的使用方式即可。
+
+## Lock hierarchy
+
+锁层次(Lock hierarchy)是AOSP内部针对死锁问题而提出的一种解决方案。它需要开发者在开发过程中明确锁的使用，例如，开发者在开发时就知道在持有锁a时申请锁b，此时可能产生死锁问题，在实现过程中应该避免这样的使用场景。锁层次机制会在代码预编译时进行静态的检查，违反开发者意愿的使用场景都会产生检查错误。
+
+
+AOSP定义了`LockLevel`枚举类型，在锁类型`Mutex`的构造函数中需要传入`LockLevel`参数。
+
+```c++
+enum LockLevel {
+  kLoggingLock = 0,
+  kMemMapsLock,
+  kSwapMutexesLock,
+  kUnexpectedSignalLock,
+  kThreadSuspendCountLock,
+  kAbortLock,
+  kJdwpSocketLock,
+  ...
+  kAqlLock,
+  kTraceLock,
+  kHeapBitmapLock,
+  kMutatorLock,
+  kInstrumentEntrypointsLock,
+  kZygoteCreationLock,
+
+  kLockLevelCount  // Must come last.
+};
+```
+
+每一个互斥锁`Mutex`实例都有唯一的`LockLebel`属性。这个属性定义了锁对象的偏序关系，这个偏序关系定义了锁申请的合法顺序。
+
+假设`kALock`和`kBLock`都定义在`LockLevel`中，锁`A`和`B`在构造时使用到了它们。
+
+```c++
+enum LockLevel {
+  ...
+  kALock
+  ...
+  kBLock
+  ..,
+
+  kLockLevelCount  // Must come last.
+};
+
+Mutex* A = new Mutex("A", kALock);
+Mutex* B = new Mutex("B", kBLock);
+```
+
+`kBLock>kALock`，因此在任意线程持有锁`A`时无法申请锁`B`，反之是可行的。锁层次机制可以用来减少代码实现中死锁的产生。
+
+## probe开发中的互斥锁使用
+
+#### 哪里需要上锁
+
+上锁是为了解决多线程并发导致的数据不一致问题。在probe的实现中，如果任何的数据成员都有潜在的多线程读写的可能，都要使用锁来保证读写过程的原子性。例如解释器对于`BeforeInst`和`AfterInst`的调用并非确定地在单个线程中进行，因此，这些接口的实现中需要对临界资源进行上锁处理。
+
+#### 如何上锁
+
+首先需要在`LockLevel`枚举类型中添加数据成员，在锁的实例化时使用该数据成员。实例化类`Mutex`来生成锁对象，它是AOSP提出的互斥锁类型。一个常见的锁的使用实例如下所示：
+
+```c++
+{
+	MutexLock mu(Thread::Current(), *A);
+	// do things mutually
+}
+```

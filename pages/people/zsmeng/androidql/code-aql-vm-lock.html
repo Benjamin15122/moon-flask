@@ -1,0 +1,333 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>aql-vm中的锁使用 &mdash; AndroidQL 1.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="如何实现bcov" href="code-how-bcov.html" />
+    <link rel="prev" title="开发probe，你需要做什么" href="code-add-probe.html" /> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> AndroidQL
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">框架介绍</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="overview.html">AndroidQL框架介绍</a></li>
+</ul>
+<p class="caption"><span class="caption-text">安装</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="install.html">AndroidQL的安装介绍</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install-aqlvm-source.html">从源码安装aql-vm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install-aqlvm-image.html">下载镜像安装aql-vm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install-aqlvm-device.html">安装aql-vm到真实Android设备</a></li>
+</ul>
+<p class="caption"><span class="caption-text">下载</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="download.html">下载AndroidQL</a></li>
+</ul>
+<p class="caption"><span class="caption-text">使用手册</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="aql-get-started.html">从零开始AndroidQL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="aql-query-language.html">AQL查询语言简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="aql-aqlsh.html">可交互的aqlsh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="aql-brk.html">AndroidQL的断点机制</a></li>
+<li class="toctree-l1"><a class="reference internal" href="aql-probe-how-work.html">AndroidQL的probe如何工作</a></li>
+<li class="toctree-l1"><a class="reference internal" href="aql-have-probe.html">可用的probe</a></li>
+<li class="toctree-l1"><a class="reference internal" href="aql-spec.html">通信协议规范</a></li>
+</ul>
+<p class="caption"><span class="caption-text">贡献代码</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="code.html">贡献代码介绍</a></li>
+<li class="toctree-l1"><a class="reference internal" href="code-aql-vm.html">aql-vm项目介绍</a></li>
+<li class="toctree-l1"><a class="reference internal" href="code-aql-vm-adapter.html">aql-vm之adapter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="code-aql-vm-core.html">aql-vm之core</a></li>
+<li class="toctree-l1"><a class="reference internal" href="code-aql-vm-patch.html">aql-vm之patch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="code-aql-vm-compile.html">aql-vm的编译</a></li>
+<li class="toctree-l1"><a class="reference internal" href="code-aql-vm-probe.html">probe需要做什么</a></li>
+<li class="toctree-l1"><a class="reference internal" href="code-aql-vm-how-probe.html">aql-vm提供的接口</a></li>
+<li class="toctree-l1"><a class="reference internal" href="code-dev-env.html">AndroidQL开发环境部署</a></li>
+<li class="toctree-l1"><a class="reference internal" href="code-add-probe.html">开发probe，你需要做什么</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">aql-vm中的锁使用</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#lock-hierarchy">Lock hierarchy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#probe">probe开发中的互斥锁使用</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#">哪里需要上锁</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#">如何上锁</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="code-how-bcov.html">如何实现<strong>bcov</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="code-contact.html">联系我们</a></li>
+<li class="toctree-l1"><a class="reference internal" href="code-bug-report.html">bug报告</a></li>
+<li class="toctree-l1"><a class="reference internal" href="code-patch-submit.html">patch提交</a></li>
+</ul>
+<p class="caption"><span class="caption-text">帮助</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="help-troubleshooting.html">常见问题汇总</a></li>
+<li class="toctree-l1"><a class="reference internal" href="help-profile.html">aql-vm的profile</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">AndroidQL</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>aql-vm中的锁使用</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/code-aql-vm-lock.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="aql-vm">
+<span id="aql-vm"></span><h1>aql-vm中的锁使用<a class="headerlink" href="#aql-vm" title="Permalink to this headline">¶</a></h1>
+<p>AOSP(Android Open Source Project)实现复杂的锁机制。然而在aql-vm的开发中我们只需要了解其中一部分锁的使用方式即可。</p>
+<div class="section" id="lock-hierarchy">
+<span id="lock-hierarchy"></span><h2>Lock hierarchy<a class="headerlink" href="#lock-hierarchy" title="Permalink to this headline">¶</a></h2>
+<p>锁层次(Lock hierarchy)是AOSP内部针对死锁问题而提出的一种解决方案。它需要开发者在开发过程中明确锁的使用，例如，开发者在开发时就知道在持有锁a时申请锁b，此时可能产生死锁问题，在实现过程中应该避免这样的使用场景。锁层次机制会在代码预编译时进行静态的检查，违反开发者意愿的使用场景都会产生检查错误。</p>
+<p>AOSP定义了<code class="docutils literal notranslate"><span class="pre">LockLevel</span></code>枚举类型，在锁类型<code class="docutils literal notranslate"><span class="pre">Mutex</span></code>的构造函数中需要传入<code class="docutils literal notranslate"><span class="pre">LockLevel</span></code>参数。</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">enum</span> <span class="n">LockLevel</span> <span class="p">{</span>
+  <span class="n">kLoggingLock</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span>
+  <span class="n">kMemMapsLock</span><span class="p">,</span>
+  <span class="n">kSwapMutexesLock</span><span class="p">,</span>
+  <span class="n">kUnexpectedSignalLock</span><span class="p">,</span>
+  <span class="n">kThreadSuspendCountLock</span><span class="p">,</span>
+  <span class="n">kAbortLock</span><span class="p">,</span>
+  <span class="n">kJdwpSocketLock</span><span class="p">,</span>
+  <span class="p">...</span>
+  <span class="n">kAqlLock</span><span class="p">,</span>
+  <span class="n">kTraceLock</span><span class="p">,</span>
+  <span class="n">kHeapBitmapLock</span><span class="p">,</span>
+  <span class="n">kMutatorLock</span><span class="p">,</span>
+  <span class="n">kInstrumentEntrypointsLock</span><span class="p">,</span>
+  <span class="n">kZygoteCreationLock</span><span class="p">,</span>
+
+  <span class="n">kLockLevelCount</span>  <span class="c1">// Must come last.</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+<p>每一个互斥锁<code class="docutils literal notranslate"><span class="pre">Mutex</span></code>实例都有唯一的<code class="docutils literal notranslate"><span class="pre">LockLebel</span></code>属性。这个属性定义了锁对象的偏序关系，这个偏序关系定义了锁申请的合法顺序。</p>
+<p>假设<code class="docutils literal notranslate"><span class="pre">kALock</span></code>和<code class="docutils literal notranslate"><span class="pre">kBLock</span></code>都定义在<code class="docutils literal notranslate"><span class="pre">LockLevel</span></code>中，锁<code class="docutils literal notranslate"><span class="pre">A</span></code>和<code class="docutils literal notranslate"><span class="pre">B</span></code>在构造时使用到了它们。</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">enum</span> <span class="n">LockLevel</span> <span class="p">{</span>
+  <span class="p">...</span>
+  <span class="n">kALock</span>
+  <span class="p">...</span>
+  <span class="n">kBLock</span>
+  <span class="p">..,</span>
+
+  <span class="n">kLockLevelCount</span>  <span class="c1">// Must come last.</span>
+<span class="p">};</span>
+
+<span class="n">Mutex</span><span class="o">*</span> <span class="n">A</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Mutex</span><span class="p">(</span><span class="s">&quot;A&quot;</span><span class="p">,</span> <span class="n">kALock</span><span class="p">);</span>
+<span class="n">Mutex</span><span class="o">*</span> <span class="n">B</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Mutex</span><span class="p">(</span><span class="s">&quot;B&quot;</span><span class="p">,</span> <span class="n">kBLock</span><span class="p">);</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">kBLock&gt;kALock</span></code>，因此在任意线程持有锁<code class="docutils literal notranslate"><span class="pre">A</span></code>时无法申请锁<code class="docutils literal notranslate"><span class="pre">B</span></code>，反之是可行的。锁层次机制可以用来减少代码实现中死锁的产生。</p>
+</div>
+<div class="section" id="probe">
+<span id="probe"></span><h2>probe开发中的互斥锁使用<a class="headerlink" href="#probe" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="">
+<span id="id1"></span><h3>哪里需要上锁<a class="headerlink" href="#" title="Permalink to this headline">¶</a></h3>
+<p>上锁是为了解决多线程并发导致的数据不一致问题。在probe的实现中，如果任何的数据成员都有潜在的多线程读写的可能，都要使用锁来保证读写过程的原子性。例如解释器对于<code class="docutils literal notranslate"><span class="pre">BeforeInst</span></code>和<code class="docutils literal notranslate"><span class="pre">AfterInst</span></code>的调用并非确定地在单个线程中进行，因此，这些接口的实现中需要对临界资源进行上锁处理。</p>
+</div>
+<div class="section" id="">
+<span id="id2"></span><h3>如何上锁<a class="headerlink" href="#" title="Permalink to this headline">¶</a></h3>
+<p>首先需要在<code class="docutils literal notranslate"><span class="pre">LockLevel</span></code>枚举类型中添加数据成员，在锁的实例化时使用该数据成员。实例化类<code class="docutils literal notranslate"><span class="pre">Mutex</span></code>来生成锁对象，它是AOSP提出的互斥锁类型。一个常见的锁的使用实例如下所示：</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="n">MutexLock</span> <span class="n">mu</span><span class="p">(</span><span class="n">Thread</span><span class="o">::</span><span class="n">Current</span><span class="p">(),</span> <span class="o">*</span><span class="n">A</span><span class="p">);</span>
+    <span class="c1">// do things mutually</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="code-how-bcov.html" class="btn btn-neutral float-right" title="如何实现bcov" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="code-add-probe.html" class="btn btn-neutral" title="开发probe，你需要做什么" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, mzs.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1.0',
+            LANGUAGE:'None',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

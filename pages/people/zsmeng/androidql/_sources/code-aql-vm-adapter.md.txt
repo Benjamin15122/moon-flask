@@ -1,0 +1,26 @@
+aql-vm之adapter
+===============
+
+`adapter`层的存在保证了aql-vm在不同AOSP版本的兼容性。目前，AndroidQL支持的Android版本包括5，6，7，8。保证aql-vm在不同版本之间的兼容，直观的处理方式就是维护aql-vm在不同Android版本的公用部分的稳定性，此外，还应该对版本之间的差异进行某种归一化处理。AndroidQL在实现上把Android版本之间的差异性总结为三个方面，包括`数据结构`、`API`和`宏定义`。
+
+#### 宏定义
+
+宏定义的变化主要表现在[Clang中与线程安全相关的annotation](https://clang.llvm.org/docs/ThreadSafetyAnalysis.html)，这是因为不同的AOSP源码是基于不同版本的Clang实现的。此外，AOSP中自定义的一些宏也存在版本之间的变化，这其中大部分并未被aql-vm用到，aql-vm中对涉及到的宏都进行了重新定义。
+
+AOSP版本 | 共享锁 | 互斥锁 | 不应该持有某个锁
+----|------|---- | ----
+8 | REQUIRES_SHARED(lock)  | REQUIRES(lock)| REQUIRES(!lock)
+7 | SHARED_REQUIRES(lock)  | REQUIRES(lock)| REQUIRES(!lock)
+6 | SHARED_LOCKS_REQUIRED(lock) | EXCLUSIVE_LOCKS_REQUIRED(lock) | LOCKS_EXCLUDED(lock)
+5 | SHARED_LOCKS_REQUIRED(lock) | EXCLUSIVE_LOCKS_REQUIRED(lock) | LOCKS_EXCLUDED(lock)
+AndroidQL | REQUIRES_SHARED(lock) | REQUIRES(lock) | LOCKS_EXCLUDED(lock)
+
+#### API
+
+API的改变主要表现在，在AOSP7之前，部分提供base功能的API被定义在aosp/art/runtime/base目录下, AOSP8之后，这部分API中的一小部分被移动在了aosp/system/core/base/include目录下. AndroidQL使用到了**StringPrintf**来格式化std::string字符串，所以应该将这种变更考虑进来才可以实现不同Android版本的兼容。
+
+AndroidQL将这些变更统一进行进行封装，提供一致的API给AndroidQL使用，在每个版本的aosp目录中aosp/art/runtime下的makefile中添加`PLATFORM_VERSION_MAJOR`宏定义来进行条件编译。具体可见aql/adapter的源码实现。
+
+#### 数据结构
+
+aql-vm在开发过程中本着侵入性最小的原则，对于数据结构在设计实现上的变动，都使用`PLATFORM_VERSION_MAJOR`进行条件编译处理。根据`PLATFORM_VERSION_MAJOR`的不同取值，引入不同的头文件。
