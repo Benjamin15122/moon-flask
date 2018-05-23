@@ -109,9 +109,9 @@
 <li class="toctree-l1"><a class="reference internal" href="code.html">贡献代码介绍</a></li>
 <li class="toctree-l1"><a class="reference internal" href="code-aql-vm.html">aql-vm项目介绍</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">aql-vm之adapter</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#">宏定义</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id1">宏定义</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#api">API</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#">数据结构</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id2">数据结构</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="code-aql-vm-core.html">aql-vm之core</a></li>
@@ -182,7 +182,7 @@
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="_sources/code-aql-vm-adapter.md.txt" rel="nofollow"> View page source</a>
+            <a href="_sources/code-aql-vm-adapter.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -196,27 +196,57 @@
            <div itemprop="articleBody">
             
   <div class="section" id="aql-vmadapter">
-<span id="aql-vmadapter"></span><h1>aql-vm之adapter<a class="headerlink" href="#aql-vmadapter" title="Permalink to this headline">¶</a></h1>
-<p><code class="docutils literal notranslate"><span class="pre">adapter</span></code>层的存在保证了aql-vm在不同AOSP版本的兼容性。目前，AndroidQL支持的Android版本包括5，6，7，8。保证aql-vm在不同版本之间的兼容，直观的处理方式就是维护aql-vm在不同Android版本的公用部分的稳定性，此外，还应该对版本之间的差异进行某种归一化处理。AndroidQL在实现上把Android版本之间的差异性总结为三个方面，包括<code class="docutils literal notranslate"><span class="pre">数据结构</span></code>、<code class="docutils literal notranslate"><span class="pre">API</span></code>和<code class="docutils literal notranslate"><span class="pre">宏定义</span></code>。</p>
-<div class="section" id="">
-<span id="id1"></span><h2>宏定义<a class="headerlink" href="#" title="Permalink to this headline">¶</a></h2>
-<p>宏定义的变化主要表现在<a class="reference external" href="https://clang.llvm.org/docs/ThreadSafetyAnalysis.html">Clang中与线程安全相关的annotation</a>，这是因为不同的AOSP源码是基于不同版本的Clang实现的。此外，AOSP中自定义的一些宏也存在版本之间的变化，这其中大部分并未被aql-vm用到，aql-vm中对涉及到的宏都进行了重新定义。</p>
-<p>AOSP版本 | 共享锁 | 互斥锁 | 不应该持有某个锁
-—-|——|—- | —-
-8 | REQUIRES_SHARED(lock)  | REQUIRES(lock)| REQUIRES(!lock)
-7 | SHARED_REQUIRES(lock)  | REQUIRES(lock)| REQUIRES(!lock)
-6 | SHARED_LOCKS_REQUIRED(lock) | EXCLUSIVE_LOCKS_REQUIRED(lock) | LOCKS_EXCLUDED(lock)
-5 | SHARED_LOCKS_REQUIRED(lock) | EXCLUSIVE_LOCKS_REQUIRED(lock) | LOCKS_EXCLUDED(lock)
-AndroidQL | REQUIRES_SHARED(lock) | REQUIRES(lock) | LOCKS_EXCLUDED(lock)</p>
+<h1>aql-vm之adapter<a class="headerlink" href="#aql-vmadapter" title="Permalink to this headline">¶</a></h1>
+<p><code class="docutils literal notranslate"><span class="pre">adapter</span></code> 层的存在保证了aql-vm在不同AOSP版本的兼容性。目前，AndroidQL支持的Android版本包括5，6，7，8。保证aql-vm在不同版本之间的兼容，直观的处理方式就是维护aql-vm在不同Android版本的公用部分的稳定性，此外，还应该对版本之间的差异进行某种归一化处理。AndroidQL在实现上把Android版本之间的差异性总结为三个方面，包括 <code class="docutils literal notranslate"><span class="pre">数据结构</span></code> 、<code class="docutils literal notranslate"><span class="pre">API</span></code> 和 <code class="docutils literal notranslate"><span class="pre">宏定义</span></code>。</p>
+<div class="section" id="id1">
+<h2>宏定义<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p>宏定义的变化主要表现在 <a class="reference external" href="https://clang.llvm.org/docs/ThreadSafetyAnalysis.html">Clang中与线程安全相关的annotation</a>，这是因为不同的AOSP源码是基于不同版本的Clang实现的。此外，AOSP中自定义的一些宏也存在版本之间的变化，这其中大部分并未被aql-vm用到，aql-vm中对涉及到的宏都进行了重新定义。</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="19%" />
+<col width="30%" />
+<col width="30%" />
+<col width="21%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">AOSP版本</th>
+<th class="head">共享锁</th>
+<th class="head">互斥锁</th>
+<th class="head">不应该持有某个锁</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>8</td>
+<td>REQUIRES_SHARED(lock)</td>
+<td>REQUIRES(lock)</td>
+<td>REQUIRES(!lock)</td>
+</tr>
+<tr class="row-odd"><td>7</td>
+<td>SHARED_REQUIRES(lock)</td>
+<td>REQUIRES(lock)</td>
+<td>REQUIRES(!lock)</td>
+</tr>
+<tr class="row-even"><td>6</td>
+<td>SHARED_LOCKS_REQUIRED(lock)</td>
+<td>EXCLUSIVE_LOCKS_REQUIRED(lock)</td>
+<td>LOCKS_EXCLUDED(lock)</td>
+</tr>
+<tr class="row-odd"><td>5</td>
+<td>SHARED_LOCKS_REQUIRED(lock)</td>
+<td>EXCLUSIVE_LOCKS_REQUIRED(lock)</td>
+<td>LOCKS_EXCLUDED(lock)</td>
+</tr>
+</tbody>
+</table>
 </div>
 <div class="section" id="api">
-<span id="api"></span><h2>API<a class="headerlink" href="#api" title="Permalink to this headline">¶</a></h2>
-<p>API的改变主要表现在，在AOSP7之前，部分提供base功能的API被定义在aosp/art/runtime/base目录下, AOSP8之后，这部分API中的一小部分被移动在了aosp/system/core/base/include目录下. AndroidQL使用到了<strong>StringPrintf</strong>来格式化std::string字符串，所以应该将这种变更考虑进来才可以实现不同Android版本的兼容。</p>
-<p>AndroidQL将这些变更统一进行进行封装，提供一致的API给AndroidQL使用，在每个版本的aosp目录中aosp/art/runtime下的makefile中添加<code class="docutils literal notranslate"><span class="pre">PLATFORM_VERSION_MAJOR</span></code>宏定义来进行条件编译。具体可见aql/adapter的源码实现。</p>
+<h2>API<a class="headerlink" href="#api" title="Permalink to this headline">¶</a></h2>
+<p>API的改变主要表现在，在AOSP7之前，部分提供base功能的API被定义在 <code class="docutils literal notranslate"><span class="pre">aosp/art/runtime/base</span></code> 目录下, AOSP8之后，这部分API中的一小部分被移动在了 <code class="docutils literal notranslate"><span class="pre">aosp/system/core/base/include</span></code> 目录下. AndroidQL使用到了 <strong>StringPrintf</strong> 来格式化std::string字符串，所以应该将这种变更考虑进来才可以实现不同Android版本的兼容。</p>
+<p>AndroidQL将这些变更统一进行进行封装，提供一致的API给AndroidQL使用，在每个版本的aosp目录中aosp/art/runtime下的makefile中添加 <code class="docutils literal notranslate"><span class="pre">PLATFORM_VERSION_MAJOR</span></code> 宏定义来进行条件编译。具体可见aql/adapter的源码实现。</p>
 </div>
-<div class="section" id="">
-<span id="id2"></span><h2>数据结构<a class="headerlink" href="#" title="Permalink to this headline">¶</a></h2>
-<p>aql-vm在开发过程中本着侵入性最小的原则，对于数据结构在设计实现上的变动，都使用<code class="docutils literal notranslate"><span class="pre">PLATFORM_VERSION_MAJOR</span></code>进行条件编译处理。根据<code class="docutils literal notranslate"><span class="pre">PLATFORM_VERSION_MAJOR</span></code>的不同取值，引入不同的头文件。</p>
+<div class="section" id="id2">
+<h2>数据结构<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>aql-vm在开发过程中本着侵入性最小的原则，对于数据结构在设计实现上的变动，都使用 <code class="docutils literal notranslate"><span class="pre">PLATFORM_VERSION_MAJOR</span></code> 进行条件编译处理。根据 <code class="docutils literal notranslate"><span class="pre">PLATFORM_VERSION_MAJOR</span></code> 的不同取值，引入不同的头文件。</p>
 </div>
 </div>
 
@@ -240,7 +270,7 @@ AndroidQL | REQUIRES_SHARED(lock) | REQUIRES(lock) | LOCKS_EXCLUDED(lock)</p>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2018, mzs.
+        &copy; Copyright 2018, spar.
 
     </p>
   </div>

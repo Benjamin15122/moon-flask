@@ -3,7 +3,7 @@
 
 AndroidQL作为一个测试框架，支持开发者实现自定义的probe。probe以插件的形式由框架统一管理。probe集中实现在aql-vm模块，可以用来完成对应用程序运行状态的检测和控制。本文档主要介绍如何实现一个可用的probe出来。
 
-首先probe的开发者需要具备C++开发的能力，并且配置了[AndroidQL开发环境](./code-dev-env.html)。接下来会围绕probe的开发和编译俩个过程进行介绍。
+首先probe的开发者需要具备C++开发的能力，并且配置了[AndroidQL开发环境](./code-dev-env.html)。接下来会围绕probe的开发和编译两个过程进行介绍。
 
 ## probe的开发
 

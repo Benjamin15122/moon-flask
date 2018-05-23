@@ -51,7 +51,7 @@ INSTALL apk_path
 LAUNCH apk_path [probes]
 ```
 
-在demo中，启动app同时开启了brk这个用来执行breakpoint逻辑的probe模块，我们可以一次开启更多的probe，也可以只是单纯地想启动一个app而已，并不打开任何probe，以上的俩种使用需求可以通过以下的俩个操作完成.
+在demo中，启动app同时开启了brk这个用来执行breakpoint逻辑的probe模块，我们可以一次开启更多的probe，也可以只是单纯地想启动一个app而已，并不打开任何probe，以上的两种使用需求可以通过以下的两个操作完成.
 
 ```
 LAUNCH a.apk brk,mcov

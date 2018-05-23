@@ -193,7 +193,7 @@
   <div class="section" id="bcov">
 <span id="bcov"></span><h1>如何实现<strong>bcov</strong><a class="headerlink" href="#bcov" title="Permalink to this headline">¶</a></h1>
 <p>假设我们实现一个叫作<strong>bcov</strong>的probe，对它功能的设定只是用来简单地统计一个app测试过程中的branch覆盖率数据。那么在实现上应该解决哪些问题呢。</p>
-<p>首先，我们应该在ART内存中有效地存储覆盖率数据，随着测试过程的持续进行，这个数据规模或许会变得很可观。进一步考虑其实它可以分解成俩个更小的问题，包括在<strong>bcov</strong>情境下到底什么是感兴趣的数据以及这些数据应该被怎么存储. 其次，还应该解决数据传输的问题，因为<strong>bcov</strong>记录下的覆盖率数据最终需要通过client反馈给用户，而在<strong>bcov</strong>和client之间格式化传输数据有助于数据的封装和解析。另外一个潜在的挑战是<strong>bcov</strong>怎么得到每条分支指令的布尔取值？</p>
+<p>首先，我们应该在ART内存中有效地存储覆盖率数据，随着测试过程的持续进行，这个数据规模或许会变得很可观。进一步考虑其实它可以分解成两个更小的问题，包括在<strong>bcov</strong>情境下到底什么是感兴趣的数据以及这些数据应该被怎么存储. 其次，还应该解决数据传输的问题，因为<strong>bcov</strong>记录下的覆盖率数据最终需要通过client反馈给用户，而在<strong>bcov</strong>和client之间格式化传输数据有助于数据的封装和解析。另外一个潜在的挑战是<strong>bcov</strong>怎么得到每条分支指令的布尔取值？</p>
 <p><strong>bbov</strong>处理以上问题的过程表现为几个API的具体实现:</p>
 <ol>
 <li><p class="first">bcov构造函数</p>
@@ -316,7 +316,7 @@
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2018, mzs.
+        &copy; Copyright 2018, spar.
 
     </p>
   </div>

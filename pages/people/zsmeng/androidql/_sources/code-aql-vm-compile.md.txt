@@ -62,7 +62,7 @@ AOSP中`art`模块的`Android.mk`包含了aql-vm中的`Aql.mk`文件，并且将
 
 `deply.sh`脚本用来完成deploy过程。这一过程实际上就是将aql-vm的源代码复制到AOSP项目中，`deploy.sh`脚本会简单地将`aql-vm/src/`目录下的所有源码文件（包括`Aql.mk`）拷贝到`<AOSP_HOME>/art/runtime/aql`目录下面。
 
-通过patch和deploy这俩个步骤，已将aql-vm的所有源码拷贝到AOSP项目内部，同时也完成了对AOSP编译脚本的修改，使得它具备对于aql-vm中所有源码进行编译的能力。
+通过patch和deploy这两个步骤，已将aql-vm的所有源码拷贝到AOSP项目内部，同时也完成了对AOSP编译脚本的修改，使得它具备对于aql-vm中所有源码进行编译的能力。
 
 #### build
 
