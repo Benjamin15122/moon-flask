@@ -1,7 +1,7 @@
 aql-vm之patch
 =======================
 
-本质上来说，aql-vm项目本身就是AOSP的一个patch，aql-vm最终部署到AOSP的`art/runtime/aql`目录下，编译的完成需要依赖于AOSP本身提供的编译机制，相关细节可参考[aql-vm的编译](./code-aql-vm-compile.md)。
+本质上来说，aql-vm项目本身就是AOSP的一个patch，aql-vm最终部署到AOSP的`art/runtime/aql`目录下，编译的完成需要依赖于AOSP本身提供的编译机制，相关细节可参考[aql-vm的编译](./code-aql-vm-compile.html)。
 
 这里所说的在AOSP中添加aql-vm patch，是指那些需要修改AOSP才能完成的模块。比如AndroidQL在实现上需要修改ART虚拟机的解释器部分，只需在AOSP中解释器相关的代码中加入对于`aql`模块接口的调用即可。
 

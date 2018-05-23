@@ -196,7 +196,7 @@
             
   <div class="section" id="aql-vmpatch">
 <span id="aql-vmpatch"></span><h1>aql-vm之patch<a class="headerlink" href="#aql-vmpatch" title="Permalink to this headline">¶</a></h1>
-<p>本质上来说，aql-vm项目本身就是AOSP的一个patch，aql-vm最终部署到AOSP的<code class="docutils literal notranslate"><span class="pre">art/runtime/aql</span></code>目录下，编译的完成需要依赖于AOSP本身提供的编译机制，相关细节可参考<a class="reference external" href="./code-aql-vm-compile.md">aql-vm的编译</a>。</p>
+<p>本质上来说，aql-vm项目本身就是AOSP的一个patch，aql-vm最终部署到AOSP的<code class="docutils literal notranslate"><span class="pre">art/runtime/aql</span></code>目录下，编译的完成需要依赖于AOSP本身提供的编译机制，相关细节可参考<a class="reference external" href="./code-aql-vm-compile.html">aql-vm的编译</a>。</p>
 <p>这里所说的在AOSP中添加aql-vm patch，是指那些需要修改AOSP才能完成的模块。比如AndroidQL在实现上需要修改ART虚拟机的解释器部分，只需在AOSP中解释器相关的代码中加入对于<code class="docutils literal notranslate"><span class="pre">aql</span></code>模块接口的调用即可。</p>
 <div class="section" id="patch">
 <span id="patch"></span><h2>patch的使用<a class="headerlink" href="#patch" title="Permalink to this headline">¶</a></h2>
@@ -235,7 +235,7 @@
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2018, mzs.
+        &copy; Copyright 2018, spar.
 
     </p>
   </div>

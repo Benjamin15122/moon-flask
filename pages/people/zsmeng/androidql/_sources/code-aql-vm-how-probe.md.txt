@@ -55,7 +55,7 @@ pid_t tid = self->GetTid();
 	Object* ibject = shadow_frame.GetThisObject();
 	```
 
-5. 指令的寄存器参数. 和JVM基于栈结构的指令不同的是，ART的指令是基于寄存器的	，也就是每条指令的参数存在于寄存器中. 因此在ShadowFrame类中预先定义若干个寄存器用来存储这些数据. 不同的指令使用的寄存器是不同的(在ART中，指令被封装成`Instruciton`类，该类中记录了指令实例在`ShadowFrame`中寄存器的索引)，比如取到**IF_EQ**指令的俩个参数，可以使用如下代码
+5. 指令的寄存器参数. 和JVM基于栈结构的指令不同的是，ART的指令是基于寄存器的	，也就是每条指令的参数存在于寄存器中. 因此在ShadowFrame类中预先定义若干个寄存器用来存储这些数据. 不同的指令使用的寄存器是不同的(在ART中，指令被封装成`Instruciton`类，该类中记录了指令实例在`ShadowFrame`中寄存器的索引)，比如取到**IF_EQ**指令的两个参数，可以使用如下代码
 
 	```c++
 	inst_data = inst->Opcode();

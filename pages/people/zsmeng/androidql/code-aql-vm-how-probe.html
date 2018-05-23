@@ -251,7 +251,7 @@
 </pre></div>
 </div>
 </li>
-<li><p class="first">指令的寄存器参数. 和JVM基于栈结构的指令不同的是，ART的指令是基于寄存器的 ，也就是每条指令的参数存在于寄存器中. 因此在ShadowFrame类中预先定义若干个寄存器用来存储这些数据. 不同的指令使用的寄存器是不同的(在ART中，指令被封装成<code class="docutils literal notranslate"><span class="pre">Instruciton</span></code>类，该类中记录了指令实例在<code class="docutils literal notranslate"><span class="pre">ShadowFrame</span></code>中寄存器的索引)，比如取到<strong>IF_EQ</strong>指令的俩个参数，可以使用如下代码</p>
+<li><p class="first">指令的寄存器参数. 和JVM基于栈结构的指令不同的是，ART的指令是基于寄存器的 ，也就是每条指令的参数存在于寄存器中. 因此在ShadowFrame类中预先定义若干个寄存器用来存储这些数据. 不同的指令使用的寄存器是不同的(在ART中，指令被封装成<code class="docutils literal notranslate"><span class="pre">Instruciton</span></code>类，该类中记录了指令实例在<code class="docutils literal notranslate"><span class="pre">ShadowFrame</span></code>中寄存器的索引)，比如取到<strong>IF_EQ</strong>指令的两个参数，可以使用如下代码</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">inst_data</span> <span class="o">=</span> <span class="n">inst</span><span class="o">-&gt;</span><span class="n">Opcode</span><span class="p">();</span>
 <span class="kt">int32_t</span> <span class="n">arg1</span> <span class="o">=</span> <span class="n">shadow_frame</span><span class="p">.</span><span class="n">GetVReg</span><span class="p">(</span><span class="n">inst</span><span class="o">-&gt;</span><span class="n">VRegA_22t</span><span class="p">(</span><span class="n">inst_data</span><span class="p">));</span>
 <span class="kt">int32_t</span> <span class="n">arg2</span> <span class="o">=</span> <span class="n">shadow_frame</span><span class="p">.</span><span class="n">GetVReg</span><span class="p">(</span><span class="n">inst</span><span class="o">-&gt;</span><span class="n">VRegB_22t</span><span class="p">(</span><span class="n">inst_data</span><span class="p">));</span>
@@ -375,7 +375,7 @@ const char* file_name = method-&gt;GetDeclaringClassSourceFile();
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2018, mzs.
+        &copy; Copyright 2018, spar.
 
     </p>
   </div>

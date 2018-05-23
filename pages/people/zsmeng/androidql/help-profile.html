@@ -192,7 +192,7 @@
   <div class="section" id="aql-vmprofile">
 <span id="aql-vmprofile"></span><h1>aql-vm的profile<a class="headerlink" href="#aql-vmprofile" title="Permalink to this headline">¶</a></h1>
 <p>过多的启动probe或者不当的probe实现都会带来潜在的性能问题，因此在开发过程中，aql-vm的正确profile是必要的。</p>
-<p>linux内核带有<a class="reference external" href="https://perf.wiki.kernel.org/index.php/Main_Page">perf</a>工具可以用来profile。Android是基于linux内核实现的，因此理论上可以使用perf。但是在Android设备上更通用的profile工具是<a class="reference external" href="https://developer.android.com/ndk/guides/simpleperf">simpleperf</a>，它用来对Android应用层进行profile，包括native实现。但是相比较perf来说，它只实现了部分可用的功能。</p>
+<p>linux内核带有<a class="reference external" href="https://perf.wiki.kernel.org/index.php/Main_Page">perf</a>工具可以用来profile。Android是基于linux内核实现的，因此理论上可以使用perf。但是在Android设备上更通用的profile工具是<a class="reference external" href="https://developer.android.com/ndk/guides/simpleperf">simpleperf</a>，它用来对Android应用层进行profile，包括native实现。相比较perf来说，它只实现了部分可用的功能。</p>
 <p>然而，Android模拟器只提供了simpleperf工具，因此可能无法进行充分的profile。对于aql-vm的profile建议在Android真实设备上展开，此时perf工具是可用的。步骤包括：</p>
 <ol class="simple">
 <li>在编译aql-vm时添加clang的<code class="docutils literal notranslate"><span class="pre">-g</span></code>参数，保留调试符号表</li>
@@ -219,7 +219,7 @@
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2018, mzs.
+        &copy; Copyright 2018, spar.
 
     </p>
   </div>

@@ -197,7 +197,7 @@
             
   <div class="section" id="aql-vm">
 <span id="aql-vm"></span><h1>下载镜像安装aql-vm<a class="headerlink" href="#aql-vm" title="Permalink to this headline">¶</a></h1>
-<p>aql-vm作为Android ART虚拟机的一个模块运行在Android设备上，因此下载的<code class="docutils literal notranslate"><span class="pre">system.img</span></code>需要刷入设备使用。当前发布的<code class="docutils literal notranslate"><span class="pre">system.img</span></code>镜像文件都对应于<code class="docutils literal notranslate"><span class="pre">x86_64</span></code> CPU体系架构的，不可刷入真实的Android手机使用，这是因为目前市场长几乎所有的Android设备都是ARM的。在真实的Android手机使用AndroidQL请参考<a class="reference external" href="./install-aqlvm-device.md">安装aql-vm到真实Android设备</a>。此外，aql-vm也提供了从源码安装的方式，请参考<a class="reference external" href="./install-aqlvm-source.md">从源码安装aql-vm</a>。</p>
+<p>aql-vm作为Android ART虚拟机的一个模块运行在Android设备上，因此下载的<code class="docutils literal notranslate"><span class="pre">system.img</span></code>需要刷入设备使用。当前发布的<code class="docutils literal notranslate"><span class="pre">system.img</span></code>镜像文件都对应于<code class="docutils literal notranslate"><span class="pre">x86_64</span></code> CPU体系架构的，不可刷入真实的Android手机使用，这是因为目前市场长几乎所有的Android设备都是ARM的。在真实的Android手机使用AndroidQL请参考<a class="reference external" href="./install-aqlvm-device.html">安装aql-vm到真实Android设备</a>。此外，aql-vm也提供了从源码安装的方式，请参考<a class="reference external" href="./install-aqlvm-source.html">从源码安装aql-vm</a>。</p>
 <div class="section" id="system-img">
 <span id="system-img"></span><h2>下载system.img镜像文件<a class="headerlink" href="#system-img" title="Permalink to this headline">¶</a></h2>
 <p>当前提供的系统镜像文件均是<code class="docutils literal notranslate"><span class="pre">x86_64</span></code>的，可提供给运行于<code class="docutils literal notranslate"><span class="pre">x86_64</span></code>主机的Android模拟器使用。点击链接可下载相应版本镜像文件<code class="docutils literal notranslate"><span class="pre">system.img</span></code>。</p>
@@ -224,8 +224,8 @@
 <div class="section" id="troubleshooting">
 <span id="troubleshooting"></span><h2>Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permalink to this headline">¶</a></h2>
 <p>使用下载的system.img启动模拟器时可能遇到无法启动的问题，这是由<code class="docutils literal notranslate"><span class="pre">kernel-qemu</span></code>版本之间的不一致导致的。对于这个问题有以下几个解决办法：</p>
-<p>首先，可以下载相应版本的AOSP，下载过程请参考<a class="reference external" href="./install-aqlvm-source.md">下载Android源码项目AOSP</a>。在AOSP根目录内部的<code class="docutils literal notranslate"><span class="pre">prebuilts</span></code>目录下查找<code class="docutils literal notranslate"><span class="pre">kernel-qemu</span></code>，通常情况下，这个<code class="docutils literal notranslate"><span class="pre">kernel-qemu</span></code>文件是可用的。</p>
-<p>此外，也可以采用<a class="reference external" href="./install-aqlvm-source.md">从源码安装aql-vm</a>的方式，这样处理的一个好处是，<code class="docutils literal notranslate"><span class="pre">emulator</span></code>所需的所有镜像文件都由AOSP提供，较少存在版本兼容的问题。</p>
+<p>首先，可以下载相应版本的AOSP，下载过程请参考<a class="reference external" href="./install-aqlvm-source.html">下载Android源码项目AOSP</a>。在AOSP根目录内部的<code class="docutils literal notranslate"><span class="pre">prebuilts</span></code>目录下查找<code class="docutils literal notranslate"><span class="pre">kernel-qemu</span></code>，通常情况下，这个<code class="docutils literal notranslate"><span class="pre">kernel-qemu</span></code>文件是可用的。</p>
+<p>此外，也可以采用<a class="reference external" href="./install-aqlvm-source.html">从源码安装aql-vm</a>的方式，这样处理的一个好处是，<code class="docutils literal notranslate"><span class="pre">emulator</span></code>所需的所有镜像文件都由AOSP提供，较少存在版本兼容的问题。</p>
 </div>
 </div>
 
@@ -249,7 +249,7 @@
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2018, mzs.
+        &copy; Copyright 2018, spar.
 
     </p>
   </div>
