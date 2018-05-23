@@ -11,8 +11,8 @@ AndroidQL框架的probe扩展主要在aql-vm部分进行，因此在添加新的
 - [aql-vm之core](./code-aql-vm-core.html)
 - [aql-vm之patch](./code-aql-vm-patch.html)
 - [aql-vm的编译](./code-aql-vm-compile.html)
-- [probe需要做什么](./code-aql-probe.html)
-- [aql-vm提供的接口](./code-aql-how-probe.html)
+- [probe需要做什么](./code-aql-vm-probe.html)
+- [aql-vm提供的接口](./code-aql-vm-how-probe.html)
 
 在动手实现一个probe之前，下列的文档对你可能是有用的。
 
