@@ -123,7 +123,7 @@ title: Xiaoxing Ma (Chinese)
 ## [发表论文](../publications)
 近期部分论文：
 
-{{ render_bib_file('../xiaoxingma.bib', ['WSongTSE2018','ConUpTSE_2017','TGuASE2016','YYangTC16MIPA','jiang_crash_2016','jiang_online_2016','Xu:2015:TSE','JavelusIST14','JYY:2014:ICSE'], hl='Xiaoxing Ma') }}
+{{ render_bib_file('../xiaoxingma.bib', ['WSongTSE2018','TGuECOOP18','ConUpTSE_2017','TGuASE2016','YYangTC16MIPA','jiang_crash_2016','jiang_online_2016','Xu:2015:TSE','JavelusIST14','JYY:2014:ICSE'], hl='Xiaoxing Ma') }}
 
 
 (还有...[英文论文](../publications), [中文论文](http://www.c-dblp.cn/search_result.php?author_name=%E9%A9%AC%E6%99%93%E6%98%9F); [DBLP](http://dblp.uni-trier.de/pers/hd/m/Ma:Xiaoxing), [Google Scholar](https://scholar.google.com/citations?user=44WpWR4AAAAJ))
