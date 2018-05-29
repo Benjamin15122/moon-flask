@@ -413,7 +413,6 @@ Two-byte SW interrupt             0-255         No
 
 # 5. 相关资源
 
-* [代码框架](/taohuang/manual/lab2.zip)
 
 # 6. 作业提交
 
