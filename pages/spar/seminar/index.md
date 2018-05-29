@@ -9,7 +9,7 @@ Every *Wednesday 4pm* @ *Computer Science and Technology Building 229*.
 ## Upcoming Talks
 
 * (May 23) Qingwei Sun: UI Driven Android Application Reduction [[ASE 17]](https://ieeexplore.ieee.org/document/8115642/); Jue Wang: SimplyDroid: Efficient Event Sequence Simplification for Android Application [[ASE 17]](https://ieeexplore.ieee.org/document/8115643/).
-* Yuju Shen
+* (May 30) Yuju Shen: GLORE: Generalized Loop Redundancy Elimination upon LER-Notation [[OOPSLA 17]](https://dl.acm.org/citation.cfm?id=3133898).
 * Zenan Li; Shengtao Yue
 * Weiyu Ye
 * Yi Liu; Rui Qiu
