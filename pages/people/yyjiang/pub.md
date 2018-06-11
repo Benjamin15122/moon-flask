@@ -5,6 +5,7 @@ title: Publications
 ### 2018
 
 * {{ render_bib_entry(g.site.spar_paper.jiang_needle_2018, hl='Yanyan Jiang') }}
+* {{ render_bib_entry(g.site.spar_paper.chen_testing_2018, hl='Yanyan Jiang') }}
 * {{ render_bib_entry(g.site.spar_paper.wang_aatt_2018, hl='Yanyan Jiang') }}
 * {{ render_bib_entry(g.site.spar_paper.wu_synthesizing_2018, hl='Yanyan Jiang') }}
 * {{ render_bib_entry(g.site.spar_paper.ma_lesdroid_2018, hl='Yanyan Jiang') }}
