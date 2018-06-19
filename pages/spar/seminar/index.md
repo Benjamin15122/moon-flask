@@ -8,9 +8,7 @@ Every *Wednesday 4pm* @ *Computer Science and Technology Building 229*.
 
 ## Upcoming Talks
 
-* (Jun 13) Da Li: UFO: Predictive Concurrency Use-After-Free Detection [[ICSE 18]](https://parasol.tamu.edu/people/jeff/academic/ufo.pdf); Wenjie Li: Traceability in the Wild: Automatically Augmenting Incomplete Trace Links [[ICSE 18]](https://arxiv.org/pdf/1804.02433.pdf).
-* Yi Liu; Rui Qiu
-* Bingying Guo
+* (Jun 20) Yi Liu: Repairing Crashes in Android Apps [[ICSE 18]](http://www.shinhwei.com/droixicse_camera.pdf).
 * Weiyu Ye
 * Yanxiang Tong
 * Chenxi Zhang
@@ -28,6 +26,8 @@ Every *Wednesday 4pm* @ *Computer Science and Technology Building 229*.
 * (May 23) Qingwei Sun: UI Driven Android Application Reduction [[ASE 17]](https://ieeexplore.ieee.org/document/8115642/); Jue Wang: SimplyDroid: Efficient Event Sequence Simplification for Android Application [[ASE 17]](https://ieeexplore.ieee.org/document/8115643/).
 * (May 30) Yuju Shen: GLORE: Generalized Loop Redundancy Elimination upon LER-Notation [[OOPSLA 17]](https://dl.acm.org/citation.cfm?id=3133898).
 * (Jun 6) Zenan Li: Universal Adversarial Perturbations [[CVPR 17]](https://arxiv.org/abs/1610.08401).
+* (Jun 13) Da Li: UFO: Predictive Concurrency Use-After-Free Detection [[ICSE 18]](https://parasol.tamu.edu/people/jeff/academic/ufo.pdf); Wenjie Li: Traceability in the Wild: Automatically Augmenting Incomplete Trace Links [[ICSE 18]](https://arxiv.org/pdf/1804.02433.pdf).
+* Yi Liu; Rui Qiu
 
 ## Seminar Archive
 
