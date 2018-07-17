@@ -17,14 +17,14 @@ Ph.D. (*Nanjing University* ![](img/nju_logo.png), 2017)<br>Visiting Scholar (*O
 I'm a coder striving to make programming less miserable. I'm interested in technologies that can *automatically* make computer software better: *testing*, *analysis*, and *synthesis*. ([知乎专栏 ![](img/zhihu.png)](https://zhuanlan.zhihu.com/se-research/) and chronological list of [my publications](pub).)
 
 <div class="row gutter" markdown="1">
-<div class="col-lg-7 col-md-7 col-sm-12">
+<div class="col-lg-9 col-md-9 col-sm-12">
 <ul>
   <li>**Software Testing and Analysis**</li>
   <ul>
     <li>Concurrent Programs: *Understanding Shared Memory Dependences* (CARE [[ICSE14](pubs/care)], RWTrace [[ASE15](pubs/rwtrace)], BC [[FSE16](pubs/bc)], Survey [[JoS17](pubs/survey)], and my [PhD Thesis](pubs/thesis)); *Interleaving Space Sampling* (SCS [[FSE18](pubs/scs)]);</li>
     <li>Mobile Apps: *Platform* (ATT [[Internetware15](pubs/att)], CoseDroid [[COMPSAC15](pubs/cosedroid)]); *Event Generation* (GAT [[APSEC16](pubs/gat)], AATT [[APSEC16](pubs/aatt), [SCP18](pubs/aattplus)]); *Human Insights* (UGA [[APSEC14](pubs/uga)]); *Analysis* (RepDroid [[ICPC17](pubs/repdroid)], LESDroid [[ICPC18](pubs/lesdroid)]);</li>
-    <li>Reliability: *Crash Consistency* (C3 [[FSE16](pubs/c3)]); *Regular Expressions* (ReScue [[ASE18](pubs/rescue)]);</li>
-    <li>Symbolic Analysis: *Fault Localization* (Comedy [[COMPSAC15](pubs/comedy)]);</li>
+    <li>Reliability: *Crash Consistency* (C3 [[FSE16](pubs/c3)]); </li>
+    <li>Program Analysis: *Fault Localization* (Comedy [[COMPSAC15](pubs/comedy)]); *Regular Expressions* (ReScue [[ASE18](pubs/rescue)]);</li>
   </ul>
   <li>**Program Synthesis**</li>
   <ul>
@@ -65,7 +65,7 @@ I'm a coder striving to make programming less miserable. I'm interested in techn
 
 <hr>
 
-Last Update: April 12, 2018
+Last Update: July 18, 2018
 
 ~~~{.customjs}
 $('ul').css('margin-left', '-15px');
