@@ -23,7 +23,7 @@ I'm a coder striving to make programming less miserable. I'm interested in techn
   <ul>
     <li>Concurrent Programs: *Understanding Shared Memory Dependences* (CARE [[ICSE14](pubs/care)], RWTrace [[ASE15](pubs/rwtrace)], BC [[FSE16](pubs/bc)], Survey [[JoS17](pubs/survey)], and my [PhD Thesis](pubs/thesis)); *Interleaving Space Sampling* (SCS [[FSE18](pubs/scs)]);</li>
     <li>Mobile Apps: *Platform* (ATT [[Internetware15](pubs/att)], CoseDroid [[COMPSAC15](pubs/cosedroid)]); *Event Generation* (GAT [[APSEC16](pubs/gat)], AATT [[APSEC16](pubs/aatt), [SCP18](pubs/aattplus)]); *Human Insights* (UGA [[APSEC14](pubs/uga)]); *Analysis* (RepDroid [[ICPC17](pubs/repdroid)], LESDroid [[ICPC18](pubs/lesdroid)]);</li>
-    <li>Reliability: *Crash Consistency* (C3 [[FSE16](pubs/c3)]);</li>
+    <li>Reliability: *Crash Consistency* (C3 [[FSE16](pubs/c3)]); *Regular Expressions* (ReScue [[ASE18](pubs/rescue)]);</li>
     <li>Symbolic Analysis: *Fault Localization* (Comedy [[COMPSAC15](pubs/comedy)]);</li>
   </ul>
   <li>**Program Synthesis**</li>
