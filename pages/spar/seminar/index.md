@@ -8,9 +8,7 @@ Every *Wednesday 4pm* @ *Computer Science and Technology Building 229*.
 
 ## Upcoming Talks
 
-* (Jun 27) Weiyu Ye: Model-Based Self-Aware Performance and Resource Management Using the Descartes Modeling Language[[TSE 17]](https://ieeexplore.ieee.org/document/7577879/).
-* Yanxiang Tong
-* Chenxi Zhang
+* (Jul 18) Chenxi Zhang: Leveraging Program Analysis to Reduce User-Perceived Latency in Mobile Applications [[ICSE 18]](https://softarch.usc.edu/~yixue/mypapers/ICSE2018_PALOMA.pdf).
 
 ## Past Talks
 * (Mar 21) Jiarong Wu: Neural-Guided Deductive Search for Real-Time Program Synthesis from Examples [[ICLR 18]](https://openreview.net/forum?id=rywDjg-RW).
@@ -27,6 +25,8 @@ Every *Wednesday 4pm* @ *Computer Science and Technology Building 229*.
 * (Jun 6) Zenan Li: Universal Adversarial Perturbations [[CVPR 17]](https://arxiv.org/abs/1610.08401).
 * (Jun 13) Da Li: UFO: Predictive Concurrency Use-After-Free Detection [[ICSE 18]](https://parasol.tamu.edu/people/jeff/academic/ufo.pdf); Wenjie Li: Traceability in the Wild: Automatically Augmenting Incomplete Trace Links [[ICSE 18]](https://arxiv.org/pdf/1804.02433.pdf).
 * (Jun 20) Yi Liu: Repairing Crashes in Android Apps [[ICSE 18]](http://www.shinhwei.com/droixicse_camera.pdf).
+* (Jun 27) Weiyu Ye: Model-Based Self-Aware Performance and Resource Management Using the Descartes Modeling Language [[TSE 17]](https://ieeexplore.ieee.org/document/7577879/).
+* (Jul 4) Yanxiang Tong: CALOREE: Learning Control for Predictable Latency and Low Energy [[ASPLOS 18]](https://dl.acm.org/citation.cfm?id=3173184).
 
 ## Seminar Archive
 
