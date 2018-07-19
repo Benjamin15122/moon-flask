@@ -4,7 +4,7 @@ title: Jingwei Xu
 
 * Assistant Researcher
 * Institute of Computer Software, Nanjing University
-* Room 812, Computer Science and Technology Building
+* Room 919, Computer Science and Technology Building
 * jingwei.xu.nju (at) gmail dot com
 
 ## Research Interests
