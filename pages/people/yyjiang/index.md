@@ -43,7 +43,7 @@ I'm a coder striving to make programming less miserable. I'm interested in techn
 
 ## Teaching
 
-* [Operating Systems (Spring 2018)](/~jyywiki).
+* [Operating Systems (Spring 2018)](/~jyywiki); [Introduction to Computer Systems (Fall 2018)](/~jyywiki).
 * I am a co-founder of *Project-N* ![](img/logo-n.png) in which undergraduate students build a complete computer system (NPC SoC, NEMU system emulator, Nanos operating system, NCC compiler, and applications) from scratch.
     * We got Second Place in the 2017 Loongson Cup computer system design contest.
     * Papers: *Plagiarism Detection* (Needle [[SIGCSE-China18](pubs/needle)]).
@@ -61,7 +61,7 @@ I'm a coder striving to make programming less miserable. I'm interested in techn
 * 2016 *Distinguished Student* of Nanjing University (the only PhD student out of ten winners).
 * 2014 *MSRA Fellowship Award*; 2015 and 2010 *National Scholarship*;
 * First Place in the 2014 Huawei Cup *Regional Programming Contest*; Second Place in the 2012 *Tencent Hackathon*.
-* During my collegiate years, I competed in *ACM-ICPC* regional contests for two Gold Medals and earned 49th Place in the 2009 World Finals.
+* During my collegiate years, I competed in *ACM-ICPC* regional contests for two Gold Medals and earned 49th Place in the 2009 *World Finals*.
 
 <hr>
 
