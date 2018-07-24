@@ -44,7 +44,7 @@ I'm a coder striving to make programming less miserable. I'm interested in techn
 ## Teaching
 
 * [Operating Systems (Spring 2018)](/~jyywiki).
-* I am working on the *Project-N* ![](img/logo-n.png) in which students build a complete computer system (NPC SoC, NEMU system emulator, Nanos operating system, NCC compiler, and applications) from scratch. I am the inventor of *Nanos* and *AbstractMachine* in Project-N, and contributed to the overall system-stack design.
+* I am a co-founder of *Project-N* ![](img/logo-n.png) in which undergraduate students build a complete computer system (NPC SoC, NEMU system emulator, Nanos operating system, NCC compiler, and applications) from scratch.
     * We got Second Place in the 2017 Loongson Cup computer system design contest.
     * Papers: *Plagiarism Detection* (Needle [[SIGCSE-China18](pubs/needle)]).
 * Selected talks:
@@ -53,8 +53,8 @@ I'm a coder striving to make programming less miserable. I'm interested in techn
 
 ## Services
 
-* PC Member: [SATE2018](http://sei.pku.edu.cn/~xiongyf04/confs/sate18/index_en.html) ([中文](http://sei.pku.edu.cn/~xiongyf04/confs/sate18/index.html))
-* ![](img/noi.png) Scientific Program Committee member of Jiangsu Olympiad in Informatics (the official programming contest hoster for high school students).
+* PC Member: [SATE2018](http://sei.pku.edu.cn/~xiongyf04/confs/sate18/index_en.html) ([中文](http://sei.pku.edu.cn/~xiongyf04/confs/sate18/index.html)); External Reviewer: TPDS (2018).
+* ![](img/noi.png) Steering Program Committee member of Jiangsu Olympiad in Informatics.
 * ![](img/acmicpc.png) Coach of the programming contest training team at Nanjing University.
 
 ## Honors and Awards
@@ -65,7 +65,7 @@ I'm a coder striving to make programming less miserable. I'm interested in techn
 
 <hr>
 
-Last Update: July 18, 2018
+Last Update: July 24, 2018
 
 ~~~{.customjs}
 $('ul').css('margin-left', '-15px');
