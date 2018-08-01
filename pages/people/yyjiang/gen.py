@@ -21,14 +21,12 @@ class Paper:
 for p in bibtexparser.load(open('../../spar/spar.bib'), parser=parser).entries:
     paper = Paper()
     for (k, v) in p.items():
-        paper.__dict__[k.lower()] = v
+        setattr(paper, k.lower(), v)
     db[paper.id] = paper
     
-
 for (name, values) in yaml.load(open('papers.yaml', 'r')).items():
     id = values['id']
     for (k, v) in values.items():
-        db[id].__dict__[k] = v
+        setattr(db[id], k, v)
     render(name, id, db[id], 'pubs/{0}.md'.format(name))
-
-
+    print(name, )
