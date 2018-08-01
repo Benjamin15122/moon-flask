@@ -40,7 +40,7 @@ I'm a coder striving to make programming less miserable. I'm interested in techn
 
 <b>Summary</b> (click to magnify)
 
-[![](summary.svg)](summary)
+<a href="summary"><img src="summary.svg"/></a>
 
 </div>
 </div>
