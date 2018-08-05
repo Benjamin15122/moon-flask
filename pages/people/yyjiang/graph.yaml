@@ -2,7 +2,7 @@ nodes:
   - id: rescue
     name: ReScue
     desc: '[ASE18]'
-    path: sta/analysis
+    path: sta/adverse
   - id: scs
     name: SCS
     desc: '[FSE18]'
@@ -18,27 +18,27 @@ nodes:
   - id: thesis
     name: PhD Thesis
     desc: 'Yanyan Jiang<br></br>Nanjing University'
-    path: sta/concurrency
+    path: sta/smd
   - id: survey
     name: Survey
     desc: '[JoS17]'
-    path: sta/concurrency
+    path: sta/smd
   - id: aatt
     name: AATT
     desc: '[APSEC16]<br></br>[SCP18]'
-    path: mobile
+    path: sta/concurrency
   - id: repdroid
     name: RepDroid
     desc: '[ICPC17]'
-    path: sta/mobile
+    path: sta/analysis
   - id: c3
     name: C3
     desc: '[FSE16]'
-    path: sta/analysis
+    path: sta/adverse
   - id: bc
     name: Bisect Coord
     desc: '[FSE16]'
-    path: sta/concurrency
+    path: sta/smd
   - id: gat
     name: GAT
     desc: '[APSEC16]'
@@ -50,7 +50,7 @@ nodes:
   - id: rwtrace
     name: RWTrace
     desc: '[ASE15]'
-    path: sta/concurrency
+    path: sta/smd
   - id: comedy
     name: Comedy
     desc: '[COMPSAC15]'
@@ -70,7 +70,7 @@ nodes:
   - id: care
     name: CARE
     desc: '[ICSE14]'
-    path: sta/concurrency
+    path: sta/smd
   - id: uga
     name: UGA
     desc: '[APSEC14]'
@@ -82,7 +82,7 @@ nodes:
   - id: lesdroid
     name: LESDroid
     desc: '[ICPC18]'
-    path: sta/mobile
+    path: sta/analysis
 edges:
   - att -> gat
   - att -> aatt
@@ -101,10 +101,14 @@ edges:
 clusters:
   - id: sta
     label: 'Software Testing and Analysis'
+  - id: smd
+    label: 'Understanding Shared Memory Dependences'
   - id: concurrency
-    label: 'Concurrent Programs'
+    label: 'Exploration of Interleaving Spaces' 
   - id: mobile
     label: 'Mobile Apps'
+  - id: adverse
+    label: 'Adversarial Conditions'
   - id: analysis
     label: 'Software Analysis'
   - id: synthesis
