@@ -64,7 +64,7 @@ title: Jun Ma
 
 ## News
 
-*  <img src="static/img/new.jpg" width = "40" height = "40" align=center />Congratulations on Shengtao Yue's ICSME'18 paper: "RegionDroid: A Tool for Detecting Android Application Repackaging Based on Runtime UI Region Features"!
+*  <img src="static/img/new.jpg" width = "40" height = "40" align=center />Congratulations on Shengtao Yue's ICSME'18 paper: "RegionDroid: A Tool for Detecting Android Application Repackaging Based on Runtime UI Region Features"!([Pre-print Version](static/files/ICSME2018(pre-print).pdf))
 *  <img src="static/img/new.jpg" width = "40" height = "40" align=center />New paper "LESDroid - A Tool for Detecting Exported Service Leaks of Android Applications" is accepted to ICPC'18!([Pre-print Version](static/files/LesDroid(pre-print).pdf))
 *  <img src="static/img/new.jpg" width = "40" height = "40" align=center />Congratulations on Tianheng Wu's Compsac'18 paper:"CARMUS: Towards a General Framework for Continuous Activity Recognition with Missing Values on Smartphones"!
 *  <img src="static/img/new.jpg" width = "40" height = "40" align=center /> Jue Wang, Yanyan Jiang, Chang Xu, Qiwei Li, Tianxiao Gu, Jun Ma, Xiaoxing Ma, and Jian Lu. AATT+: Effectively Manifesting Concurrency Bugs in Android Apps. Science of Computer Programming (SCP), Vol. 163, pp. 1-18, Oct 2018. ([pdf](http://cs.nju.edu.cn/changxu/1_publications/SCP18.pdf))
