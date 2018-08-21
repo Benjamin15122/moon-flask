@@ -52,6 +52,7 @@ I'm a coder striving to make programming less miserable. I'm interested in techn
 * I am a co-founder of *Project-N* ![](img/logo-n.png) in which undergraduate students build a complete computer system (NPC SoC, NEMU system emulator, Nanos operating system, NCC compiler, and applications) from scratch.
     * Papers: *Plagiarism Detection* (Needle [![](img/zhihu.png)](http://zhuanlan.zhihu.com/p/40568346) [[SIGCSE-China18](pubs/needle)]).
 * Selected talks:
+    * “Building Computer Systems From Scratch Around AbstractMachine” [![](/static/img/icon-pdf.png)](teach/am-talk.pdf) (CSEW'18).
     * “计算：万物的起源和终点” [![](/static/img/icon-pdf.png)](teach/20140121.pdf) (Keynote speech at JSOI'14 Winter Camp).
     * “从逻辑门到电子计算机” [![](/static/img/icon-pdf.png)](teach/20141008.pdf) (Guest lecture, 2014).
 
@@ -69,7 +70,7 @@ I'm a coder striving to make programming less miserable. I'm interested in techn
 
 <hr>
 
-Last Update: July 24, 2018
+Last Update: August 21, 2018
 
 ~~~{.customjs}
 $('ul').css('margin-left', '-15px');
