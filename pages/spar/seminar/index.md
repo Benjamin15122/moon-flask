@@ -2,13 +2,16 @@ title: SPAR Seminar
 
 # SPAR Seminar (2018 Fall)
 
-Discuss software engineering, programming language, and system papers that have *novel* and *significant* contributions. Tool tutorials are also welcomed.
+16:00-17:00, Every *Tuesday*, Room *TBD*
 
-TBD.
+Discuss software engineering, programming language, and system papers that have *novel* and *significant* contributions. Tool tutorials are also welcomed.
 
 ## Upcoming Talks
 
+TBD.
+
 ## Past Talks
+
 ## Seminar Archive
 
 * [2018 Spring](2018spring).
