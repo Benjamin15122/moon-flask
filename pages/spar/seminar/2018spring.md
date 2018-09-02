@@ -7,7 +7,7 @@ title: 2018 Spring
 * (Apr 4) Yuehuan Wang: Practical Black-Box Attacks against Machine Learning [[ASIACCS 17]](https://arxiv.org/abs/1602.02697).
 * (Apr 11) Cong Li: Reliable Third-Party Library Detection in Android and its Security Applications [[CCS 16]](https://dl.acm.org/citation.cfm?id=2978333), LibRadar: Fast and Accurate Detection of Third-party Libraries in Android Apps [[ICSE 16]](https://dl.acm.org/citation.cfm?id=2889178), WuKong: A Scalable and Accurate Two-Phase Approach to Android App Clone Detection [[ISSTA 15]](https://dl.acm.org/citation.cfm?id=2771795); Jingxin Fan: Proactive Self-Adaptation under Uncertainty: A Probabilistic Model Checking Approach [[FSE 15]](http://acme.able.cs.cmu.edu/pubs/uploads/pdf/fse15main-mainid213-p-1d01012-24621-final.pdf).
 * (Apr 18) Shaocong Liu: Systematically Testing Background Services of Mobile Apps [[ASE 17]](https://dl.acm.org/citation.cfm?id=3155568).
-* (Apr 25) Yang Cao: Skyfire: Data-Driven Seed Generation for Fuzzing [[SP 17]](https://ieeexplore.ieee.org/document/7958599/); Dongjie Chen: Repairing Sequential Consistency in C/C++ 11 [[PLDI 17]](https://dl.acm.org/citation.cfm?id=3062352).
+* (Apr 25) Yang Cao: Skyfire: Data-Driven Seed Generation for Fuzzing [[S&P 17]](https://ieeexplore.ieee.org/document/7958599/); Dongjie Chen: Repairing Sequential Consistency in C/C++ 11 [[PLDI 17]](https://dl.acm.org/citation.cfm?id=3062352).
 * (May 2) Dawei Cheng: LAMP: Data Provenance for Graph Based Machine Learning Algorithms through Derivative Computation [[FSE 17]](https://dl.acm.org/citation.cfm?id=3106291). 
 * (May 9) Jiaxing Dong: DroidInjector: A Process Injection-baseddynamic Tracking System for Runtime Behaviors of Android Applications [[Computer & Security 17]](https://www.sciencedirect.com/science/article/pii/S0167404817301207?via%3Dihub).
 * (May 16) Huiyan Wang: Discovering Relational Specifications [[FSE 17]](https://dl.acm.org/citation.cfm?doid=3106237.3106279).
@@ -19,3 +19,4 @@ title: 2018 Spring
 * (Jun 27) Weiyu Ye: Model-Based Self-Aware Performance and Resource Management Using the Descartes Modeling Language [[TSE 17]](https://ieeexplore.ieee.org/document/7577879/).
 * (Jul 4) Yanxiang Tong: CALOREE: Learning Control for Predictable Latency and Low Energy [[ASPLOS 18]](https://dl.acm.org/citation.cfm?id=3173184).
 * (Jul 18) Chenxi Zhang: Leveraging Program Analysis to Reduce User-Perceived Latency in Mobile Applications [[ICSE 18]](https://softarch.usc.edu/~yixue/mypapers/ICSE2018_PALOMA.pdf).
+

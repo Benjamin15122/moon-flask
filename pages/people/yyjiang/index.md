@@ -58,7 +58,7 @@ I'm a coder striving to make programming less miserable. I'm interested in techn
 
 ## Services
 
-* PC Member: [SATE2018](http://sei.pku.edu.cn/~xiongyf04/confs/sate18/index_en.html) ([中文](http://sei.pku.edu.cn/~xiongyf04/confs/sate18/index.html)); External Reviewer: TPDS (2018).
+* PC Member: [SATE2018](http://sei.pku.edu.cn/~xiongyf04/confs/sate18/index_en.html) ([中文](http://sei.pku.edu.cn/~xiongyf04/confs/sate18/index.html)); External Reviewer: TPDS (2018), Internetware (2018).
 * ![](img/noi.png) Steering/Scientific Program Committee member of Jiangsu Olympiad in Informatics.
 * ![](img/acmicpc.png) Coach of the programming contest training team at Nanjing University.
 
@@ -71,7 +71,7 @@ I'm a coder striving to make programming less miserable. I'm interested in techn
 
 <hr>
 
-Last Update: August 21, 2018
+Last Update: September 2, 2018
 
 ~~~{.customjs}
 $('ul').css('margin-left', '-15px');
