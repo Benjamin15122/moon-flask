@@ -19,6 +19,15 @@ My research interests focus on Android app testing.
 **Publications**:
 
 ~~~{.bibtexhtml hl_lines="Yi Liu"}
+@article{liu2018navydroid,
+    author={Liu, Yi and Wang, Jue and Xu, Chang and Ma, Xiaoxing and L{\"u}, Jian},
+    title={NavyDroid: An Efficient Tool of Energy Inefficiency Problem Diagnosis for Android Applications},
+    journal={Science China Information Sciences},
+    volume={61},
+    pages={1--20},
+    year={2018},
+    publisher={Springer}
+}
 @inproceedings{liu2017navydroid,
     author={Liu, Yi and Wang, Jue and Xu, Chang and Ma, Xiaoxing},
     title={NavyDroid: Detecting Energy Inefficiency Problems for Smartphone Applications},

@@ -1,0 +1,306 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>aql-vm之core &mdash; AndroidQL 1.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="aql-vm之patch" href="code-aql-vm-patch.html" />
+    <link rel="prev" title="aql-vm之adapter" href="code-aql-vm-adapter.html" /> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> AndroidQL
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">框架介绍</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="overview.html">AndroidQL框架介绍</a></li>
+</ul>
+<p class="caption"><span class="caption-text">安装</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="install.html">AndroidQL的安装介绍</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install-aqlvm-source.html">从源码安装aql-vm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install-aqlvm-image.html">下载镜像安装aql-vm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install-aqlvm-device.html">安装aql-vm到真实Android设备</a></li>
+</ul>
+<p class="caption"><span class="caption-text">下载</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="download.html">下载AndroidQL</a></li>
+</ul>
+<p class="caption"><span class="caption-text">使用手册</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="aql-get-started.html">从零开始AndroidQL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="aql-query-language.html">AQL查询语言简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="aql-aqlsh.html">可交互的aqlsh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="aql-brk.html">AndroidQL的断点机制</a></li>
+<li class="toctree-l1"><a class="reference internal" href="aql-probe-how-work.html">AndroidQL的probe如何工作</a></li>
+<li class="toctree-l1"><a class="reference internal" href="aql-have-probe.html">可用的probe</a></li>
+<li class="toctree-l1"><a class="reference internal" href="aql-spec.html">通信协议规范</a></li>
+</ul>
+<p class="caption"><span class="caption-text">贡献代码</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="code.html">贡献代码介绍</a></li>
+<li class="toctree-l1"><a class="reference internal" href="code-aql-vm.html">aql-vm项目介绍</a></li>
+<li class="toctree-l1"><a class="reference internal" href="code-aql-vm-adapter.html">aql-vm之adapter</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">aql-vm之core</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#base"><code class="docutils literal notranslate"><span class="pre">base</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#json11"><code class="docutils literal notranslate"><span class="pre">json11</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#table"><code class="docutils literal notranslate"><span class="pre">table</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#state"><code class="docutils literal notranslate"><span class="pre">state</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="code-aql-vm-patch.html">aql-vm之patch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="code-aql-vm-compile.html">aql-vm的编译</a></li>
+<li class="toctree-l1"><a class="reference internal" href="code-aql-vm-probe.html">probe需要做什么</a></li>
+<li class="toctree-l1"><a class="reference internal" href="code-aql-vm-how-probe.html">aql-vm提供的接口</a></li>
+<li class="toctree-l1"><a class="reference internal" href="code-dev-env.html">AndroidQL开发环境部署</a></li>
+<li class="toctree-l1"><a class="reference internal" href="code-add-probe.html">开发probe，你需要做什么</a></li>
+<li class="toctree-l1"><a class="reference internal" href="code-aql-vm-lock.html">aql-vm中的锁使用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="code-how-bcov.html">如何实现<strong>bcov</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="code-contact.html">联系我们</a></li>
+<li class="toctree-l1"><a class="reference internal" href="code-bug-report.html">bug报告</a></li>
+<li class="toctree-l1"><a class="reference internal" href="code-patch-submit.html">patch提交</a></li>
+</ul>
+<p class="caption"><span class="caption-text">帮助</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="help-troubleshooting.html">常见问题汇总</a></li>
+<li class="toctree-l1"><a class="reference internal" href="help-profile.html">aql-vm的profile</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">AndroidQL</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>aql-vm之core</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/code-aql-vm-core.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="aql-vmcore">
+<span id="aql-vmcore"></span><h1>aql-vm之core<a class="headerlink" href="#aql-vmcore" title="Permalink to this headline">¶</a></h1>
+<p><code class="docutils literal notranslate"><span class="pre">core</span></code>作为aql-vm的核心技术层，处理的技术细节包括：</p>
+<ul class="simple">
+<li>对于ART虚拟机解释器的修改</li>
+<li>aql-vm和aql-client的连接状态的维护</li>
+<li>数据传输协议的实现</li>
+<li>数据的有效内部存储</li>
+<li>probe的组织和管理</li>
+</ul>
+<p><code class="docutils literal notranslate"><span class="pre">core</span></code>存在于art/runtime/aql/core，结构如下：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>aql
+└── adapter
+└── probe
+└── core
+    └── base
+    └── json11
+    └── table  
+    └── state      
+</pre></div>
+</div>
+<div class="section" id="base">
+<span id="base"></span><h2><code class="docutils literal notranslate"><span class="pre">base</span></code><a class="headerlink" href="#base" title="Permalink to this headline">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">base</span></code>包含对ART虚拟机解释器的修改和用来传输的数据包数据结构的定义，对解释器的修改封装实现在<code class="docutils literal notranslate"><span class="pre">aql_instrumentation</span></code>，数据包在aql-vm中定义为<code class="docutils literal notranslate"><span class="pre">aql-packet</span></code>。</p>
+</div>
+<div class="section" id="json11">
+<span id="json11"></span><h2><code class="docutils literal notranslate"><span class="pre">json11</span></code><a class="headerlink" href="#json11" title="Permalink to this headline">¶</a></h2>
+<p>AndroidQL数据包被分为<code class="docutils literal notranslate"><span class="pre">head</span></code>和<code class="docutils literal notranslate"><span class="pre">data</span></code>两个部分，其中<code class="docutils literal notranslate"><span class="pre">data</span></code>部分采用json序列化传输。<code class="docutils literal notranslate"><span class="pre">json11</span></code>目录下提供了json字符串<code class="docutils literal notranslate"><span class="pre">encode</span></code>和<code class="docutils literal notranslate"><span class="pre">decode</span></code>等相关的接口。</p>
+</div>
+<div class="section" id="table">
+<span id="table"></span><h2><code class="docutils literal notranslate"><span class="pre">table</span></code><a class="headerlink" href="#table" title="Permalink to this headline">¶</a></h2>
+<p>在AndroidQL的设计和实现中，应用程序的所有运行时数据都可以以表的形式存在于内存中。内存表在实现上采用SQlite的<code class="docutils literal notranslate"><span class="pre">in-memory</span></code>机制，<code class="docutils literal notranslate"><span class="pre">table</span></code>部分完成了对SQlite接口的进一步封装。</p>
+</div>
+<div class="section" id="state">
+<span id="state"></span><h2><code class="docutils literal notranslate"><span class="pre">state</span></code><a class="headerlink" href="#state" title="Permalink to this headline">¶</a></h2>
+<p>aql-vm和aql-client建立的连接在内部被抽象成<code class="docutils literal notranslate"><span class="pre">aql_state</span></code>数据结构。aql-vm使用<code class="docutils literal notranslate"><span class="pre">aql_state</span></code>对连接的建立和销毁，数据的接收和发送等核心功能进行管理。</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="code-aql-vm-patch.html" class="btn btn-neutral float-right" title="aql-vm之patch" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="code-aql-vm-adapter.html" class="btn btn-neutral" title="aql-vm之adapter" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, spar.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1.0',
+            LANGUAGE:'None',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

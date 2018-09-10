@@ -1,0 +1,355 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>AndroidQL 代码详解 &mdash; AndroidQL 1.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> AndroidQL
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">框架介绍</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="overview.html">AndroidQL框架介绍</a></li>
+</ul>
+<p class="caption"><span class="caption-text">安装</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="install.html">AndroidQL的安装介绍</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install-aqlvm-source.html">从源码安装aql-vm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install-aqlvm-image.html">下载镜像安装aql-vm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install-aqlvm-device.html">安装aql-vm到真实Android设备</a></li>
+</ul>
+<p class="caption"><span class="caption-text">下载</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="download.html">下载AndroidQL</a></li>
+</ul>
+<p class="caption"><span class="caption-text">使用手册</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="aql-get-started.html">从零开始AndroidQL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="aql-query-language.html">AQL查询语言简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="aql-aqlsh.html">可交互的aqlsh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="aql-brk.html">AndroidQL的断点机制</a></li>
+<li class="toctree-l1"><a class="reference internal" href="aql-probe-how-work.html">AndroidQL的probe如何工作</a></li>
+<li class="toctree-l1"><a class="reference internal" href="aql-have-probe.html">可用的probe</a></li>
+<li class="toctree-l1"><a class="reference internal" href="aql-spec.html">通信协议规范</a></li>
+</ul>
+<p class="caption"><span class="caption-text">贡献代码</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="code.html">贡献代码介绍</a></li>
+<li class="toctree-l1"><a class="reference internal" href="code-aql-vm.html">aql-vm项目介绍</a></li>
+<li class="toctree-l1"><a class="reference internal" href="code-aql-vm-adapter.html">aql-vm之adapter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="code-aql-vm-core.html">aql-vm之core</a></li>
+<li class="toctree-l1"><a class="reference internal" href="code-aql-vm-patch.html">aql-vm之patch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="code-aql-vm-compile.html">aql-vm的编译</a></li>
+<li class="toctree-l1"><a class="reference internal" href="code-aql-vm-probe.html">probe需要做什么</a></li>
+<li class="toctree-l1"><a class="reference internal" href="code-aql-vm-how-probe.html">aql-vm提供的接口</a></li>
+<li class="toctree-l1"><a class="reference internal" href="code-dev-env.html">AndroidQL开发环境部署</a></li>
+<li class="toctree-l1"><a class="reference internal" href="code-add-probe.html">开发probe，你需要做什么</a></li>
+<li class="toctree-l1"><a class="reference internal" href="code-aql-vm-lock.html">aql-vm中的锁使用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="code-how-bcov.html">如何实现<strong>bcov</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="code-contact.html">联系我们</a></li>
+<li class="toctree-l1"><a class="reference internal" href="code-bug-report.html">bug报告</a></li>
+<li class="toctree-l1"><a class="reference internal" href="code-patch-submit.html">patch提交</a></li>
+</ul>
+<p class="caption"><span class="caption-text">帮助</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="help-troubleshooting.html">常见问题汇总</a></li>
+<li class="toctree-l1"><a class="reference internal" href="help-profile.html">aql-vm的profile</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">AndroidQL</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>AndroidQL 代码详解</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/code-comment.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="androidql">
+<span id="androidql"></span><h1>AndroidQL 代码详解<a class="headerlink" href="#androidql" title="Permalink to this headline">¶</a></h1>
+<p>AndroidQL 的源代码除了 <code class="docutils literal notranslate"><span class="pre">art/runtime/aql</span></code> 目录下的内容，还对 Android Runtime 进行了几个地方的改动：</p>
+<ol class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">art/runtime/runtime.cc</span></code>：随着 <code class="docutils literal notranslate"><span class="pre">Runtime</span></code> 对象的创建和销毁，创建和销毁<code class="docutils literal notranslate"><span class="pre">Aql</span></code>对象</li>
+<li><code class="docutils literal notranslate"><span class="pre">art/runtime/jdwp/jdwp_adb.cc</span></code>：进行 AndroidQL 主要的初始化工作，包括初始化连接状态、建立通信等</li>
+<li><code class="docutils literal notranslate"><span class="pre">art/runtime/interpreter_switch_impl.cc</span></code>：在指令解释执行的前后进行插桩</li>
+<li><code class="docutils literal notranslate"><span class="pre">art/runtime/thread_list.cc</span></code>：支持线程 suspend，以实现断点功能</li>
+</ol>
+<div class="section" id="">
+<span id="id1"></span><h2>全局定义<a class="headerlink" href="#" title="Permalink to this headline">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">aql/core/base/aql_macros.h</span></code>里定义了<code class="docutils literal notranslate"><span class="pre">LOGI</span></code>和<code class="docutils literal notranslate"><span class="pre">LOGE</span></code>，都是使用ART里已有的log功能（<code class="docutils literal notranslate"><span class="pre">art/runtime/base/logging.h</span></code>里的<code class="docutils literal notranslate"><span class="pre">LOG</span></code>），在输入前面附加AQL标签。</p>
+</div>
+<div class="section" id="">
+<span id="id2"></span><h2>插桩<a class="headerlink" href="#" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="">
+<span id="id3"></span><h3>入口<a class="headerlink" href="#" title="Permalink to this headline">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">art/runtime/interpreter/interpreter_switch_impl.cc</span></code>里的<code class="docutils literal notranslate"><span class="pre">PREAMBLE()</span></code>插入了<code class="docutils literal notranslate"><span class="pre">AQL_BEFORE_INST</span></code>，<code class="docutils literal notranslate"><span class="pre">POSTAMBLE</span></code>插入了<code class="docutils literal notranslate"><span class="pre">AQL_AFTER_INST</span></code>。经过一系列的宏定义解开之后，会调用<code class="docutils literal notranslate"><span class="pre">AqlInstrumentationListener::BeforeInst</span></code>和<code class="docutils literal notranslate"><span class="pre">AqlInstrumentationListener::AfterInst</span></code>。</p>
+<p>总结来说，在每个指令执行时，找到注册在这个指令的opcode上的listener，调用这些listener的<code class="docutils literal notranslate"><span class="pre">BeforeInst</span></code>和<code class="docutils literal notranslate"><span class="pre">AfterInst</span></code>。</p>
+</div>
+<div class="section" id="listener">
+<span id="listener"></span><h3>Listener<a class="headerlink" href="#listener" title="Permalink to this headline">¶</a></h3>
+<p>Listener的类为<code class="docutils literal notranslate"><span class="pre">AqlInstrumentationListener</span></code>。管理listener的类是<code class="docutils literal notranslate"><span class="pre">AqlInstrumentation</span></code>。<code class="docutils literal notranslate"><span class="pre">AqlInstrumentation</span></code>维护一个从opcode到listeners的map。每次指令执行时，根据这个map来查询注册在这个opcode上的listeners。</p>
+<p><code class="docutils literal notranslate"><span class="pre">AqlInstrumentation</span></code>的<code class="docutils literal notranslate"><span class="pre">AddListener</span></code>和<code class="docutils literal notranslate"><span class="pre">RemoveListener</span></code>是用来注册listener的接口。但实际使用的时候都是调用<code class="docutils literal notranslate"><span class="pre">Probe::Wire</span></code>和<code class="docutils literal notranslate"><span class="pre">Probe::Unwire</span></code>来进行批量的注册。</p>
+</div>
+<div class="section" id="probe">
+<span id="probe"></span><h3>Probe<a class="headerlink" href="#probe" title="Permalink to this headline">¶</a></h3>
+<p>Probe实际上就是做具体功能的listener，每个功能类继承自<code class="docutils literal notranslate"><span class="pre">AqlInstrumentationListener</span></code>。这些功能类又有一个共同的抽象父类<code class="docutils literal notranslate"><span class="pre">Probe</span></code>。</p>
+<p><code class="docutils literal notranslate"><span class="pre">Probe</span></code>类提供了<code class="docutils literal notranslate"><span class="pre">WireAll</span></code>、<code class="docutils literal notranslate"><span class="pre">WireInvoke</span></code>、<code class="docutils literal notranslate"><span class="pre">WireBranch</span></code>以支持常用的批量注册操作。<code class="docutils literal notranslate"><span class="pre">Probe</span></code>类的<code class="docutils literal notranslate"><span class="pre">Wire*</span></code>会调用<code class="docutils literal notranslate"><span class="pre">AqlInstrumentation::AddListener</span></code>，把自己（this，本身就是listener）注册在某个指令上。其中<code class="docutils literal notranslate"><span class="pre">WireAll</span></code>将listener注册在了一个特殊的opcode <code class="docutils literal notranslate"><span class="pre">ALL_INSTS</span></code>上。任何指令的执行都会触发注册在<code class="docutils literal notranslate"><span class="pre">ALL_INSTS</span></code>上的listeners。<code class="docutils literal notranslate"><span class="pre">Probe</span></code>类并未重写<code class="docutils literal notranslate"><span class="pre">AqlInstrumentationListener</span></code>的<code class="docutils literal notranslate"><span class="pre">BeforeInst</span></code>和<code class="docutils literal notranslate"><span class="pre">AfterInst</span></code>方法，而是交给具体的功能类去完成。</p>
+<p>功能类 | Wire* | 重写BeforeInst | 重写AfterInst
+— | — | — | —
+Breakpoint | <code class="docutils literal notranslate"><span class="pre">WireAll</span></code> | Yes | No
+ICov | <code class="docutils literal notranslate"><span class="pre">WireAll</span></code> | No | Yes
+BCov | <code class="docutils literal notranslate"><span class="pre">WireBranch</span></code> | No | Yes
+MCov | <code class="docutils literal notranslate"><span class="pre">WireInvoke</span></code> | No | Yes</p>
+</div>
+</div>
+<div class="section" id="">
+<span id="id4"></span><h2>通信<a class="headerlink" href="#" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="connection">
+<span id="connection"></span><h3>Connection<a class="headerlink" href="#connection" title="Permalink to this headline">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">art/runtime/jdwp/jdwp_adb.cc</span></code> 里调用<code class="docutils literal notranslate"><span class="pre">Aql::GoActive(sock)</span></code>。这里<code class="docutils literal notranslate"><span class="pre">sock</span></code>是一个FD（文件描述符）。</p>
+<p>JDWP是一个Android的调试协议，规定了一个debug client（DDMS）如何和debug server（运行在VM中）进行通信。在正常情况下，VM只允许建立一条连接。这里进行了修改，打开了第二条连接通道，进行AQL相关的通信。代码中使用<code class="docutils literal notranslate"><span class="pre">jdwp_socket</span></code>和<code class="docutils literal notranslate"><span class="pre">aql_socket</span></code>来区分这两个连接通道。</p>
+<p>当一个app启动时，会添加一个断点到主函数之前，保证在app运行前就完成AQL的初始化工作。</p>
+<p><code class="docutils literal notranslate"><span class="pre">Aql::GoActive</span></code>启动AQL模块，初始化probes，切换至解释器模式，创建一个<code class="docutils literal notranslate"><span class="pre">AqlConnState</span></code>对象，调用<code class="docutils literal notranslate"><span class="pre">AqlConnState::Run</span></code>进入主循环。其中，<code class="docutils literal notranslate"><span class="pre">Aql::SwitchToInterpreter</span></code>切换成了解释器模式。</p>
+</div>
+<div class="section" id="aqlconnstate">
+<span id="aqlconnstate"></span><h3><code class="docutils literal notranslate"><span class="pre">AqlConnState</span></code>类<a class="headerlink" href="#aqlconnstate" title="Permalink to this headline">¶</a></h3>
+<p>主循环在<code class="docutils literal notranslate"><span class="pre">Run</span></code>，启动之后不断调用<code class="docutils literal notranslate"><span class="pre">ProcessIncoming</span></code>。<code class="docutils literal notranslate"><span class="pre">ProcessIncoming</span></code>模仿了<code class="docutils literal notranslate"><span class="pre">art/runtime/jdwp/jdwp_adb.cc</span></code>里的<code class="docutils literal notranslate"><span class="pre">JdwpAdbState::ProcessIncoming</span></code>的实现。</p>
+<p><code class="docutils literal notranslate"><span class="pre">ProcessIncoming</span></code>从sock这个FD读（调用<code class="docutils literal notranslate"><span class="pre">read</span></code>）。如果buffer里有了一个完整的packet，就会调用<code class="docutils literal notranslate"><span class="pre">HandlePacket</span></code>进行处理。<code class="docutils literal notranslate"><span class="pre">HandlePacket</span></code>会调用<code class="docutils literal notranslate"><span class="pre">ProcessRequest</span></code>，由packet得到reply。</p>
+<p><code class="docutils literal notranslate"><span class="pre">ProcessRequest</span></code>处理请求，根据packet的dataload json里的probe字段，将请求patch到不同的probe，调用<code class="docutils literal notranslate"><span class="pre">probe-&gt;HandlePacket</span></code>，输入dataload json，输出reply。</p>
+<p>得到reply后，调用<code class="docutils literal notranslate"><span class="pre">WritePacket</span></code>将reply写到sock里。</p>
+</div>
+<div class="section" id="probe">
+<span id="id5"></span><h3>Probe如何处理请求<a class="headerlink" href="#probe" title="Permalink to this headline">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">Probe::HandlePacket</span></code>负责处理请求，输入dataload json，输出reply。</p>
+<ul class="simple">
+<li>首先，从json里提取出command</li>
+<li>其次，调用<code class="docutils literal notranslate"><span class="pre">GetHandlerByCmd</span></code>，根据command找到handler（实际上就是从map里找）<ul>
+<li>handler的类型是<code class="docutils literal notranslate"><span class="pre">AqlPacketHandler</span></code>，实际上是一个函数指针）</li>
+</ul>
+</li>
+<li>然后，调用handler处理请求。</li>
+</ul>
+<p>具体的probe类会调用<code class="docutils literal notranslate"><span class="pre">RegisterHandler</span></code>，声明支持哪个command，并给出对应的handler。例如，<code class="docutils literal notranslate"><span class="pre">Breakpoint</span></code>支持BREAKPOINT和RESUME两个command，handler分别是<code class="docutils literal notranslate"><span class="pre">BreakpointHandler</span></code>和<code class="docutils literal notranslate"><span class="pre">ResumeHandler</span></code>。</p>
+<p>handler处理的过程是多层dispatch。例如<code class="docutils literal notranslate"><span class="pre">Probe::HandlePacket</span></code>可以dispatch到<code class="docutils literal notranslate"><span class="pre">Breakpoint:BreakpointHandler</span></code>和<code class="docutils literal notranslate"><span class="pre">Breakpoint::ResumeHandler</span></code>，<code class="docutils literal notranslate"><span class="pre">Breakpoint:BreakpointHandler</span></code>又可以dispatch到<code class="docutils literal notranslate"><span class="pre">Breakpoint::SetHandler</span></code>和<code class="docutils literal notranslate"><span class="pre">Breakpoint::ClearHandler</span></code>。Dispatch之后，具体的handler负责写reply的内容。如果dispatch出错，会调用<code class="docutils literal notranslate"><span class="pre">box_reply</span></code>来返回错误信息。<code class="docutils literal notranslate"><span class="pre">box_reply</span></code>会生成一个reply对象，包含status与message。</p>
+</div>
+</div>
+<div class="section" id="">
+<span id="id6"></span><h2>功能模块<a class="headerlink" href="#" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="breakpoint">
+<span id="breakpoint"></span><h3>Breakpoint<a class="headerlink" href="#breakpoint" title="Permalink to this headline">¶</a></h3>
+<p>断点由两个值标识：一个是method signature，另一个是PC，其中method signature包括class name和method name。</p>
+<p>每次执行一个指令<strong>前</strong>，判断当前method signature和PC是不是断点。如果是断点，进行一些suspend操作。因为断点需要监控所有的指令，所以调用<code class="docutils literal notranslate"><span class="pre">WireAll</span></code></p>
+</div>
+<div class="section" id="cov-mcov-bcov-icov">
+<span id="cov-mcov-bcov-icov"></span><h3>Cov (MCov, BCov, ICov)<a class="headerlink" href="#cov-mcov-bcov-icov" title="Permalink to this headline">¶</a></h3>
+<p>大部分逻辑都是共有的，实现在抽象父类<code class="docutils literal notranslate"><span class="pre">Cov</span></code>中。每个功能类重写了<code class="docutils literal notranslate"><span class="pre">BeforeInst</span></code>和<code class="docutils literal notranslate"><span class="pre">AfterInst</span></code>。
+三个功能类都只注册了<code class="docutils literal notranslate"><span class="pre">SelectHandler</span></code>，即对于SELECT语句调用该handler。至于收集覆盖信息，是在执行过程中通过listener来完成的。
+MCov监控方法调用，使用<code class="docutils literal notranslate"><span class="pre">WireInvoke</span></code>; BCov监控分支，使用<code class="docutils literal notranslate"><span class="pre">WireBranch</span></code>；ICov监控指令执行，使用<code class="docutils literal notranslate"><span class="pre">WireAll</span></code>。</p>
+<p><code class="docutils literal notranslate"><span class="pre">SelectHandler</span></code>也是定义在<code class="docutils literal notranslate"><span class="pre">Cov</span></code>类中，由三个功能类共享。<code class="docutils literal notranslate"><span class="pre">SelectHandler</span></code>的功能实际上就是把SELECT语句交给SQLite执行，因此AQL有能力支持各种复杂的查询语句。</p>
+<p>由于coverage不考虑覆盖次数，<code class="docutils literal notranslate"><span class="pre">Cov::InsertRecord</span></code>判断是否visited，已visited的不记录。</p>
+</div>
+</div>
+<div class="section" id="">
+<span id="id7"></span><h2>数据存储<a class="headerlink" href="#" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="sqlite">
+<span id="sqlite"></span><h3>SQLite接口的含义<a class="headerlink" href="#sqlite" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">sqlite3_open</span></code>：打开/创建数据库</li>
+<li><code class="docutils literal notranslate"><span class="pre">sqlite3_exec</span></code>：执行一条语句</li>
+<li><code class="docutils literal notranslate"><span class="pre">sqlite3_get_table</span></code>：SELECT语句，不需要回调函数的简洁查询方法</li>
+<li><code class="docutils literal notranslate"><span class="pre">sqlite3_free_table</span></code>：和<code class="docutils literal notranslate"><span class="pre">sqlite3_get_table</span></code>配套，用来将查询结果对象释放掉</li>
+</ul>
+</div>
+<div class="section" id="tablesql">
+<span id="tablesql"></span><h3><code class="docutils literal notranslate"><span class="pre">Table</span></code>类和SQL语句的关系<a class="headerlink" href="#tablesql" title="Permalink to this headline">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">Table::Table</span></code>创建数据库（内存数据库），并调用<code class="docutils literal notranslate"><span class="pre">Create</span></code>创建table（CREATE TABLE语句）。数据类型只支持NVARCHAR类型（变长字符串类型）。
+<code class="docutils literal notranslate"><span class="pre">Table::~Table</span></code>调用<code class="docutils literal notranslate"><span class="pre">Drop</span></code>删除table（DROP TABLE语句）。
+<code class="docutils literal notranslate"><span class="pre">Table::Insert</span></code>插入record，支持单个插入和批量插入，都是使用INSERT INTO语句。批量插入会将多个INSERT INTO语句包含在一个trasaction中（使用BEGIN/COMMIT语句）。
+<code class="docutils literal notranslate"><span class="pre">Table::Select</span></code>查询数据（SELECT语句）。</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, spar.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1.0',
+            LANGUAGE:'None',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

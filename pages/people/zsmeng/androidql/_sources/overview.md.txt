@@ -1,0 +1,46 @@
+AndroidQL框架介绍
+======
+
+AndroidQL (Android Query Language)提供了AQL接口给用户使用。AQL定义的一系列操作的组合可以被用来方便地构建针对Android移动应用的动态分析工具。作为一种类SQLite字符串接口，AQL和具体的实现语言无关，可以从Java，Python，C或者其他语言中调用AQL操作。此外，AQL和具体的内部实现机制无关，它可以通过修改Android虚拟机，程序插桩等机制来完成实现。当前AndroidQL在实现上采用前者。
+
+## AndroidQL产生的背景
+
+构建完成一个测试分析工具通常需要关注与测试算法本身无关的诸多细节，比如应用程序的插桩等。因此，为了解决这个问题，我们首先设计完成了一个尝试性的原型框架ATT的实现：
+
+* Zhanshuai Meng, Yanyan Jiang, and Chang Xu, “Facilitating reusable and scalable automated testing and analysis for Android apps”, in *Proceedings of the 7th Asia-Pacific Symposium on Internetware* (Internetware), 2015.
+
+但是ATT无法满足一些更复杂的应用测试场景的需求，因此，为了更充分地解决这个问题，AndroidQL作为一种新的实现技术被提了出来。作为一种类SQlite的查询语言，AQL能够帮助我们查询应用的运行时数据并改变应用的运行状态，例如hook程序的方法调用过程。
+
+当前AndroidQL采用定制Android虚拟机的实现方案。
+
+## AndroidQL的架构
+
+AndroidQL采用CS架构，一共包括两个模块，aql-vm和aql-client。aql-client接收来自用户的AQL操作并发送给aql-vm，同时aql-vm返回数据给aql-client。
+
+![AndroidQL架构](arch.png)
+
+aql-vm作为ART虚拟机的一个模块，运行于Android设备上。aql-client接收并解析用户输入的AQL指令。
+
+## 使用AndroidQL你可以做什么
+
+#### 通过可交互的SHELL使用AQL
+
+```
+> PERFORM CLICK (345,678)
+> BREAKPOINT xxxx:xxxx
+[...] Breakpoint Hit, Suspend
+> PERFORM THROW java.io.IOException("An artificial exception")
+> SELECT * FROM method_coverage
+[...] ...
+```
+
+#### 批处理AQL指令序列
+
+使用者可以脚本的形式开发测试工具，AndroidQL可批处理AQL指令序列。
+
+#### 对于移动应用测试分析的支持
+
++ 程序测试：GUI测试，并发测试，异常检测等
++ 程序分析：coverage等
+
+

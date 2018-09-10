@@ -38,4 +38,4 @@ And now, I'm focusing on algorithmic complexity attack.
 
 <hr>
 
-Last Update: September 14, 2016
+Last Update: March 29, 2018

@@ -1,0 +1,42 @@
+从零开始AndroidQL
+======
+
+AndroidQL是一个基于**Android Runtime虚拟机**开发的可扩展的Android应用测试和分析的框架，它提供了AQL (Android Query Language)作为给用户使用的一致的接口。AQL预定义的操作可以帮助使用者以脚本的方式开发测试和分析工具。
+
+## AQL
+
+AQL指令由AndroidQL内部的模块进行解析和处理。以下的例子展示如何使用AQL来hijack应用程序的运行过程。
+
+### 一个demo：如何hijack一个app的运行
+
+该demo展示如何方便地使用AndroidQL**启动一个Android应用并且劫持程序的运行过程**
+
+```shell
+> INSTALL a.apk
+> LAUNCH a.apk
+> BREAKPOINT SET org.demo.MainActivitty:demoActivtiy:0
+> PERFORM gui.CLICK (345, 678)
+[...] Breakpoint Hit, Suspend
+```
+demo中初步使用到了AQL定义的几种操作(**INSTALL**，**LAUNCH**，**BREAKPOINT**，**PERFORM**). **INSTALL**和**LAUNCH**操作帮助用户安装并且启动一个全新的Android应用。接下来通过**BREAKPOINT**操作，可以在MainActivity的demoActivity方法的入口设置了一个断点(方法入口的指令偏移为0)，这样当程序执行到该位置时，应用进程就暂停在该点。 这个操作可以帮助用户执行一些类似于debug的功能，比如在某些特定的情境下，可以方便地hijack程序运行的过程，插入一些park/sleep操作，从而实现一个粗粒度的线程调度器，去做并发相关的测试。
+
+AndroidQL对AQL的语法格式作了详细的规范和定义。用户输入的AQL指令通过aql-client进行解析并发送给aql-vm进行处理。我们提供了一个可交互的SHELL实现aqlsh，它在内部对aql-client进行了封装。因此，以下几个文档可帮助你快速地上手AQL。
+
+* [如何正确使用AQL](./aql-query-language.html)
+* [aqlsh的使用](./aql-aqlsh.html)
+
+## AndroidQL中的概念
+
+* **agent**: 每一个Android device抽象成一个**AndroidQL agent**
+* **client**: 正在运行且进行的Android app就是一个**AndroidQL client**
+* **VM**: **AndroidQL**修改了Android Runtime也就是ART虚拟机部分源码，因此，下文中提到的VM除非特别说明均是指aql-vm项目中实现的**custom ART**虚拟机
+* **probe**: **AndroidQL**支持的可扩展插件，实现在VM内部，可以对程序运行状态执行**W/R**操作通常配合java客户端来进行使用，**AndroidQL**提供了一些常用的probe，当然用户也可以根据需要来扩展实现更多的probe
+* **通信**: **AndroidQL**中指aql-vm和aql-client之间的通信，该信道复用**ADB**工具管理，通常状况下用户不需要对通信进行任何的设置
+* **table**: probe中用来存储运行时数据的数据结构，支持查询删除插入等操作
+
+这些概念的正确理解会帮助你更快地阅读以下相关的文档。
+
+* [断点功能](./aql-brk.html)
+* [通信协议规范](./aql-spec.html)
+* [probe是怎么工作的](./aql-probe-how-work.html)
+* [可用的probe](./aql-have-probe.html)

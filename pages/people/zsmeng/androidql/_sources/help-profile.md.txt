@@ -1,0 +1,14 @@
+aql-vm的profile
+===============
+
+过多的启动probe或者不当的probe实现都会带来潜在的性能问题，因此在开发过程中，aql-vm的正确profile是必要的。
+
+linux内核带有[perf](https://perf.wiki.kernel.org/index.php/Main_Page)工具可以用来profile。Android是基于linux内核实现的，因此理论上可以使用perf。但是在Android设备上更通用的profile工具是[simpleperf](https://developer.android.com/ndk/guides/simpleperf)，它用来对Android应用层进行profile，包括native实现。相比较perf来说，它只实现了部分可用的功能。
+
+然而，Android模拟器只提供了simpleperf工具，因此可能无法进行充分的profile。对于aql-vm的profile建议在Android真实设备上展开，此时perf工具是可用的。步骤包括：
+
+1. 在编译aql-vm时添加clang的`-g`参数，保留调试符号表
+
+2. [安装aql-vm到真实Android设备](./install-aqlvm-device.html)
+
+3. 使用perf工具

@@ -1,0 +1,8 @@
+AndroidQL的安装介绍
+======
+
+AndroidQL项目包括`aql-vm`和`aql-client`两个部分，aql-vm定制实现在Android系统中的`ART`虚拟机中，aql-client作为客户端使用。
+
+aql-vm随着Android系统镜像文件system.img发布，需要刷机到Android虚拟机或者设备使用。aql-vm在虚拟机的安装过程可参考[从源码安装aql-vm](./install-aqlvm-source.html)和[下载镜像安装aql-vm](./install-aqlvm-image.html)。对于真实Android设备的aql-vm安装过程可参考文档[安装aql-vm到真实Android设备](./install-aqlvm-device.html)。
+
+关于aql-client的使用过程，可参考[一个可用的AndroidQL SHELL实现](./aql-aqlsh.html)。

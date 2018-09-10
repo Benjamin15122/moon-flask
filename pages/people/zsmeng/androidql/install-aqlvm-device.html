@@ -1,0 +1,306 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>安装aql-vm到真实Android设备 &mdash; AndroidQL 1.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="下载AndroidQL" href="download.html" />
+    <link rel="prev" title="下载镜像安装aql-vm" href="install-aqlvm-image.html" /> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> AndroidQL
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">框架介绍</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="overview.html">AndroidQL框架介绍</a></li>
+</ul>
+<p class="caption"><span class="caption-text">安装</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="install.html">AndroidQL的安装介绍</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install-aqlvm-source.html">从源码安装aql-vm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install-aqlvm-image.html">下载镜像安装aql-vm</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">安装aql-vm到真实Android设备</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#aospaql-vm">下载AOSP项目和aql-vm项目</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#">下载并编译驱动程序</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#">下载驱动程序</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#aosp">编译AOSP项目</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">下载</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="download.html">下载AndroidQL</a></li>
+</ul>
+<p class="caption"><span class="caption-text">使用手册</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="aql-get-started.html">从零开始AndroidQL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="aql-query-language.html">AQL查询语言简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="aql-aqlsh.html">可交互的aqlsh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="aql-brk.html">AndroidQL的断点机制</a></li>
+<li class="toctree-l1"><a class="reference internal" href="aql-probe-how-work.html">AndroidQL的probe如何工作</a></li>
+<li class="toctree-l1"><a class="reference internal" href="aql-have-probe.html">可用的probe</a></li>
+<li class="toctree-l1"><a class="reference internal" href="aql-spec.html">通信协议规范</a></li>
+</ul>
+<p class="caption"><span class="caption-text">贡献代码</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="code.html">贡献代码介绍</a></li>
+<li class="toctree-l1"><a class="reference internal" href="code-aql-vm.html">aql-vm项目介绍</a></li>
+<li class="toctree-l1"><a class="reference internal" href="code-aql-vm-adapter.html">aql-vm之adapter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="code-aql-vm-core.html">aql-vm之core</a></li>
+<li class="toctree-l1"><a class="reference internal" href="code-aql-vm-patch.html">aql-vm之patch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="code-aql-vm-compile.html">aql-vm的编译</a></li>
+<li class="toctree-l1"><a class="reference internal" href="code-aql-vm-probe.html">probe需要做什么</a></li>
+<li class="toctree-l1"><a class="reference internal" href="code-aql-vm-how-probe.html">aql-vm提供的接口</a></li>
+<li class="toctree-l1"><a class="reference internal" href="code-dev-env.html">AndroidQL开发环境部署</a></li>
+<li class="toctree-l1"><a class="reference internal" href="code-add-probe.html">开发probe，你需要做什么</a></li>
+<li class="toctree-l1"><a class="reference internal" href="code-aql-vm-lock.html">aql-vm中的锁使用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="code-how-bcov.html">如何实现<strong>bcov</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="code-contact.html">联系我们</a></li>
+<li class="toctree-l1"><a class="reference internal" href="code-bug-report.html">bug报告</a></li>
+<li class="toctree-l1"><a class="reference internal" href="code-patch-submit.html">patch提交</a></li>
+</ul>
+<p class="caption"><span class="caption-text">帮助</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="help-troubleshooting.html">常见问题汇总</a></li>
+<li class="toctree-l1"><a class="reference internal" href="help-profile.html">aql-vm的profile</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">AndroidQL</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>安装aql-vm到真实Android设备</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/install-aqlvm-device.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="aql-vmandroid">
+<span id="aql-vmandroid"></span><h1>安装aql-vm到真实Android设备<a class="headerlink" href="#aql-vmandroid" title="Permalink to this headline">¶</a></h1>
+<p>当前AndroidQL发布的<code class="docutils literal notranslate"><span class="pre">system.img</span></code>镜像文件均提供给模拟器使用，它是无法直接提供给真实的Android设备使用的，因为真实的Android手机需要硬件的驱动程序。</p>
+<p>因此，安装aql-vm到Android手机需要解决硬件驱动的问题，当前AndroidQL支持的Android版本和支持的手机型号对应关系如下：</p>
+<ul class="simple">
+<li>android-8.0.0_r4(OPR6.170623.013)：Nexus 5X, Nexus 6P</li>
+<li>android-7.1.2_r28(N2G48C)：Nexus 5X, Nexus 6P, Nexus Player, Pixel C</li>
+<li>android-6.0.1_r17(MMB29V)：Nexus 5, Nexus 5X, Nexus 6, Nexus 6P, Nexus 7, Nexus 9</li>
+<li>android-5.1.1_r14(LMY48M)：Nexus 4, Nexus 5, Nexus 6, Nexus 7, Nexus 9, Nexus 10</li>
+</ul>
+<div class="section" id="aospaql-vm">
+<span id="aospaql-vm"></span><h2>下载AOSP项目和aql-vm项目<a class="headerlink" href="#aospaql-vm" title="Permalink to this headline">¶</a></h2>
+<p>在任何编译过程开始之前需要先下载完成AOSP项目和aql-vm项目，并配置<code class="docutils literal notranslate"><span class="pre">AOSP?_HOME</span></code>环境变量，此过程可参考文档<a class="reference external" href="./install-aqlvm-device.html">从源码安装aql-vm</a></p>
+</div>
+<div class="section" id="">
+<span id="id1"></span><h2>下载并编译驱动程序<a class="headerlink" href="#" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="">
+<span id="id2"></span><h3>下载驱动程序<a class="headerlink" href="#" title="Permalink to this headline">¶</a></h3>
+<p>在下载和编译之前，首先确定AOSP版本号和目标手机的型号，在网站<code class="docutils literal notranslate"><span class="pre">https://source.android.com/setup/start/build-numbers</span></code>查找驱动文件下载链接。例如，在一部Nexus6手机上刷入<code class="docutils literal notranslate"><span class="pre">6.0.1_r17</span></code>版本的Android系统，也就是<code class="docutils literal notranslate"><span class="pre">MMB29V</span></code>。根据相关条件可查找到<code class="docutils literal notranslate"><span class="pre">Nexus</span> <span class="pre">6</span> <span class="pre">(Mobile)</span> <span class="pre">binaries</span> <span class="pre">for</span> <span class="pre">Android</span> <span class="pre">6.0.1</span> <span class="pre">(MMB29V)</span></code>，点击<code class="docutils literal notranslate"><span class="pre">link</span></code>链接，会得到三个脚本文件。</p>
+<p>移动全部下载所得脚本文件到<code class="docutils literal notranslate"><span class="pre">AOSP?_HOME</span></code>目录下，并依次运行，运行结束之后可得到<code class="docutils literal notranslate"><span class="pre">vendor</span></code>目录。以上操作完成了驱动程序的下载过程。</p>
+</div>
+<div class="section" id="aosp">
+<span id="aosp"></span><h3>编译AOSP项目<a class="headerlink" href="#aosp" title="Permalink to this headline">¶</a></h3>
+<p>首先部署aql-vm到<code class="docutils literal notranslate"><span class="pre">AOSP?_HOME</span></code>目录下。进入aql-vm项目根目录，运行<code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">deploy</span></code>完成部署。</p>
+<p>接下来编译AOSP项目。一个常见的命令行如下：</p>
+<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span><span class="nb">source</span> build/envsetup.sh <span class="c1"># 初始化环境</span>
+lunch aosp_arm-eng <span class="c1"># 选择要编译的目标</span>
+make <span class="c1"># 编译代码</span>
+</pre></div>
+</div>
+<p>其中<code class="docutils literal notranslate"><span class="pre">lunch</span></code>命令用于指定编译出的镜像文件的适配类型，不带参数的<code class="docutils literal notranslate"><span class="pre">lunch</span></code>命令可以查看所有的支持的适配类型。现在市场上大多数Android手机CPU为ARM架构，因此使用<code class="docutils literal notranslate"><span class="pre">lunch</span> <span class="pre">aosp_arm-eng</span></code>理论上可以编译得到可在真机上运行的安卓系统。编译生成的镜像文件在 <code class="docutils literal notranslate"><span class="pre">&lt;AOSP?_HOME&gt;/out/target/product</span></code> 子目录下。</p>
+<p>然而，Google官方针对特定机型提供了专门的<code class="docutils literal notranslate"><span class="pre">lunch</span></code>类型，可在<a class="reference external" href="https://source.android.com/setup/build/running">官方给出的文档</a>中查找得到，例如对于Nexus6手机，应该使用<code class="docutils literal notranslate"><span class="pre">lunch</span> <span class="pre">aosp_shamu-userdebug</span></code>。因此，对于不同型号的真机需要确定不同的<code class="docutils literal notranslate"><span class="pre">lunch</span></code>类型。</p>
+<p>完成以上步骤，即可编译得到可刷入真实设备使用的Android所有镜像。刷机过程在<code class="docutils literal notranslate"><span class="pre">AOSP?_HOME</span></code>目录下完成，具体请参考<a class="reference external" href="https://source.android.com/setup/build/running">官方给出的刷机文档</a>中关于<code class="docutils literal notranslate"><span class="pre">Flashing</span> <span class="pre">a</span> <span class="pre">device</span></code>的描述。</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="download.html" class="btn btn-neutral float-right" title="下载AndroidQL" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="install-aqlvm-image.html" class="btn btn-neutral" title="下载镜像安装aql-vm" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, spar.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1.0',
+            LANGUAGE:'None',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

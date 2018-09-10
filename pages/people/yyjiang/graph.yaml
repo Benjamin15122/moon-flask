@@ -1,0 +1,119 @@
+nodes:
+  - id: rescue
+    name: ReScue
+    desc: '[ASE18]'
+    path: sta/adverse
+  - id: scs
+    name: SCS
+    desc: '[FSE18]'
+    path: sta/concurrency
+  - id: aotes
+    name: AOTES
+    desc: '[ICSE17 Poster]<br></br>[ECOOP18]'
+    path: synthesis/transformer
+  - id: needle
+    name: Needle
+    desc: '[TURC18]'
+    path: sta/analysis
+  - id: thesis
+    name: PhD Thesis
+    desc: 'Yanyan Jiang<br></br>Nanjing University'
+    path: sta/smd
+  - id: survey
+    name: Survey
+    desc: '[JoS17]'
+    path: sta/smd
+  - id: aatt
+    name: AATT
+    desc: '[APSEC16]<br></br>[SCP18]'
+    path: sta/concurrency
+  - id: repdroid
+    name: RepDroid
+    desc: '[ICPC17]'
+    path: sta/analysis
+  - id: c3
+    name: C3
+    desc: '[FSE16]'
+    path: sta/adverse
+  - id: bc
+    name: Bisect Coord
+    desc: '[FSE16]'
+    path: sta/smd
+  - id: gat
+    name: GAT
+    desc: '[APSEC16]'
+    path: sta/mobile
+  - id: gain
+    name: GAIN
+    desc: '[APSEC14]<br></br>[IST16]'
+    path: tech
+  - id: rwtrace
+    name: RWTrace
+    desc: '[ASE15]'
+    path: sta/smd
+  - id: comedy
+    name: Comedy
+    desc: '[COMPSAC15]'
+    path: sta/analysis
+  - id: abc
+    name: ABC
+    desc: '[APSEC15]'
+    path: tech
+  - id: att
+    name: ATT
+    desc: '[Internetware15]'
+    path: sta/mobile
+  - id: cosedroid
+    name: CoseDroid
+    desc: '[COMPSAC14]'
+    path: sta/mobile
+  - id: care
+    name: CARE
+    desc: '[ICSE14]'
+    path: sta/smd
+  - id: uga
+    name: UGA
+    desc: '[APSEC14]'
+    path: sta/mobile
+  - id: enter
+    name: ENTER
+    desc: '[ICSE18 Poster]'
+    path: synthesis/transformer
+  - id: lesdroid
+    name: LESDroid
+    desc: '[ICPC18]'
+    path: sta/analysis
+edges:
+  - att -> gat
+  - att -> aatt
+  - care -> rwtrace
+  - rwtrace -> bc
+  - care -> survey
+  - rwtrace -> survey
+  - bc -> survey
+  - survey -> thesis
+  - uga -> att
+  - needle -> repdroid
+  - thesis -> scs
+  - cosedroid -> att
+  - aatt -> thesis
+  - c3 -> thesis
+clusters:
+  - id: sta
+    label: 'Software Testing and Analysis'
+  - id: smd
+    label: 'Understanding Shared Memory Dependences'
+  - id: concurrency
+    label: 'Exploration of Interleaving Spaces' 
+  - id: mobile
+    label: 'Mobile Apps'
+  - id: adverse
+    label: 'Adversarial Conditions'
+  - id: analysis
+    label: 'Software Analysis'
+  - id: synthesis
+    label: 'Program Synthesis'
+  - id: transformer
+    label: 'Transformers'
+  - id: tech
+    label: 'Fun and Profits'

@@ -1,0 +1,120 @@
+开发probe，你需要做什么
+======================
+
+AndroidQL作为一个测试框架，支持开发者实现自定义的probe。probe以插件的形式由框架统一管理。probe集中实现在aql-vm模块，可以用来完成对应用程序运行状态的检测和控制。本文档主要介绍如何实现一个可用的probe出来。
+
+首先probe的开发者需要具备C++开发的能力，并且配置了[AndroidQL开发环境](./code-dev-env.html)。接下来会围绕probe的开发和编译两个过程进行介绍。
+
+## probe的开发
+
+#### 扩展基类
+
+任何自定义的probe都需要继承`Probe`基类。`Probe`基类规定了子类需要实现的接口。
+
+```C++
+virtual void BeforeInst(Thread* thread, ShadowFrame& shadow_frame,
+                          const Instruction* inst);
+virtual void AfterInst(Thread* thread, ShadowFrame& shadow_frame,
+                         const Instruction* inst, int32_t offset);
+virtual bool HandlePacket(const Json& json, ExpandBuf* pReply);
+```
+
+`BeforeInst`和`AfterInst`使得自定义的probe可以在一条特定的指令执行前和后添加自定义的执行逻辑，如对于指令执行过程的劫持和运行时数据的记录。`HandlePacket`是probe中对于分发过来的AQL操作的处理函数，基类probe已经对该方法提供了通用的实现方案，probe也可以重新实现处理过程。
+
+如果probe无需实现某个接口或者没有使用到某个参数，则需要使用`UNUSED`宏显示的对参数进行指定。例如，当我们实现一个probe时，发现无需对`BeforeInst`接口进行扩展，可实现如下：
+
+```C++
+void BeforeInst(Thread* thread, ShadowFrame& shadow_frame,
+                          const Instruction* inst) {
+                UNUSED(thread);
+                UNUSED(shadow_frame);
+                UNUSED(INST);
+}
+
+```
+
+#### 数据管理
+
+probe使用`BeforeInst`和`AfterInst`接口可获取到应用程序运行过程中产生的运行时数据。probe对这些数据需要进行有效的管理。在当前aql-vm的实现中，基于`SQLite`
+的`in-memory`机制实现了内存表数据结构。
+
+与内存表使用相关的API实现在`aql-vm/src/core/table.h`中，用户可以使用以下API完成数据的插入。
+
+```C++
+bool Insert(const Record* record);
+bool Insert(const std::vector<const Record*>& records);
+```
+
+其中`Record`数据结构是我们实现的中间数据抽象层，所有的运行时数据都可以抽象成Record结构，进而和内存表进行交互。关于`Record`的描述在`aql-vm/src/core/table.h`中。
+
+#### 响应AQL操作
+
+用户开发的probe可以作为AQL的目标probe对AQL操作进行响应和处理。probe会根据字符串形式的指令名对`handler`进行索引。在这之前，probe需要对一些`handler`进行注册。`Probe`基类中提供了该API。
+
+```C++
+void RegisterHandler(const std::string& cmd, AqlPacketHandler handler);
+```
+
+例如在一个probe的实现中，需要对`SELECT`操作进行处理，可进行如下的绑定。
+
+```C++
+RegisterHandler("select", SelectHandler);
+```
+关于AqlPacketHandler的定义请参考`aql-vm/src/probe/probe.h`。
+
+#### 绑定指令类型
+
+probe实现的`BeforeInst`和`AfterInst`可以在特定指令执行过程中进行调用。AndroidQL允许probe绑定感兴趣的指令类型集合。例如一个probe对所有的进行函数调用的指令类型感兴趣，则可以使用`WireInvoke`这个API对指令集合进行绑定。`WireInvoke`的实现如下：
+
+```C++
+bool Probe::WireInvoke() {
+  // register the instructions related to method invoke
+  return Wire({Instruction::INVOKE_DIRECT, Instruction::INVOKE_DIRECT_RANGE,
+               Instruction::INVOKE_INTERFACE,
+               Instruction::INVOKE_INTERFACE_RANGE, Instruction::INVOKE_STATIC,
+               Instruction::INVOKE_STATIC_RANGE, Instruction::INVOKE_SUPER,
+               Instruction::INVOKE_SUPER_RANGE, Instruction::INVOKE_VIRTUAL,
+               Instruction::INVOKE_VIRTUAL_QUICK,
+               Instruction::INVOKE_VIRTUAL_RANGE,
+               Instruction::INVOKE_VIRTUAL_RANGE_QUICK});
+}
+```
+
+也可以直接调用`Wire`这个API，所有的probe都要进行指令类型的绑定。AndroidQL提供了`WireInvoke`，`WireReturn`，`WireBranch`，`WireAll`等helper函数。
+
+#### probe的注册
+
+用户自定义实现的probe需要显示地注册在aql-vm内部进行统一的管理，这可以通过`Probe::AddProbe(new ProbeClass)`完成，这里`ProbeClass`是用户实现的probe类。probe的注册过程在
+与内存表使用相关的API实现在`aql-vm/src/aql.cc`中的`Aql::InitProbes()`完成。
+
+#### 构造函数
+
+probe的构造函数应该完成以下工作:
+
+1. probe命名，probe的name会作为probe的id，具有唯一性
+
+2. 绑定指令类型
+
+3. 响应AQL操作的`handler`注册
+
+#### probe的并发一致性保证
+
+关于probe开发中的锁机制请参考[aql-vm中的锁](./code-aql-vm-lock.html)
+
+## probe的编译
+
+通常情况下，一个probe的实现应该有包含一个头文件和源码文件，文件命名形式如`bcov.h`和`bcov.cc`。在probe类的实现完成之后，需要将源文件添加到`Aql.mk`的`aql_srcs`变量中。
+
+```bash
+aql_srcs := aql/aql.cc \
+	aql/core/aql_state.cc \
+	aql/core/base/aql_expand_buf.cc \
+	aql/core/base/aql_instrumentation.cc \
+	aql/core/base/aql_packet.cc \
+	aql/core/json11/json11.cc \
+	aql/core/table/table.cc \
+	...
+	aql/probe/bcov.cc
+```
+
+在添加完成之后，可按照[aql-vm的编译](./code-aql-vm-compile.html)对项目进行编译。

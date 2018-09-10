@@ -1,0 +1,167 @@
+AQL查询语言简介
+=============
+
+AndroidQL提供一种类SQL的语言作为交互的接口，这种语言称为AQL(Android Query Language)。用户可以使用AQL语言对目标应用的运行过程进行查询和控制。
+
+AQL共定义了7种命令：
+
+* **INSTALL**: 安装 app
+* **LAUNCH**: 启动 app
+* **TOGGLE**: 打开／关闭一个 probe
+* **PERFORM**: 执行某个probe预定义的操作，或是执行用户定义的操作（如UI操作，throw exception等）
+* **BREAKPOINT**: 设置断点
+* **RESUME**: 恢复程序运行
+* **SELECT**: 查询操作，可对应用的运行状态进行查询
+
+一个可执行的`AQL`操作是由以上任意一种操作类型加一些特定形式的参数组成的，通常来说，格式是这样的：
+
+```
+INSTALL | LAUNCH | PERFORM | BREAKPOINT | RESUME | SELECT [probe.action] [args] [from probe.table] [args]
+```
+
+**probe.action**的书写形式表明，一个实现在VM中的probe可以注册一些感兴趣的action列表，从而对外部的某些行为(比如click)产生响应，而**probe.table**从另一个角度表明一个probe可以在内存中实现很多的table，用来存储运行时产生的数据(比如当前覆盖到的所有方法)。aql-vm中可能同时存在上百个probe，因此理论上在AQL的所有操作中，都需要唯一地指定目标probe，这样该指令会被aql-vm部分的核心运行逻辑分发至对应的probe模块进行处理。
+
+然而在具体实现上，**AndroidQL**针对不同的操作进行了一些特殊化的处理，也就是说不是所有的使用情境下，都需要指定目标probe.
+
+**AndroidQL**的运行机制设定所有probe均存在于`ART`虚拟机中，probe注册感兴趣的action，同时对每一个action注册执行处理逻辑的`handler`。 所有来自aql-client的操作都会被分装成格式化的数据包，通过内部通信机制发送给aql-vm，根据数据包中的目标probe对操作进行分发，由目标probe完成实际的数据处理和响应.
+
+ART虚拟机实例在app启动时被动态地创建，在**INSTALL**指令执行时，app并没有被启动，因此，**INSTALL**指令无需显示地指定目标probe. 此外，**LAUNCH**操作用来启动app创建VM，在它被aql-vm响应前，虚拟机也并没有启动，因此它也不需要指定probe. 而**BREAKPOINT**的所有实现逻辑都天然地绑定在**brk**这个probe内，也不再需要对目标probe进行显示的指定. 在**AndroidQL**的设计中，只有**PERFORM**，**TOGGLE**，**SELECT**三种操作是需要指定probe的。
+
+总结一下，需要目标probe参数的操作和无需指定probe的操作作如下区分：
+
+* 需要指定probe: **TOGGLE**, **PERFORM**，**SELECT**
+
+并不是所有的**AndroidQL**操作类型都需要显示地指定目标probe，然而以上的三种操作在不指定目标probe时，却可能会产生**无法预期的错误**。
+
+接下来，针对不同的**AndroidQL**操作指令格式分别进行详细的介绍。
+
+### INSTALL
+
+**INSTALL**操作格式最为简单，其中apk_path指定要安装的apk的路径，这个路径是指本地apk的路径，需要确保该apk文件存在且可用，否则会导致安装错误的出现.
+
+```
+INSTALL apk_path
+```
+
+### LAUNCH
+
+在一些使用情境下，可能需要在启动app的同时伴随开启某些probe，所以**LAUNCH**操作格式如下
+
+```
+LAUNCH apk_path [probes]
+```
+
+在demo中，启动app同时开启了brk这个用来执行breakpoint逻辑的probe模块，我们可以一次开启更多的probe，也可以只是单纯地想启动一个app而已，并不打开任何probe，以上的两种使用需求可以通过以下的两个操作完成.
+
+```
+LAUNCH a.apk brk,mcov
+```
+
+```
+LAUNCH a.apk //不开启任何probe
+```
+
+### BREAKPOINT
+
+```
+BREAKPOINT SET/CLEAN class_descriptor:method_name:offset
+```
+
+**BREAKPOINT**操作可以帮助添加和清除断点，method_name指断点所在方法的方法名，而offset参数指定断点在方法中的偏移，如果想在调用某个方法入口就设置断点，可将offset置于0. 通过这三个参数，**AndroidQL**可以唯一地定位所有的断点.
+
+```
+BREAKPOINT SET org.aql.doc:demo:0
+```
+
+```
+BREAKPOINT CLEAN org.aql.doc:demo:7
+```
+
+### RESUME
+
+**RESUME**指令只有一种形式，它用于恢复VM的运行状态
+
+```
+RESUME
+```
+
+以上的操作类型是**无需指定目标probe**的. 下边介绍**必须指定**probe的**AndroidQL**接口的语法.
+
+
+### TOGGLE
+
+**TOGGLE**可以用切换某个probe的运行状态.
+
+打开/关闭一个probe只需要
+
+```
+TOGGLE probes on/off [probes off/on]
+```
+
+```
+TOGGLE icov,brk off ui on
+TOGGLE mcov,brk off ui on
+TOGGLE mcov on icov off
+TOGGLE bcov on
+```
+
+
+### PROFORM
+
+```
+PERFORM probe.action [args]
+```
+
+**PERFORM**操作的action在满足probe处理逻辑可以响应的条件下可由用户定制添加，当然处理逻辑需要目标probe支持实现. 因此在probe的扩展中，**PERFORM**操作会扮演极其重要的角色. 当前**AndroidQL**已经使用**PERFORM**操作完成实现gui这个probe，来辅助进行GUI方面的测试和分析，注册并支持的action包括
+
+- CLICK
+- LONGCLICK
+- SWIPE
+- DOUBLECLICK
+- MENU
+- HOME
+- BACK
+- UNLOCK
+- DUMPLAYOUT
+
+使用方法如下：
+
+```
+PERFORM gui.CLICK/gui.LONGCLICK/gui.DOUBLECLICK (x,y)
+```
+
+```
+PERFORM gui.MENU/gui.HOME/gui.BACK/gui.UNLOCK
+```
+
+```
+PERFORM gui.SWIPE (x1,y1) (x2,y2)   //()内无任何空白符
+```
+
+```
+PERFORM gui.DUMPLAYOUT
+```
+
+此外，**AndroidQL**使用PERFORM实现完成另外一个probe—**excp**，它可以在程序运行过程任意时刻抛出异常，模拟一些极端的app运行环境，比如配合**excp**和**PERRORM**可以完成抛io异常的操作：
+
+```
+PERORM excp.THROW java.io.Excption("Mock exception")
+```
+
+### SELECT
+
+```
+SELECT stmt_body
+```
+
+stmt_body除table名前需要用probe.table形式进行唯一的限定外，与 SQL中的 SELECT 语句格式相同。**SELECT**查询操作需要指定目标probe进行响应，而一个probe的所有table都由该probe自行实现和管理，比如可以把当前的layout实现为**gui**这一probe中的一张表，也可以把当前覆盖到的方法抽象成一张表. 在**AndroidQL**中，**all is table**，这里的all，指的是一个app所有的可读取的运行时数据.
+
+查询所有方法覆盖的指令如下：
+
+```
+SELECT * from mcov.mcov
+```
+
+最后，在**AndroidQL**的实现中，每个probe可以响应什么操作是由用户开发的probe指定的。
+
+**注**: **所有的AQL操作都是大小写不敏感的**.

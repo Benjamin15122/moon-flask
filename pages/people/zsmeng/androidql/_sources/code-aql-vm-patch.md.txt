@@ -1,0 +1,23 @@
+aql-vm之patch
+=======================
+
+本质上来说，aql-vm项目本身就是AOSP的一个patch，aql-vm最终部署到AOSP的`art/runtime/aql`目录下，编译的完成需要依赖于AOSP本身提供的编译机制，相关细节可参考[aql-vm的编译](./code-aql-vm-compile.html)。
+
+这里所说的在AOSP中添加aql-vm patch，是指那些需要修改AOSP才能完成的模块。比如AndroidQL在实现上需要修改ART虚拟机的解释器部分，只需在AOSP中解释器相关的代码中加入对于`aql`模块接口的调用即可。
+
+
+## patch的使用
+
+对于AOSP源码的修改在aql-vm中以patch的形式存在于`aql-vm/patch`目录下，该目录包含了对于以下Android版本进行定制和修改的patch：
+
+* android-8.0.0_r4，存在于`patch/aosp8`子目录
+* android-7.1.2_r28，存在于`patch/aosp7`子目录
+* android-6.0.1_r17，存在于`patch/aosp6`子目录
+* android-5.1.1_r14，存在于`patch/aosp5`子目录
+
+patch是常见的diff文件，在使用时通过`git apply`命令添加到AOSP项目内部。
+
+## patch的生成
+
+在生成aql-vm patch之前，需要首先使用git对AOSP进行管理，并提交最初始的版本。接下来根据AndroidQL的需求逐行添加对于AOSP中源代码文件的修改，在功能调试完成之后，使用`git add`和`git commit`提交新的版本。最后使用`git diff`生成两个版本之间的diff文件，命名为`patch.diff`，并将之移动到`aql-vm/patch`目录下。
+
