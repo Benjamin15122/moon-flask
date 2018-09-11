@@ -2,36 +2,31 @@ title: Dongjie Chen
 
 # Dongjie Chen 陈冬杰
 
-M. Sc student, Dept. Computer Science and Technology, Nanjing University
-
-<img style="float:left; margin-right:10px; height:224px" src="cdj.jpg">
-
-<div style="height:200px">
-<p>
-I received my B. Sc degree in Department of Computer Science and Technology from Nanjing University in July 2016.<br>
-From then on, I am enrolled in the Graduate School of Nanjing University under the supervision of <a href="http://cs.nju.edu.cn/changxu/">Prof. Chang Xu</a>.
-</p>
+<div class="row gutter" markdown="1">
+<div class="col-lg-2 col-md-2 col-sm-3 col-xs-4">
+	<center>![](img/me.jpg)</center>
 </div>
+[<img src="img/GitHub-Mark-32px.png">](https://github.com/midwinter1993) ![](img/email.png)
+
+Ph. D. student `2016.9 ~ present`, [SPAR ![](/static/img/logo-spar-small.png)](/spar/), supervised by <a href="http://moon.nju.edu.cn/people/yyjiang/">Yanyan Jiang</a>, <a href="http://cs.nju.edu.cn/changxu/">Prof. Chang Xu</a>, and <a href="http://moon.nju.edu.cn/people/xiaoxingma/">Prof. Xiaoxing Ma</a> 
+<br />
+*Dept. of Computer Science and Technology* ![](img/cs_logo_sm.png), *Nanjing University* ![](../yyjiang/img/nju_logo.png).
+<br />
+
+B. Sc degree `2012.9 ~ 2016.6`,
+<br />
+*Dept. of Computer Science and Technology* ![](img/cs_logo_sm.png), *Nanjing University* ![](../yyjiang/img/nju_logo.png).
+<br />
+
+</div>
+
 
 ## Research
 
-My research interests include software analysis and software testing.
-Now I'm focusing on concurrent programs.
+My research interest focuses on multi-threaded program testing.
 
-## Contact
-
-<table>
-<tr valign="top">
-	<td align="right"><b>Email: </b></td><td><img src="email.png"></td>
-</tr>
-<tr valign="top">
-	<td align="right"><b>GitHub: </b></td><td><a href="https://github.com/midwinter1993/">https://github.com/midwinter1993/</a></td>
-</tr>
-<tr valign="top">
-	<td align="right"><b>Addr: </b></td><td>Dongjie Chen,<br> Department of Computer Science and Technology,<br> Nanjing University, 163 Xianlin Avenue,<br> Qixia District, Nanjing 210023, JiangSu, China.</td>
-</tr>
-</table>
+## Publication
+* {{ render_bib_entry(g.site.spar_paper.chen_testing_2018, hl='Dongjie Chen') }}
 
 <hr>
-
-Last Update: Oct 11, 2016
+Last Update: Sep 11, 2018
