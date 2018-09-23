@@ -70,13 +70,12 @@ faculty:
     avatar: /static/img/avatar/jingweixu.jpg
   - name: Yanyan Jiang 蒋炎岩
     title: Assistant Researcher
-    url:  /~jyy/
+    url:  /~jyy
     avatar: /spar/img/avatar/yyjiang.jpg
     group: spar, castle
 
 phd:
   - name: Yi Qin 秦逸
-    url:  yqin
     avatar: /spar/img/avatar/yqin.jpg
     from: 2013
     group: spar
@@ -94,12 +93,12 @@ phd:
     from: 2014
     group: dse, spar
   - name: Huiyan Wang 王慧妍
-    url: hywang
+    url: huiyanwang
     avatar: /spar/img/avatar/hywang.jpg
     from: 2015
     group: spar
   - name: Jue Wang 王珏
-    url: jwang
+    url: juewang
     avatar: /spar/img/avatar/jwang.jpg
     from: 2016
     group: spar, castle
@@ -116,7 +115,6 @@ phd:
   - name: Yanxiang Tong 童燕翔
     from: 2016
     avatar: /static/img/avatar/tongyanxiang.jpg
-    url: yxtong
     group: spar
   - name: Xue Jiang 江雪
     from: 2016
@@ -124,13 +122,12 @@ phd:
   - name: Wenjie Li 李文杰
     from: 2016
     avatar: /spar/img/avatar/wjli.jpg
-    url: wjli
     group: spar, castle
   - name: Yuqi Zhang 张宇奇
     from: 2016
     group: disalg
   - name: Dongjie Chen 陈冬杰
-    url: /~djchen/
+    url: /~dongjie
     avatar: /spar/img/avatar/djchen.jpg
     from: 2016
     group: spar
@@ -144,37 +141,35 @@ phd:
     from: 2017
   - name: Weiyu Ye 叶炜煜
     from: 2017
-    url: weiyuye
     group: spar
   - name: Chenxi Zhang 张晨曦
     from: 2017
-    url: chenxizhang
     avatar: /spar/img/avatar/cxzhang.png
     group: spar
   - name: Xianfei Ou 欧先飞
     from: 2018
-    url: xianfeiou
     group: spar
   - name: Cong Li 李聪
     from: 2018
-    url: congli
     avatar: /spar/img/avatar/congli.jpg
     group: spar
+  - name: Xinchen Guo 郭新琛
+    from: 2018
 
 graduates:
   - name: Jiaxing Dong 董加星
-    url:  jxdong
     from: 2015
+    url: jiaxingdong
     avatar: /spar/img/avatar/jxdong.jpg
     group: spar
   - name: Yang Cao 曹阳
     avatar: /spar/img/avatar/ycao.jpg
-    url: ycao
+    url: yangcao
     from: 2016
     group: spar
   - name: Yuju Shen 沈宇桔
     from: 2016
-    url: /~yjshen/
+    url: /~yuju
     avatar: /spar/img/avatar/yjshen.jpg
     group: spar
   - name: Xiaofei Zhang 张晓飞
@@ -224,27 +219,47 @@ graduates:
     group: dse
   - name: Shaocong Liu 刘少聪
     from: 2018
-    url: shaocongliu
     group: spar
   - name: Jinci Chen 陈锦赐
     from: 2018
-    url: jincichen
     avatar: /spar/img/avatar/jcchen.png
     group: spar
   - name: Jingxin Fan 范景新
     from: 2018
     avatar: /spar/img/avatar/jxfan.jpg
-    url: jingxinfan
     group: spar
   - name: Yuehuan Wang 王月欢
     from: 2018
-    url: yuehuanwang
     avatar: /spar/img/avatar/yhwang.jpg
     group: spar
+  - name: Guosheng Pan 潘国盛
+    from: 2018
+  - name: Long Chen 陈龙
+    from: 2018
+  - name: Rongxun Guo 郭荣勋
+    from: 2018
+  - name: Xingchen Yi 易星辰
+    from: 2018
+    group: disalg
+  - name: Zhou Zhou 周舟
+    from: 2018
+    group: disalg
+  - name: Ye Ji 纪业
+    from: 2018
+    group: disalg
 
 undergraduates:
   - name: Zhao Gang 刚昭
     from: 2017
+    group: spar
+  - name: Ziqi Chen 陈紫琦
+    from: 2018
+    group: spar
+  - name: Yingzhuo Yang 杨英卓
+    from: 2018
+    group: spar
+  - name: Siyuan Zhu 朱思远
+    from: 2018
     group: spar
   - name: Daohan Qu 屈道涵
     from: 2018
@@ -264,7 +279,7 @@ alumni:
     url:  shuocheng
     from: 2015
   - name: Bingying Guo 郭冰莹
-    url:  byguo
+    url:  bingyingguo
     from: 2015
     avatar: /spar/img/avatar/byguo.png
     group: spar
@@ -289,22 +304,23 @@ alumni:
     url:  xiangxu
     from: 2015
   - name: Shengtao Yue 岳胜涛
-    url:  default
     from: 2015
     group: spar
   - name: Zongfei Zhang 张宗飞
     url:  default
     from: 2015
   - name: Zhanshuai Meng 孟占帅
-    url:  zsmeng
+    url:  zhanshuaimeng
     from: 2015
     group: spar
     avatar: /spar/img/avatar/zsmeng.jpg
   - name: Jiarong Wu 吴嘉荣
+    avatar: /spar/img/avatar/jrwu.jpg
+    url:  http://home.cse.ust.hk/~jwubf/
     from: 2017
     group: spar, castle
   - name: Wenhua Yang 杨文华
-    url:  whyang
+    url:  wenhuayang
     avatar: /spar/img/avatar/whyang.jpg
     from: 2014
     group: spar, castle
@@ -315,12 +331,12 @@ alumni:
     url:  default
     from: 2014
   - name: Qiwei Li 李其玮
-    url:  qwli
+    url:  qiweili
     from: 2014
     avatar: /spar/img/avatar/qwli.jpg
     group: spar, castle
   - name: Xiaofan Li 李晓帆
-    url:  xfli
+    url:  xiaofanli
     from: 2014
     avatar: /spar/img/avatar/xfli.jpg
     group: spar
@@ -338,7 +354,7 @@ alumni:
     group: dse, spar
     avatar: /static/img/avatar/wangyiqun.jpg
   - name: Xiangyu Wu 武翔宇
-    url:  xywu
+    url:  xiangyuwu
     from: 2014
     avatar: /spar/img/avatar/xywu.jpg
     group: spar
@@ -353,7 +369,7 @@ alumni:
     from: 2014
     avatar: /people/zhongliangyuan/static/handsome.jpg
   - name: Ruiqing Zhang 张瑞青
-    url:  rqzhang
+    url:  ruiqingzhang
     from: 2014
     avatar: /spar/img/avatar/rqzhang.jpg
     group: spar, castle
@@ -406,7 +422,7 @@ alumni:
     from: 2013
   - name: Jun Sui 眭骏
     from: 2013
-    url: jsui
+    url: junsui
     avatar: /spar/img/avatar/jsui.jpg
     group: spar
   - name: Jie Wei 魏杰
@@ -421,15 +437,15 @@ alumni:
   - name: Yang Zou 邹阳
     from: 2008
   - name: Xiujiang Li 李秀江
-    url:  xjli
+    url:  xiujiangli
     group: spar, castle
     avatar: /spar/img/avatar/xjli.jpg
   - name: Wang Xi 奚旺
-    url:  wxi
+    url:  wangxi
     group: spar
     avatar: /spar/img/avatar/wxi.jpg
   - name: Hao Jin 金昊
-    url:  hjin
+    url:  haojin
     avatar: /spar/img/avatar/hjin.jpg
     group: spar
   - name: Yuan Yao

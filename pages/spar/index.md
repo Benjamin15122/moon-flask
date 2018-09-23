@@ -22,7 +22,7 @@ Here is the [full list of SPAR publications](pubs). We also have weekly [seminar
 #### Group News
 
 * Congrats to Yuju's ASE'18 paper "ReScue: Crafting regular expression DoS attacks" and winning the ACM SIGSOFT Distinguished Paper Award 🏅!
-* Congrats to Dongjie's FSE'18 paper "Testing multithreaded programs via thread speed control"!
+* Congrats to Dongjie's ESEC/FSE'18 paper "Testing multithreaded programs via thread speed control"!
 
 
 #### Mentors
