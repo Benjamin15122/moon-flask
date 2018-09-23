@@ -1,11 +1,3 @@
-title: Under construction
+title: 标题
 
-
-This page is under construction!
-
-
-* Institute of Computer Software, Nanjing University
- 	
-* Room xxx, Computer Science and Technology Building
- 	
-* Email: xxx@xxx.xxx
+# 这个人很懒，什么也没留下

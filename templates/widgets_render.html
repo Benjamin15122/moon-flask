@@ -1,15 +1,3 @@
-{% macro render_index_left() %}
-<ul class="list-unstyled clear-margins">
-{{ render_short_news_widget('Papers', g.site.paper_news, 'news/papers', 15) }}
-</ul>
-{% endmacro %}
-
-{% macro render_index_right() %}
-<ul class="list-unstyled clear-margins">
-{{ render_short_news_widget('Awards', g.site.award_news, 'news/awards', 10) }}
-</ul>
-{% endmacro %}
-
 {% macro render_short_news_widget(title, news, path, maxn) %}
  <li class="widget-container widget_nav_menu"><!-- widget -->
     <h1 class="title-widget">{{ title }}</h1>
@@ -26,14 +14,13 @@
 </li><!-- widget end -->
 {% endmacro %}
 
-{% macro render_index_middle() %}
+{% macro render_news(st, ed, has_more) %}
 <ul class="list-unstyled clear-margins"><!-- widgets -->
     <li class="widget-container widget_recent_news"><!-- widgets list -->
-        <h1 class="title-widget">News</h1>
         <ul class="list-unstyled">
             {% set news = g.site.news.items %}
             {% for n in news %}
-                {% if loop.index <= 3 %}
+                {% if st <= loop.index <= ed %}
                     <li class="recent-news-wrap">
                     <h1 class="title-median"><a href="{{ url_for('page', path=n.path) }}" title="{{n.title}}">{{ n.title }}</a></h1>
                         <div class="recent-news-meta">
@@ -66,9 +53,11 @@
                 {% endif %}
             {% endfor %}
         </ul>
+{% if has_more %}
         <div class="recent-news-wrap" style="text-align:right">
            <a href="{{ url_for('page', path='news/') }}" class="moretag" title="read more">more</a>
-        <div>
+        </div>
+{% endif %}
     </li><!-- widgets list end -->
 </ul><!-- widgets end -->
 {% endmacro %}
@@ -114,7 +103,6 @@
                                     {% if e.summary %}
                                     <p>
                                         {{ e.summary|truncate(150)|safe}}
-                                        <!--<a href="{{ e.events }}" class="moretag" title="read more">MORE</a>-->
                                     </p>
                                     {% endif %}
                                 </li>

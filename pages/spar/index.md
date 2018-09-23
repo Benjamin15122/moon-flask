@@ -26,16 +26,16 @@ Here is the [full list of SPAR publications](pubs). We also have weekly [seminar
 
 
 #### Mentors
-{{ render_people(category = "faculty", group = "spar") | safe }}
+{{ render_people(category="faculty", group="spar") | safe }}
 
 #### Ph.D. students
-{{ render_people(category = "phd", group = "spar") | safe }}
+{{ render_people(category="phd", group="spar") | safe }}
 
 #### M.Sc. students
-{{ render_people(category = "graduates", group = "spar") | safe }}
+{{ render_people(category="graduates", group="spar") | safe }}
 
 #### Undergraduates
-{{ render_people(category = "undergraduates", group = "spar") | safe }}
+{{ render_people(category="undergraduates", group="spar") | safe }}
 
 #### Alumni/ae
-{{ render_people(category = "alumni", group = "spar") | safe }}
+{{ render_people(category="alumni", group="spar") | safe }}

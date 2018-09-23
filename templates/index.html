@@ -5,21 +5,28 @@
     {{ widgets.render_carousel_widget() }}
 </div><!-- row end -->
 <div class="row no-gutter"><!-- row -->
-    <div class="col-lg-4 col-md-4"><!-- misc wrapper -->
-        <div class="col-padded col-shaded"><!-- inner custom column -->
-            {{ widgets.render_index_left() }}
+
+    <div class="col-lg-12 col-md-12"><!-- recent news wrapper -->
+        <div class="col-padded" style="padding-bottom: 0;"><!-- inner custom column -->
+            <h1 class="title-widget" style="margin: 0 0 0 0;">News</h1>
         </div>
     </div>
     <div class="col-lg-4 col-md-4"><!-- recent news wrapper -->
         <div class="col-padded"><!-- inner custom column -->
-            {{ widgets.render_index_middle() }}
+            {{ widgets.render_news(1, 1) }}
         </div>
     </div>
-    <div class="col-lg-4 col-md-4"><!-- misc wrapper -->
-        <div class="col-padded col-shaded"><!-- inner custom column -->
-            {{ widgets.render_index_right() }}
+    <div class="col-lg-4 col-md-4"><!-- recent news wrapper -->
+        <div class="col-padded"><!-- inner custom column -->
+            {{ widgets.render_news(2, 2) }}
         </div>
     </div>
+    <div class="col-lg-4 col-md-4"><!-- recent news wrapper -->
+        <div class="col-padded"><!-- inner custom column -->
+            {{ widgets.render_news(3, 3, has_more=True) }}
+        </div>
+    </div>
+
 </div><!-- row end -->
 {% endblock %}
     {% block footer %}
