@@ -103,7 +103,7 @@ phd:
     from: 2016
     group: spar, castle
   - name: Da Li 李达
-    url: dli
+    url: dali
     from: 2016
     avatar: /spar/img/avatar/dli.png
     group: spar, castle
