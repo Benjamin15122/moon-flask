@@ -39,7 +39,7 @@ title: Publications
 * {{ render_bib_entry(g.site.spar_paper.jiang_optimistic_2015) }}
 * {{ render_bib_entry(g.site.spar_paper.jin_concolic_2015) }}
 * {{ render_bib_entry(g.site.spar_paper.wu_cosedroid_2015) }}
-* {{ render_bib_entry(g.site.spar_paper.xi_shap_2014) }} (![](img/award.png) best paper award)
+* {{ render_bib_entry(g.site.spar_paper.xi_shap_2014) }}
 * {{ render_bib_entry(g.site.spar_paper.sui_gain_2014) }}
 * {{ render_bib_entry(g.site.spar_paper.li_user_2014) }}
 * {{ render_bib_entry(g.site.spar_paper.yang_verifying_2014) }}
