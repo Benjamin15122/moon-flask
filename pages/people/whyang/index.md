@@ -15,7 +15,7 @@
 				<td>
 					<h1><a href="#">Wenhua Yang (&#x6768;&#x6587;&#x534E;)</a></h1>
 					<p></p>
-					<p>Ph.D. Candidate, IEEE Student Member<br />
+					<p>Ph.D.<br />
 					<a href="http://cs.nju.edu.cn/">Department of Computer Science and Technology</a> 
 					<br /> <a href="http://www.nju.edu.cn/">Nanjing University</a>, Nanjing, China
 					</p>
@@ -33,7 +33,7 @@
 		<div id="content">
 			<div class="post">
 				<div class="entry">
-					<p>Currently,  I am pursuing the doctoral degree  under the supervision of Prof. <a href="http://cs.nju.edu.cn/changxu/" target="_blank">Chang Xu</a> and Prof. <a href="http://cs.nju.edu.cn/xxm" target="_blank">Xiaoxing Ma</a>  at Nanjing University.</p>
+					<p>Currently, I am a faculty mumber at Nanjing University of Aeronautics and Astronautics after graduation in 2017. My supervisor was Prof. <a href="http://cs.nju.edu.cn/changxu/" target="_blank">Chang Xu</a> and Prof. <a href="http://cs.nju.edu.cn/xxm" target="_blank">Xiaoxing Ma</a>  at Nanjing University.</p>
 				</div>
 			</div>
 			<div class="post">

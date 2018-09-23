@@ -3,7 +3,7 @@
 ## Brief Biography
 
 I received my M. Sc degree from Department of Computer Science and Technology at Nanjing University, supervised by Prof <a href="http://moon.nju.edu.cn/~xxm">Xiaoxing Ma</a> and Prof <a href="http://cs.nju.edu.cn/changxu/">Chang Xu</a> in 2015.
-<br>Currently I am employed by Microsoft (China), Applications and Services Group (Suzhou site).
+<br>After receiving the M.Eng degree, I was employed by Microsoft (China), Applications and Services Group (Suzhou site).
 
 ## Research
 * **COMEDY (Concolic Metamorphic Debugging)**: Testing and Debugging Programs without Oracles</h4></li>

@@ -87,7 +87,7 @@ class MoonFencedBlockPreprocessor(Preprocessor):
                 else:
                     code = self.CODE_WRAP % (lang, self._escape(m.group('code')))
 
-                placeholder = self.markdown.htmlStash.store(code, safe=True)
+                placeholder = self.markdown.htmlStash.store(code) # FIXME:, safe=True)
                 text = '%s\n%s\n%s'% (text[:m.start()], placeholder, text[m.end():])
             else:
                 break

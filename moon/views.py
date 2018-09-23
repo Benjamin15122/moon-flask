@@ -49,31 +49,6 @@ def before_request():
 def teardown_request(exception):
     pass
 
-# TODO: handle redirect
-# '/spar/people/wxy/sogr.html': '/spar/peoples/xywu/sogr.html',
-
-def spar():
-    fullpath = request.path
-
-    # TODO: this code barely works, but should not be like this.
-    if fullpath == '/': fullpath = '/index'
-    elif fullpath.endswith('/'): fullpath += 'index.html'
-    tokens = fullpath.split('/')
-    dir = os.path.sep.join(tokens[:-1])
-    fname = tokens[-1]
-
-    base = PAGES_DIR + os.path.sep + fullpath
-
-    if fullpath.endswith('.html'):
-        base = PAGES_DIR + dir + os.path.sep + fname[:-5]
-        if os.path.exists(base + '.md'):
-            content = get_markdown_page(base + '.md')
-        else:
-            content = get_markdown_page(base + '.html')
-        return render_template('page.html', page = content)
-    elif os.path.exists(base):
-        return send_file(PAGES_DIR + os.path.sep + fullpath)
-
 def check_static(folder, path):
     try:
         localpath = safe_join(folder, path)
@@ -93,8 +68,6 @@ def check_static(folder, path):
 def page(name = None, path = None):
     if path is None:
         path = 'index'
-    #elif name is None and path.startswith('spar/'):
-    #    return spar()
     elif path.endswith('/'):
         path += 'index'
 

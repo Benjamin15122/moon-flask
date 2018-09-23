@@ -4,7 +4,7 @@ title: Wang Xi
 
 ## Introduction
 
-Microsoft Search Technology Center Asia (STCA)
+I was employed by Microsoft Search Technology Center Asia (STCA) after graduation.
 
 I received by M.Sc degree on software methodology supervised by Professor Chang Xu in 2015 from SPAR Group, Institute of Computer Software, Dept. Computer Science and Technology, Nanjing University.
 

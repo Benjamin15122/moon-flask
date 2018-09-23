@@ -6,7 +6,7 @@ I received my M. Sc degree in 2015 from <a href="www.nju.edu.cn">Nanjing Univers
 
 My research interest includes software testing and analysis, especially testing on smartphone apps.
 
-I am currently employed by Tencent Entertainment, Shanghai.
+After receiving the M.Eng degree, I was employed by Tencent Entertainment, Shanghai.
 
 ## Publications
 
