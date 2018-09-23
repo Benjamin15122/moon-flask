@@ -1,6 +1,6 @@
 import flask, yaml
 from moon import *
-from views import page
+import views
 
 @app.route('/~<name>', methods=['GET'], defaults={'path': None})
 @app.route('/~<name>/', methods=['GET'], defaults={'path': None})
@@ -11,7 +11,7 @@ def short_url(name, path):
         dest = mapping[name]
         if dest.startswith('people/'):
             uname = dest.split('/')[1]
-            return page(name=uname, path=path)
+            return views.page(name=uname, path=path)
         else:
             return flask.redirect(dest)
     else:

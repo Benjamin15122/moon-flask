@@ -103,7 +103,7 @@ phd:
     from: 2016
     group: spar, castle
   - name: Da Li 李达
-    url: dli
+    url: dali
     from: 2016
     avatar: /spar/img/avatar/dli.png
     group: spar, castle
@@ -121,6 +121,7 @@ phd:
     group: disalg
   - name: Wenjie Li 李文杰
     from: 2016
+    url: wenjieli
     avatar: /spar/img/avatar/wjli.jpg
     group: spar, castle
   - name: Yuqi Zhang 张宇奇
