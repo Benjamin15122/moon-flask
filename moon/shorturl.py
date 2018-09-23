@@ -1,12 +1,19 @@
 import flask, yaml
 from moon import *
+from views import page
 
-@app.route('/~<name>', methods=['GET'])
-@app.route('/~<name>/', methods=['GET'])
-def short_url(name):
+@app.route('/~<name>', methods=['GET'], defaults={'path': None})
+@app.route('/~<name>/', methods=['GET'], defaults={'path': None})
+@app.route('/~<name>/<path:path>', methods=['GET'])
+def short_url(name, path):
     mapping = flask.g.site.shorturl
     if name in mapping:
-        return flask.redirect(mapping[name])
+        dest = mapping[name]
+        if dest.startswith('people/'):
+            uname = dest.split('/')[1]
+            return page(name=uname, path=path)
+        else:
+            return flask.redirect(dest)
     else:
         flask.abort(404)
 

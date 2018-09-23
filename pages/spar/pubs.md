@@ -22,6 +22,9 @@ title: Publications
 ---
 
 ## Conference/Symposium/Workshop Publications
+
+* {{ render_bib_entry(g.site.spar_paper.shen_rescue_2018) }}
+* {{ render_bib_entry(g.site.spar_paper.chen_testing_2018) }}
 * {{ render_bib_entry(g.site.spar_paper.wu_synthesizing_2018) }}
 * {{ render_bib_entry(g.site.spar_paper.gu_synthesizing_2017) }}
 * {{ render_bib_entry(g.site.spar_paper.yue_repdroid_2017) }}

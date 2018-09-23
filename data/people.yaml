@@ -70,7 +70,7 @@ faculty:
     avatar: /static/img/avatar/jingweixu.jpg
   - name: Yanyan Jiang 蒋炎岩
     title: Assistant Researcher
-    url:  yyjiang
+    url:  /~jyy/
     avatar: /spar/img/avatar/yyjiang.jpg
     group: spar, castle
 
@@ -130,7 +130,7 @@ phd:
     from: 2016
     group: disalg
   - name: Dongjie Chen 陈冬杰
-    url: djchen
+    url: /~djchen/
     avatar: /spar/img/avatar/djchen.jpg
     from: 2016
     group: spar
@@ -174,7 +174,7 @@ graduates:
     group: spar
   - name: Yuju Shen 沈宇桔
     from: 2016
-    url: yjshen
+    url: /~yjshen/
     avatar: /spar/img/avatar/yjshen.jpg
     group: spar
   - name: Xiaofei Zhang 张晓飞
