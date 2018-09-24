@@ -5,9 +5,9 @@ img_path: photo/Loongson_2018.jpg
 
 # A team won First Prize (Second Place) in 2018 Loogson Cup Computer System Contest
 
-The team built an out-of-order MIPS32 processor (on FPGA) running a self-built modern operating system and applications (window manager, terminal emulator, full system emulators, etc.). One of our PhD students, Xianfei Ou from the [SPAR group](/spar/), lead the system and application software developments. 
+The team built an out-of-order MIPS32 processor (on FPGA) running a self-built modern operating system and applications (window manager, terminal emulator, full system emulators, etc.). One of our PhD students, Xianfei Ou from the [SPAR group](/spar/), leads the system and application software developments. 
 
-The software architecture design was lead by [Dr. Yanyan Jiang](http://moon.nju.edu.cn/~jyy), who is now teaching "Operating Systems" and "Introduction to Computer Systems" (Practicum Part). The series of designs (including hardware part design by [Zihao Yu](https://sashimi-yzh.github.io)) will be incorporated in the undergraduate curriculum at Nanjing University.
+The software architecture design was led by [Dr. Yanyan Jiang](http://moon.nju.edu.cn/~jyy), who is now teaching "Operating Systems" and "Introduction to Computer Systems" (Practicum Part). The series of designs (including hardware part design by [Zihao Yu](https://sashimi-yzh.github.io)) will be incorporated in the undergraduate curriculum at Nanjing University.
 [(talk at CSWE'18)](/~jyy/teach/am-talk.pdf). 
 
 ![](/static/photo/Loongson_2018_1.jpg){: class="img-responsive" style="width:640px;margin:10px auto;" }
