@@ -14,7 +14,7 @@ Ph.D. (*Nanjing University* ![](img/nju_logo.png), 2017)<br>Visiting Scholar (*O
 
 ## Research
 
-I'm a coder striving to make programming less miserable. I'm interested in technologies that can *automatically* make computer software better: *testing*, *analysis*, and *synthesis*. ([知乎专栏:软件工程研究漫谈 ![](img/zhihu.png)](https://zhuanlan.zhihu.com/se-research) and chronological list of [my publications](pub).)
+I'm a coder striving to make programs better. I'm interested in automated technologies for software and systems: *testing*, *analysis*, and *synthesis*. Chronological list of [my publications](pub). (欢迎关注[知乎专栏:软件工程研究漫谈 ![](img/zhihu.png)](https://zhuanlan.zhihu.com/se-research))
 
 <div class="row gutter" markdown="1">
 <div class="col-lg-7 col-md-7 col-sm-12">
@@ -48,8 +48,8 @@ I'm a coder striving to make programming less miserable. I'm interested in techn
 
 ## Teaching
 
-* <img class="pull-right" style="margin-left:15px" width="200px" src="img/projectn.jpg"/> [Operating Systems (Spring 2018)](/~jyywiki); [Introduction to Computer Systems (Fall 2018)](/~jyywiki).
-* I am a co-founder of *Project-N* ![](img/logo-n.png) in which undergraduate students build a complete computer system (NPC SoC, NEMU system emulator, Nanos operating system, NCC compiler, and applications) from scratch. 
+* <img class="pull-right" style="margin-left:15px" width="200px" src="img/projectn.jpg"/> [Introduction to Computer Systems (Fall 2018)](/~jyywiki) and [Operating Systems (Spring 2018)](/~jyywiki). (Only available for NJU campus-local network.)
+* I am a co-founder (with [Zihao Yu 余子濠](https://sashimi-yzh.github.io)) of *Project-N* ![](img/logo-n.png) in which undergraduate students build a complete computer system (NPC SoC, NEMU system emulator, Nanos operating system, NCC compiler, and applications) from scratch. 
     * Papers: *Plagiarism Detection* (Needle [![](img/zhihu.png)](http://zhuanlan.zhihu.com/p/40568346) [[SIGCSE-China18](pubs/needle)]).
     * We won *first prize* in 2018 Loongson Cup contest.
 * Selected talks:
@@ -59,11 +59,11 @@ I'm a coder striving to make programming less miserable. I'm interested in techn
 
 ## Students
 
-​<img class="pull-left" width="125px" style="margin-right: 15px" src="img/yuju-cake.jpg"/>I'm co-supervising students with Prof. [Chang Xu](http://cs.nju.edu.cn/changxu) and [Xiaoxing Ma](/~xxm).
+<img class="pull-left" width="125px" style="margin-right: 15px" src="img/yuju-cake.jpg"/>I'm co-supervising students with Prof. [Chang Xu](http://cs.nju.edu.cn/changxu) and Prof. [Xiaoxing Ma](/~xxm).
 
-Current: [Wenjie Li](/people/wenjieli) (PhD, Android), [Dongjie Chen](/~dongjie) (PhD, concurrency), [Jue Wang](/people/juewang) (PhD, Android), Chenxi Zhang (PhD, Android), Xianfei Ou (PhD, compilers), Daohan Qu (PhD), [Jiaxing Dong](/people/jiaxingdong) (MSc), [Yang Cao](/people/yangcao) (MSc), [Yuju Shen](/~yuju) (MSc), [Yi Liu](/people/yiliu) (MSc), Zhao Gang (Undergrad), Mingjie Shen (Undergrad), Xiaolin Li (Undergrad), Shixuan Zhao (Undergrad), Shaoyuan Chen (Undergrad)
+Current: [Wenjie Li 李文杰](/people/wenjieli) (PhD, Android), [Dongjie Chen 陈冬杰](/~dongjie) (PhD, concurrency), [Jue Wang 王珏](/people/juewang) (PhD, Android), Chenxi Zhang 张晨曦 (PhD, Android), Xianfei Ou 欧先飞 (PhD, compilers), Daohan Qu 屈道涵 (PhD), [Jiaxing Dong 董加星](/people/jiaxingdong) (MSc), [Yang Cao 曹阳](/people/yangcao) (MSc), [Yuju Shen 沈宇桔](/~yuju) (MSc), [Yi Liu 刘毅](/people/yiliu) (MSc), Zhao Gang 刚昭 (Undergrad), Mingjie Shen 沈明杰 (Undergrad), Xiaolin Li 李晓霖 (Undergrad), Shixuan Zhao 赵士轩 (Undergrad), Shaoyuan Chen 陈劭源 (Undergrad)
 
-Past: [Zhanshuai Meng](/people/zhanshuaimeng) (2018 MSc, Ant Financial), [Jiarong Wu](http://home.cse.ust.hk/~jwubf/) (2018 Bachelor, HKUST PhD)
+Past: [Zhanshuai Meng 孟占帅](/people/zhanshuaimeng) (2018 MSc → Ant Financial), [Jiarong Wu 吴嘉荣](http://home.cse.ust.hk/~jwubf/) (2018 Bachelor → HKUST PhD)
 
 ## Services
 
