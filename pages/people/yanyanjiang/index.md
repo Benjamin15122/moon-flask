@@ -57,6 +57,14 @@ I'm a coder striving to make programming less miserable. I'm interested in techn
     * “计算：万物的起源和终点” [![](/static/img/icon-pdf.png)](teach/20140121.pdf) (Keynote speech at JSOI'14 Winter Camp).
     * “从逻辑门到电子计算机” [![](/static/img/icon-pdf.png)](teach/20141008.pdf) (Guest lecture, 2014).
 
+## Students
+
+​<img class="pull-left" width="125px" style="margin-right: 15px" src="img/yuju-cake.jpg"/>I'm co-supervising students with Prof. [Chang Xu](http://cs.nju.edu.cn/changxu) and [Xiaoxing Ma](/~xxm).
+
+Current: [Wenjie Li](/people/wenjieli) (PhD, Android), [Dongjie Chen](/~dongjie) (PhD, concurrency), [Jue Wang](/people/juewang) (PhD, Android), Chenxi Zhang (PhD, Android), Xianfei Ou (PhD, compilers), Daohan Qu (PhD), [Jiaxing Dong](/people/jiaxingdong) (MSc), [Yang Cao](/people/yangcao) (MSc), [Yuju Shen](/~yuju) (MSc), [Yi Liu](/people/yiliu) (MSc), Zhao Gang (Undergrad), Mingjie Shen (Undergrad), Xiaolin Li (Undergrad), Shixuan Zhao (Undergrad), Shaoyuan Chen (Undergrad)
+
+Past: [Zhanshuai Meng](/people/zhanshuaimeng) (2018 MSc, Ant Financial), [Jiarong Wu](http://home.cse.ust.hk/~jwubf/) (2018 Bachelor, HKUST PhD)
+
 ## Services
 
 * PC Member: [SATE2018](http://sei.pku.edu.cn/~xiongyf04/confs/sate18/index_en.html) ([中文](http://sei.pku.edu.cn/~xiongyf04/confs/sate18/index.html)); External Reviewer: TPDS (2018), Internetware (2018).
