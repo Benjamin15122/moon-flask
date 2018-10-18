@@ -80,6 +80,7 @@ I am now an assistant professor with Nanjing University.
 I received the following awards or honors (reversely chronological order):
 
 * I received "NJU Annual Charismatic Advisor Award" (南京大学年度魅力导师奖) in 2018.
+* I received "JSCS Contribution Award of Science and Technology Services" (江苏省计算机学会科技服务贡献奖) in 2018.
 * I received "Outstanding Coach Award" (江苏省大学生程序设计竞赛“优秀教练”)  in 2008.
 ## Research interests
 
