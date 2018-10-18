@@ -63,14 +63,24 @@ title: Jun Ma
 </div>
 
 ## News
-
+*  <img src="static/img/new.jpg" width = "40" height = "40" align=center />Congratulations on Cong LI's APSEC'18 paper: "ELEGANT: Towards Effective Location of Fragmentation-Induced Compatibility Issues for Android Apps"!
+*  <img src="static/img/new.jpg" width = "40" height = "40" align=center />Shengtao Yue is granted "NJU CS Nominated Outstanding Master's Thesis Award"  for his thesis titled “Android Application Repackaging Detection Based on Runtime Graphical User Interface“.
 *  <img src="static/img/new.jpg" width = "40" height = "40" align=center />Congratulations on Shengtao Yue's ICSME'18 paper: "RegionDroid: A Tool for Detecting Android Application Repackaging Based on Runtime UI Region Features"!([Pre-print Version](static/files/ICSME2018(pre-print).pdf))
 *  <img src="static/img/new.jpg" width = "40" height = "40" align=center />New paper "LESDroid - A Tool for Detecting Exported Service Leaks of Android Applications" is accepted to ICPC'18!([Pre-print Version](static/files/LesDroid(pre-print).pdf))
 *  <img src="static/img/new.jpg" width = "40" height = "40" align=center />Congratulations on Tianheng Wu's Compsac'18 paper:"CARMUS: Towards a General Framework for Continuous Activity Recognition with Missing Values on Smartphones"!
 *  <img src="static/img/new.jpg" width = "40" height = "40" align=center /> Jue Wang, Yanyan Jiang, Chang Xu, Qiwei Li, Tianxiao Gu, Jun Ma, Xiaoxing Ma, and Jian Lu. AATT+: Effectively Manifesting Concurrency Bugs in Android Apps. Science of Computer Programming (SCP), Vol. 163, pp. 1-18, Oct 2018. ([pdf](http://cs.nju.edu.cn/changxu/1_publications/SCP18.pdf))
-*  <img src="static/img/new.jpg" width = "40" height = "40" align=center />New paper "LeakDAF: an Automated Tool for Detecting Leaked Activities and Fragments of Android Applications" is accepted to Compsac'17! (DOI:[10.1109/COMPSAC.2017.161](https://doi.org/10.1109/COMPSAC.2017.161))
-*  <img src="static/img/new.jpg" width = "40" height = "40" align=center />Congratulations on Shengtao Yue's ICPC'17 paper: "RepDroid: An Automated Tool for Android Application Repackaging Detection"!(DOI:[10.1109/ICPC.2017.16](https://doi.org/10.1109/ICPC.2017.16))
 
+
+## Bio
+
+I obtained my Ph.D. degree in computer science and technology from Nanjing University (NJU) in 2015 (Ph.D. advisor: Prof. Xianping TAO), and Bachelor degree in computer science and technology from Nanjing University in 2003.
+
+I am now an assistant professor with Nanjing University.
+
+I received the following awards or honors (reversely chronological order):
+
+* I received "NJU Annual Charismatic Advisor Award" (南京大学年度魅力导师奖) in 2018.
+* I received "Outstanding Coach Award" (江苏省大学生程序设计竞赛“优秀教练”)  in 2008.
 ## Research interests
 
 My current interests focus on following topics:
