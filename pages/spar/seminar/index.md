@@ -7,8 +7,7 @@ title: SPAR Seminar
 Discuss software engineering, programming language, and system papers that have *novel* and *significant* contributions. Tool tutorials are also welcomed.
 
 ## Upcoming Talks
-* (Nov 6) Dawei Cheng: DeepRoad: GAN-Based Metamorphic Testing and Input Validation Framework for Autonomous Driving Systems [[ASE 18]](http://www.utdallas.edu/~lxz144130/publications/ase2018.pdf).
-* Dongjie Chen; Shaocong Liu
+* (Nov 13) Shaocong Liu: Neural-Augmented Static Analysis of Android Communication [[FSE 18]](http://pages.cs.wisc.edu/~aws/papers/fse18a.pdf).
 * Yang Cao
 * Chenxi Zhang, Fengmin Shi
 * Cong Li
@@ -25,6 +24,7 @@ Discuss software engineering, programming language, and system papers that have 
 * (Oct 16) Jingxin Fan: Software Performance Self-Adaptation through Efﬁcient Model Predictive Control [[ASE 17]](http://cse.lab.imtlucca.it/~mirco.tribastone/papers/ase2017.pdf); Da Li: Tell Them Apart: Distilling Technology Differences from Crowd-Scale Comparison Discussions [[ASE 18]](https://chunyang-chen.github.io/publication/diffSimilarTech.pdf).
 * (Oct 23) Zelin Zhao: Disjunctive Program Synthesis: a Robust Approach to Programming by Example [[AAAI 2018]](https://www.aaai.org/ocs/index.php/AAAI/AAAI18/paper/view/17055/15835).
 * (Oct 30) Yuju Shen: A Symbolic Model Checking Approach to the Analysis of String and Length Constraints [[ASE 18]](https://dl.acm.org/ft_gateway.cfm?id=3238189&ftid=1995572&dwn=1&CFID=26138668&CFTOKEN=ae9586e38acef0e9-41BBF88E-F72B-F23B-16CF441A7C313EBE); Jue Wang: Towards Model Checking Android Applications [[TSE 18]](https://ieeexplore.ieee.org/document/7911333).
+* (Nov 6) Dawei Cheng: DeepRoad: GAN-Based Metamorphic Testing and Input Validation Framework for Autonomous Driving Systems [[ASE 18]](http://www.utdallas.edu/~lxz144130/publications/ase2018.pdf).
 
 ## Seminar Archive
 
