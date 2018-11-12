@@ -19,5 +19,8 @@ My research interests include metamorphic testing and algorithmic complexity vul
 ## Publication
 * {{ render_bib_entry(g.site.spar_paper.shen_rescue_2018, hl='Yuju Shen') }}
 
-<hr>
+## Other
+[Seat Printer](seatprint.html)
+
+<br>
 Last Update: Sep 10, 2018

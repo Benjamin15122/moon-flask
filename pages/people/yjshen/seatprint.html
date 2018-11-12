@@ -1,0 +1,147 @@
+
+<!doctype html>
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="viewpoint">
+	<meta content="telephone=no" name="format-detection">
+
+  <style>
+  h1 {
+    text-align: center;
+  }
+  h2 {
+    text-align: center;
+  }
+  h5 {
+    text-align: center;
+    color: red;
+  }
+  table {
+    margin: auto;
+    text-align: center;
+  }
+  </style>
+
+	<title>Seat Tag</title>
+  <script src="pdfmake.min.js"></script>
+  <script src="vfs_fonts.js"></script>
+</head>
+
+<body>
+		<h1>实验室座号打印系统</h1>
+		<table id="seats-table">
+			<tr>
+				<td>实验室</td>
+				<td>座号</td>
+				<td>姓名</td>
+				<td>导师</td>
+			</tr>
+			<tr>
+				<td><input placeholder="Room Number" value="824"/></td>
+				<td><input placeholder="Seat Number" value="21"/></td>
+				<td><input placeholder="Your Name" value="沈宇桔"/></td>
+				<td><input placeholder="Your Supervisor" value="许畅"/></td>
+			</tr>
+			<tr>
+				<td colspan="2"><input id="previewBtn" type="button" value="预览" onclick="previewTag();"/></td>
+        <td colspan="2"><input id="addBtn" type="button" value="加一行" onclick="addLine();"/></td>
+			</tr>
+		</table>
+    <h5>Tips: 输入完毕后点击预览, 会跳转到pdf, 然后下载打印剪一下 (多人打印节约用纸).</h5>
+
+    <script>
+    function addLine() {
+      var table = document.getElementById("seats-table");
+
+      if (table.rows.length == 6) {
+        document.getElementById("addBtn").disabled = true;
+        return;
+      }
+
+      var row = table.insertRow(table.rows.length - 1);
+      var cellRoom = row.insertCell(0);
+      var cellNo = row.insertCell(1);
+      var cellName = row.insertCell(2);
+      var cellSupervisor = row.insertCell(3);
+
+      cellRoom.innerHTML = '<input placeholder="Room Number" value="824"/>';
+      cellNo.innerHTML = '<input placeholder="Seat Number" value="21"/>'
+      cellName.innerHTML = '<input placeholder="Your Name" value="沈宇桔"/>';
+      cellSupervisor.innerHTML = '<input placeholder="Your Supervisor" value="许畅"/>';
+    }
+
+    function previewTag() {
+      var table = document.getElementById("seats-table");
+      var tmpBody = [];
+
+      for (var i = 1; i < table.rows.length-1; i++) {
+        var curRoom = table.rows[i].cells[0].children[0].value;
+        var curNo = table.rows[i].cells[1].children[0].value;
+        var curName = table.rows[i].cells[2].children[0].value;
+        var curSupervisor = table.rows[i].cells[3].children[0].value;
+
+        var curRoomNo = curRoom + '-' + curNo;
+        var curItems = [
+          [
+            {text: ' ', border: [true, true, true, false]}, {text: ' ', border: [true, true, true, false]}, {text: ' ', border: [true, true, true, false]}
+          ],[
+            {text: curRoomNo, border: [true, false, true, false], alignment: 'center'},
+            {text: curName, border: [true, false, true, false], alignment: 'center'},
+            {text: curSupervisor, border: [true, false, true, false], alignment: 'center'}
+          ],[
+            {text: ' ', border: [true, false, true, true]}, {text: ' ', border: [true, false, true, true]}, {text: ' ', border: [true, false, true, true]}
+          ]
+        ];
+
+        tmpBody = tmpBody.concat(curItems);
+      }
+
+      pdfMake.fonts = {
+        wenquan: {
+                normal: '文泉驿微米黑.ttf',
+                bold: '文泉驿微米黑.ttf',
+                italics: '文泉驿微米黑.ttf',
+                bolditalics: '文泉驿微米黑.ttf'
+        }
+      };
+
+      var docDefinition = {
+        content: [
+          {
+            columns: [
+              {
+                width: '*',
+                text: ''
+              },
+              {
+                width: 'auto',
+                style: 'mainTable',
+                table: {
+                  widths: [162, 162, 162],
+                  body: tmpBody
+                }
+              },
+              {
+                width: '*',
+                text: ''
+              },
+            ]
+          }
+        ],
+        styles: {
+          mainTable: {
+            fontSize: 42
+          }
+        },
+        defaultStyle: {
+          font: 'wenquan'
+        }
+      };
+
+      pdfMake.createPdf(docDefinition).open({}, window);
+    }
+    </script>
+</body>
+</html>
