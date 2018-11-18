@@ -7,8 +7,7 @@ title: SPAR Seminar
 Discuss software engineering, programming language, and system papers that have *novel* and *significant* contributions. Tool tutorials are also welcomed.
 
 ## Upcoming Talks
-* (Nov 13) Shaocong Liu: Neural-Augmented Static Analysis of Android Communication [[FSE 18]](http://pages.cs.wisc.edu/~aws/papers/fse18a.pdf).
-* Yang Cao
+* (Nov 20) Yang Cao: T-Fuzz: fuzzing by program transformation [[SP 18]](https://nebelwelt.net/publications/files/18Oakland.pdf).
 * Chenxi Zhang, Fengmin Shi
 * Cong Li
 * Yanxiang Tong; Xianfei Ou
@@ -25,6 +24,7 @@ Discuss software engineering, programming language, and system papers that have 
 * (Oct 23) Zelin Zhao: Disjunctive Program Synthesis: a Robust Approach to Programming by Example [[AAAI 2018]](https://www.aaai.org/ocs/index.php/AAAI/AAAI18/paper/view/17055/15835).
 * (Oct 30) Yuju Shen: A Symbolic Model Checking Approach to the Analysis of String and Length Constraints [[ASE 18]](https://dl.acm.org/ft_gateway.cfm?id=3238189&ftid=1995572&dwn=1&CFID=26138668&CFTOKEN=ae9586e38acef0e9-41BBF88E-F72B-F23B-16CF441A7C313EBE); Jue Wang: Towards Model Checking Android Applications [[TSE 18]](https://ieeexplore.ieee.org/document/7911333).
 * (Nov 6) Dawei Cheng: DeepRoad: GAN-Based Metamorphic Testing and Input Validation Framework for Autonomous Driving Systems [[ASE 18]](http://www.utdallas.edu/~lxz144130/publications/ase2018.pdf).
+* (Nov 13) Shaocong Liu: Neural-Augmented Static Analysis of Android Communication [[FSE 18]](http://pages.cs.wisc.edu/~aws/papers/fse18a.pdf); Dongjie Chen: Why is Random Testing Effective for Partition Tolerance Bugs? [[POPL 18]](https://dl.acm.org/citation.cfm?id=3177123.3158134).
 
 ## Seminar Archive
 
