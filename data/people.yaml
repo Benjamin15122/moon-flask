@@ -13,66 +13,80 @@ faculty:
     title: Professor
     url: xianpingtao
     avatar: /people/xianpingtao/static/avatar.jpg
+    center: interdiscipline
   - name: Xiaoxing Ma 马晓星
     title: Professor
     id: xiaoxingma
     url: /people/xiaoxingma
     avatar: /people/xiaoxingma/static/avatar.jpg
     group: dse, spar
+    center: research
   - name: Feng Xu 徐锋
     id: fengxu
     title: Professor
     avatar: /people/fengxu/static/img/avatar.jpg
     url: fengxu
+    center: research
   - name: Chang Xu 许畅
     title: Professor
     id: changxu
     url: http://cs.nju.edu.cn/changxu
     avatar: /static/img/avatar/xuchang.jpg
     group: spar, castle
+    center: research
   - name: Yu Huang 黄宇
     title: Professor
     url: http://cs.nju.edu.cn/yuhuang
     avatar: /static/img/avatar/huangyu.jpg
     group: disalg
+    center: research
   - name: Hao Hu 胡昊
     title: Associate Professor
     avatar: /static/img/avatar/huhao.jpg
+    center: interdiscipline
   - name: Chun Cao 曹春
     title: Associate Professor
     avatar: /static/img/avatar/caochun.jpg
+    center: engineering
   - name: Ping Yu 余萍
     title: Associate Professor
     url: http://cs.nju.edu.cn/yuping
     avatar: /static/img/avatar/yuping.jpg
+    center: engineering
   - name: Jun Ma 马骏
     id: junma
     title: Assistant Professor
     url: junma
     avatar: /static/img/avatar/majun.jpg
+    center: research
   - name: Liang Wang 汪亮
     title: Assistant Researcher
     url: http://cs.nju.edu.cn/wangliang
     avatar: /static/img/avatar/wangliang.jpg
+    center: interdiscipline
   - name: Yuan Yao 姚远
     id: yuanyao
     title: Assistant Researcher
     avatar: /static/img/avatar/yaoyuan.jpg
     url: yuanyao
+    center: research
   - name: Hengfeng Wei 魏恒峰
     title: Assistant Researcher
     url:  hengfengwei
     avatar: /static/img/avatar/weihengfeng.png
     group: disalg
+    center: research
   - name: Jingwei Xu 徐经纬
     title: Assistant Researcher
     url:  jingweixu
+    center: research
     avatar: /static/img/avatar/jingweixu.jpg
   - name: Yanyan Jiang 蒋炎岩
     title: Assistant Researcher
     url:  /~jyy
     avatar: /spar/img/avatar/yyjiang.jpg
     group: spar, castle
+    center: research
 
 phd:
   - name: Yi Qin 秦逸
