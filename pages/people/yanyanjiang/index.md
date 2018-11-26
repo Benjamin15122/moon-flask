@@ -72,7 +72,7 @@ Past: [Zhanshuai Meng 孟占帅](/people/zhanshuaimeng) (2018 MSc → Ant Financ
 * ![](img/acmicpc.png) Coach of the programming contest training team at Nanjing University.
 
 ## Honors and Awards
-* 2018 *ACM SIGSOFT Distinguished Paper Award*.
+* 2018 *ACM SIGSOFT Distinguished Paper Award*, *ACM China Doctoral Dissertation Award Nomination* (Top 5 in China).
 * 2016 *Distinguished Student* of Nanjing University (the only PhD student out of ten winners).
 * 2014 *MSRA Fellowship Award*; 2015 and 2010 *National Scholarship*;
 * First Place in 2014 Huawei Cup *Regional Programming Contest*; Second Place in 2012 *Tencent Hackathon*.
@@ -80,7 +80,7 @@ Past: [Zhanshuai Meng 孟占帅](/people/zhanshuaimeng) (2018 MSc → Ant Financ
 
 <hr>
 
-Last Update: September 23, 2018
+Last Update: November 25, 2018
 
 ~~~{.customjs}
 $('ul').css('margin-left', '-15px');
