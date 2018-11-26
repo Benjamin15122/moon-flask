@@ -12,7 +12,7 @@ title: DNS 设置
 
 ## 修改本机 `/etc/hosts`
 
-在本机的 `/etc/hosts` 文件中增加一条记录，将 `git.njuics.cn` 的域名指向 `114.212.189.145`。
+该方法适用于所有操作系统。在本机的 `/etc/hosts` 文件中增加一条记录，将 `git.njuics.cn` 的域名指向 `114.212.189.145`。
 例如：
 
 ```
@@ -23,7 +23,7 @@ title: DNS 设置
 
 DNS Server 搭建在校园网内网（114.212.189.138），上游指向学校的 DNS，并添加了软件所一些服务的 DNS。若要访问 Gitlab，需要在个人的机器上添加一条 DNS nameserver 的记录。
 
-1. RHEL/CentOS 
+### 1. RHEL/CentOS 
 
 临时配置可在 `/etc/resolv.conf` 添加记录：
 
@@ -37,7 +37,7 @@ nameserver 114.212.189.138
 DNS1="114.212.189.138"
 ```
 
-2. Debian/Ubuntu
+### 2. Debian/Ubuntu
 
 临时配置可在 `/etc/resolv.conf` 添加配置：
 
@@ -51,15 +51,15 @@ nameserver 114.212.189.138
 dns-nameservers 114.212.189.138
 ```
 
-3. MacOS
+### 3. MacOS
 
 在**设置 - 网络 - 高级 - DNS** 里配置：
 
 ![dns](http://cdn.jetmuffin.com/posts/mac-dns.png)
 
-4. Windows
+### 4. Windows
 
-详见 [百度经验](https://jingyan.baidu.com/article/2fb0ba40833b0a00f2ec5f28.html)
+详细配置见 [百度经验](https://jingyan.baidu.com/article/2fb0ba40833b0a00f2ec5f28.html)
 
 ## 备注
 
