@@ -61,9 +61,9 @@ I'm a coder striving to make programs better. I'm interested in automated techno
 
 <img class="pull-left" width="125px" style="margin-right: 15px" src="img/yuju-cake.jpg"/>I'm co-supervising students with Prof. [Chang Xu](http://cs.nju.edu.cn/changxu) and Prof. [Xiaoxing Ma](/~xxm).
 
-Current: [Wenjie Li 李文杰](/people/wenjieli) (PhD, Android), [Dongjie Chen 陈冬杰](/~dongjie) (PhD, concurrency), [Jue Wang 王珏](/people/juewang) (PhD, Android), Chenxi Zhang 张晨曦 (PhD, Android), Xianfei Ou 欧先飞 (PhD, compilers), Daohan Qu 屈道涵 (PhD), [Jiaxing Dong 董加星](/people/jiaxingdong) (MSc), [Yang Cao 曹阳](/people/yangcao) (MSc), [Yuju Shen 沈宇桔](/~yuju) (MSc), [Yi Liu 刘毅](/people/yiliu) (MSc), Zhao Gang 刚昭 (Undergrad), Mingjie Shen 沈明杰 (Undergrad), Xiaolin Li 李晓霖 (Undergrad), Shixuan Zhao 赵士轩 (Undergrad), Shaoyuan Chen 陈劭源 (Undergrad)
+Current: [Wenjie Li 李文杰](/people/wenjieli) (PhD, Android), [Dongjie Chen 陈冬杰](/~dongjie) (PhD, concurrency), [Jue Wang 王珏](/people/juewang) (PhD, Android), Chenxi Zhang 张晨曦 (PhD, Android), Xianfei Ou 欧先飞 (PhD, compilers), Daohan Qu 屈道涵 (PhD), [Yang Cao 曹阳](/people/yangcao) (MSc), [Yuju Shen 沈宇桔](/~yuju) (MSc), [Yi Liu 刘毅](/people/yiliu) (MSc), Zhao Gang 刚昭 (Undergrad), Mingjie Shen 沈明杰 (Undergrad), Xiaolin Li 李晓霖 (Undergrad), Shixuan Zhao 赵士轩 (Undergrad), Shaoyuan Chen 陈劭源 (Undergrad)
 
-Past: [Zhanshuai Meng 孟占帅](/people/zhanshuaimeng) (2018 MSc → Ant Financial), [Jiarong Wu 吴嘉荣](http://home.cse.ust.hk/~jwubf/) (2018 Bachelor → HKUST PhD)
+Past ([Details](students)): [Zhanshuai Meng 孟占帅](/people/zhanshuaimeng) (2018 MSc → Ant Financial), [Jiarong Wu 吴嘉荣](http://home.cse.ust.hk/~jwubf/) (2018 BSc → HKUST PhD)
 
 ## Services
 

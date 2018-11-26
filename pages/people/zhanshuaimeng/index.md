@@ -25,7 +25,7 @@ title: Zhanshuai Meng
 # Biography
 
 * I received my B. Sc degree in Department of Computer Science and Technology from [Nanjing University](http://www.nju.edu.cn) in July 2015.
-* I am supervised by [Prof. Xiaoxing Ma (马晓星)](http://moon.nju.edu.cn/people/xiaoxingma/) and [Prof. Chang Xu (许畅)](http://cs.nju.edu.cn/changxu/).
+* I am supervised by [Prof. Xiaoxing Ma (马晓星)](http://moon.nju.edu.cn/people/xiaoxingma/), [Prof. Chang Xu (许畅)](http://cs.nju.edu.cn/changxu/), and [Dr. Yanyan Jiang (蒋炎岩)](/~jyy).
 
 ## Research
 
@@ -33,18 +33,7 @@ title: Zhanshuai Meng
 
 ## Publication List
 
-~~~{.bibtexhtml hl_lines="Zhanshuai Meng"}
-@inproceedings{meng_facilitating_2015,
-    title = {Facilitating Reusable and Scalable Automated Testing and Analysis for Android Apps},
-    author = {Zhanshuai Meng and Yanyan Jiang and Chang Xu},
-    year = {2015},
-    booktitle = {Proceedings of the 7th Asia-Pacific Symposium on Internetware},
-    location = {Wuhan, China},
-    url = {http://dl.acm.org/citation.cfm?id=2875937},
-    doi = {10.1145/2875913.2875937},
-    pages = {166--175},
-}
-~~~
+* Zhanshuai Meng, Yanyan Jiang, and Chang Xu, “Facilitating reusable and scalable automated testing and analysis for Android apps”, in *Proceedings of the 7th Asia-Pacific Symposium on Internetware* (Internetware), 166–175, 2015.
 
 ## Hobbies
 
