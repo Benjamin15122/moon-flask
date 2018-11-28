@@ -65,8 +65,7 @@ title: Jun Ma
                     Tel: +86 25 89680922
                 </div>
             </div><!-- nesting row end -->
-        </div>
-	</div>
+        </div></div>
 </div>
 
 ## News
