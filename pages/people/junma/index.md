@@ -1,7 +1,5 @@
 title: Jun Ma
 
-# Jun Ma
-
 <div class="news-body">
     <div class="row gutter k-equal-height"><!-- row -->
         <div class="col-lg-3 col-md-3 col-sm-12">
@@ -68,7 +66,7 @@ title: Jun Ma
                 </div>
             </div><!-- nesting row end -->
         </div>
-	</div><!-- row end -->
+	</div>
 </div>
 
 ## News
@@ -88,6 +86,8 @@ title: Jun Ma
 * <img src="static/img/nju.jpg" width = "30" height = "30" align=center "/> I am now an assistant professor with Nanjing University.
 
 * <img src="static/img/220px-_ICPC_Foundation_Logo,_wide_profile,_2018_.png" width = "30" height = "30" align=center "/>I became the coach of NJU ICPC-Training Team since 2007.
+
+## Awards
 
 I received the following awards or honors (reversely chronological order):
 
