@@ -68,7 +68,7 @@ title: Jun Ma
                 </div>
             </div><!-- nesting row end -->
         </div>
-    </div><!-- row end -->
+	</div><!-- row end -->
 </div>
 
 ## News
