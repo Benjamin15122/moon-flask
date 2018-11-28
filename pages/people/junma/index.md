@@ -49,7 +49,14 @@ title: Jun Ma
                 </div>
             </div><!-- nesting row end -->
 		
-		
+			<div class="row gutter k-equal-height"><!-- nesting row -->
+                <div class="col-lg-4 col-md-4 col-sm-12">
+                   南京大学ACM-ICPC集训队教练
+                </div>
+                <div class="col-lg-8 col-md-8 col-sm-12">
+                  Coach of NJU ACM-ICPC Training Team
+                </div>
+            </div><!-- nesting row end -->
 			
             <div class="row gutter k-equal-height"><!-- nesting row -->
                 <div class="col-lg-12 col-md-12 col-sm-12">
@@ -62,6 +69,7 @@ title: Jun Ma
                 </div>
             </div><!-- nesting row end -->
         </div>
+		
     </div><!-- row end -->
 </div>
 
