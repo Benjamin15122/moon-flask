@@ -63,7 +63,7 @@ def make_people_url(url):
     # the url is directory name
     return url_for('page', name=url)
 
-def render_people(cond = None, category = None, large = False, group = None):
+def render_people(cond=None, category=None, large=False, group=None, center=None):
     if type(category) == str: category = [category]
 
     def render_one(p):
@@ -90,7 +90,11 @@ def render_people(cond = None, category = None, large = False, group = None):
     peoples = sum([g.site.people[t] for t in types], [])
 
     def need_render(p):
-        return not group or group in p.get('group', '')
+        if center:
+            if center not in p.get('center', ''): return False
+        if group:
+            if group not in p.get('group', ''): return False
+        return True
 
     return flask.render_template_string(
         BLOCK_TEMPLATE_LG if large else BLOCK_TEMPLATE_SM,
