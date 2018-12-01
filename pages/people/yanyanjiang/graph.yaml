@@ -30,7 +30,7 @@ nodes:
   - id: repdroid
     name: RepDroid
     desc: '[ICPC17]'
-    path: sta/analysis
+    path: sta/mobile
   - id: c3
     name: C3
     desc: '[FSE16]'
@@ -82,7 +82,11 @@ nodes:
   - id: lesdroid
     name: LESDroid
     desc: '[ICPC18]'
-    path: sta/analysis
+    path: sta/mobile
+  - id: tapir
+    name: TAPIR
+    desc: '[SANER19]'
+    path: sta/mobile
 edges:
   - att -> gat
   - att -> aatt
@@ -91,6 +95,7 @@ edges:
   - care -> survey
   - rwtrace -> survey
   - bc -> survey
+  - repdroid -> lesdroid
   - survey -> thesis
   - uga -> att
   - needle -> repdroid
