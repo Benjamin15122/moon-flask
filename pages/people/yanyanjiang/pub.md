@@ -2,6 +2,10 @@ title: Publications
 
 ## Yanyan Jiang's Publications
 
+## 2019
+
+* {{ render_bib_entry(g.site.spar_paper.li_characterizing_2019, hl='Yanyan Jiang') }}
+
 ### 2018
 
 * {{ render_bib_entry(g.site.spar_paper.jiang_needle_2018, hl='Yanyan Jiang') }}

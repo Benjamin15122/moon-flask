@@ -1,7 +1,5 @@
 title: Jun Ma
 
-# Jun Ma
-
 <div class="news-body">
     <div class="row gutter k-equal-height"><!-- row -->
         <div class="col-lg-3 col-md-3 col-sm-12">
@@ -26,6 +24,14 @@ title: Jun Ma
             </div><!-- nesting row end -->
             <div class="row gutter k-equal-height"><!-- nesting row -->
                 <div class="col-lg-4 col-md-4 col-sm-12">
+                   南京大学ACM-ICPC集训队教练
+                </div>
+                <div class="col-lg-8 col-md-8 col-sm-12">
+                  Coach of NJU ACM-ICPC Training Team
+                </div>
+            </div><!-- nesting row end -->
+			<div class="row gutter k-equal-height"><!-- nesting row -->
+                <div class="col-lg-4 col-md-4 col-sm-12">
                     南京大学计算机科学与技术系
                 </div>
                 <div class="col-lg-8 col-md-8 col-sm-12">
@@ -48,6 +54,7 @@ title: Jun Ma
                     Computer Building 819
                 </div>
             </div><!-- nesting row end -->
+			
             <div class="row gutter k-equal-height"><!-- nesting row -->
                 <div class="col-lg-12 col-md-12 col-sm-12">
                     E-mail: <img src="static/img/email.jpg"></img>
@@ -58,11 +65,11 @@ title: Jun Ma
                     Tel: +86 25 89680922
                 </div>
             </div><!-- nesting row end -->
-        </div>
-    </div><!-- row end -->
+        </div></div>
 </div>
 
 ## News
+*  <img src="static/img/new.jpg" width = "40" height = "40" align=center /> <img src="static/img/220px-_ICPC_Foundation_Logo,_wide_profile,_2018_.png" width = "60" height = "40" align=center "/>Congratulations to Hao LING, Hongyang LIU and Yangbo ZHANG for winning the championship in the 42th ACM-ICPC Asia Regional (Qingdao).
 *  <img src="static/img/new.jpg" width = "40" height = "40" align=center />Congratulations on Cong LI's APSEC'18 paper: "ELEGANT: Towards Effective Location of Fragmentation-Induced Compatibility Issues for Android Apps"!
 *  <img src="static/img/new.jpg" width = "40" height = "40" align=center />Shengtao Yue is granted "NJU CS Nominated Outstanding Master's Thesis Award"  for his thesis titled “Android Application Repackaging Detection Based on Runtime Graphical User Interface“.
 *  <img src="static/img/new.jpg" width = "40" height = "40" align=center />Congratulations on Shengtao Yue's ICSME'18 paper: "RegionDroid: A Tool for Detecting Android Application Repackaging Based on Runtime UI Region Features"!([Pre-print Version](static/files/ICSME2018(pre-print).pdf))
@@ -73,14 +80,19 @@ title: Jun Ma
 
 ## Bio
 
-I obtained my Ph.D. degree in computer science and technology from Nanjing University (NJU) in 2015 (Ph.D. advisor: Prof. Xianping TAO), and Bachelor degree in computer science and technology from Nanjing University in 2003.
+* <img src="static/img/nju.jpg" width = "30" height = "30" align=center "/> I obtained my Ph.D. degree in computer science and technology from Nanjing University (NJU) in 2015 (Ph.D. advisor: Prof. Xianping TAO), and Bachelor degree in computer science and technology from Nanjing University in 2003.
 
-I am now an assistant professor with Nanjing University.
+* <img src="static/img/nju.jpg" width = "30" height = "30" align=center "/> I am now an assistant professor with Nanjing University.
+
+* <img src="static/img/220px-_ICPC_Foundation_Logo,_wide_profile,_2018_.png" width = "30" height = "30" align=center "/>I became the coach of NJU ICPC-Training Team since 2007.
+
+## Awards
 
 I received the following awards or honors (reversely chronological order):
 
+* I received "NJU Sun Zhongxiu Teaching Award" (南京大学孙钟秀奖教金) in 2018.
 * I received "NJU Charismatic Advisor Award" (南京大学魅力导师奖) in 2018.
-* I received "JSCS Contribution Award of Science and Technology Services" (江苏省计算机学会科技服务贡献奖) in 2018.
+* I received "Jiangsu Computer Society Service Award" (江苏省计算机学会科技服务贡献奖) in 2018.
 * I received "Outstanding Coach Award" (江苏省大学生程序设计竞赛“优秀教练”)  in 2008.
 ## Research interests
 

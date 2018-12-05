@@ -22,7 +22,7 @@ I'm a coder striving to make programs better. I'm interested in automated techno
   <li>**Software Testing and Analysis**</li>
   <ul>
     <li>Concurrent Programs: *Understanding Shared Memory Dependences* (CARE [[ICSE14](pubs/care)], RWTrace [[ASE15](pubs/rwtrace)], BC [[FSE16](pubs/bc)], Survey [[JoS17](pubs/survey)], and my [PhD Thesis](pubs/thesis)); *Interleaving Space Sampling* (SCS [[ESEC/FSE18](pubs/scs)]);</li>
-    <li>Mobile Apps: *Platform* (ATT [[Internetware15](pubs/att)], CoseDroid [[COMPSAC15](pubs/cosedroid)]); *Event Generation* (GAT [[APSEC16](pubs/gat)], AATT [[APSEC16](pubs/aatt), [SCP18](pubs/aattplus)]); *Human Insights* (UGA [[APSEC14](pubs/uga)]); *Analysis* (RepDroid [[ICPC17](pubs/repdroid)], LESDroid [[ICPC18](pubs/lesdroid)]);</li>
+    <li>Mobile Apps: *Platform* (ATT [[Internetware15](pubs/att)], CoseDroid [[COMPSAC15](pubs/cosedroid)]); *Event Generation* (GAT [[APSEC16](pubs/gat)], AATT [[APSEC16](pubs/aatt), [SCP18](pubs/aattplus)]); *Human Insights* (UGA [[APSEC14](pubs/uga)]); *Analysis* (RepDroid [[ICPC17](pubs/repdroid)], LESDroid [[ICPC18](pubs/lesdroid)]); *Performance* (TAPIR [[SANER19]](pubs/tapir));</li>
     <li>Program Analysis: *Crash Consistency* (C3 [[FSE16](pubs/c3)]); *Fault Localization* (Comedy [[COMPSAC15](pubs/comedy)]); *Regular Expressions* (ReScue [[ASE18](pubs/rescue)] 🏅);</li>
   </ul>
   <li>**Program Synthesis**</li>
@@ -61,9 +61,9 @@ I'm a coder striving to make programs better. I'm interested in automated techno
 
 <img class="pull-left" width="125px" style="margin-right: 15px" src="img/yuju-cake.jpg"/>I'm co-supervising students with Prof. [Chang Xu](http://cs.nju.edu.cn/changxu) and Prof. [Xiaoxing Ma](/~xxm).
 
-Current: [Wenjie Li 李文杰](/people/wenjieli) (PhD, Android), [Dongjie Chen 陈冬杰](/~dongjie) (PhD, concurrency), [Jue Wang 王珏](/people/juewang) (PhD, Android), Chenxi Zhang 张晨曦 (PhD, Android), Xianfei Ou 欧先飞 (PhD, compilers), Daohan Qu 屈道涵 (PhD), [Jiaxing Dong 董加星](/people/jiaxingdong) (MSc), [Yang Cao 曹阳](/people/yangcao) (MSc), [Yuju Shen 沈宇桔](/~yuju) (MSc), [Yi Liu 刘毅](/people/yiliu) (MSc), Zhao Gang 刚昭 (Undergrad), Mingjie Shen 沈明杰 (Undergrad), Xiaolin Li 李晓霖 (Undergrad), Shixuan Zhao 赵士轩 (Undergrad), Shaoyuan Chen 陈劭源 (Undergrad)
+Current: [Wenjie Li 李文杰](/people/wenjieli) (PhD, Android), [Dongjie Chen 陈冬杰](/~dongjie) (PhD, concurrency), [Jue Wang 王珏](/people/juewang) (PhD, Android), Chenxi Zhang 张晨曦 (PhD, Android), Xianfei Ou 欧先飞 (PhD, compilers), Daohan Qu 屈道涵 (PhD), [Yang Cao 曹阳](/people/yangcao) (MSc), [Yuju Shen 沈宇桔](/~yuju) (MSc), [Yi Liu 刘毅](/people/yiliu) (MSc), Zhao Gang 刚昭 (Undergrad), Mingjie Shen 沈明杰 (Undergrad), Xiaolin Li 李晓霖 (Undergrad), Shixuan Zhao 赵士轩 (Undergrad), Shaoyuan Chen 陈劭源 (Undergrad)
 
-Past: [Zhanshuai Meng 孟占帅](/people/zhanshuaimeng) (2018 MSc → Ant Financial), [Jiarong Wu 吴嘉荣](http://home.cse.ust.hk/~jwubf/) (2018 Bachelor → HKUST PhD)
+Past ([Details](students)): [Zhanshuai Meng 孟占帅](/people/zhanshuaimeng) (2018 MSc → Ant Financial), [Jiarong Wu 吴嘉荣](http://home.cse.ust.hk/~jwubf/) (2018 BSc → HKUST PhD)
 
 ## Services
 
@@ -72,7 +72,7 @@ Past: [Zhanshuai Meng 孟占帅](/people/zhanshuaimeng) (2018 MSc → Ant Financ
 * ![](img/acmicpc.png) Coach of the programming contest training team at Nanjing University.
 
 ## Honors and Awards
-* 2018 *ACM SIGSOFT Distinguished Paper Award*.
+* 2018 *ACM SIGSOFT Distinguished Paper Award*, *ACM China Doctoral Dissertation Award Nomination* (Top 5 in China).
 * 2016 *Distinguished Student* of Nanjing University (the only PhD student out of ten winners).
 * 2014 *MSRA Fellowship Award*; 2015 and 2010 *National Scholarship*;
 * First Place in 2014 Huawei Cup *Regional Programming Contest*; Second Place in 2012 *Tencent Hackathon*.
@@ -80,7 +80,7 @@ Past: [Zhanshuai Meng 孟占帅](/people/zhanshuaimeng) (2018 MSc → Ant Financ
 
 <hr>
 
-Last Update: September 23, 2018
+Last Update: December 1, 2018
 
 ~~~{.customjs}
 $('ul').css('margin-left', '-15px');
