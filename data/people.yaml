@@ -1,35 +1,38 @@
-faculty:
-  - name: Jiafu Xu 徐家福
-    title: Professor
-    avatar: /static/img/avatar/xujiafu.jpg
-    url: /news/2018/01/jiafu
+chief_scientist:
   - name: Jian Lü 吕建
     title: Professor
+    role: President of NJU
     avatar: /static/img/avatar/lujian.jpg
-  - name: Jianying Zhang 张建莹
-    title: Senior Engineer
-    avatar: /static/img/avatar/mrszhang.jpg
-  - name: Xianping Tao 陶先平
-    title: Professor
-    url: xianpingtao
-    avatar: /people/xianpingtao/static/avatar.jpg
+faculty:
   - name: Xiaoxing Ma 马晓星
     title: Professor
+    role: Deputy Director
     id: xiaoxingma
     url: /people/xiaoxingma
     avatar: /people/xiaoxingma/static/avatar.jpg
+    role: Deputy Directory
     group: dse, spar
+  - name: Xianping Tao 陶先平
+    title: Professor
+    role: Director of Emerging Directions
+    url: xianpingtao
+    avatar: /people/xianpingtao/static/avatar.jpg
+  - name: Chang Xu 许畅
+    title: Professor
+    role: Director of Research
+    id: changxu
+    url: http://cs.nju.edu.cn/changxu
+    avatar: /static/img/avatar/xuchang.jpg
+    group: spar, castle
+  - name: Chun Cao 曹春
+    title: Associate Professor
+    role: Director of Engineering
+    avatar: /static/img/avatar/caochun.jpg
   - name: Feng Xu 徐锋
     id: fengxu
     title: Professor
     avatar: /people/fengxu/static/img/avatar.jpg
     url: fengxu
-  - name: Chang Xu 许畅
-    title: Professor
-    id: changxu
-    url: http://cs.nju.edu.cn/changxu
-    avatar: /static/img/avatar/xuchang.jpg
-    group: spar, castle
   - name: Yu Huang 黄宇
     title: Professor
     url: http://cs.nju.edu.cn/yuhuang
@@ -38,9 +41,6 @@ faculty:
   - name: Hao Hu 胡昊
     title: Associate Professor
     avatar: /static/img/avatar/huhao.jpg
-  - name: Chun Cao 曹春
-    title: Associate Professor
-    avatar: /static/img/avatar/caochun.jpg
   - name: Ping Yu 余萍
     title: Associate Professor
     url: http://cs.nju.edu.cn/yuping
@@ -73,6 +73,9 @@ faculty:
     url:  /~jyy
     avatar: /spar/img/avatar/yyjiang.jpg
     group: spar, castle
+  - name: Jianying Zhang 张建莹
+    title: Senior Engineer
+    avatar: /static/img/avatar/mrszhang.jpg
 
 phd:
   - name: Yi Qin 秦逸
@@ -274,6 +277,13 @@ undergraduates:
   - name: Shaoyuan Chen 陈劭源
     from: 2018
     group: spar
+
+# Those left or passed away 
+former_faculty:
+  - name: Jiafu Xu 徐家福
+    title: Professor
+    avatar: /static/img/avatar/xujiafu.jpg
+    url: /news/2018/01/jiafu
 
 alumni:
   - name: Shuo Cheng 程硕

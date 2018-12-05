@@ -37,7 +37,8 @@ PEOPLE_TEMPLATE_LG = u"""
 <table><tr>
 <td><img class="avatar" src="{{ avatar }}"/></td>
 <td><span class="name">{{ name1 }}</span><br>
-<span>{{ name2 | safe }}</span></td>
+<span>{{ name2 | safe }}</span><br>
+<span>{{ "" if not name3 else name3 | safe }}</span></td>
 </tr></table>
 {% if url %} </a> {% endif %}
 </div>
@@ -79,11 +80,13 @@ def render_people(cond = None, category = None, large = False, group = None):
         else:
             name1 = ' '.join(name[:-1])
             name2 = name[-1]
+        
+        name3=p.get("role")
 
         return flask.render_template_string(
             PEOPLE_TEMPLATE_LG if large else PEOPLE_TEMPLATE_SM,
             url = make_people_url(p.get('url', None)),
-            name1 = name1, name2 = name2,
+            name1 = name1, name2 = name2, name3 = name3,
             avatar = avatar)
 
     types = category if category else ['faculty', 'phd', 'graduates', 'alumni']
