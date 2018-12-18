@@ -7,7 +7,7 @@ title: SPAR Seminar
 Discuss software engineering, programming language, and system papers that have *novel* and *significant* contributions. Tool tutorials are also welcomed.
 
 ## Upcoming Talks
-* (Dec 18) Huiyan Wang: MODE: Automated Neural Network Model Debugging via State Dierential Analysis and Input Selection [[FSE 18]](https://dl.acm.org/citation.cfm?id=3236082).
+* (Dec 18) Huiyan Wang: MODE: Automated Neural Network Model Debugging via State Differential Analysis and Input Selection [[FSE 18]](https://dl.acm.org/citation.cfm?id=3236082).
 * Wenjie Li
 * Weiyu Ye; Yanxiang Tong
 * Qingwei Sun
