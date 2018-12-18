@@ -7,10 +7,9 @@ title: SPAR Seminar
 Discuss software engineering, programming language, and system papers that have *novel* and *significant* contributions. Tool tutorials are also welcomed.
 
 ## Upcoming Talks
-* (Dec 11) Cong Li: PerfFuzz: Automatically Generating Pathological Inputs [[ISSTA 18]](https://dl.acm.org/citation.cfm?id=3213874).
-* Yanxiang Tong; Xianfei Ou
+* (Dec 18) Huiyan Wang: MODE: Automated Neural Network Model Debugging via State Dierential Analysis and Input Selection [[FSE 18]](https://dl.acm.org/citation.cfm?id=3236082).
 * Wenjie Li
-* Weiyu Ye; Huiyan Wang
+* Weiyu Ye; Yanxiang Tong
 * Qingwei Sun
 
 ## Past Talks
@@ -25,7 +24,7 @@ Discuss software engineering, programming language, and system papers that have 
 * (Nov 13) Shaocong Liu: Neural-Augmented Static Analysis of Android Communication [[FSE 18]](http://pages.cs.wisc.edu/~aws/papers/fse18a.pdf); Dongjie Chen: Why is Random Testing Effective for Partition Tolerance Bugs? [[POPL 18]](https://dl.acm.org/citation.cfm?id=3177123.3158134).
 * (Nov 20) Yang Cao: T-Fuzz: Fuzzing by Program Transformation [[SP 18]](https://nebelwelt.net/publications/files/18Oakland.pdf).
 * (Nov 27) Fengmin Shi: ExceLint: Automatically Finding Spreadsheet Formula Errors [[OOPSLA 18]](https://dl.acm.org/citation.cfm?id=3276518).
-* (Dec 4) Chenxi Zhang: Using Finite-State Models for Log Diﬀerencing [[FSE 18]](http://www.cs.tau.ac.il/~maozs/papers/log-diff-fse18.pdf).
+* (Dec 11) Cong Li: PerfFuzz: Automatically Generating Pathological Inputs [[ISSTA 18]](https://dl.acm.org/citation.cfm?id=3213874). 
 
 ## Seminar Archive
 
