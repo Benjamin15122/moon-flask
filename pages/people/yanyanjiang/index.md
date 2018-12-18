@@ -72,7 +72,8 @@ Past ([Details](students)): [Zhanshuai Meng 孟占帅](/people/zhanshuaimeng) (2
 * ![](img/acmicpc.png) Coach of the programming contest training team at Nanjing University.
 
 ## Honors and Awards
-* 2018 *ACM SIGSOFT Distinguished Paper Award*, *ACM China Doctoral Dissertation Award Nomination* (Top 5 in China).
+* 2018 *ACM SIGSOFT Distinguished Paper Award*.
+* 2018 *CCF Docotral Disseration Award* (Top 5 in China), *ACM China Doctoral Dissertation Award Nomination* (Top 5 in China).
 * 2016 *Distinguished Student* of Nanjing University (the only PhD student out of ten winners).
 * 2014 *MSRA Fellowship Award*; 2015 and 2010 *National Scholarship*;
 * First Place in 2014 Huawei Cup *Regional Programming Contest*; Second Place in 2012 *Tencent Hackathon*.
