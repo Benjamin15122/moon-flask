@@ -7,8 +7,7 @@ title: SPAR Seminar
 Discuss software engineering, programming language, and system papers that have *novel* and *significant* contributions. Tool tutorials are also welcomed.
 
 ## Upcoming Talks
-* (Dec 18) Huiyan Wang: MODE: Automated Neural Network Model Debugging via State Differential Analysis and Input Selection [[FSE 18]](https://dl.acm.org/citation.cfm?id=3236082).
-* Wenjie Li
+* (Dec 25) Wenjie Li: BLeak: Automatically Debugging Memory Leaks in Web Applications [[PLDI 18]](https://jvilk.com/assets/pdf/bleak.pdf).
 * Weiyu Ye; Yanxiang Tong
 * Qingwei Sun
 
@@ -26,6 +25,7 @@ Discuss software engineering, programming language, and system papers that have 
 * (Nov 27) Fengmin Shi: ExceLint: Automatically Finding Spreadsheet Formula Errors [[OOPSLA 18]](https://dl.acm.org/citation.cfm?id=3276518).
 * (Dec 4) Chenxi Zhang: Using Finite-State Models for Log Diﬀerencing [[FSE 18]](http://www.cs.tau.ac.il/~maozs/papers/log-diff-fse18.pdf).
 * (Dec 11) Cong Li: PerfFuzz: Automatically Generating Pathological Inputs [[ISSTA 18]](https://dl.acm.org/citation.cfm?id=3213874). 
+* (Dec 18) Huiyan Wang: MODE: Automated Neural Network Model Debugging via State Differential Analysis and Input Selection [[FSE 18]](https://dl.acm.org/citation.cfm?id=3236082).
 
 ## Seminar Archive
 
