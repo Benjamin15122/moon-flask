@@ -10,7 +10,6 @@ faculty:
     id: xiaoxingma
     url: /people/xiaoxingma
     avatar: /people/xiaoxingma/static/avatar.jpg
-    role: Deputy Directory
     group: dse, spar
   - name: Xianping Tao 陶先平
     title: Professor
