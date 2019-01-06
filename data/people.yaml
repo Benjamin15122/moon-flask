@@ -79,15 +79,15 @@ faculty:
     url:  /~jyy
     avatar: /spar/img/avatar/yyjiang.jpg
     group: spar, castle
+  - name: Yi Qin 秦逸
+    title: Assistant Researcher
+    avatar: /spar/img/avatar/yqin.jpg
+    group: spar
   - name: Jianying Zhang 张建莹
     title: Senior Engineer
     avatar: /static/img/avatar/mrszhang.jpg
 
 phd:
-  - name: Yi Qin 秦逸
-    avatar: /spar/img/avatar/yqin.jpg
-    from: 2013
-    group: spar
   - name: Shengqu Xi 席圣渠
     url:  shengquxi
     from: 2014
@@ -167,11 +167,6 @@ phd:
     from: 2018
 
 graduates:
-  - name: Jiaxing Dong 董加星
-    from: 2015
-    url: jiaxingdong
-    avatar: /spar/img/avatar/jxdong.jpg
-    group: spar
   - name: Yang Cao 曹阳
     avatar: /spar/img/avatar/ycao.jpg
     url: yangcao
