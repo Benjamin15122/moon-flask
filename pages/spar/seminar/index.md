@@ -7,9 +7,8 @@ title: SPAR Seminar
 Discuss software engineering, programming language, and system papers that have *novel* and *significant* contributions. Tool tutorials are also welcomed.
 
 ## Upcoming Talks
-* (Dec 25) Wenjie Li: BLeak: Automatically Debugging Memory Leaks in Web Applications [[PLDI 18]](https://jvilk.com/assets/pdf/bleak.pdf).
-* Weiyu Ye; Yanxiang Tong
-* Qingwei Sun
+* (Jan 8) Yanxiang Tong: Testing vision-based control systems using learnable evolutionary algorithms [[ICSE 18]](http://dl.acm.org/citation.cfm?doid=3180155.3180160).
+* Qingwei Sun; Weiyu Ye
 
 ## Past Talks
 * (Sep 11) Jinci Chen: Avoiding the Familiar to Speed Up Test Case Reduction [[QRS 18]](https://ieeexplore.ieee.org/document/8424994/); Rui Qiu: Learning to Prioritize Test Programs for Compiler Testing [[ICSE 17]](http://materials.dagstuhl.de/files/17/17502/17502.JunjieChen.Preprint.pdf).
@@ -26,6 +25,7 @@ Discuss software engineering, programming language, and system papers that have 
 * (Dec 4) Chenxi Zhang: Using Finite-State Models for Log Diﬀerencing [[FSE 18]](http://www.cs.tau.ac.il/~maozs/papers/log-diff-fse18.pdf).
 * (Dec 11) Cong Li: PerfFuzz: Automatically Generating Pathological Inputs [[ISSTA 18]](https://dl.acm.org/citation.cfm?id=3213874). 
 * (Dec 18) Huiyan Wang: MODE: Automated Neural Network Model Debugging via State Differential Analysis and Input Selection [[FSE 18]](https://dl.acm.org/citation.cfm?id=3236082).
+* (Dec 25) Wenjie Li: BLeak: Automatically Debugging Memory Leaks in Web Applications [[PLDI 18]](https://jvilk.com/assets/pdf/bleak.pdf).
 
 ## Seminar Archive
 
