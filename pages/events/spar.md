@@ -1,6 +1,6 @@
-title: Spar Seminar
+title: Spar 讨论班
 
 
-# Spar Seminar
+# Spar 讨论班
 
 {{ render_spar_events()}} 

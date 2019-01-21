@@ -1,5 +1,5 @@
-title: Events
+title: 讨论班
 
 
-# Events
+# 讨论班
 {{ render_events() }}

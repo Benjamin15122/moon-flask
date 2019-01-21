@@ -7,10 +7,10 @@
         <li {% if request.path == url_for('page', path='people/') %} class="current-menu-item" {% endif %}>
             <a href="{{ url_for('page', path='people/') }}" title="">成员</a>
         </li>
-        <li>
+        <li {% if request.path == url_for('page', path='centers/') %} class="current-menu-item" {% endif %}>
             <a href="{{ url_for('page', path='centers/') }}" title="">中心</a>
             <ul class="sub-menu">
-                <li ><a href="{{ url_for('page', path='centers/research-center/') }}">基础研究中心</a></li>
+                <li {% if request.path == url_for('page', path='centers/research-center') %} class="current-menu-item" {% endif %}><a href="{{ url_for('page', path='centers/research-center/') }}">基础研究中心</a></li>
                 <li ><a href="{{ url_for('page', path='centers/engineering-center/') }}">系统工程中心</a></li>
                 <li ><a href="{{ url_for('page', path='centers/leading-edge-center/') }}">前沿交叉中心</a></li>
             </ul>
@@ -38,7 +38,7 @@
             <ul class="sub-menu">
                 <li {% if request.path == url_for('page', path='events/phd') %} class="current-menu-item" {% endif %}><a href="{{ url_for('page', path='events/phd') }}">博士生讨论班</a></li>
                 <li {% if request.path == url_for('page', path='events/master') %} class="current-menu-item" {% endif %}><a href="{{ url_for('page', path='events/master') }}">硕士生讨论班</a></li>
-                <li {% if request.path == url_for('page', path='/spar/seminar/') %} class="current-menu-item" {% endif %}><a href="{{ url_for('page', path='/spar/seminar/') }}">Spar 讨论班</a></li>
+                <li {% if request.path == url_for('page', path='/spar/seminar') %} class="current-menu-item" {% endif %}><a href="{{ url_for('page', path='/spar/seminar/') }}">Spar 讨论班</a></li>
                 <li {% if request.path == url_for('page', path='events/deadlines') %} class="current-menu-item" {% endif %}><a href="{{ url_for('page', path='events/deadlines')}}">投稿截止日期</a></li>
             </ul>
         </li>

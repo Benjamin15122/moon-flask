@@ -1,5 +1,5 @@
-title: Master Seminar
+title: 硕士讨论班
 
 
-# Master Seminar
+# 硕士讨论班
 {{ render_master_events() }}

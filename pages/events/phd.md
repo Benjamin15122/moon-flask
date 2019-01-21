@@ -1,6 +1,6 @@
-title: PhD Seminar
+title: 博士讨论班
 
 
-# PhD Seminar
+# 博士讨论班
 
 {{ render_phd_events() }}

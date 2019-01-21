@@ -1,6 +1,6 @@
-title: Papers
+title: 论文
 
-# Papers
+# 论文
 
 {{ render_short_news(g.site.paper_news) }}
 
