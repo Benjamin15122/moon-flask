@@ -126,7 +126,7 @@ I am interested in various topics in software engineering, especially
 ## [Publications](publications)
 **Some recent papers:**
 
-{{ render_bib_file('xiaoxingma.bib', ['2019-ICSENIER-ZLi-Misleading','2019-ICSE-TGu-APE','MaSNS2018','WSongTSE2018','TGuECOOP18','ConUpTSE_2017','TGuASE2016','YYangTC16MIPA','jiang_crash_2016','jiang_online_2016','Xu:2015:TSE','JavelusIST14','JYY:2014:ICSE'], hl='Xiaoxing Ma') }}
+{{ render_bib_file('xiaoxingma.bib', ['2019-ICSENIER-ZLi-Misleading','2019-ICSE-TGu-APE','2018-SETSS-Ma-SNS','2018-TSE-WSong-InsMigVal', '2018-ECOOP-TGu-AOTES', '2018-FSE-DChen-TMP', '2018-ASE-YShen-ReScue', '2017-TSE-LBaresi-ConUp','2016-ASE-TGu-Ares','2016-TC-YYang-MIPA','2016-FSE-YJiang-Crash','2016-FSE-YJiang-Bisect'], hl='Xiaoxing Ma') }}
 
 **More publications:** [_In English_](publications), [_In Chinese_](http://www.c-dblp.cn/search_result.php?author_name=%E9%A9%AC%E6%99%93%E6%98%9F); or in [DBLP](http://dblp.uni-trier.de/pers/hd/m/Ma:Xiaoxing), [Google Scholar](https://scholar.google.com/citations?user=44WpWR4AAAAJ).
 
