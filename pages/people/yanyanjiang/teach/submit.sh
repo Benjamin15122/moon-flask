@@ -8,8 +8,8 @@ read task
 cwd=${PWD##*/}
 echo "${STUID} (${STUNAME}) submitting ${task}..."
 
-#wiki=$(curl -m 1 -Ls -w '%{url_effective}' -o /dev/null 'moon.nju.edu.cn/~jyywiki' | grep -o 'http://[^/]*/')
-wiki='http://114.212.81.193:5000/' # hot fix
+wiki=`curl -m 1 -Ls -w '%{url_effective}' -o /dev/null 'http://moon.nju.edu.cn/~jyywiki' | grep -o 'http://[^/]*/'`
+# wiki='http://114.212.87.156:5000/' # hot fix
 
 tarball=$(mktemp -q).tar.bz2
 bash -c "cd .. && tar cj ${cwd} > ${tarball}"
