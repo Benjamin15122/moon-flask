@@ -11,4 +11,4 @@ wiki=`curl -m 1 -Ls -w '%{url_effective}' -o /dev/null 'http://moon.nju.edu.cn/~
 
 tarball=$(mktemp -q).tar.bz2
 bash -c "cd .. && tar cj ${cwd} > ${tarball}"
-curl -F "task=${task}" -F "id=${STUID}" -F "name=${STUNAME}" -F "submission=@${tarball}" ${wiki}upload
+curl -F "task=${TASK}" -F "id=${STUID}" -F "name=${STUNAME}" -F "submission=@${tarball}" ${wiki}upload
