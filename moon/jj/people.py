@@ -51,6 +51,18 @@ BLOCK_TEMPLATE_LG = u"""
 </div>
 """
 
+DUTY_TEMPLATE = u"""
+    {% for name, url, duty in people %}
+        <ul>
+            <li>{% if url %} <a href="{{ url  }}"> {% endif %}
+                {{ name }}
+                {% if url %} </a> {% endif %}
+            : {{ duty }}</li>
+        </ul>
+    {% endfor %}
+"""
+
+
 def make_people_url(url):
     if url is None:
         return None
@@ -64,6 +76,16 @@ def make_people_url(url):
     # the url is directory name
     return url_for('page', name=url)
 
+def render_duty():
+    return flask.render_template_string(
+        DUTY_TEMPLATE,
+        people=[(p['name'].split(' ')[-1], p['url'], p['duty'])
+                for p in g.site.people['faculty'] # only for facuty
+                #if flag in p.get('flag', '') and p.get('duty', None)
+                if p.get('duty', None)
+        ]
+    )
+
 def render_people(cond=None, category=None, large=False, group=None, center=None):
     if type(category) == str: category = [category]
 
@@ -72,6 +94,8 @@ def render_people(cond=None, category=None, large=False, group=None, center=None
         mygroup = [i.strip() for i in p.get('group', '').split(',')]
 
         name = p['name'].split(' ')
+        name[0], name[1] = name[1], name[0] # put Chinese name in the first place
+        name = name[::-1]
         if len(name) == 2: (name1, name2) = ('', '')
         elif large:
             name1 = ' '.join(name)
@@ -80,7 +104,7 @@ def render_people(cond=None, category=None, large=False, group=None, center=None
         else:
             name1 = ' '.join(name[:-1])
             name2 = name[-1]
-        
+
         name3=p.get("role")
 
         return flask.render_template_string(

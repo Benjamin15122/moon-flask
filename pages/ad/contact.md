@@ -1,4 +1,4 @@
-title: Contact
+title: 联系我们
 bundle: qqmap
 
 <div class="row gutter"><!-- row -->
