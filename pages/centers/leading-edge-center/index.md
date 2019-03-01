@@ -4,11 +4,9 @@ title: 交叉与前沿中心
 <hr>
 
 ## 成员
-{{ render_people(center = "leading-edge", category = ["faculty"]) | safe }}
+{{ render_people(center = "leading-edge", category = ["faculty"], large=True) | safe }}
 
-## 成员职责
-{{ render_duty(center='leading-edge') | safe }}
+## 博士研究生
 
-## 研究小组
+## 硕士研究生
 
-## 研究生讨论班

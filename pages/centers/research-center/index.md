@@ -3,11 +3,18 @@ title: 基础研究中心
 # 基础研究中心
 <hr>
 
-## 成员
-{{ render_people(center='research', category = ["faculty"]) | safe }}
+## 教师
+{{ render_people(center='research', category = ["faculty"], large=True) | safe }}
 
-## 成员职责
-{{ render_duty(center='research') | safe }}
+
+<hr>
+## 博士研究生
+{{ render_people(category="phd", center='research', large=True) | safe }}
+<hr>
+
+## 硕士研究生
+{{ render_people(category="graduates", center='research', large=True) | safe }}
+<hr>
 
 ## 研究小组
 - [DisAlg: Distributed Algorithm Group](../../disalg/)
@@ -22,6 +29,3 @@ title: 基础研究中心
 
     ![](/static/img/logo-spar-small.png) 小组负责人: [马晓星](/people/xiaoxingma)、[许畅](http://cs.nju.edu.cn/changxu)、[蒋炎岩](/people/yyjiang).
 
-## 研究生讨论班
-- [博士生讨论班](../../events/phd)
-- [硕士生讨论班](../../events/master)

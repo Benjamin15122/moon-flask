@@ -1,16 +1,15 @@
-title: Introduction
+title: 介绍
 
-# Introduction
+# 介绍
 
-The [Institute of Computer Software (ICS)](/)
-is affiliated with [Nanjing University](http://www.nju.edu.cn)
-and supported by the [Department of Computer Science and Technology of Nanjing University](http://cs.nju.edu.cn).
+计算机软件所[Institute of Computer Software (ICS)](/)
+隶属于[南京大学](http://www.nju.edu.cn)，由[南京大学计算机科学与技术系](http://cs.nju.edu.cn)支撑的科研机构。
 
-Research interests of ICS mainly focus on:
+软件所从事的科研方向主要有：
 
-* Internetware-based Software Methodology
-* Self-adaptive Software
-* Dynamic Software Evolution
-* Context-aware Modeling
-* Software Trustiness and Quality
-* Software Requirements Modeling and Analysis etc.
+* 基于网构软件的软件方法学
+* 自适应软件
+* 软件动态演化
+* 基于环境上下文感知的建模
+* 软件信任和质量
+* 软件需求建模和分析等

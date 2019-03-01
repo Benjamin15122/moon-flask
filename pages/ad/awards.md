@@ -1,4 +1,4 @@
-title: Awards of ICS
+title: 奖项
 
 
 {{ render_awards() }}

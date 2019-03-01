@@ -4,15 +4,17 @@
         <li {% if request.path == url_for('page') %} class="current-menu-item" {% endif %}>
             <a href="{{ url_for('page') }}" title="">首页</a>
         </li>
+        <!--
         <li {% if request.path == url_for('page', path='people/') %} class="current-menu-item" {% endif %}>
             <a href="{{ url_for('page', path='people/') }}" title="">成员</a>
         </li>
+        -->
         <li {% if request.path == url_for('page', path='centers/') %} class="current-menu-item" {% endif %}>
-            <a href="{{ url_for('page', path='centers/') }}" title="">中心</a>
+            <a href="{{ url_for('page', path='centers/') }}" title="">组织</a>
             <ul class="sub-menu">
                 <li {% if request.path == url_for('page', path='centers/research-center') %} class="current-menu-item" {% endif %}><a href="{{ url_for('page', path='centers/research-center/') }}">基础研究中心</a></li>
-                <li ><a href="{{ url_for('page', path='centers/engineering-center/') }}">系统工程中心</a></li>
-                <li ><a href="{{ url_for('page', path='centers/leading-edge-center/') }}">前沿交叉中心</a></li>
+                <li {% if request.path == url_for('page', path='centers/engineering-center') %} class="current-menu-item" {% endif %}><a href="{{ url_for('page', path='centers/engineering-center/') }}">系统工程中心</a></li>
+                <li {% if request.path == url_for('page', path='centers/leading-edge-center') %} class="current-menu-item" {% endif %}><a href="{{ url_for('page', path='centers/leading-edge-center/') }}">前沿交叉中心</a></li>
             </ul>
         </li>
         <!--
@@ -24,7 +26,6 @@
                 <li ><a href="{{ url_for('page', path='spar/') }}">SPAR</a></li>
             </ul>
         </li>
-        -->
         <li {% if request.path == url_for('page', path='news/') %} class="current-menu-item" {% endif %}>
             <a href="{{ url_for('page', path='news/') }}" title="">新闻</a>
             <ul class="sub-menu">
@@ -33,8 +34,9 @@
                 <li ><a href="{{ url_for('page', path='news/scholarships') }}">奖学金</a></li>
             </ul>
         </li>
+        -->
         <li {% if request.path == url_for('page', path='events') %} class="current-menu-item" {% endif %}>
-            <a href="{{ url_for('page', path='events/') }}" title="">讨论班</a>
+            <a href="{{ url_for('page', path='events/') }}" title="">活动</a>
             <ul class="sub-menu">
                 <li {% if request.path == url_for('page', path='events/phd') %} class="current-menu-item" {% endif %}><a href="{{ url_for('page', path='events/phd') }}">博士生讨论班</a></li>
                 <li {% if request.path == url_for('page', path='events/master') %} class="current-menu-item" {% endif %}><a href="{{ url_for('page', path='events/master') }}">硕士生讨论班</a></li>
@@ -45,8 +47,11 @@
         <li>
             <a href="http://moon.nju.edu.cn/courses/" title="">课程</a>
         </li>
+        <li {% if request.path == url_for('page', path='recruit') %} class="current-menu-item" {% endif %}>
+            <a href="{{ url_for('page', path='recruit/') }}" title="">招生</a>
+        </li>
         <li>
-            <a href="{{ url_for('page', path='ad/') }}" title="">宣传</a>
+            <a href="{{ url_for('page', path='ad/') }}" title="">资源</a>
             <ul class="sub-menu">
                 <li {% if request.path == url_for('page', path='ad/awards') %} class="current-menu-item" {% endif %}><a href="{{ url_for('page', path='ad/awards') }}">奖项</a></li>
                 <li {% if request.path == url_for('page', path='ad/scholarships') %} class="current-menu-item" {% endif %}><a href="{{ url_for('page', path='ad/scholarships') }}">奖学金</a></li>

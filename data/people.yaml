@@ -10,20 +10,14 @@ faculty:
     id: xiaoxingma
     url: /people/xiaoxingma
     center: research, engineering
-    duty: 软件所所长
+    duty: 软件所副所长
     avatar: /people/xiaoxingma/static/avatar.jpg
     group: dse, spar
-  - name: Xianping Tao 陶先平
-    title: Professor
-    duty: 前沿交叉中心负责人
-    center: leading-edge
-    url: xianpingtao
-    avatar: /people/xianpingtao/static/avatar.jpg
   - name: Chang Xu 许畅
     title: Professor
     #role: Director of Research
     center: research
-    duty: 研究中心负责人
+    duty: 基础研究中心负责人
     id: changxu
     url: http://cs.nju.edu.cn/changxu
     avatar: /static/img/avatar/xuchang.jpg
@@ -31,9 +25,16 @@ faculty:
   - name: Chun Cao 曹春
     title: Associate Professor
     #role: Director of Engineering
-    duty: 工程仲系负责人
+    url: 
+    duty: 系统工程中心负责人
     center: engineering
     avatar: /static/img/avatar/caochun.jpg
+  - name: Xianping Tao 陶先平
+    title: Professor
+    duty: 前沿交叉中心负责人
+    center: leading-edge
+    url: xianpingtao
+    avatar: /people/xianpingtao/static/avatar.jpg
   - name: Feng Xu 徐锋
     id: fengxu
     title: Professor
@@ -57,6 +58,7 @@ faculty:
     url: http://cs.nju.edu.cn/yuping
     avatar: /static/img/avatar/yuping.jpg
     center: engineering
+    duty: 公众号维护
   - name: Jun Ma 马骏
     id: junma
     title: Assistant Professor
@@ -107,200 +109,261 @@ phd:
   - name: Shengqu Xi 席圣渠
     url:  shengquxi
     from: 2014
+    center: research
     avatar: /people/shengquxi/static/face.png
   - name: Yaojing Wang 王瑶菁
     url:  yaojingwang
+    center: research
     avatar: /static/img/avatar/yaojingwang.jpg
     from: 2014
   - name: Zelin Zhao 赵泽林
     url:  zelinzhao
+    center: research
     avatar: /people/zelinzhao/static/avatar.jpg
     from: 2014
     group: dse, spar
   - name: Huiyan Wang 王慧妍
+    center: research
     url: huiyanwang
     avatar: /spar/img/avatar/hywang.jpg
     from: 2015
     group: spar
   - name: Jue Wang 王珏
+    center: research
     url: juewang
     avatar: /spar/img/avatar/jwang.jpg
     from: 2016
     group: spar, castle
   - name: Da Li 李达
+    center: research
     url: dali
     from: 2016
     avatar: /spar/img/avatar/dli.png
     group: spar, castle
   - name: Ying Zhang 张营
+    center: research
     from: 2016
     avatar: /spar/img/avatar/yzhang.jpg
     url:  yingzhang
     group: spar
   - name: Yanxiang Tong 童燕翔
+    center: research
     from: 2016
     avatar: /static/img/avatar/tongyanxiang.jpg
     group: spar
   - name: Xue Jiang 江雪
+    center: research
     from: 2016
     group: disalg
   - name: Wenjie Li 李文杰
+    center: research
     from: 2016
     url: wenjieli
     avatar: /spar/img/avatar/wjli.jpg
     group: spar, castle
   - name: Yuqi Zhang 张宇奇
+    center: research
     from: 2016
     group: disalg
   - name: Dongjie Chen 陈冬杰
+    center: research
     url: /~dongjie
     avatar: /spar/img/avatar/djchen.jpg
     from: 2016
     group: spar
   - name: Yi Huang 黄羿
+    center: research
     from: 2017
     group: disalg
   - name: Lingzhi Ouyang 欧阳凌志
+    center: research
     from: 2017
     group: disalg
   - name: Shengbin Xu 徐圣斌
+    center: research
     from: 2017
   - name: Weiyu Ye 叶炜煜
+    center: research
     from: 2017
     group: spar
   - name: Chenxi Zhang 张晨曦
+    center: research
     from: 2017
     avatar: /spar/img/avatar/cxzhang.png
     group: spar
   - name: Xianfei Ou 欧先飞
+    center: research
     from: 2018
     group: spar
   - name: Cong Li 李聪
+    center: research
     from: 2018
     avatar: /spar/img/avatar/congli.jpg
     group: spar
   - name: Xinchen Guo 郭新琛
+    center: research
     from: 2018
 
 graduates:
   - name: Yang Cao 曹阳
+    center: research
     avatar: /spar/img/avatar/ycao.jpg
     url: yangcao
     from: 2016
     group: spar
   - name: Yuju Shen 沈宇桔
+    center: research
     from: 2016
     url: /~yuju
     avatar: /spar/img/avatar/yjshen.jpg
     group: spar
   - name: Xiaofei Zhang 张晓飞
+    center: research
     from: 2016
     url: xiaofeizhang
   - name: Lun Zhao 赵伦
+    center: research
     from: 2016
   - name: Hongjun Ge 葛红军
+    center: engineering
     from: 2016
   - name: Jing Deng 邓靖
+    center: engineering
     from: 2016
   - name: Jie Chen 陈洁
+    center: engineering
     from: 2016
     url: http://jetmuffin.com
   - name: Xinchen Cai 蔡昕辰
+    center: research
     from: 2016
   - name: Dawei Cheng 程大卫
+    center: research
     from: 2016
     avatar: /spar/img/avatar/dwcheng.jpg
     group: spar
   - name: Xiang Hu 胡翔
+    center: engineering
     from: 2017
   - name: Qingping Li 李青坪
+    center: engineering
     from: 2017
   - name: Rui Qiu 邱睿
+    center: engineering
     from: 2017
     avatar: /spar/img/avatar/rqiu.jpg
     group: spar
   - name: Shijie Tang 唐士杰
+    center: research
     from: 2017
   - name: Simeng Wu 吴思萌
+    center: leading-edge
     from: 2017
   - name: Suwei Zhang 张素威
+    center: research
     from: 2017
   - name: Yi Liu 刘毅
+    center: research
     from: 2017
     url: yiliu
     avatar: /spar/img/avatar/yliu.jpg
     group: spar
   - name: Qingwei Sun 孙清伟
+    center: research
     from: 2017
     avatar: /spar/img/avatar/qwsun.jpg
     group: spar
   - name: Tianheng Wu 吴天珩
+    center: leading-edge
     from: 2017
   - name: Di Huang 黄頔
+    center: research
     from: 2018
     group: dse
   - name: Shaocong Liu 刘少聪
+    center: research
     from: 2018
     group: spar
   - name: Jinci Chen 陈锦赐
+    center: research
     from: 2018
     avatar: /spar/img/avatar/jcchen.png
     group: spar
   - name: Jingxin Fan 范景新
+    center: research
     from: 2018
     avatar: /spar/img/avatar/jxfan.jpg
     group: spar
   - name: Yuehuan Wang 王月欢
+    center: research
     from: 2018
     avatar: /spar/img/avatar/yhwang.jpg
     group: spar
   - name: Guosheng Pan 潘国盛
+    center: research
     from: 2018
   - name: Long Chen 陈龙
+    center: research
     from: 2018
   - name: Rongxun Guo 郭荣勋
+    center: research
     from: 2018
   - name: Xingchen Yi 易星辰
+    center: research
     from: 2018
     group: disalg
   - name: Zhou Zhou 周舟
+    center: research
     from: 2018
     group: disalg
   - name: Ye Ji 纪业
+    center: research
     from: 2018
     group: disalg
   - name: Dongyu Wang 王东宇
+    center: engineering
     from: 2018
   - name: Xiangsen Liao 廖祥森
+    center: engineering
     from: 2018
   - name: Minglong Qin 钦明珑
+    center: engineering
     from: 2018
   - name: Chengxian He 何城贤
+    center: engineering
     from: 2018
 
 undergraduates:
   - name: Zhao Gang 刚昭
+    center: research
     from: 2017
     group: spar
   - name: Ziqi Chen 陈紫琦
+    center: research
     from: 2018
     group: spar
   - name: Yingzhuo Yang 杨英卓
+    center: research
     from: 2018
     group: spar
   - name: Siyuan Zhu 朱思远
+    center: research
     from: 2018
     group: spar
   - name: Daohan Qu 屈道涵
+    center: research
     from: 2018
     group: spar
   - name: Hao Ling 凌浩
+    center: research
     from: 2018
     group: spar
   - name: Shixuan Zhao 赵士轩
+    center: research
     from: 2018
     group: spar
   - name: Shaoyuan Chen 陈劭源
+    center: research
     from: 2018
     group: spar
 

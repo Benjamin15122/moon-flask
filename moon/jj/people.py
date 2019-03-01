@@ -76,12 +76,13 @@ def make_people_url(url):
     # the url is directory name
     return url_for('page', name=url)
 
-def render_duty(center=None):
+def render_duty():
     return flask.render_template_string(
         DUTY_TEMPLATE,
         people=[(p['name'].split(' ')[-1], p['url'], p['duty'])
                 for p in g.site.people['faculty'] # only for facuty
-                if center in p.get('center', '') and p.get('duty', None)
+                #if flag in p.get('flag', '') and p.get('duty', None)
+                if p.get('duty', None)
         ]
     )
 
@@ -93,6 +94,8 @@ def render_people(cond=None, category=None, large=False, group=None, center=None
         mygroup = [i.strip() for i in p.get('group', '').split(',')]
 
         name = p['name'].split(' ')
+        name[0], name[1] = name[1], name[0] # put Chinese name in the first place
+        name = name[::-1]
         if len(name) == 2: (name1, name2) = ('', '')
         elif large:
             name1 = ' '.join(name)
