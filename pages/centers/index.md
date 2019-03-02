@@ -11,9 +11,13 @@ title: 组织
 
 - [前沿交叉中心](leading-edge-center/index)
     前沿交叉中心介绍
+<hr>
+## 首席科学家
+{{ render_people(category="chief_scientist", large=True) | safe }}
 
-
+<hr>
 ## 教师
 {{ render_people(category="faculty", large=True) | safe }}
+<hr>
 ## 成员职责
 {{ render_duty() | safe }}
