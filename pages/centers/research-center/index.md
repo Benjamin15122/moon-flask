@@ -17,7 +17,7 @@ title: 基础研究中心
 <hr>
 
 ## 研究小组
-- [DisAlg: Distributed Algorithm Group](../../disalg/)
+- [DisAlg: Distributed Algorithm Group](https://github.com/Disalg-ICS-NJU/disalg-nju)
 
     ![](/static/img/logo-disalg-small.png) 小组负责人: [黄宇](http://cs.nju.edu.cn/yuhuang)、[魏恒峰](/people/hengfengwei/).
 
