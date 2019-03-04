@@ -16,15 +16,20 @@ I received my B.Sc. degree on computer science and technology from Nanjing Unive
 
 ## Research
 
-My research interests include software engineering and software methodology. And now, I'm focusing on metamorphic testing.
+My research interests include software engineering and software methodology. And now, I'm focusing on metamorphic testing and testing for machine/deep learning programs.
 
 ## Selected Publications
 
+* {{ render_bib_entry(g.site.spar_paper.wang_geas_2019, hl='Huiyan Wang') }}
+* {{ render_bib_entry(g.site.spar_paper.qin_syneva_2018, hl='Huiyan Wang') }}
+* {{ render_bib_entry(g.site.spar_paper.guo_GEASori_2017, hl='Huiyan Wang') }}
 * {{ render_bib_entry(g.site.spar_paper.wang_BCT_2016, hl='Huiyan Wang') }}
 
 
 ## Teaching Assistance
 
+* 2018 (Fall): Guidance to Software Engineering Research
+* 2017 (Spring): Principles and Techniques of Compilers
 * 2016 (Fall): Guidance to Software Engineering Research
 * 2016 (Spring): Principles and Techniques of Compilers
 * 2015 (Fall): Guidance to Software Engineering Research
@@ -42,4 +47,4 @@ My research interests include software engineering and software methodology. And
 
 <hr>
 
-Last Update: October 12, 2016
+Last Update: March 4, 2019
