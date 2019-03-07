@@ -12,9 +12,9 @@
         <li {% if request.path == url_for('page', path='centers/') %} class="current-menu-item" {% endif %}>
             <a href="{{ url_for('page', path='centers/') }}" title="">组织</a>
             <ul class="sub-menu">
-                <li {% if request.path == url_for('page', path='centers/research-center') %} class="current-menu-item" {% endif %}><a href="{{ url_for('page', path='centers/research-center/') }}">基础研究中心</a></li>
-                <li {% if request.path == url_for('page', path='centers/engineering-center') %} class="current-menu-item" {% endif %}><a href="{{ url_for('page', path='centers/engineering-center/') }}">系统工程中心</a></li>
-                <li {% if request.path == url_for('page', path='centers/leading-edge-center') %} class="current-menu-item" {% endif %}><a href="{{ url_for('page', path='centers/leading-edge-center/') }}">前沿交叉中心</a></li>
+                <li {% if request.path == url_for('page', path='centers/research-center/index') %} class="current-menu-item" {% endif %}><a href="{{ url_for('page', path='centers/research-center/index') }}">基础研究中心</a></li>
+                <li {% if request.path == url_for('page', path='centers/engineering-center/index') %} class="current-menu-item" {% endif %}><a href="{{ url_for('page', path='centers/engineering-center/index') }}">系统工程中心</a></li>
+                <li {% if request.path == url_for('page', path='centers/leading-edge-center/index') %} class="current-menu-item" {% endif %}><a href="{{ url_for('page', path='centers/leading-edge-center/index') }}">前沿交叉中心</a></li>
             </ul>
         </li>
         <!--
@@ -38,8 +38,8 @@
         <li {% if request.path == url_for('page', path='events') %} class="current-menu-item" {% endif %}>
             <a href="{{ url_for('page', path='events/') }}" title="">活动</a>
             <ul class="sub-menu">
-                <li {% if request.path == url_for('page', path='events/phd') %} class="current-menu-item" {% endif %}><a href="{{ url_for('page', path='events/phd') }}">博士生讨论班</a></li>
-                <li {% if request.path == url_for('page', path='events/master') %} class="current-menu-item" {% endif %}><a href="{{ url_for('page', path='events/master') }}">硕士生讨论班</a></li>
+                <li {% if request.path == url_for('page', path='events/phd/18192') %} class="current-menu-item" {% endif %}><a href="{{ url_for('page', path='events/phd/18192') }}">博士生讨论班</a></li>
+                <li {% if request.path == url_for('page', path='events/master/18192') %} class="current-menu-item" {% endif %}><a href="{{ url_for('page', path='events/master/18192') }}">硕士生讨论班</a></li>
                 <li {% if request.path == url_for('page', path='/spar/seminar') %} class="current-menu-item" {% endif %}><a href="{{ url_for('page', path='/spar/seminar/') }}">Spar 讨论班</a></li>
                 <li {% if request.path == url_for('page', path='events/deadlines') %} class="current-menu-item" {% endif %}><a href="{{ url_for('page', path='events/deadlines')}}">投稿截止日期</a></li>
             </ul>
