@@ -55,7 +55,7 @@ faculty:
     center: leading-edge
   - name: Ping Yu 余萍
     title: Associate Professor
-    url: http://cs.nju.edu.cn/yuping
+    url: /people/pingyu
     avatar: /static/img/avatar/yuping.jpg
     center: engineering
     duty: 公众号维护
