@@ -39,7 +39,8 @@
             <a href="{{ url_for('page', path='events/') }}" title="">活动</a>
             <ul class="sub-menu">
                 <li {% if request.path == url_for('page', path='events/phd/18192') %} class="current-menu-item" {% endif %}><a href="{{ url_for('page', path='events/phd/18192') }}">博士生讨论班</a></li>
-                <li {% if request.path == url_for('page', path='events/master/18192') %} class="current-menu-item" {% endif %}><a href="{{ url_for('page', path='events/master/18192') }}">硕士生讨论班</a></li>
+                <li {% if request.path == url_for('page', path='events/master/18192') %} class="current-menu-item" {% endif %}><a href="{{ url_for('page', path='events/master/18192') }}">研究中心硕士生讨论班</a></li>
+                <li {% if request.path == url_for('page', path='events/master_eng/index') %} class="current-menu-item" {% endif %}><a href="{{ url_for('page', path='events/master_eng/index') }}">工程中心硕士生讨论班</a></li>
                 <li {% if request.path == url_for('page', path='/spar/seminar') %} class="current-menu-item" {% endif %}><a href="{{ url_for('page', path='/spar/seminar/') }}">Spar 讨论班</a></li>
                 <li {% if request.path == url_for('page', path='events/deadlines') %} class="current-menu-item" {% endif %}><a href="{{ url_for('page', path='events/deadlines')}}">投稿截止日期</a></li>
             </ul>
