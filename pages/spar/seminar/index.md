@@ -7,7 +7,7 @@ title: SPAR Seminar
 Discuss software engineering, programming language, and system papers that have *novel* and *significant* contributions. Tool tutorials are also welcomed.
 
 ## Upcoming Talks
-* (Mar 12) Zenan Li
+* (Mar 12) Zenan Li: Towards Optimal Concolic Testing [[ICSE18]](https://dl.acm.org/citation.cfm?id=3180177).
 * (Mar 19) Zelin Zhao, Shaocong Liu
 * (Mar 26) Yang Cao
 * (Apr 2) Huiyan Wang
