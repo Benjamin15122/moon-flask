@@ -203,6 +203,12 @@ phd:
   - name: Xinchen Guo 郭新琛
     center: research
     from: 2018
+  - name: Yuqian Zhuang 庄宇乾
+    center: leading-edge
+    from: 2018
+  - name: Zhiwen Zheng 郑智文
+    center: leading-edge
+    from: 2018
 
 graduates:
   - name: Yang Cao 曹阳
@@ -332,6 +338,15 @@ graduates:
   - name: Chengxian He 何城贤
     center: engineering
     from: 2018
+  - name: Yue Cao 曹越
+    center: leading-edge
+    from: 2018
+  - name: Yuyou Wang 王禹又
+    center: leading-edge
+    from: 2018
+  - name: Wen Wang 王文
+    center: leading-edge
+    from: 2019
 
 undergraduates:
   - name: Zhao Gang 刚昭
