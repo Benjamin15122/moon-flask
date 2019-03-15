@@ -205,10 +205,12 @@ phd:
     from: 2018
   - name: Yuqian Zhuang 庄宇乾
     center: leading-edge
+    avatar: /static/img/avatar/zhuangyuqian.jpg
     from: 2018
   - name: Zhiwen Zheng 郑智文
     center: leading-edge
     from: 2018
+    avatar: /static/img/avatar/zhengzhiwen.jpg
 
 graduates:
   - name: Yang Cao 曹阳
@@ -264,6 +266,7 @@ graduates:
     from: 2017
   - name: Simeng Wu 吴思萌
     center: leading-edge
+    avatar: /static/img/avatar/wusimeng.jpg
     from: 2017
   - name: Suwei Zhang 张素威
     center: research
@@ -281,6 +284,7 @@ graduates:
     group: spar
   - name: Tianheng Wu 吴天珩
     center: leading-edge
+    avatar: /static/img/avatar/wutianheng.jpg
     from: 2017
   - name: Di Huang 黄頔
     center: research
@@ -340,12 +344,14 @@ graduates:
     from: 2018
   - name: Yue Cao 曹越
     center: leading-edge
+    avatar: /static/img/avatar/caoyue.jpg
     from: 2018
   - name: Yuyou Wang 王禹又
     center: leading-edge
     from: 2018
   - name: Wen Wang 王文
     center: leading-edge
+    avatar: /static/img/avatar/wangwen.jpg
     from: 2019
 
 undergraduates:
@@ -381,6 +387,10 @@ undergraduates:
     center: research
     from: 2018
     group: spar
+  - name: Yuzhe Qiao 乔裕哲
+    center: leading-edge
+    avatar: /static/img/avatar/qiaoyuzhe.jpg
+    from: 2018
 
 # Those left or passed away 
 former_faculty:
