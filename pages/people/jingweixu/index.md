@@ -9,8 +9,8 @@ title: Jingwei Xu
 
 ## Research Interests
 
-* Data Mining
-* Recommender Systems 
+* Deep learning: Testing, analysis, and Application
+* Data mining: Recommender Systems 
 
 ## Publications
 
@@ -87,11 +87,26 @@ title: Jingwei Xu
 }
 ~~~
 
+## Students
+I'm co-supervising students with Prof. Chang Xu, Prof. Xiaoxing Ma, and Prof. Chun Cao.
+
+* Huiyan Wang [王慧妍](../huiyanwang/index) (PhD, with Prof. Chang Xu, Quality assurance for intelligent software)
+* Zenan Li 李泽南 (MSc, with Prof. Xiaoxing Ma, Machine Learning & Deep Learning)
+* Qingping Li 李青坪 (MSc, with Prof. Chun Cao, Task scheduling for deep learning task)
+* Rui Qiu 邱睿 (MSc, with Prof. Chun Cao, Recommender systems)
+* Yuehuan Wang 王月欢 (MSc, with Prof Xiaoxing Ma, Testing deep learning programs)
+* Siyuan Zhu 朱思远 (MSc, with Prof. Chang Xu, coming soon!)
+* Cheng Zhang 张铖 (MSc, coming soon!)
+
+## Teaching
+* 2019 (Spring) Introduction to Algorithm Design and Analysis
+* 2018 (Spring) Introduction to Algorithm Design and Analysis
+
 ## Awards
 * KDD2017 Student Travel Awards
 
 ## Services
-* PC Member for: ASONAM 2016-2017, CIKM 2017 (Short papers), AAAI 2018, PAKDD 2018
+* PC Member for: ASONAM 2016-2018, CIKM 2017 (Short papers), AAAI 2018, PAKDD 2018
 
 ## Projects
 
