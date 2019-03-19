@@ -21,17 +21,39 @@ I'm a coder striving to make programs (and programmer's world) better. I'm inter
 <ul>
   <li>**Software Testing and Analysis**</li>
   <ul>
-    <li>Concurrent Programs: *Understanding Shared Memory Dependences* (CARE [[ICSE14](pubs/care)], RWTrace [[ASE15](pubs/rwtrace)], BC [[FSE16](pubs/bc)], Survey [[JoS17](pubs/survey)], and my [PhD Thesis](pubs/thesis)); *Interleaving Space Sampling* (SCS [[ESEC/FSE18](pubs/scs)]);</li>
-    <li>Mobile Apps: *Platform* (ATT [[Internetware15](pubs/att)], CoseDroid [[COMPSAC15](pubs/cosedroid)]); *Event Generation* (GAT [[APSEC16](pubs/gat)], AATT [[APSEC16](pubs/aatt), [SCP18](pubs/aattplus)]); *Human Insights* (UGA [[APSEC14](pubs/uga)]); *Analysis* (RepDroid [[ICPC17](pubs/repdroid)], LESDroid [[ICPC18](pubs/lesdroid)]); *Performance* (TAPIR [[SANER19]](pubs/tapir));</li>
+    <li>Concurrent Programs: 
+    *Interleaving Space Sampling*
+    (SCS [[ESEC/FSE18](pubs/scs)]);
+    *Understanding Shared Memory Dependences*
+    (My [PhD Thesis](pubs/thesis),
+    Survey [[JoS17](pubs/survey)],
+    BC [[FSE16](pubs/bc)],
+    RWTrace [[ASE15](pubs/rwtrace)],
+    CARE [[ICSE14](pubs/care)]);
+    </li>
+    <li>Mobile Apps:
+    *Platform*
+    (ATT [[Internetware15](pubs/att)],
+    CoseDroid [[COMPSAC15](pubs/cosedroid)]);
+    *Event Generation*
+    (AATT [[SCP18](pubs/aattplus), [APSEC16](pubs/aatt)],
+    GAT [[APSEC16](pubs/gat)]);
+    *Human Insights*
+    (UGA [[APSEC14](pubs/uga)]);
+    *Analysis*
+    (LESDroid [[ICPC18](pubs/lesdroid)],
+    RepDroid [[ICPC17](pubs/repdroid)]);
+    *Performance*
+    (TAPIR [[SANER19]](pubs/tapir));</li>
     <li>Program Analysis: *Crash Consistency* (C3 [[FSE16](pubs/c3)]); *Fault Localization* (Comedy [[COMPSAC15](pubs/comedy)]); *Regular Expressions* (ReScue [[ASE18](pubs/rescue)] 🏅);</li>
   </ul>
   <li>**Program Synthesis**</li>
   <ul>
-    <li>*Transformers* (AOTES [[ICSE17 Poster](pubs/aotes), [ECOOP18](pubs/aotes1)], ENTER [[ICSE18 Poster](pubs/enter)]);</li>
+    <li>*Transformers* (AOTES [[ECOOP18](pubs/aotes1), [ICSE17 Poster](pubs/aotes)], ENTER [[ICSE18 Poster](pubs/enter)]);</li>
   </ul>
   <li>**Programming Tricks for Fun and Profits**</li>
   <ul>
-    <li>*Software Building* (ABC [[APSEC15](pubs/abc)]); *Runtime Verification* (GAIN [[APSEC14](pubs/gain), [IST16](pubs/gain1)]);</li>
+    <li>*Software Building* (ABC [[APSEC15](pubs/abc)]); *Runtime Verification* (GAIN [[IST16](pubs/gain1), [APSEC14](pubs/gain)]);</li>
   </ul>
 </ul>
 </div>
