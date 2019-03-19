@@ -14,7 +14,7 @@ Ph.D. (*Nanjing University* ![](img/nju_logo.png), 2017)<br>Visiting Scholar (*O
 
 ## Research
 
-I'm a coder striving to make programs better. I'm interested in automated technologies for software and systems: *testing*, *analysis*, and *synthesis*. Chronological list of [my publications](pub). (欢迎关注[知乎专栏:软件工程研究漫谈 ![](img/zhihu.png)](https://zhuanlan.zhihu.com/se-research))
+I'm a coder striving to make programs (and programmer's world) better. I'm interested in automated technologies for software and systems: *testing*, *analysis*, and *synthesis*. Chronological list of [my publications](pub). (欢迎关注[知乎专栏:软件工程研究漫谈 ![](img/zhihu.png)](https://zhuanlan.zhihu.com/se-research))
 
 <div class="row gutter" markdown="1">
 <div class="col-lg-7 col-md-7 col-sm-12">
@@ -48,7 +48,7 @@ I'm a coder striving to make programs better. I'm interested in automated techno
 
 ## Teaching
 
-* <img class="pull-right" style="margin-left:15px" width="200px" src="img/projectn.jpg"/> [Introduction to Computer Systems (Fall 2018)](/~jyywiki) and [Operating Systems (Spring 2018)](/~jyywiki). (Only available for NJU campus-local network.)
+* <img class="pull-right" style="margin-left:15px" width="200px" src="img/projectn.jpg"/>  [Operating Systems (Spring 2019)](/~jyywiki) and [Introduction to Computer Systems (Fall 2018)](/~jyywiki). (Only available for NJU campus-local network.)
 * I am a co-founder (with [Zihao Yu 余子濠](https://sashimi-yzh.github.io)) of *Project-N* ![](img/logo-n.png) in which undergraduate students build a complete computer system (NPC SoC, NEMU system emulator, Nanos operating system, NCC compiler, and applications) from scratch. 
     * Papers: *Plagiarism Detection* (Needle [![](img/zhihu.png)](http://zhuanlan.zhihu.com/p/40568346) [[SIGCSE-China18](pubs/needle)]).
     * We won *first prize* in 2018 Loongson Cup contest.
@@ -59,15 +59,15 @@ I'm a coder striving to make programs better. I'm interested in automated techno
 
 ## Students
 
-<img class="pull-left" width="125px" style="margin-right: 15px" src="img/yuju-cake.jpg"/>I'm co-supervising students with Prof. [Chang Xu](http://cs.nju.edu.cn/changxu) and Prof. [Xiaoxing Ma](/~xxm).
+<img class="pull-left" width="125px" style="margin-right: 15px" src="img/yuju-cake.jpg"/>I'm co-supervising graduate students with Prof. [Chang Xu](http://cs.nju.edu.cn/changxu) and Prof. [Xiaoxing Ma](/~xxm).
 
-Current: [Wenjie Li 李文杰](/people/wenjieli) (PhD, Android), [Dongjie Chen 陈冬杰](/~dongjie) (PhD, concurrency), [Jue Wang 王珏](/people/juewang) (PhD, Android), Chenxi Zhang 张晨曦 (PhD, Android), Xianfei Ou 欧先飞 (PhD, compilers), Daohan Qu 屈道涵 (PhD), [Yang Cao 曹阳](/people/yangcao) (MSc), [Yuju Shen 沈宇桔](/~yuju) (MSc), [Yi Liu 刘毅](/people/yiliu) (MSc), Zhao Gang 刚昭 (Undergrad), Mingjie Shen 沈明杰 (Undergrad), Xiaolin Li 李晓霖 (Undergrad), Shixuan Zhao 赵士轩 (Undergrad), Shaoyuan Chen 陈劭源 (Undergrad)
+Current: [Wenjie Li 李文杰](/people/wenjieli) (PhD, Android), [Dongjie Chen 陈冬杰](/~dongjie) (PhD, concurrency), [Jue Wang 王珏](/people/juewang) (PhD, Android), Chenxi Zhang 张晨曦 (PhD, Android), Xianfei Ou 欧先飞 (PhD, compilers), Daohan Qu 屈道涵 (PhD, Java runtime), [Yang Cao 曹阳](/people/yangcao) (MSc, fuzzing), [Yuju Shen 沈宇桔](/~yuju) (MSc, regex analysis), [Yi Liu 刘毅](/people/yiliu) (MSc, Android), Zhao Gang 刚昭 (Undergrad, computer-aided automation), Mingjie Shen 沈明杰 (Undergrad), Xiaolin Li 李晓霖 (Undergrad), Shixuan Zhao 赵士轩 (Undergrad, Kernel concurrency), Shaoyuan Chen 陈劭源 (Undergrad, program repair), 刘恩萌 (Undergrad, empirical software engineering), 裴一凡 (Undergrad, regex anlaysis), 何伟 (Undergrad, Android)
 
 Past ([Details](students)): [Zhanshuai Meng 孟占帅](/people/zhanshuaimeng) (2018 MSc → Ant Financial), [Jiarong Wu 吴嘉荣](http://home.cse.ust.hk/~jwubf/) (2018 BSc → HKUST PhD)
 
 ## Services
 
-* PC Member: [SATE2018](http://sei.pku.edu.cn/~xiongyf04/confs/sate18/index_en.html) ([中文](http://sei.pku.edu.cn/~xiongyf04/confs/sate18/index.html)); External Reviewer: TPDS (2018), Internetware (2018).
+* PC Member: SATE2019, [SATE2018](http://sei.pku.edu.cn/~xiongyf04/confs/sate18/index_en.html); External Reviewer: SCP (2019), TPDS (2018), Internetware (2018).
 * ![](img/noi.png) Steering/Scientific Program Committee member of Jiangsu Olympiad in Informatics.
 * ![](img/acmicpc.png) Coach of the programming contest training team at Nanjing University.
 
@@ -81,7 +81,7 @@ Past ([Details](students)): [Zhanshuai Meng 孟占帅](/people/zhanshuaimeng) (2
 
 <hr>
 
-Last Update: December 1, 2018
+Last Update: March 20, 2019
 
 ~~~{.customjs}
 $('ul').css('margin-left', '-15px');
