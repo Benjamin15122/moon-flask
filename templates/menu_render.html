@@ -54,6 +54,7 @@
         <li>
             <a href="{{ url_for('page', path='ad/') }}" title="">资源</a>
             <ul class="sub-menu">
+                <li {% if request.path == url_for('page', path='news/index') %} class="current-menu-item" {% endif %}><a href="{{ url_for('page', path='news/index') }}">新闻</a></li>
                 <li {% if request.path == url_for('page', path='ad/awards') %} class="current-menu-item" {% endif %}><a href="{{ url_for('page', path='ad/awards') }}">奖项</a></li>
                 <li {% if request.path == url_for('page', path='ad/scholarships') %} class="current-menu-item" {% endif %}><a href="{{ url_for('page', path='ad/scholarships') }}">奖学金</a></li>
                 <li {% if request.path == url_for('page', path='ad/poster') %} class="current-menu-item" {% endif %}><a href="{{ url_for('page', path='ad/poster') }}">海报</a></li>
