@@ -69,7 +69,7 @@ title: Feng Xu
 
 ## Some recent publications
 
-{{ render_bib_file('feng_recent_papers.bib', ['tang2019integral', 'zhang2019hashtag', 'wang2019brief', 'wang2018bug', 'yao2018dual', 'wu2018guiding', 'zhao2018team', 'xi2018effective', 'lu2018feature', 'yao2017scalable', 'yao2017version', 'zhang2017exploring', 'yao2017measurement'], hl='Feng Xu', group_by_year=False)  }}
+{{ render_bib_file('feng_recent_papers.bib', hl='Feng Xu', group_by_year=False)  }}
 
 ## Teaching
 
