@@ -69,7 +69,7 @@ title: Feng Xu
 
 ## Some recent publications
 
-{{ render_bib_file('feng_recent_papers.bib', hl='Xu, Feng', group_by_year=False)  }}
+{{ render_bib_file('feng_recent_papers.bib', hl='Feng Xu', group_by_year=False)  }}
 
 ## Teaching
 
