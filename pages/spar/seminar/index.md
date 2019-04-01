@@ -7,7 +7,7 @@ title: SPAR Seminar
 Discuss software engineering, programming language, and system papers that have *novel* and *significant* contributions. Tool tutorials are also welcomed.
 
 ## Upcoming Talks
-* (Apr 2) Huiyan Wang CRADLE: Cross-Backend Validation to Detect and Localize Bugs in Deep Learning Libraries [ICSE2019]
+* (Apr 2) Huiyan Wang: CRADLE: Cross-Backend Validation to Detect and Localize Bugs in Deep Learning Libraries [[ICSE2019]](https://hvpham.github.io/files/CRADLE-icse19.pdf)
 * (Apr 9) Weiyu Ye
 * (Apr 16) Yuju Shen
 * (Apr 23) Yi Liu, Qingwei Sun
