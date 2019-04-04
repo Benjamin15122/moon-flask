@@ -89,11 +89,12 @@ Past ([Details](students)): [Zhanshuai Meng 孟占帅](/people/zhanshuaimeng) (2
 
 ## Services
 
-* PC Member: SATE2019, [SATE2018](http://sei.pku.edu.cn/~xiongyf04/confs/sate18/index_en.html); External Reviewer: SCP (2019), TPDS (2018), Internetware (2018).
+* PC Member: [ISSTA2019 AEC](https://conf.researchr.org/track/issta-2019/issta-2019-papers), SATE2019, [SATE2018](http://sei.pku.edu.cn/~xiongyf04/confs/sate18/index_en.html); External Reviewer: SCP (2019), TPDS (2018), Internetware (2018).
 * ![](img/noi.png) Steering/Scientific Program Committee member of Jiangsu Olympiad in Informatics.
 * ![](img/acmicpc.png) Coach of the programming contest training team at Nanjing University.
 
 ## Honors and Awards
+* 2018-2020 *CCF Elite Youth Scientists Sponsorship Program* (Top 6 in China).
 * 2018 *ACM SIGSOFT Distinguished Paper Award*.
 * 2018 *CCF Docotral Disseration Award* (Top 5 in China), *ACM China Doctoral Dissertation Award Nomination* (Top 5 in China).
 * 2016 *Distinguished Student* of Nanjing University (the only PhD student out of ten winners).
@@ -103,7 +104,7 @@ Past ([Details](students)): [Zhanshuai Meng 孟占帅](/people/zhanshuaimeng) (2
 
 <hr>
 
-Last Update: March 20, 2019
+Last Update: April 4, 2019
 
 ~~~{.customjs}
 $('ul').css('margin-left', '-15px');
