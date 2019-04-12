@@ -87,6 +87,7 @@ faculty:
   - name: Jingwei Xu 徐经纬
     title: Assistant Researcher
     duty: 管理软件所门户网站
+    group: spar
     url:  jingweixu
     center: research, engineering
     avatar: /static/img/avatar/jingweixu.jpg
