@@ -36,7 +36,7 @@ I'm a coder striving to make programs (and programmer's world) better. I'm inter
     (ATT [[Internetware15](pubs/att)],
     CoseDroid [[COMPSAC15](pubs/cosedroid)]);
     *Event Generation*
-    (AATT [[SCP18](pubs/aattplus), [APSEC16](pubs/aatt)],
+    (Survey [[SCIS19]](pubs/android-survey), AATT [[SCP18](pubs/aattplus), [APSEC16](pubs/aatt)],
     GAT [[APSEC16](pubs/gat)]);
     *Human Insights*
     (UGA [[APSEC14](pubs/uga)]);
@@ -73,7 +73,7 @@ I'm a coder striving to make programs (and programmer's world) better. I'm inter
 * <img class="pull-right" style="margin-left:15px" width="200px" src="img/projectn.jpg"/>  [Operating Systems (Spring 2019)](/~jyywiki) and [Introduction to Computer Systems (Fall 2018)](/~jyywiki). (Only available for NJU campus-local network.)
 * I am a co-founder (with [Zihao Yu 余子濠](https://sashimi-yzh.github.io)) of *Project-N* ![](img/logo-n.png) in which undergraduate students build a complete computer system (NPC SoC, NEMU system emulator, Nanos operating system, NCC compiler, and applications) from scratch. 
     * Papers: *Plagiarism Detection* (Needle [![](img/zhihu.png)](http://zhuanlan.zhihu.com/p/40568346) [[SIGCSE-China18](pubs/needle)]).
-    * We won *first prize* in 2018 Loongson Cup contest.
+    * We won the *first prize* in 2018 Loongson Cup contest.
 * Selected talks:
     * “Building Computer Systems From Scratch Around AbstractMachine” [![](/static/img/icon-pdf.png)](teach/am-talk.pdf) (CSEW'18).
     * “计算：万物的起源和终点” [![](/static/img/icon-pdf.png)](teach/20140121.pdf) (Keynote speech at JSOI'14 Winter Camp).
@@ -100,11 +100,11 @@ Past ([Details](students)): [Zhanshuai Meng 孟占帅](/people/zhanshuaimeng) (2
 * 2016 *Distinguished Student* of Nanjing University (the only PhD student out of ten winners).
 * 2014 *MSRA Fellowship Award*; 2015 and 2010 *National Scholarship*;
 * First Place in 2014 Huawei Cup *Regional Programming Contest*; Second Place in 2012 *Tencent Hackathon*.
-* I competed in *ACM-ICPC* regional contests for two Gold Medals and earned 49th Place in 2009 *World Finals*.
+* I competed in *ACM-ICPC* regional contests for two Gold Medals and earned 49th Place in the 2009 *World Finals*.
 
 <hr>
 
-Last Update: April 4, 2019
+Last Update: April 22, 2019
 
 ~~~{.customjs}
 $('ul').css('margin-left', '-15px');
