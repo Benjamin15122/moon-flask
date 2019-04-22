@@ -87,6 +87,10 @@ nodes:
     name: TAPIR
     desc: '[SANER19]'
     path: sta/mobile
+  - id: android-survey
+    name: Survey
+    desc: '[SCIS19]'
+    path: sta/mobile
 edges:
   - att -> gat
   - att -> aatt
@@ -103,6 +107,8 @@ edges:
   - cosedroid -> att
   - aatt -> thesis
   - c3 -> thesis
+  - aatt -> android-survey
+  - gat -> android-survey
 clusters:
   - id: sta
     label: 'Software Testing and Analysis'
