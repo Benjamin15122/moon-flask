@@ -25,7 +25,7 @@ faculty:
   - name: Chun Cao 曹春
     title: Associate Professor
     #role: Director of Engineering
-    url: 
+    url: https://ccao.cc
     duty: 系统工程中心负责人
     center: engineering
     avatar: /static/img/avatar/caochun.jpg
