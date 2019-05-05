@@ -7,8 +7,7 @@ title: SPAR Seminar
 Discuss software engineering, programming language, and system papers that have *novel* and *significant* contributions. Tool tutorials are also welcomed.
 
 ## Upcoming Talks
-* (Apr 30) Jue Wang: AppFlow: Using Machine Learning to Synthesize Robust, Reusable UI Tests[[FSE '18]](http://www.cs.columbia.edu/~junfeng/papers/appflow.pdf)
-* (May 7) Dawei Chen
+* (May 7) Dawei Chen: Guiding Deep Learning System Testing using Surprise Adequacy [[ICSE'19]](https://arxiv.org/pdf/1808.08444.pdf)
 * (May 14) Yang Cao
 * (May 21) Jingxin Fan
 * (May 28) Di Huang, Yuehuan Wang
@@ -30,6 +29,7 @@ Discuss software engineering, programming language, and system papers that have 
 * (Apr 9) Weiyu Ye: Optimus: An Efficient Dynamic Resource Scheduler for Deep Learning Clusters [[EuroSys '18]](https://dl.acm.org/citation.cfm?doid=3190508.3190517).
 * (Apr 16) Yuju Shen: Singularity: Pattern Fuzzing for Worst Case Complexity [[FSE '18]](https://dl.acm.org/citation.cfm?id=3236039).
 * (Apr 23) Yi Liu: Reproducing Crashes in Android Apps from Bug Reports [[ICSE '19]](https://tingsu.github.io/files/ReCDroid.pdf), Qingwei Sun: GUILeak: tracing privacy policy claims on user input data for Android applications [[ICSE '18]](https://dl.acm.org/citation.cfm?id=3180196)
+* (Apr 30) Jue Wang: AppFlow: Using Machine Learning to Synthesize Robust, Reusable UI Tests[[FSE '18]](http://www.cs.columbia.edu/~junfeng/papers/appflow.pdf)
 
 ## Seminar Archive
 
