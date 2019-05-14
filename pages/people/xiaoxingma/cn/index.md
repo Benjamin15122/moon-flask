@@ -123,7 +123,7 @@ title: Xiaoxing Ma (Chinese)
 ## [发表论文](../publications)
 近期部分论文：
 
-{{ render_bib_file('../xiaoxingma.bib', ['MaSNS2018','WSongTSE2018','TGuECOOP18','ConUpTSE_2017','TGuASE2016','YYangTC16MIPA','jiang_crash_2016','jiang_online_2016','Xu:2015:TSE','JavelusIST14','JYY:2014:ICSE'], hl='Xiaoxing Ma') }}
+{{ render_bib_file('../xiaoxingma.bib', ['2019-ICSENIER-ZLi-Misleading','2019-ICSE-TGu-APE','2018-SETSS-Ma-SNS','2018-TSE-WSong-InsMigVal', '2018-ECOOP-TGu-AOTES', '2018-FSE-DChen-TMP', '2018-ASE-YShen-ReScue', '2017-TSE-LBaresi-ConUp','2016-ASE-TGu-Ares','2016-TC-YYang-MIPA','2016-FSE-YJiang-Crash','2016-FSE-YJiang-Bisect'], hl='Xiaoxing Ma') }}
 
 
 (还有...[英文论文](../publications), [中文论文](http://www.c-dblp.cn/search_result.php?author_name=%E9%A9%AC%E6%99%93%E6%98%9F); [DBLP](http://dblp.uni-trier.de/pers/hd/m/Ma:Xiaoxing), [Google Scholar](https://scholar.google.com/citations?user=44WpWR4AAAAJ))
@@ -136,8 +136,8 @@ title: Xiaoxing Ma (Chinese)
 * 国家自然科学基金面上项目: __自适应软件系统的无缝演化与环境感知技术研究__, 批准号: 61472177, 2015-2018. 
 
 ## 课程教学
-* 离散数学 2014-2018 （计算机系）
-* 离散数学 2013-2017 （软件学院）
+* 离散数学 2014-2019 （计算机系）
+* 离散数学 2013-2019 （软件学院）
 * 程序设计语言概论 （计算机系）
 * 面向对象的软件构造 （计算机系）
 
