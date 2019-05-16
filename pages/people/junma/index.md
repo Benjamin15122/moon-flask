@@ -69,7 +69,8 @@ title: Jun Ma
 </div>
 
 ## News
-*  <img src="static/img/new.jpg" width = "40" height = "40" align=center /> <img src="static/img/220px-_ICPC_Foundation_Logo,_wide_profile,_2018_.png" width = "60" height = "40" align=center "/>Congratulations to Hao LING, Hongyang LIU and Yangbo ZHANG for winning the championship in the 42th ACM-ICPC Asia Regional (Qingdao).
+*  <img src="static/img/new.jpg" width = "40" height = "40" align=center /> <img src="static/img/220px-_ICPC_Foundation_Logo,_wide_profile,_2018_.png" width = "60" height = "40" align=center "/>Congratulations to Hao LING, Hongyang LIU and Yangbo ZHANG for winning the 13th place in the 43th ACM-ICPC World Final.
+*  <img src="static/img/new.jpg" width = "40" height = "40" align=center /> <img src="static/img/220px-_ICPC_Foundation_Logo,_wide_profile,_2018_.png" width = "60" height = "40" align=center "/>Congratulations to Hao LING, Hongyang LIU and Yangbo ZHANG for winning the championship in the 43th ACM-ICPC Asia Regional (Qingdao).
 *  <img src="static/img/new.jpg" width = "40" height = "40" align=center />Congratulations on Cong LI's APSEC'18 paper: "ELEGANT: Towards Effective Location of Fragmentation-Induced Compatibility Issues for Android Apps"!
 *  <img src="static/img/new.jpg" width = "40" height = "40" align=center />Shengtao Yue is granted "NJU CS Nominated Outstanding Master's Thesis Award"  for his thesis titled “Android Application Repackaging Detection Based on Runtime Graphical User Interface“.
 *  <img src="static/img/new.jpg" width = "40" height = "40" align=center />Congratulations on Shengtao Yue's ICSME'18 paper: "RegionDroid: A Tool for Detecting Android Application Repackaging Based on Runtime UI Region Features"!([Pre-print Version](static/files/ICSME2018(pre-print).pdf))
@@ -92,7 +93,7 @@ I received the following awards or honors (reversely chronological order):
 
 * I received "NJU Sun Zhongxiu Teaching Award" (南京大学孙钟秀奖教金) in 2018.
 * I received "NJU Charismatic Advisor Award" (南京大学魅力导师奖) in 2018.
-* I received "Jiangsu Computer Society Service Award" (江苏省计算机学会科技服务贡献奖) in 2018.
+* I received "Jiangsu Computer Society Service Award" (江苏省计算机学会科技服务贡献奖) in 2017 and 2018.
 * I received "Outstanding Coach Award" (江苏省大学生程序设计竞赛“优秀教练”)  in 2008.
 ## Research interests
 
