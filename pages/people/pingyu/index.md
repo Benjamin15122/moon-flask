@@ -69,26 +69,29 @@ title: Ping Yu
 
 ## Some recent publications
 
-   * Ping Yu, Fei Yang, Chun Cao, Hao Hu and Xiaoxing Ma. "Mining API Usage Change Rules for Software Framework Evolution", Science China Information Sciences, 050108:1-050108:3, 2018.
-   * Chun Cao, Hongjun Ge, Tianxiao Gu, Jing Deng, Ping Yu and Jian Lu. "Accelerating Automated Android GUI Exploration with Widgets Grouping", 25th Asia-Pacific Software Engineering Conference, 2018.
-   * Yuju Shen, Yanyan Jiang, Chang Xu, Ping Yu, Xiaoxing Ma and Jian Lu. "ReScue: Crafting Regular Expression DoS Attacks", 33rd ACM/IEEE International Conference on Automated Software Engineering, pp.225-235, 2018
-   * Chun Cao, Chenglin Meng, Hongjun Ge, Ping Yu and Xiaoxing Ma. "Xdroid: Testing Android Apps With Dependency Injection", IEEE 41st Computer Society Signature Conference on Computers, Software and Applications, pp.214-223, 2017.
-   * Ruiqing Zhang, Chang Xu, S.C. Cheung, Ping Yu, Xiaoxing Ma and Jian Lu. "How Effectively can Spreadsheet Anomalies be Detected: An Empirical Study", Journal of Systems and Software, Vol. 126, 87-100, 2017.
-   * Shuo Cheng, Chun Cao, Ping Yu and Xiaoxing Ma. "SLA-Aware and Green Resource Management of IaaS Clouds", IEEE 18th International Conference on High Performance Computing and Communications, pp.457-464, 2016.
-   * Wang Xi, Chang Xu, Wenhua Yang, Xiaoxing Ma, Ping Yu and Jian Lu. "Suppressing Detection of Inconsistency Hazards by Pattern Learning", Information and Software Technology, Vol. 74, 219-229, 2016.
-   * Yi Qin, Chang Xu, Ping Yu and Jian Lu. "SIT: Sampling-based Interactive Testing for Self-adaptive Apps", Journal of Systems and Software, Vol. 120, 70-88, 2016.
+   * **Ping Yu**, Fei Yang, Chun Cao, Hao Hu and Xiaoxing Ma. "Mining API Usage Change Rules for Software Framework Evolution", Science China Information Sciences, 050108:1-050108:3, 2018.
+   * Chun Cao, Hongjun Ge, Tianxiao Gu, Jing Deng, **Ping Yu** and Jian Lu. "Accelerating Automated Android GUI Exploration with Widgets Grouping", 25th Asia-Pacific Software Engineering Conference, 2018.
+   * Yuju Shen, Yanyan Jiang, Chang Xu, **Ping Yu**, Xiaoxing Ma and Jian Lu. "ReScue: Crafting Regular Expression DoS Attacks", 33rd ACM/IEEE International Conference on Automated Software Engineering, pp.225-235, 2018
+   * Chun Cao, Chenglin Meng, Hongjun Ge, **Ping Yu** and Xiaoxing Ma. "Xdroid: Testing Android Apps With Dependency Injection", IEEE 41st Computer Society Signature Conference on Computers, Software and Applications, pp.214-223, 2017.
+   * Ruiqing Zhang, Chang Xu, S.C. Cheung, **Ping Yu**, Xiaoxing Ma and Jian Lu. "How Effectively can Spreadsheet Anomalies be Detected: An Empirical Study", Journal of Systems and Software, Vol. 126, 87-100, 2017.
+   * Shuo Cheng, Chun Cao, **Ping Yu** and Xiaoxing Ma. "SLA-Aware and Green Resource Management of IaaS Clouds", IEEE 18th International Conference on High Performance Computing and Communications, pp.457-464, 2016.
+   * Wang Xi, Chang Xu, Wenhua Yang, Xiaoxing Ma, **Ping Yu** and Jian Lu. "Suppressing Detection of Inconsistency Hazards by Pattern Learning", Information and Software Technology, Vol. 74, 219-229, 2016.
+   * Yi Qin, Chang Xu, **Ping Yu** and Jian Lu. "SIT: Sampling-based Interactive Testing for Self-adaptive Apps", Journal of Systems and Software, Vol. 120, 70-88, 2016.
 
 
 ## Teaching
 
-* 2017-2018, Autumn：Financial Big Data Processing Technology (http://moon.nju.edu.cn/courses/)
-* 2017-2018, Autumn: Java Programming (https://njuics.github.io/java-2018f/)
-* 2008-2016, Autumn: Object-Oriented Design Method
+* 2017-2018, 秋季: [金融大数据处理技术](http://moon.nju.edu.cn/courses/)
+* 2017-2018, 秋季: [Java程序设计](https://njuics.github.io/java-2018f/)
+* 2012-2018, 秋季: [Agent技术](http://moon.nju.edu.cn/courses/)
+* 2008-2016, 秋季: [面向对象设计方法](http://moon.nju.edu.cn/courses/)
 
 
 ## Awards
 
-* 2010: 教育部高校优秀科研成果技术发明一等奖
+* ASE 2018 ACM SIGSOFT Distinguished Paper Award
+* APSEC 2014 Best Paper Award
+* 教育部高校优秀科研成果技术发明一等奖（2011年）
 
 
 ## Join Us
