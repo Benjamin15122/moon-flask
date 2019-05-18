@@ -91,6 +91,10 @@ nodes:
     name: Survey
     desc: '[SCIS19]'
     path: sta/mobile
+  - id: test-survey
+    name: Survey
+    desc: '[FCS19]'
+    path: sta
 edges:
   - att -> gat
   - att -> aatt
