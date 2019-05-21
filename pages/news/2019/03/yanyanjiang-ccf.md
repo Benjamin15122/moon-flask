@@ -4,7 +4,7 @@ img_title: Yanyan Jiang CCF
 img_path: photo/YanyanJiangCCF-news.jpg
 
 
-# 蒋炎岩博士荣获2017年CCF优秀博士论文奖
+# 蒋炎岩博士荣获2018年CCF优秀博士论文奖
 
 2018中国计算机学会年度颁奖大会于2019年1月19日在北京举行。
 大会首先颁发了2018年度“中国计算机学会CCF优秀博士学位论文奖”，
