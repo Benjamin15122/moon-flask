@@ -7,8 +7,8 @@ title: SPAR Seminar
 Discuss software engineering, programming language, and system papers that have *novel* and *significant* contributions. Tool tutorials are also welcomed.
 
 ## Upcoming Talks
-* (May 14) Yang Cao: Automatically Generating Search Heuristics for Concolic Testing[[ICSE'18]](http://prl.korea.ac.kr/~sooyoung/papers/ICSE18.pdf)
-* (May 21) Jingxin Fan
+* (May 14) Yang Cao: Automatically Generating Search Heuristics for Concolic Testing[[ICSE' 18]](http://prl.korea.ac.kr/~sooyoung/papers/ICSE18.pdf)
+* (May 21) Jingxin Fan: Feedback-Directed Differential Testing of Interactive Debuggers[[FSE' 18]](http://software-lab.org/publications/fse2018.pdf)
 * (May 28) Di Huang, Yuehuan Wang
 * (Jun 4) Jinci Chen
 * (Jun 11) Da Li
@@ -23,7 +23,7 @@ Discuss software engineering, programming language, and system papers that have 
 * (Mar 5) Wenjie Li: Characterizing and Detecting Inefficient Image Displaying Issues in Android Apps.
 * (Mar 12) Zenan Li: Towards Optimal Concolic Testing [[ICSE '18]](https://dl.acm.org/citation.cfm?id=3180177).
 * (Mar 19) Zelin Zhao: Mvedsua: Higher Availability Dynamic Software Updates via Multi-Version Execution [[ASPLOS '19]](http://www.cs.umd.edu/~mwh/papers/mvedsua.pdf), Shaocong Liu: Self-Hiding Behavior in Android Apps: Detection and Characterization [[ICSE '18]](https://dl.acm.org/citation.cfm?id=3180214).
-* (Mar 26) Dongjie Chen: Optimistic Hybrid Analysis: Accelerating Dynamic Analysis through Predicated Static Analysis [[ASPLOS '19]](https://dl.acm.org/citation.cfm?doid=3173162.3177153).
+* (Mar 26) Dongjie Chen: Optimistic Hybrid Analysis: Accelerating Dynamic Analysis through Predicated Static Analysis [[ASPLOS '18]](https://dl.acm.org/citation.cfm?doid=3173162.3177153).
 * (Apr 2) Huiyan Wang: CRADLE: Cross-Backend Validation to Detect and Localize Bugs in Deep Learning Libraries [[ICSE '19]](https://hvpham.github.io/files/CRADLE-icse19.pdf).
 * (Apr 9) Weiyu Ye: Optimus: An Efficient Dynamic Resource Scheduler for Deep Learning Clusters [[EuroSys '18]](https://dl.acm.org/citation.cfm?doid=3190508.3190517).
 * (Apr 16) Yuju Shen: Singularity: Pattern Fuzzing for Worst Case Complexity [[FSE '18]](https://dl.acm.org/citation.cfm?id=3236039).
