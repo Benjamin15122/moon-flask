@@ -19,6 +19,16 @@ title: Jingwei Xu
 ## Publications
 
 ~~~{.bibtexhtml hl_lines="Jingwei Xu"}
+@inproceedings{2019-FSE-ZLi-Conditioning,
+	Author = {Zenan Li and Xiaoxing Ma and Chang Xu and Chun Cao and Jingwei Xu and Jian Lu},
+	Booktitle = {Proceedings of The 27th ACM Joint European Software Engineering Conference and Symposium on the Foundations of Software Engineering (ESEC/FSE 80 2019)},
+	Date-Added = {2019-05-25 09:02:03 +0800},
+	Date-Modified = {2019-05-25 09:10:08 +0800},
+	Month = {Aug},
+	Pages = {Accepted. To appear. },
+	Pdf = {/people/xiaoxingma/pubs/2019-FSE-ZLi-Conditioning.pdf},
+	Title = {Boosting Operational {DNN} Testing Efficiency through Conditioning},
+	Year = {2019}}
 @inproceedings{Xu:2017:HHO:3097983.3098019,
  author = {Jingwei Xu and Yuan Yao and Hanghang Tong and Xianping Tao and Jian Lu},
  title = {HoORaYs: High-order Optimization of Rating Distance for Recommender Systems},
