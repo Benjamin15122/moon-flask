@@ -27,7 +27,7 @@ title: Jingwei Xu
 	Month = {Aug},
 	Pages = {Accepted. To appear. },
 	Pdf = {/people/xiaoxingma/pubs/2019-FSE-ZLi-Conditioning.pdf},
-	Title = {Boosting Operational {DNN} Testing Efficiency through Conditioning},
+	Title = {Boosting Operational DNN Testing Efficiency through Conditioning},
 	Year = {2019}}
 @inproceedings{Xu:2017:HHO:3097983.3098019,
  author = {Jingwei Xu and Yuan Yao and Hanghang Tong and Xianping Tao and Jian Lu},
