@@ -12,6 +12,10 @@ title: Jingwei Xu
 * Deep learning: Testing, analysis, and Application
 * Data mining: Recommender Systems 
 
+## News
+* Congratulations on Zenan Li's ESEC/FSE'19 paper "Boosting Operational DNN Testing Efficiency through Conditioning"!
+
+
 ## Publications
 
 ~~~{.bibtexhtml hl_lines="Jingwei Xu"}
