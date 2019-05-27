@@ -89,7 +89,7 @@ Current: [Wenjie Li 李文杰](/people/wenjieli) (PhD, Android), [Dongjie Chen �
 
 Past ([Details](students)):
 
-* 2019: [Yang Cao 曹阳](/people/yangcao) (MSc → ByteDance), [Yuju Shen 沈宇桔](/~yuju) (MSc → NetEase Games)
+* 2019: [Yang Cao 曹阳](/people/yangcao) (MSc → ByteDance), [Yuju Shen 沈宇桔](/~yuju) (MSc → NetEase Games), [Zhao Gang 刚昭](https://hirico.moe) (BSc → UCSD MSc), Xiaolin Li 李晓霖 (BSc → ICT-CAS MSc), Mingjie Shen 沈明杰 (BSc → Purdue PhD)
 * 2018: [Zhanshuai Meng 孟占帅](/people/zhanshuaimeng) (MSc → Ant Financial), [Jiarong Wu 吴嘉荣](http://home.cse.ust.hk/~jwubf/) (BSc → HKUST PhD)
 
 ## Services
