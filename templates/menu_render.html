@@ -46,7 +46,7 @@
             </ul>
         </li>
         <li>
-            <a href="http://moon.nju.edu.cn/courses/" title="">课程</a>
+            <a href="{{ url_for('page', path='courses/') }}" title="">课程</a>
         </li>
         <li {% if request.path == url_for('page', path='recruit') %} class="current-menu-item" {% endif %}>
             <a href="{{ url_for('page', path='recruit/') }}" title="">招生</a>
