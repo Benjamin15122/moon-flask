@@ -7,9 +7,7 @@ title: SPAR Seminar
 Discuss software engineering, programming language, and system papers that have *novel* and *significant* contributions. Tool tutorials are also welcomed.
 
 ## Upcoming Talks
-* (May 28) Di Huang: Chopped Symbolic Execution[[ICSE 18]](https://srg.doc.ic.ac.uk/files/papers/chopper-icse-18.pdf), 
-Yuehuan Wang: Adversarial Sample Detection for Deep Neural Network through Model Mutation Testing[[ICSE 19]](https://arxiv.org/abs/1812.05793)
-* (Jun 4) Jinci Chen
+* (Jun 4) Jinci Chen: A Novel Neural Source Code Representation based on Abstract Syntax Tree[[ICSE 19]](http://xuwang.tech/paper/astnn_icse2019.pdf)
 * (Jun 11) Da Li
 * (Jun 18) Rui Qiu
 * (Jun 25) Fengmin Shi
@@ -31,6 +29,8 @@ Yuehuan Wang: Adversarial Sample Detection for Deep Neural Network through Model
 * (May 7) Dawei Chen: Guiding Deep Learning System Testing using Surprise Adequacy [[ICSE 19]](https://arxiv.org/pdf/1808.08444.pdf)
 * (May 14) Yang Cao: Automatically Generating Search Heuristics for Concolic Testing[[ICSE 18]](http://prl.korea.ac.kr/~sooyoung/papers/ICSE18.pdf)
 * (May 21) Jingxin Fan: Feedback-Directed Differential Testing of Interactive Debuggers[[FSE 18]](http://software-lab.org/publications/fse2018.pdf)
+* (May 28) Di Huang: Chopped Symbolic Execution[[ICSE 18]](https://srg.doc.ic.ac.uk/files/papers/chopper-icse-18.pdf), 
+Yuehuan Wang: Adversarial Sample Detection for Deep Neural Network through Model Mutation Testing[[ICSE 19]](https://arxiv.org/abs/1812.05793)
 
 ## Seminar Archive
 
