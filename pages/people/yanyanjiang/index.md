@@ -94,7 +94,7 @@ Past ([Details](students)):
 
 ## Services
 
-* PC Member: [ISSTA2019 AEC](https://conf.researchr.org/track/issta-2019/issta-2019-papers), SATE2019, [SATE2018](http://sei.pku.edu.cn/~xiongyf04/confs/sate18/index_en.html); External Reviewer: SCP (2019), TPDS (2018), Internetware (2018).
+* PC Member: [ISSTA2019 AEC](https://conf.researchr.org/track/issta-2019/issta-2019-papers), [SATE2019](https://sate2019.github.io), [SATE2018](http://sei.pku.edu.cn/~xiongyf04/confs/sate18/index_en.html); External Reviewer: TSE, TPDS, SCP, Internetware.
 * ![](img/noi.png) Steering/Scientific Program Committee member of Jiangsu Olympiad in Informatics.
 * ![](img/acmicpc.png) Coach of the programming contest training team at Nanjing University.
 
