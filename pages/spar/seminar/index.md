@@ -8,7 +8,7 @@ Discuss software engineering, programming language, and system papers that have 
 
 ## Upcoming Talks
 
-* (Jun 18) Da Li： Harnessing Evolution for Multi-Hunk Program Repair [[ICSE'19]](https://dl.acm.org/citation.cfm?id=3339508)
+* (Jun 18) Da Li: Harnessing Evolution for Multi-Hunk Program Repair [[ICSE'19]](https://dl.acm.org/citation.cfm?id=3339508)
 * (Jun 18) Rui Qiu
 * (Jun 25) Fengmin Shi
 * (Jul 2) Cong Li, Yanxiang Tong
