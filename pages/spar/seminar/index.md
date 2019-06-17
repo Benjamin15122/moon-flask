@@ -7,8 +7,8 @@ title: SPAR Seminar
 Discuss software engineering, programming language, and system papers that have *novel* and *significant* contributions. Tool tutorials are also welcomed.
 
 ## Upcoming Talks
-* (Jun 4) Jinci Chen: A Novel Neural Source Code Representation based on Abstract Syntax Tree[[ICSE 19]](http://xuwang.tech/paper/astnn_icse2019.pdf)
-* (Jun 11) Da Li
+
+* (Jun 11) Da Li： Harnessing Evolution for Multi-Hunk Program Repair [[ICSE'19]](https://dl.acm.org/citation.cfm?id=3339508)
 * (Jun 18) Rui Qiu
 * (Jun 25) Fengmin Shi
 * (Jul 2) Cong Li, Yanxiang Tong
@@ -17,6 +17,7 @@ Discuss software engineering, programming language, and system papers that have 
 
 ## Past Talks
 
+* (Jun 4) Jinci Chen: A Novel Neural Source Code Representation based on Abstract Syntax Tree[[ICSE 19]](http://xuwang.tech/paper/astnn_icse2019.pdf)
 * (Mar 5) Wenjie Li: Characterizing and Detecting Inefficient Image Displaying Issues in Android Apps.
 * (Mar 12) Zenan Li: Towards Optimal Concolic Testing [[ICSE 18]](https://dl.acm.org/citation.cfm?id=3180177).
 * (Mar 19) Zelin Zhao: Mvedsua: Higher Availability Dynamic Software Updates via Multi-Version Execution [[ASPLOS 19]](http://www.cs.umd.edu/~mwh/papers/mvedsua.pdf), Shaocong Liu: Self-Hiding Behavior in Android Apps: Detection and Characterization [[ICSE 18]](https://dl.acm.org/citation.cfm?id=3180214).
