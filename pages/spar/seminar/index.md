@@ -8,16 +8,14 @@ Discuss software engineering, programming language, and system papers that have 
 
 ## Upcoming Talks
 
-* (Jun 18) Da Li: Harnessing Evolution for Multi-Hunk Program Repair [[ICSE'19]](https://dl.acm.org/citation.cfm?id=3339508)
-* (Jun 18) Rui Qiu
+* (Jun 18) Chenxi Zhang: Finding and Preventing Bugs in JavaScript Binding [[S&P 17]](https://ranjitjhala.github.io/static/binding-bugs-sp2017.pdf)
 * (Jun 25) Fengmin Shi
 * (Jul 2) Cong Li, Yanxiang Tong
 * (Jul 9) Xianfei Ou
-* (Jul 16) Chenxi Zhang
+* (Jul 16) Rui Qiu
 
 ## Past Talks
 
-* (Jun 4) Jinci Chen: A Novel Neural Source Code Representation based on Abstract Syntax Tree[[ICSE 19]](http://xuwang.tech/paper/astnn_icse2019.pdf)
 * (Mar 5) Wenjie Li: Characterizing and Detecting Inefficient Image Displaying Issues in Android Apps.
 * (Mar 12) Zenan Li: Towards Optimal Concolic Testing [[ICSE 18]](https://dl.acm.org/citation.cfm?id=3180177).
 * (Mar 19) Zelin Zhao: Mvedsua: Higher Availability Dynamic Software Updates via Multi-Version Execution [[ASPLOS 19]](http://www.cs.umd.edu/~mwh/papers/mvedsua.pdf), Shaocong Liu: Self-Hiding Behavior in Android Apps: Detection and Characterization [[ICSE 18]](https://dl.acm.org/citation.cfm?id=3180214).
@@ -32,6 +30,8 @@ Discuss software engineering, programming language, and system papers that have 
 * (May 21) Jingxin Fan: Feedback-Directed Differential Testing of Interactive Debuggers[[FSE 18]](http://software-lab.org/publications/fse2018.pdf)
 * (May 28) Di Huang: Chopped Symbolic Execution[[ICSE 18]](https://srg.doc.ic.ac.uk/files/papers/chopper-icse-18.pdf), 
 Yuehuan Wang: Adversarial Sample Detection for Deep Neural Network through Model Mutation Testing[[ICSE 19]](https://arxiv.org/abs/1812.05793)
+* (Jun 4) Jinci Chen: A Novel Neural Source Code Representation based on Abstract Syntax Tree[[ICSE 19]](http://xuwang.tech/paper/astnn_icse2019.pdf)
+* (Jun 18) Da Li: Harnessing Evolution for Multi-Hunk Program Repair [[ICSE'19]](https://dl.acm.org/citation.cfm?id=3339508)
 
 ## Seminar Archive
 
