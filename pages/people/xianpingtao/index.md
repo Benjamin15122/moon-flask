@@ -14,11 +14,6 @@ title: Xianping Tao
     </div><!-- nesting row end -->
     <div class="row gutter k-equal-height"><!-- nesting row -->
         <div class="col-lg-12">
-            <span style="font-size:14pt">南京大学计算机科学与技术系 副系主任</span>
-        </div>
-    </div><!-- nesting row end -->
-    <div class="row gutter k-equal-height"><!-- nesting row -->
-        <div class="col-lg-12">
             <span style="font-size:14pt">南京大学计算机软件新技术国家重点实验室</span>
         </div>
     </div><!-- nesting row end -->
