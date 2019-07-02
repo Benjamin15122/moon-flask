@@ -9,7 +9,7 @@ Discuss software engineering, programming language, and system papers that have 
 ## Upcoming Talks
 
 * (Jun 18) Chenxi Zhang: Finding and Preventing Bugs in JavaScript Binding [[S&P 17]](https://ranjitjhala.github.io/static/binding-bugs-sp2017.pdf)
-* (Jun 25) Fengmin Shi
+* (Jun 25) Fengmin Shi: Learning to Spot and Refactor Inconsistent Method Names[[ICSE 19]](http://orbilu.uni.lu/bitstream/10993/39016/1/camera-ready-version.pdf)
 * (Jul 2) Cong Li, Yanxiang Tong
 * (Jul 9) Xianfei Ou
 * (Jul 16) Rui Qiu
