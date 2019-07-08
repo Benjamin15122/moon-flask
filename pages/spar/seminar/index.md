@@ -8,11 +8,9 @@ Discuss software engineering, programming language, and system papers that have 
 
 ## Upcoming Talks
 
-* (Jun 18) Chenxi Zhang: Finding and Preventing Bugs in JavaScript Binding [[S&P 17]](https://ranjitjhala.github.io/static/binding-bugs-sp2017.pdf)
-* (Jun 25) Fengmin Shi: Learning to Spot and Refactor Inconsistent Method Names[[ICSE 19]](http://orbilu.uni.lu/bitstream/10993/39016/1/camera-ready-version.pdf)
-* (Jul 2) Cong Li, Yanxiang Tong
-* (Jul 9) Xianfei Ou
-* (Jul 16) Rui Qiu
+* (Jul 9) Cong Li: Deep Differential Testing of JVM Implementations [[ICSE 19]](https://dl.acm.org/citation.cfm?id=3339662), Yanxiang Tong: A system identification based Oracle for control-CPS software fault localization [[ICSE 19]](https://dl.acm.org/citation.cfm?id=3339522)
+* (Jul 16) Xianfei Ou
+* (Jul 23) Rui Qiu
 
 ## Past Talks
 
@@ -32,6 +30,8 @@ Discuss software engineering, programming language, and system papers that have 
 Yuehuan Wang: Adversarial Sample Detection for Deep Neural Network through Model Mutation Testing[[ICSE 19]](https://arxiv.org/abs/1812.05793)
 * (Jun 4) Jinci Chen: A Novel Neural Source Code Representation based on Abstract Syntax Tree[[ICSE 19]](http://xuwang.tech/paper/astnn_icse2019.pdf)
 * (Jun 18) Da Li: Harnessing Evolution for Multi-Hunk Program Repair [[ICSE'19]](https://dl.acm.org/citation.cfm?id=3339508)
+* (Jun 25) Chenxi Zhang: Finding and Preventing Bugs in JavaScript Binding [[S&P 17]](https://ranjitjhala.github.io/static/binding-bugs-sp2017.pdf)
+* (Jul 2) Fengmin Shi: Learning to Spot and Refactor Inconsistent Method Names[[ICSE 19]](http://orbilu.uni.lu/bitstream/10993/39016/1/camera-ready-version.pdf)
 
 ## Seminar Archive
 
