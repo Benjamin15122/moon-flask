@@ -21,15 +21,18 @@ I'm a coder striving to make programs (and programmer's world) better. I'm inter
 <ul>
   <li>**Software Testing and Analysis**</li>
   <ul>
-    <li>Concurrent Programs: 
-    *Interleaving Space Sampling*
-    (SCS [[ESEC/FSE18](pubs/scs)]);
-    *Understanding Shared Memory Dependences*
-    (My [PhD Thesis](pubs/thesis),
-    Survey [[JoS17](pubs/survey)],
-    BC [[FSE16](pubs/bc)],
-    RWTrace [[ASE15](pubs/rwtrace)],
-    CARE [[ICSE14](pubs/care)]);
+    <li>System Software:
+    *Compiler Toolchain* (Cod [[ASE19](pubs/c2v)]
+    );
+    *Concurrent Programs* (SCS [[ESEC/FSE18](pubs/scs)],
+      My [PhD Thesis](pubs/thesis),
+      Survey [[JoS17](pubs/survey)],
+      BC [[FSE16](pubs/bc)],
+      RWTrace [[ASE15](pubs/rwtrace)],
+      CARE [[ICSE14](pubs/care)]
+    );
+    *Cloud Systems* (eBugs [[ASE19](pubs/diet)]
+    );
     </li>
     <li>Mobile Apps:
     *Platform*
@@ -109,7 +112,7 @@ Past ([Details](students)):
 
 <hr>
 
-Last Update: July 1, 2019
+Last Update: August 6, 2019
 
 ~~~{.customjs}
 $('ul').css('margin-left', '-15px');
