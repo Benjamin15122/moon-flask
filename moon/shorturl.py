@@ -13,7 +13,8 @@ def short_url(name, path):
             uname = dest.split('/')[1]
             return views.page(name=uname, path=path)
         else:
+            if path:
+                dest += '/' + path
             return flask.redirect(dest)
     else:
         flask.abort(404)
-
