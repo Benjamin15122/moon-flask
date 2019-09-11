@@ -10,7 +10,7 @@ nodes:
   - id: aotes
     name: AOTES
     desc: '[ICSE17 Poster]<br></br>[ECOOP18]'
-    path: synthesis/transformer
+    path: sta/synthesis/transformer
   - id: needle
     name: Needle
     desc: '[TURC18]'
@@ -46,7 +46,7 @@ nodes:
   - id: gain
     name: GAIN
     desc: '[APSEC14]<br></br>[IST16]'
-    path: tech
+    path: sta/tech
   - id: rwtrace
     name: RWTrace
     desc: '[ASE15]'
@@ -58,7 +58,7 @@ nodes:
   - id: abc
     name: ABC
     desc: '[APSEC15]'
-    path: tech
+    path: sta/tech
   - id: att
     name: ATT
     desc: '[Internetware15]'
@@ -78,7 +78,7 @@ nodes:
   - id: enter
     name: ENTER
     desc: '[ICSE18 Poster]'
-    path: synthesis/transformer
+    path: sta/synthesis/transformer
   - id: lesdroid
     name: LESDroid
     desc: '[ICPC18]'
@@ -95,6 +95,14 @@ nodes:
     name: Survey
     desc: '[FCS19]'
     path: sta
+  - id: c2v
+    name: C2V
+    desc: '[ASE19]'
+    path: sta/compiler
+  - id: diet
+    name: DIET
+    desc: '[ASE19]'
+    path: sta/system
 edges:
   - att -> gat
   - att -> aatt
@@ -113,9 +121,11 @@ edges:
   - c3 -> thesis
   - aatt -> android-survey
   - gat -> android-survey
+  - c3 -> diet
+  - test-survey -> c2v
 clusters:
   - id: sta
-    label: 'Software Testing and Analysis'
+    label: 'Software Testing, Analysis, and Synthesis'
   - id: smd
     label: 'Understanding Shared Memory Dependences'
   - id: concurrency
@@ -132,3 +142,8 @@ clusters:
     label: 'Transformers'
   - id: tech
     label: 'Fun and Profits'
+  - id: compiler
+    label: 'Compiler Toolchain'
+  - id: system
+    label: 'System Software'
+

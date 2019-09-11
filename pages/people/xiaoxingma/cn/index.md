@@ -164,7 +164,8 @@ title: Xiaoxing Ma (Chinese)
     * [Software engineering education track of ICSE 2010](http://www.sbs.co.za/ICSE2010/3-EVENTS/_TRACKS/ICSE2010_SE-EDUCATION.html)
 
 * 期刊编委
-   * [软件学报](http://www.jos.org.cn)  2011至今
+   * [《中国科学：信息科学》](http://scis.scichina.com) 青年编委, 2019-
+   * [《软件学报》](http://www.jos.org.cn) 责任编委,  2011-
 * 客座编辑
    * [Special Section on Software Systems](http://jcst.ict.ac.cn:8080/jcst/EN/column/item161.shtml), _Journal of Computer Science and Technology_, September 2017.
     * Special Focus on Internetware, _Science China: Information Sciences_ Volume 56, Number 1, January 2013.
