@@ -75,7 +75,7 @@ I'm a coder striving to make programs (and programmer's world) better. I'm inter
 
 ## Teaching
 
-* <img class="pull-right" style="margin-left:15px" width="200px" src="img/projectn.jpg"/>  [Operating Systems (Spring 2019)](/~jyywiki) and [Introduction to Computer Systems (Fall 2018)](/~jyywiki). (Only available for NJU campus-local network.)
+* <img class="pull-right" style="margin-left:15px" width="200px" src="img/projectn.jpg"/>  [Operating Systems (Spring 2019)](/~jyywiki/wiki/OS2019) and [Introduction to Computer Systems (Fall 2019)](/~jyywiki/wiki/ICS2019). (Only available for NJU campus-local network.)
 * I am a co-founder (with [Zihao Yu 余子濠](https://sashimi-yzh.github.io)) of *Project-N* ![](img/logo-n.png) in which undergraduate students build a complete computer system (NPC SoC, NEMU system emulator, Nanos operating system, NCC compiler, and applications) from scratch. 
     * Papers: *Plagiarism Detection* (Needle [![](img/zhihu.png)](http://zhuanlan.zhihu.com/p/40568346) [[SIGCSE-China18](pubs/needle)]).
     * We won the *first prize* in 2018 Loongson Cup contest.
@@ -87,6 +87,7 @@ I'm a coder striving to make programs (and programmer's world) better. I'm inter
 ## Students
 
 <img class="pull-left" width="125px" style="margin-right: 15px" src="img/yuju-cake.jpg"/>I'm co-supervising graduate students with Prof. [Chang Xu](http://cs.nju.edu.cn/changxu) and Prof. [Xiaoxing Ma](/~xxm).
+We also welcome [undergraduate research interns](http://ics.nju.edu.cn/~jyywiki/wiki/ICS_NJU).
 
 Current: [Wenjie Li 李文杰](/people/wenjieli) (PhD, Android), [Dongjie Chen 陈冬杰](/~dongjie) (PhD, Kernel and concurrency), [Jue Wang 王珏](/people/juewang) (PhD, Android), Chenxi Zhang 张晨曦 (PhD, Android), Xianfei Ou 欧先飞 (PhD, compilers), Daohan Qu 屈道涵 (PhD, runtime systems), [Yi Liu 刘毅](/people/yiliu) (MSc, Android), Shixuan Zhao 赵士轩 (Undergrad, Kernel concurrency), Shaoyuan Chen 陈劭源 (Undergrad, program repair), 刘恩萌 (Undergrad, empirical software engineering), 裴一凡 (Undergrad, regex anlaysis), 何伟 (Undergrad, Android), 张天昀 (Undergrad, software updates)
 
