@@ -1,27 +1,29 @@
-title: A team won First Prize in 2018 Loogson Cup Computer System Contest
+title: 软件所队伍获得2018年龙芯杯计算机系统大赛一等奖
 date: 2018-09-24
 img_path: photo/Loongson_2018.jpg
 
 
-# A team won First Prize (Second Place) in 2018 Loogson Cup Computer System Contest
+# 软件所队伍获得2018年龙芯杯计算机系统大赛一等奖
 
-The team built an out-of-order MIPS32 processor (on FPGA) running a self-built modern operating system and applications (window manager, terminal emulator, full system emulators, etc.). One of our PhD students, Xianfei Ou from the [SPAR group](/spar/), leads the system and application software developments. 
+队伍搭建的MIPS32处理器(基于FGPA)可运行自制的操作系统及其应用程序(窗口管理器，中断仿真，全系统仿真等)。
+来自[SPAR group](/spar/)的博士生欧先飞同学带领队伍完成系统和应用软件的开发任务。
 
-The software architecture design was led by [Dr. Yanyan Jiang](http://moon.nju.edu.cn/~jyy), who is now teaching "Operating Systems" and "Introduction to Computer Systems" (Practicum Part). The series of designs (including hardware part design by [Zihao Yu](https://sashimi-yzh.github.io)) will be incorporated in the undergraduate curriculum at Nanjing University.
+[蒋炎岩 博士](http://moon.nju.edu.cn/~jyy)负责指导软件架构的设计。蒋炎岩博士目前教授“Operating Systems”和“Introduction to Computer Systems” (Practicum Part)。
+此次处理器的设计和实现(包括硬件部分的设计[Zihao Yu](https://sashimi-yzh.github.io))内容将逐步引入相应的南京大学本科生课程之中。
 [(talk at CSWE'18)](/~jyy/teach/am-talk.pdf). 
 
 ![](/static/photo/Loongson_2018_1.jpg){: class="img-responsive" style="width:640px;margin:10px auto;" }
 
-<center>(supervisors and contestants)</center>
+<center>(指导老师和参赛人员)</center>
 
 ![](/static/photo/Loongson_2018_2.jpg){: class="img-responsive" style="width:640px;margin:10px auto;" }
 
-<center>(a full system running on an FPGA board)</center>
+<center>(一个完整的操作系统，运行在FGPA板上)</center>
 
 ![](/static/photo/Loongson_2018_4.jpg){: class="img-responsive" style="width:640px;margin:10px auto;" }
 
-<center>(award ceremony)</center>
+<center>(获奖时刻)</center>
 
 ![](/static/photo/Loongson_2018_3.jpg){: class="img-responsive" style="width:640px;margin:10px auto;" }
 
-<center>(certificate)</center>
+<center>(荣誉证书)</center>

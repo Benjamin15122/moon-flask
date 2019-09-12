@@ -1,33 +1,40 @@
 title: SPAR Seminar
 
-# SPAR Seminar (2018 Fall)
+# SPAR Seminar (2019 Spring)
 
 16:00-17:00, Every *Tuesday*, Room *229*
 
 Discuss software engineering, programming language, and system papers that have *novel* and *significant* contributions. Tool tutorials are also welcomed.
 
 ## Upcoming Talks
-* (Dec 4) Chenxi Zhang: Using Finite-State Models for Log Diﬀerencing [[FSE 18]](http://www.cs.tau.ac.il/~maozs/papers/log-diff-fse18.pdf).
-* Cong Li
-* Yanxiang Tong; Xianfei Ou
-* Wenjie Li
-* Weiyu Ye; Huiyan Wang
-* Qingwei Sun
+
+* (Jul 23) Rui Qiu
 
 ## Past Talks
-* (Sep 11) Jinci Chen: Avoiding the Familiar to Speed Up Test Case Reduction [[QRS 18]](https://ieeexplore.ieee.org/document/8424994/); Rui Qiu: Learning to Prioritize Test Programs for Compiler Testing [[ICSE 17]](http://materials.dagstuhl.de/files/17/17502/17502.JunjieChen.Preprint.pdf).
-* (Sep 18) Zenan Li: DeepGauge: Multi-Granularity Testing Criteria for Deep Learning Systems [[ASE 18]](https://arxiv.org/abs/1803.07519).
-* (Sep 25) Di Huang: SEEDE: Simultaneous Execution and Editing in a Development Environment [[ASE 18]](https://doi.org/10.1145/3238147.3238182); Yi Liu: Efficiently Manifesting Asynchronous Programming Errors in Android Apps [[ASE 18]](https://tingsu.github.io/files/ase18-async.pdf).
-* (Oct 9) Yuehuan Wang: DeepMutation: Mutation Testing of Deep Learning Systems [[ISSRE 18]](https://arxiv.org/pdf/1805.05206.pdf).
-* (Oct 16) Jingxin Fan: Software Performance Self-Adaptation through Efﬁcient Model Predictive Control [[ASE 17]](http://cse.lab.imtlucca.it/~mirco.tribastone/papers/ase2017.pdf); Da Li: Tell Them Apart: Distilling Technology Differences from Crowd-Scale Comparison Discussions [[ASE 18]](https://chunyang-chen.github.io/publication/diffSimilarTech.pdf).
-* (Oct 23) Zelin Zhao: Disjunctive Program Synthesis: a Robust Approach to Programming by Example [[AAAI 2018]](https://www.aaai.org/ocs/index.php/AAAI/AAAI18/paper/view/17055/15835).
-* (Oct 30) Yuju Shen: A Symbolic Model Checking Approach to the Analysis of String and Length Constraints [[ASE 18]](https://dl.acm.org/ft_gateway.cfm?id=3238189&ftid=1995572&dwn=1&CFID=26138668&CFTOKEN=ae9586e38acef0e9-41BBF88E-F72B-F23B-16CF441A7C313EBE); Jue Wang: Towards Model Checking Android Applications [[TSE 18]](https://ieeexplore.ieee.org/document/7911333).
-* (Nov 6) Dawei Cheng: DeepRoad: GAN-Based Metamorphic Testing and Input Validation Framework for Autonomous Driving Systems [[ASE 18]](http://www.utdallas.edu/~lxz144130/publications/ase2018.pdf).
-* (Nov 13) Shaocong Liu: Neural-Augmented Static Analysis of Android Communication [[FSE 18]](http://pages.cs.wisc.edu/~aws/papers/fse18a.pdf); Dongjie Chen: Why is Random Testing Effective for Partition Tolerance Bugs? [[POPL 18]](https://dl.acm.org/citation.cfm?id=3177123.3158134).
-* (Nov 20) Yang Cao: T-Fuzz: Fuzzing by Program Transformation [[SP 18]](https://nebelwelt.net/publications/files/18Oakland.pdf).
-* (Nov 27) Fengmin Shi: ExceLint: Automatically Finding Spreadsheet Formula Errors [[OOPSLA 18]](https://dl.acm.org/citation.cfm?id=3276518).
+
+* (Mar 5) Wenjie Li: Characterizing and Detecting Inefficient Image Displaying Issues in Android Apps.
+* (Mar 12) Zenan Li: Towards Optimal Concolic Testing [[ICSE 18]](https://dl.acm.org/citation.cfm?id=3180177).
+* (Mar 19) Zelin Zhao: Mvedsua: Higher Availability Dynamic Software Updates via Multi-Version Execution [[ASPLOS 19]](http://www.cs.umd.edu/~mwh/papers/mvedsua.pdf), Shaocong Liu: Self-Hiding Behavior in Android Apps: Detection and Characterization [[ICSE 18]](https://dl.acm.org/citation.cfm?id=3180214).
+* (Mar 26) Dongjie Chen: Optimistic Hybrid Analysis: Accelerating Dynamic Analysis through Predicated Static Analysis [[ASPLOS 18]](https://dl.acm.org/citation.cfm?doid=3173162.3177153).
+* (Apr 2) Huiyan Wang: CRADLE: Cross-Backend Validation to Detect and Localize Bugs in Deep Learning Libraries [[ICSE 19]](https://hvpham.github.io/files/CRADLE-icse19.pdf).
+* (Apr 9) Weiyu Ye: Optimus: An Efficient Dynamic Resource Scheduler for Deep Learning Clusters [[EuroSys 18]](https://dl.acm.org/citation.cfm?doid=3190508.3190517).
+* (Apr 16) Yuju Shen: Singularity: Pattern Fuzzing for Worst Case Complexity [[FSE 18]](https://dl.acm.org/citation.cfm?id=3236039).
+* (Apr 23) Yi Liu: Reproducing Crashes in Android Apps from Bug Reports [[ICSE 19]](https://tingsu.github.io/files/ReCDroid.pdf), Qingwei Sun: GUILeak: tracing privacy policy claims on user input data for Android applications [[ICSE 18]](https://dl.acm.org/citation.cfm?id=3180196)
+* (Apr 30) Jue Wang: AppFlow: Using Machine Learning to Synthesize Robust, Reusable UI Tests[[FSE 18]](http://www.cs.columbia.edu/~junfeng/papers/appflow.pdf)
+* (May 7) Dawei Chen: Guiding Deep Learning System Testing using Surprise Adequacy [[ICSE 19]](https://arxiv.org/pdf/1808.08444.pdf)
+* (May 14) Yang Cao: Automatically Generating Search Heuristics for Concolic Testing[[ICSE 18]](http://prl.korea.ac.kr/~sooyoung/papers/ICSE18.pdf)
+* (May 21) Jingxin Fan: Feedback-Directed Differential Testing of Interactive Debuggers[[FSE 18]](http://software-lab.org/publications/fse2018.pdf)
+* (May 28) Di Huang: Chopped Symbolic Execution[[ICSE 18]](https://srg.doc.ic.ac.uk/files/papers/chopper-icse-18.pdf), 
+Yuehuan Wang: Adversarial Sample Detection for Deep Neural Network through Model Mutation Testing[[ICSE 19]](https://arxiv.org/abs/1812.05793)
+* (Jun 4) Jinci Chen: A Novel Neural Source Code Representation based on Abstract Syntax Tree[[ICSE 19]](http://xuwang.tech/paper/astnn_icse2019.pdf)
+* (Jun 18) Da Li: Harnessing Evolution for Multi-Hunk Program Repair [[ICSE'19]](https://dl.acm.org/citation.cfm?id=3339508)
+* (Jun 18) Chenxi Zhang: Finding and Preventing Bugs in JavaScript Binding [[S&P 17]](https://ranjitjhala.github.io/static/binding-bugs-sp2017.pdf)
+* (Jun 25) Fengmin Shi: Learning to Spot and Refactor Inconsistent Method Names[[ICSE 19]](http://orbilu.uni.lu/bitstream/10993/39016/1/camera-ready-version.pdf)
+* (Jul 9) Cong Li: Deep Differential Testing of JVM Implementations [[ICSE 19]](https://dl.acm.org/citation.cfm?id=3339662), Yanxiang Tong: A system identification based Oracle for control-CPS software fault localization [[ICSE 19]](https://dl.acm.org/citation.cfm?id=3339522)
+* (Jul 16) Xianfei Ou: Hacking blind [[IEEE SSP 14]](https://ieeexplore.ieee.org/abstract/document/6956567). To detect stack buffer overflow with polymorphic canaries [[IEEE DSN 18]](https://ieeexplore.ieee.org/abstract/document/8416487)
 
 ## Seminar Archive
 
+* [2018 Fall](2018fall).
 * [2018 Spring](2018spring).
 * [2017 Fall](2017fall).

@@ -1,5 +1,16 @@
-title: Events
+title: 活动
 
 
-# Events
-{{ render_events() }}
+# 科研活动
+
+#### 基础研究与系统工程中心
+- 博士生讨论班
+    + 2018-2019春季学期, [2018-2019秋季学期](phd/18192)
+- [研究中心硕士生讨论班](master/index)
+- [工程中心硕士生讨论班](master_eng/index)
+- [SPAR讨论班](/spar/seminar/)
+
+#### 前沿交叉中心
+
+<hr>
+# 团建拓展

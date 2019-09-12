@@ -4,6 +4,10 @@ title: Publications
 
 ## 2019
 
+* {{ render_bib_entry(g.site.spar_paper.yang_automatic_2019, hl='Yanyan Jiang') }}
+* {{ render_bib_entry(g.site.spar_paper.chen_understanding_2019, hl='Yanyan Jiang') }}
+* {{ render_bib_entry(g.site.spar_paper.cao_perspectives_2019, hl='Yanyan Jiang') }}
+* {{ render_bib_entry(g.site.spar_paper.wang_automatic_2019, hl='Yanyan Jiang') }}
 * {{ render_bib_entry(g.site.spar_paper.li_characterizing_2019, hl='Yanyan Jiang') }}
 
 ### 2018
@@ -44,3 +48,4 @@ title: Publications
 
 ### 2013
 * {{ render_bib_entry(g.site.spar_paper.jiang_dpac_2013, hl='Yanyan Jiang') }}
+

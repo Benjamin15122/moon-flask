@@ -9,12 +9,26 @@ title: Jingwei Xu
 
 ## Research Interests
 
-* Data Mining
-* Recommender Systems 
+* Deep learning: Testing, analysis, and Application
+* Data mining: Recommender Systems 
+
+## News
+* Congratulations on Zenan Li's ESEC/FSE'19 paper "Boosting Operational DNN Testing Efficiency through Conditioning"!
+
 
 ## Publications
 
 ~~~{.bibtexhtml hl_lines="Jingwei Xu"}
+@inproceedings{2019-FSE-ZLi-Conditioning,
+	Author = {Zenan Li and Xiaoxing Ma and Chang Xu and Chun Cao and Jingwei Xu and Jian Lu},
+	Booktitle = {Proceedings of The 27th ACM Joint European Software Engineering Conference and Symposium on the Foundations of Software Engineering (ESEC/FSE 80 2019)},
+	Date-Added = {2019-05-25 09:02:03 +0800},
+	Date-Modified = {2019-05-25 09:10:08 +0800},
+	Month = {Aug},
+	Pages = {Accepted. To appear. },
+	Pdf = {/people/xiaoxingma/pubs/2019-FSE-ZLi-Conditioning.pdf},
+	Title = {Boosting Operational DNN Testing Efficiency through Conditioning},
+	Year = {2019}}
 @inproceedings{Xu:2017:HHO:3097983.3098019,
  author = {Jingwei Xu and Yuan Yao and Hanghang Tong and Xianping Tao and Jian Lu},
  title = {HoORaYs: High-order Optimization of Rating Distance for Recommender Systems},
@@ -87,11 +101,25 @@ title: Jingwei Xu
 }
 ~~~
 
+## Students
+I'm co-supervising students with Prof. Chang Xu, Prof. Xiaoxing Ma, and Prof. Chun Cao.
+
+* Huiyan Wang [王慧妍](../huiyanwang/index) (PhD, with Prof. Chang Xu, Quality assurance for intelligent software)
+* Zenan Li 李泽南 (MSc, with Prof. Xiaoxing Ma, Machine Learning & Deep Learning)
+* Qingping Li 李青坪 (MSc, with Prof. Chun Cao, Task scheduling for deep learning task)
+* Yuehuan Wang 王月欢 (MSc, with Prof Xiaoxing Ma, Testing deep learning programs)
+* Siyuan Zhu 朱思远 (MSc, with Prof. Chang Xu, coming soon!)
+* Cheng Zhang 张铖 (MSc, coming soon!)
+
+## Teaching
+* 2019 (Spring) Introduction to Algorithm Design and Analysis
+* 2018 (Spring) Introduction to Algorithm Design and Analysis
+
 ## Awards
 * KDD2017 Student Travel Awards
 
 ## Services
-* PC Member for: ASONAM 2016-2017, CIKM 2017 (Short papers), AAAI 2018, PAKDD 2018
+* PC Member for: ASONAM 2016-2018, CIKM 2017 (Short papers), AAAI 2018, PAKDD 2018
 
 ## Projects
 

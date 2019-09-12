@@ -1,6 +1,6 @@
-title: Scholarships
+title: 奖学金
 
 
-# Scholarships
+# 奖学金
 {{ render_short_news(g.site.scholarship_news) }}
 

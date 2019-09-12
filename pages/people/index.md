@@ -1,20 +1,20 @@
-title: People
+title: 成员
 
-# People
+# 成员
 
 <hr>
 
-## Chief Scientist 
+## 首席科学家 
 {{ render_people(category="chief_scientist", large=True) | safe }}
 
-## Faculty
+## 教师
 {{ render_people(category="faculty", large=True) | safe }}
 
 <hr>
-## Ph.D. Student
+## 博士研究生
 {{ render_people(category="phd", large=True) | safe }}
 
 <hr>
-## Master Student
+## 硕士研究生
 {{ render_people(category="graduates", large=True) | safe }}
 
