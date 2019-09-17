@@ -4,6 +4,7 @@ title: Publications
 
 ## 2019
 
+* {{ render_bib_entry(g.site.spar_paper.jiang_highs_2019, hl='Yanyan Jiang') }} <small>[![](img/zhihu.png) “读博那些事儿”](https://zhuanlan.zhihu.com/p/82579410)</small>
 * {{ render_bib_entry(g.site.spar_paper.yang_automatic_2019, hl='Yanyan Jiang') }}
 * {{ render_bib_entry(g.site.spar_paper.chen_understanding_2019, hl='Yanyan Jiang') }}
 * {{ render_bib_entry(g.site.spar_paper.cao_perspectives_2019, hl='Yanyan Jiang') }}
