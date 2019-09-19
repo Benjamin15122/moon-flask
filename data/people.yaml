@@ -102,6 +102,7 @@ faculty:
     avatar: /spar/img/avatar/yqin.jpg
     group: spar
     center: research
+    url: https://yiqinnju.github.io
   - name: Jianying Zhang 张建莹
     title: Senior Engineer
     avatar: /static/img/avatar/mrszhang.jpg
