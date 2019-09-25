@@ -73,10 +73,14 @@ I'm a coder striving to make programs (and programmer's world) better. I'm inter
 </div>
 
 
-## Teaching
+## Teaching: [Yanyan's Wiki](/~jyywiki)
 
-* <img class="pull-right" style="margin-left:15px" width="200px" src="img/projectn.jpg"/>  [Operating Systems (Spring 2019)](/~jyywiki/wiki/OS2019) and [Introduction to Computer Systems (Fall 2019)](/~jyywiki/wiki/ICS2019). (Only available for NJU campus-local network.)
-* I am a co-founder (with [Zihao Yu 余子濠](https://sashimi-yzh.github.io)) of *Project-N* ![](img/logo-n.png) in which undergraduate students build a complete computer system (NPC SoC, NEMU system emulator, Nanos operating system, NCC compiler, and applications) from scratch. 
+* <img class="pull-right" style="margin-left:15px" width="200px" src="img/projectn.jpg"/>
+[Introduction to Computer Systems (Fall 2019)](/~jyywiki/wiki/ICS2019),
+[Introduction to Software Engineering Research (Fall 2019)](/~jyywiki/wiki/GSER2019), and
+[Operating Systems (Spring 2019)](/~jyywiki/wiki/OS2019).
+(Only available for NJU campus-local network.)
+* I'm a co-founder (with [Zihao Yu 余子濠](https://sashimi-yzh.github.io)) of *Project-N* ![](img/logo-n.png) in which undergraduate students build a complete computer system (NPC SoC, NEMU system emulator, Nanos operating system, NCC compiler, and applications) from scratch. 
     * Papers: *Plagiarism Detection* (Needle [![](img/zhihu.png)](http://zhuanlan.zhihu.com/p/40568346) [[SIGCSE-China18](pubs/needle)]).
     * We won the *first prize* in 2018 Loongson Cup contest.
 * Selected talks:
