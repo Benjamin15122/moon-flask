@@ -1,11 +1,15 @@
 title: Publications of Jun Ma
+**2019**
+
+- Yang CAO, Yanyan JIANG, Chang XU, **Jun MA**, Xiaoxing MA, "Perspectives on Search Strategies in Automated Test Input Generation", FCS, to appear, 2019.([Pre-print Version](https://cs.nju.edu.cn/changxu/1_publications/FCS19.pdf))
+
 **2018**
 
-- <img src="static/img/new.jpg" width = "40" height = "40" align=center /> Cong Li, Chang Xu, Lili Wei, Jue Wang, **Jun Ma**, Jian Lu, "ELEGANT: Towards Effective Location of Fragmentation-Induced Compatibility Issues for Android Apps", in Proceedings of the 25th Asia-Pacific Software Engineering Conference (APSEC), to appear, 2018.
-- <img src="static/img/new.jpg" width = "40" height = "40" align=center /> Shengtao Yue, Qingwei Sun, **Jun Ma**, Xianping Tao, Chang Xu, Jian Lu, "RegionDroid: A Tool for Detecting Android Application Repackaging Based on Runtime UI Region Features", in Proceedings of the 34th IEEE International Conference on Software Maintenance and Evolution, to appear, 2018.([Pre-print Version](static/files/ICSME2018(pre-print).pdf))
-- <img src="static/img/new.jpg" width = "40" height = "40" align=center /> Tianheng Wu, Liang Wang, Zhiwen Zheng, Simeng Wu, **Jun Ma**, Xianping Tao, Jian Lu, "CARMUS: Towards a General Framework for Continuous Activity Recognition with Missing Values on Smartphones", in Proceedings of the 42nd IEEE Inter  Conference on Computer, Software  & Applications(COMPSAC), to appear, 2018.
-- <img src="static/img/new.jpg" width = "40" height = "40" align=center /> Jue Wang, Yanyan Jiang, Chang Xu, Qiwei Li, Tianxiao Gu, **Jun Ma**, Xiaoxing Ma, Jian Lu, "AATT+: Effectively manifesting concurrency bugs in Android apps", Science of Computer Programming, Volume 163, 2018, Pages 1-18, ISSN 0167-6423, (DOI:[10.1016/j.scico.2018.03.008](https://doi.org/10.1016/j.scico.2018.03.008))
--  <img src="static/img/new.jpg" width = "40" height = "40" align=center />**Jun Ma**, Shaocong Liu, Yanyan Jiang, Xianping Tao, Chang Xu, and Jian Lu, “LESdroid: A tool for detecting exported service leaks of Android applications”, in Proceedings of the 26th International Conference on Program Comprehension (ICPC), to appear, 2018.([Pre-print Version](static/files/LesDroid(pre-print).pdf))
+-  Cong Li, Chang Xu, Lili Wei, Jue Wang, **Jun Ma**, Jian Lu. "ELEGANT: Towards Effective Location of Fragmentation-Induced Compatibility Issues for Android Apps" in Proceedings of the 25th Asia-Pacific Software Engineering Conference (APSEC 2018), Nara, Japan, Dec 2018.(DOI:[10.1109/APSEC.2018.00042](https://doi.org/10.1109/APSEC.2018.00042))
+-  Shengtao Yue, Qingwei Sun, **Jun Ma**, Xianping Tao, Chang Xu, Jian Lu, "RegionDroid: A Tool for Detecting Android Application Repackaging Based on Runtime UI Region Features", in Proceedings of the 34th IEEE International Conference on Software Maintenance and Evolution, to appear, 2018.(DOI:[10.1109/ICSME.2018.00041](https://doi.org/10.1109/ICSME.2018.00041))
+-  Tianheng Wu, Liang Wang, Zhiwen Zheng, Simeng Wu, **Jun Ma**, Xianping Tao, Jian Lu, "CARMUS: Towards a General Framework for Continuous Activity Recognition with Missing Values on Smartphones", in Proceedings of the 42nd IEEE Inter  Conference on Computer, Software  & Applications(COMPSAC), to appear, 2018.
+-  Jue Wang, Yanyan Jiang, Chang Xu, Qiwei Li, Tianxiao Gu, **Jun Ma**, Xiaoxing Ma, Jian Lu, "AATT+: Effectively manifesting concurrency bugs in Android apps", Science of Computer Programming, Volume 163, 2018, Pages 1-18, ISSN 0167-6423, (DOI:[10.1016/j.scico.2018.03.008](https://doi.org/10.1016/j.scico.2018.03.008))
+-  **Jun Ma**, Shaocong Liu, Yanyan Jiang, Xianping Tao, Chang Xu, and Jian Lu, “LESdroid: A tool for detecting exported service leaks of Android applications”, in Proceedings of the 26th International Conference on Program Comprehension (ICPC), to appear, 2018.(DOI:[10.1145/3196321.3196336](https://doi.org/10.1145/3196321.3196336))
 
 **2017**
 

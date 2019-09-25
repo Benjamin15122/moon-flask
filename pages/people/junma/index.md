@@ -69,14 +69,11 @@ title: Jun Ma
 </div>
 
 ## News
+
+*  <img src="static/img/new.jpg" width = "40" height = "40" align=center /> Congratulations on Cao Yang's FCS paper "Perspectives on Search Strategies in Automated Test Input Generation".
+
 *  <img src="static/img/new.jpg" width = "40" height = "40" align=center /> <img src="static/img/220px-_ICPC_Foundation_Logo,_wide_profile,_2018_.png" width = "60" height = "40" align=center "/>Congratulations to Hao LING, Hongyang LIU and Yangbo ZHANG for winning the 13th place in the 43th ACM-ICPC World Final.
 *  <img src="static/img/new.jpg" width = "40" height = "40" align=center /> <img src="static/img/220px-_ICPC_Foundation_Logo,_wide_profile,_2018_.png" width = "60" height = "40" align=center "/>Congratulations to Hao LING, Hongyang LIU and Yangbo ZHANG for winning the championship in the 43th ACM-ICPC Asia Regional (Qingdao).
-*  <img src="static/img/new.jpg" width = "40" height = "40" align=center />Congratulations on Cong LI's APSEC'18 paper: "ELEGANT: Towards Effective Location of Fragmentation-Induced Compatibility Issues for Android Apps"!
-*  <img src="static/img/new.jpg" width = "40" height = "40" align=center />Shengtao Yue is granted "NJU CS Nominated Outstanding Master's Thesis Award"  for his thesis titled “Android Application Repackaging Detection Based on Runtime Graphical User Interface“.
-*  <img src="static/img/new.jpg" width = "40" height = "40" align=center />Congratulations on Shengtao Yue's ICSME'18 paper: "RegionDroid: A Tool for Detecting Android Application Repackaging Based on Runtime UI Region Features"!([Pre-print Version](static/files/ICSME2018(pre-print).pdf))
-*  <img src="static/img/new.jpg" width = "40" height = "40" align=center />New paper "LESDroid - A Tool for Detecting Exported Service Leaks of Android Applications" is accepted to ICPC'18!([Pre-print Version](static/files/LesDroid(pre-print).pdf))
-*  <img src="static/img/new.jpg" width = "40" height = "40" align=center />Congratulations on Tianheng Wu's Compsac'18 paper:"CARMUS: Towards a General Framework for Continuous Activity Recognition with Missing Values on Smartphones"!
-*  <img src="static/img/new.jpg" width = "40" height = "40" align=center /> Jue Wang, Yanyan Jiang, Chang Xu, Qiwei Li, Tianxiao Gu, Jun Ma, Xiaoxing Ma, and Jian Lu. AATT+: Effectively Manifesting Concurrency Bugs in Android Apps. Science of Computer Programming (SCP), Vol. 163, pp. 1-18, Oct 2018. ([pdf](http://cs.nju.edu.cn/changxu/1_publications/SCP18.pdf))
 
 
 ## Bio
@@ -91,6 +88,7 @@ title: Jun Ma
 
 I received the following awards or honors (reversely chronological order):
 
+* I received "NJU Liu Houjun Teaching Award" (南京大学刘厚俊奖教金) in 2019.
 * I received "NJU Sun Zhongxiu Teaching Award" (南京大学孙钟秀奖教金) in 2018.
 * I received "NJU Charismatic Advisor Award" (南京大学魅力导师奖) in 2018.
 * I received "Jiangsu Computer Society Service Award" (江苏省计算机学会科技服务贡献奖) in 2017 and 2018.
@@ -100,14 +98,13 @@ I received the following awards or honors (reversely chronological order):
 My current interests focus on following topics:
 
 
-1. Pervasive Computing
-    * Context-aware Computing
-    * Smart Space
-
-2. Software Analysis and Testing of Android Apps
+1. Software Analysis and Testing of Android Apps
     * Resource Leak Detection
     * Repackaging/Cloned App Detection
     * ...
+2. Pervasive Computing
+    * Context-aware Computing
+    * Smart Space
 
 # Publications
 
@@ -115,8 +112,10 @@ My current interests focus on following topics:
 
 ## Teaching
 
+* 2018, Autumn: [Problem Solving(1)](http://cslabcms.nju.edu.cn/problem_solving/index.php/2019%E7%BA%A7--%E5%AD%A6%E6%9C%9F%E5%AE%89%E6%8E%92_(%E7%AC%AC%E4%B8%80%E5%AD%A6%E6%9C%9F)) (Dept. CSE)
+* 2019, Spring: [Problem Solving(4)](http://cslabcms.nju.edu.cn/problem_solving/index.php/2017%E7%BA%A7--%E5%AD%A6%E6%9C%9F%E5%AE%89%E6%8E%92_(%E7%AC%AC%E5%9B%9B%E5%AD%A6%E6%9C%9F)) (Dept. CSE)
 * 2018, Autumn: [Problem Solving(3)](http://cslabcms.nju.edu.cn/problem_solving/index.php/2017%E7%BA%A7--%E5%AD%A6%E6%9C%9F%E5%AE%89%E6%8E%92_(%E7%AC%AC%E4%B8%89%E5%AD%A6%E6%9C%9F)) (Dept. CSE)
-* 2018, String: [Problem Solving(2)](http://cslabcms.nju.edu.cn/problem_solving/index.php/2017%E7%BA%A7--%E5%AD%A6%E6%9C%9F%E5%AE%89%E6%8E%92_(%E7%AC%AC%E4%BA%8C%E5%AD%A6%E6%9C%9F)) (Dept. CSE)
+* 2018, Spring: [Problem Solving(2)](http://cslabcms.nju.edu.cn/problem_solving/index.php/2017%E7%BA%A7--%E5%AD%A6%E6%9C%9F%E5%AE%89%E6%8E%92_(%E7%AC%AC%E4%BA%8C%E5%AD%A6%E6%9C%9F)) (Dept. CSE)
 * 2017, Autumn: [Problem Solving(1)](http://cslabcms.nju.edu.cn/problem_solving/index.php/2017%E7%BA%A7) (Dept. CSE)
 * 2017, Spring: [Problem Solving(4)](http://cslabcms.nju.edu.cn/problem_solving/index.php/2015%E7%BA%A7--%E5%AD%A6%E6%9C%9F%E5%AE%89%E6%8E%92_(%E7%AC%AC%E5%9B%9B%E5%AD%A6%E6%9C%9F)) (Dept. CSE)
 * 2016, Autumn: [Problem Solving(3)](http://cslabcms.nju.edu.cn/problem_solving/index.php/2015%E7%BA%A7--%E5%AD%A6%E6%9C%9F%E5%AE%89%E6%8E%92_(%E7%AC%AC%E4%B8%89%E5%AD%A6%E6%9C%9F)) (Dept. CSE)
