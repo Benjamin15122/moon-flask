@@ -31,17 +31,15 @@ BLOCK_TEMPLATE_SM = u"""
 
 # People and people block (large)
 PEOPLE_TEMPLATE_LG = u"""
-<div class="col-lg-3 col-md-4 col-sm-6 col-xs-6">
-<div class="pblock">
+<div class="col-lg-3 col-md-4 col-sm-6 col-xs-6 pblock">
 {% if url %} <a href="{{ url }}"> {% endif %}
 <table><tr>
 <td><img class="avatar" src="{{ avatar }}"/></td>
-<td><span class="name">{{ name1 }}</span><br>
+<td class="intro"><span class="name">{{ name1 }}</span><br>
 <span>{{ name2 | safe }}</span><br>
-<span>{{ "" if not name3 else name3 | safe }}</span></td>
+<span class="name3">{{ "" if not name3 else name3 | safe }}</span></td>
 </tr></table>
 {% if url %} </a> {% endif %}
-</div>
 </div>
 """
 
@@ -105,7 +103,7 @@ def render_people(cond=None, category=None, large=False, group=None, center=None
             name1 = ' '.join(name[:-1])
             name2 = name[-1]
 
-        name3=p.get("role")
+        name3 = p.get('role')
 
         return flask.render_template_string(
             PEOPLE_TEMPLATE_LG if large else PEOPLE_TEMPLATE_SM,
