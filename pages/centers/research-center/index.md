@@ -27,5 +27,5 @@ title: 基础研究中心
 
 - [SPAR: System & Program Analysis Research Group](../../spar)
 
-    ![](/static/img/logo-spar-small.png) 小组负责人: [马晓星](/people/xiaoxingma)、[许畅](http://cs.nju.edu.cn/changxu)、[蒋炎岩](/people/yyjiang).
+    ![](/static/img/logo-spar-small.png) 小组负责人: [马晓星](/people/xiaoxingma)、[许畅](http://cs.nju.edu.cn/changxu)、[蒋炎岩](/people/yanyanjiang)、[秦逸](https://yiqinnju.github.io).
 
