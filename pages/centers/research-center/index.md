@@ -6,15 +6,11 @@ title: 基础研究中心
 ## 教师
 {{ render_people(center='research', category = ["faculty"], large=True) | safe }}
 
-
-<hr>
 ## 博士研究生
 {{ render_people(category="phd", center='research', large=True) | safe }}
-<hr>
 
 ## 硕士研究生
 {{ render_people(category="graduates", center='research', large=True) | safe }}
-<hr>
 
 ## 研究小组
 - [DisAlg: Distributed Algorithm Group](https://github.com/Disalg-ICS-NJU/disalg-nju)

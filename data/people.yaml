@@ -1,22 +1,22 @@
 chief_scientist:
   - name: Jian Lü 吕建
     title: Professor
-    #role: President of NJU
+    role: 中科院院士、南京大学校长
     avatar: /static/img/avatar/lujian.jpg
 faculty:
   - name: Xiaoxing Ma 马晓星
     title: Professor
-    #role: Deputy Director
     id: xiaoxingma
     url: /people/xiaoxingma
     center: research, engineering
+    role: 软件所副所长
     duty: 软件所副所长
     avatar: /people/xiaoxingma/static/avatar.jpg
     group: dse, spar
   - name: Chang Xu 许畅
     title: Professor
-    #role: Director of Research
     center: research
+    role: 基础研究中心负责人
     duty: 基础研究中心负责人
     id: changxu
     url: http://cs.nju.edu.cn/changxu
@@ -24,13 +24,14 @@ faculty:
     group: spar, castle
   - name: Chun Cao 曹春
     title: Associate Professor
-    #role: Director of Engineering
     url: https://ccao.cc
+    role: 系统工程中心负责人
     duty: 系统工程中心负责人
     center: engineering
     avatar: /static/img/avatar/caochun.jpg
   - name: Xianping Tao 陶先平
     title: Professor
+    role: 前沿交叉中心负责人
     duty: 前沿交叉中心负责人
     center: leading-edge
     url: xianpingtao
