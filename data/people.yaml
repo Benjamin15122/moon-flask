@@ -213,6 +213,9 @@ phd:
     center: leading-edge
     from: 2018
     avatar: /static/img/avatar/zhengzhiwen.jpg
+  - name: Guochang Wang 王国畅
+    center: engineering
+    from: 2019
 
 graduates:
   - name: Xiang Hu 胡翔
@@ -304,9 +307,6 @@ graduates:
   - name: Xiangsen Liao 廖祥森
     center: engineering
     from: 2018
-  - name: Minglong Qin 钦明珑
-    center: engineering
-    from: 2018
   - name: Chengxian He 何城贤
     center: engineering
     from: 2018
@@ -338,9 +338,6 @@ graduates:
     center: engineering
     from: 2019
   - name: Yuanxi Han 韩沅锡
-    center: engineering
-    from: 2019
-  - name: Siyuan Zhu 朱思远
     center: engineering
     from: 2019
   - name: Ruize Tang 唐瑞泽
