@@ -1,6 +1,9 @@
 .row .people {
     margin-left: 0px;
     margin-right: 0px;
+    padding-left: 10px;
+    background-color: #f6f6f6;
+    border-radius: 7px;
 }
 .people-small .row .small {
     margin-left: 10px;
