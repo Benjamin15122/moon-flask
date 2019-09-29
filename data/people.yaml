@@ -113,6 +113,7 @@ faculty:
   - name: Tian Tan 谭添
     title: Assistant Researcher
     url: https://silverbullettt.bitbucket.io/
+    avatar: /static/img/avatar/tiantan.jpg
   - name: Jianying Zhang 张建莹
     title: Senior Engineer
     avatar: /static/img/avatar/mrszhang.jpg
@@ -342,6 +343,7 @@ graduates:
     center: research
     from: 2019
     group: spar
+    avatar: /static/img/avatar/yingzhuoyang.jpg
   - name: Siyuan Zhu 朱思远
     center: research
     from: 2019
