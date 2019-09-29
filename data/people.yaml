@@ -86,7 +86,7 @@ faculty:
   - name: Hengfeng Wei 魏恒峰
     title: Assistant Researcher
     url:  hengfengwei
-    avatar: /static/img/avatar/weihengfeng.png
+    avatar: /static/img/avatar/weihengfeng.jpg
     group: disalg
     center: research
     duty: 软件所资产管理
@@ -339,6 +339,7 @@ graduates:
     center: research
     from: 2019
     group: spar
+    avatar: /static/img/avatar/ziqichen.jpg
   - name: Yingzhuo Yang 杨英卓
     center: research
     from: 2019
