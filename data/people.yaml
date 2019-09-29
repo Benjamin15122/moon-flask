@@ -64,6 +64,7 @@ faculty:
     title: Associate Professor
     url: https://yuelee.bitbucket.io
     avatar: /static/img/avatar/yueli.jpg
+    group: spar
   - name: Jun Ma 马骏
     id: junma
     title: Assistant Professor
@@ -114,6 +115,7 @@ faculty:
     title: Assistant Researcher
     url: https://silverbullettt.bitbucket.io/
     avatar: /static/img/avatar/tiantan.jpg
+    group: spar
   - name: Jianying Zhang 张建莹
     title: Senior Engineer
     avatar: /static/img/avatar/mrszhang.jpg
@@ -399,10 +401,6 @@ graduates:
     from: 2019
 
 undergraduates:
-  - name: Zhao Gang 刚昭
-    center: research
-    from: 2017
-    group: spar
   - name: Hao Ling 凌浩
     center: research
     from: 2018
@@ -415,6 +413,22 @@ undergraduates:
     center: research
     from: 2018
     group: spar
+  - name: Enmeng Liu 刘恩萌
+    center: research
+    from: 2019
+    group: spar
+  - name: Wei He 何伟
+    center: research
+    from: 2019
+    group: spar
+  - name: Yifan Pei 裴一凡
+    center: research
+    from: 2019
+    group: spar
+  - name: Tianyun Zhang 张天昀
+    center: research
+    from: 2019
+    group: spar
 
 # Those left or passed away 
 former_faculty:
@@ -424,6 +438,10 @@ former_faculty:
     url: /news/2018/01/jiafu
 
 alumni:
+  - name: Zhao Gang 刚昭
+    center: research
+    from: 2017
+    group: spar
   - name: Yang Cao 曹阳
     center: research
     avatar: /spar/img/avatar/ycao.jpg
