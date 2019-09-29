@@ -214,45 +214,11 @@ phd:
     center: leading-edge
     from: 2018
     avatar: /static/img/avatar/zhengzhiwen.jpg
+  - name: Guochang Wang 王国畅
+    center: engineering
+    from: 2019
 
 graduates:
-  - name: Yang Cao 曹阳
-    center: research
-    avatar: /spar/img/avatar/ycao.jpg
-    url: yangcao
-    from: 2016
-    group: spar
-  - name: Yuju Shen 沈宇桔
-    center: research
-    from: 2016
-    url: /~yuju
-    avatar: /spar/img/avatar/yjshen.jpg
-    group: spar
-  - name: Xiaofei Zhang 张晓飞
-    center: research
-    from: 2016
-    url: xiaofeizhang
-  - name: Lun Zhao 赵伦
-    center: research
-    from: 2016
-  - name: Hongjun Ge 葛红军
-    center: engineering
-    from: 2016
-  - name: Jing Deng 邓靖
-    center: engineering
-    from: 2016
-  - name: Jie Chen 陈洁
-    center: engineering
-    from: 2016
-    url: http://jetmuffin.com
-  - name: Xinchen Cai 蔡昕辰
-    center: research
-    from: 2016
-  - name: Dawei Cheng 程大卫
-    center: research
-    from: 2016
-    avatar: /spar/img/avatar/dwcheng.jpg
-    group: spar
   - name: Xiang Hu 胡翔
     center: engineering
     from: 2017
@@ -333,13 +299,13 @@ graduates:
     center: research
     from: 2018
     group: disalg
+  - name: Haogang Wang 汪浩港
+    center: engineering
+    from: 2018
   - name: Dongyu Wang 王东宇
     center: engineering
     from: 2018
   - name: Xiangsen Liao 廖祥森
-    center: engineering
-    from: 2018
-  - name: Minglong Qin 钦明珑
     center: engineering
     from: 2018
   - name: Chengxian He 何城贤
@@ -353,31 +319,75 @@ graduates:
     center: leading-edge
     avatar: /static/img/avatar/wangyuyou.jpg
     from: 2018
+  - name: Daohan Qu 屈道涵
+    center: research
+    from: 2019
+    group: spar
+  - name: Ziqi Chen 陈紫琦
+    center: research
+    from: 2019
+    group: spar
+  - name: Yingzhuo Yang 杨英卓
+    center: research
+    from: 2019
+    group: spar
+  - name: Siyuan Zhu 朱思远
+    center: research
+    from: 2019
+    group: spar
+  - name: Cong Tang 汤聪
+    center: engineering
+    from: 2019
+  - name: Yuanxi Han 韩沅锡
+    center: engineering
+    from: 2019
+  - name: Ruize Tang 唐瑞泽
+    center: research
+    from: 2019
+    group: disalg
+  - name: Kaile Huang 黄开乐
+    center: research
+    from: 2019
+    group: disalg
+  - name: Yijiang Yang 杨一江
+    center: research
+    from: 2019
+    group: disalg
+  - name: Xiaosong Gu 谷晓松
+    center: research
+    from: 2019
+    group: disalg
+  - name: Jiali Yuan 袁佳莉
+    center: research
+    from: 2019
+  - name: Ji Liu 刘冀
+    center: research
+    from: 2019
+  - name: Songlin Hou 候松林
+    center: leading-edge
+    from: 2019
   - name: Wen Wang 王文
     center: leading-edge
     avatar: /static/img/avatar/wangwen.jpg
+    from: 2019
+  - name: Yuzhe Qiao 乔裕哲
+    center: leading-edge
+    avatar: /static/img/avatar/qiaoyuzhe.jpg
+    from: 2019
+  - name: Huiyu Jiang 江会煜
+    center: leading-edge
+    from: 2019
+  - name: Yu Jiang 蒋煜
+    center: leading-edge
+    from: 2019
+  - name: Cheng Zhang 张铖
+    center: leading-edge
     from: 2019
 
 undergraduates:
   - name: Zhao Gang 刚昭
     center: research
     from: 2017
-    group: spar
-  - name: Ziqi Chen 陈紫琦
-    center: research
-    from: 2018
-    group: spar
-  - name: Yingzhuo Yang 杨英卓
-    center: research
-    from: 2018
-    group: spar
-  - name: Siyuan Zhu 朱思远
-    center: research
-    from: 2018
-    group: spar
-  - name: Daohan Qu 屈道涵
-    center: research
-    from: 2018
     group: spar
   - name: Hao Ling 凌浩
     center: research
@@ -391,10 +401,6 @@ undergraduates:
     center: research
     from: 2018
     group: spar
-  - name: Yuzhe Qiao 乔裕哲
-    center: leading-edge
-    avatar: /static/img/avatar/qiaoyuzhe.jpg
-    from: 2018
 
 # Those left or passed away 
 former_faculty:
@@ -404,6 +410,43 @@ former_faculty:
     url: /news/2018/01/jiafu
 
 alumni:
+  - name: Yang Cao 曹阳
+    center: research
+    avatar: /spar/img/avatar/ycao.jpg
+    url: yangcao
+    from: 2016
+    group: spar
+  - name: Yuju Shen 沈宇桔
+    center: research
+    from: 2016
+    url: /~yuju
+    avatar: /spar/img/avatar/yjshen.jpg
+    group: spar
+  - name: Xiaofei Zhang 张晓飞
+    center: research
+    from: 2016
+    url: xiaofeizhang
+  - name: Lun Zhao 赵伦
+    center: research
+    from: 2016
+  - name: Hongjun Ge 葛红军
+    center: engineering
+    from: 2016
+  - name: Jing Deng 邓靖
+    center: engineering
+    from: 2016
+  - name: Jie Chen 陈洁
+    center: engineering
+    from: 2016
+    url: http://jetmuffin.com
+  - name: Xinchen Cai 蔡昕辰
+    center: research
+    from: 2016
+  - name: Dawei Cheng 程大卫
+    center: research
+    from: 2016
+    avatar: /spar/img/avatar/dwcheng.jpg
+    group: spar
   - name: Shuo Cheng 程硕
     url:  shuocheng
     from: 2015
