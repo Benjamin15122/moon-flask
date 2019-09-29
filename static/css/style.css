@@ -598,8 +598,6 @@ a.list-group-item.active > .badge, .nav-pills > .active > a > .badge { backgroun
 /* == END bootstrap pagination == */
 
 /* == custom rows and columns == */
-.row.no-gutter { margin-left: 0; margin-right: 0; }
-.row.no-gutter [class*='col-']:not(:first-child), .row.no-gutter [class*='col-']:not(:last-child) { padding-right: 0; padding-left: 0; }
 .row.no-gutter .row.gutter [class*='col-']:not(:first-child), .row.no-gutter .row.gutter [class*='col-']:not(:last-child) { padding-right: 15px; padding-left: 15px; }
 .row.fullwidth { margin-left: -15px; margin-right: -15px; }
 .col-padded { padding: 30px; background-color: #FFF; overflow: hidden; }
