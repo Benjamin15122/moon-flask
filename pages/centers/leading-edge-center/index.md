@@ -4,7 +4,7 @@ title: 交叉与前沿中心
 
 ---
 
-## 成员
+## 教师
 {{ render_people(center = "leading-edge", category = ["faculty"], large=True) | safe }}
 
 ## 博士研究生
