@@ -95,7 +95,7 @@ We also welcome [undergraduate research interns](http://ics.nju.edu.cn/~jyywiki/
 
 Current: [Wenjie Li 李文杰](/people/wenjieli) (PhD, Android), [Dongjie Chen 陈冬杰](/~dongjie) (PhD, Kernel and concurrency), [Jue Wang 王珏](/people/juewang) (PhD, Android), Chenxi Zhang 张晨曦 (PhD, Android), Xianfei Ou 欧先飞 (PhD, compilers), Daohan Qu 屈道涵 (PhD, runtime systems), [Yi Liu 刘毅](/people/yiliu) (MSc, Android), Shixuan Zhao 赵士轩 (Undergrad, Kernel concurrency), Shaoyuan Chen 陈劭源 (Undergrad, program repair), 刘恩萌 (Undergrad, empirical software engineering), 裴一凡 (Undergrad, regex anlaysis), 何伟 (Undergrad, Android), 张天昀 (Undergrad, software updates)
 
-Past ([Details](students)):
+Past ([Details](students); feel free to ask them for anything you want to know about our research group!):
 
 * 2019: [Yang Cao 曹阳](/people/yangcao) (MSc → ByteDance), [Yuju Shen 沈宇桔](/~yuju) (MSc → NetEase Games), [Zhao Gang 刚昭](https://hirico.moe) (BSc → UCSD MSc), Xiaolin Li 李晓霖 (BSc → ICT-CAS MSc), Mingjie Shen 沈明杰 (BSc → Purdue PhD)
 * 2018: [Zhanshuai Meng 孟占帅](/people/zhanshuaimeng) (MSc → Ant Financial), [Jiarong Wu 吴嘉荣](http://home.cse.ust.hk/~jwubf/) (BSc → HKUST PhD)
