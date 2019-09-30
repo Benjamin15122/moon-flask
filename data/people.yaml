@@ -351,6 +351,7 @@ graduates:
     center: research
     from: 2019
     group: spar
+    avatar: /static/img/avatar/siyuanzhu.jpg
   - name: Cong Tang 汤聪
     center: engineering
     from: 2019
