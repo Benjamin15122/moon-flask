@@ -15,15 +15,9 @@ Welcome to the home page of [SPAR](/spar): System & Program Analysis Research Gr
 * We focus on research of testing and analysis techniques for quality software.
 * SPAR has joint research with the [DSE](/dse) group led by Prof. [Xiaoxing Ma](/people/xiaoxingma/).
 
-Here is the [full list of SPAR publications](pubs). We also have weekly [seminar](seminar/) for paper discussion.
+See also our weekly [seminar](seminar/) on paper discussion.
 
 ---
-
-#### Group News
-
-* Congrats to Yuju's ASE'18 paper "ReScue: Crafting regular expression DoS attacks" and winning the ACM SIGSOFT Distinguished Paper Award 🏅!
-* Congrats to Dongjie's ESEC/FSE'18 paper "Testing multithreaded programs via thread speed control"!
-
 
 #### Mentors
 {{ render_people(category="faculty", group="spar") | safe }}

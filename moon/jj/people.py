@@ -91,17 +91,15 @@ def render_people(cond=None, category=None, large=False, group=None, center=None
         avatar = p.get('avatar', '/static/img/avatar/default.jpg')
         mygroup = [i.strip() for i in p.get('group', '').split(',')]
 
-        name = p['name'].split(' ')
-        name[0], name[1] = name[1], name[0] # put Chinese name in the first place
-        name = name[::-1]
-        if len(name) == 2: (name1, name2) = ('', '')
-        elif large:
-            name1 = ' '.join(name)
+        name_sp = p['name'].split(' ')
+        namechn = name_sp[-1]
+        nameeng = ' '.join(name_sp[:-1])
+        if large:
+            name1 = namechn + ' ' + nameeng
             logo = ''.join([GROUP_LOGO[i] for i in mygroup if i in GROUP_LOGO])
             name2 = logo + p.get('title', str(p.get('from', '??')) + ' ' + u'\u2013')
         else:
-            name1 = ' '.join(name[:-1])
-            name2 = name[-1]
+            name1, name2 = namechn, nameeng
 
         name3 = p.get('role')
 
