@@ -708,6 +708,7 @@ a.list-group-item.active > .badge, .nav-pills > .active > a > .badge { backgroun
 	
 	#mobile-nav-switch { display: block; }
 	#k-menu { display: none; }
+	.col-padded { padding-left: 5px; padding-right: 5px; }
 }
 /* == END media queries == */
 

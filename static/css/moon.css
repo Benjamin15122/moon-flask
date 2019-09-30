@@ -29,6 +29,7 @@
     transition: all 0.25s ease-in-out 0s; 
     border: 1px solid #aaa;
     border-radius: 50%;
+    min-width: 48px;
 }
 
 .people .pblock a img:hover {
@@ -45,7 +46,7 @@
 
 .people .name {
     font-size: 15px;
-    font-weight: 700;
+    font-weight: 500;
     color: #636363;
 }
 
