@@ -156,7 +156,7 @@ I am interested in various topics in software engineering, especially
     * SCORE 2011: [Student Contest on Software Engineering](http://score-contest.org/2011/)
     * [Software engineering education track of ICSE 2010](http://www.sbs.co.za/ICSE2010/3-EVENTS/_TRACKS/ICSE2010_SE-EDUCATION.html)
 * Editorial Board Member 
-	* [Science China Information Science] (https://www.springer.com/journal/11432) Member of Young Scientists Committee, since May 2019. 
+    * [Science China Information Science](https://www.springer.com/journal/11432) Member of Young Scientists Committee, since May 2019. 
     * [Journal of Software](http://www.jos.org.cn) (in Chinese), since Jan. 2011.
 * Guest Editor 
     * [Special Section on Software Systems](http://jcst.ict.ac.cn:8080/jcst/EN/column/item161.shtml), _Journal of Computer Science and Technology_, September 2017.
