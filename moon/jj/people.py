@@ -31,17 +31,15 @@ BLOCK_TEMPLATE_SM = u"""
 
 # People and people block (large)
 PEOPLE_TEMPLATE_LG = u"""
-<div class="col-lg-3 col-md-4 col-sm-6 col-xs-6">
-<div class="pblock">
+<div class="col-lg-3 col-md-4 col-sm-6 col-xs-6 pblock">
 {% if url %} <a href="{{ url }}"> {% endif %}
 <table><tr>
 <td><img class="avatar" src="{{ avatar }}"/></td>
-<td><span class="name">{{ name1 }}</span><br>
+<td class="intro"><span class="name">{{ name1 }}</span><br>
 <span>{{ name2 | safe }}</span><br>
-<span>{{ "" if not name3 else name3 | safe }}</span></td>
+<span class="name3">{{ "" if not name3 else name3 | safe }}</span></td>
 </tr></table>
 {% if url %} </a> {% endif %}
-</div>
 </div>
 """
 
@@ -93,19 +91,17 @@ def render_people(cond=None, category=None, large=False, group=None, center=None
         avatar = p.get('avatar', '/static/img/avatar/default.jpg')
         mygroup = [i.strip() for i in p.get('group', '').split(',')]
 
-        name = p['name'].split(' ')
-        name[0], name[1] = name[1], name[0] # put Chinese name in the first place
-        name = name[::-1]
-        if len(name) == 2: (name1, name2) = ('', '')
-        elif large:
-            name1 = ' '.join(name)
+        name_sp = p['name'].split(' ')
+        namechn = name_sp[-1]
+        nameeng = ' '.join(name_sp[:-1])
+        if large:
+            name1 = namechn + ' ' + nameeng
             logo = ''.join([GROUP_LOGO[i] for i in mygroup if i in GROUP_LOGO])
             name2 = logo + p.get('title', str(p.get('from', '??')) + ' ' + u'\u2013')
         else:
-            name1 = ' '.join(name[:-1])
-            name2 = name[-1]
+            name1, name2 = namechn, nameeng
 
-        name3=p.get("role")
+        name3 = p.get('role')
 
         return flask.render_template_string(
             PEOPLE_TEMPLATE_LG if large else PEOPLE_TEMPLATE_SM,

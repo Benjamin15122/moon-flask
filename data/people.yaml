@@ -1,22 +1,22 @@
 chief_scientist:
   - name: Jian Lü 吕建
     title: Professor
-    #role: President of NJU
+    role: 中科院院士、南京大学校长
     avatar: /static/img/avatar/lujian.jpg
 faculty:
   - name: Xiaoxing Ma 马晓星
     title: Professor
-    #role: Deputy Director
     id: xiaoxingma
     url: /people/xiaoxingma
     center: research, engineering
+    role: 软件所副所长
     duty: 软件所副所长
     avatar: /people/xiaoxingma/static/avatar.jpg
     group: dse, spar
   - name: Chang Xu 许畅
     title: Professor
-    #role: Director of Research
     center: research
+    role: 基础研究中心负责人
     duty: 基础研究中心负责人
     id: changxu
     url: http://cs.nju.edu.cn/changxu
@@ -24,13 +24,14 @@ faculty:
     group: spar, castle
   - name: Chun Cao 曹春
     title: Associate Professor
-    #role: Director of Engineering
     url: https://ccao.cc
+    role: 系统工程中心负责人
     duty: 系统工程中心负责人
     center: engineering
     avatar: /static/img/avatar/caochun.jpg
   - name: Xianping Tao 陶先平
     title: Professor
+    role: 前沿交叉中心负责人
     duty: 前沿交叉中心负责人
     center: leading-edge
     url: xianpingtao
@@ -59,6 +60,11 @@ faculty:
     avatar: /static/img/avatar/yuping.jpg
     center: engineering
     duty: 组织重点实验室演示，研究生论文答辩安排
+  - name: Yue Li 李樾
+    title: Associate Professor
+    url: https://yuelee.bitbucket.io
+    avatar: /static/img/avatar/yueli.jpg
+    group: spar
   - name: Jun Ma 马骏
     id: junma
     title: Assistant Professor
@@ -76,14 +82,15 @@ faculty:
     title: Assistant Researcher
     avatar: /static/img/avatar/yaoyuan.jpg
     url: yuanyao
-    duty: 管理博士生考核文档资料
+    duty: 管理博士生考核文档资料、文化建设
     center: research, engineering
   - name: Hengfeng Wei 魏恒峰
     title: Assistant Researcher
     url:  hengfengwei
-    avatar: /static/img/avatar/weihengfeng.png
+    avatar: /static/img/avatar/weihengfeng.jpg
     group: disalg
     center: research
+    duty: 软件所资产管理
   - name: Jingwei Xu 徐经纬
     title: Assistant Researcher
     duty: 管理软件所门户网站
@@ -102,6 +109,13 @@ faculty:
     avatar: /spar/img/avatar/yqin.jpg
     group: spar
     center: research
+    url: https://yiqinnju.github.io
+    duty: 重点实验室演示规划
+  - name: Tian Tan 谭添
+    title: Assistant Researcher
+    url: https://silverbullettt.bitbucket.io/
+    avatar: /static/img/avatar/tiantan.jpg
+    group: spar
   - name: Jianying Zhang 张建莹
     title: Senior Engineer
     avatar: /static/img/avatar/mrszhang.jpg
@@ -212,45 +226,17 @@ phd:
     center: leading-edge
     from: 2018
     avatar: /static/img/avatar/zhengzhiwen.jpg
+  - name: Guochang Wang 王国畅
+    center: engineering
+    from: 2019
+  - name: Daohan Qu 屈道涵
+    center: research
+    from: 2019
+    group: spar
+    avatar: /static/img/avatar/daohanqu.jpg
+    url: daohanqu
 
 graduates:
-  - name: Yang Cao 曹阳
-    center: research
-    avatar: /spar/img/avatar/ycao.jpg
-    url: yangcao
-    from: 2016
-    group: spar
-  - name: Yuju Shen 沈宇桔
-    center: research
-    from: 2016
-    url: /~yuju
-    avatar: /spar/img/avatar/yjshen.jpg
-    group: spar
-  - name: Xiaofei Zhang 张晓飞
-    center: research
-    from: 2016
-    url: xiaofeizhang
-  - name: Lun Zhao 赵伦
-    center: research
-    from: 2016
-  - name: Hongjun Ge 葛红军
-    center: engineering
-    from: 2016
-  - name: Jing Deng 邓靖
-    center: engineering
-    from: 2016
-  - name: Jie Chen 陈洁
-    center: engineering
-    from: 2016
-    url: http://jetmuffin.com
-  - name: Xinchen Cai 蔡昕辰
-    center: research
-    from: 2016
-  - name: Dawei Cheng 程大卫
-    center: research
-    from: 2016
-    avatar: /spar/img/avatar/dwcheng.jpg
-    group: spar
   - name: Xiang Hu 胡翔
     center: engineering
     from: 2017
@@ -331,13 +317,13 @@ graduates:
     center: research
     from: 2018
     group: disalg
+  - name: Haogang Wang 汪浩港
+    center: engineering
+    from: 2018
   - name: Dongyu Wang 王东宇
     center: engineering
     from: 2018
   - name: Xiangsen Liao 廖祥森
-    center: engineering
-    from: 2018
-  - name: Minglong Qin 钦明珑
     center: engineering
     from: 2018
   - name: Chengxian He 何城贤
@@ -351,32 +337,71 @@ graduates:
     center: leading-edge
     avatar: /static/img/avatar/wangyuyou.jpg
     from: 2018
+  - name: Ziqi Chen 陈紫琦
+    center: research
+    from: 2019
+    group: spar
+    avatar: /static/img/avatar/ziqichen.jpg
+  - name: Yingzhuo Yang 杨英卓
+    center: research
+    from: 2019
+    group: spar
+    avatar: /static/img/avatar/yingzhuoyang.jpg
+  - name: Siyuan Zhu 朱思远
+    center: research
+    from: 2019
+    group: spar
+    avatar: /static/img/avatar/siyuanzhu.jpg
+  - name: Cong Tang 汤聪
+    center: engineering
+    from: 2019
+  - name: Yuanxi Han 韩沅锡
+    center: engineering
+    from: 2019
+  - name: Ruize Tang 唐瑞泽
+    center: research
+    from: 2019
+    group: disalg
+  - name: Kaile Huang 黄开乐
+    center: research
+    from: 2019
+    group: disalg
+  - name: Yijiang Yang 杨一江
+    center: research
+    from: 2019
+    group: disalg
+  - name: Xiaosong Gu 谷晓松
+    center: research
+    from: 2019
+    group: disalg
+  - name: Jiali Yuan 袁佳莉
+    center: research
+    from: 2019
+  - name: Ji Liu 刘冀
+    center: research
+    from: 2019
+  - name: Songlin Hou 候松林
+    center: leading-edge
+    from: 2019
   - name: Wen Wang 王文
     center: leading-edge
     avatar: /static/img/avatar/wangwen.jpg
     from: 2019
+  - name: Yuzhe Qiao 乔裕哲
+    center: leading-edge
+    avatar: /static/img/avatar/qiaoyuzhe.jpg
+    from: 2019
+  - name: Huiyu Jiang 江会煜
+    center: leading-edge
+    from: 2019
+  - name: Yu Jiang 蒋煜
+    center: leading-edge
+    from: 2019
+  - name: Cheng Zhang 张铖
+    center: leading-edge
+    from: 2019
 
 undergraduates:
-  - name: Zhao Gang 刚昭
-    center: research
-    from: 2017
-    group: spar
-  - name: Ziqi Chen 陈紫琦
-    center: research
-    from: 2018
-    group: spar
-  - name: Yingzhuo Yang 杨英卓
-    center: research
-    from: 2018
-    group: spar
-  - name: Siyuan Zhu 朱思远
-    center: research
-    from: 2018
-    group: spar
-  - name: Daohan Qu 屈道涵
-    center: research
-    from: 2018
-    group: spar
   - name: Hao Ling 凌浩
     center: research
     from: 2018
@@ -389,10 +414,22 @@ undergraduates:
     center: research
     from: 2018
     group: spar
-  - name: Yuzhe Qiao 乔裕哲
-    center: leading-edge
-    avatar: /static/img/avatar/qiaoyuzhe.jpg
-    from: 2018
+  - name: Enmeng Liu 刘恩萌
+    center: research
+    from: 2019
+    group: spar
+  - name: Wei He 何伟
+    center: research
+    from: 2019
+    group: spar
+  - name: Yifan Pei 裴一凡
+    center: research
+    from: 2019
+    group: spar
+  - name: Tianyun Zhang 张天昀
+    center: research
+    from: 2019
+    group: spar
 
 # Those left or passed away 
 former_faculty:
@@ -402,6 +439,47 @@ former_faculty:
     url: /news/2018/01/jiafu
 
 alumni:
+  - name: Zhao Gang 刚昭
+    center: research
+    from: 2017
+    group: spar
+  - name: Yang Cao 曹阳
+    center: research
+    avatar: /spar/img/avatar/ycao.jpg
+    url: yangcao
+    from: 2016
+    group: spar
+  - name: Yuju Shen 沈宇桔
+    center: research
+    from: 2016
+    url: /~yuju
+    avatar: /spar/img/avatar/yjshen.jpg
+    group: spar
+  - name: Xiaofei Zhang 张晓飞
+    center: research
+    from: 2016
+    url: xiaofeizhang
+  - name: Lun Zhao 赵伦
+    center: research
+    from: 2016
+  - name: Hongjun Ge 葛红军
+    center: engineering
+    from: 2016
+  - name: Jing Deng 邓靖
+    center: engineering
+    from: 2016
+  - name: Jie Chen 陈洁
+    center: engineering
+    from: 2016
+    url: http://jetmuffin.com
+  - name: Xinchen Cai 蔡昕辰
+    center: research
+    from: 2016
+  - name: Dawei Cheng 程大卫
+    center: research
+    from: 2016
+    avatar: /spar/img/avatar/dwcheng.jpg
+    group: spar
   - name: Shuo Cheng 程硕
     url:  shuocheng
     from: 2015

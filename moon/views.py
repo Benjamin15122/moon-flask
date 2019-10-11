@@ -90,6 +90,10 @@ def page(name = None, path = None):
     template = page.meta.get('template', 'page.html')
     return render_template(template, page = page)
 
+@app.route('/favicon.ico', methods=['GET'])
+def favicon():
+    return redirect('/static/img/favicon.png')
+
 def redirect_url(url):
     if url is None:
         abort(404)

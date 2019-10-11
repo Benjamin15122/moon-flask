@@ -95,8 +95,8 @@ nodes:
     name: Survey
     desc: '[FCS19]'
     path: sta
-  - id: c2v
-    name: C2V
+  - id: cod
+    name: Cod
     desc: '[ASE19]'
     path: sta/compiler
   - id: diet
@@ -122,7 +122,7 @@ edges:
   - aatt -> android-survey
   - gat -> android-survey
   - c3 -> diet
-  - test-survey -> c2v
+  - test-survey -> cod
 clusters:
   - id: sta
     label: 'Software Testing, Analysis, and Synthesis'

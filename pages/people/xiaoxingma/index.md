@@ -126,7 +126,7 @@ I am interested in various topics in software engineering, especially
 ## [Publications](publications)
 **Some recent papers:**
 
-{{ render_bib_file('xiaoxingma.bib', ['2019-FSE-ZLi-Conditioning', '2019-ICSENIER-ZLi-Misleading','2019-ICSE-TGu-APE','2018-SETSS-Ma-SNS','2019-TSE-WSong-InsMigVal', '2018-ECOOP-TGu-AOTES', '2018-FSE-DChen-TMP', '2018-ASE-YShen-ReScue', '2017-TSE-LBaresi-ConUp','2016-ASE-TGu-Ares','2016-TC-YYang-MIPA','2016-FSE-YJiang-Crash','2016-FSE-YJiang-Bisect'], hl='Xiaoxing Ma') }}
+{{ render_bib_file('xiaoxingma.bib', ['li2019operational','2019-FSE-ZLi-Conditioning', '2019-ICSENIER-ZLi-Misleading','2019-ICSE-TGu-APE','2018-SETSS-Ma-SNS','2019-TSE-WSong-InsMigVal', '2018-ECOOP-TGu-AOTES', '2018-FSE-DChen-TMP', '2018-ASE-YShen-ReScue', '2017-TSE-LBaresi-ConUp','2016-ASE-TGu-Ares','2016-TC-YYang-MIPA','2016-FSE-YJiang-Crash','2016-FSE-YJiang-Bisect'], hl='Xiaoxing Ma') }}
 
 **More publications:** [_In English_](publications), [_In Chinese_](http://www.c-dblp.cn/search_result.php?author_name=%E9%A9%AC%E6%99%93%E6%98%9F); or in [DBLP](http://dblp.uni-trier.de/pers/hd/m/Ma:Xiaoxing), [Google Scholar](https://scholar.google.com/citations?user=44WpWR4AAAAJ).
 
@@ -156,6 +156,7 @@ I am interested in various topics in software engineering, especially
     * SCORE 2011: [Student Contest on Software Engineering](http://score-contest.org/2011/)
     * [Software engineering education track of ICSE 2010](http://www.sbs.co.za/ICSE2010/3-EVENTS/_TRACKS/ICSE2010_SE-EDUCATION.html)
 * Editorial Board Member 
+    * [Science China Information Science](https://www.springer.com/journal/11432) Member of Young Scientists Committee, since May 2019. 
     * [Journal of Software](http://www.jos.org.cn) (in Chinese), since Jan. 2011.
 * Guest Editor 
     * [Special Section on Software Systems](http://jcst.ict.ac.cn:8080/jcst/EN/column/item161.shtml), _Journal of Computer Science and Technology_, September 2017.
