@@ -26,3 +26,6 @@ title: 基础研究中心
 
     ![](/static/img/logo-spar-small.png) 小组负责人: [马晓星](/people/xiaoxingma)、[许畅](http://cs.nju.edu.cn/changxu)、[蒋炎岩](/people/yanyanjiang)、[秦逸](https://yiqinnju.github.io).
 
+- [PASCAL: Programming Languages and Static Analysis Group](https://pascal-group.bitbucket.io)
+
+    ![](/static/img/logo-pascal-small.png) 小组负责人: [李樾](https://yuelee.bitbucket.io)、[谭添](https://silverbullettt.bitbucket.io).
