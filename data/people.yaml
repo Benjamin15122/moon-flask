@@ -64,7 +64,8 @@ faculty:
     title: Associate Professor
     url: https://yuelee.bitbucket.io
     avatar: /static/img/avatar/yueli.jpg
-    group: spar
+    group: spar, pascal
+    center: research
   - name: Jun Ma 马骏
     id: junma
     title: Assistant Professor
@@ -115,7 +116,8 @@ faculty:
     title: Assistant Researcher
     url: https://silverbullettt.bitbucket.io/
     avatar: /static/img/avatar/tiantan.jpg
-    group: spar
+    group: spar, pascal
+    center: research
   - name: Jianying Zhang 张建莹
     title: Senior Engineer
     avatar: /static/img/avatar/mrszhang.jpg
