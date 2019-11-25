@@ -69,11 +69,10 @@ title: Jun Ma
 </div>
 
 ## News
-
+*  <img src="static/img/new.jpg" width = "40" height = "40" align=center /> <img src="static/img/ccpc_logo.png" width = "60" height = "40" align=center "/>Congratulations to Hao LING, Hongyang LIU and Yangbo ZHANG for winning the runnerup in the finals of the 5-th Chinese Collegiate Programing Contest.
+*  <img src="static/img/new.jpg" width = "40" height = "40" align=center /> <img src="static/img/ccpc_logo.png" width = "60" height = "40" align=center "/>Congratulations to Shaoyuan CHEN, Dongyang WANG and Chunyang WANG for winning the 4-th place in the finals of the 5-th Chinese Collegiate Programing Contest.
+*  <img src="static/img/new.jpg" width = "40" height = "40" align=center /> <img src="static/img/220px-_ICPC_Foundation_Logo,_wide_profile,_2018_.png" width = "60" height = "40" align=center "/>Congratulations to Hao LING, Hongyang LIU and Yangbo ZHANG for winning the championship in the 44th ACM-ICPC Asia Regional (Nanchang).
 *  <img src="static/img/new.jpg" width = "40" height = "40" align=center /> Congratulations on Cao Yang's FCS paper "Perspectives on Search Strategies in Automated Test Input Generation".
-
-*  <img src="static/img/new.jpg" width = "40" height = "40" align=center /> <img src="static/img/220px-_ICPC_Foundation_Logo,_wide_profile,_2018_.png" width = "60" height = "40" align=center "/>Congratulations to Hao LING, Hongyang LIU and Yangbo ZHANG for winning the 13th place in the 43th ACM-ICPC World Final.
-*  <img src="static/img/new.jpg" width = "40" height = "40" align=center /> <img src="static/img/220px-_ICPC_Foundation_Logo,_wide_profile,_2018_.png" width = "60" height = "40" align=center "/>Congratulations to Hao LING, Hongyang LIU and Yangbo ZHANG for winning the championship in the 43th ACM-ICPC Asia Regional (Qingdao).
 
 
 ## Bio
@@ -82,7 +81,7 @@ title: Jun Ma
 
 * <img src="static/img/nju.jpg" width = "30" height = "30" align=center "/> I am now an assistant professor with Nanjing University.
 
-* <img src="static/img/220px-_ICPC_Foundation_Logo,_wide_profile,_2018_.png" width = "30" height = "30" align=center "/>I became the coach of NJU ICPC-Training Team since 2007.
+* <img src="static/img/220px-_ICPC_Foundation_Logo,_wide_profile,_2018_.png" width = "30" height = "30" align=center "/>The coach of NJU ICPC-Training Team since 2007.
 
 ## Awards
 
