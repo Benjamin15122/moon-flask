@@ -69,10 +69,10 @@ title: Jun Ma
 </div>
 
 ## News
-*  <img src="static/img/new.jpg" width = "40" height = "40" align=center /> <img src="static/img/ccpc_logo.png" width = "60" height = "40" align=center "/>Congratulations to Hao LING, Hongyang LIU and Yangbo ZHANG for winning the runnerup in the finals of the 5-th Chinese Collegiate Programing Contest.
-*  <img src="static/img/new.jpg" width = "40" height = "40" align=center /> <img src="static/img/ccpc_logo.png" width = "60" height = "40" align=center "/>Congratulations to Shaoyuan CHEN, Dongyang WANG and Chunyang WANG for winning the 4-th place in the finals of the 5-th Chinese Collegiate Programing Contest.
-*  <img src="static/img/new.jpg" width = "40" height = "40" align=center /> <img src="static/img/220px-_ICPC_Foundation_Logo,_wide_profile,_2018_.png" width = "60" height = "40" align=center "/>Congratulations to Hao LING, Hongyang LIU and Yangbo ZHANG for winning the championship in the 44th ACM-ICPC Asia Regional (Nanchang).
-*  <img src="static/img/new.jpg" width = "40" height = "40" align=center /> Congratulations on Cao Yang's FCS paper "Perspectives on Search Strategies in Automated Test Input Generation".
+*  <img src="static/img/new.jpg" width = "30" height = "30" align=center /> <img src="static/img/ccpc_logo.png" width = "30" height = "20" align=center "/>Congratulations to Hao LING, Hongyang LIU and Yangbo ZHANG for winning the runnerup in the finals of the 5-th Chinese Collegiate Programing Contest.
+*  <img src="static/img/new.jpg" width = "30" height = "30" align=center /> <img src="static/img/ccpc_logo.png" width = "30" height = "20" align=center "/>Congratulations to Shaoyuan CHEN, Dongyang WANG and Chunyang WANG for winning the 4-th place in the finals of the 5-th Chinese Collegiate Programing Contest.
+*  <img src="static/img/new.jpg" width = "30" height = "30" align=center /> <img src="static/img/220px-_ICPC_Foundation_Logo,_wide_profile,_2018_.png" width = "30" height = "20" align=center "/>Congratulations to Hao LING, Hongyang LIU and Yangbo ZHANG for winning the championship in the 44th ACM-ICPC Asia Regional (Nanchang).
+*  <img src="static/img/new.jpg" width = "30" height = "30" align=center /> Congratulations on Cao Yang's FCS paper "Perspectives on Search Strategies in Automated Test Input Generation".
 
 
 ## Bio
