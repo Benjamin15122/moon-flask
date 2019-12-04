@@ -16,10 +16,10 @@ title: Jun Ma
             </div><!-- nesting row end -->
             <div class="row gutter k-equal-height"><!-- nesting row -->
                 <div class="col-lg-4 col-md-4 col-sm-12">
-                    博士，讲师
+                    博士，副教授
                 </div>
                 <div class="col-lg-8 col-md-8 col-sm-12">
-                    Ph.D., Assistant Professor
+                    Ph.D., Associate Professor
                 </div>
             </div><!-- nesting row end -->
             <div class="row gutter k-equal-height"><!-- nesting row -->
@@ -79,7 +79,7 @@ title: Jun Ma
 
 * <img src="static/img/nju.jpg" width = "30" height = "30" align=center "/> I obtained my Ph.D. degree in computer science and technology from Nanjing University (NJU) in 2015 (Ph.D. advisor: Prof. Xianping TAO), and Bachelor degree in computer science and technology from Nanjing University in 2003.
 
-* <img src="static/img/nju.jpg" width = "30" height = "30" align=center "/> I am now an assistant professor with Nanjing University.
+* <img src="static/img/nju.jpg" width = "30" height = "30" align=center "/> I am now an associate professor with Nanjing University.
 
 * <img src="static/img/220px-_ICPC_Foundation_Logo,_wide_profile,_2018_.png" width = "30" height = "30" align=center "/>The coach of NJU ICPC-Training Team since 2007.
 
