@@ -16,10 +16,10 @@ title: Jun Ma
             </div><!-- nesting row end -->
             <div class="row gutter k-equal-height"><!-- nesting row -->
                 <div class="col-lg-4 col-md-4 col-sm-12">
-                    博士，副教授
+                    博士，讲师
                 </div>
                 <div class="col-lg-8 col-md-8 col-sm-12">
-                    Ph.D., Associate Professor
+                    Ph.D., Assistant Professor
                 </div>
             </div><!-- nesting row end -->
             <div class="row gutter k-equal-height"><!-- nesting row -->
@@ -69,17 +69,17 @@ title: Jun Ma
 </div>
 
 ## News
-*  <img src="static/img/new.jpg" width = "30" height = "30" align=center /> <img src="static/img/ccpc_logo.png" width = "30" height = "20" align=center "/>Congratulations to Hao LING, Hongyang LIU and Yangbo ZHANG for winning the runnerup in the finals of the 5-th Chinese Collegiate Programing Contest.
-*  <img src="static/img/new.jpg" width = "30" height = "30" align=center /> <img src="static/img/ccpc_logo.png" width = "30" height = "20" align=center "/>Congratulations to Shaoyuan CHEN, Dongyang WANG and Chunyang WANG for winning the 4-th place in the finals of the 5-th Chinese Collegiate Programing Contest.
-*  <img src="static/img/new.jpg" width = "30" height = "30" align=center /> <img src="static/img/220px-_ICPC_Foundation_Logo,_wide_profile,_2018_.png" width = "30" height = "20" align=center "/>Congratulations to Hao LING, Hongyang LIU and Yangbo ZHANG for winning the championship in the 44th ACM-ICPC Asia Regional (Nanchang).
-*  <img src="static/img/new.jpg" width = "30" height = "30" align=center /> Congratulations on Cao Yang's FCS paper "Perspectives on Search Strategies in Automated Test Input Generation".
+*  <img src="static/img/new.jpg" width = "40" height = "40" align=center /> <img src="static/img/ccpc_logo.png" width = "60" height = "40" align=center "/>Congratulations to Hao LING, Hongyang LIU and Yangbo ZHANG for winning the runnerup in the finals of the 5-th Chinese Collegiate Programing Contest.
+*  <img src="static/img/new.jpg" width = "40" height = "40" align=center /> <img src="static/img/ccpc_logo.png" width = "60" height = "40" align=center "/>Congratulations to Shaoyuan CHEN, Dongyang WANG and Chunyang WANG for winning the 4-th place in the finals of the 5-th Chinese Collegiate Programing Contest.
+*  <img src="static/img/new.jpg" width = "40" height = "40" align=center /> <img src="static/img/220px-_ICPC_Foundation_Logo,_wide_profile,_2018_.png" width = "60" height = "40" align=center "/>Congratulations to Hao LING, Hongyang LIU and Yangbo ZHANG for winning the championship in the 44th ACM-ICPC Asia Regional (Nanchang).
+*  <img src="static/img/new.jpg" width = "40" height = "40" align=center /> Congratulations on Cao Yang's FCS paper "Perspectives on Search Strategies in Automated Test Input Generation".
 
 
 ## Bio
 
 * <img src="static/img/nju.jpg" width = "30" height = "30" align=center "/> I obtained my Ph.D. degree in computer science and technology from Nanjing University (NJU) in 2015 (Ph.D. advisor: Prof. Xianping TAO), and Bachelor degree in computer science and technology from Nanjing University in 2003.
 
-* <img src="static/img/nju.jpg" width = "30" height = "30" align=center "/> I am now an associate professor with Nanjing University.
+* <img src="static/img/nju.jpg" width = "30" height = "30" align=center "/> I am now an assistant professor with Nanjing University.
 
 * <img src="static/img/220px-_ICPC_Foundation_Logo,_wide_profile,_2018_.png" width = "30" height = "30" align=center "/>The coach of NJU ICPC-Training Team since 2007.
 
