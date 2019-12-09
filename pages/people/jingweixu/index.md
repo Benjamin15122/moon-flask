@@ -13,12 +13,42 @@ title: Jingwei Xu
 * Data mining: Recommender Systems 
 
 ## News
+* Congratulations on Huiyan Wang's ICSE'20 paper "DISSECTOR: Input Validation for Deep Learning Applications by Crossing-layer Dissection"!
+* Congratulations on Yuehuan Wang's Internetware'19 paper "Fast Robustness Prediction for Deep Neural Network"!
 * Congratulations on Zenan Li's ESEC/FSE'19 paper "Boosting Operational DNN Testing Efficiency through Conditioning"!
 
 
 ## Publications
 
 ~~~{.bibtexhtml hl_lines="Jingwei Xu"}
+
+@article{wang_dissector_2019,
+  author    = {Huiyan Wang and Jingwei Xu and Chang Xu and Xiaoxing Ma and and Jian Lu},
+  title     = {DISSECTOR: Input Validation for Deep Learning Applications by Crossing-layer Dissection},
+  booktitle = {Proceedings of the 42nd ACM/IEEE International Conference on Software Engineering (ICSE)},
+  year      = {2019},
+  pages     = {to appear},
+}
+
+@inproceedings{Wang:2019:FRP:3361242.3361243,
+ author = {Wang, Yuehuan and Li, Zenan and Xu, Jingwei and Yu, Ping and Ma, Xiaoxing},
+ title = {Fast Robustness Prediction for Deep Neural Network},
+ booktitle = {Proceedings of the 11th Asia-Pacific Symposium on Internetware},
+ series = {Internetware '19},
+ year = {2019},
+ isbn = {978-1-4503-7701-0},
+ location = {Fukuoka, Japan},
+ pages = {11:1--11:10},
+ articleno = {11},
+ numpages = {10},
+ url = {http://doi.acm.org/10.1145/3361242.3361243},
+ doi = {10.1145/3361242.3361243},
+ acmid = {3361243},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+ keywords = {Deep Neural Networks, Prediction, Robustness},
+} Best Paper Award
+
 @inproceedings{2019-FSE-ZLi-Conditioning,
 	Author = {Zenan Li and Xiaoxing Ma and Chang Xu and Chun Cao and Jingwei Xu and Jian Lu},
 	Booktitle = {Proceedings of The 27th ACM Joint European Software Engineering Conference and Symposium on the Foundations of Software Engineering (ESEC/FSE 80 2019)},
@@ -29,6 +59,7 @@ title: Jingwei Xu
 	Pdf = {/people/xiaoxingma/pubs/2019-FSE-ZLi-Conditioning.pdf},
 	Title = {Boosting Operational DNN Testing Efficiency through Conditioning},
 	Year = {2019}}
+
 @inproceedings{Xu:2017:HHO:3097983.3098019,
  author = {Jingwei Xu and Yuan Yao and Hanghang Tong and Xianping Tao and Jian Lu},
  title = {HoORaYs: High-order Optimization of Rating Distance for Recommender Systems},
@@ -105,11 +136,16 @@ title: Jingwei Xu
 I'm co-supervising students with Prof. Chang Xu, Prof. Xiaoxing Ma, and Prof. Chun Cao.
 
 * Huiyan Wang [王慧妍](../huiyanwang/index) (PhD, with Prof. Chang Xu, Quality assurance for intelligent software)
-* Zenan Li 李泽南 (MSc, with Prof. Xiaoxing Ma, Machine Learning & Deep Learning)
+* Zenan Li 李泽南 (PhD, with Prof. Xiaoxing Ma, Machine Learning & Deep Learning)
+* Guochang Wang 王国畅 (PhD, with Prof. Chun Cao, Version Control for Deep Learning Projects)
 * Qingping Li 李青坪 (MSc, with Prof. Chun Cao, Task scheduling for deep learning task)
 * Yuehuan Wang 王月欢 (MSc, with Prof Xiaoxing Ma, Testing deep learning programs)
-* Siyuan Zhu 朱思远 (MSc, with Prof. Chang Xu, coming soon!)
-* Cheng Zhang 张铖 (MSc, coming soon!)
+* Zihan Zeng 曾子涵 (BSc, Comming soon!)
+* Maorun Zhang 张茂润  (BSc, Comming soon!)
+* Sen Wang 王森 (BSc, Comming soon!)
+
+
+
 
 ## Teaching
 * 2019 (Spring) Introduction to Algorithm Design and Analysis
@@ -119,7 +155,7 @@ I'm co-supervising students with Prof. Chang Xu, Prof. Xiaoxing Ma, and Prof. Ch
 * KDD2017 Student Travel Awards
 
 ## Services
-* PC Member for: ASONAM 2016-2018, CIKM 2017 (Short papers), AAAI 2018, PAKDD 2018
+* PC Member for: WWW 2019, ASONAM 2016-2019, CIKM 2017 (Short papers), AAAI 2018, PAKDD 2018, 2019
 
 ## Projects
 
