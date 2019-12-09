@@ -117,7 +117,7 @@ Past ([Details](students); feel free to ask them for anything you want to know a
 
 <hr>
 
-Last Update: August 6, 2019
+Last Update: December 9, 2019
 
 ~~~{.customjs}
 $('ul').css('margin-left', '-15px');

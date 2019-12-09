@@ -2,6 +2,11 @@ title: Publications
 
 ## Yanyan Jiang's Publications
 
+## 2020
+
+* {{ render_bib_entry(g.site.spar_paper.chen_testing_2020, hl='Yanyan Jiang') }}
+* {{ render_bib_entry(g.site.spar_paper.wang_combodroid_2020, hl='Yanyan Jiang') }}
+
 ## 2019
 
 * {{ render_bib_entry(g.site.spar_paper.jiang_highs_2019, hl='Yanyan Jiang') }} <small>[![](img/zhihu.png) “读博那些事儿”](https://zhuanlan.zhihu.com/p/82579410)</small>
