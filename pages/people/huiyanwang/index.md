@@ -20,6 +20,10 @@ My research interests include software engineering and software methodology. And
 
 ## Selected Publications
 
+* {{ render_bib_entry(g.site.spar_paper.wang_dissector_2019, hl='Huiyan Wang') }}
+* {{ render_bib_entry(g.site.spar_paper.li_sguard_2019, hl='Huiyan Wang') }}
+* {{ render_bib_entry(g.site.spar_paper.chen_vision_2019, hl='Huiyan Wang') }}
+* {{ render_bib_entry(g.site.spar_paper.li_warder_2019, hl='Huiyan Wang') }}
 * {{ render_bib_entry(g.site.spar_paper.wang_geas_2019, hl='Huiyan Wang') }}
 * {{ render_bib_entry(g.site.spar_paper.qin_syneva_2018, hl='Huiyan Wang') }}
 * {{ render_bib_entry(g.site.spar_paper.guo_GEASori_2017, hl='Huiyan Wang') }}
