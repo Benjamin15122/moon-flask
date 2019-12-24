@@ -21,44 +21,54 @@ I'm a coder striving to make programs (and programmer's world) better. I'm inter
 <ul>
   <li>**Software Testing and Analysis**</li>
   <ul>
-    <li>System Software:
-    *Compiler Toolchain* (Cod [[ASE19](pubs/c2v)]
-    );
-    *Concurrent Programs* (SCS [[ESEC/FSE18](pubs/scs)],
+    <li>
+    System Software:
+    *Storage Systems* (Dogfood [[ICSE20](pubs/dogfood)],
+      C3 [[FSE16](pubs/c3)]),
+    *Compiler Toolchain* (Cod [[ASE19](pubs/c2v)]),
+    *Concurrent/Parallel/Distributed Systems* (SCS [[ESEC/FSE18](pubs/scs)],
       My [PhD Thesis](pubs/thesis),
       Survey [[JoS17](pubs/survey)],
       BC [[FSE16](pubs/bc)],
       RWTrace [[ASE15](pubs/rwtrace)],
-      CARE [[ICSE14](pubs/care)]
-    );
-    *Cloud Systems* (eBugs [[ASE19](pubs/diet)]
-    );
+      CARE [[ICSE14](pubs/care)],
+      eBugs [[ASE19](pubs/diet)]);
     </li>
-    <li>Mobile Apps:
-    *Platform*
-    (ATT [[Internetware15](pubs/att)],
-    CoseDroid [[COMPSAC15](pubs/cosedroid)]);
-    *Event Generation*
-    (Survey [[SCIS19]](pubs/android-survey), AATT [[SCP18](pubs/aattplus), [APSEC16](pubs/aatt)],
-    GAT [[APSEC16](pubs/gat)]);
-    *Human Insights*
-    (UGA [[APSEC14](pubs/uga)]);
-    *Analysis*
-    (LESDroid [[ICPC18](pubs/lesdroid)],
-    RepDroid [[ICPC17](pubs/repdroid)]);
-    *Performance*
-    (TAPIR [[SANER19]](pubs/tapir));</li>
-    <li>General Testing and Analysis:
-    Survey [[FCS20](pubs/test-survey)]; 
-    *Crash Consistency* (C3 [[FSE16](pubs/c3)]); *Fault Localization* (Comedy [[COMPSAC15](pubs/comedy)]); *Regular Expressions* (ReScue [[ASE18](pubs/rescue)] 🏅);</li>
+    <li>
+    Mobile Apps:
+    *Platform* (ATT [[Internetware15](pubs/att)],
+      CoseDroid [[COMPSAC15](pubs/cosedroid)]);
+    *Event Generation* (ComboDroid [[ICSE20](pubs/combodroid)],
+      Survey [[SCIS19](pubs/android-survey)],
+      AATT [[SCP18](pubs/aattplus),
+      [APSEC16](pubs/aatt)],
+      GAT [[APSEC16](pubs/gat)]),
+    *Human Insights* (UGA [[APSEC14](pubs/uga)]),
+    *Analysis* (LESDroid [[ICPC18](pubs/lesdroid)],
+      RepDroid [[ICPC17](pubs/repdroid)]),
+    *Performance* (TAPIR [[SANER19]](pubs/tapir));
+    </li>
+    <li>
+    General Testing and Analysis:
+    Survey [[FCS20](pubs/test-survey)],
+    *Fault Localization* (Comedy [[COMPSAC15](pubs/comedy)]);
+    </li>
   </ul>
   <li>**Program Synthesis**</li>
   <ul>
-    <li>*Transformers* (AOTES [[ECOOP18](pubs/aotes1), [ICSE17 Poster](pubs/aotes)], ENTER [[ICSE18 Poster](pubs/enter)]);</li>
+    <li>
+    *Transformers* (AOTES [[ECOOP18](pubs/aotes1),
+      [ICSE17 Poster](pubs/aotes)],
+      ENTER [[ICSE18 Poster](pubs/enter)]),
+    *Domain-Specific Language* (ReScue [[ASE18](pubs/rescue)] 🏅);
+    </li>
   </ul>
   <li>**Programming Tricks for Fun and Profits**</li>
   <ul>
-    <li>*Software Building* (ABC [[APSEC15](pubs/abc)]); *Runtime Verification* (GAIN [[IST16](pubs/gain1), [APSEC14](pubs/gain)]);</li>
+    <li>
+    *Software Building* (ABC [[APSEC15](pubs/abc)]),
+    *Runtime Verification* (GAIN [[IST16](pubs/gain1),
+      [APSEC14](pubs/gain)]);</li>
   </ul>
 </ul>
 </div>
@@ -117,7 +127,7 @@ Past ([Details](students); feel free to ask them for anything you want to know a
 
 <hr>
 
-Last Update: December 9, 2019
+Last Update: December 24, 2019
 
 ~~~{.customjs}
 $('ul').css('margin-left', '-15px');

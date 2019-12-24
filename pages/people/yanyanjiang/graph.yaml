@@ -2,11 +2,11 @@ nodes:
   - id: rescue
     name: ReScue
     desc: '[ASE18]'
-    path: sta/adverse
+    path: sta/synthesis/dsl
   - id: scs
     name: SCS
     desc: '[FSE18]'
-    path: sta/concurrency
+    path: sta/system/concurrent
   - id: aotes
     name: AOTES
     desc: '[ICSE17 Poster]<br></br>[ECOOP18]'
@@ -19,14 +19,14 @@ nodes:
     name: PhD Thesis
     desc: 'Yanyan Jiang<br></br>Nanjing University'
     path: sta/smd
-  - id: survey
+  - id: con-survey
     name: Survey
     desc: '[JoS17]'
     path: sta/smd
   - id: aatt
     name: AATT
     desc: '[APSEC16]<br></br>[SCP18]'
-    path: sta/concurrency
+    path: sta/mobile
   - id: repdroid
     name: RepDroid
     desc: '[ICPC17]'
@@ -34,7 +34,7 @@ nodes:
   - id: c3
     name: C3
     desc: '[FSE16]'
-    path: sta/adverse
+    path: sta/os
   - id: bc
     name: Bisect Coord
     desc: '[FSE16]'
@@ -98,42 +98,51 @@ nodes:
   - id: cod
     name: Cod
     desc: '[ASE19]'
-    path: sta/compiler
+    path: sta/system/compiler
   - id: diet
     name: DIET
     desc: '[ASE19]'
-    path: sta/system
+    path: sta/system/concurrent
+  - id: dogfood
+    name: Dogfood
+    desc: '[ICSE20]'
+    path: sta/system/os
+  - id: combodroid
+    name: ComboDroid
+    desc: '[ICSE20]'
+    path: sta/mobile
 edges:
   - att -> gat
   - att -> aatt
   - care -> rwtrace
   - rwtrace -> bc
-  - care -> survey
-  - rwtrace -> survey
-  - bc -> survey
+  - care -> con-survey
+  - rwtrace -> con-survey
+  - bc -> con-survey
   - repdroid -> lesdroid
-  - survey -> thesis
+  - con-survey -> thesis
   - uga -> att
   - needle -> repdroid
   - thesis -> scs
   - cosedroid -> att
   - aatt -> thesis
-  - c3 -> thesis
   - aatt -> android-survey
   - gat -> android-survey
   - c3 -> diet
-  - test-survey -> cod
+  - android-survey -> combodroid
+  - uga -> combodroid
+  - scs -> dogfood
+  - c3 -> dogfood
+  - repdroid -> combodroid
 clusters:
   - id: sta
     label: 'Software Testing, Analysis, and Synthesis'
   - id: smd
     label: 'Understanding Shared Memory Dependences'
-  - id: concurrency
-    label: 'Exploration of Interleaving Spaces' 
   - id: mobile
     label: 'Mobile Apps'
-  - id: adverse
-    label: 'Adversarial Conditions'
+  - id: dsl
+    label: 'Domain-Specific Language'
   - id: analysis
     label: 'Software Analysis'
   - id: synthesis
@@ -142,8 +151,11 @@ clusters:
     label: 'Transformers'
   - id: tech
     label: 'Fun and Profits'
-  - id: compiler
-    label: 'Compiler Toolchain'
   - id: system
     label: 'System Software'
-
+  - id: concurrent
+    label: 'Parallel/Distributed Systems'
+  - id: os
+    label: 'Operating Systems'
+  - id: compiler
+    label: 'Compiler Toolchain'
