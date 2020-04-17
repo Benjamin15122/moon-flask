@@ -23,12 +23,15 @@ I'm a coder striving to make programs (and programmer's world) better. I'm inter
   <ul>
     <li>
     System Software:
-    *Storage Systems* (Dogfood [[ICSE20](pubs/dogfood)],
-      C3 [[FSE16](pubs/c3)]),
-    *Compiler Toolchain* (Cod [[ASE19](pubs/c2v)]),
-    *Concurrent/Parallel/Distributed Systems* (SCS [[ESEC/FSE18](pubs/scs)],
-      My [PhD Thesis](pubs/thesis),
-      Survey [[JoS17](pubs/survey)],
+    *Storage Systems*
+      (Dogfood [[ICSE20](pubs/dogfood)],
+      C<sup>3</sup> [[FSE16](pubs/c3)]),
+    *Compiler Toolchain*
+      (C<sup>2</sup>V [[ASE19](pubs/c2v)]),
+    *Concurrent/Parallel/Distributed Systems*
+      (Survey [[FCS20](pubs/contest-survey), [JoS17](pubs/survey)],
+      SCS [[ESEC/FSE18](pubs/scs)],
+      My [PhD Thesis](pubs/thesis) 🏅,
       BC [[FSE16](pubs/bc)],
       RWTrace [[ASE15](pubs/rwtrace)],
       CARE [[ICSE14](pubs/care)],
@@ -86,10 +89,10 @@ I'm a coder striving to make programs (and programmer's world) better. I'm inter
 ## Teaching: [Yanyan's Wiki](/~jyywiki)
 
 * <img class="pull-right" style="margin-left:15px" width="200px" src="img/projectn.jpg"/>
-[Introduction to Computer Systems (Fall 2019)](/~jyywiki/wiki/ICS2019),
-[Introduction to Software Engineering Research (Fall 2019)](/~jyywiki/wiki/GSER2019), and
-[Operating Systems (Spring 2019)](/~jyywiki/wiki/OS2019).
-(Only available on NJU campus-local network.)
+[Operating Systems (Spring 2020)](/~jyywiki/wiki/OS2020);
+[Introduction to Computer Systems (Fall 2019)](/~jyywiki/wiki/ICS2019) and
+[Introduction to Software Engineering Research (Fall 2019)](/~jyywiki/wiki/GSER2019). (NJU campus-access only.)
+    * An [article ![](img/zhihu.png)](https://zhuanlan.zhihu.com/p/130318023) about our operating system course.
 * I'm a co-founder (with [Zihao Yu 余子濠](https://sashimi-yzh.github.io)) of *Project-N* ![](img/logo-n.png) in which undergraduate students build a complete computer system (NPC SoC, NEMU system emulator, Nanos operating system, NCC compiler, and applications) from scratch. 
     * Papers: *Plagiarism Detection* (Needle [![](img/zhihu.png)](http://zhuanlan.zhihu.com/p/40568346) [[SIGCSE-China18](pubs/needle)]).
     * We won the *first prize* in 2018 Loongson Cup contest.
@@ -103,7 +106,25 @@ I'm a coder striving to make programs (and programmer's world) better. I'm inter
 <img class="pull-left" width="125px" style="margin-right: 15px" src="img/yuju-cake.jpg"/>I'm co-supervising graduate students with Prof. [Chang Xu](http://cs.nju.edu.cn/changxu) and Prof. [Xiaoxing Ma](/~xxm).
 We also welcome [undergraduate research interns](http://ics.nju.edu.cn/~jyywiki/wiki/ICS_NJU).
 
-Current: [Wenjie Li 李文杰](/people/wenjieli) (PhD, Android), [Dongjie Chen 陈冬杰](/~dongjie) (PhD, Kernel and concurrency), [Jue Wang 王珏](/people/juewang) (PhD, Android), [Da Li 李达](/people/dali) (PhD, program repair), Xianfei Ou 欧先飞 (PhD, compilers), Cong Li 李聪 (PhD, Android), Daohan Qu 屈道涵 (PhD, runtime systems), Shixuan Zhao 赵士轩 (Undergrad, Kernel concurrency), Shaoyuan Chen 陈劭源 (Undergrad, program repair), 刘恩萌 (Undergrad, empirical software engineering), 裴一凡 (Undergrad, regex anlaysis), 何伟 (Undergrad, Android), 张天昀 (Undergrad, software updates)
+Current:
+[Wenjie Li 李文杰](/people/wenjieli) (PhD, Android),
+[Dongjie Chen 陈冬杰](/~dongjie) (PhD, Kernel and concurrency),
+[Jue Wang 王珏](/people/juewang) (PhD, Android),
+[Da Li 李达](/people/dali) (PhD, program repair),
+Xianfei Ou 欧先飞 (PhD, compilers),
+Cong Li 李聪 (PhD, Android),
+Daohan Qu 屈道涵 (PhD, runtime systems), 
+Qinlin Chen 陈钦霖 (MSc, testing), 
+Yicheng Huang 黄奕诚 (MSc, spreadsheet),
+Yiding Li 李一丁 (MSc, compilers),
+Xinyi Mao 毛心怡 (MSc, regex analysis),
+Shixuan Zhao 赵士轩 (Undergrad, Kernel concurrency),
+Shaoyuan Chen 陈劭源 (Undergrad, program repair),
+Enmeng Liu 刘恩萌 (Undergrad, empirical software engineering),
+Yifan Pei 裴一凡 (Undergrad, regex anlaysis),
+Wei He 何伟 (Undergrad, Android),
+Tianyun Zhang 张天昀 (Undergrad, software updates),
+Hantong Liu 刘晗桐 (Undergrad, software analysis).
 
 Past ([Details](students); feel free to ask them for anything you want to know about our research group!):
 
@@ -112,7 +133,7 @@ Past ([Details](students); feel free to ask them for anything you want to know a
 
 ## Services
 
-* PC Member: [ISSTA2019 AEC](https://conf.researchr.org/track/issta-2019/issta-2019-papers), [SATE2019](https://sate2019.github.io), [SATE2018](http://sei.pku.edu.cn/~xiongyf04/confs/sate18/index_en.html); External Reviewer: TSE, TPDS, SCP, Internetware.
+* PC Members: [ASE'20 Tool-Demos](), [Internetware'20](https://internetware2020.github.io/), [ISSTA'19 Artifacts](https://conf.researchr.org/track/issta-2019/issta-2019-papers), [SATE'19](https://sate2019.github.io), [SATE'18](http://sei.pku.edu.cn/~xiongyf04/confs/sate18/index_en.html); External Reviewer: TSE, TPDS, SCP.
 * ![](img/noi.png) Steering/Scientific Program Committee member of Jiangsu Olympiad in Informatics.
 * ![](img/acmicpc.png) Coach of the programming contest training team at Nanjing University.
 
@@ -127,7 +148,7 @@ Past ([Details](students); feel free to ask them for anything you want to know a
 
 <hr>
 
-Last Update: December 24, 2019
+Last Update: April 17, 2019
 
 ~~~{.customjs}
 $('ul').css('margin-left', '-15px');
