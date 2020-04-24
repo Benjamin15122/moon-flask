@@ -8,6 +8,7 @@ title: Publications
 * {{ render_bib_entry(g.site.spar_paper.wang_combodroid_2020, hl='Yanyan Jiang') }} <small>[![](img/zhihu.png) “单招不好使，连招才管用：为 Android 应用生成高质量测试输入”](https://zhuanlan.zhihu.com/p/129732494)</small>
 * {{ render_bib_entry(g.site.spar_paper.chen_interleaving_2020, hl='Yanyan Jiang') }}
 * {{ render_bib_entry(g.site.spar_paper.cao_perspectives_2019, hl='Yanyan Jiang') }}
+* {{ render_bib_entry(g.site.spar_paper.huang_warder_2020, hl='Yanyan Jiang') }}
 
 ## 2019
 
