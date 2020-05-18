@@ -14,7 +14,7 @@ title: 招生
 	
 - 申请步骤：
 
-	+ Step-1: <font color=red size=4>免试研究生</font>请在线填写[NJU软件研究所免试研究生基本信息收集表](https://wj.qq.com/s2/5761052/e658/)
+	+ Step-1: <font color=red size=4>免试研究生</font>请在线填写[NJU软件研究所免试研究生基本信息收集表](https://wj.qq.com/s2/6323748/c214/)
 	
 	+ Step-2: 通过邮件发送申请材料
 
