@@ -4,7 +4,7 @@ title: Yanyan Jiang
 
 <div class="row gutter" markdown="1">
 <div class="col-lg-3 col-md-3 col-sm-4 col-xs-5">
-  <center>![](img/yanyan-portrait.jpg)</center>
+  <center>![](img/frog-head.jpg){width=300px}</center>
 </div>
 Assistant Researcher,<br>[SPAR ![](/static/img/logo-spar-small.png)](/spar/) - [CASTLE ![](/static/img/logo-castle-small.png)](http://sccpu2.cse.ust.hk/castle/index.html) Joint Group<br>Dept. of Computer Science and Technology, Nanjing University
 
@@ -92,7 +92,7 @@ I'm a coder striving to make programs (and programmer's world) better. I'm inter
 [Operating Systems (Spring 2020)](/~jyywiki/wiki/OS2020);
 [Introduction to Computer Systems (Fall 2019)](/~jyywiki/wiki/ICS2019) and
 [Introduction to Software Engineering Research (Fall 2019)](/~jyywiki/wiki/GSER2019). (NJU campus-access only.)
-    * An [article ![](img/zhihu.png)](https://zhuanlan.zhihu.com/p/130318023) about our operating system course.
+    * An [article ![](img/zhihu.png)](https://zhuanlan.zhihu.com/p/130318023) about our operating system course ([BV1N741177F5](https://www.bilibili.com/video/BV1N741177F5)).
 * I'm a co-founder (with [Zihao Yu 余子濠](https://sashimi-yzh.github.io)) of *Project-N* ![](img/logo-n.png) in which undergraduate students build a complete computer system (NPC SoC, NEMU system emulator, Nanos operating system, NCC compiler, and applications) from scratch. 
     * Papers: *Plagiarism Detection* (Needle [![](img/zhihu.png)](http://zhuanlan.zhihu.com/p/40568346) [[SIGCSE-China18](pubs/needle)]).
     * We won the *first prize* in 2018 Loongson Cup contest.
@@ -118,8 +118,6 @@ Qinlin Chen 陈钦霖 (MSc, testing),
 Yicheng Huang 黄奕诚 (MSc, spreadsheet),
 Yiding Li 李一丁 (MSc, compilers),
 Xinyi Mao 毛心怡 (MSc, regex analysis),
-Shixuan Zhao 赵士轩 (Undergrad, Kernel concurrency),
-Shaoyuan Chen 陈劭源 (Undergrad, program repair),
 Enmeng Liu 刘恩萌 (Undergrad, empirical software engineering),
 Yifan Pei 裴一凡 (Undergrad, regex anlaysis),
 Wei He 何伟 (Undergrad, Android),
@@ -128,12 +126,21 @@ Hantong Liu 刘晗桐 (Undergrad, software analysis).
 
 Past ([Details](students); feel free to ask them for anything you want to know about our research group!):
 
-* 2019: [Yang Cao 曹阳](/people/yangcao) (MSc → ByteDance), [Yuju Shen 沈宇桔](/~yuju) (MSc → NetEase Games), [Zhao Gang 刚昭](https://hirico.moe) (BSc → UCSD MSc), Xiaolin Li 李晓霖 (BSc → ICT-CAS MSc), Mingjie Shen 沈明杰 (BSc → Purdue PhD)
-* 2018: [Zhanshuai Meng 孟占帅](/people/zhanshuaimeng) (MSc → Ant Financial), [Jiarong Wu 吴嘉荣](http://home.cse.ust.hk/~jwubf/) (BSc → HKUST PhD)
+* 2020:
+  [Yi Liu 刘毅](/people/yiliu) (MSc → Ant Financial),
+  Shaoyuan Chen 陈劭源 (BSc → Tsinghua PhD),
+  Shixuan Zhao 赵士轩 (Bsc → Ohio State PhD)
+* 2019: [Yang Cao 曹阳](/people/yangcao) (MSc → ByteDance),
+  [Yuju Shen 沈宇桔](/~yuju) (MSc → NetEase Games),
+  [Zhao Gang 刚昭](https://hirico.moe) (BSc → UCSD MSc),
+  Xiaolin Li 李晓霖 (BSc → ICT-CAS MSc),
+  Mingjie Shen 沈明杰 (BSc → Purdue PhD)
+* 2018: [Zhanshuai Meng 孟占帅](/people/zhanshuaimeng) (MSc → Ant Financial),
+  [Jiarong Wu 吴嘉荣](http://home.cse.ust.hk/~jwubf/) (BSc → HKUST PhD)
 
 ## Services
 
-* PC Members: [ASE'20 Tool-Demos](), [Internetware'20](https://internetware2020.github.io/), [ISSTA'19 Artifacts](https://conf.researchr.org/track/issta-2019/issta-2019-papers), [SATE'19](https://sate2019.github.io), [SATE'18](http://sei.pku.edu.cn/~xiongyf04/confs/sate18/index_en.html); External Reviewer: TSE, TPDS, SCP.
+* PC Members: [ASE'20 Tools](), [Internetware'20](https://internetware2020.github.io/), [ISSTA'19 Artifacts](https://conf.researchr.org/track/issta-2019/issta-2019-papers), [SATE'19](https://sate2019.github.io), [SATE'18](http://sei.pku.edu.cn/~xiongyf04/confs/sate18/index_en.html); External Reviewer: TSE, TPDS, SCP.
 * ![](img/noi.png) Steering/Scientific Program Committee member of Jiangsu Olympiad in Informatics.
 * ![](img/acmicpc.png) Coach of the programming contest training team at Nanjing University.
 
@@ -148,7 +155,7 @@ Past ([Details](students); feel free to ask them for anything you want to know a
 
 <hr>
 
-Last Update: April 17, 2019
+Last Update: June 3, 2020
 
 ~~~{.customjs}
 $('ul').css('margin-left', '-15px');
