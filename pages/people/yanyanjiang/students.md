@@ -2,6 +2,11 @@ title: Students
 
 # Past Students
 
+## 2020
+
+*  [Yi Liu 刘毅](/people/yiliu) (MSc → Ant Financial), “Detecting environmental adaptability defects for Android applications”
+*  Shaoyuan Chen 陈劭源 (BSc → Tsinghua PhD), “Automatic reapir of one-line shell scripts”
+*  Shixuan Zhao 赵士轩 (Bsc → Ohio State PhD), “Automatic detection of read-copy-update bugs in Linux Kernel”
 
 ## 2019
 
