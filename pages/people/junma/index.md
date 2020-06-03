@@ -48,10 +48,10 @@ title: Jun Ma
             </div><!-- nesting row end -->
             <div class="row gutter k-equal-height"><!-- nesting row -->
                 <div class="col-lg-4 col-md-4 col-sm-12">
-                    计算机系楼819
+                    计算机系楼541
                 </div>
                 <div class="col-lg-8 col-md-8 col-sm-12">
-                    Computer Building 819
+                    Computer Building 541
                 </div>
             </div><!-- nesting row end -->
 			
