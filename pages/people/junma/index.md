@@ -69,6 +69,7 @@ title: Jun Ma
 </div>
 
 ## News
+* <img src="static/img/new.jpg" width = "30" height = "30" align=center /> **For <font color=#0099ff size=5>potential graduate students</font>, please check this： [ICS portal (软件所招收2020/2021年秋季入学研究生说明)](/recruit/)**.
 *  <img src="static/img/new.jpg" width = "30" height = "30" align=center /> <img src="static/img/ccpc_logo.png" width = "30" height = "20" align=center "/>Congratulations to Hao LING, Hongyang LIU and Yangbo ZHANG for winning the runnerup in the finals of the 5-th Chinese Collegiate Programing Contest.
 *  <img src="static/img/new.jpg" width = "30" height = "30" align=center /> <img src="static/img/ccpc_logo.png" width = "30" height = "20" align=center "/>Congratulations to Shaoyuan CHEN, Dongyang WANG and Chunyang WANG for winning the 4-th place in the finals of the 5-th Chinese Collegiate Programing Contest.
 *  <img src="static/img/new.jpg" width = "30" height = "30" align=center /> <img src="static/img/220px-_ICPC_Foundation_Logo,_wide_profile,_2018_.png" width = "30" height = "20" align=center "/>Congratulations to Hao LING, Hongyang LIU and Yangbo ZHANG for winning the championship in the 44th ACM-ICPC Asia Regional (Nanchang).
@@ -110,7 +111,7 @@ My current interests focus on following topics:
 * [Please click here to see my publications](publications)
 
 ## Teaching
-
+* 2020, Spring: [Problem Solving(2)](http://cslabcms.nju.edu.cn/problem_solving/index.php/2019%E7%BA%A7--%E5%AD%A6%E6%9C%9F%E5%AE%89%E6%8E%92_(%E7%AC%AC%E4%BA%8C%E5%AD%A6%E6%9C%9F)) (Dept. CSE)
 * 2019, Autumn: [Problem Solving(1)](http://cslabcms.nju.edu.cn/problem_solving/index.php/2019%E7%BA%A7--%E5%AD%A6%E6%9C%9F%E5%AE%89%E6%8E%92_(%E7%AC%AC%E4%B8%80%E5%AD%A6%E6%9C%9F)) (Dept. CSE)
 * 2019, Spring: [Problem Solving(4)](http://cslabcms.nju.edu.cn/problem_solving/index.php/2017%E7%BA%A7--%E5%AD%A6%E6%9C%9F%E5%AE%89%E6%8E%92_(%E7%AC%AC%E5%9B%9B%E5%AD%A6%E6%9C%9F)) (Dept. CSE)
 * 2018, Autumn: [Problem Solving(3)](http://cslabcms.nju.edu.cn/problem_solving/index.php/2017%E7%BA%A7--%E5%AD%A6%E6%9C%9F%E5%AE%89%E6%8E%92_(%E7%AC%AC%E4%B8%89%E5%AD%A6%E6%9C%9F)) (Dept. CSE)
