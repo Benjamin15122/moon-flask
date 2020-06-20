@@ -2,9 +2,22 @@ title: Yanyan Jiang
 
 # Yanyan Jiang 蒋炎岩 ![](img/email.png)
 
+~~~{.customjs}
+$('#frog').hover(
+  function() {
+    $(this).attr('src', 'img/yanyan-portrait.jpg');
+  },
+  function() {
+    $(this).attr('src', 'img/frog-head.jpg');
+  }
+);
+~~~
+
 <div class="row gutter" markdown="1">
 <div class="col-lg-3 col-md-3 col-sm-4 col-xs-5">
-  <center>![](img/frog-head.jpg){width=300px}</center>
+  <center>
+  ![](img/frog-head.jpg){width=300px id=frog}
+  </center>
 </div>
 Assistant Researcher,<br>[SPAR ![](/static/img/logo-spar-small.png)](/spar/) - [CASTLE ![](/static/img/logo-castle-small.png)](http://sccpu2.cse.ust.hk/castle/index.html) Joint Group<br>Dept. of Computer Science and Technology, Nanjing University
 
