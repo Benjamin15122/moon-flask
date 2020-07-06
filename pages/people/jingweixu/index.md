@@ -22,6 +22,13 @@ title: Jingwei Xu
 
 ~~~{.bibtexhtml hl_lines="Jingwei Xu"}
 
+@article{zenan_cali_2020,
+  author    = {Zenan Li and Xiaoxing Ma and Chang Xu and Jingwei Xu and Chun Cao and  Jian Lu},
+  title     = {Operational Calibration: Debugging Confidence Errors for DNNs in the Field},
+  booktitle = {Proceedings of The 28th ACM Joint European Software Engineering Conference and Symposium on the Foundations of Software Engineering (ESEC/FSE 2020)},
+  year      = {2020},
+  pages     = {to appear},
+}
 @article{wang_dissector_2020,
   author    = {Huiyan Wang and Jingwei Xu and Chang Xu and Xiaoxing Ma and Jian Lu},
   title     = {DISSECTOR: Input Validation for Deep Learning Applications by Crossing-layer Dissection},
@@ -51,7 +58,7 @@ title: Jingwei Xu
 
 @inproceedings{2019-FSE-ZLi-Conditioning,
 	Author = {Zenan Li and Xiaoxing Ma and Chang Xu and Chun Cao and Jingwei Xu and Jian Lu},
-	Booktitle = {Proceedings of The 27th ACM Joint European Software Engineering Conference and Symposium on the Foundations of Software Engineering (ESEC/FSE 80 2019)},
+	Booktitle = {Proceedings of The 27th ACM Joint European Software Engineering Conference and Symposium on the Foundations of Software Engineering (ESEC/FSE 2019)},
 	Date-Added = {2019-05-25 09:02:03 +0800},
 	Date-Modified = {2019-05-25 09:10:08 +0800},
 	Month = {Aug},
